@@ -17,7 +17,7 @@
       "Enabled":  true,
       "ProviderURL": "https://dns.quad9.net/dns-query",
       "Locked": false,
-      "ExcludedDomains": ["example.com"]
+      "ExcludedDomains": [""]
       }
   }
 }
