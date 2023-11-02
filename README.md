@@ -13,8 +13,6 @@ Serve a disabilitare roba inutile come:
 Inoltre abilita:
 - DNSOverHTTPS (Quad9)
 - uBlock Origin
-- Antritracciamento avanzato
-- Blocco automatico di alcuni cookie banner
 
 ### configurazione.cfg ###
 Impostazioni che si applicano automaticamente a tutti i profili.
