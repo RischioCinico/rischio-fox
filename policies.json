@@ -15,12 +15,11 @@
         "3rdparty": {
           "Extensions": {
             "uBlock0@raymondhill.net": {
-              "externalLists": [
+              "externalLists":
                 "https://gitlab.com/magnolia1234/bypass-paywalls-clean-filters/-/raw/main/bpc-paywall-filter.txt",
                 "https://raw.githubusercontent.com/DandelionSprout/adfilt/master/ClearURLs%20for%20uBo/clear_urls_uboified.txt",
                 "https://www.i-dont-care-about-cookies.eu/abp/",
                 "https://malware-filter.gitlab.io/pup-filter/pup-filter.txt",
-            ],
               "importedLists": [
                 "https://gitlab.com/magnolia1234/bypass-paywalls-clean-filters/-/raw/main/bpc-paywall-filter.txt",
                 "https://raw.githubusercontent.com/DandelionSprout/adfilt/master/ClearURLs%20for%20uBo/clear_urls_uboified.txt",
