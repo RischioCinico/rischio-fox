@@ -6,7 +6,7 @@
       "RejectTracker": true,
       "Locked": false,
       "Behavior": "reject-tracker-and-partition-foreign",
-      "BehaviorPrivateBrowsing": "reject-tracker-and-partition-foreign",
+      "BehaviorPrivateBrowsing": "reject-tracker-and-partition-foreign"
     },
     "DisableFeedbackCommands": true,
     "DisableFirefoxStudies": true,
@@ -107,6 +107,6 @@
       "SkipOnboarding": false,
       "MoreFromMozilla": false,
       "Locked": true
-    },
+    }
   }
 }
