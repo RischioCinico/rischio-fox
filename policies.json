@@ -10,8 +10,8 @@
       "uBlock0@raymondhill.net": {
         "install_url": "https://addons.mozilla.org/firefox/downloads/latest/ublock-origin/latest.xpi",
         "installation_mode": "force_installed"
-          }
-      },
+      }
+    },
         "3rdparty": {
           "Extensions": {
             "uBlock0@raymondhill.net": {
@@ -32,14 +32,14 @@
                 "https://www.i-dont-care-about-cookies.eu/abp/",
                 "https://malware-filter.gitlab.io/pup-filter/pup-filter.txt",
               ],
-                          },
-                },
+            },
+          },
         },
     "DNSOverHTTPS": {
       "Enabled":  true,
       "ProviderURL": "https://dns.quad9.net/dns-query",
       "Locked": true,
       "ExcludedDomains": [""]
-      }
+    }
   }
 }
