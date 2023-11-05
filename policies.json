@@ -17,8 +17,7 @@
     "DNSOverHTTPS": {
       "Enabled":  true,
       "ProviderURL": "https://dns.quad9.net/dns-query",
-      "Locked": true,
-      "ExcludedDomains": [""]
+      "Locked": true
     },
     "DontCheckDefaultBrowser": true,
     "EnableTrackingProtection": {
@@ -26,8 +25,7 @@
       "Locked": true,
       "Cryptomining": true,
       "Fingerprinting": true,
-      "EmailTracking": true,
-      "Exceptions": [""]
+      "EmailTracking": true
     },
     "EncryptedMediaExtensions": {
       "Enabled": true,
@@ -80,7 +78,7 @@
         "Locked": true
       }
     },
-        "PictureInPicture": {
+    "PictureInPicture": {
       "Enabled": true,
       "Locked": true
     },
