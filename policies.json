@@ -6,7 +6,8 @@
           "adminSettings": {
             "advancedUserEnabled": true,
             "uiAccentCustom": true,
-            "uiAccentCustom0": "#04cdff"
+            "uiAccentCustom0": "#04cdff",
+            "uiTheme": "dark"
           }
         }
       }
