@@ -6,6 +6,7 @@
           "adminSettings": {
             "userSettings": {
               "advancedUserEnabled": true,
+              "cloudStorageEnabled": true,
               "uiAccentCustom": true,
               "uiAccentCustom0": "#04cdff",
               "uiTheme": "dark",
