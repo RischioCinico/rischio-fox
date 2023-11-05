@@ -1,5 +1,16 @@
 {
   "policies": {
+    "3rdparty": {
+      "Extensions": {
+        "uBlock0@raymondhill.net": {
+          "adminSettings": {
+            "advancedUserEnabled": true,
+            "uiAccentCustom": true,
+            "uiAccentCustom0": "#04cdff"
+          }
+        }
+      }
+    },
     "Cookies": {
       "Default": true,
       "AcceptThirdParty": "from-visited",
