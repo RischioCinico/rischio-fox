@@ -98,7 +98,7 @@
     },
     "FirefoxHome": {
       "Search": true,
-      "TopSites": false,
+      "TopSites": true,
       "SponsoredTopSites": false,
       "Highlights": false,
       "Pocket": false,
