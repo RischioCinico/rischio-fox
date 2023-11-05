@@ -4,7 +4,7 @@
       "Default": true,
       "AcceptThirdParty": "from-visited",
       "RejectTracker": true,
-      "Locked": false,
+      "Locked": true,
       "Behavior": "reject-tracker-and-partition-foreign",
       "BehaviorPrivateBrowsing": "reject-tracker-and-partition-foreign"
     },
