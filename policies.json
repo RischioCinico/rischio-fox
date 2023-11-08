@@ -133,8 +133,8 @@
         "Locked": false
       },
       "Autoplay": {
-        "Default": "block-audio-video",
-        "Locked": true
+        "Default": "block-audio",
+        "Locked": false
       }
     },
     "PictureInPicture": {
