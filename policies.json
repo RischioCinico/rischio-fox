@@ -69,11 +69,6 @@
     "DisablePocket": true,
     "DisableProfileRefresh": true,
     "DisableSetDesktopBackground": true,
-    "DisableTelemetry": true,
-    "DNSOverHTTPS": {
-      "Enabled":  true,
-      "ProviderURL": "https://dns.quad9.net/dns-query",
-      "Locked": true
-    }
+    "DisableTelemetry": true
   }
 }
