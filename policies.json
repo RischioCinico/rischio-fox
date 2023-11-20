@@ -1,5 +1,11 @@
 {
   "policies": {
+    "ExtensionSettings": {
+      "uBlock0@raymondhill.net": {
+        "install_url": "https://addons.mozilla.org/firefox/downloads/latest/ublock-origin/latest.xpi",
+        "installation_mode": "force_installed"
+      }
+    }.
     "3rdparty": {
       "Extensions": {
         "uBlock0@raymondhill.net": {
@@ -58,14 +64,6 @@
         }
       }
     },
-    "Cookies": {
-      "Default": true,
-      "AcceptThirdParty": "from-visited",
-      "RejectTracker": true,
-      "Locked": true,
-      "Behavior": "reject-tracker-and-partition-foreign",
-      "BehaviorPrivateBrowsing": "reject-tracker-and-partition-foreign"
-    },
     "DisableFeedbackCommands": true,
     "DisableFirefoxStudies": true,
     "DisablePocket": true,
@@ -75,93 +73,6 @@
     "DNSOverHTTPS": {
       "Enabled":  true,
       "ProviderURL": "https://dns.quad9.net/dns-query",
-      "Locked": true
-    },
-    "DontCheckDefaultBrowser": true,
-    "EnableTrackingProtection": {
-      "Value": true,
-      "Locked": true,
-      "Cryptomining": true,
-      "Fingerprinting": true,
-      "EmailTracking": true
-    },
-    "EncryptedMediaExtensions": {
-      "Enabled": true,
-      "Locked": true
-    },
-    "ExtensionSettings": {
-      "uBlock0@raymondhill.net": {
-        "install_url": "https://addons.mozilla.org/firefox/downloads/latest/ublock-origin/latest.xpi",
-        "installation_mode": "force_installed"
-      }
-    },
-    "FirefoxHome": {
-      "Search": true,
-      "TopSites": true,
-      "SponsoredTopSites": false,
-      "Highlights": false,
-      "Pocket": false,
-      "SponsoredPocket": false,
-      "Snippets": false,
-      "Locked": false
-    },
-    "FirefoxSuggest": {
-      "WebSuggestions": true,
-      "SponsoredSuggestions": false,
-      "ImproveSuggest": true,
-      "Locked": false
-    },
-    "HardwareAcceleration": true,
-    "NetworkPrediction": false,
-    "NoDefaultBookmarks": true,
-    "Permissions": {
-      "Camera": {
-        "BlockNewRequests": true,
-        "Locked": false
-      },
-      "Microphone": {
-        "BlockNewRequests": true,
-        "Locked": false
-      },
-      "Location": {
-        "BlockNewRequests": true,
-        "Locked": false
-      },
-      "Notifications": {
-        "BlockNewRequests": true,
-        "Locked": false
-      },
-      "Autoplay": {
-        "Default": "block-audio",
-        "Locked": false
-      }
-    },
-    "PictureInPicture": {
-      "Enabled": true,
-      "Locked": true
-    },
-    "PopupBlocking": {
-      "Default": true,
-      "Locked": true
-    },
-    "SanitizeOnShutdown": {
-      "Cache": false,
-      "Cookies": false,
-      "Downloads": false,
-      "FormData": false,
-      "History": false,
-      "Sessions": false,
-      "SiteSettings": false,
-      "OfflineApps": false,
-      "Locked": true
-      },
-    "UserMessaging": {
-      "WhatsNew": false,
-      "ExtensionRecommendations": false,
-      "FeatureRecommendations": false,
-      "UrlbarInterventions": false,
-      "SkipOnboarding": false,
-      "MoreFromMozilla": false,
       "Locked": true
     }
   }
