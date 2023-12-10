@@ -24,7 +24,7 @@
               "uiAccentCustom": true,
               "uiAccentCustom0": "#04cdff",
               "uiTheme": "dark",
-              "externalLists": "https://gitlab.com/magnolia1234/bypass-paywalls-clean-filters/-/raw/main/bpc-paywall-filter.txt\nhttps://raw.githubusercontent.com/DandelionSprout/adfilt/master/BrowseWebsitesWithoutLoggingIn.txt\nhttps://raw.githubusercontent.com/DandelionSprout/adfilt/master/LegitimateURLShortener.txt\nhttps://raw.githubusercontent.com/stephenhawk8054/PrivacyExtended/main/privacy_extended.txt\nhttps://raw.githubusercontent.com/yokoffing/filterlists/main/annoyance_list.txt\nhttps://raw.githubusercontent.com/yokoffing/filterlists/main/privacy_essentials.txt\nhttps://raw.githubusercontent.com/yokoffing/filterlists/main/youtube_clear_view.txt\nhttps://www.i-dont-care-about-cookies.eu/abp/",
+              "externalLists": "https://gitlab.com/magnolia1234/bypass-paywalls-clean-filters/-/raw/main/bpc-paywall-filter.txt\nhttps://raw.githubusercontent.com/DandelionSprout/adfilt/master/BrowseWebsitesWithoutLoggingIn.txt\nhttps://raw.githubusercontent.com/DandelionSprout/adfilt/master/LegitimateURLShortener.txt\nhttps://raw.githubusercontent.com/stephenhawk8054/PrivacyExtended/main/privacy_extended.txt\nhttps://raw.githubusercontent.com/yokoffing/filterlists/main/annoyance_list.txt\nhttps://www.i-dont-care-about-cookies.eu/abp/",
               "firewallPaneMinimized": false,
               "importedLists": [
                 "https://gitlab.com/magnolia1234/bypass-paywalls-clean-filters/-/raw/main/bpc-paywall-filter.txt",
@@ -33,7 +33,6 @@
                 "https://raw.githubusercontent.com/stephenhawk8054/PrivacyExtended/main/privacy_extended.txt",
                 "https://raw.githubusercontent.com/yokoffing/filterlists/main/annoyance_list.txt",
                 "https://raw.githubusercontent.com/yokoffing/filterlists/main/privacy_essentials.txt",
-                "https://raw.githubusercontent.com/yokoffing/filterlists/main/youtube_clear_view.txt",
                 "https://www.i-dont-care-about-cookies.eu/abp/"
               ]
             },
@@ -63,7 +62,6 @@
               "https://raw.githubusercontent.com/DandelionSprout/adfilt/master/BrowseWebsitesWithoutLoggingIn.txt",
               "https://raw.githubusercontent.com/yokoffing/filterlists/main/privacy_essentials.txt",
               "https://raw.githubusercontent.com/yokoffing/filterlists/main/annoyance_list.txt",
-              "https://raw.githubusercontent.com/yokoffing/filterlists/main/youtube_clear_view.txt",
               "https://gitlab.com/magnolia1234/bypass-paywalls-clean-filters/-/raw/main/bpc-paywall-filter.txt",
               "https://www.i-dont-care-about-cookies.eu/abp/",
               "https://raw.githubusercontent.com/stephenhawk8054/PrivacyExtended/main/privacy_extended.txt"
