@@ -159,12 +159,19 @@ pref("geo.provider.use_gpsd", false);
 pref("geo.provider.use_geoclue", false);
 
 /*** [0300] RACCOLTA DATI ***/
+/* 0320: disable recommendation pane in about:addons (uses Google Analytics) ***/
 pref("extensions.getAddons.showPane", false); // [Nascosta]
+/* 0321: disable recommendations in about:addons' Extensions and Themes panes ***/
 pref("extensions.htmlaboutaddons.recommendations.enabled", false);
+/* 0322: disable personalized Extension Recommendations in about:addons and AMO ***/
 pref("browser.discovery.enabled", false);
-pref("browser.shopping.experience2023.enabled", false);
+/* 0323: disable shopping experience ***/
+pref("browser.shopping.experience2023.enabled", false); // [FF116+]
+/* 0330: disable new data submission ***/
 pref("datareporting.policy.dataSubmissionEnabled", false);
+/* 0331: disable Health Reports ***/
 pref("datareporting.healthreport.uploadEnabled", false);
+/* 0332: disable telemetry ***/
 pref("toolkit.telemetry.unified", false);
 pref("toolkit.telemetry.enabled", false);
 pref("toolkit.telemetry.server", "data:,");
@@ -174,23 +181,30 @@ pref("toolkit.telemetry.shutdownPingSender.enabled", false);
 pref("toolkit.telemetry.updatePing.enabled", false);
 pref("toolkit.telemetry.bhrPing.enabled", false);
 pref("toolkit.telemetry.firstShutdownPing.enabled", false);
+/* 0333: disable Telemetry Coverage ***/
 pref("toolkit.telemetry.coverage.opt-out", true); // [Nascosta]
 pref("toolkit.coverage.opt-out", true); // [Nascosta]
 pref("toolkit.coverage.endpoint.base", "");
+/* 0334: disable PingCentre telemetry (used in several System Add-ons) ***/
 pref("browser.ping-centre.telemetry", false);
 pref("browser.newtabpage.activity-stream.feeds.telemetry", false);
+/* 0335: disable Firefox Home (Activity Stream) telemetry ***/
 pref("browser.newtabpage.activity-stream.telemetry", false);
+/* 0340: disable Studies ***/
 pref("app.shield.optoutstudies.enabled", false);
+/* 0341: disable Normandy/Shield ***/
 pref("app.normandy.enabled", false);
 pref("app.normandy.api_url", "");
+/* 0350: disable Crash Reports ***/
 pref("breakpad.reportURL", "");
 pref("browser.tabs.crashReporting.sendReport", false);
 pref("browser.crashReports.unsubmittedCheck.enabled", false);
+/* 0351: enforce no submission of backlogged Crash Reports ***/
 pref("browser.crashReports.unsubmittedCheck.autoSubmit2", false);
 /* 0360: disabilita Captive Portal ***/
 defaultPref("captivedetect.canonicalURL", "");
 defaultPref("network.captive-portal-service.enabled", false);
-/* 0361: disabilita controllo connettività [FF65+] ***/
+/* 0361: disabilita controllo connettività ***/
 defaultPref("network.connectivity-service.enabled", false);
 
 /*** [0600] CONNESSIONI NON RICHIESTE ***/
