@@ -1,2 +1,2 @@
 pref("general.config.obscure_value", 0);
-pref("general.config.filename", "configurazione.cfg");
+pref("general.config.filename", "rischio-fox.js");
