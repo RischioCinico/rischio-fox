@@ -432,7 +432,6 @@ clearPref("signon.privateBrowsingCapture.enabled");
 clearPref("security.mixed_content.upgrade_display_content");
 clearPref("security.mixed_content.upgrade_display_content.image");
 clearPref("browser.download.open_pdf_attachments_inline");
-
 // FF116
 clearPref("layout.css.font-visibility.resistFingerprinting");
 // FF117
