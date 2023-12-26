@@ -1,7 +1,7 @@
 /*** Rischio-Fox (appare in about:config se la configurazione è stata applicata correttamente) ***/
 lockPref("rischio.fox", "Parrebbe funzionare...");
 /* 0001: Modifiche newtab ***/
-lockPref("browser.newtabpage.pinned", "[{\"url\":\"https://github.com/RischioCinico/rischio-fox\",\"label\":\"121.9\"},{\"url\":\"https://www.youtube.com/\",\"label\":\"YouTube\"},{\"url\":\"https://www.reddit.com/\",\"label\":\"Reddit\"},{\"url\":\"https://mail.google.com/mail/u/0/?hl=it#inbox\",\"label\":\"Gmail\"},{\"url\":\"https://addons.mozilla.org/it/firefox/\",\"label\":\"Estensioni\"},{\"url\":\"https://wiki.archlinux.org/title/List_of_applications\",\"label\":\"Applicazioni\"},{\"url\":\"https://www.subito.it/\",\"label\":\"Subito\"},{\"url\":\"https://www.flashscore.it/\",\"label\":\"Flashscore\"}]");
+lockPref("browser.newtabpage.pinned", "[{\"url\":\"https://github.com/RischioCinico/rischio-fox\",\"label\":\"121.10\"},{\"url\":\"https://www.youtube.com/\",\"label\":\"YouTube\"},{\"url\":\"https://www.reddit.com/\",\"label\":\"Reddit\"},{\"url\":\"https://mail.google.com/mail/u/0/?hl=it#inbox\",\"label\":\"Gmail\"},{\"url\":\"https://addons.mozilla.org/it/firefox/\",\"label\":\"Estensioni\"},{\"url\":\"https://wiki.archlinux.org/title/List_of_applications\",\"label\":\"Applicazioni\"},{\"url\":\"https://www.subito.it/\",\"label\":\"Subito\"},{\"url\":\"https://www.flashscore.it/\",\"label\":\"Flashscore\"}]");
 pref("browser.newtabpage.activity-stream.improvesearch.handoffToAwesomebar", false); // Ripristina searchbox
 lockPref("browser.newtabpage.activity-stream.improvesearch.topSiteSearchShortcuts.havePinned", "");
 lockPref("browser.newtabpage.activity-stream.improvesearch.topSiteSearchShortcuts.searchEngines", "");
@@ -354,8 +354,8 @@ clearPref("extensions.autoDisableScopes", 15);
 pref("extensions.postDownloadThirdPartyPrompt", false);
 
 /*** [2700] ETP (ENHANCED TRACKING PROTECTION) ***/
-/* 2701: abilita antitracciamento in modalità restrittiva ***/
-pref("browser.contentblocking.category", "strict");
+/* 2701: abilita antitracciamento (usare "strict" per la modalità restrittiva) ***/
+pref("browser.contentblocking.category", "standard");
 
 /*** [2800] SPEGNIMENTO ***/
 /* 2810: impedisci eliminazione dati alla chiusura di Firefox ***/
@@ -383,7 +383,7 @@ pref("privacy.window.maxInnerHeight", 900);
 /* 4503: disabilita mozAddonManager Web API ***/
 pref("privacy.resistFingerprinting.block_mozAddonManager", true);
 /* 4504: RFP letterboxing ***/
-clearPref("privacy.resistFingerprinting.letterboxing", true); // [Nascosta]
+pref("privacy.resistFingerprinting.letterboxing", true); // [Nascosta]
 /* 4510: usa colori di sistema ***/
 pref("browser.display.use_system_colors", false);
 /* 4511: usa tema widget non-nativo ***/
@@ -425,6 +425,8 @@ pref("permissions.default.geo", 2);
 pref("permissions.default.microphone", 2);
 pref("permissions.default.shortcuts", 2);
 pref("permissions.default.xr", 2);
+/* 7015: abilita DNT (Do Not Track) ***/
+pref("privacy.donottrackheader.enabled", true);
 /* 7017: disabilita service workers ***/
 pref("dom.serviceWorkers.enabled", false);
 /* 7018: disabilita notifiche web ***/
