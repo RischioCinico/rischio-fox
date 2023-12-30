@@ -437,7 +437,7 @@ clearPref("security.tls.version.enable-deprecated");
 /* 6011: enforce disabling of Web Compatibility Reporter ***/
 clearPref("extensions.webcompat-reporter.enabled");
 /* 6012: enforce Quarantined Domains [FF115+] ***/
-clearPref("extensions.quarantinedDomains.enabled", true);
+clearPref("extensions.quarantinedDomains.enabled");
 
 /*** [7000] ***/
 /* 7002: blocca richieste permessi ***/
