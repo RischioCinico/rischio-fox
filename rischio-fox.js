@@ -1,7 +1,7 @@
 /*** Rischio-Fox (appare in about:config se la configurazione è stata applicata correttamente) ***/
 lockPref("rischio.fox", "Parrebbe funzionare...");
 /* 0001: Modifiche newtab ***/
-lockPref("browser.newtabpage.pinned", "[{\"url\":\"https://github.com/RischioCinico/rischio-fox\",\"label\":\"121.12\"},{\"url\":\"https://www.youtube.com/\",\"label\":\"YouTube\"},{\"url\":\"https://www.reddit.com/\",\"label\":\"Reddit\"},{\"url\":\"https://mail.google.com/mail/u/0/?hl=it#inbox\",\"label\":\"Gmail\"},{\"url\":\"https://addons.mozilla.org/it/firefox/\",\"label\":\"Estensioni\"},{\"url\":\"https://wiki.archlinux.org/title/List_of_applications\",\"label\":\"Applicazioni\"},{\"url\":\"https://www.subito.it/\",\"label\":\"Subito\"},{\"url\":\"https://www.flashscore.it/\",\"label\":\"Flashscore\"}]");
+lockPref("browser.newtabpage.pinned", "[{\"url\":\"https://github.com/RischioCinico/rischio-fox\",\"label\":\"121.13\"},{\"url\":\"https://www.youtube.com/\",\"label\":\"YouTube\"},{\"url\":\"https://www.reddit.com/\",\"label\":\"Reddit\"},{\"url\":\"https://mail.google.com/mail/u/0/?hl=it#inbox\",\"label\":\"Gmail\"},{\"url\":\"https://addons.mozilla.org/it/firefox/\",\"label\":\"Estensioni\"},{\"url\":\"https://wiki.archlinux.org/title/List_of_applications\",\"label\":\"Applicazioni\"},{\"url\":\"https://www.subito.it/\",\"label\":\"Subito\"},{\"url\":\"https://www.flashscore.it/\",\"label\":\"Flashscore\"}]");
 pref("browser.newtabpage.activity-stream.improvesearch.handoffToAwesomebar", false); // Ripristina searchbox
 lockPref("browser.newtabpage.activity-stream.improvesearch.topSiteSearchShortcuts.havePinned", "");
 lockPref("browser.newtabpage.activity-stream.improvesearch.topSiteSearchShortcuts.searchEngines", "");
@@ -421,7 +421,25 @@ pref("browser.eme.ui.enabled", false);
 /* 5509: disabilita IPv6 ***/
 defaultPref("network.dns.disableIPv6", true);
 
-/*** [7000] NOTIFICHE ***/
+/*** [6000]: NON TOCCARE ***/
+/* 6001: enforce Firefox blocklist ***/
+clearPref("extensions.blocklist.enabled");
+/* 6002: enforce no referer spoofing ***/
+clearPref("network.http.referer.spoofSource");
+/* 6004: enforce a security delay on some confirmation dialogs such as install, open/save ***/
+clearPref("security.dialog_enable_delay");
+/* 6008: enforce no First Party Isolation ***/
+clearPref("privacy.firstparty.isolate");
+/* 6009: enforce SmartBlock shims (about:compat) ***/
+clearPref("extensions.webcompat.enable_shims");
+/* 6010: enforce no TLS 1.0/1.1 downgrades ***/
+clearPref("security.tls.version.enable-deprecated");
+/* 6011: enforce disabling of Web Compatibility Reporter ***/
+clearPref("extensions.webcompat-reporter.enabled");
+/* 6012: enforce Quarantined Domains [FF115+] ***/
+clearPref("extensions.quarantinedDomains.enabled", true);
+
+/*** [7000] ***/
 /* 7002: blocca richieste permessi ***/
 pref("permissions.default.camera", 2);
 pref("permissions.default.desktop-notification", 2);
@@ -431,13 +449,12 @@ pref("permissions.default.shortcuts", 2);
 pref("permissions.default.xr", 2);
 /* 7015: abilita DNT (Do Not Track) ***/
 pref("privacy.donottrackheader.enabled", true);
-/* 7017: disabilita service workers ***/
-pref("dom.serviceWorkers.enabled", false);
-/* 7018: disabilita notifiche web ***/
-pref("dom.webnotifications.enabled", false);
-/* 7019: disabilita Push ***/
-pref("dom.push.enabled", false);
-clearPref("dom.push.userAgentID");
+/* 7017: resetta service workers (disabilitare i service workers rompe Firefox Sync e diversi siti) ***/
+clearPref("dom.serviceWorkers.enabled");
+/* 7018: resetta notifiche web ***/
+clearPref("dom.webnotifications.enabled");
+/* 7019: resetta notifiche Push ***/
+clearPref("dom.push.enabled",);
 
 /*** [9999] DEPRECATE ***/
 // Resettate
