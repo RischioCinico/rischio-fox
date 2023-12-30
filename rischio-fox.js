@@ -378,7 +378,7 @@ pref("privacy.clearOnShutdown.cookies", false);
 pref("privacy.clearOnShutdown.offlineApps", false);
 
 /*** [4500] RFP (ResistFingerPrinting) ***/
-/* 4501: abilita RFP (solo in modalita anonima) ***/
+/* 4501: abilita RFP (solo in modalità anonima) ***/
 clearPref("privacy.resistFingerprinting");
 pref("privacy.resistFingerprinting.pbmode", true);
 /* 4502: arrotondamento dimensioni finestre ***/
@@ -387,7 +387,7 @@ pref("privacy.window.maxInnerHeight", 900);
 /* 4503: disabilita mozAddonManager Web API ***/
 pref("privacy.resistFingerprinting.block_mozAddonManager", true);
 /* 4504: RFP letterboxing ***/
-clearPref("privacy.resistFingerprinting.letterboxing", true); // [Nascosta]
+clearPref("privacy.resistFingerprinting.letterboxing"); // [Nascosta]
 /* 4510: usa colori di sistema ***/
 pref("browser.display.use_system_colors", false);
 /* 4511: usa tema widget non-nativo ***/
