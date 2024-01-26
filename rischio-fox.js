@@ -401,7 +401,7 @@ pref("browser.link.open_newwindow.restriction", 0);
 clearPref("webgl.disabled");
 
 /*** [5000] OPSEC ***/
-/* 5009: disabilita "open con" in download dialog ***/
+/* 5009: disabilita "apri con" per i download ***/
 pref("browser.download.forbid_open_with", true);
 /* 5012: disabilita completamento autmatico nella barra degli indirizzi ***/
 pref("browser.urlbar.autoFill", false);
