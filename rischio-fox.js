@@ -21,7 +21,8 @@ pref("dom.disable_open_during_load", false);
 pref("accessibility.force_disabled", 1);
 /* 0006: Abilita scorrimento automatico ***/
 pref("general.autoScroll", true);
-/* 0007: Disabilita indicatore microfono in uso (è buggato) ***/
+/* 0007: Disabilita indicatori WebRTC (sono buggati) ***/
+pref("privacy.webrtc.hideGlobalIndicator", true);
 pref("privacy.webrtc.legacyGlobalIndicator", false);
 /* 0008: Mostra segnalibri Mobile ***/
 pref("browser.bookmarks.showMobileBookmarks", true);
