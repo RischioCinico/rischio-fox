@@ -1,6 +1,6 @@
 /*** [0000] Rischio-Fox ***/
 /* 0001: Modifiche newtab ***/
-lockPref("browser.newtabpage.pinned", "[{\"url\":\"https://github.com/RischioCinico/rischio-fox\",\"label\":\"122.2\"},{\"url\":\"https://www.youtube.com/\",\"label\":\"YouTube\"},{\"url\":\"https://www.reddit.com/\",\"label\":\"Reddit\"},{\"url\":\"https://mail.google.com/mail/u/0/?hl=it#inbox\",\"label\":\"Gmail\"},{\"url\":\"https://addons.mozilla.org/it/firefox/\",\"label\":\"Estensioni\"},{\"url\":\"https://wiki.archlinux.org/title/List_of_applications\",\"label\":\"Applicazioni\"},{\"url\":\"https://www.subito.it/\",\"label\":\"Subito\"},{\"url\":\"https://www.flashscore.it/\",\"label\":\"Flashscore\"}]");
+lockPref("browser.newtabpage.pinned", "[{\"url\":\"https://github.com/RischioCinico/rischio-fox\",\"label\":\"122.3\"},{\"url\":\"https://www.youtube.com/\",\"label\":\"YouTube\"},{\"url\":\"https://www.reddit.com/\",\"label\":\"Reddit\"},{\"url\":\"https://mail.google.com/mail/u/0/?hl=it#inbox\",\"label\":\"Gmail\"},{\"url\":\"https://addons.mozilla.org/it/firefox/\",\"label\":\"Estensioni\"},{\"url\":\"https://wiki.archlinux.org/title/List_of_applications\",\"label\":\"Applicazioni\"},{\"url\":\"https://www.subito.it/\",\"label\":\"Subito\"},{\"url\":\"https://www.flashscore.it/\",\"label\":\"Flashscore\"}]");
 pref("browser.newtabpage.activity-stream.improvesearch.handoffToAwesomebar", false); // Ripristina searchbox
 lockPref("browser.newtabpage.activity-stream.improvesearch.topSiteSearchShortcuts.havePinned", "");
 lockPref("browser.newtabpage.activity-stream.improvesearch.topSiteSearchShortcuts.searchEngines", "");
@@ -44,7 +44,7 @@ pref("gfx.webrender.software.opengl", true);
 pref("media.hardware-video-decoding.force-enabled", true);
 pref("media.ffmpeg.vaapi.enabled", true);
 
-/*** [0097] FastFox v119 ***/
+/*** [0097] FastFox v122 ***/
 // https://github.com/yokoffing/Betterfox/blob/main/Fastfox.js
 
 /** GENERAL ***/
@@ -73,7 +73,7 @@ defaultPref("dom.enable_web_task_scheduling", true);
 defaultPref("layout.css.has-selector.enabled", true);
 defaultPref("dom.security.sanitizer.enabled", true);
 
-/*** [0098] PeskyFox v119 ***/
+/*** [0098] PeskyFox v122 ***/
 // https://github.com/yokoffing/Betterfox/blob/main/Peskyfox.js
 
 /* rimuove link Mozilla VPN ***/
@@ -108,6 +108,7 @@ pref("layout.css.prefers-color-scheme.content-override", 0); // tema scuro
 pref("cookiebanners.service.mode", 2);
 pref("cookiebanners.service.mode.privateBrowsing", 2);
 pref("cookiebanners.service.enableGlobalRules", true);
+pref("cookiebanners.service.enableGlobalRules.subFrames", true);
 /* nascondi avviso schermo intero ***/
 pref("full-screen-api.transition-duration.enter", "0 0");
 pref("full-screen-api.transition-duration.leave", "0 0");
@@ -129,7 +130,7 @@ pref("layout.word_select.eat_space_to_next_word", false);
 /* Non nascondere il puntatore durante digitazione ***/
 pref("widget.gtk.hide-pointer-while-typing.enabled", false);
 
-/*** [0099] SecureFox v119 ***/
+/*** [0099] SecureFox v122 ***/
 // https://github.com/yokoffing/Betterfox/blob/main/Securefox.js
 
 /* SameSite Cookies ***/
@@ -137,6 +138,7 @@ pref("network.cookie.sameSite.noneRequiresSecure", true);
 /* GPC ***/
 pref("privacy.globalprivacycontrol.enabled", true);
 pref("privacy.globalprivacycontrol.functionality.enabled", true);
+pref("privacy.globalprivacycontrol.pbmode.enabled", true);
 /* Permetti aggiunta di nuovi motori di ricerca ***/
 pref("browser.urlbar.update2.engineAliasRefresh", true); // [Nascosta]
 /* Impedisci ai siti di troncare le password ***/
