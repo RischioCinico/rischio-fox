@@ -1,6 +1,6 @@
 /*** [0000] Rischio-Fox ***/
 /* 0001: Modifiche newtab ***/
-lockPref("browser.newtabpage.pinned", "[{\"url\":\"https://github.com/RischioCinico/rischio-fox\",\"label\":\"122.5\"},{\"url\":\"https://www.youtube.com/\",\"label\":\"YouTube\"},{\"url\":\"https://www.reddit.com/\",\"label\":\"Reddit\"},{\"url\":\"https://mail.google.com/mail/u/0/?hl=it#inbox\",\"label\":\"Gmail\"},{\"url\":\"https://addons.mozilla.org/it/firefox/\",\"label\":\"Estensioni\"},{\"url\":\"https://wiki.archlinux.org/title/List_of_applications\",\"label\":\"Applicazioni\"},{\"url\":\"https://www.subito.it/\",\"label\":\"Subito\"},{\"url\":\"https://www.flashscore.it/\",\"label\":\"Flashscore\"}]");
+lockPref("browser.newtabpage.pinned", "[{\"url\":\"https://github.com/RischioCinico/rischio-fox\",\"label\":\"123\"},{\"url\":\"https://www.youtube.com/\",\"label\":\"YouTube\"},{\"url\":\"https://www.reddit.com/\",\"label\":\"Reddit\"},{\"url\":\"https://mail.google.com/mail/u/0/?hl=it#inbox\",\"label\":\"Gmail\"},{\"url\":\"https://addons.mozilla.org/it/firefox/\",\"label\":\"Estensioni\"},{\"url\":\"https://wiki.archlinux.org/title/List_of_applications\",\"label\":\"Applicazioni\"},{\"url\":\"https://www.subito.it/\",\"label\":\"Subito\"},{\"url\":\"https://www.flashscore.it/\",\"label\":\"Flashscore\"}]");
 pref("browser.newtabpage.activity-stream.improvesearch.handoffToAwesomebar", false); // Ripristina searchbox
 lockPref("browser.newtabpage.activity-stream.improvesearch.topSiteSearchShortcuts.havePinned", "");
 lockPref("browser.newtabpage.activity-stream.improvesearch.topSiteSearchShortcuts.searchEngines", "");
@@ -361,8 +361,8 @@ clearPref("extensions.autoDisableScopes", 15);
 pref("extensions.postDownloadThirdPartyPrompt", false);
 
 /*** [2700] ETP (ENHANCED TRACKING PROTECTION) ***/
-/* 2701: abilita antitracciamento (usare "strict" per la modalità restrittiva) ***/
-pref("browser.contentblocking.category", "standard");
+/* 2701: abilita antitracciamento ***/
+pref("browser.contentblocking.category", "strict");
 
 /*** [2800] SPEGNIMENTO ***/
 /* 2810: impedisci eliminazione dati alla chiusura di Firefox ***/
