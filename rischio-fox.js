@@ -1,6 +1,6 @@
 /*** [0000] Rischio-Fox ***/
 /* 0001: Modifiche newtab ***/
-lockPref("browser.newtabpage.pinned", "[{\"url\":\"https://github.com/RischioCinico/rischio-fox\",\"label\":\"122.4\"},{\"url\":\"https://www.youtube.com/\",\"label\":\"YouTube\"},{\"url\":\"https://www.reddit.com/\",\"label\":\"Reddit\"},{\"url\":\"https://mail.google.com/mail/u/0/?hl=it#inbox\",\"label\":\"Gmail\"},{\"url\":\"https://addons.mozilla.org/it/firefox/\",\"label\":\"Estensioni\"},{\"url\":\"https://wiki.archlinux.org/title/List_of_applications\",\"label\":\"Applicazioni\"},{\"url\":\"https://www.subito.it/\",\"label\":\"Subito\"},{\"url\":\"https://www.flashscore.it/\",\"label\":\"Flashscore\"}]");
+lockPref("browser.newtabpage.pinned", "[{\"url\":\"https://github.com/RischioCinico/rischio-fox\",\"label\":\"122.5\"},{\"url\":\"https://www.youtube.com/\",\"label\":\"YouTube\"},{\"url\":\"https://www.reddit.com/\",\"label\":\"Reddit\"},{\"url\":\"https://mail.google.com/mail/u/0/?hl=it#inbox\",\"label\":\"Gmail\"},{\"url\":\"https://addons.mozilla.org/it/firefox/\",\"label\":\"Estensioni\"},{\"url\":\"https://wiki.archlinux.org/title/List_of_applications\",\"label\":\"Applicazioni\"},{\"url\":\"https://www.subito.it/\",\"label\":\"Subito\"},{\"url\":\"https://www.flashscore.it/\",\"label\":\"Flashscore\"}]");
 pref("browser.newtabpage.activity-stream.improvesearch.handoffToAwesomebar", false); // Ripristina searchbox
 lockPref("browser.newtabpage.activity-stream.improvesearch.topSiteSearchShortcuts.havePinned", "");
 lockPref("browser.newtabpage.activity-stream.improvesearch.topSiteSearchShortcuts.searchEngines", "");
@@ -39,27 +39,31 @@ pref("gfx.webrender.compositor", true);
 pref("gfx.webrender.compositor.force-enabled", true);
 pref("gfx.webrender.software.opengl", true);
 pref("gfx.canvas.accelerated", true); // WARNING: not compatible with WINDOWS integrated GPUs
-pref("gfx.canvas.accelerated.cache-items", 4096);
-pref("gfx.canvas.accelerated.cache-size", 512);
+pref("gfx.canvas.accelerated.cache-items", 8192);
+pref("gfx.canvas.accelerated.cache-size", 1024);
 pref("gfx.content.skia-font-cache-size", 20);
 pref("media.hardware-video-decoding.force-enabled", true);
 pref("media.ffmpeg.vaapi.enabled", true);
 /** CACHE ***/
 pref("browser.cache.jsbc_compression_level", 3);
-pref("media.memory_cache_max_size", 1048576);
-pref("media.memory_caches_combined_limit_kb", 3145728);
+pref("media.memory_cache_max_size", 131072);
+pref("media.memory_caches_combined_limit_kb", 1048576);
+pref("media.memory_caches_combined_limit_pc_sysmem", 10);
 pref("media.cache_readahead_limit", 7200);
 pref("media.cache_resume_threshold", 3600);
 pref("image.mem.decode_bytes_at_a_time", 65536);
-pref("image.mem.shared.unmap.min_expiration_ms", 120000);
+pref("image.mem.shared.unmap.min_expiration_ms", 65536);
 /** NETWORK ***/
 pref("network.buffer.cache.size", 262144);
 pref("network.buffer.cache.count", 128);
 pref("network.http.max-connections", 1800);
 pref("network.http.max-persistent-connections-per-server", 10);
 pref("network.http.max-urgent-start-excessive-connections-per-host", 5);
+pref("network.http.max-persistent-connections-per-proxy", 48);
 pref("network.http.pacing.requests.enabled", false);
-pref("network.dnsCacheExpiration", 86400);
+pref("network.http.pacing.requests.min-parallelism", 10)
+pref("network.http.pacing.requests.burst", 14);
+pref("network.dnsCacheEntries", 1000);
 pref("network.dns.max_high_priority_threads", 8);
 pref("network.ssl_tokens_cache_capacity", 10240);
 /** EXPERIMENTAL ***/
@@ -450,13 +454,12 @@ pref("permissions.default.xr", 2);
 pref("privacy.donottrackheader.enabled", true);
 /* 7017: resetta service workers (disabilitare i service workers rompe Firefox Sync e diversi siti) ***/
 clearPref("dom.serviceWorkers.enabled");
-/* 7018: resetta notifiche web ***/
-clearPref("dom.webnotifications.enabled");
-/* 7019: resetta notifiche Push ***/
-clearPref("dom.push.enabled",);
 
 /*** [9999] DEPRECATE ***/
 // Resettate
+clearPref("network.dnsCacheExpiration");
+clearPref("dom.webnotifications.enabled");
+clearPref("dom.push.enabled",);
 clearPref("gfx.webrender.program-binary-disk");
 clearPref("gfx.webrender.enabled");
 clearPref("browser.urlbar.showSearchTerms.enabled");
