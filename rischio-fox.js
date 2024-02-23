@@ -362,7 +362,7 @@ pref("extensions.postDownloadThirdPartyPrompt", false);
 
 /*** [2700] ETP (ENHANCED TRACKING PROTECTION) ***/
 /* 2701: abilita antitracciamento ***/
-pref("browser.contentblocking.category", "strict");
+pref("browser.contentblocking.category", "standard");
 
 /*** [2800] SPEGNIMENTO ***/
 /* 2810: impedisci eliminazione dati alla chiusura di Firefox ***/
