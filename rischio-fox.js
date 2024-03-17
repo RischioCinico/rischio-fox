@@ -1,12 +1,12 @@
 /*** [0000] Rischio-Fox ***/
 /* 0001: Modifiche newtab ***/
-lockPref("browser.newtabpage.pinned", "[{\"url\":\"https://github.com/RischioCinico/rischio-fox\",\"label\":\"123\"},{\"url\":\"https://www.youtube.com/\",\"label\":\"YouTube\"},{\"url\":\"https://www.reddit.com/\",\"label\":\"Reddit\"},{\"url\":\"https://mail.google.com/mail/u/0/?hl=it#inbox\",\"label\":\"Gmail\"},{\"url\":\"https://addons.mozilla.org/it/firefox/\",\"label\":\"Estensioni\"},{\"url\":\"https://wiki.archlinux.org/title/List_of_applications\",\"label\":\"Applicazioni\"},{\"url\":\"https://www.subito.it/\",\"label\":\"Subito\"},{\"url\":\"https://www.flashscore.it/\",\"label\":\"Flashscore\"}]");
+lockPref("browser.newtabpage.pinned", "[{\"url\":\"https://github.com/RischioCinico/rischio-fox\",\"label\":\"123.1\"},{\"url\":\"https://www.youtube.com/\",\"label\":\"YouTube\"},{\"url\":\"https://www.reddit.com/\",\"label\":\"Reddit\"},{\"url\":\"https://mail.google.com/mail/u/0/?hl=it#inbox\",\"label\":\"Gmail\"},{\"url\":\"https://addons.mozilla.org/it/firefox/\",\"label\":\"Estensioni\"},{\"url\":\"https://wiki.archlinux.org/title/List_of_applications\",\"label\":\"Applicazioni\"},{\"url\":\"https://www.subito.it/\",\"label\":\"Subito\"},{\"url\":\"https://www.flashscore.it/\",\"label\":\"Flashscore\"}]");
 pref("browser.newtabpage.activity-stream.improvesearch.handoffToAwesomebar", false); // Ripristina searchbox
 lockPref("browser.newtabpage.activity-stream.improvesearch.topSiteSearchShortcuts.havePinned", "");
 lockPref("browser.newtabpage.activity-stream.improvesearch.topSiteSearchShortcuts.searchEngines", "");
 lockPref("browser.newtabpage.activity-stream.impressionId", "");
 lockPref("browser.newtabpage.activity-stream.feeds.section.topstories", false);
-/* 0002: portale XDG (integrazione desktop environment) ***/
+/* 0002: integrazione desktop environment ***/
 defaultPref("media.hardwaremediakeys.enabled", false); // Ridondante con Plasma Integration
 defaultPref("widget.use-xdg-desktop-portal.file-picker", 1); // default 2
 defaultPref("widget.use-xdg-desktop-portal.location", 1); // default 2
@@ -54,7 +54,7 @@ pref("media.cache_resume_threshold", 3600);
 pref("image.mem.decode_bytes_at_a_time", 65536);
 pref("image.mem.shared.unmap.min_expiration_ms", 65536);
 /** NETWORK ***/
-pref("network.buffer.cache.size", 262144);
+pref("network.buffer.cache.size", 262144); // WARNING: Cannot open HTML files bigger than 4MB if changed
 pref("network.buffer.cache.count", 128);
 pref("network.http.max-connections", 1800);
 pref("network.http.max-persistent-connections-per-server", 10);
