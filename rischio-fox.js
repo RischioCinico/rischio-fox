@@ -1,18 +1,13 @@
 /*** [0000] Rischio-Fox ***/
 /* 0001: Modifiche newtab ***/
-lockPref("browser.newtabpage.pinned", "[{\"url\":\"https://github.com/RischioCinico/rischio-fox\",\"label\":\"124\"},{\"url\":\"https://www.youtube.com/\",\"label\":\"YouTube\"},{\"url\":\"https://www.reddit.com/\",\"label\":\"Reddit\"},{\"url\":\"https://mail.google.com/mail/u/0/?hl=it#inbox\",\"label\":\"Gmail\"},{\"url\":\"https://addons.mozilla.org/it/firefox/\",\"label\":\"Estensioni\"},{\"url\":\"https://wiki.archlinux.org/title/List_of_applications\",\"label\":\"Applicazioni\"},{\"url\":\"https://www.subito.it/\",\"label\":\"Subito\"},{\"url\":\"https://www.flashscore.it/\",\"label\":\"Flashscore\"}]");
+lockPref("browser.newtabpage.pinned", "[{\"url\":\"https://github.com/RischioCinico/rischio-fox\",\"label\":\"124.1\"},{\"url\":\"https://www.youtube.com/\",\"label\":\"YouTube\"},{\"url\":\"https://www.reddit.com/\",\"label\":\"Reddit\"},{\"url\":\"https://mail.google.com/mail/u/0/?hl=it#inbox\",\"label\":\"Gmail\"},{\"url\":\"https://addons.mozilla.org/it/firefox/\",\"label\":\"Estensioni\"},{\"url\":\"https://wiki.archlinux.org/title/List_of_applications\",\"label\":\"Applicazioni\"},{\"url\":\"https://www.subito.it/\",\"label\":\"Subito\"},{\"url\":\"https://www.flashscore.it/\",\"label\":\"Flashscore\"}]");
 pref("browser.newtabpage.activity-stream.improvesearch.handoffToAwesomebar", false); // Ripristina searchbox
 lockPref("browser.newtabpage.activity-stream.improvesearch.topSiteSearchShortcuts.havePinned", "");
 lockPref("browser.newtabpage.activity-stream.improvesearch.topSiteSearchShortcuts.searchEngines", "");
 lockPref("browser.newtabpage.activity-stream.impressionId", "");
 lockPref("browser.newtabpage.activity-stream.feeds.section.topstories", false);
-/* 0002: integrazione desktop environment ***/
-defaultPref("media.hardwaremediakeys.enabled", false); // Ridondante con Plasma Integration
-defaultPref("widget.use-xdg-desktop-portal.file-picker", 1); // default 2
-defaultPref("widget.use-xdg-desktop-portal.location", 1); // default 2
-defaultPref("widget.use-xdg-desktop-portal.mime-handler", 1); // default 2
-defaultPref("widget.use-xdg-desktop-portal.open-uri", 1); // default 2
-defaultPref("widget.use-xdg-desktop-portal.settings", 1); // default 2
+/* 0002: Mostra segnalibri Mobile ***/
+pref("browser.bookmarks.showMobileBookmarks", true);
 /* 0003: Disabilita popup traduttore ***/
 pref("browser.translations.automaticallyPopup", false);
 /* 0004: Disabilita il blocco popup integrato ***/
@@ -24,8 +19,6 @@ pref("general.autoScroll", true);
 /* 0007: Disabilita indicatori WebRTC (sono buggati) ***/
 pref("privacy.webrtc.hideGlobalIndicator", true);
 pref("privacy.webrtc.legacyGlobalIndicator", false);
-/* 0008: Mostra segnalibri Mobile ***/
-pref("browser.bookmarks.showMobileBookmarks", true);
 
 /*** [0097] FastFox v122 ***/
 // https://github.com/yokoffing/Betterfox/blob/main/Fastfox.js
