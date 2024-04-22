@@ -459,7 +459,6 @@ pref("privacy.donottrackheader.enabled", true);
 clearPref("dom.serviceWorkers.enabled");
 
 /*** [9999] DEPRECATE ***/
-// Resettate
 clearPref("network.dnsCacheExpiration");
 clearPref("dom.webnotifications.enabled");
 clearPref("dom.push.enabled",);
