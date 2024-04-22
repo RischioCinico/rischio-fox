@@ -1,32 +1,33 @@
 /*** [0000] Rischio-Fox ***/
-/* 0001: Modifiche newtab ***/
-lockPref("browser.newtabpage.pinned", "[{\"url\":\"https://github.com/RischioCinico/rischio-fox\",\"label\":\"124.1\"},{\"url\":\"https://www.youtube.com/\",\"label\":\"YouTube\"},{\"url\":\"https://www.reddit.com/\",\"label\":\"Reddit\"},{\"url\":\"https://mail.google.com/mail/u/0/?hl=it#inbox\",\"label\":\"Gmail\"},{\"url\":\"https://addons.mozilla.org/it/firefox/\",\"label\":\"Estensioni\"},{\"url\":\"https://wiki.archlinux.org/title/List_of_applications\",\"label\":\"Applicazioni\"},{\"url\":\"https://www.subito.it/\",\"label\":\"Subito\"},{\"url\":\"https://www.flashscore.it/\",\"label\":\"Flashscore\"}]");
-pref("browser.newtabpage.activity-stream.improvesearch.handoffToAwesomebar", false); // Ripristina searchbox
+/* modifiche newtab ***/
+lockPref("browser.newtabpage.pinned", "[{\"url\":\"https://github.com/RischioCinico/rischio-fox\",\"label\":\"125\"},{\"url\":\"https://www.youtube.com/\",\"label\":\"YouTube\"},{\"url\":\"https://www.reddit.com/\",\"label\":\"Reddit\"},{\"url\":\"https://mail.google.com/mail/u/0/?hl=it#inbox\",\"label\":\"Gmail\"},{\"url\":\"https://addons.mozilla.org/it/firefox/\",\"label\":\"Estensioni\"},{\"url\":\"https://wiki.archlinux.org/title/List_of_applications\",\"label\":\"Applicazioni\"},{\"url\":\"https://www.subito.it/\",\"label\":\"Subito\"},{\"url\":\"https://www.flashscore.it/\",\"label\":\"Flashscore\"}]");
 lockPref("browser.newtabpage.activity-stream.improvesearch.topSiteSearchShortcuts.havePinned", "");
 lockPref("browser.newtabpage.activity-stream.improvesearch.topSiteSearchShortcuts.searchEngines", "");
 lockPref("browser.newtabpage.activity-stream.impressionId", "");
 lockPref("browser.newtabpage.activity-stream.feeds.section.topstories", false);
-/* 0002: integrazione desktop environment ***/
+/* ripristina searchbox ***/
+pref("browser.newtabpage.activity-stream.improvesearch.handoffToAwesomebar", false);
+/* integrazione KDE ***/
 defaultPref("media.hardwaremediakeys.enabled", false); // Ridondante con Plasma Integration
 defaultPref("widget.use-xdg-desktop-portal.file-picker", 1); // default 2
 defaultPref("widget.use-xdg-desktop-portal.location", 1); // default 2
 defaultPref("widget.use-xdg-desktop-portal.mime-handler", 1); // default 2
 defaultPref("widget.use-xdg-desktop-portal.open-uri", 1); // default 2
 defaultPref("widget.use-xdg-desktop-portal.settings", 1); // default 2
-/* 0003: Disabilita popup traduttore ***/
+/* disabilita popup traduttore ***/
 pref("browser.translations.automaticallyPopup", false);
-/* 0004: Disabilita il blocco popup integrato ***/
+/* disabilita il blocco popup integrato ***/
 pref("dom.disable_open_during_load", false);
-/* 0005: Disabilita accessibilità ***/
+/* disabilita accessibilità ***/
 pref("accessibility.force_disabled", 1);
-/* 0006: Abilita scorrimento automatico ***/
+/* abilita scorrimento automatico ***/
 pref("general.autoScroll", true);
-/* 0007: Disabilita indicatori WebRTC (sono buggati) ***/
+/* disabilita indicatori WebRTC (sono buggati) ***/
 pref("privacy.webrtc.hideGlobalIndicator", true);
 pref("privacy.webrtc.legacyGlobalIndicator", false);
-/* 0008: Mostra segnalibri Mobile ***/
+/* mostra segnalibri Mobile ***/
 pref("browser.bookmarks.showMobileBookmarks", true);
-/* 0009: Barra del titolo ***/
+/* nascondi barra del titolo ***/
 pref("browser.tabs.inTitlebar", 2);
 
 /*** [0097] FastFox v122 ***/
@@ -84,9 +85,9 @@ pref("browser.shell.checkDefaultBrowser", false);
 /* disabilita suggerimenti estensioni ***/
 pref("browser.newtabpage.activity-stream.asrouter.userprefs.cfr.addons", false);
 pref("browser.newtabpage.activity-stream.asrouter.userprefs.cfr.features", false);
-/* Nascondi "Altro da Mozilla" ***/
+/* nascondi "Altro da Mozilla" ***/
 pref("browser.preferences.moreFromMozilla", false);
-/* Nasconde lista schede aperte quando non necessario ***/
+/* nasconde lista schede aperte quando non necessario ***/
 pref("browser.tabs.tabmanager.enabled", false);
 /* disabilita avviso about:config ***/
 pref("browser.aboutConfig.showWarning", false);
@@ -95,19 +96,19 @@ pref("browser.startup.homepage_override.mstone", "ignore");
 pref("browser.aboutwelcome.enabled", false);
 /* disabilita pulsante "What's New" ***/
 pref("browser.messaging-system.whatsNewPanel.enabled", false);
-/* Abilita userChrome.css ***/
+/* abilita userChrome.css ***/
 pref("toolkit.legacyUserProfileCustomizations.stylesheets", true);
-/* Abilita modalità compatta ***/
+/* abilita modalità compatta ***/
 pref("browser.compactmode.show", true);
 /* imposta tipo di focus ***/
 pref("browser.display.focus_ring_on_anything", true);
-pref("browser.display.focus_ring_style", 0);
+pref("browser.display.focus_ring_style", 0); // 0=Solid, 1=Dotted
 pref("browser.display.focus_ring_width", 1);
-/* schema di colori preferito per le pagine ***/
-pref("layout.css.prefers-color-scheme.content-override", 0); // tema scuro
-/* chiudi automaticamente banner cookie ***/
-pref("cookiebanners.service.mode", 2);
-pref("cookiebanners.service.mode.privateBrowsing", 2);
+/* schema di colori preferito per le pagine (0=Scuro, 1=Chiaro, 2=Sistema, 3=Browser) ***/
+pref("layout.css.prefers-color-scheme.content-override", 3);
+/* rifiuta automatica banner dei cookie ***/
+pref("cookiebanners.service.mode", 1);
+pref("cookiebanners.service.mode.privateBrowsing", 1);
 pref("cookiebanners.service.enableGlobalRules", true);
 pref("cookiebanners.service.enableGlobalRules.subFrames", true);
 /* nascondi avviso schermo intero ***/
@@ -122,13 +123,13 @@ pref("browser.urlbar.unitConversion.enabled", true);
 pref("extensions.pocket.enabled", false);
 /* lascia il menu segnalibri aperto ***/
 pref("browser.bookmarks.openInTabClosesMenu", false);
-/* Mostra "visualizza informazioni immagine" ***/
+/* mostra "visualizza informazioni immagine" ***/
 pref("browser.menu.showViewImageInfo", true);
-/* Evidenzia risultati ***/
+/* evidenzia risultati ricerca ***/
 pref("findbar.highlightAll", true);
-/* Non selezionare lo spazio dopo le parole ***/
+/* non selezionare lo spazio dopo le parole ***/
 pref("layout.word_select.eat_space_to_next_word", false);
-/* Non nascondere il puntatore durante digitazione ***/
+/* non nascondere il puntatore durante digitazione ***/
 pref("widget.gtk.hide-pointer-while-typing.enabled", false);
 
 /*** [0099] SecureFox v122 ***/
@@ -140,9 +141,9 @@ pref("network.cookie.sameSite.noneRequiresSecure", true);
 pref("privacy.globalprivacycontrol.enabled", true);
 pref("privacy.globalprivacycontrol.functionality.enabled", true);
 pref("privacy.globalprivacycontrol.pbmode.enabled", true);
-/* Permetti aggiunta di nuovi motori di ricerca ***/
+/* permetti aggiunta di nuovi motori di ricerca ***/
 pref("browser.urlbar.update2.engineAliasRefresh", true); // [Nascosta]
-/* Impedisci ai siti di troncare le password ***/
+/* impedisci ai siti di troncare le password ***/
 pref("editor.truncate_user_pastes", false);
 
 /*** Arkenfox v122 ***/
@@ -150,9 +151,9 @@ pref("editor.truncate_user_pastes", false);
 /*** [0100] AVVIO ***/
 /* 0102: ripristina sessione ***/
 pref("browser.startup.page", 3);
-/* 0103: Resetta la home page di Firefox ***/
+/* 0103: resetta la home page di Firefox ***/
 clearPref("browser.startup.homepage");
-/* 0104: Resetta NEWTAB ***/
+/* 0104: resetta NEWTAB ***/
 clearPref("browser.newtabpage.enabled");
 /* 0105: disabilita contenuti sponsorizzati ***/
 lockPref("browser.newtabpage.activity-stream.showSponsored", false);
