@@ -461,7 +461,7 @@ clearPref("dom.serviceWorkers.enabled");
 /*** [9999] DEPRECATE ***/
 clearPref("network.dnsCacheExpiration");
 clearPref("dom.webnotifications.enabled");
-clearPref("dom.push.enabled",);
+clearPref("dom.push.enabled");
 clearPref("gfx.webrender.program-binary-disk");
 clearPref("gfx.webrender.enabled");
 clearPref("browser.urlbar.showSearchTerms.enabled");
