@@ -7,13 +7,6 @@ lockPref("browser.newtabpage.activity-stream.impressionId", "");
 lockPref("browser.newtabpage.activity-stream.feeds.section.topstories", false);
 /* ripristina searchbox ***/
 pref("browser.newtabpage.activity-stream.improvesearch.handoffToAwesomebar", false);
-/* integrazione KDE ***/
-defaultPref("media.hardwaremediakeys.enabled", false); // Ridondante con Plasma Integration
-defaultPref("widget.use-xdg-desktop-portal.file-picker", 1); // default 2
-defaultPref("widget.use-xdg-desktop-portal.location", 1); // default 2
-defaultPref("widget.use-xdg-desktop-portal.mime-handler", 1); // default 2
-defaultPref("widget.use-xdg-desktop-portal.open-uri", 1); // default 2
-defaultPref("widget.use-xdg-desktop-portal.settings", 1); // default 2
 /* disabilita popup traduttore ***/
 pref("browser.translations.automaticallyPopup", false);
 /* disabilita il blocco popup integrato ***/
