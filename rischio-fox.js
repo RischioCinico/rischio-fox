@@ -591,24 +591,19 @@ pref("browser.messaging-system.whatsNewPanel.enabled", false);
 pref("browser.urlbar.showSearchTerms.enabled", false);
 
 /*** [9999] DEPRECATE ***/
-
 // FF116
 clearPref("layout.css.font-visibility.resistFingerprinting");
-
 // FF117
 clearPref("security.family_safety.mode");
 clearPref("dom.webnotifications.serviceworker.enabled");
-
 // FF118
 clearPref("layout.css.font-visibility.private");
 clearPref("layout.css.font-visibility.standard");
 clearPref("layout.css.font-visibility.trackingprotection");
 clearPref("permissions.delegation.enabled");
-
 // FF119
 clearPref("javascript.use_us_english_locale");
 clearPref("network.dns.skipTRR-when-parental-control-enabled");
-
 // Resettate
 clearPref("gfx.canvas.accelerated"); // default=true (Linux)
 clearPref("cookiebanners.service.enableGlobalRules"); // default=true
@@ -621,7 +616,6 @@ clearPref("network.buffer.cache.count"); // WARNING: Cannot open HTML files bigg
 clearPref("network.http.pacing.requests.min-parallelism")
 clearPref("network.http.pacing.requests.burst");
 clearPref("network.http.max-persistent-connections-per-proxy");
-
 // DA CONTROLLARE
 clearPref("gfx.webrender.program-binary-disk");
 clearPref("gfx.webrender.enabled");
