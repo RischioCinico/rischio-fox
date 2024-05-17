@@ -11,7 +11,7 @@
 /*                    ░                                                     */
 
 /* modifiche newtab ***/
-lockPref("browser.newtabpage.pinned", "[{\"url\":\"https://github.com/RischioCinico/rischio-fox\",\"label\":\"125.10\"},{\"url\":\"https://www.youtube.com/\",\"label\":\"YouTube\"},{\"url\":\"https://www.reddit.com/\",\"label\":\"Reddit\"},{\"url\":\"https://mail.google.com/mail/u/0/?hl=it#inbox\",\"label\":\"Gmail\"},{\"url\":\"https://addons.mozilla.org/it/firefox/\",\"label\":\"Estensioni\"},{\"url\":\"https://wiki.archlinux.org/title/List_of_applications\",\"label\":\"Applicazioni\"},{\"url\":\"https://www.subito.it/\",\"label\":\"Subito\"},{\"url\":\"https://www.diretta.it/\",\"label\":\"Diretta\"}]");
+lockPref("browser.newtabpage.pinned", "[{\"url\":\"https://github.com/RischioCinico/rischio-fox\",\"label\":\"125.11\"},{\"url\":\"https://www.youtube.com/\",\"label\":\"YouTube\"},{\"url\":\"https://www.reddit.com/\",\"label\":\"Reddit\"},{\"url\":\"https://mail.google.com/mail/u/0/?hl=it#inbox\",\"label\":\"Gmail\"},{\"url\":\"https://addons.mozilla.org/it/firefox/\",\"label\":\"Estensioni\"},{\"url\":\"https://wiki.archlinux.org/title/List_of_applications\",\"label\":\"Applicazioni\"},{\"url\":\"https://www.subito.it/\",\"label\":\"Subito\"},{\"url\":\"https://www.diretta.it/\",\"label\":\"Diretta\"}]");
 lockPref("browser.newtabpage.activity-stream.improvesearch.topSiteSearchShortcuts.havePinned", "");
 lockPref("browser.newtabpage.activity-stream.improvesearch.topSiteSearchShortcuts.searchEngines", "");
 lockPref("browser.newtabpage.activity-stream.impressionId", "");
@@ -33,8 +33,31 @@ pref("privacy.webrtc.legacyGlobalIndicator", false);
 pref("browser.bookmarks.showMobileBookmarks", true);
 /* nascondi barra del titolo ***/
 defaultPref("browser.tabs.inTitlebar", 2);
+/* non nascondere il puntatore durante digitazione (Peskyfox) ***/
+pref("widget.gtk.hide-pointer-while-typing.enabled", false);
 
-/*** [0099] Betterfox v122.1 ***/
+// DA CONTROLLARE
+clearPref("gfx.webrender.program-binary-disk");
+clearPref("gfx.webrender.enabled");
+clearPref("gfx.webrender.all", true);
+clearPref("gfx.webrender.precache-shaders", true);
+clearPref("gfx.webrender.compositor", true);
+clearPref("gfx.webrender.compositor.force-enabled", true);
+clearPref("gfx.webrender.software.opengl", true);
+clearPref("gfx.canvas.accelerated", true); // WARNING: not compatible with WINDOWS integrated GPUs
+clearPref("image.mem.shared.unmap.min_expiration_ms", 65536);
+clearPref("media.hardware-video-decoding.force-enabled", true);
+clearPref("media.ffmpeg.vaapi.enabled", true);
+clearPref("media.memory_caches_combined_limit_kb", 1048576);
+clearPref("media.memory_caches_combined_limit_pc_sysmem", 10);
+clearPref("network.buffer.cache.size", 262144); // WARNING: Cannot open HTML files bigger than 4MB if changed
+clearPref("network.buffer.cache.count", 128);
+clearPref("network.http.max-persistent-connections-per-proxy", 48);
+clearPref("network.http.pacing.requests.min-parallelism", 10)
+clearPref("network.http.pacing.requests.burst", 14);
+clearPref("network.dnsCacheEntries", 1000);
+
+/*** Betterfox v122.1 ***/
 
 /* ░█▀▀░█▀█░█▀▀░▀█▀░█▀▀░█▀█░█░█ */
 /* ░█▀▀░█▀█░▀▀█░░█░░█▀▀░█░█░▄▀▄ */
@@ -202,8 +225,8 @@ pref("browser.privatebrowsing.vpnpromourl", "");
 // pref("extensions.htmlaboutaddons.recommendations.enabled", false); doppione di 0321
 // pref("browser.discovery.enabled", false); doppione di 0322
 pref("browser.shell.checkDefaultBrowser", false);
-pref("browser.newtabpage.activity-stream.asrouter.userprefs.cfr.addons", false);
-pref("browser.newtabpage.activity-stream.asrouter.userprefs.cfr.features", false);
+// pref("browser.newtabpage.activity-stream.asrouter.userprefs.cfr.addons", false); doppione di 9002
+// pref("browser.newtabpage.activity-stream.asrouter.userprefs.cfr.features", false); doppione di 9002
 pref("browser.preferences.moreFromMozilla", false);
 pref("browser.tabs.tabmanager.enabled", false);
 pref("browser.aboutConfig.showWarning", false);
@@ -252,60 +275,6 @@ pref("browser.bookmarks.openInTabClosesMenu", false);
 pref("browser.menu.showViewImageInfo", true);
 pref("findbar.highlightAll", true);
 pref("layout.word_select.eat_space_to_next_word", false);
-
-
-
-
-
-// peskyfox
-/* schema di colori preferito per le pagine ***/
-pref("layout.css.prefers-color-scheme.content-override", 3);
-/* rifiuta automatica banner dei cookie ***/
-pref("cookiebanners.service.enableGlobalRules", true);
-pref("cookiebanners.service.enableGlobalRules.subFrames", true);
-/* non nascondere il puntatore durante digitazione ***/
-pref("widget.gtk.hide-pointer-while-typing.enabled", false);
-/* disabilita messaggi di benvenuto ***/
-pref("browser.startup.homepage_override.mstone", "ignore");
-/* disabilita pulsante "What's New" ***/
-pref("browser.messaging-system.whatsNewPanel.enabled", false);
-
-// Securefox
-/* GPC ***/
-pref("privacy.globalprivacycontrol.functionality.enabled", true);
-pref("privacy.globalprivacycontrol.pbmode.enabled", true);
-
-// Fastfox
-/** RENDERING ***/
-pref("gfx.webrender.all", true);
-pref("gfx.webrender.precache-shaders", true);
-pref("gfx.webrender.compositor", true);
-pref("gfx.webrender.compositor.force-enabled", true);
-pref("gfx.webrender.software.opengl", true);
-pref("gfx.canvas.accelerated", true); // WARNING: not compatible with WINDOWS integrated GPUs
-pref("media.hardware-video-decoding.force-enabled", true);
-pref("media.ffmpeg.vaapi.enabled", true);
-/** CACHE ***/
-pref("media.memory_caches_combined_limit_kb", 1048576);
-pref("media.memory_caches_combined_limit_pc_sysmem", 10);
-pref("image.mem.shared.unmap.min_expiration_ms", 65536);
-/** NETWORK ***/
-pref("network.buffer.cache.size", 262144); // WARNING: Cannot open HTML files bigger than 4MB if changed
-pref("network.buffer.cache.count", 128);
-pref("network.http.max-persistent-connections-per-proxy", 48);
-pref("network.http.pacing.requests.min-parallelism", 10)
-pref("network.http.pacing.requests.burst", 14);
-pref("network.dnsCacheEntries", 1000);
-
-clearPref("dom.webnotifications.enabled");
-clearPref("dom.push.enabled");
-clearPref("gfx.webrender.program-binary-disk");
-clearPref("gfx.webrender.enabled");
-clearPref("browser.urlbar.showSearchTerms.enabled");
-
-
-
-
 
 /* ░█▀█░█▀▄░█░█░█▀▀░█▀█░█▀▀░█▀█░█░█ */
 /* ░█▀█░█▀▄░█▀▄░█▀▀░█░█░█▀▀░█░█░▄▀▄ */
@@ -621,8 +590,28 @@ pref("permissions.default.xr", 2);
 pref("privacy.donottrackheader.enabled", true);
 /* 7017: resetta service workers (disabilitare i service workers rompe Firefox Sync e diversi siti) ***/
 clearPref("dom.serviceWorkers.enabled");
+/* 7018: disable Web Notifications ***/
+pref("dom.webnotifications.enabled", false);
+/* 7019: disable Push Notifications [FF44+] ***/
+pref("dom.push.enabled", false);
+
+/*** [9000]: NON-PROJECT RELATED ***/
+/* 9001: disable welcome notices ***/
+pref("browser.startup.homepage_override.mstone", "ignore"); // [HIDDEN PREF]
+/* 9002: disable General>Browsing>Recommend extensions/features as you browse [FF67+] ***/
+pref("browser.newtabpage.activity-stream.asrouter.userprefs.cfr.addons", false);
+pref("browser.newtabpage.activity-stream.asrouter.userprefs.cfr.features", false);
+/* 9003: disable What's New toolbar icon ***/
+pref("browser.messaging-system.whatsNewPanel.enabled", false);
+/* 9004: disable search terms ***/
+pref("browser.urlbar.showSearchTerms.enabled", false);
 
 /*** [9999] DEPRECATE ***/
+// Resettate
+clearPref("cookiebanners.service.enableGlobalRules"); // default=true
+clearPref("cookiebanners.service.enableGlobalRules.subFrames"); // default=true
+clearPref("privacy.globalprivacycontrol.functionality.enabled"); // default=true
+clearPref("privacy.globalprivacycontrol.pbmode.enabled"); // default=true
 // FF116
 clearPref("layout.css.font-visibility.resistFingerprinting");
 // FF117
