@@ -11,7 +11,7 @@
 /*                    ░                                                     */
 
 /* modifiche newtab ***/
-lockPref("browser.newtabpage.pinned", "[{\"url\":\"https://github.com/RischioCinico/rischio-fox\",\"label\":\"125.14\"},{\"url\":\"https://www.youtube.com/\",\"label\":\"YouTube\"},{\"url\":\"https://www.reddit.com/\",\"label\":\"Reddit\"},{\"url\":\"https://mail.google.com/mail/u/0/?hl=it#inbox\",\"label\":\"Gmail\"},{\"url\":\"https://addons.mozilla.org/it/firefox/\",\"label\":\"Estensioni\"},{\"url\":\"https://wiki.archlinux.org/title/List_of_applications\",\"label\":\"Applicazioni\"},{\"url\":\"https://www.subito.it/\",\"label\":\"Subito\"},{\"url\":\"https://www.diretta.it/\",\"label\":\"Diretta\"}]");
+lockPref("browser.newtabpage.pinned", "[{\"url\":\"https://github.com/RischioCinico/rischio-fox\",\"label\":\"125.15\"},{\"url\":\"https://www.youtube.com/\",\"label\":\"YouTube\"},{\"url\":\"https://www.reddit.com/\",\"label\":\"Reddit\"},{\"url\":\"https://mail.google.com/mail/u/0/?hl=it#inbox\",\"label\":\"Gmail\"},{\"url\":\"https://addons.mozilla.org/it/firefox/\",\"label\":\"Estensioni\"},{\"url\":\"https://wiki.archlinux.org/title/List_of_applications\",\"label\":\"Applicazioni\"},{\"url\":\"https://www.subito.it/\",\"label\":\"Subito\"},{\"url\":\"https://www.diretta.it/\",\"label\":\"Diretta\"}]");
 lockPref("browser.newtabpage.activity-stream.improvesearch.topSiteSearchShortcuts.havePinned", "");
 lockPref("browser.newtabpage.activity-stream.improvesearch.topSiteSearchShortcuts.searchEngines", "");
 lockPref("browser.newtabpage.activity-stream.impressionId", "");
@@ -40,19 +40,6 @@ pref("network.dnsCacheEntries", 0);
 /* Media memory cache ***/
 pref("media.memory_caches_combined_limit_kb", 1048576);
 pref("media.memory_caches_combined_limit_pc_sysmem", 10);
-
-// DA CONTROLLARE
-clearPref("gfx.webrender.program-binary-disk");
-clearPref("gfx.webrender.enabled");
-clearPref("gfx.webrender.all", true);
-clearPref("gfx.webrender.precache-shaders", true);
-clearPref("gfx.webrender.compositor", true);
-clearPref("gfx.webrender.compositor.force-enabled", true);
-clearPref("gfx.webrender.software.opengl", true);
-clearPref("gfx.canvas.accelerated", true); // WARNING: not compatible with WINDOWS integrated GPUs
-clearPref("media.hardware-video-decoding.force-enabled", true);
-clearPref("media.ffmpeg.vaapi.enabled", true);
-
 
 /*** Betterfox v122.1 ***/
 
@@ -605,18 +592,6 @@ pref("browser.urlbar.showSearchTerms.enabled", false);
 
 /*** [9999] DEPRECATE ***/
 
-// Resettate
-clearPref("cookiebanners.service.enableGlobalRules"); // default=true
-clearPref("cookiebanners.service.enableGlobalRules.subFrames"); // default=true
-clearPref("privacy.globalprivacycontrol.functionality.enabled"); // default=true
-clearPref("privacy.globalprivacycontrol.pbmode.enabled"); // default=true
-clearPref("image.mem.shared.unmap.min_expiration_ms"); // This is only used on 32-bit builds of Firefox where there is meaningful
-clearPref("network.buffer.cache.size"); // WARNING: Cannot open HTML files bigger than 4MB if changed
-clearPref("network.buffer.cache.count"); // WARNING: Cannot open HTML files bigger than 4MB if changed
-clearPref("network.http.pacing.requests.min-parallelism")
-clearPref("network.http.pacing.requests.burst");
-clearPref("network.http.max-persistent-connections-per-proxy");
-
 // FF116
 clearPref("layout.css.font-visibility.resistFingerprinting");
 
@@ -633,6 +608,30 @@ clearPref("permissions.delegation.enabled");
 // FF119
 clearPref("javascript.use_us_english_locale");
 clearPref("network.dns.skipTRR-when-parental-control-enabled");
+
+// Resettate
+clearPref("gfx.canvas.accelerated"); // default=true (Linux)
+clearPref("cookiebanners.service.enableGlobalRules"); // default=true
+clearPref("cookiebanners.service.enableGlobalRules.subFrames"); // default=true
+clearPref("privacy.globalprivacycontrol.functionality.enabled"); // default=true
+clearPref("privacy.globalprivacycontrol.pbmode.enabled"); // default=true
+clearPref("image.mem.shared.unmap.min_expiration_ms"); // This is only used on 32-bit builds of Firefox where there is meaningful
+clearPref("network.buffer.cache.size"); // WARNING: Cannot open HTML files bigger than 4MB if changed
+clearPref("network.buffer.cache.count"); // WARNING: Cannot open HTML files bigger than 4MB if changed
+clearPref("network.http.pacing.requests.min-parallelism")
+clearPref("network.http.pacing.requests.burst");
+clearPref("network.http.max-persistent-connections-per-proxy");
+
+// DA CONTROLLARE
+clearPref("gfx.webrender.program-binary-disk");
+clearPref("gfx.webrender.enabled");
+clearPref("gfx.webrender.all");
+clearPref("gfx.webrender.precache-shaders");
+clearPref("gfx.webrender.compositor");
+clearPref("gfx.webrender.compositor.force-enabled");
+clearPref("gfx.webrender.software.opengl");
+clearPref("media.hardware-video-decoding.force-enabled");
+clearPref("media.ffmpeg.vaapi.enabled");
 
 // [FINE]
 lockPref("rischio.fox", "Parrebbe funzionare...");
