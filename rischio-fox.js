@@ -11,7 +11,7 @@
 /*                    ░                                                     */
 
 /* modifiche newtab ***/
-lockPref("browser.newtabpage.pinned", "[{\"url\":\"https://github.com/RischioCinico/rischio-fox\",\"label\":\"125.9\"},{\"url\":\"https://www.youtube.com/\",\"label\":\"YouTube\"},{\"url\":\"https://www.reddit.com/\",\"label\":\"Reddit\"},{\"url\":\"https://mail.google.com/mail/u/0/?hl=it#inbox\",\"label\":\"Gmail\"},{\"url\":\"https://addons.mozilla.org/it/firefox/\",\"label\":\"Estensioni\"},{\"url\":\"https://wiki.archlinux.org/title/List_of_applications\",\"label\":\"Applicazioni\"},{\"url\":\"https://www.subito.it/\",\"label\":\"Subito\"},{\"url\":\"https://www.diretta.it/\",\"label\":\"Diretta\"}]");
+lockPref("browser.newtabpage.pinned", "[{\"url\":\"https://github.com/RischioCinico/rischio-fox\",\"label\":\"125.10\"},{\"url\":\"https://www.youtube.com/\",\"label\":\"YouTube\"},{\"url\":\"https://www.reddit.com/\",\"label\":\"Reddit\"},{\"url\":\"https://mail.google.com/mail/u/0/?hl=it#inbox\",\"label\":\"Gmail\"},{\"url\":\"https://addons.mozilla.org/it/firefox/\",\"label\":\"Estensioni\"},{\"url\":\"https://wiki.archlinux.org/title/List_of_applications\",\"label\":\"Applicazioni\"},{\"url\":\"https://www.subito.it/\",\"label\":\"Subito\"},{\"url\":\"https://www.diretta.it/\",\"label\":\"Diretta\"}]");
 lockPref("browser.newtabpage.activity-stream.improvesearch.topSiteSearchShortcuts.havePinned", "");
 lockPref("browser.newtabpage.activity-stream.improvesearch.topSiteSearchShortcuts.searchEngines", "");
 lockPref("browser.newtabpage.activity-stream.impressionId", "");
@@ -196,79 +196,79 @@ pref("security.mixed_content.upgrade_display_content.image", true);
 /* ░█▀▀░█▀▀░▀▀█░█▀▄░░█░░█▀▀░█░█░▄▀▄ */
 /* ░▀░░░▀▀▀░▀▀▀░▀░▀░░▀░░▀░░░▀▀▀░▀░▀ */
 
-/*** PeskyFox ***/
-/* rimuove link Mozilla VPN ***/
+/** MOZILLA UI ***/
 pref("browser.privatebrowsing.vpnpromourl", "");
-/* disabilita controllo browser predefinito ***/
+// pref("extensions.getAddons.showPane", false); doppione di 0320
+// pref("extensions.htmlaboutaddons.recommendations.enabled", false); doppione di 0321
+// pref("browser.discovery.enabled", false); doppione di 0322
 pref("browser.shell.checkDefaultBrowser", false);
-/* disabilita suggerimenti estensioni ***/
 pref("browser.newtabpage.activity-stream.asrouter.userprefs.cfr.addons", false);
 pref("browser.newtabpage.activity-stream.asrouter.userprefs.cfr.features", false);
-/* nascondi "Altro da Mozilla" ***/
 pref("browser.preferences.moreFromMozilla", false);
-/* nasconde lista schede aperte quando non necessario ***/
 pref("browser.tabs.tabmanager.enabled", false);
-/* disabilita avviso about:config ***/
 pref("browser.aboutConfig.showWarning", false);
-/* disabilita messaggi di benvenuto ***/
-pref("browser.startup.homepage_override.mstone", "ignore");
 pref("browser.aboutwelcome.enabled", false);
-/* disabilita pulsante "What's New" ***/
-pref("browser.messaging-system.whatsNewPanel.enabled", false);
-/* abilita userChrome.css ***/
+
+/** THEME ADJUSTMENTS ***/
 pref("toolkit.legacyUserProfileCustomizations.stylesheets", true);
-/* abilita modalità compatta ***/
 pref("browser.compactmode.show", true);
-/* imposta tipo di focus ***/
 pref("browser.display.focus_ring_on_anything", true);
 pref("browser.display.focus_ring_style", 0); // 0=Solid, 1=Dotted
 pref("browser.display.focus_ring_width", 1);
-/* schema di colori preferito per le pagine (0=Scuro, 1=Chiaro, 2=Sistema, 3=Browser) ***/
-pref("layout.css.prefers-color-scheme.content-override", 3);
-/* rifiuta automatica banner dei cookie ***/
+pref("layout.css.prefers-color-scheme.content-override", 3); // (0=Scuro, 1=Chiaro, 2=Sistema, 3=Browser)
+// pref("browser.privateWindowSeparation.enabled", false); // WINDOWS
+
+/** COOKIE BANNER HANDLING ***/
 pref("cookiebanners.service.mode", 1);
 pref("cookiebanners.service.mode.privateBrowsing", 1);
-pref("cookiebanners.service.enableGlobalRules", true);
-pref("cookiebanners.service.enableGlobalRules.subFrames", true);
-/* nascondi avviso schermo intero ***/
+
+/** FULLSCREEN NOTICE ***/
 pref("full-screen-api.transition-duration.enter", "0 0");
 pref("full-screen-api.transition-duration.leave", "0 0");
 pref("full-screen-api.warning.delay", -1);
 pref("full-screen-api.warning.timeout", 0);
-/* calcolatrice nella barra degli indirizzi ***/
+
+/** URL BAR ***/
 pref("browser.urlbar.suggest.calculator", true);
 pref("browser.urlbar.unitConversion.enabled", true);
-/* disabilita Pocket ***/
+// pref("browser.urlbar.trending.featureGate", false); doppione di 0805
+
+/** NEW TAB PAGE ***/
+pref("browser.newtabpage.activity-stream.feeds.topsites", false);
+pref("browser.newtabpage.activity-stream.feeds.section.topstories", false);
+
+/** POCKET ***/
 pref("extensions.pocket.enabled", false);
-/* lascia il menu segnalibri aperto ***/
+
+/** DOWNLOADS ***/
+// pref("browser.download.always_ask_before_handling_new_types", true); doppione di 2654
+// pref("browser.download.manager.addToRecentDocs", false); doppione di 2653
+
+/** PDF ***/
+pref("browser.download.open_pdf_attachments_inline", true);
+
+/** TAB BEHAVIOR ***/
 pref("browser.bookmarks.openInTabClosesMenu", false);
-/* mostra "visualizza informazioni immagine" ***/
 pref("browser.menu.showViewImageInfo", true);
-/* evidenzia risultati ricerca ***/
 pref("findbar.highlightAll", true);
-/* non selezionare lo spazio dopo le parole ***/
 pref("layout.word_select.eat_space_to_next_word", false);
+
+
+
+
+
+// peskyfox
+/* schema di colori preferito per le pagine ***/
+pref("layout.css.prefers-color-scheme.content-override", 3);
+/* rifiuta automatica banner dei cookie ***/
+pref("cookiebanners.service.enableGlobalRules", true);
+pref("cookiebanners.service.enableGlobalRules.subFrames", true);
 /* non nascondere il puntatore durante digitazione ***/
 pref("widget.gtk.hide-pointer-while-typing.enabled", false);
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
+/* disabilita messaggi di benvenuto ***/
+pref("browser.startup.homepage_override.mstone", "ignore");
+/* disabilita pulsante "What's New" ***/
+pref("browser.messaging-system.whatsNewPanel.enabled", false);
 
 // Securefox
 /* GPC ***/
@@ -297,6 +297,11 @@ pref("network.http.pacing.requests.min-parallelism", 10)
 pref("network.http.pacing.requests.burst", 14);
 pref("network.dnsCacheEntries", 1000);
 
+clearPref("dom.webnotifications.enabled");
+clearPref("dom.push.enabled");
+clearPref("gfx.webrender.program-binary-disk");
+clearPref("gfx.webrender.enabled");
+clearPref("browser.urlbar.showSearchTerms.enabled");
 
 
 
@@ -618,12 +623,6 @@ pref("privacy.donottrackheader.enabled", true);
 clearPref("dom.serviceWorkers.enabled");
 
 /*** [9999] DEPRECATE ***/
-clearPref("dom.webnotifications.enabled");
-clearPref("dom.push.enabled");
-clearPref("gfx.webrender.program-binary-disk");
-clearPref("gfx.webrender.enabled");
-clearPref("browser.urlbar.showSearchTerms.enabled");
-clearPref("browser.download.open_pdf_attachments_inline");
 // FF116
 clearPref("layout.css.font-visibility.resistFingerprinting");
 // FF117
