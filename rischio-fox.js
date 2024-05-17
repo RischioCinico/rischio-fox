@@ -11,7 +11,7 @@
 /*                    ░                                                     */
 
 /* modifiche newtab ***/
-lockPref("browser.newtabpage.pinned", "[{\"url\":\"https://github.com/RischioCinico/rischio-fox\",\"label\":\"125.8\"},{\"url\":\"https://www.youtube.com/\",\"label\":\"YouTube\"},{\"url\":\"https://www.reddit.com/\",\"label\":\"Reddit\"},{\"url\":\"https://mail.google.com/mail/u/0/?hl=it#inbox\",\"label\":\"Gmail\"},{\"url\":\"https://addons.mozilla.org/it/firefox/\",\"label\":\"Estensioni\"},{\"url\":\"https://wiki.archlinux.org/title/List_of_applications\",\"label\":\"Applicazioni\"},{\"url\":\"https://www.subito.it/\",\"label\":\"Subito\"},{\"url\":\"https://www.diretta.it/\",\"label\":\"Diretta\"}]");
+lockPref("browser.newtabpage.pinned", "[{\"url\":\"https://github.com/RischioCinico/rischio-fox\",\"label\":\"125.9\"},{\"url\":\"https://www.youtube.com/\",\"label\":\"YouTube\"},{\"url\":\"https://www.reddit.com/\",\"label\":\"Reddit\"},{\"url\":\"https://mail.google.com/mail/u/0/?hl=it#inbox\",\"label\":\"Gmail\"},{\"url\":\"https://addons.mozilla.org/it/firefox/\",\"label\":\"Estensioni\"},{\"url\":\"https://wiki.archlinux.org/title/List_of_applications\",\"label\":\"Applicazioni\"},{\"url\":\"https://www.subito.it/\",\"label\":\"Subito\"},{\"url\":\"https://www.diretta.it/\",\"label\":\"Diretta\"}]");
 lockPref("browser.newtabpage.activity-stream.improvesearch.topSiteSearchShortcuts.havePinned", "");
 lockPref("browser.newtabpage.activity-stream.improvesearch.topSiteSearchShortcuts.searchEngines", "");
 lockPref("browser.newtabpage.activity-stream.impressionId", "");
@@ -69,9 +69,9 @@ pref("network.dns.max_high_priority_threads", 8);
 pref("network.ssl_tokens_cache_capacity", 10240);
 
 /** SPECULATIVE LOADING ***/
-// pref("network.dns.disablePrefetch", true); [0602]
-// pref("network.prefetch-next", false); [0601]
-// pref("network.predictor.enabled", false); [0603]
+// pref("network.dns.disablePrefetch", true); doppione di 0602
+// pref("network.prefetch-next", false); doppione di 0601
+// pref("network.predictor.enabled", false); doppione di 0603
 
 /** EXPERIMENTAL ***/
 defaultPref("layout.css.grid-template-masonry-value.enabled", true);
@@ -83,52 +83,118 @@ defaultPref("dom.security.sanitizer.enabled", true);
 /* ░▀▀█░█▀▀░█░░░█░█░█▀▄░█▀▀░█▀▀░█░█░▄▀▄ */
 /* ░▀▀▀░▀▀▀░▀▀▀░▀▀▀░▀░▀░▀▀▀░▀░░░▀▀▀░▀░▀ */
 
-
-
-/*** SecureFox ***/
-/* SameSite Cookies ***/
+/** TRACKING PROTECTION ***/
+// pref("browser.contentblocking.category", "strict"); doppione di 2701
+clearPref("urlclassifier.trackingSkipURLs");
+clearPref("urlclassifier.features.socialtracking.skipURLs");
 pref("network.cookie.sameSite.noneRequiresSecure", true);
-/* GPC ***/
+// pref("browser.download.start_downloads_in_tmp_dir", true); doppione di 2603
+// pref("browser.helperApps.deleteTempFileOnExit", true); doppione di 2603
+// pref("browser.uitour.enabled", false); doppione di 2606
 pref("privacy.globalprivacycontrol.enabled", true);
-pref("privacy.globalprivacycontrol.functionality.enabled", true);
-pref("privacy.globalprivacycontrol.pbmode.enabled", true);
-/* permetti aggiunta di nuovi motori di ricerca ***/
-pref("browser.urlbar.update2.engineAliasRefresh", true); // [Nascosta]
-/* impedisci ai siti di troncare le password ***/
+
+/** OCSP & CERTS / HPKP ***/
+// pref("security.OCSP.enabled", 0); [1211]
+// pref("security.remote_settings.crlite_filters.enabled", true); doppione di 1224
+// pref("security.pki.crlite_mode", 2); doppione di 1224
+
+/** SSL / TLS ***/
+// pref("security.ssl.treat_unsafe_negotiation_as_broken", true); doppione di 1270
+// pref("browser.xul.error_pages.expert_bad_cert", true); doppione di 1272
+// pref("security.tls.enable_0rtt_data", false); doppione di 1206
+
+/** DISK AVOIDANCE ***/
+// pref("browser.privatebrowsing.forceMediaMemoryCache", true); doppione di 1002
+pref("browser.sessionstore.interval", 60000);
+
+/** SHUTDOWN & SANITIZING ***/
+pref("privacy.history.custom", true);
+
+/** SEARCH / URL BAR ***/
+// pref("browser.search.separatePrivateDefault.ui.enabled", true); doppione di 0830
+pref("browser.urlbar.update2.engineAliasRefresh", true);
+// pref("browser.search.suggest.enabled", false);
+// pref("browser.urlbar.suggest.quicksuggest.sponsored", false); doppione di 0802
+// pref("browser.urlbar.suggest.quicksuggest.nonsponsored", false); doppione di 0802
+// pref("browser.formfill.enable", false); doppione di 0810
+pref("security.insecure_connection_text.enabled", true);
+pref("security.insecure_connection_text.pbmode.enabled", true);
+// pref("network.IDN_show_punycode", true); doppione di 2619
+
+/** HTTPS-FIRST POLICY ***/
+pref("dom.security.https_first", true);
+pref("dom.security.https_first_schemeless", true);
+
+/** PASSWORDS ***/
+// pref("signon.formlessCapture.enabled", false); doppione di 0904
+pref("signon.privateBrowsingCapture.enabled", false);
+// pref("network.auth.subresource-http-auth-allow", 1); doppione di 0905
 pref("editor.truncate_user_pastes", false);
 
+/** MIXED CONTENT + CROSS-SITE ***/
+// pref("security.mixed_content.block_display_content", true); doppione di 1241
+pref("security.mixed_content.upgrade_display_content", true);
+pref("security.mixed_content.upgrade_display_content.image", true);
+// pref("pdfjs.enableScripting", false); doppione di 2620
+// pref("extensions.postDownloadThirdPartyPrompt", false); doppione di 2661
 
+/** HEADERS / REFERERS ***/
+// pref("network.http.referer.XOriginTrimmingPolicy", 2); doppione di 1602
 
+/** CONTAINERS ***/
+// pref("privacy.userContext.ui.enabled", true); doppione di 1701
 
+/** WEBRTC ***/
+// pref("media.peerconnection.ice.proxy_only_if_behind_proxy", true); doppione di 2002
+// pref("media.peerconnection.ice.default_address_only", true); doppione di 2003
 
+/** SAFE BROWSING ***/
+// pref("browser.safebrowsing.downloads.remote.enabled", false); doppione di 0403
 
+/** MOZILLA ***/
+// pref("permissions.default.desktop-notification", 2); doppione di 7002
+// pref("permissions.default.geo", 2); doppione di 7002
+// pref("geo.provider.network.url", "https://location.services.mozilla.com/v1/geolocate?key=%MOZILLA_API_KEY%"); doppione di 0201
+// pref("permissions.manager.defaultsUrl", ""); doppione di 2616
+// pref("webchannel.allowObject.urlWhitelist", ""); doppione di 2617
 
+/** TELEMETRY ***/
+// pref("datareporting.policy.dataSubmissionEnabled", false);
+// pref("datareporting.healthreport.uploadEnabled", false);
+// pref("toolkit.telemetry.unified", false);
+// pref("toolkit.telemetry.enabled", false);
+// pref("toolkit.telemetry.server", "data:,");
+// pref("toolkit.telemetry.archive.enabled", false);
+// pref("toolkit.telemetry.newProfilePing.enabled", false);
+// pref("toolkit.telemetry.shutdownPingSender.enabled", false);
+// pref("toolkit.telemetry.updatePing.enabled", false);
+// pref("toolkit.telemetry.bhrPing.enabled", false);
+// pref("toolkit.telemetry.firstShutdownPing.enabled", false);
+// pref("toolkit.telemetry.coverage.opt-out", true);
+// pref("toolkit.coverage.opt-out", true);
+// pref("toolkit.coverage.endpoint.base", "");
+// pref("browser.ping-centre.telemetry", false);
+// pref("browser.newtabpage.activity-stream.feeds.telemetry", false);
+// pref("browser.newtabpage.activity-stream.telemetry", false);
 
+/** EXPERIMENTS ***/
+// pref("app.shield.optoutstudies.enabled", false); doppione di 0340
+// pref("app.normandy.enabled", false); doppione di 0341
+// pref("app.normandy.api_url", ""); doppione di 0341
 
+/** CRASH REPORTS ***/
+// pref("breakpad.reportURL", ""); doppione di 0350
+// pref("browser.tabs.crashReporting.sendReport", false); doppione di 0350
+// pref("browser.crashReports.unsubmittedCheck.autoSubmit2", false); doppione di 0351
 
+/** DETECTION ***/
+// pref("captivedetect.canonicalURL", ""); doppione di 0360
+// pref("network.captive-portal-service.enabled", false); doppione di 0360
+// pref("network.connectivity-service.enabled", false); doppione di 0361
 
-/** RENDERING ***/
-pref("gfx.webrender.all", true);
-pref("gfx.webrender.precache-shaders", true);
-pref("gfx.webrender.compositor", true);
-pref("gfx.webrender.compositor.force-enabled", true);
-pref("gfx.webrender.software.opengl", true);
-pref("gfx.canvas.accelerated", true); // WARNING: not compatible with WINDOWS integrated GPUs
-pref("media.hardware-video-decoding.force-enabled", true);
-pref("media.ffmpeg.vaapi.enabled", true);
-/** CACHE ***/
-pref("media.memory_caches_combined_limit_kb", 1048576);
-pref("media.memory_caches_combined_limit_pc_sysmem", 10);
-pref("image.mem.shared.unmap.min_expiration_ms", 65536);
-/** NETWORK ***/
-pref("network.buffer.cache.size", 262144); // WARNING: Cannot open HTML files bigger than 4MB if changed
-pref("network.buffer.cache.count", 128);
-pref("network.http.max-persistent-connections-per-proxy", 48);
-pref("network.http.pacing.requests.min-parallelism", 10)
-pref("network.http.pacing.requests.burst", 14);
-pref("network.dnsCacheEntries", 1000);
-
-
+/* ░█▀█░█▀▀░█▀▀░█░█░█░█░█▀▀░█▀█░█░█ */
+/* ░█▀▀░█▀▀░▀▀█░█▀▄░░█░░█▀▀░█░█░▄▀▄ */
+/* ░▀░░░▀▀▀░▀▀▀░▀░▀░░▀░░▀░░░▀▀▀░▀░▀ */
 
 /*** PeskyFox ***/
 /* rimuove link Mozilla VPN ***/
@@ -184,6 +250,56 @@ pref("findbar.highlightAll", true);
 pref("layout.word_select.eat_space_to_next_word", false);
 /* non nascondere il puntatore durante digitazione ***/
 pref("widget.gtk.hide-pointer-while-typing.enabled", false);
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+// Securefox
+/* GPC ***/
+pref("privacy.globalprivacycontrol.functionality.enabled", true);
+pref("privacy.globalprivacycontrol.pbmode.enabled", true);
+
+// Fastfox
+/** RENDERING ***/
+pref("gfx.webrender.all", true);
+pref("gfx.webrender.precache-shaders", true);
+pref("gfx.webrender.compositor", true);
+pref("gfx.webrender.compositor.force-enabled", true);
+pref("gfx.webrender.software.opengl", true);
+pref("gfx.canvas.accelerated", true); // WARNING: not compatible with WINDOWS integrated GPUs
+pref("media.hardware-video-decoding.force-enabled", true);
+pref("media.ffmpeg.vaapi.enabled", true);
+/** CACHE ***/
+pref("media.memory_caches_combined_limit_kb", 1048576);
+pref("media.memory_caches_combined_limit_pc_sysmem", 10);
+pref("image.mem.shared.unmap.min_expiration_ms", 65536);
+/** NETWORK ***/
+pref("network.buffer.cache.size", 262144); // WARNING: Cannot open HTML files bigger than 4MB if changed
+pref("network.buffer.cache.count", 128);
+pref("network.http.max-persistent-connections-per-proxy", 48);
+pref("network.http.pacing.requests.min-parallelism", 10)
+pref("network.http.pacing.requests.burst", 14);
+pref("network.dnsCacheEntries", 1000);
+
+
+
+
 
 
 /* ░█▀█░█▀▄░█░█░█▀▀░█▀█░█▀▀░█▀█░█░█ */
@@ -507,15 +623,6 @@ clearPref("dom.push.enabled");
 clearPref("gfx.webrender.program-binary-disk");
 clearPref("gfx.webrender.enabled");
 clearPref("browser.urlbar.showSearchTerms.enabled");
-clearPref("urlclassifier.trackingSkipURLs");
-clearPref("urlclassifier.features.socialtracking.skipURLs");
-clearPref("browser.sessionstore.interval");
-clearPref("security.insecure_connection_text.enabled");
-clearPref("security.insecure_connection_text.pbmode.enabled");
-clearPref("dom.security.https_first");
-clearPref("signon.privateBrowsingCapture.enabled");
-clearPref("security.mixed_content.upgrade_display_content");
-clearPref("security.mixed_content.upgrade_display_content.image");
 clearPref("browser.download.open_pdf_attachments_inline");
 // FF116
 clearPref("layout.css.font-visibility.resistFingerprinting");
