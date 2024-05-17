@@ -1,6 +1,18 @@
+
+/*  ██▀███  ██▓ ██████ ▄████▄  ██░ ██ ██▓▒█████       █████▒█████ ▒██   ██▒ */
+/* ▓██ ▒ ██▓██▒██    ▒▒██▀ ▀█ ▓██░ ██▓██▒██▒  ██▒   ▓██   ▒██▒  ██▒▒ █ █ ▒░ */
+/* ▓██ ░▄█ ▒██░ ▓██▄  ▒▓█    ▄▒██▀▀██▒██▒██░  ██▒   ▒████ ▒██░  ██░░  █   ░ */
+/* ▒██▀▀█▄ ░██░ ▒   ██▒▓▓▄ ▄██░▓█ ░██░██▒██   ██░   ░▓█▒  ▒██   ██░░ █ █ ▒  */
+/* ░██▓ ▒██░██▒██████▒▒ ▓███▀ ░▓█▒░██░██░ ████▓▒░   ░▒█░  ░ ████▓▒▒██▒ ▒██▒ */
+/* ░ ▒▓ ░▒▓░▓ ▒ ▒▓▒ ▒ ░ ░▒ ▒  ░▒ ░░▒░░▓ ░ ▒░▒░▒░     ▒ ░  ░ ▒░▒░▒░▒▒ ░ ░▓ ░ */
+/*   ░▒ ░ ▒░▒ ░ ░▒  ░ ░ ░  ▒   ▒ ░▒░ ░▒ ░ ░ ▒ ▒░     ░      ░ ▒ ▒░░░   ░▒ ░ */
+/*   ░░   ░ ▒ ░  ░  ░ ░        ░  ░░ ░▒ ░ ░ ░ ▒      ░ ░  ░ ░ ░ ▒  ░    ░   */
+/*    ░     ░       ░ ░ ░      ░  ░  ░░     ░ ░               ░ ░  ░    ░   */
+/*                    ░                                                     */
+
 /*** [0000] Rischio-Fox ***/
 /* 0001: modifiche newtab ***/
-lockPref("browser.newtabpage.pinned", "[{\"url\":\"https://github.com/RischioCinico/rischio-fox\",\"label\":\"125.5\"},{\"url\":\"https://www.youtube.com/\",\"label\":\"YouTube\"},{\"url\":\"https://www.reddit.com/\",\"label\":\"Reddit\"},{\"url\":\"https://mail.google.com/mail/u/0/?hl=it#inbox\",\"label\":\"Gmail\"},{\"url\":\"https://addons.mozilla.org/it/firefox/\",\"label\":\"Estensioni\"},{\"url\":\"https://wiki.archlinux.org/title/List_of_applications\",\"label\":\"Applicazioni\"},{\"url\":\"https://www.subito.it/\",\"label\":\"Subito\"},{\"url\":\"https://www.diretta.it/\",\"label\":\"Diretta\"}]");
+lockPref("browser.newtabpage.pinned", "[{\"url\":\"https://github.com/RischioCinico/rischio-fox\",\"label\":\"125.6\"},{\"url\":\"https://www.youtube.com/\",\"label\":\"YouTube\"},{\"url\":\"https://www.reddit.com/\",\"label\":\"Reddit\"},{\"url\":\"https://mail.google.com/mail/u/0/?hl=it#inbox\",\"label\":\"Gmail\"},{\"url\":\"https://addons.mozilla.org/it/firefox/\",\"label\":\"Estensioni\"},{\"url\":\"https://wiki.archlinux.org/title/List_of_applications\",\"label\":\"Applicazioni\"},{\"url\":\"https://www.subito.it/\",\"label\":\"Subito\"},{\"url\":\"https://www.diretta.it/\",\"label\":\"Diretta\"}]");
 lockPref("browser.newtabpage.activity-stream.improvesearch.topSiteSearchShortcuts.havePinned", "");
 lockPref("browser.newtabpage.activity-stream.improvesearch.topSiteSearchShortcuts.searchEngines", "");
 lockPref("browser.newtabpage.activity-stream.impressionId", "");
@@ -23,7 +35,11 @@ pref("browser.bookmarks.showMobileBookmarks", true);
 /* 0009: nascondi barra del titolo ***/
 defaultPref("browser.tabs.inTitlebar", 2);
 
-/*** [0097] FastFox v122 ***/
+/*** [0099] Betterfox v122.1 ***/
+
+
+
+/*** FastFox v122 ***/
 // https://github.com/yokoffing/Betterfox/blob/main/Fastfox.js
 
 /** GENERAL ***/
@@ -68,7 +84,7 @@ defaultPref("dom.enable_web_task_scheduling", true);
 defaultPref("layout.css.has-selector.enabled", true);
 defaultPref("dom.security.sanitizer.enabled", true);
 
-/*** [0098] PeskyFox v122 ***/
+/*** PeskyFox ***/
 // https://github.com/yokoffing/Betterfox/blob/main/Peskyfox.js
 
 /* rimuove link Mozilla VPN ***/
@@ -125,7 +141,7 @@ pref("layout.word_select.eat_space_to_next_word", false);
 /* non nascondere il puntatore durante digitazione ***/
 pref("widget.gtk.hide-pointer-while-typing.enabled", false);
 
-/*** [0099] SecureFox v122 ***/
+/*** SecureFox ***/
 // https://github.com/yokoffing/Betterfox/blob/main/Securefox.js
 
 /* SameSite Cookies ***/
