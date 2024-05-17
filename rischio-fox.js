@@ -11,7 +11,7 @@
 /*                    ░                                                     */
 
 /* modifiche newtab ***/
-lockPref("browser.newtabpage.pinned", "[{\"url\":\"https://github.com/RischioCinico/rischio-fox\",\"label\":\"125.12\"},{\"url\":\"https://www.youtube.com/\",\"label\":\"YouTube\"},{\"url\":\"https://www.reddit.com/\",\"label\":\"Reddit\"},{\"url\":\"https://mail.google.com/mail/u/0/?hl=it#inbox\",\"label\":\"Gmail\"},{\"url\":\"https://addons.mozilla.org/it/firefox/\",\"label\":\"Estensioni\"},{\"url\":\"https://wiki.archlinux.org/title/List_of_applications\",\"label\":\"Applicazioni\"},{\"url\":\"https://www.subito.it/\",\"label\":\"Subito\"},{\"url\":\"https://www.diretta.it/\",\"label\":\"Diretta\"}]");
+lockPref("browser.newtabpage.pinned", "[{\"url\":\"https://github.com/RischioCinico/rischio-fox\",\"label\":\"125.13\"},{\"url\":\"https://www.youtube.com/\",\"label\":\"YouTube\"},{\"url\":\"https://www.reddit.com/\",\"label\":\"Reddit\"},{\"url\":\"https://mail.google.com/mail/u/0/?hl=it#inbox\",\"label\":\"Gmail\"},{\"url\":\"https://addons.mozilla.org/it/firefox/\",\"label\":\"Estensioni\"},{\"url\":\"https://wiki.archlinux.org/title/List_of_applications\",\"label\":\"Applicazioni\"},{\"url\":\"https://www.subito.it/\",\"label\":\"Subito\"},{\"url\":\"https://www.diretta.it/\",\"label\":\"Diretta\"}]");
 lockPref("browser.newtabpage.activity-stream.improvesearch.topSiteSearchShortcuts.havePinned", "");
 lockPref("browser.newtabpage.activity-stream.improvesearch.topSiteSearchShortcuts.searchEngines", "");
 lockPref("browser.newtabpage.activity-stream.impressionId", "");
@@ -45,12 +45,10 @@ clearPref("gfx.webrender.compositor", true);
 clearPref("gfx.webrender.compositor.force-enabled", true);
 clearPref("gfx.webrender.software.opengl", true);
 clearPref("gfx.canvas.accelerated", true); // WARNING: not compatible with WINDOWS integrated GPUs
-clearPref("image.mem.shared.unmap.min_expiration_ms", 65536);
 clearPref("media.hardware-video-decoding.force-enabled", true);
 clearPref("media.ffmpeg.vaapi.enabled", true);
 clearPref("media.memory_caches_combined_limit_kb", 1048576);
 clearPref("media.memory_caches_combined_limit_pc_sysmem", 10);
-clearPref("network.buffer.cache.size", 262144); // WARNING: Cannot open HTML files bigger than 4MB if changed
 clearPref("network.buffer.cache.count", 128);
 clearPref("network.http.max-persistent-connections-per-proxy", 48);
 clearPref("network.http.pacing.requests.min-parallelism", 10)
@@ -87,7 +85,7 @@ pref("network.http.max-connections", 1800);
 pref("network.http.max-persistent-connections-per-server", 10);
 pref("network.http.max-urgent-start-excessive-connections-per-host", 5);
 pref("network.http.pacing.requests.enabled", false);
-pref("network.dnsCacheExpiration", 3600);
+clearPref("network.dnsCacheExpiration"); // ignored by DNS resolver if using DoH/TR
 pref("network.dns.max_high_priority_threads", 8);
 pref("network.ssl_tokens_cache_capacity", 10240);
 
@@ -612,6 +610,9 @@ clearPref("cookiebanners.service.enableGlobalRules"); // default=true
 clearPref("cookiebanners.service.enableGlobalRules.subFrames"); // default=true
 clearPref("privacy.globalprivacycontrol.functionality.enabled"); // default=true
 clearPref("privacy.globalprivacycontrol.pbmode.enabled"); // default=true
+clearPref("image.mem.shared.unmap.min_expiration_ms"); // This is only used on 32-bit builds of Firefox where there is meaningful
+clearPref("network.buffer.cache.size"); // WARNING: Cannot open HTML files bigger than 4MB if changed
+
 // FF116
 clearPref("layout.css.font-visibility.resistFingerprinting");
 // FF117
