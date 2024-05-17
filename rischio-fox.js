@@ -9,39 +9,104 @@
 /*   ░░   ░ ▒ ░  ░  ░ ░        ░  ░░ ░▒ ░ ░ ░ ▒      ░ ░  ░ ░ ░ ▒  ░    ░   */
 /*    ░     ░       ░ ░ ░      ░  ░  ░░     ░ ░               ░ ░  ░    ░   */
 /*                    ░                                                     */
-/*** [0000] Rischio-Fox ***/
-/* 0001 modifiche newtab ***/
-lockPref("browser.newtabpage.pinned", "[{\"url\":\"https://github.com/RischioCinico/rischio-fox\",\"label\":\"125.7\"},{\"url\":\"https://www.youtube.com/\",\"label\":\"YouTube\"},{\"url\":\"https://www.reddit.com/\",\"label\":\"Reddit\"},{\"url\":\"https://mail.google.com/mail/u/0/?hl=it#inbox\",\"label\":\"Gmail\"},{\"url\":\"https://addons.mozilla.org/it/firefox/\",\"label\":\"Estensioni\"},{\"url\":\"https://wiki.archlinux.org/title/List_of_applications\",\"label\":\"Applicazioni\"},{\"url\":\"https://www.subito.it/\",\"label\":\"Subito\"},{\"url\":\"https://www.diretta.it/\",\"label\":\"Diretta\"}]");
+
+/* modifiche newtab ***/
+lockPref("browser.newtabpage.pinned", "[{\"url\":\"https://github.com/RischioCinico/rischio-fox\",\"label\":\"125.8\"},{\"url\":\"https://www.youtube.com/\",\"label\":\"YouTube\"},{\"url\":\"https://www.reddit.com/\",\"label\":\"Reddit\"},{\"url\":\"https://mail.google.com/mail/u/0/?hl=it#inbox\",\"label\":\"Gmail\"},{\"url\":\"https://addons.mozilla.org/it/firefox/\",\"label\":\"Estensioni\"},{\"url\":\"https://wiki.archlinux.org/title/List_of_applications\",\"label\":\"Applicazioni\"},{\"url\":\"https://www.subito.it/\",\"label\":\"Subito\"},{\"url\":\"https://www.diretta.it/\",\"label\":\"Diretta\"}]");
 lockPref("browser.newtabpage.activity-stream.improvesearch.topSiteSearchShortcuts.havePinned", "");
 lockPref("browser.newtabpage.activity-stream.improvesearch.topSiteSearchShortcuts.searchEngines", "");
 lockPref("browser.newtabpage.activity-stream.impressionId", "");
 lockPref("browser.newtabpage.activity-stream.feeds.section.topstories", false);
-/* 0002 ripristina searchbox ***/
+/* ripristina searchbox ***/
 pref("browser.newtabpage.activity-stream.improvesearch.handoffToAwesomebar", false);
-/* 0003 disabilita popup traduttore ***/
+/* disabilita popup traduttore ***/
 pref("browser.translations.automaticallyPopup", false);
-/* 0004 disabilita il blocco popup integrato ***/
+/* disabilita il blocco popup integrato ***/
 pref("dom.disable_open_during_load", false);
-/* 0005 disabilita accessibilità ***/
+/* disabilita accessibilità ***/
 pref("accessibility.force_disabled", 1);
-/* 0006 abilita scorrimento automatico ***/
+/* abilita scorrimento automatico ***/
 defaultPref("general.autoScroll", true);
-/* 0007 disabilita indicatori WebRTC (sono buggati) ***/
+/* disabilita indicatori WebRTC (sono buggati) ***/
 pref("privacy.webrtc.hideGlobalIndicator", true);
 pref("privacy.webrtc.legacyGlobalIndicator", false);
-/* 0008 mostra segnalibri Mobile ***/
+/* mostra segnalibri Mobile ***/
 pref("browser.bookmarks.showMobileBookmarks", true);
-/* 0009 nascondi barra del titolo ***/
+/* nascondi barra del titolo ***/
 defaultPref("browser.tabs.inTitlebar", 2);
 
-/* ░█▀▄░█▀▀░▀█▀░▀█▀░█▀▀░█▀▄░█▀▀░█▀█░█░█ */
-/* ░█▀▄░█▀▀░░█░░░█░░█▀▀░█▀▄░█▀▀░█░█░▄▀▄ */
-/* ░▀▀░░▀▀▀░░▀░░░▀░░▀▀▀░▀░▀░▀░░░▀▀▀░▀░▀ */
 /*** [0099] Betterfox v122.1 ***/
 
-/*** FastFox ***/
+/* ░█▀▀░█▀█░█▀▀░▀█▀░█▀▀░█▀█░█░█ */
+/* ░█▀▀░█▀█░▀▀█░░█░░█▀▀░█░█░▄▀▄ */
+/* ░▀░░░▀░▀░▀▀▀░░▀░░▀░░░▀▀▀░▀░▀ */
+
 /** GENERAL ***/
 pref("content.notify.interval", 100000);
+
+/** GFX ***/
+pref("gfx.canvas.accelerated.cache-items", 4096);
+pref("gfx.canvas.accelerated.cache-size", 512);
+pref("gfx.content.skia-font-cache-size", 20);
+
+/** DISK CACHE ***/
+pref("browser.cache.jsbc_compression_level", 3);
+
+/** MEDIA CACHE ***/
+pref("media.memory_cache_max_size", 65536);
+pref("media.cache_readahead_limit", 7200);
+pref("media.cache_resume_threshold", 3600);
+
+/** IMAGE CACHE ***/
+pref("image.mem.decode_bytes_at_a_time", 32768);
+
+/** NETWORK ***/
+pref("network.http.max-connections", 1800);
+pref("network.http.max-persistent-connections-per-server", 10);
+pref("network.http.max-urgent-start-excessive-connections-per-host", 5);
+pref("network.http.pacing.requests.enabled", false);
+pref("network.dnsCacheExpiration", 3600);
+pref("network.dns.max_high_priority_threads", 8);
+pref("network.ssl_tokens_cache_capacity", 10240);
+
+/** SPECULATIVE LOADING ***/
+// pref("network.dns.disablePrefetch", true); [0602]
+// pref("network.prefetch-next", false); [0601]
+// pref("network.predictor.enabled", false); [0603]
+
+/** EXPERIMENTAL ***/
+defaultPref("layout.css.grid-template-masonry-value.enabled", true);
+defaultPref("dom.enable_web_task_scheduling", true);
+defaultPref("layout.css.has-selector.enabled", true);
+defaultPref("dom.security.sanitizer.enabled", true);
+
+/* ░█▀▀░█▀▀░█▀▀░█░█░█▀▄░█▀▀░█▀▀░█▀█░█░█ */
+/* ░▀▀█░█▀▀░█░░░█░█░█▀▄░█▀▀░█▀▀░█░█░▄▀▄ */
+/* ░▀▀▀░▀▀▀░▀▀▀░▀▀▀░▀░▀░▀▀▀░▀░░░▀▀▀░▀░▀ */
+
+
+
+/*** SecureFox ***/
+/* SameSite Cookies ***/
+pref("network.cookie.sameSite.noneRequiresSecure", true);
+/* GPC ***/
+pref("privacy.globalprivacycontrol.enabled", true);
+pref("privacy.globalprivacycontrol.functionality.enabled", true);
+pref("privacy.globalprivacycontrol.pbmode.enabled", true);
+/* permetti aggiunta di nuovi motori di ricerca ***/
+pref("browser.urlbar.update2.engineAliasRefresh", true); // [Nascosta]
+/* impedisci ai siti di troncare le password ***/
+pref("editor.truncate_user_pastes", false);
+
+
+
+
+
+
+
+
+
+
+
 /** RENDERING ***/
 pref("gfx.webrender.all", true);
 pref("gfx.webrender.precache-shaders", true);
@@ -49,38 +114,21 @@ pref("gfx.webrender.compositor", true);
 pref("gfx.webrender.compositor.force-enabled", true);
 pref("gfx.webrender.software.opengl", true);
 pref("gfx.canvas.accelerated", true); // WARNING: not compatible with WINDOWS integrated GPUs
-pref("gfx.canvas.accelerated.cache-items", 8192);
-pref("gfx.canvas.accelerated.cache-size", 1024);
-pref("gfx.content.skia-font-cache-size", 20);
 pref("media.hardware-video-decoding.force-enabled", true);
 pref("media.ffmpeg.vaapi.enabled", true);
 /** CACHE ***/
-pref("browser.cache.jsbc_compression_level", 3);
-pref("media.memory_cache_max_size", 131072);
 pref("media.memory_caches_combined_limit_kb", 1048576);
 pref("media.memory_caches_combined_limit_pc_sysmem", 10);
-pref("media.cache_readahead_limit", 7200);
-pref("media.cache_resume_threshold", 3600);
-pref("image.mem.decode_bytes_at_a_time", 65536);
 pref("image.mem.shared.unmap.min_expiration_ms", 65536);
 /** NETWORK ***/
 pref("network.buffer.cache.size", 262144); // WARNING: Cannot open HTML files bigger than 4MB if changed
 pref("network.buffer.cache.count", 128);
-pref("network.http.max-connections", 1800);
-pref("network.http.max-persistent-connections-per-server", 10);
-pref("network.http.max-urgent-start-excessive-connections-per-host", 5);
 pref("network.http.max-persistent-connections-per-proxy", 48);
-pref("network.http.pacing.requests.enabled", false);
 pref("network.http.pacing.requests.min-parallelism", 10)
 pref("network.http.pacing.requests.burst", 14);
 pref("network.dnsCacheEntries", 1000);
-pref("network.dns.max_high_priority_threads", 8);
-pref("network.ssl_tokens_cache_capacity", 10240);
-/** EXPERIMENTAL ***/
-defaultPref("layout.css.grid-template-masonry-value.enabled", true);
-defaultPref("dom.enable_web_task_scheduling", true);
-defaultPref("layout.css.has-selector.enabled", true);
-defaultPref("dom.security.sanitizer.enabled", true);
+
+
 
 /*** PeskyFox ***/
 /* rimuove link Mozilla VPN ***/
@@ -137,17 +185,6 @@ pref("layout.word_select.eat_space_to_next_word", false);
 /* non nascondere il puntatore durante digitazione ***/
 pref("widget.gtk.hide-pointer-while-typing.enabled", false);
 
-/*** SecureFox ***/
-/* SameSite Cookies ***/
-pref("network.cookie.sameSite.noneRequiresSecure", true);
-/* GPC ***/
-pref("privacy.globalprivacycontrol.enabled", true);
-pref("privacy.globalprivacycontrol.functionality.enabled", true);
-pref("privacy.globalprivacycontrol.pbmode.enabled", true);
-/* permetti aggiunta di nuovi motori di ricerca ***/
-pref("browser.urlbar.update2.engineAliasRefresh", true); // [Nascosta]
-/* impedisci ai siti di troncare le password ***/
-pref("editor.truncate_user_pastes", false);
 
 /* ░█▀█░█▀▄░█░█░█▀▀░█▀█░█▀▀░█▀█░█░█ */
 /* ░█▀█░█▀▄░█▀▄░█▀▀░█░█░█▀▀░█░█░▄▀▄ */
@@ -465,7 +502,6 @@ pref("privacy.donottrackheader.enabled", true);
 clearPref("dom.serviceWorkers.enabled");
 
 /*** [9999] DEPRECATE ***/
-clearPref("network.dnsCacheExpiration");
 clearPref("dom.webnotifications.enabled");
 clearPref("dom.push.enabled");
 clearPref("gfx.webrender.program-binary-disk");
