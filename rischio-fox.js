@@ -10,13 +10,13 @@
 /*    ░     ░       ░ ░ ░      ░  ░  ░░     ░ ░               ░ ░  ░    ░   */
 /*                    ░                                                     */
 
-/* modifiche newtab ***/
-lockPref("browser.newtabpage.pinned", "[{\"url\":\"https://github.com/RischioCinico/rischio-fox\",\"label\":\"125.15\"},{\"url\":\"https://www.youtube.com/\",\"label\":\"YouTube\"},{\"url\":\"https://www.reddit.com/\",\"label\":\"Reddit\"},{\"url\":\"https://mail.google.com/mail/u/0/?hl=it#inbox\",\"label\":\"Gmail\"},{\"url\":\"https://addons.mozilla.org/it/firefox/\",\"label\":\"Estensioni\"},{\"url\":\"https://wiki.archlinux.org/title/List_of_applications\",\"label\":\"Applicazioni\"},{\"url\":\"https://www.subito.it/\",\"label\":\"Subito\"},{\"url\":\"https://www.diretta.it/\",\"label\":\"Diretta\"}]");
+/* scorciatoie newtab ***/
+lockPref("browser.newtabpage.pinned", "[{\"url\":\"https://github.com/RischioCinico/rischio-fox\",\"label\":\"126\"},{\"url\":\"https://www.youtube.com/\",\"label\":\"YouTube\"},{\"url\":\"https://www.reddit.com/\",\"label\":\"Reddit\"},{\"url\":\"https://mail.google.com/mail/u/0/?hl=it#inbox\",\"label\":\"Gmail\"},{\"url\":\"https://addons.mozilla.org/it/firefox/\",\"label\":\"Estensioni\"},{\"url\":\"https://wiki.archlinux.org/title/List_of_applications\",\"label\":\"Applicazioni\"},{\"url\":\"https://www.subito.it/\",\"label\":\"Subito\"},{\"url\":\"https://www.diretta.it/\",\"label\":\"Diretta\"}]");
 lockPref("browser.newtabpage.activity-stream.improvesearch.topSiteSearchShortcuts.havePinned", "");
 lockPref("browser.newtabpage.activity-stream.improvesearch.topSiteSearchShortcuts.searchEngines", "");
 lockPref("browser.newtabpage.activity-stream.impressionId", "");
 lockPref("browser.newtabpage.activity-stream.feeds.section.topstories", false);
-/* ripristina searchbox ***/
+/* ripristina searchbox in newtab ***/
 pref("browser.newtabpage.activity-stream.improvesearch.handoffToAwesomebar", false);
 /* disabilita popup traduttore ***/
 pref("browser.translations.automaticallyPopup", false);
@@ -24,15 +24,11 @@ pref("browser.translations.automaticallyPopup", false);
 pref("dom.disable_open_during_load", false);
 /* disabilita accessibilità ***/
 pref("accessibility.force_disabled", 1);
-/* abilita scorrimento automatico ***/
-defaultPref("general.autoScroll", true);
 /* disabilita indicatori WebRTC (sono buggati) ***/
 pref("privacy.webrtc.hideGlobalIndicator", true);
 pref("privacy.webrtc.legacyGlobalIndicator", false);
 /* mostra segnalibri Mobile ***/
 pref("browser.bookmarks.showMobileBookmarks", true);
-/* nascondi barra del titolo ***/
-defaultPref("browser.tabs.inTitlebar", 2);
 /* non nascondere il puntatore durante digitazione (Peskyfox) ***/
 pref("widget.gtk.hide-pointer-while-typing.enabled", false);
 /* Disabilita cache DNS di Firefox ***/
@@ -40,6 +36,10 @@ pref("network.dnsCacheEntries", 0);
 /* Media memory cache ***/
 pref("media.memory_caches_combined_limit_kb", 1048576);
 pref("media.memory_caches_combined_limit_pc_sysmem", 10);
+/* nascondi barra del titolo ***/
+defaultPref("browser.tabs.inTitlebar", 2);
+/* abilita scorrimento automatico ***/
+defaultPref("general.autoScroll", true);
 
 /*** Betterfox v122.1 ***/
 
