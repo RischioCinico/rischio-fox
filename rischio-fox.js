@@ -11,7 +11,7 @@
 /*                    ░                                                     */
 
 /* scorciatoie newtab ***/
-lockPref("browser.newtabpage.pinned", "[{\"url\":\"https://github.com/RischioCinico/rischio-fox\",\"label\":\"126\"},{\"url\":\"https://www.youtube.com/\",\"label\":\"YouTube\"},{\"url\":\"https://www.reddit.com/\",\"label\":\"Reddit\"},{\"url\":\"https://mail.google.com/mail/u/0/?hl=it#inbox\",\"label\":\"Gmail\"},{\"url\":\"https://addons.mozilla.org/it/firefox/\",\"label\":\"Estensioni\"},{\"url\":\"https://wiki.archlinux.org/title/List_of_applications\",\"label\":\"Applicazioni\"},{\"url\":\"https://www.subito.it/\",\"label\":\"Subito\"},{\"url\":\"https://www.diretta.it/\",\"label\":\"Diretta\"}]");
+lockPref("browser.newtabpage.pinned", "[{\"url\":\"https://github.com/RischioCinico/rischio-fox\",\"label\":\"126.1\"},{\"url\":\"https://www.youtube.com/\",\"label\":\"YouTube\"},{\"url\":\"https://www.reddit.com/\",\"label\":\"Reddit\"},{\"url\":\"https://mail.google.com/mail/u/0/?hl=it#inbox\",\"label\":\"Gmail\"},{\"url\":\"https://addons.mozilla.org/it/firefox/\",\"label\":\"Estensioni\"},{\"url\":\"https://wiki.archlinux.org/title/List_of_applications\",\"label\":\"Applicazioni\"},{\"url\":\"https://www.subito.it/\",\"label\":\"Subito\"},{\"url\":\"https://www.diretta.it/\",\"label\":\"Diretta\"}]");
 lockPref("browser.newtabpage.activity-stream.improvesearch.topSiteSearchShortcuts.havePinned", "");
 lockPref("browser.newtabpage.activity-stream.improvesearch.topSiteSearchShortcuts.searchEngines", "");
 lockPref("browser.newtabpage.activity-stream.impressionId", "");
@@ -41,7 +41,7 @@ defaultPref("browser.tabs.inTitlebar", 2);
 /* abilita scorrimento automatico ***/
 defaultPref("general.autoScroll", true);
 
-/*** Betterfox v122.1 ***/
+/*** Betterfox v126 ***/
 
 /* ░█▀▀░█▀█░█▀▀░▀█▀░█▀▀░█▀█░█░█ */
 /* ░█▀▀░█▀█░▀▀█░░█░░█▀▀░█░█░▄▀▄ */
@@ -72,18 +72,18 @@ pref("network.http.max-persistent-connections-per-server", 10);
 pref("network.http.max-urgent-start-excessive-connections-per-host", 5);
 pref("network.http.pacing.requests.enabled", false);
 pref("network.dnsCacheExpiration", 0);
-pref("network.dns.max_high_priority_threads", 8);
 pref("network.ssl_tokens_cache_capacity", 10240);
 
 /** SPECULATIVE LOADING ***/
 // pref("network.dns.disablePrefetch", true); doppione di 0602
+// pref("network.dns.disablePrefetchFromHTTPS", true); doppione di 0602
 // pref("network.prefetch-next", false); doppione di 0601
 // pref("network.predictor.enabled", false); doppione di 0603
+// pref("network.predictor.enable-prefetch", false); doppione di 0603
 
 /** EXPERIMENTAL ***/
 defaultPref("layout.css.grid-template-masonry-value.enabled", true);
 defaultPref("dom.enable_web_task_scheduling", true);
-defaultPref("layout.css.has-selector.enabled", true);
 defaultPref("dom.security.sanitizer.enabled", true);
 
 /* ░█▀▀░█▀▀░█▀▀░█░█░█▀▄░█▀▀░█▀▀░█▀█░█░█ */
@@ -164,25 +164,6 @@ pref("security.mixed_content.upgrade_display_content.image", true);
 // pref("geo.provider.network.url", "https://location.services.mozilla.com/v1/geolocate?key=%MOZILLA_API_KEY%"); doppione di 0201
 // pref("permissions.manager.defaultsUrl", ""); doppione di 2616
 // pref("webchannel.allowObject.urlWhitelist", ""); doppione di 2617
-
-/** TELEMETRY ***/
-// pref("datareporting.policy.dataSubmissionEnabled", false);
-// pref("datareporting.healthreport.uploadEnabled", false);
-// pref("toolkit.telemetry.unified", false);
-// pref("toolkit.telemetry.enabled", false);
-// pref("toolkit.telemetry.server", "data:,");
-// pref("toolkit.telemetry.archive.enabled", false);
-// pref("toolkit.telemetry.newProfilePing.enabled", false);
-// pref("toolkit.telemetry.shutdownPingSender.enabled", false);
-// pref("toolkit.telemetry.updatePing.enabled", false);
-// pref("toolkit.telemetry.bhrPing.enabled", false);
-// pref("toolkit.telemetry.firstShutdownPing.enabled", false);
-// pref("toolkit.telemetry.coverage.opt-out", true);
-// pref("toolkit.coverage.opt-out", true);
-// pref("toolkit.coverage.endpoint.base", "");
-// pref("browser.ping-centre.telemetry", false);
-// pref("browser.newtabpage.activity-stream.feeds.telemetry", false);
-// pref("browser.newtabpage.activity-stream.telemetry", false);
 
 /** EXPERIMENTS ***/
 // pref("app.shield.optoutstudies.enabled", false); doppione di 0340
@@ -606,10 +587,12 @@ clearPref("javascript.use_us_english_locale");
 clearPref("network.dns.skipTRR-when-parental-control-enabled");
 // Resettate
 clearPref("gfx.canvas.accelerated"); // default=true (Linux)
+clearPref("network.dns.max_high_priority_threads"); // default
 clearPref("cookiebanners.service.enableGlobalRules"); // default=true
 clearPref("cookiebanners.service.enableGlobalRules.subFrames"); // default=true
 clearPref("privacy.globalprivacycontrol.functionality.enabled"); // default=true
 clearPref("privacy.globalprivacycontrol.pbmode.enabled"); // default=true
+clearPref("layout.css.has-selector.enabled"); // default
 clearPref("image.mem.shared.unmap.min_expiration_ms"); // This is only used on 32-bit builds of Firefox where there is meaningful
 clearPref("network.buffer.cache.size"); // WARNING: Cannot open HTML files bigger than 4MB if changed
 clearPref("network.buffer.cache.count"); // WARNING: Cannot open HTML files bigger than 4MB if changed
