@@ -586,13 +586,13 @@ clearPref("permissions.delegation.enabled");
 clearPref("javascript.use_us_english_locale");
 clearPref("network.dns.skipTRR-when-parental-control-enabled");
 // Resettate
-clearPref("gfx.canvas.accelerated"); // default=true (Linux)
-clearPref("network.dns.max_high_priority_threads"); // default
-clearPref("cookiebanners.service.enableGlobalRules"); // default=true
-clearPref("cookiebanners.service.enableGlobalRules.subFrames"); // default=true
-clearPref("privacy.globalprivacycontrol.functionality.enabled"); // default=true
-clearPref("privacy.globalprivacycontrol.pbmode.enabled"); // default=true
-clearPref("layout.css.has-selector.enabled"); // default
+clearPref("gfx.canvas.accelerated");
+clearPref("network.dns.max_high_priority_threads");
+clearPref("cookiebanners.service.enableGlobalRules");
+clearPref("cookiebanners.service.enableGlobalRules.subFrames");
+clearPref("privacy.globalprivacycontrol.functionality.enabled");
+clearPref("privacy.globalprivacycontrol.pbmode.enabled");
+clearPref("layout.css.has-selector.enabled");
 clearPref("image.mem.shared.unmap.min_expiration_ms"); // This is only used on 32-bit builds of Firefox where there is meaningful
 clearPref("network.buffer.cache.size"); // WARNING: Cannot open HTML files bigger than 4MB if changed
 clearPref("network.buffer.cache.count"); // WARNING: Cannot open HTML files bigger than 4MB if changed
