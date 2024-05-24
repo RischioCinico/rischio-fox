@@ -26,6 +26,8 @@
             "userSettings": {
               "advancedUserEnabled": true,
               "cloudStorageEnabled": true,
+              "uiAccentCustom": true,
+              "uiAccentCustom0": "#04cdff",
               "externalLists": [
                 "https://raw.githubusercontent.com/DandelionSprout/adfilt/master/LegitimateURLShortener.txt",
                 "https://raw.githubusercontent.com/DandelionSprout/adfilt/master/BrowseWebsitesWithoutLoggingIn.txt",
