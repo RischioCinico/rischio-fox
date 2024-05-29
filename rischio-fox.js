@@ -429,7 +429,7 @@ clearPref("media.gmp-provider.enabled");
 pref("dom.disable_window_move_resize", true);
 
 /*** [2600] MISTO ***/
-/* 2603: non scaricare i file nella cartella temporanea ***/
+/* 2603: download in cartella temporanea ***/
 pref("browser.download.start_downloads_in_tmp_dir", true);
 pref("browser.helperApps.deleteTempFileOnExit", true);
 /* 2606: disabilita UITour ***/
