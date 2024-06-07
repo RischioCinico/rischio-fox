@@ -11,7 +11,7 @@
 /*                    ░                                                     */
 
 /* scorciatoie newtab ***/
-lockPref("browser.newtabpage.pinned", "[{\"url\":\"https://github.com/RischioCinico/rischio-fox\",\"label\":\"126.2\"},{\"url\":\"https://www.youtube.com/\",\"label\":\"YouTube\"},{\"url\":\"https://www.reddit.com/\",\"label\":\"Reddit\"},{\"url\":\"https://mail.google.com/mail/u/0/?hl=it#inbox\",\"label\":\"Gmail\"},{\"url\":\"https://addons.mozilla.org/it/firefox/\",\"label\":\"Estensioni\"},{\"url\":\"https://wiki.archlinux.org/title/List_of_applications\",\"label\":\"Applicazioni\"},{\"url\":\"https://www.subito.it/\",\"label\":\"Subito\"},{\"url\":\"https://www.diretta.it/\",\"label\":\"Diretta\"}]");
+lockPref("browser.newtabpage.pinned", "[{\"url\":\"https://github.com/RischioCinico/rischio-fox\",\"label\":\"126.3\"},{\"url\":\"https://www.youtube.com/\",\"label\":\"YouTube\"},{\"url\":\"https://www.reddit.com/\",\"label\":\"Reddit\"},{\"url\":\"https://mail.google.com/mail/u/0/?hl=it#inbox\",\"label\":\"Gmail\"},{\"url\":\"https://addons.mozilla.org/it/firefox/\",\"label\":\"Estensioni\"},{\"url\":\"https://wiki.archlinux.org/title/List_of_applications\",\"label\":\"Applicazioni\"},{\"url\":\"https://www.subito.it/\",\"label\":\"Subito\"},{\"url\":\"https://www.diretta.it/\",\"label\":\"Diretta\"}]");
 lockPref("browser.newtabpage.activity-stream.improvesearch.topSiteSearchShortcuts.havePinned", "");
 lockPref("browser.newtabpage.activity-stream.improvesearch.topSiteSearchShortcuts.searchEngines", "");
 lockPref("browser.newtabpage.activity-stream.impressionId", "");
@@ -244,7 +244,7 @@ pref("layout.word_select.eat_space_to_next_word", false);
 /* ░█▀█░█▀▄░█░█░█▀▀░█▀█░█▀▀░█▀█░█░█ */
 /* ░█▀█░█▀▄░█▀▄░█▀▀░█░█░█▀▀░█░█░▄▀▄ */
 /* ░▀░▀░▀░▀░▀░▀░▀▀▀░▀░▀░▀░░░▀▀▀░▀░▀ */
-/*** Arkenfox v122 ***/
+/*** Arkenfox v126 ***/
 
 /*** [0100] AVVIO ***/
 /* 0102: ripristina sessione ***/
@@ -274,7 +274,7 @@ pref("extensions.htmlaboutaddons.recommendations.enabled", false);
 /* 0322: disable personalized Extension Recommendations in about:addons and AMO ***/
 pref("browser.discovery.enabled", false);
 /* 0323: disable shopping experience ***/
-pref("browser.shopping.experience2023.enabled", false); // [FF116+]
+pref("browser.shopping.experience2023.enabled", false);
 /* 0330: disable new data submission ***/
 pref("datareporting.policy.dataSubmissionEnabled", false);
 /* 0331: disable Health Reports ***/
@@ -293,10 +293,8 @@ pref("toolkit.telemetry.firstShutdownPing.enabled", false);
 pref("toolkit.telemetry.coverage.opt-out", true); // [Nascosta]
 pref("toolkit.coverage.opt-out", true); // [Nascosta]
 pref("toolkit.coverage.endpoint.base", "");
-/* 0334: disable PingCentre telemetry (used in several System Add-ons) ***/
-pref("browser.ping-centre.telemetry", false);
-pref("browser.newtabpage.activity-stream.feeds.telemetry", false);
 /* 0335: disable Firefox Home (Activity Stream) telemetry ***/
+pref("browser.newtabpage.activity-stream.feeds.telemetry", false);
 pref("browser.newtabpage.activity-stream.telemetry", false);
 /* 0340: disable Studies ***/
 pref("app.shield.optoutstudies.enabled", false);
@@ -348,17 +346,19 @@ pref("network.trr.custom_uri", "https://dns.quad9.net/dns-query");
 /* 0801: disabilita connessioni speculative nella barra degli indirizzi ***/
 pref("browser.urlbar.speculativeConnect.enabled", false);
 /* 0802: disabilita suggerimenti sponsorizzati nella barra degli indirizzi ***/
+pref("browser.urlbar.quicksuggest.enabled", false);
 pref("browser.urlbar.suggest.quicksuggest.nonsponsored", false);
 pref("browser.urlbar.suggest.quicksuggest.sponsored", false);
 /* 0805: disabilita suggerimenti ricerche di tendenza nella barra degli indirizzi ***/
-pref("browser.urlbar.trending.featureGate", false); // [FF118+]
+pref("browser.urlbar.trending.featureGate", false);
 /* 0806: disabilita suggerimenti nella barra degli indirizzi ***/
-pref("browser.urlbar.addons.featureGate", false); // [FF115+]
-pref("browser.urlbar.mdn.featureGate", false); // [FF117+] [Nascosta]
-pref("browser.urlbar.pocket.featureGate", false); // [FF116+]
+pref("browser.urlbar.addons.featureGate", false);
+pref("browser.urlbar.mdn.featureGate", false); // [Nascosta]
+pref("browser.urlbar.pocket.featureGate", false);
 pref("browser.urlbar.weather.featureGate", false);
+pref("browser.urlbar.yelp.featureGate", false);
 /* 0807: disabilita suggerimenti dagli appunti nella barra di ricerca ***/
-pref("browser.urlbar.clipboard.featureGate", false); // [FF118+]
+pref("browser.urlbar.clipboard.featureGate", false);
 /* 0810: disabilita formfill ***/
 pref("browser.formfill.enable", false);
 /* 0830: abilita motore di ricerca diverso per le finestre anonime ***/
@@ -413,6 +413,8 @@ pref("network.http.referer.XOriginTrimmingPolicy", 2);
 /* 1701: abilita Container di Firefox ***/
 pref("privacy.userContext.enabled", true);
 pref("privacy.userContext.ui.enabled", true);
+/* 1703: scegli in quale container aprire i collegamenti esterni ***/
+pref("browser.link.force_default_user_context_id_for_external_opens", true);
 
 /*** [2000] PLUGINS / MEDIA / WEBRTC ***/
 /* 2002: forza WebRTC dietro proxy ***/
@@ -446,7 +448,9 @@ pref("network.IDN_show_punycode", true);
 pref("pdfjs.disabled", false);
 pref("pdfjs.enableScripting", false);
 /* 2624: disabilita ricerca contenuto appunti al click tasto centrale */
-pref("browser.tabs.searchclipboardfor.middleclick", false); // [FF115+]
+pref("browser.tabs.searchclipboardfor.middleclick", false);
+/* 2630: disable content analysis by DLP (Data Loss Prevention) agents */
+pref("browser.contentanalysis.default_allow", false);
 /* 2651: chiedi dove salvare i file ***/
 pref("browser.download.useDownloadDir", false);
 /* 2652: disabilita apertura automatica del pannello download ***/
@@ -468,18 +472,6 @@ pref("browser.contentblocking.category", "standard");
 /*** [2800] SPEGNIMENTO ***/
 /* 2810: impedisci eliminazione dati alla chiusura di Firefox ***/
 pref("privacy.sanitize.sanitizeOnShutdown", false);
-/* 2811: imposta cosa eliminare alla chiusura di Firefox (se 2810=true) ***/
-pref("privacy.clearOnShutdown.cache", false);
-pref("privacy.clearOnShutdown.downloads", false);
-pref("privacy.clearOnShutdown.formdata", false);
-pref("privacy.clearOnShutdown.history", false);
-pref("privacy.clearOnShutdown.sessions", false);
-pref("privacy.clearOnShutdown.siteSettings", false);
-/* 2812: blocca eliminazione dari per ripristino sessione (se 2810=true) ***/
-pref("privacy.clearOnShutdown.openWindows", false);
-/* 2815: blocca eliminazione "Cookies" e "Site Data" (se 2810=true) ***/
-pref("privacy.clearOnShutdown.cookies", false);
-pref("privacy.clearOnShutdown.offlineApps", false);
 
 /*** [4500] RFP (ResistFingerPrinting) ***/
 /* 4501: abilita RFP (solo in modalità anonima) ***/
@@ -540,7 +532,7 @@ clearPref("extensions.webcompat.enable_shims");
 clearPref("security.tls.version.enable-deprecated");
 /* 6011: enforce disabling of Web Compatibility Reporter ***/
 clearPref("extensions.webcompat-reporter.enabled");
-/* 6012: enforce Quarantined Domains [FF115+] ***/
+/* 6012: enforce Quarantined Domains ***/
 clearPref("extensions.quarantinedDomains.enabled");
 
 /*** [7000] ***/
@@ -563,11 +555,9 @@ pref("dom.push.enabled", false);
 /*** [9000]: NON-PROJECT RELATED ***/
 /* 9001: disable welcome notices ***/
 pref("browser.startup.homepage_override.mstone", "ignore"); // [HIDDEN PREF]
-/* 9002: disable General>Browsing>Recommend extensions/features as you browse [FF67+] ***/
+/* 9002: disable General>Browsing>Recommend extensions/features as you browse ***/
 pref("browser.newtabpage.activity-stream.asrouter.userprefs.cfr.addons", false);
 pref("browser.newtabpage.activity-stream.asrouter.userprefs.cfr.features", false);
-/* 9003: disable What's New toolbar icon ***/
-pref("browser.messaging-system.whatsNewPanel.enabled", false);
 /* 9004: disable search terms ***/
 pref("browser.urlbar.showSearchTerms.enabled", false);
 
@@ -585,6 +575,11 @@ clearPref("permissions.delegation.enabled");
 // FF119
 clearPref("javascript.use_us_english_locale");
 clearPref("network.dns.skipTRR-when-parental-control-enabled");
+// FF123
+clearPref("browser.ping-centre.telemetry");
+// FF126
+clearPref("browser.messaging-system.whatsNewPanel.enabled");
+
 // Resettate
 clearPref("gfx.canvas.accelerated");
 clearPref("network.dns.max_high_priority_threads");
