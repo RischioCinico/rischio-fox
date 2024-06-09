@@ -509,8 +509,6 @@ pref("extensions.formautofill.creditCards.enabled", false);
 pref("dom.popup_allowed_events", "click dblclick mousedown pointerdown");
 /* 5019 disabilita salvataggio miniature delle pagine visitate */
 pref("browser.pagethumbnails.capturing_disabled", true); // [Nascosta]
-
-/*** [5500] HARDENING ***/
 /* 5508 DRM (EME: Encryption Media Extension) */
 pref("media.eme.enabled", true);
 pref("browser.eme.ui.enabled", false);
