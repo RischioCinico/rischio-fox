@@ -11,7 +11,7 @@
 /*                    ░                                                     */
 
 /* scorciatoie newtab */
-lockPref("browser.newtabpage.pinned", "[{\"url\":\"https://github.com/RischioCinico/rischio-fox\",\"label\":\"126.8\"},{\"url\":\"https://www.youtube.com/\",\"label\":\"YouTube\"},{\"url\":\"https://www.reddit.com/\",\"label\":\"Reddit\"},{\"url\":\"https://mail.google.com/mail/u/0/?hl=it#inbox\",\"label\":\"Gmail\"},{\"url\":\"https://addons.mozilla.org/it/firefox/\",\"label\":\"Estensioni\"},{\"url\":\"https://wiki.archlinux.org/title/List_of_applications\",\"label\":\"Applicazioni\"},{\"url\":\"https://www.subito.it/\",\"label\":\"Subito\"},{\"url\":\"https://www.diretta.it/\",\"label\":\"Diretta\"}]");
+lockPref("browser.newtabpage.pinned", "[{\"url\":\"https://github.com/RischioCinico/rischio-fox\",\"label\":\"126.9\"},{\"url\":\"https://www.youtube.com/\",\"label\":\"YouTube\"},{\"url\":\"https://www.reddit.com/\",\"label\":\"Reddit\"},{\"url\":\"https://mail.google.com/mail/u/0/?hl=it#inbox\",\"label\":\"Gmail\"},{\"url\":\"https://addons.mozilla.org/it/firefox/\",\"label\":\"Estensioni\"},{\"url\":\"https://wiki.archlinux.org/title/List_of_applications\",\"label\":\"Applicazioni\"},{\"url\":\"https://www.subito.it/\",\"label\":\"Subito\"},{\"url\":\"https://www.diretta.it/\",\"label\":\"Diretta\"}]");
 lockPref("browser.newtabpage.activity-stream.improvesearch.topSiteSearchShortcuts.havePinned", "");
 lockPref("browser.newtabpage.activity-stream.improvesearch.topSiteSearchShortcuts.searchEngines", "");
 lockPref("browser.newtabpage.activity-stream.impressionId", "");
@@ -74,13 +74,6 @@ pref("network.http.pacing.requests.enabled", false);
 pref("network.dnsCacheExpiration", 0);
 pref("network.ssl_tokens_cache_capacity", 10240);
 
-/** SPECULATIVE LOADING **/
-// pref("network.dns.disablePrefetch", true); doppione di 0602
-// pref("network.dns.disablePrefetchFromHTTPS", true); doppione di 0602
-// pref("network.prefetch-next", false); doppione di 0601
-// pref("network.predictor.enabled", false); doppione di 0603
-// pref("network.predictor.enable-prefetch", false); doppione di 0603
-
 /** EXPERIMENTAL **/
 defaultPref("layout.css.grid-template-masonry-value.enabled", true);
 defaultPref("dom.enable_web_task_scheduling", true);
@@ -99,16 +92,6 @@ pref("network.cookie.sameSite.noneRequiresSecure", true);
 // pref("browser.helperApps.deleteTempFileOnExit", true); doppione di 2603
 // pref("browser.uitour.enabled", false); doppione di 2606
 pref("privacy.globalprivacycontrol.enabled", true);
-
-/** OCSP & CERTS / HPKP **/
-// pref("security.OCSP.enabled", 0); [1211]
-// pref("security.remote_settings.crlite_filters.enabled", true); doppione di 1224
-// pref("security.pki.crlite_mode", 2); doppione di 1224
-
-/** SSL / TLS **/
-// pref("security.ssl.treat_unsafe_negotiation_as_broken", true); doppione di 1270
-// pref("browser.xul.error_pages.expert_bad_cert", true); doppione di 1272
-// pref("security.tls.enable_0rtt_data", false); doppione di 1206
 
 /** DISK AVOIDANCE **/
 // pref("browser.privatebrowsing.forceMediaMemoryCache", true); doppione di 1002
@@ -144,41 +127,6 @@ pref("security.mixed_content.upgrade_display_content", true);
 pref("security.mixed_content.upgrade_display_content.image", true);
 // pref("pdfjs.enableScripting", false); doppione di 2620
 // pref("extensions.postDownloadThirdPartyPrompt", false); doppione di 2661
-
-/** HEADERS / REFERERS **/
-// pref("network.http.referer.XOriginTrimmingPolicy", 2); doppione di 1602
-
-/** CONTAINERS **/
-// pref("privacy.userContext.ui.enabled", true); doppione di 1701
-
-/** WEBRTC **/
-// pref("media.peerconnection.ice.proxy_only_if_behind_proxy", true); doppione di 2002
-// pref("media.peerconnection.ice.default_address_only", true); doppione di 2003
-
-/** SAFE BROWSING **/
-// pref("browser.safebrowsing.downloads.remote.enabled", false); doppione di 0403
-
-/** MOZILLA **/
-// pref("permissions.default.desktop-notification", 2); doppione di 7002
-// pref("permissions.default.geo", 2); doppione di 7002
-// pref("geo.provider.network.url", "https://location.services.mozilla.com/v1/geolocate?key=%MOZILLA_API_KEY%"); doppione di 0201
-// pref("permissions.manager.defaultsUrl", ""); doppione di 2616
-// pref("webchannel.allowObject.urlWhitelist", ""); doppione di 2617
-
-/** EXPERIMENTS **/
-// pref("app.shield.optoutstudies.enabled", false); doppione di 0340
-// pref("app.normandy.enabled", false); doppione di 0341
-// pref("app.normandy.api_url", ""); doppione di 0341
-
-/** CRASH REPORTS **/
-// pref("breakpad.reportURL", ""); doppione di 0350
-// pref("browser.tabs.crashReporting.sendReport", false); doppione di 0350
-// pref("browser.crashReports.unsubmittedCheck.autoSubmit2", false); doppione di 0351
-
-/** DETECTION **/
-// pref("captivedetect.canonicalURL", ""); doppione di 0360
-// pref("network.captive-portal-service.enabled", false); doppione di 0360
-// pref("network.connectivity-service.enabled", false); doppione di 0361
 
 /* ░█▀█░█▀▀░█▀▀░█░█░█░█░█▀▀░█▀█░█░█ */
 /* ░█▀▀░█▀▀░▀▀█░█▀▄░░█░░█▀▀░█░█░▄▀▄ */
@@ -227,10 +175,6 @@ pref("browser.newtabpage.activity-stream.feeds.section.topstories", false);
 
 /** POCKET **/
 pref("extensions.pocket.enabled", false);
-
-/** DOWNLOADS **/
-// pref("browser.download.always_ask_before_handling_new_types", true); doppione di 2654
-// pref("browser.download.manager.addToRecentDocs", false); doppione di 2653
 
 /** PDF **/
 pref("browser.download.open_pdf_attachments_inline", true);
