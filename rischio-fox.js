@@ -533,7 +533,7 @@ lockPref("extensions.webcompat-reporter.enabled", false); // [DEFAULT: false]
 /* 6012 enforce Quarantined Domains */
 lockPref("extensions.quarantinedDomains.enabled", true); // [DEFAULT: true]
 /* 7017 resetta service workers (disabilitare i service workers rompe Firefox Sync e diversi siti) */
-lockPref("dom.serviceWorkers.enabled", true);
+lockPref("dom.serviceWorkers.enabled", true); // [DEFAULT: true]
 
 /*** [9999] DEPRECATE ***/
 // FF116
