@@ -11,7 +11,7 @@
 /*                    ░                                                     */
 
 /* scorciatoie newtab */
-lockPref("browser.newtabpage.pinned", "[{\"url\":\"https://github.com/RischioCinico/rischio-fox\",\"label\":\"126.6\"},{\"url\":\"https://www.youtube.com/\",\"label\":\"YouTube\"},{\"url\":\"https://www.reddit.com/\",\"label\":\"Reddit\"},{\"url\":\"https://mail.google.com/mail/u/0/?hl=it#inbox\",\"label\":\"Gmail\"},{\"url\":\"https://addons.mozilla.org/it/firefox/\",\"label\":\"Estensioni\"},{\"url\":\"https://wiki.archlinux.org/title/List_of_applications\",\"label\":\"Applicazioni\"},{\"url\":\"https://www.subito.it/\",\"label\":\"Subito\"},{\"url\":\"https://www.diretta.it/\",\"label\":\"Diretta\"}]");
+lockPref("browser.newtabpage.pinned", "[{\"url\":\"https://github.com/RischioCinico/rischio-fox\",\"label\":\"126.7\"},{\"url\":\"https://www.youtube.com/\",\"label\":\"YouTube\"},{\"url\":\"https://www.reddit.com/\",\"label\":\"Reddit\"},{\"url\":\"https://mail.google.com/mail/u/0/?hl=it#inbox\",\"label\":\"Gmail\"},{\"url\":\"https://addons.mozilla.org/it/firefox/\",\"label\":\"Estensioni\"},{\"url\":\"https://wiki.archlinux.org/title/List_of_applications\",\"label\":\"Applicazioni\"},{\"url\":\"https://www.subito.it/\",\"label\":\"Subito\"},{\"url\":\"https://www.diretta.it/\",\"label\":\"Diretta\"}]");
 lockPref("browser.newtabpage.activity-stream.improvesearch.topSiteSearchShortcuts.havePinned", "");
 lockPref("browser.newtabpage.activity-stream.improvesearch.topSiteSearchShortcuts.searchEngines", "");
 lockPref("browser.newtabpage.activity-stream.impressionId", "");
@@ -517,23 +517,23 @@ defaultPref("network.dns.disableIPv6", true);
 
 /*** [6000]: NON TOCCARE ***/
 /* 6001 enforce Firefox blocklist */
-clearPref("extensions.blocklist.enabled");
+lockPref("extensions.blocklist.enabled", true); // [DEFAULT: true]
 /* 6002 enforce no referer spoofing */
-clearPref("network.http.referer.spoofSource");
-/* 6004 enforce a security delay on some confirmation dialogs such as install, open/save */
-clearPref("security.dialog_enable_delay");
+lockPref("network.http.referer.spoofSource", false); // [DEFAULT: false]
+/* 6004 enforce a security delay on some confirmation dialogs */
+lockPref("security.dialog_enable_delay", 1000); // [DEFAULT: 1000]
 /* 6008 enforce no First Party Isolation */
-clearPref("privacy.firstparty.isolate");
+lockPref("privacy.firstparty.isolate", false); // [DEFAULT: false]
 /* 6009 enforce SmartBlock shims (about:compat) */
-clearPref("extensions.webcompat.enable_shims");
+lockPref("extensions.webcompat.enable_shims", true); // [HIDDEN PREF] [DEFAULT: true]
 /* 6010 enforce no TLS 1.0/1.1 downgrades */
-clearPref("security.tls.version.enable-deprecated");
+lockPref("security.tls.version.enable-deprecated", false); // [DEFAULT: false]
 /* 6011 enforce disabling of Web Compatibility Reporter */
-clearPref("extensions.webcompat-reporter.enabled");
+lockPref("extensions.webcompat-reporter.enabled", false); // [DEFAULT: false]
 /* 6012 enforce Quarantined Domains */
-clearPref("extensions.quarantinedDomains.enabled");
+lockPref("extensions.quarantinedDomains.enabled", true); // [DEFAULT: true]
 /* 7017 resetta service workers (disabilitare i service workers rompe Firefox Sync e diversi siti) */
-clearPref("dom.serviceWorkers.enabled");
+lockPref("dom.serviceWorkers.enabled", true);
 
 /*** [9999] DEPRECATE ***/
 // FF116
