@@ -11,7 +11,7 @@
 /*                    ░                                                     */
 
 /* scorciatoie newtab */
-lockPref("browser.newtabpage.pinned", "[{\"url\":\"https://github.com/RischioCinico/rischio-fox\",\"label\":\"126.7\"},{\"url\":\"https://www.youtube.com/\",\"label\":\"YouTube\"},{\"url\":\"https://www.reddit.com/\",\"label\":\"Reddit\"},{\"url\":\"https://mail.google.com/mail/u/0/?hl=it#inbox\",\"label\":\"Gmail\"},{\"url\":\"https://addons.mozilla.org/it/firefox/\",\"label\":\"Estensioni\"},{\"url\":\"https://wiki.archlinux.org/title/List_of_applications\",\"label\":\"Applicazioni\"},{\"url\":\"https://www.subito.it/\",\"label\":\"Subito\"},{\"url\":\"https://www.diretta.it/\",\"label\":\"Diretta\"}]");
+lockPref("browser.newtabpage.pinned", "[{\"url\":\"https://github.com/RischioCinico/rischio-fox\",\"label\":\"126.8\"},{\"url\":\"https://www.youtube.com/\",\"label\":\"YouTube\"},{\"url\":\"https://www.reddit.com/\",\"label\":\"Reddit\"},{\"url\":\"https://mail.google.com/mail/u/0/?hl=it#inbox\",\"label\":\"Gmail\"},{\"url\":\"https://addons.mozilla.org/it/firefox/\",\"label\":\"Estensioni\"},{\"url\":\"https://wiki.archlinux.org/title/List_of_applications\",\"label\":\"Applicazioni\"},{\"url\":\"https://www.subito.it/\",\"label\":\"Subito\"},{\"url\":\"https://www.diretta.it/\",\"label\":\"Diretta\"}]");
 lockPref("browser.newtabpage.activity-stream.improvesearch.topSiteSearchShortcuts.havePinned", "");
 lockPref("browser.newtabpage.activity-stream.improvesearch.topSiteSearchShortcuts.searchEngines", "");
 lockPref("browser.newtabpage.activity-stream.impressionId", "");
@@ -404,12 +404,8 @@ pref("dom.security.https_only_mode_send_http_background_request", false);
 pref("security.ssl.treat_unsafe_negotiation_as_broken", true);
 /* 1272 mostra informazioni sulle connessioni non sicure */
 pref("browser.xul.error_pages.expert_bad_cert", true);
-
-/*** [1600] REFERERS ***/
 /* 1602 controlla le informazioni cross-origin da inviare */
 pref("network.http.referer.XOriginTrimmingPolicy", 2);
-
-/*** [1700] CONTAINERS ***/
 /* 1701 abilita Container di Firefox */
 pref("privacy.userContext.enabled", true);
 pref("privacy.userContext.ui.enabled", true);
@@ -464,13 +460,7 @@ pref("extensions.enabledScopes", 5); // [Nascosta]
 clearPref("extensions.autoDisableScopes", 15);
 /* 2661 disabilita prompt di installazione esterni */
 pref("extensions.postDownloadThirdPartyPrompt", false);
-
-/*** [2700] ETP (ENHANCED TRACKING PROTECTION) ***/
-/* 2701 abilita antitracciamento */
-pref("browser.contentblocking.category", "standard");
-
-/*** [2800] SPEGNIMENTO ***/
-/* 2810 impedisci eliminazione dati alla chiusura di Firefox */
+/* 2810 previene pulizia dati automatica alla chiusura di Firefox */
 pref("privacy.sanitize.sanitizeOnShutdown", false);
 
 /*** [4500] RFP (ResistFingerPrinting) ***/
