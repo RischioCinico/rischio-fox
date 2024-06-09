@@ -11,7 +11,7 @@
 /*                    ░                                                     */
 
 /* scorciatoie newtab */
-lockPref("browser.newtabpage.pinned", "[{\"url\":\"https://github.com/RischioCinico/rischio-fox\",\"label\":\"126.5\"},{\"url\":\"https://www.youtube.com/\",\"label\":\"YouTube\"},{\"url\":\"https://www.reddit.com/\",\"label\":\"Reddit\"},{\"url\":\"https://mail.google.com/mail/u/0/?hl=it#inbox\",\"label\":\"Gmail\"},{\"url\":\"https://addons.mozilla.org/it/firefox/\",\"label\":\"Estensioni\"},{\"url\":\"https://wiki.archlinux.org/title/List_of_applications\",\"label\":\"Applicazioni\"},{\"url\":\"https://www.subito.it/\",\"label\":\"Subito\"},{\"url\":\"https://www.diretta.it/\",\"label\":\"Diretta\"}]");
+lockPref("browser.newtabpage.pinned", "[{\"url\":\"https://github.com/RischioCinico/rischio-fox\",\"label\":\"126.6\"},{\"url\":\"https://www.youtube.com/\",\"label\":\"YouTube\"},{\"url\":\"https://www.reddit.com/\",\"label\":\"Reddit\"},{\"url\":\"https://mail.google.com/mail/u/0/?hl=it#inbox\",\"label\":\"Gmail\"},{\"url\":\"https://addons.mozilla.org/it/firefox/\",\"label\":\"Estensioni\"},{\"url\":\"https://wiki.archlinux.org/title/List_of_applications\",\"label\":\"Applicazioni\"},{\"url\":\"https://www.subito.it/\",\"label\":\"Subito\"},{\"url\":\"https://www.diretta.it/\",\"label\":\"Diretta\"}]");
 lockPref("browser.newtabpage.activity-stream.improvesearch.topSiteSearchShortcuts.havePinned", "");
 lockPref("browser.newtabpage.activity-stream.improvesearch.topSiteSearchShortcuts.searchEngines", "");
 lockPref("browser.newtabpage.activity-stream.impressionId", "");
@@ -534,32 +534,8 @@ clearPref("security.tls.version.enable-deprecated");
 clearPref("extensions.webcompat-reporter.enabled");
 /* 6012 enforce Quarantined Domains */
 clearPref("extensions.quarantinedDomains.enabled");
-
-/*** [7000] ***/
-/* 7002 blocca richieste permessi */
-pref("permissions.default.camera", 2);
-pref("permissions.default.desktop-notification", 2);
-pref("permissions.default.geo", 2);
-pref("permissions.default.microphone", 2);
-pref("permissions.default.shortcuts", 2);
-pref("permissions.default.xr", 2);
-/* 7015 abilita DNT (Do Not Track) */
-pref("privacy.donottrackheader.enabled", true);
 /* 7017 resetta service workers (disabilitare i service workers rompe Firefox Sync e diversi siti) */
 clearPref("dom.serviceWorkers.enabled");
-/* 7018 disable Web Notifications */
-pref("dom.webnotifications.enabled", false);
-/* 7019 disable Push Notifications [FF44+] */
-pref("dom.push.enabled", false);
-
-/*** [9000]: ALTRO ***/
-/* 9001 disabilitare gli avvisi di benvenuto */
-pref("browser.startup.homepage_override.mstone", "ignore"); // [Nascosta]
-/* 9002 disabilita estensioni suggerite durante la navigazione */
-pref("browser.newtabpage.activity-stream.asrouter.userprefs.cfr.addons", false);
-pref("browser.newtabpage.activity-stream.asrouter.userprefs.cfr.features", false);
-/* 9004 disabilitare i termini di ricerca */
-pref("browser.urlbar.showSearchTerms.enabled", false);
 
 /*** [9999] DEPRECATE ***/
 // FF116
@@ -594,6 +570,19 @@ clearPref("network.buffer.cache.count"); // WARNING: Cannot open HTML files bigg
 clearPref("network.http.pacing.requests.min-parallelism")
 clearPref("network.http.pacing.requests.burst");
 clearPref("network.http.max-persistent-connections-per-proxy");
+clearPref("browser.startup.homepage_override.mstone");
+clearPref("browser.newtabpage.activity-stream.asrouter.userprefs.cfr.addons");
+clearPref("browser.newtabpage.activity-stream.asrouter.userprefs.cfr.features");
+clearPref("browser.urlbar.showSearchTerms.enabled");
+clearPref("permissions.default.camera");
+clearPref("permissions.default.desktop-notification");
+clearPref("permissions.default.geo");
+clearPref("permissions.default.microphone");
+clearPref("permissions.default.shortcuts");
+clearPref("permissions.default.xr");
+clearPref("dom.webnotifications.enabled");
+clearPref("dom.push.enabled");
+clearPref("privacy.donottrackheader.enabled");
 // DA CONTROLLARE
 clearPref("gfx.webrender.program-binary-disk");
 clearPref("gfx.webrender.enabled");
