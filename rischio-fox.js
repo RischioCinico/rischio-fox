@@ -84,49 +84,33 @@ defaultPref("dom.security.sanitizer.enabled", true);
 /* ░▀▀▀░▀▀▀░▀▀▀░▀▀▀░▀░▀░▀▀▀░▀░░░▀▀▀░▀░▀ */
 
 /** TRACKING PROTECTION **/
-// pref("browser.contentblocking.category", "strict"); doppione di 2701
 clearPref("urlclassifier.trackingSkipURLs");
 clearPref("urlclassifier.features.socialtracking.skipURLs");
 pref("network.cookie.sameSite.noneRequiresSecure", true);
-// pref("browser.download.start_downloads_in_tmp_dir", true); doppione di 2603
-// pref("browser.helperApps.deleteTempFileOnExit", true); doppione di 2603
-// pref("browser.uitour.enabled", false); doppione di 2606
 pref("privacy.globalprivacycontrol.enabled", true);
 
 /** DISK AVOIDANCE **/
-// pref("browser.privatebrowsing.forceMediaMemoryCache", true); doppione di 1002
 pref("browser.sessionstore.interval", 60000);
 
 /** SHUTDOWN & SANITIZING **/
 pref("privacy.history.custom", true);
 
 /** SEARCH / URL BAR **/
-// pref("browser.search.separatePrivateDefault.ui.enabled", true); doppione di 0830
 pref("browser.urlbar.update2.engineAliasRefresh", true);
-// pref("browser.search.suggest.enabled", false);
-// pref("browser.urlbar.suggest.quicksuggest.sponsored", false); doppione di 0802
-// pref("browser.urlbar.suggest.quicksuggest.nonsponsored", false); doppione di 0802
-// pref("browser.formfill.enable", false); doppione di 0810
 pref("security.insecure_connection_text.enabled", true);
 pref("security.insecure_connection_text.pbmode.enabled", true);
-// pref("network.IDN_show_punycode", true); doppione di 2619
 
 /** HTTPS-FIRST POLICY **/
 pref("dom.security.https_first", true);
 pref("dom.security.https_first_schemeless", true);
 
 /** PASSWORDS **/
-// pref("signon.formlessCapture.enabled", false); doppione di 0904
 pref("signon.privateBrowsingCapture.enabled", false);
-// pref("network.auth.subresource-http-auth-allow", 1); doppione di 0905
 pref("editor.truncate_user_pastes", false);
 
 /** MIXED CONTENT + CROSS-SITE **/
-// pref("security.mixed_content.block_display_content", true); doppione di 1241
 pref("security.mixed_content.upgrade_display_content", true);
 pref("security.mixed_content.upgrade_display_content.image", true);
-// pref("pdfjs.enableScripting", false); doppione di 2620
-// pref("extensions.postDownloadThirdPartyPrompt", false); doppione di 2661
 
 /* ░█▀█░█▀▀░█▀▀░█░█░█░█░█▀▀░█▀█░█░█ */
 /* ░█▀▀░█▀▀░▀▀█░█▀▄░░█░░█▀▀░█░█░▄▀▄ */
@@ -134,12 +118,7 @@ pref("security.mixed_content.upgrade_display_content.image", true);
 
 /** MOZILLA UI **/
 pref("browser.privatebrowsing.vpnpromourl", "");
-// pref("extensions.getAddons.showPane", false); doppione di 0320
-// pref("extensions.htmlaboutaddons.recommendations.enabled", false); doppione di 0321
-// pref("browser.discovery.enabled", false); doppione di 0322
 pref("browser.shell.checkDefaultBrowser", false);
-// pref("browser.newtabpage.activity-stream.asrouter.userprefs.cfr.addons", false); doppione di 9002
-// pref("browser.newtabpage.activity-stream.asrouter.userprefs.cfr.features", false); doppione di 9002
 pref("browser.preferences.moreFromMozilla", false);
 pref("browser.tabs.tabmanager.enabled", false);
 pref("browser.aboutConfig.showWarning", false);
@@ -152,7 +131,6 @@ pref("browser.display.focus_ring_on_anything", true);
 pref("browser.display.focus_ring_style", 0); // 0=Solid, 1=Dotted
 pref("browser.display.focus_ring_width", 1);
 pref("layout.css.prefers-color-scheme.content-override", 3); // (0=Scuro, 1=Chiaro, 2=Sistema, 3=Browser)
-// pref("browser.privateWindowSeparation.enabled", false); // WINDOWS
 
 /** COOKIE BANNER HANDLING **/
 pref("cookiebanners.service.mode", 1);
@@ -167,7 +145,6 @@ pref("full-screen-api.warning.timeout", 0);
 /** URL BAR **/
 pref("browser.urlbar.suggest.calculator", true);
 pref("browser.urlbar.unitConversion.enabled", true);
-// pref("browser.urlbar.trending.featureGate", false); doppione di 0805
 
 /** NEW TAB PAGE **/
 pref("browser.newtabpage.activity-stream.feeds.topsites", true);
