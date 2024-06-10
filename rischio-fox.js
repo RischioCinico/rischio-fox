@@ -11,7 +11,7 @@
 /*                    ░                                                     */
 
 /* scorciatoie newtab */
-lockPref("browser.newtabpage.pinned", "[{\"url\":\"https://github.com/RischioCinico/rischio-fox\",\"label\":\"126.10\"},{\"url\":\"https://www.youtube.com/\",\"label\":\"YouTube\"},{\"url\":\"https://www.reddit.com/\",\"label\":\"Reddit\"},{\"url\":\"https://mail.google.com/mail/u/0/?hl=it#inbox\",\"label\":\"Gmail\"},{\"url\":\"https://addons.mozilla.org/it/firefox/\",\"label\":\"Estensioni\"},{\"url\":\"https://wiki.archlinux.org/title/List_of_applications\",\"label\":\"Applicazioni\"},{\"url\":\"https://www.subito.it/\",\"label\":\"Subito\"},{\"url\":\"https://www.diretta.it/\",\"label\":\"Diretta\"}]");
+lockPref("browser.newtabpage.pinned", "[{\"url\":\"https://github.com/RischioCinico/rischio-fox\",\"label\":\"126.11\"},{\"url\":\"https://www.youtube.com/\",\"label\":\"YouTube\"},{\"url\":\"https://www.reddit.com/\",\"label\":\"Reddit\"},{\"url\":\"https://mail.google.com/mail/u/0/?hl=it#inbox\",\"label\":\"Gmail\"},{\"url\":\"https://addons.mozilla.org/it/firefox/\",\"label\":\"Estensioni\"},{\"url\":\"https://wiki.archlinux.org/title/List_of_applications\",\"label\":\"Applicazioni\"},{\"url\":\"https://www.subito.it/\",\"label\":\"Subito\"},{\"url\":\"https://www.diretta.it/\",\"label\":\"Diretta\"}]");
 lockPref("browser.newtabpage.activity-stream.improvesearch.topSiteSearchShortcuts.havePinned", "");
 lockPref("browser.newtabpage.activity-stream.improvesearch.topSiteSearchShortcuts.searchEngines", "");
 lockPref("browser.newtabpage.activity-stream.impressionId", "");
@@ -196,20 +196,6 @@ pref("extensions.htmlaboutaddons.recommendations.enabled", false);
 pref("browser.discovery.enabled", false);
 /* 0323 disable shopping experience */
 pref("browser.shopping.experience2023.enabled", false);
-/* 0330 disable new data submission */
-pref("datareporting.policy.dataSubmissionEnabled", false);
-/* 0331 disable Health Reports */
-pref("datareporting.healthreport.uploadEnabled", false);
-/* 0332 disable telemetry */
-pref("toolkit.telemetry.unified", false);
-pref("toolkit.telemetry.enabled", false);
-pref("toolkit.telemetry.server", "data:,");
-pref("toolkit.telemetry.archive.enabled", false);
-pref("toolkit.telemetry.newProfilePing.enabled", false);
-pref("toolkit.telemetry.shutdownPingSender.enabled", false);
-pref("toolkit.telemetry.updatePing.enabled", false);
-pref("toolkit.telemetry.bhrPing.enabled", false);
-pref("toolkit.telemetry.firstShutdownPing.enabled", false);
 /* 0333 disable Telemetry Coverage */
 pref("toolkit.telemetry.coverage.opt-out", true); // [Nascosta]
 pref("toolkit.coverage.opt-out", true); // [Nascosta]
