@@ -23,8 +23,6 @@ pref("dom.disable_open_during_load", false);
 pref("accessibility.force_disabled", 1);
 /* disabilita indicatori WebRTC (sono buggati) */
 pref("privacy.webrtc.hideGlobalIndicator", true);
-/* mostra segnalibri Mobile */
-pref("browser.bookmarks.showMobileBookmarks", true);
 /* non nascondere il puntatore durante digitazione (Peskyfox) */
 pref("widget.gtk.hide-pointer-while-typing.enabled", false);
 /* disabilita cache DNS di Firefox */
@@ -475,6 +473,7 @@ clearPref("dom.webnotifications.enabled");
 clearPref("dom.push.enabled");
 clearPref("privacy.donottrackheader.enabled");
 // DA CONTROLLARE
+clearPref("browser.bookmarks.showMobileBookmarks");
 clearPref("privacy.webrtc.legacyGlobalIndicator");
 clearPref("gfx.webrender.program-binary-disk");
 clearPref("gfx.webrender.enabled");
