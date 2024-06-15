@@ -24,13 +24,6 @@ pref("dom.disable_open_during_load", false);
 pref("accessibility.force_disabled", 1);
 /* disabilita indicatori WebRTC (sono buggati) */
 pref("privacy.webrtc.hideGlobalIndicator", true);
-/* non nascondere il puntatore durante digitazione (Peskyfox) */
-pref("widget.gtk.hide-pointer-while-typing.enabled", false);
-/* disabilita cache DNS di Firefox */
-pref("network.dnsCacheEntries", 0);
-/* media memory cache */
-pref("media.memory_caches_combined_limit_kb", 1048576);
-pref("media.memory_caches_combined_limit_pc_sysmem", 10);
 /* nascondi barra del titolo */
 defaultPref("browser.tabs.inTitlebar", 2);
 /* abilita scorrimento automatico */
@@ -53,6 +46,8 @@ pref("gfx.content.skia-font-cache-size", 20);
 /** CACHE **/
 pref("browser.cache.jsbc_compression_level", 3);
 pref("media.memory_cache_max_size", 65536);
+pref("media.memory_caches_combined_limit_kb", 1048576);
+pref("media.memory_caches_combined_limit_pc_sysmem", 10);
 pref("media.cache_readahead_limit", 7200);
 pref("media.cache_resume_threshold", 3600);
 pref("image.mem.decode_bytes_at_a_time", 32768);
@@ -62,6 +57,7 @@ pref("network.http.max-connections", 1800);
 pref("network.http.max-persistent-connections-per-server", 10);
 pref("network.http.max-urgent-start-excessive-connections-per-host", 5);
 pref("network.http.pacing.requests.enabled", false);
+pref("network.dnsCacheEntries", 0);
 pref("network.dnsCacheExpiration", 0);
 pref("network.ssl_tokens_cache_capacity", 10240);
 
@@ -152,6 +148,7 @@ pref("browser.bookmarks.openInTabClosesMenu", false);
 pref("browser.menu.showViewImageInfo", true);
 pref("findbar.highlightAll", true);
 pref("layout.word_select.eat_space_to_next_word", false);
+pref("widget.gtk.hide-pointer-while-typing.enabled", false);
 
 /* ░█▀█░█▀▄░█░█░█▀▀░█▀█░█▀▀░█▀█░█░█ */
 /* ░█▀█░█▀▄░█▀▄░█▀▀░█░█░█▀▀░█░█░▄▀▄ */
