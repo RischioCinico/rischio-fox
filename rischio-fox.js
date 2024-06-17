@@ -71,8 +71,6 @@ defaultPref("dom.security.sanitizer.enabled", true);
 /* ░▀▀▀░▀▀▀░▀▀▀░▀▀▀░▀░▀░▀▀▀░▀░░░▀▀▀░▀░▀ */
 
 /** TRACKING PROTECTION **/
-clearPref("urlclassifier.trackingSkipURLs");
-clearPref("urlclassifier.features.socialtracking.skipURLs");
 pref("network.cookie.sameSite.noneRequiresSecure", true);
 pref("privacy.globalprivacycontrol.enabled", true);
 
@@ -158,10 +156,6 @@ pref("widget.gtk.hide-pointer-while-typing.enabled", false);
 /*** [0100] AVVIO ***/
 /* 0102 ripristina sessione */
 pref("browser.startup.page", 3);
-/* 0103 resetta la home page di Firefox */
-clearPref("browser.startup.homepage");
-/* 0104 resetta NEWTAB */
-clearPref("browser.newtabpage.enabled");
 /* 0105 disabilita contenuti sponsorizzati */
 lockPref("browser.newtabpage.activity-stream.showSponsored", false);
 lockPref("browser.newtabpage.activity-stream.showSponsoredTopSites", false);
@@ -312,10 +306,6 @@ pref("browser.link.force_default_user_context_id_for_external_opens", true);
 pref("media.peerconnection.ice.proxy_only_if_behind_proxy", true);
 /* 2003 utilizza una singola interfaccia di rete per ICE */
 pref("media.peerconnection.ice.default_address_only", true);
-/* 2004 forza esclusione IP privati da ICE */
-clearPref("media.peerconnection.ice.no_host");
-/* 2020 abilita GMP (Gecko Media Plugins) */
-clearPref("media.gmp-provider.enabled");
 
 /*** [2400] DOM (DOCUMENT OBJECT MODEL) ***/
 /* 2402 impedisci agli scripts di spostare e ridimensionare finestre */
@@ -360,15 +350,12 @@ pref("privacy.sanitize.sanitizeOnShutdown", false);
 
 /*** [4500] RFP (ResistFingerPrinting) ***/
 /* 4501 abilita RFP (solo in modalità anonima) */
-clearPref("privacy.resistFingerprinting");
 pref("privacy.resistFingerprinting.pbmode", true);
 /* 4502 arrotondamento dimensioni finestre */
 pref("privacy.window.maxInnerWidth", 1600);
 pref("privacy.window.maxInnerHeight", 900);
 /* 4503 disabilita mozAddonManager Web API */
 pref("privacy.resistFingerprinting.block_mozAddonManager", true);
-/* 4504 RFP letterboxing */
-clearPref("privacy.resistFingerprinting.letterboxing"); // [Nascosta]
 /* 4510 usa colori di sistema */
 pref("browser.display.use_system_colors", false);
 /* 4511 usa tema widget non-nativo */
@@ -377,8 +364,6 @@ pref("widget.non-native-theme.enabled", true);
 pref("browser.link.open_newwindow", 3);
 /* 4513 obbliga a rispettare "browser.link.open_newwindow" (4512) */
 pref("browser.link.open_newwindow.restriction", 0);
-/* 4520 WebGL (Web Graphics Library) */
-clearPref("webgl.disabled");
 
 /*** [5000] OPSEC ***/
 /* 5009 disabilita "apri con" per i download */
