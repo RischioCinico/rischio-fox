@@ -478,7 +478,6 @@ clearPref("dom.disable_window_move_resize");
 defaultPref("dom.disable_window_move_resize", true);
 
 /*** [2600] MISTO ***/
-/*** [2600] MISTO ***/
 clearPref("browser.download.start_downloads_in_tmp_dir");
 clearPref("browser.helperApps.deleteTempFileOnExit");
 clearPref("browser.uitour.enabled");
