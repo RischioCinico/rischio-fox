@@ -10,45 +10,26 @@
 /*    ░     ░       ░ ░ ░      ░  ░  ░░     ░ ░               ░ ░  ░    ░   */
 /*                    ░                                                     */
 
-/*** about:newtab ***/
-/* siti nelle scorciatoie */
-lockPref("browser.newtabpage.pinned", "[{\"url\":\"https://github.com/RischioCinico/rischio-fox\",\"label\":\"127.5\"},{\"url\":\"https://www.youtube.com/\",\"label\":\"YouTube\"},{\"url\":\"https://www.reddit.com/\",\"label\":\"Reddit\"},{\"url\":\"https://mail.google.com/mail/u/0/?hl=it#inbox\",\"label\":\"Gmail\"},{\"url\":\"https://addons.mozilla.org/it/firefox/\",\"label\":\"Estensioni\"},{\"url\":\"https://wiki.archlinux.org/title/List_of_applications\",\"label\":\"Applicazioni\"},{\"url\":\"https://www.subito.it/\",\"label\":\"Subito\"},{\"url\":\"https://www.diretta.it/\",\"label\":\"Diretta\"}]");
-/* numero righe scorciatorie */
+/* scorciatoie newtab */
+lockPref("browser.newtabpage.pinned", "[{\"url\":\"https://github.com/RischioCinico/rischio-fox\",\"label\":\"127.6\"},{\"url\":\"https://www.youtube.com/\",\"label\":\"YouTube\"},{\"url\":\"https://www.reddit.com/\",\"label\":\"Reddit\"},{\"url\":\"https://mail.google.com/mail/u/0/?hl=it#inbox\",\"label\":\"Gmail\"},{\"url\":\"https://addons.mozilla.org/it/firefox/\",\"label\":\"Estensioni\"},{\"url\":\"https://wiki.archlinux.org/title/List_of_applications\",\"label\":\"Applicazioni\"},{\"url\":\"https://www.subito.it/\",\"label\":\"Subito\"},{\"url\":\"https://www.diretta.it/\",\"label\":\"Diretta\"}]");
 lockPref("browser.newtabpage.activity-stream.topSitesRows", 1);
-/* mostra scorciatoie */
 lockPref("browser.newtabpage.activity-stream.feeds.topsites", true);
 lockPref("browser.newtabpage.activity-stream.feeds.section.topstories", false);
+lockPref("browser.newtabpage.activity-stream.showSponsored", false);
+lockPref("browser.newtabpage.activity-stream.showSponsoredTopSites", false);
+lockPref("browser.newtabpage.activity-stream.default.sites", "");
 /* non spostare il focus dal searchbox alla barra degli indirizzi */
 clearPref("browser.newtabpage.activity-stream.improvesearch.handoffToAwesomebar");
 defaultPref("browser.newtabpage.activity-stream.improvesearch.handoffToAwesomebar", false);
-
-/*** popup e avvisi fastidiosi ***/
 /* disabilita il blocco popup integrato (sostituito da estensione apposita) */
 clearPref("dom.disable_open_during_load");
 lockPref("dom.disable_open_during_load", false);
-/* avviso about:config */
-clearPref("browser.aboutConfig.showWarning");
-defaultPref("browser.aboutConfig.showWarning", false);
 /* disabilita popup traduttore */
 clearPref("browser.translations.automaticallyPopup");
 defaultPref("browser.translations.automaticallyPopup", false);
 /* disabilita indicatori WebRTC (sono buggati) */
 clearPref("privacy.webrtc.hideGlobalIndicator");
 defaultPref("privacy.webrtc.hideGlobalIndicator", true);
-/** avviso schermo interno **/
-clearPref("full-screen-api.transition-duration.enter");
-clearPref("full-screen-api.transition-duration.leave");
-clearPref("full-screen-api.warning.delay");
-clearPref("full-screen-api.warning.timeout");
-defaultPref("full-screen-api.transition-duration.enter", "0 0");
-defaultPref("full-screen-api.transition-duration.leave", "0 0");
-defaultPref("full-screen-api.warning.delay", -1);
-defaultPref("full-screen-api.warning.timeout", 0);
-/* messaggio di benvenuto */
-clearPref("browser.aboutwelcome.enabled");
-defaultPref("browser.aboutwelcome.enabled", false);
-
-/*** altro ***/
 /* disabilita accessibilità */
 clearPref("accessibility.force_disabled");
 defaultPref("accessibility.force_disabled", 1);
@@ -56,7 +37,6 @@ defaultPref("accessibility.force_disabled", 1);
 defaultPref("browser.tabs.inTitlebar", 2);
 /* abilita scorrimento automatico */
 defaultPref("general.autoScroll", true);
-
 /* has-used */
 pref("browser.engagement.ctrlTab.has-used", true);
 pref("browser.engagement.downloads-button.has-used", true);
@@ -181,12 +161,16 @@ defaultPref("security.mixed_content.upgrade_display_content.image", true);
 clearPref("browser.privatebrowsing.vpnpromourl");
 clearPref("browser.shell.checkDefaultBrowser");
 clearPref("browser.clearPreferences.moreFromMozilla");
+clearPref("browser.aboutConfig.showWarning");
+clearPref("browser.aboutwelcome.enabled");
 clearPref("browser.tabs.tabmanager.enabled");
 
 defaultPref("browser.privatebrowsing.vpnpromourl", "");
 defaultPref("browser.vpn_promo.enabled", false)
 defaultPref("browser.shell.checkDefaultBrowser", false);
 defaultPref("browser.defaultPreferences.moreFromMozilla", false);
+defaultPref("browser.aboutConfig.showWarning", false);
+defaultPref("browser.aboutwelcome.enabled", false);
 defaultPref("browser.tabs.tabmanager.enabled", false);
 
 /** THEME ADJUSTMENTS **/
@@ -210,6 +194,17 @@ clearPref("cookiebanners.service.mode.privateBrowsing");
 
 defaultPref("cookiebanners.service.mode", 1);
 defaultPref("cookiebanners.service.mode.privateBrowsing", 1);
+
+/* avviso schermo interno */
+clearPref("full-screen-api.transition-duration.enter");
+clearPref("full-screen-api.transition-duration.leave");
+clearPref("full-screen-api.warning.delay");
+clearPref("full-screen-api.warning.timeout");
+
+defaultPref("full-screen-api.transition-duration.enter", "0 0");
+defaultPref("full-screen-api.transition-duration.leave", "0 0");
+defaultPref("full-screen-api.warning.delay", -1);
+defaultPref("full-screen-api.warning.timeout", 0);
 
 /** URL BAR **/
 clearPref("browser.urlbar.suggest.calculator");
@@ -246,15 +241,8 @@ defaultPref("widget.gtk.hide-pointer-while-typing.enabled", false);
 
 /*** [0100] AVVIO ***/
 clearPref("browser.startup.page");
-clearPref("browser.newtabpage.activity-stream.default.sites");
-
 /* 0102 ripristina sessione */
 defaultPref("browser.startup.page", 3);
-/* 0105 disabilita contenuti sponsorizzati */
-lockPref("browser.newtabpage.activity-stream.showSponsored", false);
-lockPref("browser.newtabpage.activity-stream.showSponsoredTopSites", false);
-/* 0106 elimina topsites */
-defaultPref("browser.newtabpage.activity-stream.default.sites", "");
 
 /*** [0200] GEOLOCALIZZAZIONE ***/
 clearPref("geo.provider.network.url");
