@@ -11,7 +11,7 @@
 /*                    ░                                                     */
 
 /* scorciatoie newtab */
-lockPref("browser.newtabpage.pinned", "[{\"url\":\"https://github.com/RischioCinico/rischio-fox\",\"label\":\"127.3\"},{\"url\":\"https://www.youtube.com/\",\"label\":\"YouTube\"},{\"url\":\"https://www.reddit.com/\",\"label\":\"Reddit\"},{\"url\":\"https://mail.google.com/mail/u/0/?hl=it#inbox\",\"label\":\"Gmail\"},{\"url\":\"https://addons.mozilla.org/it/firefox/\",\"label\":\"Estensioni\"},{\"url\":\"https://wiki.archlinux.org/title/List_of_applications\",\"label\":\"Applicazioni\"},{\"url\":\"https://www.subito.it/\",\"label\":\"Subito\"},{\"url\":\"https://www.diretta.it/\",\"label\":\"Diretta\"}]");
+lockPref("browser.newtabpage.pinned", "[{\"url\":\"https://github.com/RischioCinico/rischio-fox\",\"label\":\"127.4\"},{\"url\":\"https://www.youtube.com/\",\"label\":\"YouTube\"},{\"url\":\"https://www.reddit.com/\",\"label\":\"Reddit\"},{\"url\":\"https://mail.google.com/mail/u/0/?hl=it#inbox\",\"label\":\"Gmail\"},{\"url\":\"https://addons.mozilla.org/it/firefox/\",\"label\":\"Estensioni\"},{\"url\":\"https://wiki.archlinux.org/title/List_of_applications\",\"label\":\"Applicazioni\"},{\"url\":\"https://www.subito.it/\",\"label\":\"Subito\"},{\"url\":\"https://www.diretta.it/\",\"label\":\"Diretta\"}]");
 lockPref("browser.newtabpage.activity-stream.topSitesRows", 1);
 lockPref("browser.newtabpage.activity-stream.feeds.section.topstories", false);
 /* ripristina searchbox in newtab */
@@ -58,8 +58,8 @@ clearPref("gfx.canvas.accelerated.cache-items");
 clearPref("gfx.canvas.accelerated.cache-size");
 clearPref("gfx.content.skia-font-cache-size");
 
-defaultPref("gfx.canvas.accelerated.cache-items", 4096);
-defaultPref("gfx.canvas.accelerated.cache-size", 512);
+defaultPref("gfx.canvas.accelerated.cache-items", 8192);
+defaultPref("gfx.canvas.accelerated.cache-size", 1024);
 defaultPref("gfx.content.skia-font-cache-size", 20);
 
 /** CACHE **/
@@ -72,12 +72,12 @@ clearPref("media.cache_resume_threshold");
 clearPref("image.mem.decode_bytes_at_a_time");
 
 defaultPref("browser.cache.jsbc_compression_level", 3);
-defaultPref("media.memory_cache_max_size", 65536);
+defaultPref("media.memory_cache_max_size", 131072);
 defaultPref("media.memory_caches_combined_limit_kb", 1048576);
 defaultPref("media.memory_caches_combined_limit_pc_sysmem", 10);
 defaultPref("media.cache_readahead_limit", 7200);
 defaultPref("media.cache_resume_threshold", 3600);
-defaultPref("image.mem.decode_bytes_at_a_time", 32768);
+defaultPref("image.mem.decode_bytes_at_a_time", 65536);
 
 /** NETWORK **/
 clearPref("network.http.max-connections");
