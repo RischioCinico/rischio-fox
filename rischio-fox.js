@@ -22,7 +22,7 @@ clearPref("browser.translations.automaticallyPopup");
 defaultPref("browser.translations.automaticallyPopup", false);
 /* disabilita il blocco popup integrato */
 clearPref("dom.disable_open_during_load");
-defaultPref("dom.disable_open_during_load", false);
+lockPref("dom.disable_open_during_load", false);
 /* disabilita accessibilità */
 clearPref("accessibility.force_disabled");
 defaultPref("accessibility.force_disabled", 1);
