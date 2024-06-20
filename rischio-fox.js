@@ -11,15 +11,12 @@
 /*                    ░                                                     */
 
 /* scorciatoie newtab */
-lockPref("browser.newtabpage.pinned", "[{\"url\":\"https://github.com/RischioCinico/rischio-fox\",\"label\":\"127.8a\"},{\"url\":\"https://www.youtube.com/\",\"label\":\"YouTube\"},{\"url\":\"https://www.reddit.com/\",\"label\":\"Reddit\"},{\"url\":\"https://mail.google.com/mail/u/0/?hl=it#inbox\",\"label\":\"Gmail\"},{\"url\":\"https://addons.mozilla.org/it/firefox/\",\"label\":\"Estensioni\"},{\"url\":\"https://wiki.archlinux.org/title/List_of_applications\",\"label\":\"Applicazioni\"},{\"url\":\"https://www.subito.it/\",\"label\":\"Subito\"},{\"url\":\"https://www.diretta.it/\",\"label\":\"Diretta\"}]");
+lockPref("browser.newtabpage.pinned", "[{\"url\":\"https://github.com/RischioCinico/rischio-fox\",\"label\":\"127.8b\"},{\"url\":\"https://www.youtube.com/\",\"label\":\"YouTube\"},{\"url\":\"https://www.reddit.com/\",\"label\":\"Reddit\"},{\"url\":\"https://mail.google.com/mail/u/0/?hl=it#inbox\",\"label\":\"Gmail\"},{\"url\":\"https://addons.mozilla.org/it/firefox/\",\"label\":\"Estensioni\"},{\"url\":\"https://wiki.archlinux.org/title/List_of_applications\",\"label\":\"Applicazioni\"},{\"url\":\"https://www.subito.it/\",\"label\":\"Subito\"},{\"url\":\"https://www.diretta.it/\",\"label\":\"Diretta\"}]");
 lockPref("browser.newtabpage.activity-stream.topSitesRows", 1);
 lockPref("browser.newtabpage.activity-stream.default.sites", "");
 /* non spostare il focus dal searchbox alla barra degli indirizzi */
 clearPref("browser.newtabpage.activity-stream.improvesearch.handoffToAwesomebar");
 defaultPref("browser.newtabpage.activity-stream.improvesearch.handoffToAwesomebar", false);
-/* disabilita il blocco popup integrato (sostituito da estensione apposita) */
-clearPref("dom.disable_open_during_load");
-lockPref("dom.disable_open_during_load", false);
 /* disabilita popup traduttore */
 clearPref("browser.translations.automaticallyPopup");
 defaultPref("browser.translations.automaticallyPopup", false);
@@ -653,6 +650,7 @@ clearPref("permissions.default.xr");
 clearPref("dom.webnotifications.enabled");
 clearPref("dom.push.enabled");
 clearPref("privacy.donottrackheader.enabled");
+clearPref("dom.disable_open_during_load");
 // DA CONTROLLARE
 clearPref("browser.bookmarks.showMobileBookmarks");
 clearPref("privacy.webrtc.legacyGlobalIndicator");
