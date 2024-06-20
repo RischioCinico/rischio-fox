@@ -1,6 +1,36 @@
 {
   "policies": {
+    "DisableAppUpdate": true,
+    "DisableFeedbackCommands": true,
+    "DisableFirefoxStudies": true,
+    "DisableProfileRefresh": true,
+    "DisableSetDesktopBackground": true,
     "DisableTelemetry": true,
+    "DontCheckDefaultBrowser": true,
+    "NetworkPrediction": false,
+    "SearchBar": "unified",
+    "UserMessaging": {
+      "ExtensionRecommendations": false,
+      "FeatureRecommendations": false,
+      "UrlbarInterventions": false,
+      "SkipOnboarding": false,
+      "MoreFromMozilla": false,
+      "Locked": true
+    },
+    "FirefoxHome": {
+      "Search": true,
+      "TopSites": true,
+      "SponsoredTopSites": false,
+      "Highlights": false,
+      "Pocket": false,
+      "SponsoredPocket": false,
+      "Snippets": false,
+      "Locked": true
+    },
+    "PopupBlocking": {
+      "Default": false,
+      "Locked": true
+    },
     "ExtensionSettings": {
       "{b86e4813-687a-43e6-ab65-0bde4ab75758}": {
         "install_url": "https://addons.mozilla.org/firefox/downloads/latest/LocalCDN-fork-of-decentraleyes/latest.xpi",
