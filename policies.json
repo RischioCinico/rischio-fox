@@ -17,6 +17,9 @@
       "MoreFromMozilla": false,
       "Locked": true
     },
+    "Homepage": {
+      "StartPage": "previous-session"
+    },
     "FirefoxHome": {
       "Search": true,
       "TopSites": true,
