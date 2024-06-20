@@ -233,11 +233,6 @@ defaultPref("widget.gtk.hide-pointer-while-typing.enabled", false);
 /* ░▀░▀░▀░▀░▀░▀░▀▀▀░▀░▀░▀░░░▀▀▀░▀░▀ */
 /*** Arkenfox v126 ***/
 
-/*** [0100] AVVIO ***/
-clearPref("browser.startup.page");
-/* 0102 ripristina sessione */
-defaultPref("browser.startup.page", 3);
-
 /*** [0200] GEOLOCALIZZAZIONE ***/
 clearPref("geo.provider.network.url");
 clearPref("geo.provider.use_gpsd");
@@ -651,6 +646,7 @@ clearPref("dom.webnotifications.enabled");
 clearPref("dom.push.enabled");
 clearPref("privacy.donottrackheader.enabled");
 clearPref("dom.disable_open_during_load");
+clearPref("browser.startup.page");
 // DA CONTROLLARE
 clearPref("browser.bookmarks.showMobileBookmarks");
 clearPref("privacy.webrtc.legacyGlobalIndicator");
