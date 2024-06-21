@@ -439,7 +439,7 @@ defaultPref("browser.xul.error_pages.expert_bad_cert", true);
 defaultPref("network.http.referer.XOriginTrimmingPolicy", 2);
 /* 1701 abilita Container di Firefox */
 defaultPref("privacy.userContext.enabled", true);
-defaultPref("privacy.userContext.ui.enabled", true);
+defaultPref("privacy.userContext.ui.enabled", false);
 /* 1703 scegli in quale container aprire i collegamenti esterni */
 defaultPref("browser.link.force_default_user_context_id_for_external_opens", true);
 
