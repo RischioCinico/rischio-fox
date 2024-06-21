@@ -284,7 +284,7 @@ defaultPref("breakpad.reportURL", "");
 defaultPref("browser.tabs.crashReporting.sendReport", false);
 defaultPref("browser.crashReports.unsubmittedCheck.enabled", false);
 /* 0351 enforce no submission of backlogged Crash Reports */
-defaultPref("browser.crashReports.unsubmittedCheck.autoSubmit2", false);
+lockPref("browser.crashReports.unsubmittedCheck.autoSubmit2", false);
 /* 0360 disabilita Captive Portal */
 defaultPref("captivedetect.canonicalURL", "");
 defaultPref("network.captive-portal-service.enabled", false);
