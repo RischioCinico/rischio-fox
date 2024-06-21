@@ -3,6 +3,7 @@
     "DisableAppUpdate": true,
     "DisableFeedbackCommands": true,
     "DisableFirefoxStudies": true,
+    "DisablePocket": true,
     "DisableProfileRefresh": true,
     "DisableSetDesktopBackground": true,
     "DisableTelemetry": true,
