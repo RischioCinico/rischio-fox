@@ -206,10 +206,6 @@ clearPref("browser.urlbar.unitConversion.enabled");
 defaultPref("browser.urlbar.suggest.calculator", true);
 defaultPref("browser.urlbar.unitConversion.enabled", true);
 
-/** POCKET **/
-clearPref("extensions.pocket.enabled");
-defaultPref("extensions.pocket.enabled", false);
-
 /** PDF **/
 clearPref("browser.download.open_pdf_attachments_inline");
 defaultPref("browser.download.open_pdf_attachments_inline", true);
@@ -646,6 +642,7 @@ clearPref("dom.push.enabled");
 clearPref("privacy.donottrackheader.enabled");
 clearPref("dom.disable_open_during_load");
 clearPref("browser.startup.page");
+clearPref("extensions.pocket.enabled");
 // DA CONTROLLARE
 clearPref("browser.bookmarks.showMobileBookmarks");
 clearPref("privacy.webrtc.legacyGlobalIndicator");
