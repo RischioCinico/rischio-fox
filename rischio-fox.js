@@ -12,7 +12,7 @@
 
 /*** Pagina Iniziale ***/
 /* scorciatoie newtab */
-lockPref("browser.newtabpage.pinned", "[{\"url\":\"https://github.com/RischioCinico/rischio-fox\",\"label\":\"127.10A\"},{\"url\":\"https://www.youtube.com/\",\"label\":\"YouTube\"},{\"url\":\"https://www.reddit.com/\",\"label\":\"Reddit\"},{\"url\":\"https://mail.google.com/mail/u/0/?hl=it#inbox\",\"label\":\"Gmail\"},{\"url\":\"https://addons.mozilla.org/it/firefox/\",\"label\":\"Estensioni\"},{\"url\":\"https://wiki.archlinux.org/title/List_of_applications\",\"label\":\"Applicazioni\"},{\"url\":\"https://it.wikipedia.org/wiki/Pagina_principale\",\"label\":\"Wikipedia\"},{\"url\":\"https://www.diretta.it/\",\"label\":\"Diretta\"}]");
+lockPref("browser.newtabpage.pinned", "[{\"url\":\"https://github.com/RischioCinico/rischio-fox\",\"label\":\"127.11\"},{\"url\":\"https://www.youtube.com/\",\"label\":\"YouTube\"},{\"url\":\"https://www.reddit.com/\",\"label\":\"Reddit\"},{\"url\":\"https://mail.google.com/mail/u/0/?hl=it#inbox\",\"label\":\"Gmail\"},{\"url\":\"https://addons.mozilla.org/it/firefox/\",\"label\":\"Estensioni\"},{\"url\":\"https://wiki.archlinux.org/title/List_of_applications\",\"label\":\"Applicazioni\"},{\"url\":\"https://it.wikipedia.org/wiki/Pagina_principale\",\"label\":\"Wikipedia\"},{\"url\":\"https://www.diretta.it/\",\"label\":\"Diretta\"}]");
 lockPref("browser.newtabpage.activity-stream.topSitesRows", 1);
 lockPref("browser.newtabpage.activity-stream.default.sites", "");
 /* non spostare il focus dal searchbox alla barra degli indirizzi */
@@ -143,9 +143,6 @@ defaultPref("widget.gtk.hide-pointer-while-typing.enabled", false);
 /*** Arkenfox v126 ***/
 
 /*** [0200] GEOLOCALIZZAZIONE ***/
-clearPref("geo.provider.network.url");
-clearPref("geo.provider.use_gpsd");
-clearPref("geo.provider.use_geoclue");
 /* 0201 usa servizio di geolocalizzazione di Mozilla */
 defaultPref("geo.provider.network.url", "https://location.services.mozilla.com/v1/geolocate?key=%MOZILLA_API_KEY%");
 /* 0202 disabilita utilizzo del servizio di geolocalizzazione del sistema locale */
@@ -153,26 +150,6 @@ defaultPref("geo.provider.use_gpsd", false);
 defaultPref("geo.provider.use_geoclue", false);
 
 /*** [0300] RACCOLTA DATI ***/
-clearPref("extensions.getAddons.showPane");
-clearPref("extensions.htmlaboutaddons.recommendations.enabled");
-clearPref("browser.discovery.enabled");
-clearPref("browser.shopping.experience2023.enabled");
-clearPref("toolkit.telemetry.coverage.opt-out");
-clearPref("toolkit.coverage.opt-out");
-clearPref("toolkit.coverage.endpoint.base");
-clearPref("browser.newtabpage.activity-stream.feeds.telemetry");
-clearPref("browser.newtabpage.activity-stream.telemetry");
-clearPref("app.shield.optoutstudies.enabled");
-clearPref("app.normandy.enabled");
-clearPref("app.normandy.api_url");
-clearPref("breakpad.reportURL");
-clearPref("browser.tabs.crashReporting.sendReport");
-clearPref("browser.crashReports.unsubmittedCheck.enabled");
-clearPref("browser.crashReports.unsubmittedCheck.autoSubmit2");
-clearPref("captivedetect.canonicalURL");
-clearPref("network.captive-portal-service.enabled");
-clearPref("network.connectivity-service.enabled");
-
 /* 0320 disable recommendation pane in about:addons (uses Google Analytics) */
 defaultPref("extensions.getAddons.showPane", false); // [Nascosta]
 /* 0321 disable recommendations in about:addons' Extensions and Themes panes */
@@ -206,15 +183,6 @@ defaultPref("network.captive-portal-service.enabled", false);
 defaultPref("network.connectivity-service.enabled", false);
 
 /*** [0600] CONNESSIONI NON RICHIESTE ***/
-clearPref("network.prefetch-next");
-clearPref("network.dns.disablePrefetch");
-clearPref("network.dns.disablePrefetchFromHTTPS");
-clearPref("network.predictor.enabled");
-clearPref("network.predictor.enable-prefetch");
-clearPref("network.http.speculative-parallel-limit");
-clearPref("browser.places.speculativeConnect.enabled");
-clearPref("browser.send_pings");
-
 /* 0601 disabilita link prefetching */
 defaultPref("network.prefetch-next", false);
 /* 0603 disabilita predictor / prefetching */
@@ -228,13 +196,6 @@ defaultPref("browser.places.speculativeConnect.enabled", false);
 defaultPref("browser.send_pings", false);
 
 /*** [0700] DNS / PROXY ***/
-clearPref("network.proxy.socks_remote_dns");
-clearPref("network.file.disable_unc_paths");
-clearPref("network.gio.supported-protocols");
-clearPref("network.trr.mode");
-clearPref("network.trr.uri");
-clearPref("network.trr.custom_uri");
-
 /* 0702 usa DNS remoti con proxy SOCKS */
 defaultPref("network.proxy.socks_remote_dns", true);
 /* 0703 disabilita UNC (Uniform Naming Convention) */
@@ -248,21 +209,6 @@ defaultPref("network.trr.uri", "https://dns.quad9.net/dns-query");
 defaultPref("network.trr.custom_uri", "https://dns.quad9.net/dns-query");
 
 /*** [0800] BARRE DI RICERCA / FORMS ***/
-clearPref("browser.urlbar.speculativeConnect.enabled");
-clearPref("browser.urlbar.quicksuggest.enabled");
-clearPref("browser.urlbar.suggest.quicksuggest.nonsponsored");
-clearPref("browser.urlbar.suggest.quicksuggest.sponsored");
-clearPref("browser.urlbar.trending.featureGate");
-clearPref("browser.urlbar.addons.featureGate");
-clearPref("browser.urlbar.mdn.featureGate");
-clearPref("browser.urlbar.pocket.featureGate");
-clearPref("browser.urlbar.weather.featureGate");
-clearPref("browser.urlbar.yelp.featureGate");
-clearPref("browser.urlbar.clipboard.featureGate");
-clearPref("browser.formfill.enable");
-clearPref("browser.search.separatePrivateDefault");
-clearPref("browser.search.separatePrivateDefault.ui.enabled");
-
 /* 0801 disabilita connessioni speculative nella barra degli indirizzi */
 defaultPref("browser.urlbar.speculativeConnect.enabled", false);
 /* 0802 disabilita suggerimenti sponsorizzati nella barra degli indirizzi */
@@ -286,10 +232,6 @@ defaultPref("browser.search.separatePrivateDefault", true);
 defaultPref("browser.search.separatePrivateDefault.ui.enabled", true);
 
 /*** [0900] PASSWORDS ***/
-clearPref("signon.autofillForms");
-clearPref("signon.formlessCapture.enabled");
-clearPref("network.auth.subresource-http-auth-allow");
-
 /* 0903 disabilita compilazione automatica username & password */
 defaultPref("signon.autofillForms", false);
 /* 0904 disabilita formless login capture per il Password Manager */
@@ -298,10 +240,6 @@ defaultPref("signon.formlessCapture.enabled", false);
 defaultPref("network.auth.subresource-http-auth-allow", 1);
 
 /*** [1000] LIMITARE SCRITTURA SUL DISCO ***/
-clearPref("browser.privatebrowsing.forceMediaMemoryCache");
-clearPref("media.memory_cache_max_size");
-clearPref("browser.sessionstore.privacy_level");
-
 /* 1002 disabilita scrittura cache su disco dei media in modalità anonima */
 defaultPref("browser.privatebrowsing.forceMediaMemoryCache", true);
 defaultPref("media.memory_cache_max_size", 65536);
@@ -309,23 +247,6 @@ defaultPref("media.memory_cache_max_size", 65536);
 defaultPref("browser.sessionstore.privacy_level", 2);
 
 /*** [1200] HTTPS (SSL/TLS / OCSP / CERTS / HPKP) ***/
-clearPref("security.ssl.require_safe_negotiation");
-clearPref("security.tls.enable_0rtt_data");
-clearPref("security.OCSP.enabled");
-clearPref("security.OCSP.require");
-clearPref("security.cert_pinning.enforcement_level");
-clearPref("security.remote_settings.crlite_filters.enabled");
-clearPref("security.pki.crlite_mode");
-clearPref("security.mixed_content.block_display_content");
-clearPref("dom.security.https_only_mode");
-clearPref("dom.security.https_only_mode_send_http_background_request");
-clearPref("security.ssl.treat_unsafe_negotiation_as_broken");
-clearPref("browser.xul.error_pages.expert_bad_cert");
-clearPref("network.http.referer.XOriginTrimmingPolicy");
-clearPref("privacy.userContext.enabled");
-clearPref("privacy.userContext.ui.enabled");
-clearPref("browser.link.force_default_user_context_id_for_external_opens");
-
 /* 1201 richiedere una negoziazione SSL sicura */
 defaultPref("security.ssl.require_safe_negotiation", true);
 /* 1206 disabilita TLS1.3 0-RTT (round-trip time) */
@@ -358,9 +279,6 @@ defaultPref("privacy.userContext.ui.enabled", false);
 defaultPref("browser.link.force_default_user_context_id_for_external_opens", true);
 
 /*** [2000] PLUGINS / MEDIA / WEBRTC ***/
-clearPref("media.peerconnection.ice.proxy_only_if_behind_proxy");
-clearPref("media.peerconnection.ice.default_address_only");
-
 /* 2002 forza WebRTC dietro proxy */
 defaultPref("media.peerconnection.ice.proxy_only_if_behind_proxy", true);
 /* 2003 utilizza una singola interfaccia di rete per ICE */
@@ -368,30 +286,9 @@ defaultPref("media.peerconnection.ice.default_address_only", true);
 
 /*** [2400] DOM (DOCUMENT OBJECT MODEL) ***/
 /* 2402 impedisci agli scripts di spostare e ridimensionare finestre */
-clearPref("dom.disable_window_move_resize");
 defaultPref("dom.disable_window_move_resize", true);
 
 /*** [2600] MISTO ***/
-clearPref("browser.download.start_downloads_in_tmp_dir");
-clearPref("browser.helperApps.deleteTempFileOnExit");
-clearPref("browser.uitour.enabled");
-clearPref("devtools.debugger.remote-enabled");
-clearPref("permissions.manager.defaultsUrl");
-clearPref("webchannel.allowObject.urlWhitelist");
-clearPref("network.IDN_show_punycode");
-clearPref("pdfjs.disabled");
-clearPref("pdfjs.enableScripting");
-clearPref("browser.tabs.searchclipboardfor.middleclick");
-clearPref("browser.contentanalysis.default_allow");
-clearPref("browser.download.useDownloadDir");
-clearPref("browser.download.alwaysOpenPanel");
-clearPref("browser.download.manager.addToRecentDocs");
-clearPref("browser.download.always_ask_before_handling_new_types");
-clearPref("extensions.enabledScopes");
-clearPref("extensions.autoDisableScopes");
-clearPref("extensions.postDownloadThirdPartyPrompt");
-clearPref("privacy.sanitize.sanitizeOnShutdown");
-
 /* 2603 download in cartella temporanea */
 defaultPref("browser.download.start_downloads_in_tmp_dir", true);
 defaultPref("browser.helperApps.deleteTempFileOnExit", true);
@@ -422,25 +319,14 @@ defaultPref("browser.download.manager.addToRecentDocs", false);
 defaultPref("browser.download.always_ask_before_handling_new_types", true);
 /* 2660 permetti solo le estensioni in determinate cartelle */
 defaultPref("extensions.enabledScopes", 5); // [Nascosta]
-clearPref("extensions.autoDisableScopes", 15);
 /* 2661 disabilita prompt di installazione esterni */
 defaultPref("extensions.postDownloadThirdPartyPrompt", false);
 /* 2701 protezione antitracciamento ***/
-clearPref("browser.contentblocking.category", "standard"); // [HIDDEN PREF]
 defaultPref("browser.contentblocking.category", "standard"); // [HIDDEN PREF]
 /* 2810 previene pulizia dati automatica alla chiusura di Firefox */
-defaultPref("privacy.sanitize.sanitizeOnShutdown", false);
+pref("privacy.sanitize.sanitizeOnShutdown", false);
 
 /*** [4500] RFP (ResistFingerPrinting) ***/
-clearPref("privacy.resistFingerprinting.pbmode");
-clearPref("privacy.window.maxInnerWidth", 1600);
-clearPref("privacy.window.maxInnerHeight", 900);
-clearPref("privacy.resistFingerprinting.block_mozAddonManager");
-clearPref("browser.display.use_system_colors");
-clearPref("widget.non-native-theme.enabled");
-clearPref("browser.link.open_newwindow");
-clearPref("browser.link.open_newwindow.restriction");
-
 /* 4501 abilita RFP (solo in modalità anonima) */
 defaultPref("privacy.resistFingerprinting.pbmode", true);
 /* 4502 arrotondamento dimensioni finestre */
@@ -458,17 +344,6 @@ defaultPref("browser.link.open_newwindow", 3);
 defaultPref("browser.link.open_newwindow.restriction", 0);
 
 /*** [5000] OPSEC ***/
-clearPref("browser.download.forbid_open_with");
-clearPref("browser.urlbar.autoFill");
-clearPref("browser.download.folderList");
-clearPref("extensions.formautofill.addresses.enabled");
-clearPref("extensions.formautofill.creditCards.enabled");
-clearPref("dom.popup_allowed_events", "click dblclick mousedown pointerdown");
-clearPref("browser.pagethumbnails.capturing_disabled");
-clearPref("media.eme.enabled");
-clearPref("browser.eme.ui.enabled");
-clearPref("network.dns.disableIPv6");
-
 /* 5009 disabilita "apri con" per i download */
 defaultPref("browser.download.forbid_open_with", true);
 /* 5012 disabilita completamento autmatico nella barra degli indirizzi */
@@ -509,66 +384,8 @@ lockPref("extensions.quarantinedDomains.enabled", true); // [DEFAULT: true]
 lockPref("dom.serviceWorkers.enabled", true); // [DEFAULT: true]
 
 /*** [9999] DEPRECATE ***/
-// FF116
-clearPref("layout.css.font-visibility.resistFingerprinting");
-// FF117
-clearPref("security.family_safety.mode");
-clearPref("dom.webnotifications.serviceworker.enabled");
-// FF118
-clearPref("layout.css.font-visibility.private");
-clearPref("layout.css.font-visibility.standard");
-clearPref("layout.css.font-visibility.trackingprotection");
-clearPref("permissions.delegation.enabled");
-// FF119
-clearPref("javascript.use_us_english_locale");
-clearPref("network.dns.skipTRR-when-parental-control-enabled");
-// FF123
-clearPref("browser.ping-centre.telemetry");
 // FF126
 clearPref("browser.messaging-system.whatsNewPanel.enabled");
-
-// Resettate
-clearPref("gfx.canvas.accelerated");
-clearPref("network.dns.max_high_priority_threads");
-clearPref("cookiebanners.service.enableGlobalRules");
-clearPref("cookiebanners.service.enableGlobalRules.subFrames");
-clearPref("privacy.globalprivacycontrol.functionality.enabled");
-clearPref("privacy.globalprivacycontrol.pbmode.enabled");
-clearPref("layout.css.has-selector.enabled");
-clearPref("image.mem.shared.unmap.min_expiration_ms"); // This is only used on 32-bit builds of Firefox where there is meaningful
-clearPref("network.buffer.cache.size"); // WARNING: Cannot open HTML files bigger than 4MB if changed
-clearPref("network.buffer.cache.count"); // WARNING: Cannot open HTML files bigger than 4MB if changed
-clearPref("network.http.pacing.requests.min-parallelism")
-clearPref("network.http.pacing.requests.burst");
-clearPref("network.http.max-persistent-connections-per-proxy");
-clearPref("browser.startup.homepage_override.mstone");
-clearPref("browser.newtabpage.activity-stream.asrouter.userprefs.cfr.addons");
-clearPref("browser.newtabpage.activity-stream.asrouter.userprefs.cfr.features");
-clearPref("browser.urlbar.showSearchTerms.enabled");
-clearPref("permissions.default.camera");
-clearPref("permissions.default.desktop-notification");
-clearPref("permissions.default.geo");
-clearPref("permissions.default.microphone");
-clearPref("permissions.default.shortcuts");
-clearPref("permissions.default.xr");
-clearPref("dom.webnotifications.enabled");
-clearPref("dom.push.enabled");
-clearPref("privacy.donottrackheader.enabled");
-clearPref("dom.disable_open_during_load");
-clearPref("browser.startup.page");
-clearPref("extensions.pocket.enabled");
-// DA CONTROLLARE
-clearPref("browser.bookmarks.showMobileBookmarks");
-clearPref("privacy.webrtc.legacyGlobalIndicator");
-clearPref("gfx.webrender.program-binary-disk");
-clearPref("gfx.webrender.enabled");
-clearPref("gfx.webrender.all");
-clearPref("gfx.webrender.precache-shaders");
-clearPref("gfx.webrender.compositor");
-clearPref("gfx.webrender.compositor.force-enabled");
-clearPref("gfx.webrender.software.opengl");
-clearPref("media.hardware-video-decoding.force-enabled");
-clearPref("media.ffmpeg.vaapi.enabled");
 
 // [FINE]
 lockPref("rischio.fox", "Parrebbe funzionare...");
