@@ -10,28 +10,19 @@
 /*    ░     ░       ░ ░ ░      ░  ░  ░░     ░ ░               ░ ░  ░    ░   */
 /*                    ░                                                     */
 
+/*** Pagina Iniziale ***/
 /* scorciatoie newtab */
-lockPref("browser.newtabpage.pinned", "[{\"url\":\"https://github.com/RischioCinico/rischio-fox\",\"label\":\"127.10\"},{\"url\":\"https://www.youtube.com/\",\"label\":\"YouTube\"},{\"url\":\"https://www.reddit.com/\",\"label\":\"Reddit\"},{\"url\":\"https://mail.google.com/mail/u/0/?hl=it#inbox\",\"label\":\"Gmail\"},{\"url\":\"https://addons.mozilla.org/it/firefox/\",\"label\":\"Estensioni\"},{\"url\":\"https://wiki.archlinux.org/title/List_of_applications\",\"label\":\"Applicazioni\"},{\"url\":\"https://it.wikipedia.org/wiki/Pagina_principale\",\"label\":\"Wikipedia\"},{\"url\":\"https://www.diretta.it/\",\"label\":\"Diretta\"}]");
+lockPref("browser.newtabpage.pinned", "[{\"url\":\"https://github.com/RischioCinico/rischio-fox\",\"label\":\"127.10A\"},{\"url\":\"https://www.youtube.com/\",\"label\":\"YouTube\"},{\"url\":\"https://www.reddit.com/\",\"label\":\"Reddit\"},{\"url\":\"https://mail.google.com/mail/u/0/?hl=it#inbox\",\"label\":\"Gmail\"},{\"url\":\"https://addons.mozilla.org/it/firefox/\",\"label\":\"Estensioni\"},{\"url\":\"https://wiki.archlinux.org/title/List_of_applications\",\"label\":\"Applicazioni\"},{\"url\":\"https://it.wikipedia.org/wiki/Pagina_principale\",\"label\":\"Wikipedia\"},{\"url\":\"https://www.diretta.it/\",\"label\":\"Diretta\"}]");
 lockPref("browser.newtabpage.activity-stream.topSitesRows", 1);
 lockPref("browser.newtabpage.activity-stream.default.sites", "");
 /* non spostare il focus dal searchbox alla barra degli indirizzi */
-clearPref("browser.newtabpage.activity-stream.improvesearch.handoffToAwesomebar");
 defaultPref("browser.newtabpage.activity-stream.improvesearch.handoffToAwesomebar", false);
+
+/*** Fastidi ***/
 /* disabilita popup traduttore */
-clearPref("browser.translations.automaticallyPopup");
 defaultPref("browser.translations.automaticallyPopup", false);
 /* disabilita indicatori WebRTC (sono buggati) */
-clearPref("privacy.webrtc.hideGlobalIndicator");
 defaultPref("privacy.webrtc.hideGlobalIndicator", true);
-/* disabilita accessibilità */
-clearPref("accessibility.force_disabled");
-defaultPref("accessibility.force_disabled", 1);
-/* nascondi barra del titolo */
-defaultPref("browser.tabs.inTitlebar", 2);
-/* abilita scorrimento automatico */
-defaultPref("general.autoScroll", true);
-/* mostra sempre controlli picture in picture */
-defaultPref("media.videocontrols.picture-in-picture.video-toggle.always-show", true);
 /* has-used */
 pref("browser.engagement.ctrlTab.has-used", true);
 pref("browser.engagement.downloads-button.has-used", true);
@@ -41,34 +32,29 @@ pref("browser.engagement.library-button.has-used", true);
 pref("browser.engagement.sidebar-button.has-used", true);
 pref("media.videocontrols.picture-in-picture.video-toggle.has-used", true);
 
+/*** Funzioni inutili ***/
+/* disabilita accessibilità */
+defaultPref("accessibility.force_disabled", 1);
+/* nascondi barra del titolo */
+defaultPref("browser.tabs.inTitlebar", 2);
+/* abilita scorrimento automatico */
+defaultPref("general.autoScroll", true);
+/* mostra sempre controlli picture in picture */
+defaultPref("media.videocontrols.picture-in-picture.video-toggle.always-show", true);
+
+/* ░█▀▄░█▀▀░▀█▀░▀█▀░█▀▀░█▀▄░█▀▀░█▀█░█░█ */
+/* ░█▀▄░█▀▀░░█░░░█░░█▀▀░█▀▄░█▀▀░█░█░▄▀▄ */
+/* ░▀▀░░▀▀▀░░▀░░░▀░░▀▀▀░▀░▀░▀░░░▀▀▀░▀░▀ */
 /*** Betterfox v126 ***/
 
-/* ░█▀▀░█▀█░█▀▀░▀█▀░█▀▀░█▀█░█░█ */
-/* ░█▀▀░█▀█░▀▀█░░█░░█▀▀░█░█░▄▀▄ */
-/* ░▀░░░▀░▀░▀▀▀░░▀░░▀░░░▀▀▀░▀░▀ */
-
+/*** Fastfox ***/
 /** GENERAL **/
-clearPref("content.notify.interval");
 defaultPref("content.notify.interval", 100000);
-
 /** GFX **/
-clearPref("gfx.canvas.accelerated.cache-items");
-clearPref("gfx.canvas.accelerated.cache-size");
-clearPref("gfx.content.skia-font-cache-size");
-
 defaultPref("gfx.canvas.accelerated.cache-items", 8192);
 defaultPref("gfx.canvas.accelerated.cache-size", 1024);
 defaultPref("gfx.content.skia-font-cache-size", 20);
-
 /** CACHE **/
-clearPref("browser.cache.jsbc_compression_level");
-clearPref("media.memory_cache_max_size");
-clearPref("media.memory_caches_combined_limit_kb");
-clearPref("media.memory_caches_combined_limit_pc_sysmem");
-clearPref("media.cache_readahead_limit");
-clearPref("media.cache_resume_threshold");
-clearPref("image.mem.decode_bytes_at_a_time");
-
 defaultPref("browser.cache.jsbc_compression_level", 3);
 defaultPref("media.memory_cache_max_size", 131072);
 defaultPref("media.memory_caches_combined_limit_kb", 1048576);
@@ -76,16 +62,7 @@ defaultPref("media.memory_caches_combined_limit_pc_sysmem", 10);
 defaultPref("media.cache_readahead_limit", 7200);
 defaultPref("media.cache_resume_threshold", 3600);
 defaultPref("image.mem.decode_bytes_at_a_time", 65536);
-
 /** NETWORK **/
-clearPref("network.http.max-connections");
-clearPref("network.http.max-persistent-connections-per-server");
-clearPref("network.http.max-urgent-start-excessive-connections-per-host");
-clearPref("network.http.pacing.requests.enabled");
-clearPref("network.dnsCacheEntries");
-clearPref("network.dnsCacheExpiration");
-clearPref("network.ssl_tokens_cache_capacity");
-
 defaultPref("network.http.max-connections", 1800);
 defaultPref("network.http.max-persistent-connections-per-server", 10);
 defaultPref("network.http.max-urgent-start-excessive-connections-per-host", 5);
@@ -93,73 +70,35 @@ defaultPref("network.http.pacing.requests.enabled", false);
 defaultPref("network.dnsCacheEntries", 0);
 defaultPref("network.dnsCacheExpiration", 0);
 defaultPref("network.ssl_tokens_cache_capacity", 10240);
-
 /** EXPERIMENTAL **/
 defaultPref("layout.css.grid-template-masonry-value.enabled", true);
 defaultPref("dom.enable_web_task_scheduling", true);
 defaultPref("dom.security.sanitizer.enabled", true);
 
-/* ░█▀▀░█▀▀░█▀▀░█░█░█▀▄░█▀▀░█▀▀░█▀█░█░█ */
-/* ░▀▀█░█▀▀░█░░░█░█░█▀▄░█▀▀░█▀▀░█░█░▄▀▄ */
-/* ░▀▀▀░▀▀▀░▀▀▀░▀▀▀░▀░▀░▀▀▀░▀░░░▀▀▀░▀░▀ */
-
+/*** SecureFox ***/
 /** TRACKING PROTECTION **/
-clearPref("network.cookie.sameSite.noneRequiresSecure");
-clearPref("privacy.globalprivacycontrol.enabled");
-
 defaultPref("network.cookie.sameSite.noneRequiresSecure", true);
 defaultPref("privacy.globalprivacycontrol.enabled", true);
-
 /** DISK AVOIDANCE **/
-clearPref("browser.sessionstore.interval");
 defaultPref("browser.sessionstore.interval", 60000);
-
 /** SHUTDOWN & SANITIZING **/
-clearPref("privacy.history.custom");
 defaultPref("privacy.history.custom", true);
-
 /** SEARCH / URL BAR **/
-clearPref("browser.urlbar.update2.engineAliasRefresh");
-clearPref("security.insecure_connection_text.enabled");
-clearPref("security.insecure_connection_text.pbmode.enabled");
-
 defaultPref("browser.urlbar.update2.engineAliasRefresh", true);
 defaultPref("security.insecure_connection_text.enabled", true);
 defaultPref("security.insecure_connection_text.pbmode.enabled", true);
-
 /** HTTPS-FIRST POLICY **/
-clearPref("dom.security.https_first");
-clearPref("dom.security.https_first_schemeless");
-
 defaultPref("dom.security.https_first", true);
 defaultPref("dom.security.https_first_schemeless", true);
-
 /** PASSWORDS **/
-clearPref("signon.privateBrowsingCapture.enabled");
-clearPref("editor.truncate_user_pastes");
-
 defaultPref("signon.privateBrowsingCapture.enabled", false);
 defaultPref("editor.truncate_user_pastes", false);
-
 /** MIXED CONTENT + CROSS-SITE **/
-clearPref("security.mixed_content.upgrade_display_content");
-clearPref("security.mixed_content.upgrade_display_content.image");
-
 defaultPref("security.mixed_content.upgrade_display_content", true);
 defaultPref("security.mixed_content.upgrade_display_content.image", true);
 
-/* ░█▀█░█▀▀░█▀▀░█░█░█░█░█▀▀░█▀█░█░█ */
-/* ░█▀▀░█▀▀░▀▀█░█▀▄░░█░░█▀▀░█░█░▄▀▄ */
-/* ░▀░░░▀▀▀░▀▀▀░▀░▀░░▀░░▀░░░▀▀▀░▀░▀ */
-
+/*** PeskyFox ***/
 /** MOZILLA UI **/
-clearPref("browser.privatebrowsing.vpnpromourl");
-clearPref("browser.shell.checkDefaultBrowser");
-clearPref("browser.clearPreferences.moreFromMozilla");
-clearPref("browser.aboutConfig.showWarning");
-clearPref("browser.aboutwelcome.enabled");
-clearPref("browser.tabs.tabmanager.enabled");
-
 defaultPref("browser.privatebrowsing.vpnpromourl", "");
 defaultPref("browser.vpn_promo.enabled", false)
 defaultPref("browser.defaultPreferences.moreFromMozilla", false);
@@ -167,13 +106,6 @@ defaultPref("browser.aboutConfig.showWarning", false);
 defaultPref("browser.tabs.tabmanager.enabled", false);
 
 /** THEME ADJUSTMENTS **/
-clearPref("toolkit.legacyUserProfileCustomizations.stylesheets");
-clearPref("browser.compactmode.show");
-clearPref("browser.display.focus_ring_on_anything");
-clearPref("browser.display.focus_ring_style");
-clearPref("browser.display.focus_ring_width");
-clearPref("layout.css.clearPrefers-color-scheme.content-override");
-
 defaultPref("toolkit.legacyUserProfileCustomizations.stylesheets", true);
 defaultPref("browser.compactmode.show", true);
 defaultPref("browser.display.focus_ring_on_anything", true);
@@ -182,41 +114,23 @@ defaultPref("browser.display.focus_ring_width", 1);
 defaultPref("layout.css.defaultPrefers-color-scheme.content-override", 3); // (0=Scuro, 1=Chiaro, 2=Sistema, 3=Browser)
 
 /** COOKIE BANNER HANDLING **/
-clearPref("cookiebanners.service.mode");
-clearPref("cookiebanners.service.mode.privateBrowsing");
-
 defaultPref("cookiebanners.service.mode", 1);
 defaultPref("cookiebanners.service.mode.privateBrowsing", 1);
 
 /* avviso schermo interno */
-clearPref("full-screen-api.transition-duration.enter");
-clearPref("full-screen-api.transition-duration.leave");
-clearPref("full-screen-api.warning.delay");
-clearPref("full-screen-api.warning.timeout");
-
 defaultPref("full-screen-api.transition-duration.enter", "0 0");
 defaultPref("full-screen-api.transition-duration.leave", "0 0");
 defaultPref("full-screen-api.warning.delay", -1);
 defaultPref("full-screen-api.warning.timeout", 0);
 
 /** URL BAR **/
-clearPref("browser.urlbar.suggest.calculator");
-clearPref("browser.urlbar.unitConversion.enabled");
-
 defaultPref("browser.urlbar.suggest.calculator", true);
 defaultPref("browser.urlbar.unitConversion.enabled", true);
 
 /** PDF **/
-clearPref("browser.download.open_pdf_attachments_inline");
 defaultPref("browser.download.open_pdf_attachments_inline", true);
 
 /** TAB BEHAVIOR **/
-clearPref("browser.bookmarks.openInTabClosesMenu");
-clearPref("browser.menu.showViewImageInfo");
-clearPref("findbar.highlightAll");
-clearPref("layout.word_select.eat_space_to_next_word");
-clearPref("widget.gtk.hide-pointer-while-typing.enabled");
-
 defaultPref("browser.bookmarks.openInTabClosesMenu", false);
 defaultPref("browser.menu.showViewImageInfo", true);
 defaultPref("findbar.highlightAll", true);
