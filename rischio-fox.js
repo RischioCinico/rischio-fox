@@ -104,7 +104,6 @@ defaultPref("browser.vpn_promo.enabled", false)
 defaultPref("browser.defaultPreferences.moreFromMozilla", false);
 defaultPref("browser.aboutConfig.showWarning", false);
 defaultPref("browser.tabs.tabmanager.enabled", false);
-
 /** THEME ADJUSTMENTS **/
 defaultPref("toolkit.legacyUserProfileCustomizations.stylesheets", true);
 defaultPref("browser.compactmode.show", true);
@@ -112,24 +111,19 @@ defaultPref("browser.display.focus_ring_on_anything", true);
 defaultPref("browser.display.focus_ring_style", 0); // 0=Solid, 1=Dotted
 defaultPref("browser.display.focus_ring_width", 1);
 defaultPref("layout.css.defaultPrefers-color-scheme.content-override", 3); // (0=Scuro, 1=Chiaro, 2=Sistema, 3=Browser)
-
 /** COOKIE BANNER HANDLING **/
 defaultPref("cookiebanners.service.mode", 1);
 defaultPref("cookiebanners.service.mode.privateBrowsing", 1);
-
 /* avviso schermo interno */
 defaultPref("full-screen-api.transition-duration.enter", "0 0");
 defaultPref("full-screen-api.transition-duration.leave", "0 0");
 defaultPref("full-screen-api.warning.delay", -1);
 defaultPref("full-screen-api.warning.timeout", 0);
-
 /** URL BAR **/
 defaultPref("browser.urlbar.suggest.calculator", true);
 defaultPref("browser.urlbar.unitConversion.enabled", true);
-
 /** PDF **/
 defaultPref("browser.download.open_pdf_attachments_inline", true);
-
 /** TAB BEHAVIOR **/
 defaultPref("browser.bookmarks.openInTabClosesMenu", false);
 defaultPref("browser.menu.showViewImageInfo", true);
