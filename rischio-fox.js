@@ -32,7 +32,7 @@ pref("browser.engagement.library-button.has-used", true);
 pref("browser.engagement.sidebar-button.has-used", true);
 pref("media.videocontrols.picture-in-picture.video-toggle.has-used", true);
 
-/*** Funzioni inutili ***/
+/*** Funzioni ***/
 /* disabilita accessibilità */
 defaultPref("accessibility.force_disabled", 1);
 /* nascondi barra del titolo */
