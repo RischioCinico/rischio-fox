@@ -31,16 +31,14 @@ pref("browser.engagement.home-button.has-used", true);
 pref("browser.engagement.library-button.has-used", true);
 pref("browser.engagement.sidebar-button.has-used", true);
 pref("media.videocontrols.picture-in-picture.video-toggle.has-used", true);
-
-/*** Funzioni ***/
-/* disabilita accessibilità */
-defaultPref("accessibility.force_disabled", 1);
-/* nascondi barra del titolo */
-defaultPref("browser.tabs.inTitlebar", 2);
-/* abilita scorrimento automatico */
-defaultPref("general.autoScroll", true);
 /* mostra sempre controlli picture in picture */
 defaultPref("media.videocontrols.picture-in-picture.video-toggle.always-show", true);
+/* nascondi barra del titolo */
+defaultPref("browser.tabs.inTitlebar", 2);
+
+/*** Funzioni ***/
+/* abilita scorrimento automatico */
+defaultPref("general.autoScroll", true);
 
 /* ░█▀▄░█▀▀░▀█▀░▀█▀░█▀▀░█▀▄░█▀▀░█▀█░█░█ */
 /* ░█▀▄░█▀▀░░█░░░█░░█▀▀░█▀▄░█▀▀░█░█░▄▀▄ */
@@ -96,6 +94,8 @@ defaultPref("editor.truncate_user_pastes", false);
 /** MIXED CONTENT + CROSS-SITE **/
 defaultPref("security.mixed_content.upgrade_display_content", true);
 defaultPref("security.mixed_content.upgrade_display_content.image", true);
+/** Mozilla **/
+defaultPref("accessibility.force_disabled", 1);
 
 /*** PeskyFox ***/
 /** MOZILLA UI **/
