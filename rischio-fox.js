@@ -12,17 +12,25 @@
 
 /*** Pagina Iniziale ***/
 /* scorciatoie newtab */
-lockPref("browser.newtabpage.pinned", "[{\"url\":\"https://github.com/RischioCinico/rischio-fox\",\"label\":\"127.15\"},{\"url\":\"https://www.youtube.com/\",\"label\":\"YouTube\"},{\"url\":\"https://www.reddit.com/\",\"label\":\"Reddit\"},{\"url\":\"https://mail.google.com/mail/u/0/?hl=it#inbox\",\"label\":\"Gmail\"},{\"url\":\"https://addons.mozilla.org/it/firefox/\",\"label\":\"Estensioni\"},{\"url\":\"https://wiki.archlinux.org/title/List_of_applications\",\"label\":\"Applicazioni\"},{\"url\":\"https://it.wikipedia.org/wiki/Pagina_principale\",\"label\":\"Wikipedia\"},{\"url\":\"https://www.diretta.it/\",\"label\":\"Diretta\"}]");
+lockPref("browser.newtabpage.pinned", "[{\"url\":\"https://github.com/RischioCinico/rischio-fox\",\"label\":\"127.16\"},{\"url\":\"https://www.youtube.com/\",\"label\":\"YouTube\"},{\"url\":\"https://www.reddit.com/\",\"label\":\"Reddit\"},{\"url\":\"https://mail.google.com/mail/u/0/?hl=it#inbox\",\"label\":\"Gmail\"},{\"url\":\"https://addons.mozilla.org/it/firefox/\",\"label\":\"Estensioni\"},{\"url\":\"https://wiki.archlinux.org/title/List_of_applications\",\"label\":\"Applicazioni\"},{\"url\":\"https://it.wikipedia.org/wiki/Pagina_principale\",\"label\":\"Wikipedia\"},{\"url\":\"https://www.diretta.it/\",\"label\":\"Diretta\"}]");
 lockPref("browser.newtabpage.activity-stream.topSitesRows", 1);
 lockPref("browser.newtabpage.activity-stream.default.sites", "");
 /* non spostare il focus dal searchbox alla barra degli indirizzi */
 defaultPref("browser.newtabpage.activity-stream.improvesearch.handoffToAwesomebar", false);
+
+/*** Funzioni ***/
+/* abilita scorrimento automatico */
+defaultPref("general.autoScroll", true);
 
 /*** Fastidi ***/
 /* disabilita popup traduttore */
 defaultPref("browser.translations.automaticallyPopup", false);
 /* disabilita indicatori WebRTC (sono buggati) */
 defaultPref("privacy.webrtc.hideGlobalIndicator", true);
+/* mostra sempre controlli picture in picture */
+defaultPref("media.videocontrols.picture-in-picture.video-toggle.always-show", true);
+/* nascondi barra del titolo */
+defaultPref("browser.tabs.inTitlebar", 2);
 /* has-used */
 pref("browser.rights.3.shown", true);
 pref("browser.download.panel.shown", true);
@@ -33,46 +41,61 @@ pref("browser.engagement.home-button.has-used", true);
 pref("browser.engagement.library-button.has-used", true);
 pref("browser.engagement.sidebar-button.has-used", true);
 pref("media.videocontrols.picture-in-picture.video-toggle.has-used", true);
-/* mostra sempre controlli picture in picture */
-defaultPref("media.videocontrols.picture-in-picture.video-toggle.always-show", true);
-/* nascondi barra del titolo */
-defaultPref("browser.tabs.inTitlebar", 2);
-
-/*** Funzioni ***/
-/* abilita scorrimento automatico */
-defaultPref("general.autoScroll", true);
 
 /* ░█▀▄░█▀▀░▀█▀░▀█▀░█▀▀░█▀▄░█▀▀░█▀█░█░█ */
 /* ░█▀▄░█▀▀░░█░░░█░░█▀▀░█▀▄░█▀▀░█░█░▄▀▄ */
 /* ░▀▀░░▀▀▀░░▀░░░▀░░▀▀▀░▀░▀░▀░░░▀▀▀░▀░▀ */
-/*** Betterfox v126 ***/
+// Betterfox v126
 
 /*** Fastfox ***/
-/** GENERAL **/
+/* riduce il tempo di attesa prima che le pagine vengano ridisegnate */
 defaultPref("content.notify.interval", 100000);
-/** GFX **/
+
+/** GFX RENDERING TWEAKS **/
+/* abilita Webrender */
+defaultPref("gfx.webrender.all", true);
+defaultPref("gfx.webrender.precache-shaders", true);
+defaultPref("gfx.webrender.compositor", true);
+defaultPref("gfx.gfx.webrender.software", true);
+defaultPref("gfx.webrender.software.opengl", true);
+/* accelerazione grafica Canvas2D */
 defaultPref("gfx.canvas.accelerated.cache-items", 8192);
 defaultPref("gfx.canvas.accelerated.cache-size", 1024);
 defaultPref("gfx.content.skia-font-cache-size", 20);
+
 /** CACHE **/
+/* livello compressione per JavaScript bytecode */
 defaultPref("browser.cache.jsbc_compression_level", 3);
+/* memoria cache per i media */
 defaultPref("media.memory_cache_max_size", 131072);
 defaultPref("media.memory_caches_combined_limit_kb", 1048576);
 defaultPref("media.memory_caches_combined_limit_pc_sysmem", 10);
+/* video buffering */
 defaultPref("media.cache_readahead_limit", 7200);
 defaultPref("media.cache_resume_threshold", 3600);
+/* memoria cache per le immagini */
 defaultPref("image.mem.decode_bytes_at_a_time", 65536);
+
 /** NETWORK **/
+/* aumenta numero totale di connessioni HTTP */
 defaultPref("network.http.max-connections", 1800);
 defaultPref("network.http.max-persistent-connections-per-server", 10);
 defaultPref("network.http.max-urgent-start-excessive-connections-per-host", 5);
+defaultPref("network.http.max-persistent-connections-per-proxy", 48);
+/* inviare quante più richieste HTTP possibili */
 defaultPref("network.http.pacing.requests.enabled", false);
+/* disabilita cache DNS */
 defaultPref("network.dnsCacheEntries", 0);
 defaultPref("network.dnsCacheExpiration", 0);
+/* aumenta cache TLS */
 defaultPref("network.ssl_tokens_cache_capacity", 10240);
+
 /** EXPERIMENTAL **/
+/* CSS Masonry Layout */
 defaultPref("layout.css.grid-template-masonry-value.enabled", true);
+/* Prioritized Task Scheduling API */
 defaultPref("dom.enable_web_task_scheduling", true);
+/* HTML Sanitizer API */
 defaultPref("dom.security.sanitizer.enabled", true);
 
 /*** SecureFox ***/
@@ -138,7 +161,7 @@ defaultPref("widget.gtk.hide-pointer-while-typing.enabled", false);
 /* ░█▀█░█▀▄░█░█░█▀▀░█▀█░█▀▀░█▀█░█░█ */
 /* ░█▀█░█▀▄░█▀▄░█▀▀░█░█░█▀▀░█░█░▄▀▄ */
 /* ░▀░▀░▀░▀░▀░▀░▀▀▀░▀░▀░▀░░░▀▀▀░▀░▀ */
-/*** Arkenfox v126 ***/
+// Arkenfox v126
 
 /*** [0200] GEOLOCALIZZAZIONE ***/
 /* 0201 usa servizio di geolocalizzazione di Mozilla */
