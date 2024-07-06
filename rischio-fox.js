@@ -12,7 +12,7 @@
 
 /*** Pagina Iniziale ***/
 /* scorciatoie newtab */
-lockPref("browser.newtabpage.pinned", "[{\"url\":\"https://github.com/RischioCinico/rischio-fox\",\"label\":\"127.16\"},{\"url\":\"https://www.youtube.com/\",\"label\":\"YouTube\"},{\"url\":\"https://www.reddit.com/\",\"label\":\"Reddit\"},{\"url\":\"https://mail.google.com/mail/u/0/?hl=it#inbox\",\"label\":\"Gmail\"},{\"url\":\"https://addons.mozilla.org/it/firefox/\",\"label\":\"Estensioni\"},{\"url\":\"https://wiki.archlinux.org/title/List_of_applications\",\"label\":\"Applicazioni\"},{\"url\":\"https://it.wikipedia.org/wiki/Pagina_principale\",\"label\":\"Wikipedia\"},{\"url\":\"https://www.diretta.it/\",\"label\":\"Diretta\"}]");
+lockPref("browser.newtabpage.pinned", "[{\"url\":\"https://github.com/RischioCinico/rischio-fox\",\"label\":\"127.17\"},{\"url\":\"https://www.youtube.com/\",\"label\":\"YouTube\"},{\"url\":\"https://www.reddit.com/\",\"label\":\"Reddit\"},{\"url\":\"https://mail.google.com/mail/u/0/?hl=it#inbox\",\"label\":\"Gmail\"},{\"url\":\"https://addons.mozilla.org/it/firefox/\",\"label\":\"Estensioni\"},{\"url\":\"https://wiki.archlinux.org/title/List_of_applications\",\"label\":\"Applicazioni\"},{\"url\":\"https://it.wikipedia.org/wiki/Pagina_principale\",\"label\":\"Wikipedia\"},{\"url\":\"https://www.diretta.it/\",\"label\":\"Diretta\"}]");
 lockPref("browser.newtabpage.activity-stream.topSitesRows", 1);
 lockPref("browser.newtabpage.activity-stream.default.sites", "");
 /* non spostare il focus dal searchbox alla barra degli indirizzi */
@@ -100,27 +100,37 @@ defaultPref("dom.security.sanitizer.enabled", true);
 
 /*** SecureFox ***/
 /** TRACKING PROTECTION **/
+/* Sandbox */
+lockPref("fission.autostart", true);
+/* Network Partitioning */
+lockPref("privacy.partition.network_state", true);
+lockPref("privacy.partition.serviceWorkers", true);
+lockPref("privacy.partition.network_state.ocsp_cache", true);
+lockPref("privacy.partition.bloburl_per_partition_key", true);
+lockPref("privacy.partition.always_partition_third_party_non_cookie_storage", true);
+lockPref("privacy.partition.always_partition_third_party_non_cookie_storage.exempt_sessionstorage", false);
+/* SameSite Cookies */
 defaultPref("network.cookie.sameSite.noneRequiresSecure", true);
+/* GPC */
 defaultPref("privacy.globalprivacycontrol.enabled", true);
-/** DISK AVOIDANCE **/
-defaultPref("browser.sessionstore.interval", 60000);
-/** SHUTDOWN & SANITIZING **/
-defaultPref("privacy.history.custom", true);
+
 /** SEARCH / URL BAR **/
-defaultPref("browser.urlbar.update2.engineAliasRefresh", true);
+/* mostra "non sicuro" sulle pagine HTTP */
 defaultPref("security.insecure_connection_text.enabled", true);
 defaultPref("security.insecure_connection_text.pbmode.enabled", true);
-/** HTTPS-FIRST POLICY **/
-defaultPref("dom.security.https_first", true);
-defaultPref("dom.security.https_first_schemeless", true);
+/* permetti aggiunta di motori di ricerca personalizzati */
+defaultPref("browser.urlbar.update2.engineAliasRefresh", true);
+
 /** PASSWORDS **/
+/* non salvare password durante navigazione anonima */
 defaultPref("signon.privateBrowsingCapture.enabled", false);
+/* previene troncamento password durante l'invio del form */
 defaultPref("editor.truncate_user_pastes", false);
-/** MIXED CONTENT + CROSS-SITE **/
-defaultPref("security.mixed_content.upgrade_display_content", true);
-defaultPref("security.mixed_content.upgrade_display_content.image", true);
+
 /** Mozilla **/
-defaultPref("accessibility.force_disabled", 1);
+/* disabilita accessibilità per impedire che impatti sulle prestazioni */
+pref("accessibility.force_disabled", 1);
+pref("devtools.accessibility.enabled", false);
 
 /*** PeskyFox ***/
 /** MOZILLA UI **/
