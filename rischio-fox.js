@@ -12,7 +12,7 @@
 
 /*** Pagina Iniziale ***/
 /* scorciatoie newtab */
-lockPref("browser.newtabpage.pinned", "[{\"url\":\"https://github.com/RischioCinico/rischio-fox\",\"label\":\"127.17\"},{\"url\":\"https://www.youtube.com/\",\"label\":\"YouTube\"},{\"url\":\"https://www.reddit.com/\",\"label\":\"Reddit\"},{\"url\":\"https://mail.google.com/mail/u/0/?hl=it#inbox\",\"label\":\"Gmail\"},{\"url\":\"https://addons.mozilla.org/it/firefox/\",\"label\":\"Estensioni\"},{\"url\":\"https://wiki.archlinux.org/title/List_of_applications\",\"label\":\"Applicazioni\"},{\"url\":\"https://it.wikipedia.org/wiki/Pagina_principale\",\"label\":\"Wikipedia\"},{\"url\":\"https://www.diretta.it/\",\"label\":\"Diretta\"}]");
+lockPref("browser.newtabpage.pinned", "[{\"url\":\"https://github.com/RischioCinico/rischio-fox\",\"label\":\"127.18\"},{\"url\":\"https://www.youtube.com/\",\"label\":\"YouTube\"},{\"url\":\"https://www.reddit.com/\",\"label\":\"Reddit\"},{\"url\":\"https://mail.google.com/mail/u/0/?hl=it#inbox\",\"label\":\"Gmail\"},{\"url\":\"https://addons.mozilla.org/it/firefox/\",\"label\":\"Estensioni\"},{\"url\":\"https://wiki.archlinux.org/title/List_of_applications\",\"label\":\"Applicazioni\"},{\"url\":\"https://it.wikipedia.org/wiki/Pagina_principale\",\"label\":\"Wikipedia\"},{\"url\":\"https://www.diretta.it/\",\"label\":\"Diretta\"}]");
 lockPref("browser.newtabpage.activity-stream.topSitesRows", 1);
 lockPref("browser.newtabpage.activity-stream.default.sites", "");
 /* non spostare il focus dal searchbox alla barra degli indirizzi */
@@ -134,38 +134,65 @@ pref("devtools.accessibility.enabled", false);
 
 /*** PeskyFox ***/
 /** MOZILLA UI **/
+/* nasconde pubblicità della VPN di Mozilla */
 defaultPref("browser.privatebrowsing.vpnpromourl", "");
 defaultPref("browser.vpn_promo.enabled", false)
+/* nasconde la pagina con gli altri prodotti Mozilla dalle impostazioni */
 defaultPref("browser.defaultPreferences.moreFromMozilla", false);
+/* nasconde avviso di sicurezza prima di entrare in about:config */
 defaultPref("browser.aboutConfig.showWarning", false);
+/* nasconde il pulsante per elencare le schede quando non necessario */
 defaultPref("browser.tabs.tabmanager.enabled", false);
+
 /** THEME ADJUSTMENTS **/
+/* abilita css e stili personalizzati */
 defaultPref("toolkit.legacyUserProfileCustomizations.stylesheets", true);
+/* aggiunge modalità compatta alle opzioni */
 defaultPref("browser.compactmode.show", true);
+/* imposta il tipo di focus per i link*/
 defaultPref("browser.display.focus_ring_on_anything", true);
 defaultPref("browser.display.focus_ring_style", 0); // 0=Solid, 1=Dotted
 defaultPref("browser.display.focus_ring_width", 1);
-defaultPref("layout.css.defaultPrefers-color-scheme.content-override", 3); // (0=Scuro, 1=Chiaro, 2=Sistema, 3=Browser)
+/* schema di colori preferito per le pagine (0=Scuro, 1=Chiaro, 2=Sistema, 3=Browser) */
+defaultPref("layout.css.defaultPrefers-color-scheme.content-override", 3);
+
 /** COOKIE BANNER HANDLING **/
+/* nasconde banner dei cookie */
 defaultPref("cookiebanners.service.mode", 2);
 defaultPref("cookiebanners.service.mode.privateBrowsing", 2);
-/* avviso schermo interno */
+
+/* FULLSCREEN NOTICE */
+/* rimuove ritardo schermo intero */
 defaultPref("full-screen-api.transition-duration.enter", "0 0");
 defaultPref("full-screen-api.transition-duration.leave", "0 0");
+/* nasconde avviso schermo interno */
 defaultPref("full-screen-api.warning.delay", -1);
 defaultPref("full-screen-api.warning.timeout", 0);
+
 /** URL BAR **/
+/* abilita calcolatrice nella barra degli indirizzi */
 defaultPref("browser.urlbar.suggest.calculator", true);
+/* abilita conversione unità nella barra degli indirizzi */
 defaultPref("browser.urlbar.unitConversion.enabled", true);
+
 /** PDF **/
+/* apre PDF inline */
 defaultPref("browser.download.open_pdf_attachments_inline", true);
+
 /** TAB BEHAVIOR **/
+/* apre segnalibri in una nuova scheda */
 defaultPref("browser.tabs.loadBookmarksInTabs", true);
+/* apre segnalibri in background */
 defaultPref("browser.tabs.loadBookmarksInBackground", true);
+/* lascia il menu segnalibri aperto dopo aver aperto un segnalibro */
 defaultPref("browser.bookmarks.openInTabClosesMenu", false);
+/* mostra informazioni immagini nel menu contestuale */
 defaultPref("browser.menu.showViewImageInfo", true);
+/* mostra tutti i risultati nella barra di ricerca */
 defaultPref("findbar.highlightAll", true);
+/* non selezionare lo spazio dopo una parola */
 defaultPref("layout.word_select.eat_space_to_next_word", false);
+/* non nascondere il cursore del mouse mentre si digita */
 defaultPref("widget.gtk.hide-pointer-while-typing.enabled", false);
 
 /* ░█▀█░█▀▄░█░█░█▀▀░█▀█░█▀▀░█▀█░█░█ */
