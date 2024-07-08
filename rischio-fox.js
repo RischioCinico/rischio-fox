@@ -12,7 +12,7 @@
 
 /*** Pagina Iniziale ***/
 /* scorciatoie newtab */
-lockPref("browser.newtabpage.pinned", "[{\"url\":\"https://github.com/RischioCinico/rischio-fox\",\"label\":\"127.18\"},{\"url\":\"https://www.youtube.com/\",\"label\":\"YouTube\"},{\"url\":\"https://www.reddit.com/\",\"label\":\"Reddit\"},{\"url\":\"https://mail.google.com/mail/u/0/?hl=it#inbox\",\"label\":\"Gmail\"},{\"url\":\"https://addons.mozilla.org/it/firefox/\",\"label\":\"Estensioni\"},{\"url\":\"https://wiki.archlinux.org/title/List_of_applications\",\"label\":\"Applicazioni\"},{\"url\":\"https://it.wikipedia.org/wiki/Pagina_principale\",\"label\":\"Wikipedia\"},{\"url\":\"https://www.diretta.it/\",\"label\":\"Diretta\"}]");
+lockPref("browser.newtabpage.pinned", "[{\"url\":\"https://github.com/RischioCinico/rischio-fox\",\"label\":\"127.19\"},{\"url\":\"https://www.youtube.com/\",\"label\":\"YouTube\"},{\"url\":\"https://www.reddit.com/\",\"label\":\"Reddit\"},{\"url\":\"https://mail.google.com/mail/u/0/?hl=it#inbox\",\"label\":\"Gmail\"},{\"url\":\"https://addons.mozilla.org/it/firefox/\",\"label\":\"Estensioni\"},{\"url\":\"https://wiki.archlinux.org/title/List_of_applications\",\"label\":\"Applicazioni\"},{\"url\":\"https://it.wikipedia.org/wiki/Pagina_principale\",\"label\":\"Wikipedia\"},{\"url\":\"https://www.diretta.it/\",\"label\":\"Diretta\"}]");
 lockPref("browser.newtabpage.activity-stream.topSitesRows", 1);
 lockPref("browser.newtabpage.activity-stream.default.sites", "");
 /* non spostare il focus dal searchbox alla barra degli indirizzi */
@@ -201,8 +201,6 @@ defaultPref("widget.gtk.hide-pointer-while-typing.enabled", false);
 // Arkenfox v126
 
 /*** [0200] GEOLOCALIZZAZIONE ***/
-/* 0201 usa servizio di geolocalizzazione di Mozilla */
-defaultPref("geo.provider.network.url", "https://location.services.mozilla.com/v1/geolocate?key=%MOZILLA_API_KEY%");
 /* 0202 disabilita utilizzo del servizio di geolocalizzazione del sistema locale */
 defaultPref("geo.provider.use_gpsd", false);
 defaultPref("geo.provider.use_geoclue", false);
@@ -365,8 +363,6 @@ defaultPref("pdfjs.disabled", false);
 defaultPref("pdfjs.enableScripting", false);
 /* 2624 disabilita ricerca contenuto appunti al click tasto centrale */
 defaultPref("browser.tabs.searchclipboardfor.middleclick", false);
-/* 2630 disable content analysis by DLP (Data Loss Prevention) agents */
-defaultPref("browser.contentanalysis.default_allow", false);
 /* 2651 chiedi dove salvare i file */
 defaultPref("browser.download.useDownloadDir", false);
 /* 2652 disabilita apertura automatica del pannello download */
@@ -394,8 +390,6 @@ defaultPref("privacy.window.maxInnerHeight", 900);
 defaultPref("privacy.resistFingerprinting.block_mozAddonManager", true);
 /* 4510 usa colori di sistema */
 defaultPref("browser.display.use_system_colors", false);
-/* 4511 usa tema widget non-nativo */
-defaultPref("widget.non-native-theme.enabled", true);
 /* 4512 forza apertura dei link in nuove schede */
 defaultPref("browser.link.open_newwindow", 3);
 /* 4513 obbliga a rispettare "browser.link.open_newwindow" (4512) */
@@ -444,6 +438,10 @@ lockPref("dom.serviceWorkers.enabled", true); // [DEFAULT: true]
 /*** [9999] DEPRECATE ***/
 // FF126
 clearPref("browser.messaging-system.whatsNewPanel.enabled");
+// FF127
+clearPref("geo.provider.network.url");
+clearPref("browser.contentanalysis.default_allow");
+clearPref("widget.non-native-theme.enabled");
 
 // [FINE]
 lockPref("rischio.fox", "Parrebbe funzionare...");
