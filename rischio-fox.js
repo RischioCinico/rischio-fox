@@ -383,8 +383,6 @@ pref("browser.contentblocking.category", "strict"); // [Nascosta]
 pref("privacy.sanitize.sanitizeOnShutdown", false);
 
 /*** [4500] RFP (ResistFingerPrinting) ***/
-/* 4501 abilita RFP (solo in modalità anonima) */
-defaultPref("privacy.resistFingerprinting.pbmode", true);
 /* 4502 arrotondamento dimensioni finestre */
 defaultPref("privacy.window.maxInnerWidth", 1600);
 defaultPref("privacy.window.maxInnerHeight", 900);
@@ -444,6 +442,8 @@ clearPref("browser.messaging-system.whatsNewPanel.enabled");
 clearPref("geo.provider.network.url");
 clearPref("browser.contentanalysis.default_allow");
 clearPref("widget.non-native-theme.enabled");
+// RF127
+clearPref("privacy.resistFingerprinting.pbmode");
 
 // [FINE]
 lockPref("rischio.fox", "Parrebbe funzionare...");
