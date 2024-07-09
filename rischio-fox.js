@@ -12,7 +12,7 @@
 
 /*** Pagina Iniziale ***/
 /* scorciatoie newtab */
-lockPref("browser.newtabpage.pinned", "[{\"url\":\"https://github.com/RischioCinico/rischio-fox\",\"label\":\"127.19\"},{\"url\":\"https://www.youtube.com/\",\"label\":\"YouTube\"},{\"url\":\"https://www.reddit.com/\",\"label\":\"Reddit\"},{\"url\":\"https://mail.google.com/mail/u/0/?hl=it#inbox\",\"label\":\"Gmail\"},{\"url\":\"https://addons.mozilla.org/it/firefox/\",\"label\":\"Estensioni\"},{\"url\":\"https://wiki.archlinux.org/title/List_of_applications\",\"label\":\"Applicazioni\"},{\"url\":\"https://it.wikipedia.org/wiki/Pagina_principale\",\"label\":\"Wikipedia\"},{\"url\":\"https://www.diretta.it/\",\"label\":\"Diretta\"}]");
+lockPref("browser.newtabpage.pinned", "[{\"url\":\"https://github.com/RischioCinico/rischio-fox\",\"label\":\"127.20\"},{\"url\":\"https://www.youtube.com/\",\"label\":\"YouTube\"},{\"url\":\"https://www.reddit.com/\",\"label\":\"Reddit\"},{\"url\":\"https://mail.google.com/mail/u/0/?hl=it#inbox\",\"label\":\"Gmail\"},{\"url\":\"https://addons.mozilla.org/it/firefox/\",\"label\":\"Estensioni\"},{\"url\":\"https://wiki.archlinux.org/title/List_of_applications\",\"label\":\"Applicazioni\"},{\"url\":\"https://it.wikipedia.org/wiki/Pagina_principale\",\"label\":\"Wikipedia\"},{\"url\":\"https://www.diretta.it/\",\"label\":\"Diretta\"}]");
 lockPref("browser.newtabpage.activity-stream.topSitesRows", 1);
 lockPref("browser.newtabpage.activity-stream.default.sites", "");
 /* non spostare il focus dal searchbox alla barra degli indirizzi */
@@ -237,6 +237,8 @@ defaultPref("captivedetect.canonicalURL", "");
 defaultPref("network.captive-portal-service.enabled", false);
 /* 0361 disabilita controllo connettività */
 defaultPref("network.connectivity-service.enabled", false);
+/* 0370 disabilita Privacy-Preserving Attribution */
+lockPref("dom.private-attribution.submission.enabled", false);
 
 /*** [0600] CONNESSIONI NON RICHIESTE ***/
 /* 0601 disabilita link prefetching */
@@ -376,7 +378,7 @@ defaultPref("extensions.enabledScopes", 5); // [Nascosta]
 /* 2661 disabilita prompt di installazione esterni */
 defaultPref("extensions.postDownloadThirdPartyPrompt", false);
 /* 2701 protezione antitracciamento ***/
-defaultPref("browser.contentblocking.category", "standard"); // [HIDDEN PREF]
+pref("browser.contentblocking.category", "strict"); // [Nascosta]
 /* 2810 previene pulizia dati automatica alla chiusura di Firefox */
 pref("privacy.sanitize.sanitizeOnShutdown", false);
 
