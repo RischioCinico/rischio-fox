@@ -12,7 +12,7 @@
 
 /*** Pagina Iniziale ***/
 /* scorciatoie newtab */
-lockPref("browser.newtabpage.pinned", "[{\"url\":\"https://github.com/RischioCinico/rischio-fox\",\"label\":\"127.21\"},{\"url\":\"https://www.youtube.com/\",\"label\":\"YouTube\"},{\"url\":\"https://www.reddit.com/\",\"label\":\"Reddit\"},{\"url\":\"https://mail.google.com/mail/u/0/?hl=it#inbox\",\"label\":\"Gmail\"},{\"url\":\"https://addons.mozilla.org/it/firefox/\",\"label\":\"Estensioni\"},{\"url\":\"https://wiki.archlinux.org/title/List_of_applications\",\"label\":\"Applicazioni\"},{\"url\":\"https://it.wikipedia.org/wiki/Pagina_principale\",\"label\":\"Wikipedia\"},{\"url\":\"https://www.diretta.it/\",\"label\":\"Diretta\"}]");
+lockPref("browser.newtabpage.pinned", "[{\"url\":\"https://github.com/RischioCinico/rischio-fox\",\"label\":\"127.22\"},{\"url\":\"https://www.youtube.com/\",\"label\":\"YouTube\"},{\"url\":\"https://www.reddit.com/\",\"label\":\"Reddit\"},{\"url\":\"https://mail.google.com/mail/u/0/?hl=it#inbox\",\"label\":\"Gmail\"},{\"url\":\"https://addons.mozilla.org/it/firefox/\",\"label\":\"Estensioni\"},{\"url\":\"https://wiki.archlinux.org/title/List_of_applications\",\"label\":\"Applicazioni\"},{\"url\":\"https://it.wikipedia.org/wiki/Pagina_principale\",\"label\":\"Wikipedia\"},{\"url\":\"https://www.diretta.it/\",\"label\":\"Diretta\"}]");
 lockPref("browser.newtabpage.activity-stream.topSitesRows", 1);
 lockPref("browser.newtabpage.activity-stream.default.sites", "");
 /* non spostare il focus dal searchbox alla barra degli indirizzi */
@@ -417,23 +417,23 @@ defaultPref("network.dns.disableIPv6", true);
 
 /*** [6000] NON TOCCARE ***/
 /* 6001 enforce Firefox blocklist */
-lockPref("extensions.blocklist.enabled", true); // [DEFAULT: true]
+clearPref("extensions.blocklist.enabled"); // [DEFAULT: true]
 /* 6002 enforce no referer spoofing */
-lockPref("network.http.referer.spoofSource", false); // [DEFAULT: false]
+clearPref("network.http.referer.spoofSource"); // [DEFAULT: false]
 /* 6004 enforce a security delay on some confirmation dialogs */
-lockPref("security.dialog_enable_delay", 1000); // [DEFAULT: 1000]
+clearPref("security.dialog_enable_delay"); // [DEFAULT: 1000]
 /* 6008 enforce no First Party Isolation */
-lockPref("privacy.firstparty.isolate", false); // [DEFAULT: false]
+clearPref("privacy.firstparty.isolate"); // [DEFAULT: false]
 /* 6009 enforce SmartBlock shims (about:compat) */
-lockPref("extensions.webcompat.enable_shims", true); // [HIDDEN PREF] [DEFAULT: true]
+lockPref("extensions.webcompat.enable_shims", true); // [Nascosta] [DEFAULT: true]
 /* 6010 enforce no TLS 1.0/1.1 downgrades */
-lockPref("security.tls.version.enable-deprecated", false); // [DEFAULT: false]
+clearPref("security.tls.version.enable-deprecated"); // [DEFAULT: false]
 /* 6011 enforce disabling of Web Compatibility Reporter */
-lockPref("extensions.webcompat-reporter.enabled", false); // [DEFAULT: false]
+clearPref("extensions.webcompat-reporter.enabled"); // [DEFAULT: false]
 /* 6012 enforce Quarantined Domains */
-lockPref("extensions.quarantinedDomains.enabled", true); // [DEFAULT: true]
+clearPref("extensions.quarantinedDomains.enabled"); // [DEFAULT: true]
 /* 7017 i service workers servono per il corretto funzionamento di Firefox Sync e diversi siti */
-lockPref("dom.serviceWorkers.enabled", true); // [DEFAULT: true]
+clearPref("dom.serviceWorkers.enabled"); // [DEFAULT: true]
 
 /*** [9999] DEPRECATE ***/
 // FF126
