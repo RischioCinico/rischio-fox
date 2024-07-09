@@ -12,7 +12,7 @@
 
 /*** Pagina Iniziale ***/
 /* scorciatoie newtab */
-lockPref("browser.newtabpage.pinned", "[{\"url\":\"https://github.com/RischioCinico/rischio-fox\",\"label\":\"127.20\"},{\"url\":\"https://www.youtube.com/\",\"label\":\"YouTube\"},{\"url\":\"https://www.reddit.com/\",\"label\":\"Reddit\"},{\"url\":\"https://mail.google.com/mail/u/0/?hl=it#inbox\",\"label\":\"Gmail\"},{\"url\":\"https://addons.mozilla.org/it/firefox/\",\"label\":\"Estensioni\"},{\"url\":\"https://wiki.archlinux.org/title/List_of_applications\",\"label\":\"Applicazioni\"},{\"url\":\"https://it.wikipedia.org/wiki/Pagina_principale\",\"label\":\"Wikipedia\"},{\"url\":\"https://www.diretta.it/\",\"label\":\"Diretta\"}]");
+lockPref("browser.newtabpage.pinned", "[{\"url\":\"https://github.com/RischioCinico/rischio-fox\",\"label\":\"127.21\"},{\"url\":\"https://www.youtube.com/\",\"label\":\"YouTube\"},{\"url\":\"https://www.reddit.com/\",\"label\":\"Reddit\"},{\"url\":\"https://mail.google.com/mail/u/0/?hl=it#inbox\",\"label\":\"Gmail\"},{\"url\":\"https://addons.mozilla.org/it/firefox/\",\"label\":\"Estensioni\"},{\"url\":\"https://wiki.archlinux.org/title/List_of_applications\",\"label\":\"Applicazioni\"},{\"url\":\"https://it.wikipedia.org/wiki/Pagina_principale\",\"label\":\"Wikipedia\"},{\"url\":\"https://www.diretta.it/\",\"label\":\"Diretta\"}]");
 lockPref("browser.newtabpage.activity-stream.topSitesRows", 1);
 lockPref("browser.newtabpage.activity-stream.default.sites", "");
 /* non spostare il focus dal searchbox alla barra degli indirizzi */
@@ -32,15 +32,15 @@ defaultPref("media.videocontrols.picture-in-picture.video-toggle.always-show", t
 /* nascondi barra del titolo */
 defaultPref("browser.tabs.inTitlebar", 2);
 /* has-used */
-pref("browser.rights.3.shown", true);
-pref("browser.download.panel.shown", true);
-pref("browser.engagement.ctrlTab.has-used", true);
-pref("browser.engagement.downloads-button.has-used", true);
-pref("browser.engagement.fxa-toolbar-menu-button.has-used", true);
-pref("browser.engagement.home-button.has-used", true);
-pref("browser.engagement.library-button.has-used", true);
-pref("browser.engagement.sidebar-button.has-used", true);
-pref("media.videocontrols.picture-in-picture.video-toggle.has-used", true);
+lockPref("browser.rights.3.shown", true);
+lockPref("browser.download.panel.shown", true);
+lockPref("browser.engagement.ctrlTab.has-used", true);
+lockPref("browser.engagement.downloads-button.has-used", true);
+lockPref("browser.engagement.fxa-toolbar-menu-button.has-used", true);
+lockPref("browser.engagement.home-button.has-used", true);
+lockPref("browser.engagement.library-button.has-used", true);
+lockPref("browser.engagement.sidebar-button.has-used", true);
+lockPref("media.videocontrols.picture-in-picture.video-toggle.has-used", true);
 
 /* ░█▀▄░█▀▀░▀█▀░▀█▀░█▀▀░█▀▄░█▀▀░█▀█░█░█ */
 /* ░█▀▄░█▀▀░░█░░░█░░█▀▀░█▀▄░█▀▀░█░█░▄▀▄ */
