@@ -111,8 +111,6 @@ lockPref("privacy.partition.always_partition_third_party_non_cookie_storage", tr
 lockPref("privacy.partition.always_partition_third_party_non_cookie_storage.exempt_sessionstorage", false);
 /* SameSite Cookies */
 defaultPref("network.cookie.sameSite.noneRequiresSecure", true);
-/* GPC */
-defaultPref("privacy.globalprivacycontrol.enabled", true);
 
 /** SEARCH / URL BAR **/
 /* mostra "non sicuro" sulle pagine HTTP */
