@@ -12,7 +12,7 @@
 
 /*** Pagina Iniziale ***/
 /* scorciatoie newtab */
-lockPref("browser.newtabpage.pinned", "[{\"url\":\"https://github.com/RischioCinico/rischio-fox\",\"label\":\"128\"},{\"url\":\"https://www.youtube.com/\",\"label\":\"YouTube\"},{\"url\":\"https://www.reddit.com/\",\"label\":\"Reddit\"},{\"url\":\"https://mail.google.com/mail/u/0/?hl=it#inbox\",\"label\":\"Gmail\"},{\"url\":\"https://addons.mozilla.org/it/firefox/\",\"label\":\"Estensioni\"},{\"url\":\"https://wiki.archlinux.org/title/List_of_applications\",\"label\":\"Applicazioni\"},{\"url\":\"https://it.wikipedia.org/wiki/Pagina_principale\",\"label\":\"Wikipedia\"},{\"url\":\"https://www.diretta.it/\",\"label\":\"Diretta\"}]");
+lockPref("browser.newtabpage.pinned", "[{\"url\":\"https://github.com/RischioCinico/rischio-fox\",\"label\":\"128.1\"},{\"url\":\"https://www.youtube.com/\",\"label\":\"YouTube\"},{\"url\":\"https://www.reddit.com/\",\"label\":\"Reddit\"},{\"url\":\"https://mail.google.com/mail/u/0/?hl=it#inbox\",\"label\":\"Gmail\"},{\"url\":\"https://addons.mozilla.org/it/firefox/\",\"label\":\"Estensioni\"},{\"url\":\"https://wiki.archlinux.org/title/List_of_applications\",\"label\":\"Applicazioni\"},{\"url\":\"https://it.wikipedia.org/wiki/Pagina_principale\",\"label\":\"Wikipedia\"},{\"url\":\"https://www.diretta.it/\",\"label\":\"Diretta\"}]");
 lockPref("browser.newtabpage.activity-stream.topSitesRows", 1);
 lockPref("browser.newtabpage.activity-stream.default.sites", "");
 /* non spostare il focus dal searchbox alla barra degli indirizzi */
@@ -303,31 +303,44 @@ defaultPref("media.memory_cache_max_size", 65536);
 defaultPref("browser.sessionstore.privacy_level", 2);
 
 /*** [1200] HTTPS (SSL/TLS / OCSP / CERTS / HPKP) ***/
+/** SSL (Secure Sockets Layer) / TLS (Transport Layer Security) **/
 /* 1201 richiedere una negoziazione SSL sicura */
 defaultPref("security.ssl.require_safe_negotiation", true);
 /* 1206 disabilita TLS1.3 0-RTT (round-trip time) */
 defaultPref("security.tls.enable_0rtt_data", false);
+
+/** OCSP (Online Certificate Status Protocol) **/
 /* 1211 abilita OCSP (Online Certificate Status Protocol) */
 defaultPref("security.OCSP.enabled", 1);
 /* 1212 richiedi OCSP */
 defaultPref("security.OCSP.require", true);
+
+/** CERTS / HPKP (HTTP Public Key Pinning) **/
 /* 1223 Abilita PKP (Public Key Pinning) */
 defaultPref("security.cert_pinning.enforcement_level", 2);
 /* 1224 abilita CRLite */
 defaultPref("security.remote_settings.crlite_filters.enabled", true);
 defaultPref("security.pki.crlite_mode", 2);
+
+/** MIXED CONTENT **/
 /* 1241 disabilita contenuti passivi non sicuri (ad esempio immagini) su pagine HTTPS */
 defaultPref("security.mixed_content.block_display_content", true);
 /* 1244 abilita modalità HTTPS-Only */
 defaultPref("dom.security.https_only_mode", true);
 /* 1246 disabilita richieste HTTP in background */
 defaultPref("dom.security.https_only_mode_send_http_background_request", false);
+
+/** UI (User Interface) **/
 /* 1270 mostra avvisi errori SSL */
 defaultPref("security.ssl.treat_unsafe_negotiation_as_broken", true);
 /* 1272 mostra informazioni sulle connessioni non sicure */
 defaultPref("browser.xul.error_pages.expert_bad_cert", true);
+
+/*** [1600] REFERERS ***/
 /* 1602 controlla le informazioni cross-origin da inviare */
 defaultPref("network.http.referer.XOriginTrimmingPolicy", 2);
+
+/*** [1700] CONTAINERS ***/
 /* 1701 abilita Container di Firefox */
 defaultPref("privacy.userContext.enabled", true);
 lockPref("privacy.userContext.ui.enabled", false);
@@ -363,6 +376,8 @@ defaultPref("pdfjs.disabled", false);
 defaultPref("pdfjs.enableScripting", false);
 /* 2624 disabilita ricerca contenuto appunti al click tasto centrale */
 defaultPref("browser.tabs.searchclipboardfor.middleclick", false);
+
+/** DOWNLOADS **/
 /* 2651 chiedi dove salvare i file */
 defaultPref("browser.download.useDownloadDir", false);
 /* 2652 disabilita apertura automatica del pannello download */
@@ -371,12 +386,18 @@ defaultPref("browser.download.alwaysOpenPanel", false);
 defaultPref("browser.download.manager.addToRecentDocs", false);
 /* 2654 chiedi cosa fare con i nuovi tipi di file */
 defaultPref("browser.download.always_ask_before_handling_new_types", true);
+
+/** EXTENSIONS **/
 /* 2660 permetti solo le estensioni in determinate cartelle */
 defaultPref("extensions.enabledScopes", 5); // [Nascosta]
 /* 2661 disabilita prompt di installazione esterni */
 defaultPref("extensions.postDownloadThirdPartyPrompt", false);
+
+/*** [2700] ETP (ENHANCED TRACKING PROTECTION) ***/
 /* 2701 protezione antitracciamento ***/
 defaultPref("browser.contentblocking.category", "strict"); // [Nascosta]
+
+/*** [2800] SHUTDOWN & SANITIZING ***/
 /* 2810 previene pulizia dati automatica alla chiusura di Firefox */
 pref("privacy.sanitize.sanitizeOnShutdown", false);
 
