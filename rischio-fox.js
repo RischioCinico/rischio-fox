@@ -19,6 +19,8 @@ defaultPref("browser.newtabpage.activity-stream.improvesearch.handoffToAwesomeba
 /*** Funzioni ***/
 /* abilita scorrimento automatico */
 defaultPref("general.autoScroll", true);
+/* disabilita Privacy-Preserving Attribution */
+lockPref("dom.private-attribution.submission.enabled", false);
 
 /*** Fastidi ***/
 /* disabilita popup traduttore */
@@ -239,8 +241,6 @@ defaultPref("captivedetect.canonicalURL", "");
 defaultPref("network.captive-portal-service.enabled", false);
 /* 0361 disabilita controllo connettività */
 defaultPref("network.connectivity-service.enabled", false);
-/* 0370 disabilita Privacy-Preserving Attribution */
-lockPref("dom.private-attribution.submission.enabled", false);
 
 /*** [0600] CONNESSIONI NON RICHIESTE ***/
 /* 0601 disabilita link prefetching */
