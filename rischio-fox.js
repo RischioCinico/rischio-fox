@@ -476,4 +476,4 @@ clearPref("widget.non-native-theme.enabled");
 clearPref("privacy.resistFingerprinting.pbmode");
 
 // [FINE]
-lockPref("rischio.fox", "128.5");
+lockPref("rischio.fox", "129");
