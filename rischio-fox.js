@@ -18,7 +18,9 @@ defaultPref("browser.newtabpage.pinned", "[{\"url\":\"https://www.youtube.com/\"
 defaultPref("browser.newtabpage.activity-stream.improvesearch.handoffToAwesomebar", false);
 /* permette di modificare lo sfondo nelle opzioni della pagina iniziale */
 defaultPref("browser.newtabpage.activity-stream.newtabWallpapers.v2.enabled", true);
-
+/* imposta lo sfondo predefinito */
+defaultPref("browser.newtabpage.activity-stream.newtabWallpapers.wallpaper", "dark-landscape");
+            
 /*** Funzioni ***/
 /* abilita scorrimento automatico */
 defaultPref("general.autoScroll", true);
