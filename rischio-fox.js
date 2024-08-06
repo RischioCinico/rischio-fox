@@ -20,7 +20,9 @@ defaultPref("browser.newtabpage.activity-stream.improvesearch.handoffToAwesomeba
 defaultPref("browser.newtabpage.activity-stream.newtabWallpapers.v2.enabled", true);
 /* imposta lo sfondo predefinito */
 defaultPref("browser.newtabpage.activity-stream.newtabWallpapers.wallpaper", "dark-landscape");
-            
+defaultPref("browser.newtabpage.activity-stream.newtabWallpapers.wallpaper-dark", "dark-landscape");
+defaultPref("browser.newtabpage.activity-stream.newtabWallpapers.wallpaper-light", "dark-landscape");
+
 /*** Funzioni ***/
 /* abilita scorrimento automatico */
 defaultPref("general.autoScroll", true);
