@@ -16,8 +16,6 @@ clearPref("browser.newtabpage.pinned");
 defaultPref("browser.newtabpage.pinned", "[{\"url\":\"https://www.youtube.com/\",\"label\":\"YouTube\"},{\"url\":\"https://www.reddit.com/\",\"label\":\"Reddit\"},{\"url\":\"https://mail.google.com/mail/u/0/?hl=it#inbox\",\"label\":\"Gmail\"},{\"url\":\"https://addons.mozilla.org/it/firefox/\",\"label\":\"Estensioni\"},{\"url\":\"https://wiki.archlinux.org/title/List_of_applications\",\"label\":\"Applicazioni\"},{\"url\":\"https://it.wikipedia.org/wiki/Pagina_principale\",\"label\":\"Wikipedia\"},{\"url\":\"https://github.com/\",\"label\":\"GitHub\"},{\"url\":\"https://www.diretta.it/\",\"label\":\"Diretta\"}]");
 /* non spostare il focus dal searchbox alla barra degli indirizzi */
 defaultPref("browser.newtabpage.activity-stream.improvesearch.handoffToAwesomebar", false);
-/* permette di modificare lo sfondo nelle opzioni della pagina iniziale */
-defaultPref("browser.newtabpage.activity-stream.newtabWallpapers.v2.enabled", true);
 /* imposta lo sfondo predefinito */
 defaultPref("browser.newtabpage.activity-stream.newtabWallpapers.wallpaper", "dark-landscape");
 defaultPref("browser.newtabpage.activity-stream.newtabWallpapers.wallpaper-dark", "dark-landscape");
@@ -26,8 +24,6 @@ defaultPref("browser.newtabpage.activity-stream.newtabWallpapers.wallpaper-light
 /*** Funzioni ***/
 /* abilita scorrimento automatico */
 defaultPref("general.autoScroll", true);
-/* disabilita Privacy-Preserving Attribution */
-lockPref("dom.private-attribution.submission.enabled", false);
 
 /*** Fastidi ***/
 /* disabilita popup traduttore */
@@ -52,7 +48,7 @@ lockPref("media.videocontrols.picture-in-picture.video-toggle.has-used", true);
 /* ░█▀▄░█▀▀░▀█▀░▀█▀░█▀▀░█▀▄░█▀▀░█▀█░█░█ */
 /* ░█▀▄░█▀▀░░█░░░█░░█▀▀░█▀▄░█▀▀░█░█░▄▀▄ */
 /* ░▀▀░░▀▀▀░░▀░░░▀░░▀▀▀░▀░▀░▀░░░▀▀▀░▀░▀ */
-// Betterfox v128
+// Betterfox v129
 
 /*** Fastfox ***/
 /* riduce il tempo di attesa prima che le pagine vengano ridisegnate */
@@ -105,44 +101,6 @@ defaultPref("dom.enable_web_task_scheduling", true);
 /* HTML Sanitizer API */
 defaultPref("dom.security.sanitizer.enabled", true);
 
-/*** SecureFox ***/
-/** TRACKING PROTECTION **/
-/* Sandbox */
-lockPref("fission.autostart", true);
-/* Network Partitioning */
-lockPref("privacy.partition.network_state", true);
-lockPref("privacy.partition.serviceWorkers", true);
-lockPref("privacy.partition.network_state.ocsp_cache", true);
-lockPref("privacy.partition.bloburl_per_partition_key", true);
-lockPref("privacy.partition.always_partition_third_party_non_cookie_storage", true);
-lockPref("privacy.partition.always_partition_third_party_non_cookie_storage.exempt_sessionstorage", false);
-/* SameSite Cookies */
-defaultPref("network.cookie.sameSite.noneRequiresSecure", true);
-
-/*** DISK AVOIDANCE ***/
-/* intervallo di salvataggio delle sessioni */
-defaultPref("browser.sessionstore.interval", 1800000); // default=15000 (15s); 1800000=30 min
-
-/** SEARCH / URL BAR **/
-/* nasconde https e www dall'indirizzo */
-defaultPref("browser.urlbar.trimHttps", true);
-/* mostra "non sicuro" sulle pagine HTTP */
-defaultPref("security.insecure_connection_text.enabled", true);
-defaultPref("security.insecure_connection_text.pbmode.enabled", true);
-/* permetti aggiunta di motori di ricerca personalizzati */
-defaultPref("browser.urlbar.update2.engineAliasRefresh", true);
-
-/** PASSWORDS **/
-/* non salvare password durante navigazione anonima */
-defaultPref("signon.privateBrowsingCapture.enabled", false);
-/* previene troncamento password durante l'invio del form */
-defaultPref("editor.truncate_user_pastes", false);
-
-/** Mozilla **/
-/* disabilita accessibilità per impedire che impatti sulle prestazioni */
-pref("accessibility.force_disabled", 1);
-pref("devtools.accessibility.enabled", false);
-
 /*** PeskyFox ***/
 /** MOZILLA UI **/
 /* nasconde pubblicità della VPN di Mozilla */
@@ -154,6 +112,8 @@ defaultPref("browser.defaultPreferences.moreFromMozilla", false);
 defaultPref("browser.aboutConfig.showWarning", false);
 /* nasconde il pulsante per elencare le schede quando non necessario */
 defaultPref("browser.tabs.tabmanager.enabled", false);
+/* profile switcher */
+defaultPref("browser.profiles.enabled", true);
 
 /** THEME ADJUSTMENTS **/
 /* abilita css e stili personalizzati */
@@ -166,6 +126,8 @@ defaultPref("browser.display.focus_ring_style", 0); // 0=Solid, 1=Dotted
 defaultPref("browser.display.focus_ring_width", 1);
 /* schema di colori preferito per le pagine (0=Scuro, 1=Chiaro, 2=Sistema, 3=Browser) */
 defaultPref("layout.css.defaultPrefers-color-scheme.content-override", 3);
+/* permette di modificare lo sfondo nelle opzioni della pagina iniziale */
+defaultPref("browser.newtabpage.activity-stream.newtabWallpapers.v2.enabled", true);
 
 /** COOKIE BANNER HANDLING **/
 /* nasconde banner dei cookie */
@@ -205,6 +167,46 @@ defaultPref("findbar.highlightAll", true);
 defaultPref("layout.word_select.eat_space_to_next_word", false);
 /* non nascondere il cursore del mouse mentre si digita */
 defaultPref("widget.gtk.hide-pointer-while-typing.enabled", false);
+
+/*** SecureFox ***/
+/** TRACKING PROTECTION **/
+/* Sandbox */
+lockPref("fission.autostart", true);
+/* Network Partitioning */
+lockPref("privacy.partition.network_state", true);
+lockPref("privacy.partition.serviceWorkers", true);
+lockPref("privacy.partition.network_state.ocsp_cache", true);
+lockPref("privacy.partition.bloburl_per_partition_key", true);
+lockPref("privacy.partition.always_partition_third_party_non_cookie_storage", true);
+lockPref("privacy.partition.always_partition_third_party_non_cookie_storage.exempt_sessionstorage", false);
+/* SameSite Cookies */
+defaultPref("network.cookie.sameSite.noneRequiresSecure", true);
+
+/*** DISK AVOIDANCE ***/
+/* intervallo di salvataggio delle sessioni */
+defaultPref("browser.sessionstore.interval", 1800000); // default=15000 (15s); 1800000=30 min
+
+/** SEARCH / URL BAR **/
+/* nasconde https e www dall'indirizzo */
+defaultPref("browser.urlbar.trimHttps", true);
+/* mostra HTTPS nell'URL con doppio click */
+user_pref("browser.urlbar.untrimOnUserInteraction.featureGate", true);
+/* mostra "non sicuro" sulle pagine HTTP */
+defaultPref("security.insecure_connection_text.enabled", true);
+defaultPref("security.insecure_connection_text.pbmode.enabled", true);
+/* permetti aggiunta di motori di ricerca personalizzati */
+defaultPref("browser.urlbar.update2.engineAliasRefresh", true);
+
+/** PASSWORDS **/
+/* non salvare password durante navigazione anonima */
+defaultPref("signon.privateBrowsingCapture.enabled", false);
+/* previene troncamento password durante l'invio del form */
+defaultPref("editor.truncate_user_pastes", false);
+
+/** Mozilla **/
+/* disabilita accessibilità per impedire che impatti sulle prestazioni */
+pref("accessibility.force_disabled", 1);
+pref("devtools.accessibility.enabled", false);
 
 /* ░█▀█░█▀▄░█░█░█▀▀░█▀█░█▀▀░█▀█░█░█ */
 /* ░█▀█░█▀▄░█▀▄░█▀▀░█░█░█▀▀░█░█░▄▀▄ */
@@ -476,4 +478,4 @@ clearPref("widget.non-native-theme.enabled");
 clearPref("privacy.resistFingerprinting.pbmode");
 
 // [FINE]
-lockPref("rischio.fox", "129");
+lockPref("rischio.fox", "129.1");
