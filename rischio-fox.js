@@ -215,7 +215,6 @@ pref("devtools.accessibility.enabled", false);
 
 /*** [0200] GEOLOCALIZZAZIONE ***/
 /* 0202 disabilita utilizzo del servizio di geolocalizzazione del sistema locale */
-defaultPref("geo.provider.use_gpsd", false);
 defaultPref("geo.provider.use_geoclue", false);
 
 /*** [0300] RACCOLTA DATI ***/
@@ -476,6 +475,8 @@ clearPref("browser.contentanalysis.default_allow");
 clearPref("widget.non-native-theme.enabled");
 // RF127
 clearPref("privacy.resistFingerprinting.pbmode");
+// FF129
+clearPref("geo.provider.use_gpsd")
 
 // [FINE]
 lockPref("rischio.fox", "129.1");
