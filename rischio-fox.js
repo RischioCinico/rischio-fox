@@ -476,7 +476,7 @@ clearPref("widget.non-native-theme.enabled");
 // RF127
 clearPref("privacy.resistFingerprinting.pbmode");
 // FF129
-clearPref("geo.provider.use_gpsd")
+clearPref("geo.provider.use_gpsd");
 
 // [FINE]
 lockPref("rischio.fox", "129.1");
