@@ -190,7 +190,7 @@ defaultPref("browser.sessionstore.interval", 1800000); // default=15000 (15s); 1
 /* nasconde https e www dall'indirizzo */
 defaultPref("browser.urlbar.trimHttps", true);
 /* mostra HTTPS nell'URL con doppio click */
-user_pref("browser.urlbar.untrimOnUserInteraction.featureGate", true);
+defaultPref("browser.urlbar.untrimOnUserInteraction.featureGate", true);
 /* mostra "non sicuro" sulle pagine HTTP */
 defaultPref("security.insecure_connection_text.enabled", true);
 defaultPref("security.insecure_connection_text.pbmode.enabled", true);
