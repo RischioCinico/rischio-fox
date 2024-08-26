@@ -294,7 +294,7 @@ defaultPref("browser.urlbar.yelp.featureGate", false);
 /* 0807 disabilita suggerimenti dagli appunti nella barra di ricerca */
 defaultPref("browser.urlbar.clipboard.featureGate", false);
 /* 0808 disabilita ricerche recenti */
-defaultPref("browser.urlbar.recentsearches.featureGate", false");
+defaultPref("browser.urlbar.recentsearches.featureGate", false);
 /* 0810 disabilita formfill */
 defaultPref("browser.formfill.enable", false);
 /* 0830 abilita motore di ricerca diverso per le finestre anonime */
