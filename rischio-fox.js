@@ -211,7 +211,7 @@ pref("devtools.accessibility.enabled", false);
 /* ░█▀█░█▀▄░█░█░█▀▀░█▀█░█▀▀░█▀█░█░█ */
 /* ░█▀█░█▀▄░█▀▄░█▀▀░█░█░█▀▀░█░█░▄▀▄ */
 /* ░▀░▀░▀░▀░▀░▀░▀▀▀░▀░▀░▀░░░▀▀▀░▀░▀ */
-// Arkenfox v126
+// Arkenfox v128
 
 /*** [0200] GEOLOCALIZZAZIONE ***/
 /* 0202 disabilita utilizzo del servizio di geolocalizzazione del sistema locale */
@@ -293,6 +293,8 @@ defaultPref("browser.urlbar.weather.featureGate", false);
 defaultPref("browser.urlbar.yelp.featureGate", false);
 /* 0807 disabilita suggerimenti dagli appunti nella barra di ricerca */
 defaultPref("browser.urlbar.clipboard.featureGate", false);
+/* 0808 disabilita ricerche recenti */
+defaultPref("browser.urlbar.recentsearches.featureGate", false");
 /* 0810 disabilita formfill */
 defaultPref("browser.formfill.enable", false);
 /* 0830 abilita motore di ricerca diverso per le finestre anonime */
@@ -479,4 +481,4 @@ clearPref("privacy.resistFingerprinting.pbmode");
 clearPref("geo.provider.use_gpsd");
 
 // [FINE]
-lockPref("rischio.fox", "129.1");
+lockPref("rischio.fox", "129.2");
