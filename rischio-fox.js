@@ -481,4 +481,4 @@ clearPref("privacy.resistFingerprinting.pbmode");
 clearPref("geo.provider.use_gpsd");
 
 // [FINE]
-lockPref("rischio.fox", "129.2");
+lockPref("rischio.fox", "129.3");
