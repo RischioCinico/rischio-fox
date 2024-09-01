@@ -43,6 +43,7 @@ lockPref("browser.engagement.fxa-toolbar-menu-button.has-used", true);
 lockPref("browser.engagement.home-button.has-used", true);
 lockPref("browser.engagement.library-button.has-used", true);
 lockPref("browser.engagement.sidebar-button.has-used", true);
+lockPref("browser.protections_panel.infoMessage.seen", true);
 lockPref("media.videocontrols.picture-in-picture.video-toggle.has-used", true);
 
 /* ░█▀▄░█▀▀░▀█▀░▀█▀░█▀▀░█▀▄░█▀▀░█▀█░█░█ */
@@ -481,4 +482,4 @@ clearPref("privacy.resistFingerprinting.pbmode");
 clearPref("geo.provider.use_gpsd");
 
 // [FINE]
-lockPref("rischio.fox", "129.3");
+lockPref("rischio.fox", "129.4");
