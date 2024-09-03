@@ -26,7 +26,7 @@ defaultPref("browser.newtabpage.activity-stream.newtabWallpapers.wallpaper-light
 defaultPref("general.autoScroll", true);
 /* AI chatbot */
 defaultPref("browser.ml.chat.enabled", true);
-defaultPref("browser.ml.chat.provider", "https://huggingface.co/chat");
+defaultPref("browser.ml.chat.provider", "https://gemini.google.com");
 /* mostra Picture-in-Picture cambiando scheda */
 defaultPref("media.videocontrols.picture-in-picture.enable-when-switching-tabs.enabled", true);
 
