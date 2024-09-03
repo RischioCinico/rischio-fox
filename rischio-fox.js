@@ -24,6 +24,11 @@ defaultPref("browser.newtabpage.activity-stream.newtabWallpapers.wallpaper-light
 /*** Funzioni ***/
 /* abilita scorrimento automatico */
 defaultPref("general.autoScroll", true);
+/* AI chatbot */
+defaultPref("browser.ml.chat.enabled", true);
+defaultPref("browser.ml.chat.provider", "https://huggingface.co/chat");
+/* mostra Picture-in-Picture cambiando scheda */
+defaultPref("media.videocontrols.picture-in-picture.enable-when-switching-tabs.enabled", true);
 
 /*** Fastidi ***/
 /* disabilita popup traduttore */
@@ -482,4 +487,4 @@ clearPref("privacy.resistFingerprinting.pbmode");
 clearPref("geo.provider.use_gpsd");
 
 // [FINE]
-lockPref("rischio.fox", "129.4");
+lockPref("rischio.fox", "130");
