@@ -491,7 +491,7 @@ clearPref("widget.non-native-theme.enabled");
 clearPref("privacy.resistFingerprinting.pbmode");
 // FF129
 clearPref("geo.provider.use_gpsd");
-// FF 130
+// FF130
 clearPref("layout.css.grid-template-masonry-value.enabled");
 
 // [FINE]
