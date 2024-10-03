@@ -54,7 +54,7 @@ lockPref("media.videocontrols.picture-in-picture.video-toggle.has-used", true);
 /* ░█▀▄░█▀▀░▀█▀░▀█▀░█▀▀░█▀▄░█▀▀░█▀█░█░█ */
 /* ░█▀▄░█▀▀░░█░░░█░░█▀▀░█▀▄░█▀▀░█░█░▄▀▄ */
 /* ░▀▀░░▀▀▀░░▀░░░▀░░▀▀▀░▀░▀░▀░░░▀▀▀░▀░▀ */
-// Betterfox v129
+// Betterfox v130
 
 /*** Fastfox ***/
 /* riduce il tempo di attesa prima che le pagine vengano ridisegnate */
@@ -101,7 +101,6 @@ defaultPref("network.ssl_tokens_cache_capacity", 10240);
 
 /** EXPERIMENTAL **/
 /* CSS Masonry Layout */
-defaultPref("layout.css.grid-template-masonry-value.enabled", true);
 /* Prioritized Task Scheduling API */
 defaultPref("dom.enable_web_task_scheduling", true);
 /* HTML Sanitizer API */
@@ -120,6 +119,8 @@ defaultPref("browser.aboutConfig.showWarning", false);
 defaultPref("browser.tabs.tabmanager.enabled", false);
 /* profile switcher */
 defaultPref("browser.profiles.enabled", true);
+/* usa tasti nativi nella barra del titolo */
+defaultPref("widget.gtk.non-native-titlebar-buttons.enabled", true);
 
 /** THEME ADJUSTMENTS **/
 /* abilita css e stili personalizzati */
@@ -153,6 +154,8 @@ defaultPref("full-screen-api.warning.timeout", 0);
 defaultPref("browser.urlbar.suggest.calculator", true);
 /* abilita conversione unità nella barra degli indirizzi */
 defaultPref("browser.urlbar.unitConversion.enabled", true);
+/* abilita text fragments */
+defaultPref("dom.text_fragments.enabled", true);
 
 /** PDF **/
 /* apre PDF inline */
@@ -202,6 +205,9 @@ defaultPref("security.insecure_connection_text.enabled", true);
 defaultPref("security.insecure_connection_text.pbmode.enabled", true);
 /* permetti aggiunta di motori di ricerca personalizzati */
 defaultPref("browser.urlbar.update2.engineAliasRefresh", true);
+
+/* disabilita apertura link presi dagli appunti (Linux) */
+defaultPref("browser.tabs.searchclipboardfor.middleclick", false);
 
 /** PASSWORDS **/
 /* non salvare password durante navigazione anonima */
@@ -485,6 +491,8 @@ clearPref("widget.non-native-theme.enabled");
 clearPref("privacy.resistFingerprinting.pbmode");
 // FF129
 clearPref("geo.provider.use_gpsd");
+// FF 130
+clearPref("layout.css.grid-template-masonry-value.enabled");
 
 // [FINE]
-lockPref("rischio.fox", "130");
+lockPref("rischio.fox", "131");
