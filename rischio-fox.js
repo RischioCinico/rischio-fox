@@ -27,8 +27,9 @@ defaultPref("general.autoScroll", true);
 /* AI chatbot */
 defaultPref("browser.ml.chat.enabled", true);
 defaultPref("browser.ml.chat.provider", "https://gemini.google.com");
+defaultPref("browser.ml.chat.shortcuts", false);
 /* mostra Picture-in-Picture cambiando scheda */
-defaultPref("media.videocontrols.picture-in-picture.enable-when-switching-tabs.enabled", true);
+defaultPref("media.videocontrols.picture-in-picture.enable-when-switching-tabs.enabled", false);
 
 /*** Fastidi ***/
 /* disabilita popup traduttore */
@@ -495,4 +496,4 @@ clearPref("geo.provider.use_gpsd");
 clearPref("layout.css.grid-template-masonry-value.enabled");
 
 // [FINE]
-lockPref("rischio.fox", "131");
+lockPref("rischio.fox", "132");
