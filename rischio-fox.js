@@ -432,19 +432,18 @@ clearPref("extensions.quarantinedDomains.enabled"); // [DEFAULT: true]
 clearPref("dom.serviceWorkers.enabled"); // [DEFAULT: true]
 
 /*** [9999] DEPRECATE ***/
-// FF126
+// 126
 clearPref("browser.messaging-system.whatsNewPanel.enabled");
-// FF127
+// 127
 clearPref("geo.provider.network.url");
 clearPref("browser.contentanalysis.default_allow");
 clearPref("widget.non-native-theme.enabled");
-// RF127
 clearPref("privacy.resistFingerprinting.pbmode");
-// FF129
+// 129
 clearPref("geo.provider.use_gpsd");
-// FF130
+// 130
 clearPref("layout.css.grid-template-masonry-value.enabled");
-// F131
+// 131
 clearPref("dom.security.sanitizer.enabled");
 clearPref("browser.tabs.tabmanager.enabled");
 clearPref("browser.display.focus_ring_on_anything");
