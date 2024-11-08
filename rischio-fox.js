@@ -30,6 +30,14 @@ defaultPref("browser.ml.chat.provider", "https://gemini.google.com");
 defaultPref("browser.ml.chat.shortcuts", false);
 /* mostra Picture-in-Picture cambiando scheda */
 defaultPref("media.videocontrols.picture-in-picture.enable-when-switching-tabs.enabled", false);
+/* usa tasti nativi nella barra del titolo */
+defaultPref("widget.gtk.non-native-titlebar-buttons.enabled", true);
+/* apre segnalibri in una nuova scheda */
+defaultPref("browser.tabs.loadBookmarksInTabs", true);
+/* apre segnalibri in background */
+defaultPref("browser.tabs.loadBookmarksInBackground", true);
+/* non nascondere il cursore del mouse mentre si digita */
+defaultPref("widget.gtk.hide-pointer-while-typing.enabled", false);
 
 /*** Fastidi ***/
 /* disabilita popup traduttore */
@@ -55,128 +63,35 @@ lockPref("media.videocontrols.picture-in-picture.video-toggle.has-used", true);
 /* ░█▀▄░█▀▀░▀█▀░▀█▀░█▀▀░█▀▄░█▀▀░█▀█░█░█ */
 /* ░█▀▄░█▀▀░░█░░░█░░█▀▀░█▀▄░█▀▀░█░█░▄▀▄ */
 /* ░▀▀░░▀▀▀░░▀░░░▀░░▀▀▀░▀░▀░▀░░░▀▀▀░▀░▀ */
-// Betterfox v130
+// Betterfox v131
 
-/*** Fastfox ***/
-/* riduce il tempo di attesa prima che le pagine vengano ridisegnate */
-defaultPref("content.notify.interval", 100000);
+/*** Fastfox  ***/
+defaultPref("content.notify.interval", 100000); // riduce il tempo di attesa prima che le pagine vengano ridisegnate
 
-/** GFX RENDERING TWEAKS **/
-/* abilita Webrender */
-defaultPref("gfx.webrender.all", true);
-defaultPref("gfx.webrender.precache-shaders", true);
-defaultPref("gfx.webrender.compositor", true);
-defaultPref("gfx.gfx.webrender.software", true);
-defaultPref("gfx.webrender.software.opengl", true);
-/* accelerazione grafica Canvas2D */
+/** GFX **/
 defaultPref("gfx.canvas.accelerated.cache-items", 8192);
 defaultPref("gfx.canvas.accelerated.cache-size", 1024);
 defaultPref("gfx.content.skia-font-cache-size", 20);
 
 /** CACHE **/
-/* livello compressione per JavaScript bytecode */
-defaultPref("browser.cache.jsbc_compression_level", 3);
-/* memoria cache per i media */
+defaultPref("browser.cache.jsbc_compression_level", 3); // livello compressione per JavaScript bytecode
 defaultPref("media.memory_cache_max_size", 131072);
-defaultPref("media.memory_caches_combined_limit_kb", 1048576);
-defaultPref("media.memory_caches_combined_limit_pc_sysmem", 10);
-/* video buffering */
 defaultPref("media.cache_readahead_limit", 7200);
 defaultPref("media.cache_resume_threshold", 3600);
-/* memoria cache per le immagini */
 defaultPref("image.mem.decode_bytes_at_a_time", 65536);
 
 /** NETWORK **/
-/* aumenta numero totale di connessioni HTTP */
 defaultPref("network.http.max-connections", 1800);
 defaultPref("network.http.max-persistent-connections-per-server", 10);
 defaultPref("network.http.max-urgent-start-excessive-connections-per-host", 5);
-defaultPref("network.http.max-persistent-connections-per-proxy", 48);
-/* inviare quante più richieste HTTP possibili */
 defaultPref("network.http.pacing.requests.enabled", false);
-/* disabilita cache DNS */
 defaultPref("network.dnsCacheEntries", 0);
 defaultPref("network.dnsCacheExpiration", 0);
-/* aumenta cache TLS */
 defaultPref("network.ssl_tokens_cache_capacity", 10240);
 
 /** EXPERIMENTAL **/
-/* CSS Masonry Layout */
-/* Prioritized Task Scheduling API */
-defaultPref("dom.enable_web_task_scheduling", true);
-/* HTML Sanitizer API */
-defaultPref("dom.security.sanitizer.enabled", true);
-
-/*** PeskyFox ***/
-/** MOZILLA UI **/
-/* nasconde pubblicità della VPN di Mozilla */
-defaultPref("browser.privatebrowsing.vpnpromourl", "");
-defaultPref("browser.vpn_promo.enabled", false)
-/* nasconde la pagina con gli altri prodotti Mozilla dalle impostazioni */
-defaultPref("browser.defaultPreferences.moreFromMozilla", false);
-/* nasconde avviso di sicurezza prima di entrare in about:config */
-defaultPref("browser.aboutConfig.showWarning", false);
-/* nasconde il pulsante per elencare le schede quando non necessario */
-defaultPref("browser.tabs.tabmanager.enabled", false);
-/* profile switcher */
-defaultPref("browser.profiles.enabled", true);
-/* usa tasti nativi nella barra del titolo */
-defaultPref("widget.gtk.non-native-titlebar-buttons.enabled", true);
-
-/** THEME ADJUSTMENTS **/
-/* abilita css e stili personalizzati */
-defaultPref("toolkit.legacyUserProfileCustomizations.stylesheets", true);
-/* aggiunge modalità compatta alle opzioni */
-defaultPref("browser.compactmode.show", true);
-/* imposta il tipo di focus per i link*/
-defaultPref("browser.display.focus_ring_on_anything", true);
-defaultPref("browser.display.focus_ring_style", 0); // 0=Solid, 1=Dotted
-defaultPref("browser.display.focus_ring_width", 1);
-/* schema di colori preferito per le pagine (0=Scuro, 1=Chiaro, 2=Sistema, 3=Browser) */
-defaultPref("layout.css.defaultPrefers-color-scheme.content-override", 3);
-/* permette di modificare lo sfondo nelle opzioni della pagina iniziale */
-defaultPref("browser.newtabpage.activity-stream.newtabWallpapers.v2.enabled", true);
-
-/** COOKIE BANNER HANDLING **/
-/* nasconde banner dei cookie */
-defaultPref("cookiebanners.service.mode", 2);
-defaultPref("cookiebanners.service.mode.privateBrowsing", 2);
-
-/* FULLSCREEN NOTICE */
-/* rimuove ritardo schermo intero */
-defaultPref("full-screen-api.transition-duration.enter", "0 0");
-defaultPref("full-screen-api.transition-duration.leave", "0 0");
-/* nasconde avviso schermo interno */
-defaultPref("full-screen-api.warning.delay", -1);
-defaultPref("full-screen-api.warning.timeout", 0);
-
-/** URL BAR **/
-/* abilita calcolatrice nella barra degli indirizzi */
-defaultPref("browser.urlbar.suggest.calculator", true);
-/* abilita conversione unità nella barra degli indirizzi */
-defaultPref("browser.urlbar.unitConversion.enabled", true);
-/* abilita text fragments */
-defaultPref("dom.text_fragments.enabled", true);
-
-/** PDF **/
-/* apre PDF inline */
-defaultPref("browser.download.open_pdf_attachments_inline", true);
-
-/** TAB BEHAVIOR **/
-/* apre segnalibri in una nuova scheda */
-defaultPref("browser.tabs.loadBookmarksInTabs", true);
-/* apre segnalibri in background */
-defaultPref("browser.tabs.loadBookmarksInBackground", true);
-/* lascia il menu segnalibri aperto dopo aver aperto un segnalibro */
-defaultPref("browser.bookmarks.openInTabClosesMenu", false);
-/* mostra informazioni immagini nel menu contestuale */
-defaultPref("browser.menu.showViewImageInfo", true);
-/* mostra tutti i risultati nella barra di ricerca */
-defaultPref("findbar.highlightAll", true);
-/* non selezionare lo spazio dopo una parola */
-defaultPref("layout.word_select.eat_space_to_next_word", false);
-/* non nascondere il cursore del mouse mentre si digita */
-defaultPref("widget.gtk.hide-pointer-while-typing.enabled", false);
+defaultPref("layout.css.grid-template-masonry-value.enabled", true); // CSS Masonry Layout
+defaultPref("dom.enable_web_task_scheduling", true); // Prioritized Task Scheduling API
 
 /*** SecureFox ***/
 /** TRACKING PROTECTION **/
@@ -189,8 +104,6 @@ lockPref("privacy.partition.network_state.ocsp_cache", true);
 lockPref("privacy.partition.bloburl_per_partition_key", true);
 lockPref("privacy.partition.always_partition_third_party_non_cookie_storage", true);
 lockPref("privacy.partition.always_partition_third_party_non_cookie_storage.exempt_sessionstorage", false);
-/* SameSite Cookies */
-defaultPref("network.cookie.sameSite.noneRequiresSecure", true);
 
 /*** DISK AVOIDANCE ***/
 /* intervallo di salvataggio delle sessioni */
@@ -215,6 +128,43 @@ defaultPref("browser.tabs.searchclipboardfor.middleclick", false);
 defaultPref("signon.privateBrowsingCapture.enabled", false);
 /* previene troncamento password durante l'invio del form */
 defaultPref("editor.truncate_user_pastes", false);
+
+/*** PeskyFox ***/
+/** MOZILLA UI **/
+defaultPref("browser.privatebrowsing.vpnpromourl", "");
+defaultPref("browser.vpn_promo.enabled", false)
+defaultPref("browser.defaultPreferences.moreFromMozilla", false);
+defaultPref("browser.aboutConfig.showWarning", false);
+defaultPref("browser.profiles.enabled", true);
+
+
+/** THEME ADJUSTMENTS **/
+defaultPref("toolkit.legacyUserProfileCustomizations.stylesheets", true); // abilita css e stili personalizzati
+defaultPref("browser.compactmode.show", true); // aggiunge modalità compatta alle opzioni
+defaultPref("layout.css.defaultPrefers-color-scheme.content-override", 3); // schema di colori preferito per le pagine (0=Scuro, 1=Chiaro, 2=Sistema, 3=Browser)
+defaultPref("browser.newtabpage.activity-stream.newtabWallpapers.v2.enabled", true); // permette di modificare lo sfondo nella pagina iniziale
+
+/** COOKIE BANNER HANDLING **/
+defaultPref("cookiebanners.service.mode", 2);
+defaultPref("cookiebanners.service.mode.privateBrowsing", 2);
+
+/* FULLSCREEN NOTICE */
+defaultPref("full-screen-api.transition-duration.enter", "0 0");
+defaultPref("full-screen-api.transition-duration.leave", "0 0");
+defaultPref("full-screen-api.warning.timeout", 0);
+
+/** URL BAR **/
+defaultPref("browser.urlbar.suggest.calculator", true); // abilita calcolatrice nella barra degli indirizzi
+defaultPref("browser.urlbar.unitConversion.enabled", true); // abilita conversione unità nella barra degli indirizzi
+
+/** PDF **/
+defaultPref("browser.download.open_pdf_attachments_inline", true); // apre PDF inline
+
+/** TAB BEHAVIOR **/
+defaultPref("browser.bookmarks.openInTabClosesMenu", false); // lascia il menu segnalibri aperto dopo aver aperto un segnalibro
+defaultPref("browser.menu.showViewImageInfo", true); // mostra informazioni immagini nel menu contestuale
+defaultPref("findbar.highlightAll", true); // mostra tutti i risultati nella barra di ricerca
+defaultPref("layout.word_select.eat_space_to_next_word", false); // non selezionare lo spazio dopo una parola
 
 /** Mozilla **/
 /* disabilita accessibilità per impedire che impatti sulle prestazioni */
@@ -494,6 +444,23 @@ clearPref("privacy.resistFingerprinting.pbmode");
 clearPref("geo.provider.use_gpsd");
 // FF130
 clearPref("layout.css.grid-template-masonry-value.enabled");
+// F131
+clearPref("dom.security.sanitizer.enabled");
+clearPref("browser.tabs.tabmanager.enabled");
+clearPref("browser.display.focus_ring_on_anything");
+clearPref("browser.display.focus_ring_style");
+clearPref("browser.display.focus_ring_width");
+clearPref("dom.text_fragments.enabled");
+clearPref("network.cookie.sameSite.noneRequiresSecure");
+clearPref("gfx.webrender.all");
+clearPref("gfx.webrender.precache-shaders");
+clearPref("gfx.webrender.compositor");
+clearPref("gfx.gfx.webrender.software");
+clearPref("gfx.webrender.software.opengl");
+clearPref("media.memory_caches_combined_limit_kb");
+clearPref("media.memory_caches_combined_limit_pc_sysmem");
+clearPref("network.http.max-persistent-connections-per-proxy");
+clearPref("full-screen-api.warning.delay", -1);
 
 // [FINE]
-lockPref("rischio.fox", "132");
+lockPref("rischio.fox", "132.1");
