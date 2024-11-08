@@ -460,7 +460,7 @@ clearPref("gfx.webrender.software.opengl");
 clearPref("media.memory_caches_combined_limit_kb");
 clearPref("media.memory_caches_combined_limit_pc_sysmem");
 clearPref("network.http.max-persistent-connections-per-proxy");
-clearPref("full-screen-api.warning.delay", -1);
+clearPref("full-screen-api.warning.delay");
 
 // [FINE]
 lockPref("rischio.fox", "132.1");
