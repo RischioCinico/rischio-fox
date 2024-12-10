@@ -67,7 +67,7 @@ lockPref("media.videocontrols.picture-in-picture.video-toggle.has-used", true);
 /* ░█▀▄░█▀▀░▀█▀░▀█▀░█▀▀░█▀▄░█▀▀░█▀█░█░█ */
 /* ░█▀▄░█▀▀░░█░░░█░░█▀▀░█▀▄░█▀▀░█░█░▄▀▄ */
 /* ░▀▀░░▀▀▀░░▀░░░▀░░▀▀▀░▀░▀░▀░░░▀▀▀░▀░▀ */
-// Betterfox v131
+// Betterfox v133
 
 /*** Fastfox  ***/
 defaultPref("content.notify.interval", 100000); // riduce il tempo di attesa prima che le pagine vengano ridisegnate
@@ -113,6 +113,9 @@ lockPref("privacy.partition.always_partition_third_party_non_cookie_storage.exem
 /* intervallo di salvataggio delle sessioni */
 defaultPref("browser.sessionstore.interval", 1800000); // default=15000 (15s); 1800000=30 min
 
+/* attiva pulizia icone di sessione in modalità anonima */
+defaultPref("browser.privatebrowsing.resetPBM.enabled", true);
+
 /** SEARCH / URL BAR **/
 /* nasconde https e www dall'indirizzo */
 defaultPref("browser.urlbar.trimHttps", true);
@@ -145,7 +148,6 @@ defaultPref("browser.profiles.enabled", true);
 defaultPref("toolkit.legacyUserProfileCustomizations.stylesheets", true); // abilita css e stili personalizzati
 defaultPref("browser.compactmode.show", true); // aggiunge modalità compatta alle opzioni
 defaultPref("layout.css.defaultPrefers-color-scheme.content-override", 3); // schema di colori preferito per le pagine (0=Scuro, 1=Chiaro, 2=Sistema, 3=Browser)
-defaultPref("browser.newtabpage.activity-stream.newtabWallpapers.v2.enabled", true); // permette di modificare lo sfondo nella pagina iniziale
 
 /** COOKIE BANNER HANDLING **/
 defaultPref("cookiebanners.service.mode", 2);
@@ -463,6 +465,8 @@ clearPref("media.memory_caches_combined_limit_kb");
 clearPref("media.memory_caches_combined_limit_pc_sysmem");
 clearPref("network.http.max-persistent-connections-per-proxy");
 clearPref("full-screen-api.warning.delay");
+// 133
+clearPref("browser.newtabpage.activity-stream.newtabWallpapers.v2.enabled", true);
 
 // [FINE]
-lockPref("rischio.fox", "133");
+lockPref("rischio.fox", "133.1");
