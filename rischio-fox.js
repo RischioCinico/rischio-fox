@@ -40,6 +40,8 @@ defaultPref("browser.tabs.loadBookmarksInBackground", true);
 defaultPref("widget.gtk.hide-pointer-while-typing.enabled", false);
 /* attiva gruppi di schede */
 defaultPref("browser.tabs.groups.enabled", true);
+/* sottolinea link */
+defaultPref("layout.css.always_underline_links", true);
 
 /*** Fastidi ***/
 /* disabilita popup traduttore */
