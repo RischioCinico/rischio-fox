@@ -141,7 +141,6 @@ defaultPref("browser.defaultPreferences.moreFromMozilla", false);
 defaultPref("browser.aboutConfig.showWarning", false);
 defaultPref("browser.profiles.enabled", true);
 
-
 /** THEME ADJUSTMENTS **/
 defaultPref("toolkit.legacyUserProfileCustomizations.stylesheets", true); // abilita css e stili personalizzati
 defaultPref("browser.compactmode.show", true); // aggiunge modalità compatta alle opzioni
