@@ -38,6 +38,8 @@ defaultPref("browser.tabs.loadBookmarksInTabs", true);
 defaultPref("browser.tabs.loadBookmarksInBackground", true);
 /* non nascondere il cursore del mouse mentre si digita */
 defaultPref("widget.gtk.hide-pointer-while-typing.enabled", false);
+/* attiva gruppi di schede */
+defaultPref("browser.tabs.groups.enabled", true);
 
 /*** Fastidi ***/
 /* disabilita popup traduttore */
@@ -462,4 +464,4 @@ clearPref("network.http.max-persistent-connections-per-proxy");
 clearPref("full-screen-api.warning.delay");
 
 // [FINE]
-lockPref("rischio.fox", "132.1");
+lockPref("rischio.fox", "133");
