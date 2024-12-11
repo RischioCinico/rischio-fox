@@ -40,8 +40,6 @@ defaultPref("browser.tabs.loadBookmarksInBackground", true);
 defaultPref("widget.gtk.hide-pointer-while-typing.enabled", false);
 /* attiva gruppi di schede */
 defaultPref("browser.tabs.groups.enabled", true);
-/* sottolinea link */
-defaultPref("layout.css.always_underline_links", true);
 
 /*** Fastidi ***/
 /* disabilita popup traduttore */
@@ -469,4 +467,4 @@ clearPref("full-screen-api.warning.delay");
 clearPref("browser.newtabpage.activity-stream.newtabWallpapers.v2.enabled", true);
 
 // [FINE]
-lockPref("rischio.fox", "133.1");
+lockPref("rischio.fox", "133.2");
