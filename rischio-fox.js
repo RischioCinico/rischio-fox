@@ -347,8 +347,6 @@ defaultPref("browser.uitour.enabled", false);
 clearPref("devtools.debugger.remote-enabled", false);
 /* 2616 rimuove permessi speciali per domini Mozilla */
 defaultPref("permissions.manager.defaultsUrl", "");
-/* 2617 rimuove webchannel whitelist */
-defaultPref("webchannel.allowObject.urlWhitelist", "");
 /* 2619 usa Punycode */
 defaultPref("network.IDN_show_punycode", true);
 /* 2620 disabilita PDFJS */
@@ -389,6 +387,8 @@ defaultPref("privacy.window.maxInnerHeight", 900);
 defaultPref("privacy.resistFingerprinting.block_mozAddonManager", true);
 /* 4510 usa colori di sistema */
 defaultPref("browser.display.use_system_colors", false);
+/* 4511: disable using system accent colors ***/
+defaultPref("widget.non-native-theme.use-theme-accent", false);
 /* 4512 forza apertura dei link in nuove schede */
 defaultPref("browser.link.open_newwindow", 3);
 /* 4513 obbliga a rispettare "browser.link.open_newwindow" (4512) */
@@ -464,7 +464,8 @@ clearPref("media.memory_caches_combined_limit_pc_sysmem");
 clearPref("network.http.max-persistent-connections-per-proxy");
 clearPref("full-screen-api.warning.delay");
 // 133
-clearPref("browser.newtabpage.activity-stream.newtabWallpapers.v2.enabled", true);
+clearPref("browser.newtabpage.activity-stream.newtabWallpapers.v2.enabled");
+clearPref("webchannel.allowObject.urlWhitelist");
 
 // [FINE]
-lockPref("rischio.fox", "133.2");
+lockPref("rischio.fox", "134");
