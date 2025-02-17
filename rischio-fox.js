@@ -71,8 +71,7 @@ lockPref("media.videocontrols.picture-in-picture.video-toggle.has-used", true);
 defaultPref("content.notify.interval", 100000); // riduce il tempo di attesa prima che le pagine vengano ridisegnate
 
 /** GFX **/
-defaultPref("gfx.canvas.accelerated.cache-items", 8192);
-defaultPref("gfx.canvas.accelerated.cache-size", 1024);
+defaultPref("gfx.canvas.accelerated.cache-size", 512);
 defaultPref("gfx.content.skia-font-cache-size", 20);
 
 /** CACHE **/
@@ -93,7 +92,6 @@ defaultPref("network.ssl_tokens_cache_capacity", 10240);
 
 /** EXPERIMENTAL **/
 defaultPref("layout.css.grid-template-masonry-value.enabled", true); // CSS Masonry Layout
-defaultPref("dom.enable_web_task_scheduling", true); // Prioritized Task Scheduling API
 
 /*** SecureFox ***/
 /** TRACKING PROTECTION **/
@@ -435,37 +433,6 @@ clearPref("extensions.quarantinedDomains.enabled"); // [DEFAULT: true]
 clearPref("dom.serviceWorkers.enabled"); // [DEFAULT: true]
 
 /*** [9999] DEPRECATE ***/
-// 126
-clearPref("browser.messaging-system.whatsNewPanel.enabled");
-// 127
-clearPref("geo.provider.network.url");
-clearPref("browser.contentanalysis.default_allow");
-clearPref("widget.non-native-theme.enabled");
-clearPref("privacy.resistFingerprinting.pbmode");
-// 129
-clearPref("geo.provider.use_gpsd");
-// 130
-clearPref("layout.css.grid-template-masonry-value.enabled");
-// 131
-clearPref("dom.security.sanitizer.enabled");
-clearPref("browser.tabs.tabmanager.enabled");
-clearPref("browser.display.focus_ring_on_anything");
-clearPref("browser.display.focus_ring_style");
-clearPref("browser.display.focus_ring_width");
-clearPref("dom.text_fragments.enabled");
-clearPref("network.cookie.sameSite.noneRequiresSecure");
-clearPref("gfx.webrender.all");
-clearPref("gfx.webrender.precache-shaders");
-clearPref("gfx.webrender.compositor");
-clearPref("gfx.gfx.webrender.software");
-clearPref("gfx.webrender.software.opengl");
-clearPref("media.memory_caches_combined_limit_kb");
-clearPref("media.memory_caches_combined_limit_pc_sysmem");
-clearPref("network.http.max-persistent-connections-per-proxy");
-clearPref("full-screen-api.warning.delay");
-// 133
-clearPref("browser.newtabpage.activity-stream.newtabWallpapers.v2.enabled");
-clearPref("webchannel.allowObject.urlWhitelist");
 
 // [FINE]
-lockPref("rischio.fox", "134");
+lockPref("rischio.fox", "134.1");
