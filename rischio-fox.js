@@ -175,7 +175,7 @@ pref("devtools.accessibility.enabled", false);
 /* ░█▀█░█▀▄░█░█░█▀▀░█▀█░█▀▀░█▀█░█░█ */
 /* ░█▀█░█▀▄░█▀▄░█▀▀░█░█░█▀▀░█░█░▄▀▄ */
 /* ░▀░▀░▀░▀░▀░▀░▀▀▀░▀░▀░▀░░░▀▀▀░▀░▀ */
-// Arkenfox v128
+// Arkenfox v133
 
 /*** [0200] GEOLOCALIZZAZIONE ***/
 /* 0202 disabilita utilizzo del servizio di geolocalizzazione del sistema locale */
