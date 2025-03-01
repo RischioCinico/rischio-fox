@@ -42,6 +42,8 @@ defaultPref("widget.gtk.hide-pointer-while-typing.enabled", false);
 defaultPref("browser.tabs.groups.enabled", true);
 
 /*** Fastidi ***/
+// https://blog.mozilla.org/addons/how-to-opt-out-of-add-on-metadata-updates
+defaultPref("extensions.getAddons.cache.enabled", false);
 /* disabilita popup traduttore */
 defaultPref("browser.translations.automaticallyPopup", false);
 /* disabilita indicatori WebRTC (sono buggati) */
@@ -435,4 +437,4 @@ clearPref("dom.serviceWorkers.enabled"); // [DEFAULT: true]
 /*** [9999] DEPRECATE ***/
 
 // [FINE]
-lockPref("rischio.fox", "135");
+lockPref("rischio.fox", "135.1");
