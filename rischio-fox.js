@@ -54,17 +54,6 @@ defaultPref("privacy.webrtc.hideGlobalIndicator", true);
 defaultPref("media.videocontrols.picture-in-picture.video-toggle.always-show", true);
 /* nascondi barra del titolo */
 defaultPref("browser.tabs.inTitlebar", 2);
-/* has-used */
-lockPref("browser.rights.3.shown", true);
-lockPref("browser.download.panel.shown", true);
-lockPref("browser.engagement.ctrlTab.has-used", true);
-lockPref("browser.engagement.downloads-button.has-used", true);
-lockPref("browser.engagement.fxa-toolbar-menu-button.has-used", true);
-lockPref("browser.engagement.home-button.has-used", true);
-lockPref("browser.engagement.library-button.has-used", true);
-lockPref("browser.engagement.sidebar-button.has-used", true);
-lockPref("browser.protections_panel.infoMessage.seen", true);
-lockPref("media.videocontrols.picture-in-picture.video-toggle.has-used", true);
 
 /* ░█▀▄░█▀▀░▀█▀░▀█▀░█▀▀░█▀▄░█▀▀░█▀█░█░█ */
 /* ░█▀▄░█▀▀░░█░░░█░░█▀▀░█▀▄░█▀▀░█░█░▄▀▄ */
@@ -194,15 +183,9 @@ defaultPref("extensions.htmlaboutaddons.recommendations.enabled", false);
 defaultPref("browser.discovery.enabled", false);
 /* 0323 disable shopping experience */
 defaultPref("browser.shopping.experience2023.enabled", false);
-/* 0333 disable Telemetry Coverage */
-defaultPref("toolkit.telemetry.coverage.opt-out", true); // [Nascosta]
-defaultPref("toolkit.coverage.opt-out", true); // [Nascosta]
-defaultPref("toolkit.coverage.endpoint.base", "");
 /* 0335 disable Firefox Home (Activity Stream) telemetry */
 defaultPref("browser.newtabpage.activity-stream.feeds.telemetry", false);
 defaultPref("browser.newtabpage.activity-stream.telemetry", false);
-/* 0340 disable Studies */
-defaultPref("app.shield.optoutstudies.enabled", false);
 /* 0341 disable Normandy/Shield */
 defaultPref("app.normandy.enabled", false);
 defaultPref("app.normandy.api_url", "");
@@ -439,4 +422,4 @@ clearPref("dom.serviceWorkers.enabled"); // [DEFAULT: true]
 /*** [9999] DEPRECATE ***/
 
 // [FINE]
-lockPref("rischio.fox", "135.2");
+lockPref("rischio.fox", "135.3");
