@@ -10,6 +10,17 @@
 /*    ░     ░       ░ ░ ░      ░  ░  ░░     ░ ░               ░ ░  ░    ░   */
 /*                    ░                                                     */
 
+/*** [SECTION 0100]: AVVIO ***/
+lockPref("rischio.fox", "0100 syntax error");
+/* 0106: rimuovere topsites predefiniti ***/
+defaultPref("browser.newtabpage.activity-stream.default.sites", "");
+
+/*** [SECTION 0200]: GEOLOCALIZZAZIONE ***/
+lockPref("rischio.fox", "0200 syntax error");
+/* 0202: disabilita utilizzo del servizio di geolocalizzazione del sistema ***/
+defaultPref("geo.provider.use_geoclue", false); // [LINUX]
+
+
 /*** Pagina Iniziale ***/
 /* scorciatoie newtab */
 clearPref("browser.newtabpage.pinned");
@@ -169,10 +180,6 @@ pref("devtools.accessibility.enabled", false);
 /* ░█▀█░█▀▄░█▀▄░█▀▀░█░█░█▀▀░█░█░▄▀▄ */
 /* ░▀░▀░▀░▀░▀░▀░▀▀▀░▀░▀░▀░░░▀▀▀░▀░▀ */
 // Arkenfox v133
-
-/*** [0200] GEOLOCALIZZAZIONE ***/
-/* 0202 disabilita utilizzo del servizio di geolocalizzazione del sistema locale */
-defaultPref("geo.provider.use_geoclue", false);
 
 /*** [0300] RACCOLTA DATI ***/
 /* 0320 disable recommendation pane in about:addons (uses Google Analytics) */
@@ -422,4 +429,4 @@ clearPref("dom.serviceWorkers.enabled"); // [DEFAULT: true]
 /*** [9999] DEPRECATE ***/
 
 // [FINE]
-lockPref("rischio.fox", "135.3");
+lockPref("rischio.fox", "135.4");
