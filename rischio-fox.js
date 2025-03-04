@@ -428,4 +428,4 @@ clearPref("dom.serviceWorkers.enabled"); // [DEFAULT: true]
 /*** [9999] DEPRECATE ***/
 
 // [FINE]
-lockPref("rischio.fox", "135.4");
+lockPref("rischio.fox", "135.5");
