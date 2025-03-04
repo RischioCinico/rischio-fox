@@ -10,20 +10,9 @@
 /*    ░     ░       ░ ░ ░      ░  ░  ░░     ░ ░               ░ ░  ░    ░   */
 /*                    ░                                                     */
 
-/*** [SECTION 0100]: AVVIO ***/
-lockPref("rischio.fox", "0100 syntax error");
-/* 0106: rimuovere topsites predefiniti ***/
-defaultPref("browser.newtabpage.activity-stream.default.sites", "");
-
-/*** [SECTION 0200]: GEOLOCALIZZAZIONE ***/
-lockPref("rischio.fox", "0200 syntax error");
-/* 0202: disabilita utilizzo del servizio di geolocalizzazione del sistema ***/
-defaultPref("geo.provider.use_geoclue", false); // [LINUX]
-
 
 /*** Pagina Iniziale ***/
 /* scorciatoie newtab */
-clearPref("browser.newtabpage.pinned");
 defaultPref("browser.newtabpage.pinned", "[{\"url\":\"https://www.youtube.com/\",\"label\":\"YouTube\"},{\"url\":\"https://www.reddit.com/\",\"label\":\"Reddit\"},{\"url\":\"https://mail.google.com/mail/u/0/?hl=it#inbox\",\"label\":\"Gmail\"},{\"url\":\"https://addons.mozilla.org/it/firefox/\",\"label\":\"Estensioni\"},{\"url\":\"https://wiki.archlinux.org/title/List_of_applications\",\"label\":\"Applicazioni\"},{\"url\":\"https://it.wikipedia.org/wiki/Pagina_principale\",\"label\":\"Wikipedia\"},{\"url\":\"https://github.com/\",\"label\":\"GitHub\"},{\"url\":\"https://www.diretta.it/\",\"label\":\"Diretta\"}]");
 /* non spostare il focus dal searchbox alla barra degli indirizzi */
 defaultPref("browser.newtabpage.activity-stream.improvesearch.handoffToAwesomebar", false);
@@ -180,6 +169,16 @@ pref("devtools.accessibility.enabled", false);
 /* ░█▀█░█▀▄░█▀▄░█▀▀░█░█░█▀▀░█░█░▄▀▄ */
 /* ░▀░▀░▀░▀░▀░▀░▀▀▀░▀░▀░▀░░░▀▀▀░▀░▀ */
 // Arkenfox v133
+
+/*** [SECTION 0100]: AVVIO ***/
+lockPref("rischio.fox", "0100 syntax error");
+/* 0106: rimuovere topsites predefiniti ***/
+defaultPref("browser.newtabpage.activity-stream.default.sites", "");
+
+/*** [SECTION 0200]: GEOLOCALIZZAZIONE ***/
+lockPref("rischio.fox", "0200 syntax error");
+/* 0202: disabilita utilizzo del servizio di geolocalizzazione del sistema ***/
+defaultPref("geo.provider.use_geoclue", false); // [LINUX]
 
 /*** [0300] RACCOLTA DATI ***/
 /* 0320 disable recommendation pane in about:addons (uses Google Analytics) */
