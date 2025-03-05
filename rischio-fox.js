@@ -14,9 +14,7 @@
 /* scorciatoie newtab */
 defaultPref("browser.newtabpage.pinned", "[{\"url\":\"https://www.youtube.com/\",\"label\":\"YouTube\"},{\"url\":\"https://www.reddit.com/\",\"label\":\"Reddit\"},{\"url\":\"https://mail.google.com/mail/u/0/?hl=it#inbox\",\"label\":\"Gmail\"},{\"url\":\"https://addons.mozilla.org/it/firefox/\",\"label\":\"Estensioni\"},{\"url\":\"https://wiki.archlinux.org/title/List_of_applications\",\"label\":\"Applicazioni\"},{\"url\":\"https://it.wikipedia.org/wiki/Pagina_principale\",\"label\":\"Wikipedia\"},{\"url\":\"https://github.com/\",\"label\":\"GitHub\"},{\"url\":\"https://www.diretta.it/\",\"label\":\"Diretta\"}]");
 /* imposta lo sfondo predefinito */
-defaultPref("browser.newtabpage.activity-stream.newtabWallpapers.wallpaper", "light-sky");
-defaultPref("browser.newtabpage.activity-stream.newtabWallpapers.wallpaper-dark", "dark-landscape");
-defaultPref("browser.newtabpage.activity-stream.newtabWallpapers.wallpaper-light", "light-sky");
+defaultPref("browser.newtabpage.activity-stream.newtabWallpapers.wallpaper", "dark-landscape");
 
 /*** Funzioni ***/
 /* abilita scorrimento automatico */
@@ -381,4 +379,4 @@ clearPref("accessibility.force_disabled");
 clearPref("devtools.accessibility.enabled");
 
 // [FINE]
-lockPref("rischio.fox", "137.8");
+lockPref("rischio.fox", "137.9");
