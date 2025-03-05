@@ -170,23 +170,21 @@ pref("devtools.accessibility.enabled", false);
 /* ░▀░▀░▀░▀░▀░▀░▀▀▀░▀░▀░▀░░░▀▀▀░▀░▀ */
 // Arkenfox v133
 
-/*** [SECTION 0100]: AVVIO ***/
-lockPref("rischio.fox", "0100 syntax error");
-/* 0106: rimuovere topsites predefiniti ***/
+/*** [0100] AVVIO ***/
+/* 0106 rimuovere topsites predefiniti */
 defaultPref("browser.newtabpage.activity-stream.default.sites", "");
 
-/*** [SECTION 0200]: GEOLOCALIZZAZIONE ***/
-lockPref("rischio.fox", "0200 syntax error");
-/* 0202: disabilita utilizzo del servizio di geolocalizzazione del sistema ***/
+/*** [0200] GEOLOCALIZZAZIONE ***/
+/* 0202 disabilita utilizzo del servizio di geolocalizzazione del sistema */
 defaultPref("geo.provider.use_geoclue", false); // [LINUX]
 
 /*** [0300] RACCOLTA DATI ***/
 /* 0320 disable recommendation pane in about:addons (uses Google Analytics) */
-defaultPref("extensions.getAddons.showPane", false); // [Nascosta]
+lockPref("extensions.getAddons.showPane", false); // [Nascosta]
 /* 0321 disable recommendations in about:addons' Extensions and Themes panes */
-defaultPref("extensions.htmlaboutaddons.recommendations.enabled", false);
+lockPref("extensions.htmlaboutaddons.recommendations.enabled", false);
 /* 0322 disable personalized Extension Recommendations in about:addons and AMO */
-defaultPref("browser.discovery.enabled", false);
+lockPref("browser.discovery.enabled", false);
 /* 0323 disable shopping experience */
 defaultPref("browser.shopping.experience2023.enabled", false);
 /* 0335 disable Firefox Home (Activity Stream) telemetry */
