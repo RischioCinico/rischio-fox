@@ -40,6 +40,16 @@ defaultPref("media.videocontrols.picture-in-picture.video-toggle.always-show", t
 /* nascondi barra del titolo */
 defaultPref("browser.tabs.inTitlebar", 2);
 
+/*** Prestazioni ***/
+/* Cache */
+defaultPref("browser.cache.disk.capacity", 8192000);
+defaultPref("browser.cache.disk.smart_size.enabled", false);
+defaultPref("browser.cache.frecency_half_life_hours", 18);
+defaultPref("browser.cache.max_shutdown_io_lag", 16);
+defaultPref("browser.cache.memory.capacity", 2097152);
+defaultPref("browser.cache.memory.max_entry_size", 327680);
+defaultPref("browser.cache.disk.metadata_memory_limit", 15360);
+
 /* ░█▀█░█▀▀░█▀▀░█░█░█░█░█▀▀░█▀█░█░█ */
 /* ░█▀▀░█▀▀░▀▀█░█▀▄░░█░░█▀▀░█░█░▄▀▄ */
 /* ░▀░░░▀▀▀░▀▀▀░▀░▀░░▀░░▀░░░▀▀▀░▀░▀ */
@@ -379,4 +389,4 @@ clearPref("accessibility.force_disabled");
 clearPref("devtools.accessibility.enabled");
 
 // [FINE]
-lockPref("rischio.fox", "135.9");
+lockPref("rischio.fox", "135.10");
