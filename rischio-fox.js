@@ -185,8 +185,19 @@ lockPref("extensions.getAddons.showPane", false); // [Nascosta]
 lockPref("extensions.htmlaboutaddons.recommendations.enabled", false);
 /* 0322 disable personalized Extension Recommendations in about:addons and AMO */
 lockPref("browser.discovery.enabled", false);
-/* 0323: disable shopping experience [FF116+] */
+/* 0323 disable shopping experience [FF116+] */
 lockPref("browser.shopping.experience2023.enabled", false);
+/* 0332 telemetria (disabilitata anche in policied.json) */
+lockPref("toolkit.telemetry.server", "data:,");
+lockPref("toolkit.telemetry.newProfilePing.enabled", false);
+lockPref("toolkit.telemetry.shutdownPingSender.enabled", false);
+lockPref("toolkit.telemetry.updatePing.enabled", false);
+lockPref("toolkit.telemetry.bhrPing.enabled", false);
+lockPref("toolkit.telemetry.firstShutdownPing.enabled", false);
+/* 0333 disable Telemetry Coverage ***/
+lockPref("toolkit.telemetry.coverage.opt-out", true); // [Nascosta]
+lockPref("toolkit.coverage.opt-out", true); // [Nascosta]
+lockPref("toolkit.coverage.endpoint.base", "");
 /* 0335 disable Firefox Home (Activity Stream) telemetry */
 lockPref("browser.newtabpage.activity-stream.feeds.telemetry", false);
 lockPref("browser.newtabpage.activity-stream.telemetry", false);
@@ -254,8 +265,6 @@ defaultPref("browser.urlbar.trending.featureGate", false);
 /* 0806 disabilita suggerimenti nella barra degli indirizzi */
 defaultPref("browser.urlbar.addons.featureGate", false);
 defaultPref("browser.urlbar.mdn.featureGate", false); // [Nascosta]
-defaultPref("browser.urlbar.pocket.featureGate", false);
-defaultPref("browser.urlbar.weather.featureGate", false);
 defaultPref("browser.urlbar.yelp.featureGate", false);
 /* 0807 disabilita suggerimenti dagli appunti nella barra di ricerca */
 defaultPref("browser.urlbar.clipboard.featureGate", false);
@@ -283,34 +292,25 @@ defaultPref("media.memory_cache_max_size", 65536);
 defaultPref("browser.sessionstore.privacy_level", 2);
 
 /*** [1200] HTTPS (SSL/TLS / OCSP / CERTS / HPKP) ***/
-/** SSL (Secure Sockets Layer) / TLS (Transport Layer Security) **/
 /* 1201 richiedere una negoziazione SSL sicura */
 defaultPref("security.ssl.require_safe_negotiation", true);
 /* 1206 disabilita TLS1.3 0-RTT (round-trip time) */
 defaultPref("security.tls.enable_0rtt_data", false);
-
-/** OCSP (Online Certificate Status Protocol) **/
 /* 1211 abilita OCSP (Online Certificate Status Protocol) */
 defaultPref("security.OCSP.enabled", 1);
 /* 1212 richiedi OCSP */
 defaultPref("security.OCSP.require", true);
-
-/** CERTS / HPKP (HTTP Public Key Pinning) **/
 /* 1223 Abilita PKP (Public Key Pinning) */
 defaultPref("security.cert_pinning.enforcement_level", 2);
 /* 1224 abilita CRLite */
 defaultPref("security.remote_settings.crlite_filters.enabled", true);
 defaultPref("security.pki.crlite_mode", 2);
-
-/** MIXED CONTENT **/
 /* 1241 disabilita contenuti passivi non sicuri (ad esempio immagini) su pagine HTTPS */
 defaultPref("security.mixed_content.block_display_content", true);
 /* 1244 abilita modalità HTTPS-Only */
 defaultPref("dom.security.https_only_mode", true);
 /* 1246 disabilita richieste HTTP in background */
 defaultPref("dom.security.https_only_mode_send_http_background_request", false);
-
-/** UI (User Interface) **/
 /* 1270 mostra avvisi errori SSL */
 defaultPref("security.ssl.treat_unsafe_negotiation_as_broken", true);
 /* 1272 mostra informazioni sulle connessioni non sicure */
@@ -389,8 +389,6 @@ defaultPref("privacy.resistFingerprinting.block_mozAddonManager", true);
 defaultPref("browser.display.use_system_colors", false);
 /* 4511: disable using system accent colors ***/
 defaultPref("widget.non-native-theme.use-theme-accent", false);
-/* 4512 forza apertura dei link in nuove schede */
-defaultPref("browser.link.open_newwindow", 3);
 /* 4513 obbliga a rispettare "browser.link.open_newwindow" (4512) */
 defaultPref("browser.link.open_newwindow.restriction", 0);
 
@@ -437,4 +435,4 @@ clearPref("dom.serviceWorkers.enabled"); // [DEFAULT: true]
 /*** [9999] DEPRECATE ***/
 
 // [FINE]
-lockPref("rischio.fox", "135.6");
+lockPref("rischio.fox", "135.7");
