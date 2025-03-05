@@ -185,18 +185,20 @@ lockPref("extensions.getAddons.showPane", false); // [Nascosta]
 lockPref("extensions.htmlaboutaddons.recommendations.enabled", false);
 /* 0322 disable personalized Extension Recommendations in about:addons and AMO */
 lockPref("browser.discovery.enabled", false);
-/* 0323 disable shopping experience */
-defaultPref("browser.shopping.experience2023.enabled", false);
+/* 0323: disable shopping experience [FF116+] */
+lockPref("browser.shopping.experience2023.enabled", false);
 /* 0335 disable Firefox Home (Activity Stream) telemetry */
-defaultPref("browser.newtabpage.activity-stream.feeds.telemetry", false);
-defaultPref("browser.newtabpage.activity-stream.telemetry", false);
+lockPref("browser.newtabpage.activity-stream.feeds.telemetry", false);
+lockPref("browser.newtabpage.activity-stream.telemetry", false);
+/* 0340: disable Studies */
+lockPref("app.shield.optoutstudies.enabled", false);
 /* 0341 disable Normandy/Shield */
-defaultPref("app.normandy.enabled", false);
-defaultPref("app.normandy.api_url", "");
+lockPref("app.normandy.enabled", false);
+lockPref("app.normandy.api_url", "");
 /* 0350 disable Crash Reports */
-defaultPref("breakpad.reportURL", "");
-defaultPref("browser.tabs.crashReporting.sendReport", false);
-defaultPref("browser.crashReports.unsubmittedCheck.enabled", false);
+lockPref("breakpad.reportURL", "");
+lockPref("browser.tabs.crashReporting.sendReport", false);
+lockPref("browser.crashReports.unsubmittedCheck.enabled", false);
 /* 0351 enforce no submission of backlogged Crash Reports */
 lockPref("browser.crashReports.unsubmittedCheck.autoSubmit2", false);
 /* 0360 disabilita Captive Portal */
@@ -205,18 +207,27 @@ defaultPref("network.captive-portal-service.enabled", false);
 /* 0361 disabilita controllo connettività */
 defaultPref("network.connectivity-service.enabled", false);
 
+/*** [0400] SAFE BROWSING ***/
+/* 0401 Safe Browsing */
+lockPref("browser.safebrowsing.malware.enabled", true);
+lockPref("browser.safebrowsing.phishing.enabled", true);
+/* 0402 SB checks for downloads */
+lockPref("browser.safebrowsing.downloads.enabled", true);
+/* 0403 disable SB checks for downloads (remote) */
+lockPref("browser.safebrowsing.downloads.remote.enabled", true);
+/* 0404 disable SB checks for unwanted software */
+lockPref("browser.safebrowsing.downloads.remote.block_potentially_unwanted", true);
+lockPref("browser.safebrowsing.downloads.remote.block_uncommon", true);
+
 /*** [0600] CONNESSIONI NON RICHIESTE ***/
 /* 0601 disabilita link prefetching */
 defaultPref("network.prefetch-next", false);
 /* 0603 disabilita predictor / prefetching */
 defaultPref("network.predictor.enabled", false);
-defaultPref("network.predictor.enable-prefetch", false);
 /* 0604 disabilita connessione al passaggio del mouse */
 defaultPref("network.http.speculative-parallel-limit", 0);
 /* 0605 disabilita connessioni speculative in segnalibri e cronologia */
 defaultPref("browser.places.speculativeConnect.enabled", false);
-/* 0610 impedisci "Hyperlink Auditing" (click tracking) */
-defaultPref("browser.send_pings", false);
 
 /*** [0700] DNS / PROXY ***/
 /* 0702 usa DNS remoti con proxy SOCKS */
@@ -426,4 +437,4 @@ clearPref("dom.serviceWorkers.enabled"); // [DEFAULT: true]
 /*** [9999] DEPRECATE ***/
 
 // [FINE]
-lockPref("rischio.fox", "135.5");
+lockPref("rischio.fox", "135.6");
