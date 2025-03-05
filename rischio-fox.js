@@ -379,4 +379,4 @@ clearPref("accessibility.force_disabled");
 clearPref("devtools.accessibility.enabled");
 
 // [FINE]
-lockPref("rischio.fox", "137.9");
+lockPref("rischio.fox", "135.9");
