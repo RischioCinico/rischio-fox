@@ -432,7 +432,7 @@ defaultPref("network.dns.disableIPv6", true);
 
 /*** [9000] NON-PROJECT RELATED ***/
 /* 9001 disable welcome notices */
-defaultPref("browser.startup.homepage_override.mstone", "ignore"); // [Nascosta]
+lockPref("browser.startup.homepage_override.mstone", "ignore"); // [Nascosta]
 /* 9002 disable General>Browsing>Recommend extensions/features as you browse */
 defaultPref("browser.newtabpage.activity-stream.asrouter.userprefs.cfr.addons", false);
 defaultPref("browser.newtabpage.activity-stream.asrouter.userprefs.cfr.features", false);
@@ -442,4 +442,4 @@ defaultPref("browser.urlbar.showSearchTerms.enabled", false);
 /*** [9999] DEPRECATE ***/
 
 // [FINE]
-lockPref("rischio.fox", "136");
+lockPref("rischio.fox", "136.1");
