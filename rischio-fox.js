@@ -188,7 +188,7 @@ defaultPref("browser.bookmarks.max_backups", 5); // default=15
 /* ░█▀█░█▀▄░█░█░█▀▀░█▀█░█▀▀░█▀█░█░█ */
 /* ░█▀█░█▀▄░█▀▄░█▀▀░█░█░█▀▀░█░█░▄▀▄ */
 /* ░▀░▀░▀░▀░▀░▀░▀▀▀░▀░▀░▀░░░▀▀▀░▀░▀ */
-// ArkenFox v133
+// ArkenFox v135
 
 /*** [0100] AVVIO ***/
 /* 0106 rimuovere topsites predefiniti */
@@ -205,19 +205,6 @@ lockPref("extensions.getAddons.showPane", false); // [Nascosta]
 lockPref("extensions.htmlaboutaddons.recommendations.enabled", false);
 /* 0322 disable personalized Extension Recommendations in about:addons and AMO */
 lockPref("browser.discovery.enabled", false);
-/* 0323 disable shopping experience [FF116+] */
-lockPref("browser.shopping.experience2023.enabled", false);
-/* 0332 telemetria (disabilitata anche in policied.json) */
-lockPref("toolkit.telemetry.server", "data:,");
-lockPref("toolkit.telemetry.newProfilePing.enabled", false);
-lockPref("toolkit.telemetry.shutdownPingSender.enabled", false);
-lockPref("toolkit.telemetry.updatePing.enabled", false);
-lockPref("toolkit.telemetry.bhrPing.enabled", false);
-lockPref("toolkit.telemetry.firstShutdownPing.enabled", false);
-/* 0333 disable Telemetry Coverage ***/
-lockPref("toolkit.telemetry.coverage.opt-out", true); // [Nascosta]
-lockPref("toolkit.coverage.opt-out", true); // [Nascosta]
-lockPref("toolkit.coverage.endpoint.base", "");
 /* 0335 disable Firefox Home (Activity Stream) telemetry */
 lockPref("browser.newtabpage.activity-stream.feeds.telemetry", false);
 lockPref("browser.newtabpage.activity-stream.telemetry", false);
@@ -229,9 +216,6 @@ lockPref("app.normandy.api_url", "");
 /* 0350 disable Crash Reports */
 lockPref("breakpad.reportURL", "");
 lockPref("browser.tabs.crashReporting.sendReport", false);
-lockPref("browser.crashReports.unsubmittedCheck.enabled", false);
-/* 0351 enforce no submission of backlogged Crash Reports */
-lockPref("browser.crashReports.unsubmittedCheck.autoSubmit2", false);
 /* 0360 disabilita Captive Portal */
 defaultPref("captivedetect.canonicalURL", "");
 defaultPref("network.captive-portal-service.enabled", false);
@@ -265,8 +249,6 @@ defaultPref("browser.places.speculativeConnect.enabled", false);
 defaultPref("network.proxy.socks_remote_dns", true);
 /* 0703 disabilita UNC (Uniform Naming Convention) */
 defaultPref("network.file.disable_unc_paths", true); // [Nascosta]
-/* 0704 disabilita GIO */
-defaultPref("network.gio.supported-protocols", ""); // [Nascosta]
 /* 0710 abilita DNS-over-HTTPS (DoH) */
 defaultPref("network.trr.mode", 3);
 /* 0712 imposta DNS Quad9 */
@@ -316,14 +298,11 @@ defaultPref("browser.sessionstore.privacy_level", 2);
 defaultPref("security.ssl.require_safe_negotiation", true);
 /* 1206 disabilita TLS1.3 0-RTT (round-trip time) */
 defaultPref("security.tls.enable_0rtt_data", false);
-/* 1211 abilita OCSP (Online Certificate Status Protocol) */
-defaultPref("security.OCSP.enabled", 1);
 /* 1212 richiedi OCSP */
 defaultPref("security.OCSP.require", true);
 /* 1223 Abilita PKP (Public Key Pinning) */
 defaultPref("security.cert_pinning.enforcement_level", 2);
 /* 1224 abilita CRLite */
-defaultPref("security.remote_settings.crlite_filters.enabled", true);
 defaultPref("security.pki.crlite_mode", 2);
 /* 1241 disabilita contenuti passivi non sicuri (ad esempio immagini) su pagine HTTPS */
 defaultPref("security.mixed_content.block_display_content", true);
@@ -363,14 +342,11 @@ defaultPref("browser.download.start_downloads_in_tmp_dir", true);
 defaultPref("browser.helperApps.deleteTempFileOnExit", true);
 /* 2606 disabilita UITour */
 defaultPref("browser.uitour.enabled", false);
-/* 2608 resetta debugging remoto */
-clearPref("devtools.debugger.remote-enabled", false);
 /* 2616 rimuove permessi speciali per domini Mozilla */
 defaultPref("permissions.manager.defaultsUrl", "");
 /* 2619 usa Punycode */
 defaultPref("network.IDN_show_punycode", true);
 /* 2620 disabilita PDFJS */
-defaultPref("pdfjs.disabled", false);
 defaultPref("pdfjs.enableScripting", false);
 /* 2624 disabilita ricerca contenuto appunti al click tasto centrale */
 defaultPref("browser.tabs.searchclipboardfor.middleclick", false);
@@ -393,7 +369,7 @@ defaultPref("extensions.postDownloadThirdPartyPrompt", false);
 
 /*** [2700] ETP (ENHANCED TRACKING PROTECTION) ***/
 /* 2701 protezione antitracciamento ***/
-defaultPref("browser.contentblocking.category", "strict"); // [Nascosta]
+pref("browser.contentblocking.category", "strict"); // [Nascosta]
 
 /*** [2800] SHUTDOWN & SANITIZING ***/
 /* 2810 previene pulizia dati automatica alla chiusura di Firefox */
@@ -405,10 +381,6 @@ defaultPref("privacy.window.maxInnerWidth", 1600);
 defaultPref("privacy.window.maxInnerHeight", 900);
 /* 4503 disabilita mozAddonManager Web API */
 defaultPref("privacy.resistFingerprinting.block_mozAddonManager", true);
-/* 4510 usa colori di sistema */
-defaultPref("browser.display.use_system_colors", false);
-/* 4511: disable using system accent colors ***/
-defaultPref("widget.non-native-theme.use-theme-accent", false);
 /* 4513 obbliga a rispettare "browser.link.open_newwindow" (4512) */
 defaultPref("browser.link.open_newwindow.restriction", 0);
 
@@ -442,4 +414,4 @@ defaultPref("browser.urlbar.showSearchTerms.enabled", false);
 /*** [9999] DEPRECATE ***/
 
 // [FINE]
-lockPref("rischio.fox", "136.1");
+lockPref("rischio.fox", "136.2");
