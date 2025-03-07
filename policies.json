@@ -36,6 +36,10 @@
       "Locked": true
     },
     "ExtensionSettings": {
+      "{de22fd49-c9ab-4359-b722-b3febdc3a0b0}": {
+        "install_url": "https://addons.mozilla.org/firefox/downloads/latest/popup-blocker/latest.xpi",
+        "installation_mode": "force_installed"
+      },
       "@testpilot-containers": {
         "install_url": "https://addons.mozilla.org/firefox/downloads/latest/multi-account-containers/latest.xpi",
         "installation_mode": "force_installed"
