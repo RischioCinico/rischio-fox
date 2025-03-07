@@ -41,6 +41,8 @@ defaultPref("privacy.webrtc.hideGlobalIndicator", true);
 defaultPref("media.videocontrols.picture-in-picture.video-toggle.always-show", true);
 /* nascondi barra del titolo */
 defaultPref("browser.tabs.inTitlebar", 2);
+/* non inviare ping a Mozilla */
+lockPref("datareporting.usage.uploadEnabled", false);
 
 /*** Prestazioni ***/
 /** GENERAL **/
@@ -216,6 +218,8 @@ lockPref("app.normandy.api_url", "");
 /* 0350 disable Crash Reports */
 lockPref("breakpad.reportURL", "");
 lockPref("browser.tabs.crashReporting.sendReport", false);
+/* 0351 enforce no submission of backlogged Crash Reports */
+lockPref("browser.crashReports.unsubmittedCheck.autoSubmit2", false);
 /* 0360 disabilita Captive Portal */
 defaultPref("captivedetect.canonicalURL", "");
 defaultPref("network.captive-portal-service.enabled", false);
@@ -414,4 +418,4 @@ defaultPref("browser.urlbar.showSearchTerms.enabled", false);
 /*** [9999] DEPRECATE ***/
 
 // [FINE]
-lockPref("rischio.fox", "136.2");
+lockPref("rischio.fox", "136.3");
