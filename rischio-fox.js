@@ -397,8 +397,6 @@ defaultPref("browser.pagethumbnails.capturing_disabled", true); // [Nascosta]
 /* 5508 DRM (EME: Encryption Media Extension) */
 defaultPref("media.eme.enabled", true);
 defaultPref("browser.eme.ui.enabled", false);
-/* 5509 disabilita IPv6 */
-defaultPref("network.dns.disableIPv6", true);
 
 /*** [9000] NON-PROJECT RELATED ***/
 /* 9001 disable welcome notices */
@@ -413,4 +411,4 @@ defaultPref("browser.urlbar.showSearchTerms.enabled", false);
 defaultPref("security.remote_settings.crlite_filters.enabled", true); // [DEFAULT: true FF137+]
 
 // [FINE]
-lockPref("rischio.fox", "136.9");
+lockPref("rischio.fox", "136.10");
