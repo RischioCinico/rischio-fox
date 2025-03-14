@@ -408,6 +408,7 @@ defaultPref("browser.newtabpage.activity-stream.asrouter.userprefs.cfr.features"
 defaultPref("browser.urlbar.showSearchTerms.enabled", false);
 
 /*** [9999] DEPRECATE ***/
+defaultPref("security.remote_settings.crlite_filters.enabled", true); // [DEFAULT: true FF137+]
 
 // [FINE]
-lockPref("rischio.fox", "136.6");
+lockPref("rischio.fox", "136.7");
