@@ -55,7 +55,7 @@ defaultPref("media.ffmpeg.vaapi.enabled", true); // LINUX
 defaultPref("layers.acceleration.force-enabled", true);
 /** DISK CACHE **/
 defaultPref("browser.cache.disk.smart_size.enabled", false);
-defaultPref("browser.cache.disk.capacity", 4194304); // default=256000
+defaultPref("browser.cache.disk.capacity", 8388608); // default=256000
 defaultPref("browser.cache.disk.metadata_memory_limit", 102400); // default=51200
 defaultPref("browser.cache.frecency_half_life_hours", 18); // default=6
 defaultPref("browser.cache.disk.free_space_soft_limit", 10240); // default=5120
