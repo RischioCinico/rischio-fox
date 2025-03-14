@@ -29,10 +29,6 @@ defaultPref("browser.tabs.groups.enabled", true);
 defaultPref("dom.ipc.forkserver.enable", true);
 
 /*** Fastidi ***/
-// https://blog.mozilla.org/addons/how-to-opt-out-of-add-on-metadata-updates
-defaultPref("extensions.getAddons.cache.enabled", false);
-clearPref("extensions.getAddons.cache.lastUpdate");
-clearPref("extensions.getAddons.databaseSchema");
 /* disabilita popup traduttore */
 defaultPref("browser.translations.automaticallyPopup", false);
 /* disabilita indicatori WebRTC (sono buggati) */
@@ -414,4 +410,4 @@ defaultPref("browser.urlbar.showSearchTerms.enabled", false);
 /*** [9999] DEPRECATE ***/
 
 // [FINE]
-lockPref("rischio.fox", "136.5");
+lockPref("rischio.fox", "136.6");
