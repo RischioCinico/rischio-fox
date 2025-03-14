@@ -52,15 +52,12 @@ defaultPref("gfx.webrender.all", true);
 defaultPref("gfx.webrender.precache-shaders", true);
 defaultPref("gfx.webrender.compositor", true);
 defaultPref("gfx.webrender.compositor.force-enabled", true);
-defaultPref("gfx.webrender.software", true);
-defaultPref("gfx.webrender.software.opengl", true); // [Linux]
 defaultPref("gfx.canvas.accelerated.cache-items", 32768);
 defaultPref("gfx.canvas.accelerated.cache-size", 4096);
 defaultPref("gfx.content.skia-font-cache-size", 80);
 /** DISK CACHE **/
 defaultPref("browser.cache.disk.smart_size.enabled", false);
 defaultPref("browser.cache.disk.capacity", 8192000);
-defaultPref("network.http.rcwn.enabled", false);
 defaultPref("browser.cache.disk.metadata_memory_limit", 15360);
 defaultPref("browser.cache.frecency_half_life_hours", 18);
 defaultPref("browser.cache.disk.free_space_soft_limit", 10240);
@@ -417,4 +414,4 @@ defaultPref("browser.urlbar.showSearchTerms.enabled", false);
 /*** [9999] DEPRECATE ***/
 
 // [FINE]
-lockPref("rischio.fox", "136.4");
+lockPref("rischio.fox", "136.5");
