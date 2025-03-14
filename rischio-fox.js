@@ -54,42 +54,43 @@ defaultPref("gfx.content.skia-font-cache-size", 20); // default=5
 defaultPref("media.ffmpeg.vaapi.enabled", true); // LINUX
 /** DISK CACHE **/
 defaultPref("browser.cache.disk.smart_size.enabled", false);
-defaultPref("browser.cache.disk.capacity", 4194304);
-defaultPref("browser.cache.disk.metadata_memory_limit", 102400);
-defaultPref("browser.cache.frecency_half_life_hours", 18);
-defaultPref("browser.cache.disk.free_space_soft_limit", 10240);
-defaultPref("browser.cache.disk.free_space_hard_limit", 2048);
-defaultPref("browser.cache.jsbc_compression_level", 3);
+defaultPref("browser.cache.disk.capacity", 4194304); // default=256000
+defaultPref("browser.cache.disk.metadata_memory_limit", 102400); // default=51200
+defaultPref("browser.cache.frecency_half_life_hours", 18); // default=6
+defaultPref("browser.cache.disk.free_space_soft_limit", 10240); // default=5120
+defaultPref("browser.cache.disk.free_space_hard_limit", 2048); // default=1024
+defaultPref("browser.cache.jsbc_compression_level", 3); // default=0
 /** MEMORY CACHE **/
-defaultPref("browser.cache.memory.capacity", 4194304);
-defaultPref("browser.cache.memory.max_entry_size", 10240);
+defaultPref("browser.cache.memory.capacity", 4194304); // default=-1
+defaultPref("browser.cache.memory.max_entry_size", 10240); // default=5120
 /** MEDIA CACHE **/
-defaultPref("media.memory_caches_combined_limit_kb", 3145728);
-defaultPref("media.memory_caches_combined_limit_pc_sysmem", 10);
-defaultPref("media.cache_readahead_limit", 7200);
-defaultPref("media.cache_resume_threshold", 3600);
+defaultPref("media.memory_cache_max_size", 131072); // default=8192
+defaultPref("media.memory_caches_combined_limit_kb", 3145728); // default=524288
+defaultPref("media.memory_caches_combined_limit_pc_sysmem", 10); //default=5
+defaultPref("media.cache_readahead_limit", 7200); //default=3600
+defaultPref("media.cache_resume_threshold", 3600); //default=1800
 /** IMAGE CACHE **/
-defaultPref("image.cache.size", 10485760);
-defaultPref("image.mem.decode_bytes_at_a_time", 65536);
-defaultPref("image.mem.shared.unmap.min_expiration_ms", 120000);
+defaultPref("image.cache.size", 10485760); // default=5242880
+defaultPref("image.mem.decode_bytes_at_a_time", 65536); // default=16384
+defaultPref("image.mem.shared.unmap.min_expiration_ms", 120000); // default=60000
 /** NETWORK **/
-defaultPref("network.buffer.cache.size", 262144);
-defaultPref("network.buffer.cache.count", 128);
-defaultPref("network.http.max-connections", 1800);
-defaultPref("network.http.max-persistent-connections-per-server", 10);
-defaultPref("network.http.max-urgent-start-excessive-connections-per-host", 5);
-defaultPref("network.http.max-persistent-connections-per-proxy", 48);
+defaultPref("network.buffer.cache.size", 262144); // default=32768
+defaultPref("network.buffer.cache.count", 128); // default=24
+defaultPref("network.http.max-connections", 1800); // default=900
+defaultPref("network.http.max-persistent-connections-per-server", 10); // default=6
+defaultPref("network.http.max-urgent-start-excessive-connections-per-host", 5); // default=3
+defaultPref("network.http.max-persistent-connections-per-proxy", 48); // default=32
 defaultPref("network.http.pacing.requests.enabled", false);
-defaultPref("network.http.pacing.requests.min-parallelism", 10);
-defaultPref("network.http.pacing.requests.burst", 14);
-defaultPref("network.ssl_tokens_cache_capacity", 32768);
+defaultPref("network.http.pacing.requests.min-parallelism", 10); // default=6
+defaultPref("network.http.pacing.requests.burst", 14); // default=10
+defaultPref("network.ssl_tokens_cache_capacity", 32768); // default=2048
 /** EXPERIMENTAL **/
 defaultPref("layout.css.grid-template-masonry-value.enabled", true);
 defaultPref("dom.enable_web_task_scheduling", true);
 /** TAB UNLOAD **/
-defaultPref("browser.low_commit_space_threshold_mb", 3276);
-defaultPref("browser.low_commit_space_threshold_percent", 20);
-defaultPref("browser.tabs.min_inactive_duration_before_unload", 300000);
+defaultPref("browser.low_commit_space_threshold_mb", 3276); // default=200
+defaultPref("browser.low_commit_space_threshold_percent", 20); // default=5
+defaultPref("browser.tabs.min_inactive_duration_before_unload", 300000); // default=600000
 
 /* ░█▀█░█▀▀░█▀▀░█░█░█░█░█▀▀░█▀█░█░█ */
 /* ░█▀▀░█▀▀░▀▀█░█▀▄░░█░░█▀▀░█░█░▄▀▄ */
@@ -286,7 +287,6 @@ defaultPref("network.auth.subresource-http-auth-allow", 1);
 /*** [1000] LIMITARE SCRITTURA SUL DISCO ***/
 /* 1002 disabilita scrittura cache su disco dei media in modalità anonima */
 defaultPref("browser.privatebrowsing.forceMediaMemoryCache", true);
-defaultPref("media.memory_cache_max_size", 1048576);
 /* 1003 disabilita la memorizzazione di dati di sessione aggiuntivi */
 defaultPref("browser.sessionstore.privacy_level", 2);
 
