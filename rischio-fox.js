@@ -42,26 +42,27 @@ lockPref("datareporting.usage.uploadEnabled", false);
 
 /*** Prestazioni ***/
 /** GENERAL **/
-defaultPref("content.notify.interval", 100000);
+defaultPref("content.notify.interval", 100000); // default=120000
 /** GFX RENDERING TWEAKS **/
 defaultPref("gfx.webrender.all", true);
 defaultPref("gfx.webrender.precache-shaders", true);
 defaultPref("gfx.webrender.compositor", true);
 defaultPref("gfx.webrender.compositor.force-enabled", true);
-defaultPref("gfx.canvas.accelerated.cache-items", 32768);
-defaultPref("gfx.canvas.accelerated.cache-size", 4096);
-defaultPref("gfx.content.skia-font-cache-size", 80);
+defaultPref("gfx.canvas.accelerated.cache-items", 16384); // default=8192
+defaultPref("gfx.canvas.accelerated.cache-size", 512); // default=256
+defaultPref("gfx.content.skia-font-cache-size", 20); // default=5
+defaultPref("media.ffmpeg.vaapi.enabled", true); // LINUX
 /** DISK CACHE **/
 defaultPref("browser.cache.disk.smart_size.enabled", false);
-defaultPref("browser.cache.disk.capacity", 8192000);
-defaultPref("browser.cache.disk.metadata_memory_limit", 15360);
+defaultPref("browser.cache.disk.capacity", 4194304);
+defaultPref("browser.cache.disk.metadata_memory_limit", 102400);
 defaultPref("browser.cache.frecency_half_life_hours", 18);
 defaultPref("browser.cache.disk.free_space_soft_limit", 10240);
 defaultPref("browser.cache.disk.free_space_hard_limit", 2048);
 defaultPref("browser.cache.jsbc_compression_level", 3);
 /** MEMORY CACHE **/
-defaultPref("browser.cache.memory.capacity", 2097152);
-defaultPref("browser.cache.memory.max_entry_size", 327680);
+defaultPref("browser.cache.memory.capacity", 4194304);
+defaultPref("browser.cache.memory.max_entry_size", 10240);
 /** MEDIA CACHE **/
 defaultPref("media.memory_caches_combined_limit_kb", 3145728);
 defaultPref("media.memory_caches_combined_limit_pc_sysmem", 10);
@@ -411,4 +412,4 @@ defaultPref("browser.urlbar.showSearchTerms.enabled", false);
 defaultPref("security.remote_settings.crlite_filters.enabled", true); // [DEFAULT: true FF137+]
 
 // [FINE]
-lockPref("rischio.fox", "136.7");
+lockPref("rischio.fox", "136.8");
