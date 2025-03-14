@@ -64,7 +64,7 @@ defaultPref("browser.cache.jsbc_compression_level", 3); // default=0
 defaultPref("browser.cache.memory.capacity", 4194304); // default=-1
 defaultPref("browser.cache.memory.max_entry_size", 10240); // default=5120
 /** MEDIA CACHE **/
-defaultPref("media.memory_cache_max_size", 131072); // default=8192
+defaultPref("media.memory_cache_max_size", 3145728); // default=8192
 defaultPref("media.memory_caches_combined_limit_kb", 3145728); // default=524288
 defaultPref("media.memory_caches_combined_limit_pc_sysmem", 10); //default=5
 defaultPref("media.cache_readahead_limit", 7200); //default=3600
