@@ -52,6 +52,7 @@ defaultPref("gfx.canvas.accelerated.cache-items", 16384); // default=8192
 defaultPref("gfx.canvas.accelerated.cache-size", 512); // default=256
 defaultPref("gfx.content.skia-font-cache-size", 20); // default=5
 defaultPref("media.ffmpeg.vaapi.enabled", true); // LINUX
+defaultPref("layers.acceleration.force-enabled", true);
 /** DISK CACHE **/
 defaultPref("browser.cache.disk.smart_size.enabled", false);
 defaultPref("browser.cache.disk.capacity", 4194304); // default=256000
@@ -412,4 +413,4 @@ defaultPref("browser.urlbar.showSearchTerms.enabled", false);
 defaultPref("security.remote_settings.crlite_filters.enabled", true); // [DEFAULT: true FF137+]
 
 // [FINE]
-lockPref("rischio.fox", "136.8");
+lockPref("rischio.fox", "136.9");
