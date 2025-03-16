@@ -67,24 +67,24 @@
                 "https://www.i-dont-care-about-cookies.eu/abp/",
                 "https://raw.githubusercontent.com/gioxx/xfiles/master/filtri.txt"
               ],
-              "selectedFilterLists": [
-                "user-filters",
-                "ublock-filters",
-                "ublock-badware",
-                "ublock-privacy",
-                "ublock-quick-fixes",
-                "ublock-unbreak",
-                "easylist",
-                "easyprivacy",
-                "block-lan",
-                "urlhaus-1",
-                "curben-phishing",
-                "plowe-0",
-                "dpollock-0",
-                "easylist-annoyances",
-                "fanboy-social"
-              ]
-            }
+            },
+            "selectedFilterLists": [
+              "user-filters",
+              "ublock-filters",
+              "ublock-badware",
+              "ublock-privacy",
+              "ublock-quick-fixes",
+              "ublock-unbreak",
+              "easylist",
+              "easyprivacy",
+              "block-lan",
+              "urlhaus-1",
+              "curben-phishing",
+              "plowe-0",
+              "dpollock-0",
+              "easylist-annoyances",
+              "fanboy-social"
+            ]  
           }
         }
       }
