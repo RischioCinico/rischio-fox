@@ -65,12 +65,6 @@
                 "https://raw.githubusercontent.com/yokoffing/filterlists/main/annoyance_list.txt",
                 "https://raw.githubusercontent.com/bpc-clone/bypass-paywalls-clean-filters/main/bpc-paywall-filter.txt",
                 "https://www.i-dont-care-about-cookies.eu/abp/"
-              ],
-              "importedLists": [
-                "https://raw.githubusercontent.com/DandelionSprout/adfilt/master/LegitimateURLShortener.txt",
-                "https://raw.githubusercontent.com/DandelionSprout/adfilt/master/BrowseWebsitesWithoutLoggingIn.txt",
-                "https://raw.githubusercontent.com/bpc-clone/bypass-paywalls-clean-filters/main/bpc-paywall-filter.txt",
-                "https://www.i-dont-care-about-cookies.eu/abp/"
               ]
             },
             "selectedFilterLists": [
