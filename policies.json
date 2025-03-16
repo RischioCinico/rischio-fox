@@ -97,10 +97,6 @@
               "easylist-annoyances",
               "ublock-annoyances",
               "ITA-0",
-              "https://raw.githubusercontent.com/DandelionSprout/adfilt/master/LegitimateURLShortener.txt",
-              "https://raw.githubusercontent.com/DandelionSprout/adfilt/master/BrowseWebsitesWithoutLoggingIn.txt",
-              "https://raw.githubusercontent.com/bpc-clone/bypass-paywalls-clean-filters/main/bpc-paywall-filter.txt",
-              "https://www.i-dont-care-about-cookies.eu/abp/"
             ]
           }
         }
