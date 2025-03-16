@@ -58,7 +58,7 @@
               "cloudStorageEnabled": true,
               "uiAccentCustom": true,
               "uiAccentCustom0": "#04cdff",
-              "externalLists": [
+              "importedLists": [
                 "https://raw.githubusercontent.com/DandelionSprout/adfilt/master/LegitimateURLShortener.txt",
                 "https://raw.githubusercontent.com/DandelionSprout/adfilt/master/BrowseWebsitesWithoutLoggingIn.txt",
                 "https://raw.githubusercontent.com/yokoffing/filterlists/main/privacy_essentials.txt",
