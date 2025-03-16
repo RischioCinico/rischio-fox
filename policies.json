@@ -64,7 +64,8 @@
                 "https://raw.githubusercontent.com/yokoffing/filterlists/main/privacy_essentials.txt",
                 "https://raw.githubusercontent.com/yokoffing/filterlists/main/annoyance_list.txt",
                 "https://raw.githubusercontent.com/bpc-clone/bypass-paywalls-clean-filters/main/bpc-paywall-filter.txt",
-                "https://www.i-dont-care-about-cookies.eu/abp/"
+                "https://www.i-dont-care-about-cookies.eu/abp/",
+                "https://raw.githubusercontent.com/gioxx/xfiles/master/filtri.txt"
               ],
               "selectedFilterLists": [
                 "user-filters",
@@ -81,8 +82,7 @@
                 "plowe-0",
                 "dpollock-0",
                 "easylist-annoyances",
-                "fanboy-social",
-                "ITA-0"
+                "fanboy-social"
               ]
             }
           }
