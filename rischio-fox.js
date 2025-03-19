@@ -109,7 +109,7 @@ defaultPref("browser.aboutConfig.showWarning", false);
 /* mostra profili */
 defaultPref("browser.profiles.enabled", true);
 /* usa tasti nativi nella barra del titolo */
-defaultPref("widget.gtk.non-native-titlebar-buttons.enabled", true); [LINUX]
+defaultPref("widget.gtk.non-native-titlebar-buttons.enabled", true); // [LINUX]
 
 /** THEME ADJUSTMENTS **/
 /* abilita css e stili personalizzati */
