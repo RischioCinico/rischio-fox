@@ -75,8 +75,8 @@ defaultPref("image.cache.size", 10485760); // default=5242880
 defaultPref("image.mem.decode_bytes_at_a_time", 65536); // default=16384
 defaultPref("image.mem.shared.unmap.min_expiration_ms", 120000); // default=60000
 /** NETWORK **/
-defaultPref("network.buffer.cache.size", 262144); // default=32768
-defaultPref("network.buffer.cache.count", 128); // default=24
+defaultPref("network.buffer.cache.size", 65535); // default=32768
+defaultPref("network.buffer.cache.count", 48); // default=24
 defaultPref("network.http.max-connections", 1800); // default=900
 defaultPref("network.http.max-persistent-connections-per-server", 10); // default=6
 defaultPref("network.http.max-urgent-start-excessive-connections-per-host", 5); // default=3
@@ -117,11 +117,6 @@ defaultPref("toolkit.legacyUserProfileCustomizations.stylesheets", true);
 /* mostra modalità compatta nelle opzioni */
 defaultPref("browser.compactmode.show", true);
 
-/** COOKIE BANNER HANDLING **/
-/* rifiuta i banner, altrimenti accetta i cookie per nascondere il banner */
-defaultPref("cookiebanners.service.mode", 2);
-defaultPref("cookiebanners.service.mode.privateBrowsing", 2);
-
 /** FULLSCREEN NOTICE **/
 /* rimuove ritardo schermo intero */
 defaultPref("full-screen-api.transition-duration.enter", "0 0");
@@ -131,8 +126,6 @@ defaultPref("full-screen-api.warning.delay", -1);
 defaultPref("full-screen-api.warning.timeout", 0);
 
 /** URL BAR **/
-/* abilita calcolatrice nella barra degli indirizzi */
-defaultPref("browser.urlbar.suggest.calculator", true);
 /* abilita conversione unità nella barra degli indirizzi */
 defaultPref("browser.urlbar.unitConversion.enabled", true);
 
@@ -411,4 +404,4 @@ defaultPref("browser.urlbar.showSearchTerms.enabled", false);
 defaultPref("security.remote_settings.crlite_filters.enabled", true); // [DEFAULT: true FF137+]
 
 // [FINE]
-lockPref("rischio.fox", "136.13");
+lockPref("rischio.fox", "136.14");
