@@ -47,7 +47,6 @@ defaultPref("content.notify.interval", 100000); // default=120000
 defaultPref("gfx.webrender.all", true);
 defaultPref("gfx.webrender.precache-shaders", true);
 defaultPref("gfx.webrender.compositor", true);
-defaultPref("gfx.webrender.compositor.force-enabled", true);
 defaultPref("gfx.canvas.accelerated.cache-items", 16384); // default=8192
 defaultPref("gfx.canvas.accelerated.cache-size", 512); // default=256
 defaultPref("gfx.content.skia-font-cache-size", 20); // default=5
@@ -403,4 +402,4 @@ defaultPref("browser.urlbar.showSearchTerms.enabled", false);
 /*** [9999] DEPRECATE ***/
 
 // [FINE]
-lockPref("rischio.fox", "137");
+lockPref("rischio.fox", "137.1");
