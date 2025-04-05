@@ -29,7 +29,7 @@ defaultPref("browser.tabs.groups.enabled", true);
 defaultPref("dom.ipc.forkserver.enable", true); // [LINUX]
 /* mostra sidebar */
 defaultPref("sidebar.revamp", true);
-defaultPref("sidebar.visibility", "	always-show");
+defaultPref("sidebar.visibility", "always-show");
 defaultPref("sidebar.main.tools", "aichat,syncedtabs,history,bookmarks");
 
 /*** Fastidi ***/
