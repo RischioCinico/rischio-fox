@@ -27,6 +27,9 @@ defaultPref("browser.ml.chat.shortcuts", false);
 defaultPref("browser.tabs.groups.enabled", true);
 /* Fork Server https://firefox-source-docs.mozilla.org/dom/ipc/process_model.html#fork-server */
 defaultPref("dom.ipc.forkserver.enable", true); // [LINUX]
+/* mostra sidebar */
+defaultPref("sidebar.revamp", true);
+defaultPref("sidebar.main.tools", "aichat,syncedtabs,history,bookmarks");
 
 /*** Fastidi ***/
 /* disabilita popup traduttore */
@@ -401,4 +404,4 @@ defaultPref("browser.urlbar.showSearchTerms.enabled", false);
 /*** [9999] DEPRECATE ***/
 
 // [FINE]
-lockPref("rischio.fox", "137.1");
+lockPref("rischio.fox", "137.2");
