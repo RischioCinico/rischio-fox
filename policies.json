@@ -60,7 +60,8 @@
               "importedLists": [
                 "https://raw.githubusercontent.com/DandelionSprout/adfilt/master/LegitimateURLShortener.txt",
                 "https://raw.githubusercontent.com/DandelionSprout/adfilt/master/BrowseWebsitesWithoutLoggingIn.txt",
-                "https://raw.githubusercontent.com/gioxx/xfiles/master/filtri.txt"
+                "https://raw.githubusercontent.com/gioxx/xfiles/master/filtri.txt",
+                "https://raw.githubusercontent.com/yokoffing/filterlists/main/privacy_essentials.txt"
               ]
             },
             "selectedFilterLists": [
@@ -86,7 +87,8 @@
               "ITA-0",
               "https://raw.githubusercontent.com/DandelionSprout/adfilt/master/LegitimateURLShortener.txt",
               "https://raw.githubusercontent.com/DandelionSprout/adfilt/master/BrowseWebsitesWithoutLoggingIn.txt",
-              "https://raw.githubusercontent.com/gioxx/xfiles/master/filtri.txt"
+              "https://raw.githubusercontent.com/gioxx/xfiles/master/filtri.txt",
+              "https://raw.githubusercontent.com/yokoffing/filterlists/main/privacy_essentials.txt"
             ]  
           }
         }
