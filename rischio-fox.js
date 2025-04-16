@@ -98,7 +98,7 @@ defaultPref("browser.tabs.min_inactive_duration_before_unload", 300000); // defa
 /* ░█▀█░█▀▀░█▀▀░█░█░█░█░█▀▀░█▀█░█░█ */
 /* ░█▀▀░█▀▀░▀▀█░█▀▄░░█░░█▀▀░█░█░▄▀▄ */
 /* ░▀░░░▀▀▀░▀▀▀░▀░▀░░▀░░▀░░░▀▀▀░▀░▀ */
-// PeskyFox v135
+// PeskyFox v137
 
 /** MOZILLA UI **/
 /* nascondi sponsorizzazioni Mozilla VPN */
