@@ -407,4 +407,4 @@ defaultPref("browser.urlbar.showSearchTerms.enabled", false);
 /*** [9999] DEPRECATE ***/
 
 // [FINE]
-lockPref("rischio.fox", "137.4");
+lockPref("rischio.fox", "138");
