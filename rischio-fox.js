@@ -395,6 +395,13 @@ defaultPref("browser.pagethumbnails.capturing_disabled", true); // [Nascosta]
 defaultPref("media.eme.enabled", true);
 defaultPref("browser.eme.ui.enabled", false);
 
+/*** 7002 blocca richieste permessi (è possibile dare manualmente i permessi ai siti visitati) */
+defaultPref("permissions.default.geo", 2);
+defaultPref("permissions.default.camera", 2);
+defaultPref("permissions.default.microphone", 2);
+defaultPref("permissions.default.desktop-notification", 2);
+defaultPref("permissions.default.xr", 2);
+
 /*** [9000] NON-PROJECT RELATED ***/
 /* 9001 disable welcome notices */
 lockPref("browser.startup.homepage_override.mstone", "ignore"); // [Nascosta]
