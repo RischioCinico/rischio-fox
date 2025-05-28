@@ -62,9 +62,10 @@
               "cloudStorageEnabled": true,
               "uiAccentCustom": true,
               "uiAccentCustom0": "#04cdff",
-              "importedLists": [
-                "https://raw.githubusercontent.com/DandelionSprout/adfilt/master/LegitimateURLShortener.txt",
+              "importedLists": [\
                 "https://raw.githubusercontent.com/DandelionSprout/adfilt/master/BrowseWebsitesWithoutLoggingIn.txt",
+                "https://raw.githubusercontent.com/DandelionSprout/adfilt/master/LegitimateURLShortener.txt",
+                "https://raw.githubusercontent.com/RischioCinico/Filterc/refs/heads/main/filterc.txt",
                 "https://raw.githubusercontent.com/gioxx/xfiles/master/filtri.txt",
                 "https://raw.githubusercontent.com/yokoffing/filterlists/main/privacy_essentials.txt"
               ]
@@ -92,6 +93,7 @@
               "ITA-0",
               "https://raw.githubusercontent.com/DandelionSprout/adfilt/master/LegitimateURLShortener.txt",
               "https://raw.githubusercontent.com/DandelionSprout/adfilt/master/BrowseWebsitesWithoutLoggingIn.txt",
+              "http://github.com/RischioCinico/Filterc/blob/main/filterc.txt",
               "https://raw.githubusercontent.com/gioxx/xfiles/master/filtri.txt",
               "https://raw.githubusercontent.com/yokoffing/filterlists/main/privacy_essentials.txt"
             ]  
