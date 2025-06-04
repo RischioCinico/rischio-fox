@@ -19,6 +19,16 @@ defaultPref("browser.newtabpage.activity-stream.newtabWallpapers.wallpaper", "da
 defaultPref("browser.newtabpage.activity-stream.newtabWallpapers.customColor.enabled", true);
 defaultPref("browser.newtabpage.activity-stream.newtabWallpapers.customWallpaper.enabled", true)
 
+/*** Barra Laterale ***/
+/* abilita la nuova sidebar */
+defaultPref("sidebar.revamp", true);
+/* abilita schede verticali nella sidebar */
+defaultPref("sidebar.verticalTabs", true);
+/* mostra sempre la sidebar */
+defaultPref("sidebar.visibility", "expand-on-hover");
+/* strumenti da visualizzare nella sidebar */
+defaultPref("sidebar.main.tools", "aichat,syncedtabs,history,bookmarks");
+
 /*** Funzioni ***/
 /* abilita scorrimento automatico */
 defaultPref("general.autoScroll", true);
@@ -30,10 +40,6 @@ defaultPref("browser.ml.chat.shortcuts", false);
 defaultPref("browser.tabs.groups.enabled", true);
 /* Fork Server https://firefox-source-docs.mozilla.org/dom/ipc/process_model.html#fork-server */
 defaultPref("dom.ipc.forkserver.enable", true); // [LINUX]
-/* mostra sidebar */
-defaultPref("sidebar.revamp", true);
-defaultPref("sidebar.visibility", "always-show");
-defaultPref("sidebar.main.tools", "aichat,syncedtabs,history,bookmarks");
 
 /*** Fastidi ***/
 /* disabilita popup traduttore */
@@ -417,4 +423,4 @@ defaultPref("browser.urlbar.showSearchTerms.enabled", false);
 /*** [9999] DEPRECATE ***/
 
 // [FINE]
-lockPref("rischio.fox", "139");
+lockPref("rischio.fox", "139.1");
