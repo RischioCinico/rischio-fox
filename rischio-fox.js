@@ -22,10 +22,6 @@ defaultPref("browser.newtabpage.activity-stream.newtabWallpapers.customWallpaper
 /*** Barra Laterale ***/
 /* abilita la nuova sidebar */
 defaultPref("sidebar.revamp", true);
-/* abilita schede verticali nella sidebar */
-defaultPref("sidebar.verticalTabs", true);
-/* mostra sempre la sidebar */
-defaultPref("sidebar.visibility", "expand-on-hover");
 /* strumenti da visualizzare nella sidebar */
 defaultPref("sidebar.main.tools", "aichat,syncedtabs,history,bookmarks");
 
@@ -423,4 +419,4 @@ defaultPref("browser.urlbar.showSearchTerms.enabled", false);
 /*** [9999] DEPRECATE ***/
 
 // [FINE]
-lockPref("rischio.fox", "139.1");
+lockPref("rischio.fox", "139.2");
