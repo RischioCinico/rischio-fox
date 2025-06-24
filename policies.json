@@ -2,7 +2,6 @@
   "policies": {
     "DisableFeedbackCommands": true,
     "DisableFirefoxStudies": true,
-    "DisablePocket": true,
     "DisableProfileRefresh": true,
     "DisableSetDesktopBackground": true,
     "DisableTelemetry": true,
@@ -25,8 +24,6 @@
       "TopSites": true,
       "SponsoredTopSites": false,
       "Highlights": false,
-      "Pocket": false,
-      "SponsoredPocket": false,
       "Snippets": false,
       "Locked": true
     },
