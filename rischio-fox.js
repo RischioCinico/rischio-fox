@@ -103,7 +103,7 @@ defaultPref("browser.tabs.min_inactive_duration_before_unload", 300000); // defa
 /* ░█▀█░█▀▀░█▀▀░█░█░█░█░█▀▀░█▀█░█░█ */
 /* ░█▀▀░█▀▀░▀▀█░█▀▄░░█░░█▀▀░█░█░▄▀▄ */
 /* ░▀░░░▀▀▀░▀▀▀░▀░▀░░▀░░▀░░░▀▀▀░▀░▀ */
-// PeskyFox v137
+// PeskyFox v140
 
 /** MOZILLA UI **/
 /* nascondi sponsorizzazioni Mozilla VPN */
@@ -135,8 +135,6 @@ defaultPref("full-screen-api.warning.timeout", 0);
 /** URL BAR **/
 /* abilita conversione unità nella barra degli indirizzi */
 defaultPref("browser.urlbar.unitConversion.enabled", true);
-/* https://web.dev/articles/text-fragments */
-defaultPref("dom.text_fragments.create_text_fragment.enabled", true);
 
 /** NEW TAB PAGE **/
 /* non spostare il focus dal searchbox alla barra degli indirizzi */
@@ -419,4 +417,4 @@ defaultPref("browser.urlbar.showSearchTerms.enabled", false);
 /*** [9999] DEPRECATE ***/
 
 // [FINE]
-lockPref("rischio.fox", "140");
+lockPref("rischio.fox", "140.1");
