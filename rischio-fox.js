@@ -32,6 +32,7 @@ defaultPref("general.autoScroll", true);
 defaultPref("browser.ml.chat.enabled", true);
 defaultPref("browser.ml.chat.provider", "https://gemini.google.com");
 defaultPref("browser.ml.chat.shortcuts", false);
+defaultPref("browser.ml.chat.page", true);
 /* attiva gruppi di schede */
 defaultPref("browser.tabs.groups.enabled", true);
 /* Fork Server https://firefox-source-docs.mozilla.org/dom/ipc/process_model.html#fork-server */
