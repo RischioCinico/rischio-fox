@@ -185,7 +185,7 @@ defaultPref("browser.bookmarks.max_backups", 5); // default=15
 /* ░█▀█░█▀▄░█░█░█▀▀░█▀█░█▀▀░█▀█░█░█ */
 /* ░█▀█░█▀▄░█▀▄░█▀▀░█░█░█▀▀░█░█░▄▀▄ */
 /* ░▀░▀░▀░▀░▀░▀░▀▀▀░▀░▀░▀░░░▀▀▀░▀░▀ */
-// ArkenFox v135
+// ArkenFox v140
 
 /*** [0100] AVVIO ***/
 /* 0106 rimuovere topsites predefiniti */
@@ -265,7 +265,11 @@ defaultPref("browser.urlbar.suggest.quicksuggest.sponsored", false);
 defaultPref("browser.urlbar.trending.featureGate", false);
 /* 0806 disabilita suggerimenti nella barra degli indirizzi */
 defaultPref("browser.urlbar.addons.featureGate", false);
-defaultPref("browser.urlbar.mdn.featureGate", false); // [Nascosta]
+defaultPref("browser.urlbar.amp.featureGate", false);
+defaultPref("browser.urlbar.fakespot.featureGate", false);
+defaultPref("browser.urlbar.mdn.featureGate", false);
+defaultPref("browser.urlbar.weather.featureGate", false);
+defaultPref("browser.urlbar.wikipedia.featureGate", false);
 defaultPref("browser.urlbar.yelp.featureGate", false);
 /* 0807 disabilita suggerimenti dagli appunti nella barra di ricerca */
 defaultPref("browser.urlbar.clipboard.featureGate", false);
@@ -348,6 +352,8 @@ defaultPref("network.IDN_show_punycode", true);
 defaultPref("pdfjs.enableScripting", false);
 /* 2624 disabilita ricerca contenuto appunti al click tasto centrale */
 defaultPref("browser.tabs.searchclipboardfor.middleclick", false);
+/* 2640: disable CSP Level 2 Reporting */
+defaultPref("security.csp.reporting.enabled", false);
 
 /** DOWNLOADS **/
 /* 2651 chiedi dove salvare i file */
@@ -417,4 +423,4 @@ defaultPref("browser.urlbar.showSearchTerms.enabled", false);
 /*** [9999] DEPRECATE ***/
 
 // [FINE]
-lockPref("rischio.fox", "140.1");
+lockPref("rischio.fox", "141");
