@@ -43,7 +43,6 @@
       "faststream@andrews": {
         "install_url": "https://addons.mozilla.org/firefox/downloads/latest/faststream/latest.xpi",
         "installation_mode": "normal_installed"
-        
       },
       "uBlock0@raymondhill.net": {
         "install_url": "https://addons.mozilla.org/firefox/downloads/latest/ublock-origin/latest.xpi",
