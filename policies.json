@@ -6,6 +6,14 @@
     "DisableSetDesktopBackground": true,
     "DisableTelemetry": true,
     "DontCheckDefaultBrowser": true,
+    "EnableTrackingProtection": {
+      "Value": true,
+      "Locked": false,
+      "Cryptomining": true,
+      "Fingerprinting": true,
+      "EmailTracking": true,
+      "SuspectedFingerprinting": true,
+    },
     "NetworkPrediction": false,
     "SearchBar": "unified",
     "UserMessaging": {
