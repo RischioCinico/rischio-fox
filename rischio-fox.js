@@ -49,6 +49,9 @@ defaultPref("media.videocontrols.picture-in-picture.video-toggle.always-show", t
 defaultPref("browser.tabs.inTitlebar", 2);
 /* non inviare ping a Mozilla */
 lockPref("datareporting.usage.uploadEnabled", false);
+/* permette eccezioni all'antitracking per consentire alle pagine di funzionare normalmente */
+lockPref("privacy.trackingprotection.allow_list.baseline.enabled", true);
+lockPref("privacy.trackingprotection.allow_list.convenience.enabled", true);
 
 /*** Prestazioni ***/
 /** GENERAL **/
@@ -420,4 +423,4 @@ defaultPref("browser.urlbar.showSearchTerms.enabled", false);
 /*** [9999] DEPRECATE ***/
 
 // [FINE]
-lockPref("rischio.fox", "141.2");
+lockPref("rischio.fox", "142");
