@@ -12,7 +12,7 @@
       "Cryptomining": true,
       "Fingerprinting": true,
       "EmailTracking": true,
-      "SuspectedFingerprinting": true,
+      "SuspectedFingerprinting": true
     },
     "NetworkPrediction": false,
     "SearchBar": "unified",
