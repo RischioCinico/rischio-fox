@@ -372,10 +372,6 @@ defaultPref("extensions.enabledScopes", 5); // [Nascosta]
 /* 2661 disabilita prompt di installazione esterni */
 defaultPref("extensions.postDownloadThirdPartyPrompt", false);
 
-/*** [2700] ETP (ENHANCED TRACKING PROTECTION) ***/
-/* 2701 protezione antitracciamento ***/
-pref("browser.contentblocking.category", "strict"); // [Nascosta]
-
 /*** [2800] SHUTDOWN & SANITIZING ***/
 /* 2810 previene pulizia dati automatica alla chiusura di Firefox */
 pref("privacy.sanitize.sanitizeOnShutdown", false);
@@ -424,4 +420,4 @@ defaultPref("browser.urlbar.showSearchTerms.enabled", false);
 /*** [9999] DEPRECATE ***/
 
 // [FINE]
-lockPref("rischio.fox", "141.1");
+lockPref("rischio.fox", "141.2");
