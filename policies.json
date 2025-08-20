@@ -8,7 +8,7 @@
     "DontCheckDefaultBrowser": true,
     "EnableTrackingProtection": {
       "Value": true,
-      "Locked": false,
+      "Locked": true,
       "Cryptomining": true,
       "Fingerprinting": true,
       "EmailTracking": true,
