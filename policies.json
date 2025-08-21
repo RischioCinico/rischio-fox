@@ -9,10 +9,7 @@
     "EnableTrackingProtection": {
       "Value": true,
       "Locked": true,
-      "Cryptomining": true,
-      "Fingerprinting": true,
-      "EmailTracking": true,
-      "SuspectedFingerprinting": true
+      "Category": "strict"
     },
     "NetworkPrediction": false,
     "SearchBar": "unified",
