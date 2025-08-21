@@ -297,13 +297,11 @@ defaultPref("browser.privatebrowsing.forceMediaMemoryCache", true);
 /* 1003 disabilita la memorizzazione di dati di sessione aggiuntivi */
 defaultPref("browser.sessionstore.privacy_level", 2);
 
-/*** [1200] HTTPS (SSL/TLS / OCSP / CERTS / HPKP) ***/
+/*** [1200] CONNESSIONI SICURE ***/
 /* 1201 richiedere una negoziazione SSL sicura */
 defaultPref("security.ssl.require_safe_negotiation", true);
 /* 1206 disabilita TLS1.3 0-RTT (round-trip time) */
 defaultPref("security.tls.enable_0rtt_data", false);
-/* 1212 richiedi OCSP */
-defaultPref("security.OCSP.require", true);
 /* 1223 Abilita PKP (Public Key Pinning) */
 defaultPref("security.cert_pinning.enforcement_level", 2);
 /* 1224 abilita CRLite */
@@ -419,6 +417,9 @@ defaultPref("browser.newtabpage.activity-stream.asrouter.userprefs.cfr.features"
 defaultPref("browser.urlbar.showSearchTerms.enabled", false);
 
 /*** [9999] DEPRECATE ***/
+// FF142
+lockPref("security.OCSP.enabled", 0);
+lockPref("security.OCSP.require", false);
 
 // [FINE]
-lockPref("rischio.fox", "142.1");
+lockPref("rischio.fox", "142.2");
