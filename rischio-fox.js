@@ -28,11 +28,6 @@ defaultPref("sidebar.main.tools", "aichat,syncedtabs,history,bookmarks");
 /*** Funzioni ***/
 /* abilita scorrimento automatico */
 defaultPref("general.autoScroll", true);
-/* AI chatbot */
-defaultPref("browser.ml.chat.enabled", true);
-defaultPref("browser.ml.chat.provider", "https://gemini.google.com");
-defaultPref("browser.ml.chat.shortcuts", false);
-defaultPref("browser.ml.chat.page", true);
 /* attiva gruppi di schede */
 defaultPref("browser.tabs.groups.enabled", true);
 /* Fork Server https://firefox-source-docs.mozilla.org/dom/ipc/process_model.html#fork-server */
@@ -98,7 +93,6 @@ defaultPref("network.http.pacing.requests.burst", 14); // default=10
 defaultPref("network.ssl_tokens_cache_capacity", 32768); // default=2048
 /** EXPERIMENTAL **/
 defaultPref("layout.css.grid-template-masonry-value.enabled", true);
-defaultPref("dom.enable_web_task_scheduling", true);
 /** TAB UNLOAD **/
 defaultPref("browser.low_commit_space_threshold_mb", 3276); // default=200
 defaultPref("browser.low_commit_space_threshold_percent", 20); // default=5
@@ -107,7 +101,7 @@ defaultPref("browser.tabs.min_inactive_duration_before_unload", 300000); // defa
 /* ░█▀█░█▀▀░█▀▀░█░█░█░█░█▀▀░█▀█░█░█ */
 /* ░█▀▀░█▀▀░▀▀█░█▀▄░░█░░█▀▀░█░█░▄▀▄ */
 /* ░▀░░░▀▀▀░▀▀▀░▀░▀░░▀░░▀░░░▀▀▀░▀░▀ */
-// PeskyFox v140
+// PeskyFox v142
 
 /** MOZILLA UI **/
 /* nascondi sponsorizzazioni Mozilla VPN */
@@ -128,6 +122,10 @@ defaultPref("toolkit.legacyUserProfileCustomizations.stylesheets", true);
 /* mostra modalità compatta nelle opzioni */
 defaultPref("browser.compactmode.show", true);
 
+/** AI **/
+defaultPref("browser.ml.enabled", false);
+defaultPref("browser.ml.chat.enabled", false);
+
 /** FULLSCREEN NOTICE **/
 /* rimuove ritardo schermo intero */
 defaultPref("full-screen-api.transition-duration.enter", "0 0");
@@ -136,15 +134,15 @@ defaultPref("full-screen-api.transition-duration.leave", "0 0");
 defaultPref("full-screen-api.warning.delay", -1);
 defaultPref("full-screen-api.warning.timeout", 0);
 
-/** URL BAR **/
-/* abilita conversione unità nella barra degli indirizzi */
-defaultPref("browser.urlbar.unitConversion.enabled", true);
-
 /** NEW TAB PAGE **/
 /* non spostare il focus dal searchbox alla barra degli indirizzi */
 defaultPref("browser.newtabpage.activity-stream.improvesearch.handoffToAwesomebar", false);
 /* nascondi logo Firefox */
 defaultPref("browser.newtabpage.activity-stream.logowordmark.alwaysVisible", false);
+/* nascondi sponsorizzazioni */
+defaultPref("browser.newtabpage.activity-stream.feeds.section.topstories", false);
+defaultPref("browser.newtabpage.activity-stream.showSponsored", false);
+defaultPref("browser.newtabpage.activity-stream.showSponsoredCheckboxes", false);
 
 /** PDF **/
 /* apre PDF inline */
