@@ -42,11 +42,6 @@ defaultPref("privacy.webrtc.hideGlobalIndicator", true);
 defaultPref("media.videocontrols.picture-in-picture.video-toggle.always-show", true);
 /* nascondi barra del titolo */
 defaultPref("browser.tabs.inTitlebar", 2);
-/* non inviare ping a Mozilla */
-lockPref("datareporting.usage.uploadEnabled", false);
-/* permette eccezioni all'antitracking per consentire alle pagine di funzionare normalmente */
-lockPref("privacy.trackingprotection.allow_list.baseline.enabled", true);
-lockPref("privacy.trackingprotection.allow_list.convenience.enabled", true);
 
 /*** Prestazioni ***/
 /** GENERAL **/
@@ -183,6 +178,45 @@ defaultPref("browser.ctrlTab.sortByRecentlyUsed", true);
 /** BOOKMARK MANAGEMENT **/
 /* limita il numbero di backup dei segnalibri */
 defaultPref("browser.bookmarks.max_backups", 5); // default=15
+
+/* ░█▀▀░█▀▀░█▀▀░█░█░█▀▄░█▀▀░█▀▀░█▀█░█░█ */
+/* ░▀▀█░█▀▀░█░░░█░█░█▀▄░█▀▀░█▀▀░█░█░▄▀▄ */
+/* ░▀▀▀░▀▀▀░▀▀▀░▀▀▀░▀░▀░▀▀▀░▀░░░▀▀▀░▀░▀ */
+// SecureFox v142
+
+/** TRACKING PROTECTION  **/
+/* permette eccezioni all'antitracking per consentire alle pagine di funzionare normalmente */
+lockPref("privacy.trackingprotection.allow_list.baseline.enabled", true);
+lockPref("privacy.trackingprotection.allow_list.convenience.enabled", true);
+/* Global Privacy Control (GPC) */
+defaultPref("privacy.globalprivacycontrol.enabled", true);
+
+/** DISK AVOIDANCE **/
+/* intervallo salvataggio sessioni */
+defaultPref("browser.sessionstore.interval", 300000); // 5 minute; default=15000 (15s);
+
+/** SANITIZE HISTORY **/
+/* purge session icon in Private Browsing windows */
+defaultPref("browser.privatebrowsing.resetPBM.enabled", true)
+
+/** SEARCH / URL BAR **/
+/* trim HTTPS from the URL bar */
+defaultPref("browser.urlbar.trimHttps", true);
+defaultPref("browser.urlbar.untrimOnUserInteraction.featureGate", true);
+/* hide Firefox Suggest label in URL dropdown box */
+defaultPref("browser.urlbar.groupLabels.enabled", false);
+
+/** PASSWORDS **/
+/* prevent password truncation when submitting form data */
+defaultPref("editor.truncate_user_pastes", false);
+
+/** MOZILLA & TELEMETRIA **/
+/* use alternative geolocation service instead of Google */
+defaultPref("geo.provider.network.url", "https://beacondb.net/v1/geolocate");
+/* disable metadata caching for installed add-ons by default */
+defaultPref("extensions.getAddons.cache.enabled", false);
+/* non inviare ping a Mozilla */
+lockPref("datareporting.usage.uploadEnabled", false);
 
 /* ░█▀█░█▀▄░█░█░█▀▀░█▀█░█▀▀░█▀█░█░█ */
 /* ░█▀█░█▀▄░█▀▄░█▀▀░█░█░█▀▀░█░█░▄▀▄ */
@@ -422,4 +456,4 @@ lockPref("security.OCSP.enabled", 0);
 lockPref("security.OCSP.require", false);
 
 // [FINE]
-lockPref("rischio.fox", "142.2");
+lockPref("rischio.fox", "142.3");
