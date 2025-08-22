@@ -338,8 +338,6 @@ defaultPref("security.ssl.require_safe_negotiation", true);
 defaultPref("security.tls.enable_0rtt_data", false);
 /* 1223 Abilita PKP (Public Key Pinning) */
 defaultPref("security.cert_pinning.enforcement_level", 2);
-/* 1224 abilita CRLite */
-defaultPref("security.pki.crlite_mode", 2);
 /* 1241 disabilita contenuti passivi non sicuri (ad esempio immagini) su pagine HTTPS */
 defaultPref("security.mixed_content.block_display_content", true);
 /* 1244 abilita modalità HTTPS-Only */
@@ -456,4 +454,4 @@ lockPref("security.OCSP.enabled", 0);
 lockPref("security.OCSP.require", false);
 
 // [FINE]
-lockPref("rischio.fox", "142.3");
+lockPref("rischio.fox", "142.4");
