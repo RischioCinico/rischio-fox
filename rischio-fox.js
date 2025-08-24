@@ -93,6 +93,15 @@ defaultPref("browser.low_commit_space_threshold_mb", 3276); // default=200
 defaultPref("browser.low_commit_space_threshold_percent", 20); // default=5
 defaultPref("browser.tabs.min_inactive_duration_before_unload", 300000); // default=600000
 
+/*** 000 ABOUT:CONFIG ***/
+
+// Disable annoying warnings when attempting to access the `about:config`
+defaultPref("browser.aboutConfig.showWarning", false);
+// Ensure that the `about:config` is always enabled
+lockPref("general.aboutConfig.enable", true);
+// Ensure our policies aren't overriden...
+lockPref("browser.policies.perUserDir", false); // [LINUX]
+
 /* ░█▀█░█▀▀░█▀▀░█░█░█░█░█▀▀░█▀█░█░█ */
 /* ░█▀▀░█▀▀░▀▀█░█▀▄░░█░░█▀▀░█░█░▄▀▄ */
 /* ░▀░░░▀▀▀░▀▀▀░▀░▀░░▀░░▀░░░▀▀▀░▀░▀ */
@@ -104,8 +113,6 @@ defaultPref("browser.privatebrowsing.vpnpromourl", "");
 defaultPref("browser.vpn_promo.enabled", false)
 /* nascondi "altro da mozilla" nelle impostazioni "*/
 defaultPref("browser.defaultPreferences.moreFromMozilla", false);
-/* nascondi avviso about:config */
-defaultPref("browser.aboutConfig.showWarning", false);
 /* mostra profili */
 defaultPref("browser.profiles.enabled", true);
 /* usa tasti nativi nella barra del titolo */
@@ -454,4 +461,4 @@ lockPref("security.OCSP.enabled", 0);
 lockPref("security.OCSP.require", false);
 
 // [FINE]
-lockPref("rischio.fox", "142.4");
+lockPref("rischio.fox", "142.5");
