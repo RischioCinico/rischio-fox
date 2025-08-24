@@ -134,7 +134,89 @@ lockPref("browser.tabs.crashReporting.includeURL", false);
 lockPref("browser.tabs.crashReporting.sendReport", false);
 lockPref("toolkit.crashreporter.include_context_heap", false);
 
-
+// Disable Data Reporting & Telemetry
+lockPref("browser.safebrowsing.features.emailtracking.datacollection.update", false); // [Nascosta]
+lockPref("captchadetection.actor.enabled", false);
+lockPref("captchadetection.hasUnsubmittedData", false); // [Nascosta]
+lockPref("captchadetection.loglevel", "Off");
+lockPref("datareporting.dau.cachedUsageProfileID", "beefbeef-beef-beef-beef-beeefbeefbee"); // [Nascosta]
+lockPref("datareporting.dau.cachedUsageProfileGroupID", "b0bacafe-b0ba-cafe-b0ba-cafeb0bacafe"); // [Nascosta]
+lockPref("datareporting.healthreport.uploadEnabled", false);
+lockPref("datareporting.policy.dataSubmissionEnabled", false);
+lockPref("datareporting.policy.dataSubmissionPolicyBypassNotification", true);
+lockPref("datareporting.policy.firstRunURL", "");
+lockPref("datareporting.usage.uploadEnabled", false);
+lockPref("dom.security.unexpected_system_load_telemetry_enabled", false);
+lockPref("extensions.dataCollectionPermissions.enabled", false);
+lockPref("network.jar.record_failure_reason", false);
+lockPref("network.traffic_analyzer.enabled", false);
+lockPref("network.trr.confirmation_telemetry_enabled", false);
+lockPref("nimbus.telemetry.targetingContextEnabled", false); // [Nascosta]
+lockPref("privacy.imageInputTelemetry.enableTestMode", false); // [Nascosta]
+lockPref("privacy.trackingprotection.emailtracking.data_collection.enabled", false);
+lockPref("telemetry.fog.artifact_build", false);
+lockPref("telemetry.fog.test.activity_limit", -1);
+lockPref("telemetry.fog.test.inactivity_limit", -1);
+lockPref("telemetry.fog.init_on_shutdown", false);
+lockPref("telemetry.fog.test.localhost_port", 70000);
+lockPref("telemetry.glean.internal.finalInactive", false); // [Nascosta]
+lockPref("telemetry.glean.internal.maxPingsPerMinute", 0); // [Nascosta]
+lockPref("telemetry.number_of_site_origin.min_interval", 999999999);
+lockPref("toolkit.content-background-hang-monitor.disabled", true);
+lockPref("toolkit.telemetry.archive.enabled", false);
+lockPref("toolkit.telemetry.bhrPing.enabled", false);
+lockPref("toolkit.telemetry.cachedClientID", "c0ffeec0-ffee-c0ff-eec0-ffeec0ffeec0"); // [Nascosta]
+lockPref("toolkit.telemetry.cachedProfileGroupID", "decafdec-afde-cafd-ecaf-decafdecafde"); // [Nascosta]
+lockPref("toolkit.telemetry.collectInterval", 999999999); // [Nascosta]
+lockPref("toolkit.telemetry.dap.helper.hpke", "");
+lockPref("toolkit.telemetry.dap.helper.url", "");
+lockPref("toolkit.telemetry.dap.leader.hpke", "");
+lockPref("toolkit.telemetry.dap.leader.url", "");
+lockPref("toolkit.telemetry.dap.logLevel", "Off");
+lockPref("toolkit.telemetry.dap_enabled", false);
+lockPref("toolkit.telemetry.dap_task1_enabled", false);
+lockPref("toolkit.telemetry.dap_task1_taskid", "");
+lockPref("toolkit.telemetry.dap_visit_counting_enabled", false);
+lockPref("toolkit.telemetry.dap_visit_counting_experiment_list", "[]");
+lockPref("toolkit.telemetry.debugSlowSql", false);
+lockPref("toolkit.telemetry.enabled", false);
+lockPref("toolkit.telemetry.eventping.maximumFrequency", 999999999); // [Nascosta]
+lockPref("toolkit.telemetry.eventping.minimumFrequency", 999999999); // [Nascosta]
+lockPref("toolkit.telemetry.firstShutdownPing.enabled", false);
+lockPref("toolkit.telemetry.healthping.enabled", false); // [Nascosta]
+lockPref("toolkit.telemetry.initDelay", 999999999); // [Nascosta]
+lockPref("toolkit.telemetry.log.dump", false); // [Nascosta]
+lockPref("toolkit.telemetry.log.level", "Fatal"); // [Nascosta]
+lockPref("toolkit.telemetry.minSubsessionLength", 999999999); // [Nascosta]
+lockPref("toolkit.telemetry.newProfilePing.delay", 999999999); // [Nascosta]
+lockPref("toolkit.telemetry.newProfilePing.enabled", false);
+lockPref("toolkit.telemetry.overrideUpdateChannel", "release"); // [Nascosta]
+lockPref("toolkit.telemetry.previousBuildID", ""); // [Nascosta]
+lockPref("toolkit.telemetry.reportingpolicy.firstRun", false); // [Nascosta]
+lockPref("toolkit.telemetry.scheduler.idleTickInterval", 999999999); // [Nascosta]
+lockPref("toolkit.telemetry.scheduler.tickInterval", 999999999); // [Nascosta]
+lockPref("toolkit.telemetry.send.overrideOfficialCheck", false); // [Nascosta]
+lockPref("toolkit.telemetry.server", "data;");
+lockPref("toolkit.telemetry.server_owner", "");
+lockPref("toolkit.telemetry.shutdownPingSender.backgroundtask.enabled", false);
+lockPref("toolkit.telemetry.shutdownPingSender.enabled", false);
+lockPref("toolkit.telemetry.shutdownPingSender.enabledFirstSession", false);
+lockPref("toolkit.telemetry.testing.disableFuzzingDelay", false); // [Nascosta]
+lockPref("toolkit.telemetry.testing.overridePreRelease", false); // [Nascosta]
+lockPref("toolkit.telemetry.testing.overrideProductsCheck", false);
+lockPref("toolkit.telemetry.testing.suppressPingsender", true); // [Nascosta]
+lockPref("toolkit.telemetry.translations.logLevel", "Off");
+lockPref("toolkit.telemetry.unified", false);
+lockPref("toolkit.telemetry.untrustedModulesPing.frequency", 999999999); // [Nascosta]
+lockPref("toolkit.telemetry.updatePing.enabled", false);
+lockPref("toolkit.telemetry.user_characteristics_ping.current_version", 0);
+lockPref("toolkit.telemetry.user_characteristics_ping.last_version_sent", 0);
+lockPref("toolkit.telemetry.user_characteristics_ping.logLevel", "Off");
+lockPref("toolkit.telemetry.user_characteristics_ping.opt-out", true);
+lockPref("toolkit.telemetry.user_characteristics_ping.send-once", false);
+lockPref("toolkit.telemetry.user_characteristics_ping.uuid", "");
+lockPref("urlclassifier.features.emailtracking.datacollection.allowlistTables", "");
+lockPref("urlclassifier.features.emailtracking.datacollection.blocklistTables", "");
 
 /* ░█▀█░█▀▀░█▀▀░█░█░█░█░█▀▀░█▀█░█░█ */
 /* ░█▀▀░█▀▀░▀▀█░█▀▄░░█░░█▀▀░█░█░▄▀▄ */
@@ -256,8 +338,6 @@ defaultPref("editor.truncate_user_pastes", false);
 defaultPref("geo.provider.network.url", "https://beacondb.net/v1/geolocate");
 /* disable metadata caching for installed add-ons by default */
 defaultPref("extensions.getAddons.cache.enabled", false);
-/* non inviare ping a Mozilla */
-lockPref("datareporting.usage.uploadEnabled", false);
 
 /* ░█▀█░█▀▄░█░█░█▀▀░█▀█░█▀▀░█▀█░█░█ */
 /* ░█▀█░█▀▄░█▀▄░█▀▀░█░█░█▀▀░█░█░▄▀▄ */
@@ -492,4 +572,4 @@ lockPref("security.OCSP.enabled", 0);
 lockPref("security.OCSP.require", false);
 
 // [FINE]
-lockPref("rischio.fox", "142.7");
+lockPref("rischio.fox", "142.8");
