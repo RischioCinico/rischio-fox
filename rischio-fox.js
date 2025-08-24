@@ -128,6 +128,7 @@ lockPref("toolkit.telemetry.coverage.opt-out", true); // Nascosta
 lockPref("breakpad.reportURL", "");
 lockPref("browser.crashReports.crashPull", false);
 lockPref("browser.crashReports.requestedNeverShowAgain", true);
+lockPref("browser.crashReports.unsubmittedCheck.autoSubmit2", false);
 lockPref("browser.crashReports.unsubmittedCheck.enabled", false);
 lockPref("browser.tabs.crashReporting.includeURL", false);
 lockPref("browser.tabs.crashReporting.sendReport", false);
@@ -491,4 +492,4 @@ lockPref("security.OCSP.enabled", 0);
 lockPref("security.OCSP.require", false);
 
 // [FINE]
-lockPref("rischio.fox", "142.6");
+lockPref("rischio.fox", "142.7");
