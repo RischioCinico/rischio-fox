@@ -367,8 +367,6 @@ lockPref("app.shield.optoutstudies.enabled", false);
 /* 0341 disable Normandy/Shield */
 lockPref("app.normandy.enabled", false);
 lockPref("app.normandy.api_url", "");
-/* 0351 enforce no submission of backlogged Crash Reports */
-lockPref("browser.crashReports.unsubmittedCheck.autoSubmit2", false);
 /* 0360 disabilita Captive Portal */
 defaultPref("captivedetect.canonicalURL", "");
 defaultPref("network.captive-portal-service.enabled", false);
