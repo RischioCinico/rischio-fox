@@ -864,8 +864,6 @@ defaultPref("browser.bookmarks.max_backups", 5); // default=15
 // SecureFox v142
 
 /** TRACKING PROTECTION  **/
-/* permette eccezioni all'antitracking per consentire alle pagine di funzionare normalmente */
-lockPref("privacy.trackingprotection.allow_list.baseline.enabled", true);
 /* Global Privacy Control (GPC) */
 defaultPref("privacy.globalprivacycontrol.enabled", true);
 
