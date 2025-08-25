@@ -265,9 +265,9 @@ lockPref("browser.startup.homepage_override.mstone", "ignore"); // [Nascosta]
 lockPref("browser.startup.upgradeDialog.enabled", false);
 lockPref("browser.suppress_first_window_animation", true);
 lockPref("startup.homepage_override_nimbus_disable_wnp", true);
-lockPref("startup.homepage_override_url", ""); //  
+lockPref("startup.homepage_override_url", "");
 lockPref("startup.homepage_override_url_nimbus", "");
-lockPref("startup.homepage_welcome_url", ""); //  
+lockPref("startup.homepage_welcome_url", "");
 lockPref("startup.homepage_welcome_url.additional", "");
 
 // Disable add-on/feature recommendations
