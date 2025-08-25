@@ -609,10 +609,10 @@ defaultPref("browser.urlbar.suggest.bookmark", false);
 defaultPref("browser.search.separatePrivateDefault.urlbarResult.enabled", true);
 // Disable shortcut suggestions by default
 defaultPref("browser.urlbar.suggest.topsites", false);
-// Show full URLs instead of search terms [NO-ANDROID] [NO-MAIL]
-defaultPref("browser.urlbar.restyleSearches", false); // [NO-ANDROID] [NO-MAIL] [HIDDEN] [DEFAULT]
-defaultPref("browser.urlbar.showSearchTerms.enabled", false); // [NO-ANDROID] [NO-MAIL]
-defaultPref("browser.urlbar.showSearchTerms.featureGate", false); // [NO-ANDROID] [NO-MAIL] [DEFAULT]
+// Show full URLs instead of search terms
+defaultPref("browser.urlbar.restyleSearches", false);
+defaultPref("browser.urlbar.showSearchTerms.enabled", false);
+defaultPref("browser.urlbar.showSearchTerms.featureGate", false);
 // Use the same search engine in normal and private browsing windows by default
 defaultPref("browser.search.separatePrivateDefault", true);
 
