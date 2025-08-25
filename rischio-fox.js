@@ -270,6 +270,24 @@ lockPref("startup.homepage_override_url_nimbus", "");
 lockPref("startup.homepage_welcome_url", ""); //  
 lockPref("startup.homepage_welcome_url.additional", "");
 
+// Disable add-on/feature recommendations
+lockPref("browser.dataFeatureRecommendations.enabled", false);
+lockPref("browser.discovery.enabled", false);
+lockPref("browser.discovery.sites", "");
+lockPref("browser.newtabpage.activity-stream.asrouter.providers.cfr", "null");
+lockPref("browser.newtabpage.activity-stream.asrouter.providers.cfr-fxa", "null");
+lockPref("browser.newtabpage.activity-stream.asrouter.userprefs.cfr.addons", false);
+lockPref("browser.newtabpage.activity-stream.asrouter.userprefs.cfr.features", false);
+lockPref("browser.translations.panelShown", true); // [Nascosta]
+lockPref("extensions.getAddons.browseAddons", ""); // [Nascosta]
+lockPref("extensions.getAddons.discovery.api_url", "data;");
+lockPref("extensions.getAddons.showPane", false); // [Nascosta]
+lockPref("extensions.htmlaboutaddons.recommendations.enabled", false);
+lockPref("extensions.recommendations.hideNotice", true); // [Nascosta]
+lockPref("extensions.recommendations.themeRecommendationUrl", "");
+lockPref("extensions.ui.lastCategory", "addons://list/extension"); // [Nascosta]
+lockPref("extensions.webservice.discoverURL", ""); // [Nascosta]
+
 /* ░█▀█░█▀▀░█▀▀░█░█░█░█░█▀▀░█▀█░█░█ */
 /* ░█▀▀░█▀▀░▀▀█░█▀▄░░█░░█▀▀░█░█░▄▀▄ */
 /* ░▀░░░▀▀▀░▀▀▀░▀░▀░░▀░░▀░░░▀▀▀░▀░▀ */
@@ -405,17 +423,9 @@ defaultPref("browser.newtabpage.activity-stream.default.sites", "");
 defaultPref("geo.provider.use_geoclue", false); // [LINUX]
 
 /*** [0300] RACCOLTA DATI ***/
-/* 0320 disable recommendation pane in about:addons (uses Google Analytics) */
-lockPref("extensions.getAddons.showPane", false); // [Nascosta]
-/* 0321 disable recommendations in about:addons' Extensions and Themes panes */
-lockPref("extensions.htmlaboutaddons.recommendations.enabled", false);
-/* 0322 disable personalized Extension Recommendations in about:addons and AMO */
-lockPref("browser.discovery.enabled", false);
 /* 0335 disable Firefox Home (Activity Stream) telemetry */
 lockPref("browser.newtabpage.activity-stream.feeds.telemetry", false);
 lockPref("browser.newtabpage.activity-stream.telemetry", false);
-/* 0340: disable Studies */
-lockPref("app.shield.optoutstudies.enabled", false);
 /* 0360 disabilita Captive Portal */
 defaultPref("captivedetect.canonicalURL", "");
 defaultPref("network.captive-portal-service.enabled", false);
@@ -617,4 +627,4 @@ lockPref("security.OCSP.enabled", 0);
 lockPref("security.OCSP.require", false);
 
 // [FINE]
-lockPref("rischio.fox", "142.10");
+lockPref("rischio.fox", "142.11");
