@@ -472,6 +472,10 @@ defaultPref("browser.contentblocking.cfr-milestone.enabled", false);
 defaultPref("browser.contentblocking.cfr-milestone.milestone-shown-time", "999999999"); // [Nascosta]
 defaultPref("browser.contentblocking.cfr-milestone.update-interval", 0); // [Nascosta]
 defaultPref("browser.contentblocking.database.enabled", false);
+// Disable Search & Form History
+defaultPref("browser.formfill.enable", false);
+// Enable a fire button in Private Browsing Windows to reset the session
+defaultPref("browser.privatebrowsing.resetPBM.enabled", true)
 // Increase the interval between between Session Store save operations
 defaultPref("browser.sessionstore.interval", 300000); // 5 minute; default=15000 (15s)
 // Prevent exposing content in the window title for Private Browsing windows
@@ -867,17 +871,9 @@ defaultPref("browser.bookmarks.max_backups", 5); // default=15
 /* Global Privacy Control (GPC) */
 defaultPref("privacy.globalprivacycontrol.enabled", true);
 
-/** SANITIZE HISTORY **/
-/* purge session icon in Private Browsing windows */
-defaultPref("browser.privatebrowsing.resetPBM.enabled", true)
-
 /** SEARCH / URL BAR **/
 /* hide Firefox Suggest label in URL dropdown box */
 defaultPref("browser.urlbar.groupLabels.enabled", false);
-
-/** PASSWORDS **/
-/* prevent password truncation when submitting form data */
-defaultPref("editor.truncate_user_pastes", false);
 
 /** MOZILLA & TELEMETRIA **/
 /* use alternative geolocation service instead of Google */
@@ -931,8 +927,6 @@ defaultPref("browser.urlbar.mdn.featureGate", false);
 defaultPref("browser.urlbar.weather.featureGate", false);
 defaultPref("browser.urlbar.wikipedia.featureGate", false);
 defaultPref("browser.urlbar.yelp.featureGate", false);
-/* 0810 disabilita formfill */
-defaultPref("browser.formfill.enable", false);
 
 /*** [0900] PASSWORDS ***/
 /* 0905 limita (o disabilita) autenticazione HTTP */
@@ -1003,4 +997,4 @@ lockPref("security.OCSP.enabled", 0);
 lockPref("security.OCSP.require", false);
 
 // [FINE]
-lockPref("rischio.fox", "142.17");
+lockPref("rischio.fox", "142.18");
