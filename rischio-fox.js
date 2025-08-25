@@ -890,15 +890,55 @@ defaultPref("network.lna.block_trackers", true);
 // Prevent exposing XPCOM Components.interfaces to websites
 defaultPref("dom.use_components_shim", false);
 
+/*** 022 MISC. PRIVACY ***/
+
+// Disable CSP reporting
+defaultPref("security.csp.reporting.enabled", false);
+// Disable Hyperlink Auditing (Click Tracking)
+defaultPref("browser.send_pings.require_same_host", true);
+// Disable online speech recognition
+defaultPref("media.webspeech.service.endpoint", "data;"); // [Mascosta]
+// Disable storage access heuristics
+defaultPref("dom.storage_access.auto_grants", false);
+defaultPref("privacy.restrict3rdpartystorage.heuristic.navigation", false);
+defaultPref("privacy.restrict3rdpartystorage.heuristic.opened_window_after_interaction", false);
+defaultPref("privacy.restrict3rdpartystorage.heuristic.recently_visited", false);
+defaultPref("privacy.restrict3rdpartystorage.heuristic.redirect", false);
+defaultPref("privacy.restrict3rdpartystorage.heuristic.window_open", false);
+// Enable Containers
+defaultPref("privacy.userContext.enabled", true);
+// Enable Cookie Banner Reduction
+defaultPref("cookiebanners.service.mode", 1);
+defaultPref("cookiebanners.service.mode.privateBrowsing", 1);
+// Enable Do Not Track & Global Privacy Control
+defaultPref("privacy.globalprivacycontrol.enabled", true);
+// Enable the (new) UI for browser profiles by default
+defaultPref("browser.profiles.enabled", true);
+// Disable the UI for containers
+defaultPref("privacy.userContext.ui.enabled", false);
+// Isolate permissions per container (if containers are enabled)
+defaultPref("permissions.isolateBy.userContext", true);
+// Isolate resources (ex. referrers & cookies) injected by extensions
+defaultPref("privacy.antitracking.isolateContentScriptResources", true);
+// Limit maximum cookie lifetime to 6 months/180 days (Like Brave)
+defaultPref("network.cookie.maxageCap", 15552000);
+// Prevent Firefox from automatically guessing which container to open an external link in
+defaultPref("browser.link.force_default_user_context_id_for_external_opens", true);
+// Prevent third parties from setting cookies unless the third party already has cookies as a first party (Like Safari)
+defaultPref("privacy.dynamic_firstparty.limitForeign", true);
+// Restrict tracking referers
+defaultPref("network.http.referer.defaultPolicy.trackers", 1);
+defaultPref("network.http.referer.defaultPolicy.trackers.pbmode", 1);
+// Trim cross-origin referers (Like Safari)
+defaultPref("network.http.referer.XOriginTrimmingPolicy", 2);
+
+
 
 /* ░█▀█░█▀▀░█▀▀░█░█░█░█░█▀▀░█▀█░█░█ */
 /* ░█▀▀░█▀▀░▀▀█░█▀▄░░█░░█▀▀░█░█░▄▀▄ */
 /* ░▀░░░▀▀▀░▀▀▀░▀░▀░░▀░░▀░░░▀▀▀░▀░▀ */
 // PeskyFox v142
 
-/** MOZILLA UI **/
-/* mostra profili */
-defaultPref("browser.profiles.enabled", true);
 /* usa tasti nativi nella barra del titolo */
 defaultPref("widget.gtk.non-native-titlebar-buttons.enabled", true); // [LINUX]
 
@@ -971,10 +1011,6 @@ defaultPref("browser.bookmarks.max_backups", 5); // default=15
 /* ░▀▀▀░▀▀▀░▀▀▀░▀▀▀░▀░▀░▀▀▀░▀░░░▀▀▀░▀░▀ */
 // SecureFox v142
 
-/** TRACKING PROTECTION  **/
-/* Global Privacy Control (GPC) */
-defaultPref("privacy.globalprivacycontrol.enabled", true);
-
 /** SEARCH / URL BAR **/
 /* hide Firefox Suggest label in URL dropdown box */
 defaultPref("browser.urlbar.groupLabels.enabled", false);
@@ -1028,17 +1064,6 @@ defaultPref("browser.urlbar.yelp.featureGate", false);
 /* 0905 limita (o disabilita) autenticazione HTTP */
 defaultPref("network.auth.subresource-http-auth-allow", 1);
 
-/*** [1600] REFERERS ***/
-/* 1602 controlla le informazioni cross-origin da inviare */
-defaultPref("network.http.referer.XOriginTrimmingPolicy", 2);
-
-/*** [1700] CONTAINERS ***/
-/* 1701 abilita Container di Firefox */
-defaultPref("privacy.userContext.enabled", true);
-lockPref("privacy.userContext.ui.enabled", false);
-/* 1703 scegli in quale container aprire i collegamenti esterni */
-defaultPref("browser.link.force_default_user_context_id_for_external_opens", true);
-
 /*** [2000] PLUGINS / MEDIA / WEBRTC ***/
 /* 2003 utilizza una singola interfaccia di rete per ICE */
 defaultPref("media.peerconnection.ice.default_address_only", true);
@@ -1046,10 +1071,6 @@ defaultPref("media.peerconnection.ice.default_address_only", true);
 /*** [2400] DOM (DOCUMENT OBJECT MODEL) ***/
 /* 2402 impedisci agli scripts di spostare e ridimensionare finestre */
 defaultPref("dom.disable_window_move_resize", true);
-
-/*** [2600] MISTO ***/
-/* 2640: disable CSP Level 2 Reporting */
-defaultPref("security.csp.reporting.enabled", false);
 
 /** EXTENSIONS **/
 /* 2661 disabilita prompt di installazione esterni */
@@ -1090,4 +1111,4 @@ lockPref("security.OCSP.enabled", 0);
 lockPref("security.OCSP.require", false);
 
 // [FINE]
-lockPref("rischio.fox", "142.21");
+lockPref("rischio.fox", "142.22");
