@@ -36,8 +36,6 @@ defaultPref("dom.ipc.forkserver.enable", true); // [LINUX]
 /*** Fastidi ***/
 /* disabilita popup traduttore */
 defaultPref("browser.translations.automaticallyPopup", false);
-/* disabilita indicatori WebRTC (sono buggati) */
-defaultPref("privacy.webrtc.hideGlobalIndicator", true);
 /* mostra sempre controlli picture in picture */
 defaultPref("media.videocontrols.picture-in-picture.video-toggle.always-show", true);
 /* nascondi barra del titolo */
@@ -616,7 +614,54 @@ defaultPref("browser.urlbar.showSearchTerms.featureGate", false);
 // Use the same search engine in normal and private browsing windows by default
 defaultPref("browser.search.separatePrivateDefault", true);
 
+/*** 010 DNS ***/
 
+// Disable DoH Connectivity Checks
+defaultPref("network.connectivity-service.DNS_HTTPS.domain", "");
+defaultPref("network.trr.confirmationNS", "skip");
+defaultPref("network.trr.skip-check-for-blocked-host", true);
+// Disable falling back to system DNS by default
+defaultPref("network.trr.strict_native_fallback", true);
+// Disable nsNotifyAddrListener
+defaultPref("network.notify.changed", false);
+defaultPref("network.notify.checkForNRPT", false);
+defaultPref("network.notify.checkForProxies", false);
+defaultPref("network.notify.dnsSuffixList", false);
+defaultPref("network.notify.initial_call", false);
+defaultPref("network.notify.IPv6", false);
+defaultPref("network.notify.resolvers", false);
+// Enable DoH without fallback & Set to Quad9 by default
+defaultPref("network.trr.default_provider_uri", "https://dns.quad9.net/dns-query");
+defaultPref("network.trr.mode", 3);
+// Fix IPv6 connectivity when DoH is enabled
+defaultPref("network.dns.preferIPv6", true);
+// Prevent bypassing DoH for /etc/HOSTS entries by default
+defaultPref("network.trr.exclude-etc-hosts", false);
+
+/*** 011 PROXIES ***/
+
+// Prevent Firefox from automatically using the system's proxy configuration by default
+defaultPref("network.proxy.type", 0);
+// Always start proxy extensions (if installed) as soon as possible
+defaultPref("extensions.webextensions.early_background_wakeup_on_request", true);
+// Disable automatic failover from the proxy (if configured) to direct connections when certain system requests fail
+defaultPref("network.proxy.failover_direct", false);
+// Disable file:///net
+defaultPref("network.file.path_blacklist", "/net");
+// Disable GIO
+defaultPref("network.gio.supported-protocols", "");
+// Disable Uniform Naming Convention (UNC) file paths
+defaultPref("network.file.disable_unc_paths", true);
+// Prevent bypassing the proxy (if configured) for system connections that include the `bypassProxy` flag
+defaultPref("network.proxy.allow_bypass", false);
+// Use the proxy (if configured) for remote DNS lookups
+defaultPref("network.proxy.socks_remote_dns", true);
+// disabilita indicatori WebRTC (sono buggati)
+defaultPref("privacy.webrtc.hideGlobalIndicator", true);
+// Prevent WebRTC from bypassing the proxy (if configured)
+defaultPref("media.peerconnection.ice.proxy_only_if_behind_proxy", true);
+// Warn users when attempting to switch tabs in a window being shared over WebRTC
+defaultPref("privacy.webrtc.sharedTabWarning", true);
 
 /* ░█▀█░█▀▀░█▀▀░█░█░█░█░█▀▀░█▀█░█░█ */
 /* ░█▀▀░█▀▀░▀▀█░█▀▄░░█░░█▀▀░█░█░▄▀▄ */
@@ -759,17 +804,6 @@ lockPref("browser.safebrowsing.downloads.remote.enabled", true);
 lockPref("browser.safebrowsing.downloads.remote.block_potentially_unwanted", true);
 lockPref("browser.safebrowsing.downloads.remote.block_uncommon", true);
 
-/*** [0700] DNS / PROXY ***/
-/* 0702 usa DNS remoti con proxy SOCKS */
-defaultPref("network.proxy.socks_remote_dns", true);
-/* 0703 disabilita UNC (Uniform Naming Convention) */
-defaultPref("network.file.disable_unc_paths", true); // [Nascosta]
-/* 0710 abilita DNS-over-HTTPS (DoH) */
-defaultPref("network.trr.mode", 3);
-/* 0712 imposta DNS Quad9 */
-defaultPref("network.trr.uri", "https://dns.quad9.net/dns-query");
-defaultPref("network.trr.custom_uri", "https://dns.quad9.net/dns-query");
-
 /*** [0800] BARRE DI RICERCA / FORMS ***/
 /* 0802 disabilita suggerimenti sponsorizzati nella barra degli indirizzi */
 defaultPref("browser.urlbar.quicksuggest.enabled", false);
@@ -806,8 +840,6 @@ lockPref("privacy.userContext.ui.enabled", false);
 defaultPref("browser.link.force_default_user_context_id_for_external_opens", true);
 
 /*** [2000] PLUGINS / MEDIA / WEBRTC ***/
-/* 2002 forza WebRTC dietro proxy */
-defaultPref("media.peerconnection.ice.proxy_only_if_behind_proxy", true);
 /* 2003 utilizza una singola interfaccia di rete per ICE */
 defaultPref("media.peerconnection.ice.default_address_only", true);
 
@@ -867,4 +899,4 @@ lockPref("security.OCSP.enabled", 0);
 lockPref("security.OCSP.require", false);
 
 // [FINE]
-lockPref("rischio.fox", "142.15");
+lockPref("rischio.fox", "142.16");
