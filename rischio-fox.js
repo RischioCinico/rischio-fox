@@ -782,6 +782,24 @@ defaultPref("extensions.content_web_accessible.enabled", true);
 // Require secure origins to install add-ons
 defaultPref("extensions.install.requireSecureOrigin", true); // [Nascosta]
 
+/*** 017 AI ***/
+
+// AI Chat
+defaultPref("browser.ml.chat.enabled", true);
+// Link Preview
+defaultPref("browser.ml.linkPreview.enabled", true);
+defaultPref("browser.ml.linkPreview.optin", true);
+// Disable Perplexity URL bar promotion
+defaultPref("browser.urlbar.perplexity.hasBeenInSearchMode", true);
+// Suggest tabs and a name for tab groups
+defaultPref("browser.tabs.groups.smart.enabled", true);
+defaultPref("browser.tabs.groups.smart.optin", true);
+defaultPref("browser.tabs.groups.smart.userEnabled", true);
+// Do not censor Link Preview results
+defaultPref("browser.ml.linkPreview.blockListEnabled", false);
+
+/*** 018 GEOLOCATION ***/
+
 
 /* ░█▀█░█▀▀░█▀▀░█░█░█░█░█▀▀░█▀█░█░█ */
 /* ░█▀▀░█▀▀░▀▀█░█▀▄░░█░░█▀▀░█░█░▄▀▄ */
@@ -799,10 +817,6 @@ defaultPref("widget.gtk.non-native-titlebar-buttons.enabled", true); // [LINUX]
 defaultPref("toolkit.legacyUserProfileCustomizations.stylesheets", true);
 /* mostra modalità compatta nelle opzioni */
 defaultPref("browser.compactmode.show", true);
-
-/** AI **/
-defaultPref("browser.ml.enabled", false);
-defaultPref("browser.ml.chat.enabled", false);
 
 /** FULLSCREEN NOTICE **/
 /* rimuove ritardo schermo intero */
@@ -997,4 +1011,4 @@ lockPref("security.OCSP.enabled", 0);
 lockPref("security.OCSP.require", false);
 
 // [FINE]
-lockPref("rischio.fox", "142.18");
+lockPref("rischio.fox", "142.19");
