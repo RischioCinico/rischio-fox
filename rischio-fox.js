@@ -838,6 +838,58 @@ defaultPref("pdfjs.sidebarViewOnLoad", 2);
 // Update URL when changing pages
 defaultPref("pdfjs.historyUpdateUrl", true);
 
+/*** 020 SAFE BROWSING ***/
+
+// Improve privacy & speed by sending the domain *only* to Google & without sending your locale to anyone
+defaultPref("browser.safebrowsing.provider.google.reportMalwareMistakeURL", "https://safebrowsing.google.com/safebrowsing/report_error/?tpl=mozilla&url=");
+defaultPref("browser.safebrowsing.provider.google.reportPhishMistakeURL", "https://safebrowsing.google.com/safebrowsing/report_error/?tpl=mozilla&url=");
+defaultPref("browser.safebrowsing.provider.google4.reportMalwareMistakeURL", "https://safebrowsing.google.com/safebrowsing/report_error/?tpl=mozilla&url=");
+defaultPref("browser.safebrowsing.provider.google4.reportPhishMistakeURL", "https://safebrowsing.google.com/safebrowsing/report_error/?tpl=mozilla&url=");
+defaultPref("browser.safebrowsing.reportPhishURL", "https://safebrowsing.google.com/safebrowsing/report_phish/?tpl=mozilla&url=");
+// Disable the legacy (and broken) Safe Browsing API
+lockPref("browser.safebrowsing.provider.google.lists", "disabled");
+// Enable an additional plug-in blocklist from Mozilla
+defaultPref("urlclassifier.blockedTable", "moztest-block-simple,mozplugin-block-digest256");
+// Prevent sending metadata of downloaded files to Safe Browsing providers
+defaultPref("browser.safebrowsing.downloads.remote.enabled", false);
+// We can skip the redirect to improve performance
+defaultPref("browser.safebrowsing.provider.google.reportURL", "https://transparencyreport.google.com/safe-browsing/search?url=");
+defaultPref("browser.safebrowsing.provider.google4.reportURL", "https://transparencyreport.google.com/safe-browsing/search?url=");
+
+/*** 021 MISC. PRIVACY + SECURITY ***/
+
+// Disable Accessibility Services
+defaultPref("accessibility.force_disabled", 1);
+defaultPref("devtools.accessibility.enabled", false);
+// Disable automatic updates for OpenSearch engines
+defaultPref("browser.search.update", false);
+// Disable Battery API (Navigator.getBattery)
+defaultPref("dom.battery.enabled", false);
+// Disable Beacon API (Navigator.sendBeacon)
+defaultPref("beacon.enabled", false);
+// Disable Clipboard API
+lockPref("dom.events.asyncClipboard.clipboardItem", false);
+lockPref("dom.events.asyncClipboard.readText", false);
+lockPref("dom.events.testing.asyncClipboard", false);
+// Disable Content Analysis SDK
+lockPref("browser.contentanalysis.default_result", 0);
+lockPref("browser.contentanalysis.enabled", false);
+lockPref("browser.contentanalysis.interception_point.clipboard.enabled", false);
+lockPref("browser.contentanalysis.interception_point.drag_and_drop.enabled", false);
+lockPref("browser.contentanalysis.interception_point.file_upload.enabled", false);
+lockPref("browser.contentanalysis.interception_point.print.enabled", false);
+lockPref("browser.contentanalysis.max_connections", 0);
+lockPref("browser.contentanalysis.show_blocked_result", true);
+lockPref("browser.contentanalysis.silent_notifications", false);
+// Disable WebMIDI
+defaultPref("dom.sitepermsaddon-provider.enabled", false);
+// Enable Messaging Layer Security (MLS)
+defaultPref("dom.origin-trials.mls.state", 1);
+// Enable Private Network Access Restrictions
+defaultPref("network.lna.block_trackers", true);
+// Prevent exposing XPCOM Components.interfaces to websites
+defaultPref("dom.use_components_shim", false);
+
 
 /* ░█▀█░█▀▀░█▀▀░█░█░█░█░█▀▀░█▀█░█░█ */
 /* ░█▀▀░█▀▀░▀▀█░█▀▄░░█░░█▀▀░█░█░▄▀▄ */
@@ -1038,4 +1090,4 @@ lockPref("security.OCSP.enabled", 0);
 lockPref("security.OCSP.require", false);
 
 // [FINE]
-lockPref("rischio.fox", "142.20");
+lockPref("rischio.fox", "142.21");
