@@ -1163,8 +1163,8 @@ defaultPref("browser.newtabpage.activity-stream.asrouter.userprefs.cfr.features"
 
 /*** [9999] DEPRECATE ***/
 // FF142
-lockPref("security.OCSP.enabled", 0);
-lockPref("security.OCSP.require", false);
+clearPref("security.OCSP.enabled");
+clearPref("security.OCSP.require");
 
 // [FINE]
 lockPref("rischio.fox", "142.23");
