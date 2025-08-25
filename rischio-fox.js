@@ -45,7 +45,6 @@ defaultPref("browser.tabs.inTitlebar", 2);
 /** GENERAL **/
 defaultPref("content.notify.interval", 100000); // default=120000
 /** GFX RENDERING TWEAKS **/
-defaultPref("gfx.webrender.all", true);
 defaultPref("gfx.webrender.precache-shaders", true);
 defaultPref("gfx.webrender.compositor", true);
 defaultPref("gfx.canvas.accelerated.cache-items", 16384); // default=8192
@@ -932,7 +931,64 @@ defaultPref("network.http.referer.defaultPolicy.trackers.pbmode", 1);
 // Trim cross-origin referers (Like Safari)
 defaultPref("network.http.referer.XOriginTrimmingPolicy", 2);
 
+/*** 023 MISC. SECURITY ***/
 
+// Always warn users before launching other apps
+defaultPref("network.protocol-handler.warn-external.mailto", true);
+// Decrease the lifetime of extension processes
+defaultPref("dom.ipc.keepProcessesAlive.extension", 0);
+// Decrease the lifetime of privileged processes for `about:` pages
+defaultPref("dom.ipc.keepProcessesAlive.privilegedabout", 0);
+// Enable the Cross-Origin-Embedder Policy Header
+defaultPref("dom.origin-trials.coep-credentialless.state", 1);
+// Enable the Integrity-Policy header
+defaultPref("security.integrity_policy.enabled", true);
+defaultPref("security.integrity_policy.stylesheet.enabled", true);
+// Enable Origin-keyed agent clustering by default (Like Chromium)
+defaultPref("dom.origin_agent_cluster.default", true);
+// Enforce Per-site Process Isolation + isolate all websites
+lockPref("browser.sessionstore.disable_platform_collection", false);
+lockPref("fission.autostart", true);
+lockPref("fission.autostart.session", true);
+lockPref("fission.disableSessionHistoryInParent", false);
+lockPref("fission.webContentIsolationStrategy", 1);
+defaultPref("gfx.webrender.all", true);
+// Enable the Sanitizer API
+defaultPref("dom.security.sanitizer.enabled", true);
+// Enable socket process sandboxing
+defaultPref("security.sandbox.socket.process.level", 1);
+// Enable Spectre mitigations for isolated content
+defaultPref("javascript.options.spectre.disable_for_isolated_content", false);
+// Enforce various important security-related prefs
+lockPref("dom.block_external_protocol_in_iframes", true);
+lockPref("dom.block_external_protocol_navigation_from_sandbox", true);
+lockPref("security.all_resource_uri_content_accessible", false);
+lockPref("security.allow_eval_in_parent_process", false);
+lockPref("security.allow_eval_with_system_principal", false);
+lockPref("security.allow_parent_unrestricted_js_loads", false);
+lockPref("security.allow_unsafe_parent_loads", false);
+lockPref("security.data_uri.block_toplevel_data_uri_navigations", true);
+// Ensure we block old/obsolete libavcodec libraries
+lockPref("media.libavcodec.allow-obsolete", false);
+// Never expose shell access
+lockPref("network.protocol-handler.external.shell", false);
+// Prefer to create new content processes, instead of re-using existing ones
+defaultPref("browser.tabs.remote.subframesPreferUsed", false);
+// Prevent marking JIT code pages as both writable and executable, only one or the other...
+defaultPref("javascript.options.content_process_write_protect_code", true);
+// Prevent AutoConfig files (if being used) from gaining privileged browser access...
+lockPref("general.config.sandbox_enabled", true); // [Nascosta]
+// Prevent remoteTypes from triggering process switches they shouldn't be able to...
+defaultPref("browser.tabs.remote.enforceRemoteTypeRestrictions", true);
+// Protect against CSRF Attacks (Like Chromium)
+defaultPref("network.cookie.sameSite.laxByDefault", true);
+defaultPref("network.cookie.sameSite.schemeful", true);
+// Protect against MIME Exploits
+defaultPref("dom.workers.importScripts.enforceStrictMimeType", true);
+defaultPref("network.sniff.use_extension", true);
+defaultPref("security.block_fileuri_script_with_wrong_mime", true);
+// Yes, this is a real pref... 
+lockPref("security.turn_off_all_security_so_that_viruses_can_take_over_this_computer", false); // [Nascosta]
 
 /* ░█▀█░█▀▀░█▀▀░█░█░█░█░█▀▀░█▀█░█░█ */
 /* ░█▀▀░█▀▀░▀▀█░█▀▄░░█░░█▀▀░█░█░▄▀▄ */
@@ -1111,4 +1167,4 @@ lockPref("security.OCSP.enabled", 0);
 lockPref("security.OCSP.require", false);
 
 // [FINE]
-lockPref("rischio.fox", "142.22");
+lockPref("rischio.fox", "142.23");
