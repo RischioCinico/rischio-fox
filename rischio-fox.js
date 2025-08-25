@@ -800,6 +800,44 @@ defaultPref("browser.ml.linkPreview.blockListEnabled", false);
 
 /*** 018 GEOLOCATION ***/
 
+// Block websites from prompting to access geolocation by default
+defaultPref("permissions.default.geo", 2);
+// Enable Geoclue for GNU/Linux distros by default
+defaultPref("geo.provider.use_geoclue", false); // [LINUX]
+// Prevent unconditionally providing high location accuracy
+defaultPref("geo.provider.geoclue.always_high_accuracy", false); // [LINUX]
+// Set BeaconDB as the default network geolocation provider
+defaultPref("geo.provider.network.url", "https://beacondb.net/v1/geolocate");
+
+/*** 019 PDF.js ***/
+
+// Disable Automatic Alt Text by default
+defaultPref("pdfjs.enableAltTextModelDownload", false);
+// Disable automatic hyperlinks
+defaultPref("pdfjs.enableAutoLinking", false);
+// Disable JavaScript
+defaultPref("pdfjs.enableScripting", false);
+// Disable XFA
+defaultPref("pdfjs.enableXfa", false);
+// Enable the ability to add signatures
+defaultPref("pdfjs.enableSignatureEditor", true);
+// Enable Alt Text
+defaultPref("pdfjs.enableAltText", true);
+defaultPref("pdfjs.enableAltTextForEnglish", true);
+// Enforce using the internal font renderer
+defaultPref("pdfjs.disableFontFace", true);
+// Force PDFs to be downloaded/viewed locally, and prompt before opening the PDF Viewer
+defaultPref("pdfjs.disableRange", true);
+defaultPref("pdfjs.disableStream", true);
+// Open external links in new tabs/windows
+defaultPref("pdfjs.externalLinkTarget", 2);
+// Prevent attempting to load/convert unknown binary files
+defaultPref("pdfjs.handleOctetStream", false);
+// Show sidebar by default when viewing PDFs
+defaultPref("pdfjs.sidebarViewOnLoad", 2);
+// Update URL when changing pages
+defaultPref("pdfjs.historyUpdateUrl", true);
+
 
 /* ░█▀█░█▀▀░█▀▀░█░█░█░█░█▀▀░█▀█░█░█ */
 /* ░█▀▀░█▀▀░▀▀█░█▀▄░░█░░█▀▀░█░█░▄▀▄ */
@@ -889,10 +927,6 @@ defaultPref("privacy.globalprivacycontrol.enabled", true);
 /* hide Firefox Suggest label in URL dropdown box */
 defaultPref("browser.urlbar.groupLabels.enabled", false);
 
-/** MOZILLA & TELEMETRIA **/
-/* use alternative geolocation service instead of Google */
-defaultPref("geo.provider.network.url", "https://beacondb.net/v1/geolocate");
-
 /* ░█▀█░█▀▄░█░█░█▀▀░█▀█░█▀▀░█▀█░█░█ */
 /* ░█▀█░█▀▄░█▀▄░█▀▀░█░█░█▀▀░█░█░▄▀▄ */
 /* ░▀░▀░▀░▀░▀░▀░▀▀▀░▀░▀░▀░░░▀▀▀░▀░▀ */
@@ -901,10 +935,6 @@ defaultPref("geo.provider.network.url", "https://beacondb.net/v1/geolocate");
 /*** [0100] AVVIO ***/
 /* 0106 rimuovere topsites predefiniti */
 defaultPref("browser.newtabpage.activity-stream.default.sites", "");
-
-/*** [0200] GEOLOCALIZZAZIONE ***/
-/* 0202 disabilita utilizzo del servizio di geolocalizzazione del sistema */
-defaultPref("geo.provider.use_geoclue", false); // [LINUX]
 
 /*** [0300] RACCOLTA DATI ***/
 /* 0335 disable Firefox Home (Activity Stream) telemetry */
@@ -966,8 +996,6 @@ defaultPref("media.peerconnection.ice.default_address_only", true);
 defaultPref("dom.disable_window_move_resize", true);
 
 /*** [2600] MISTO ***/
-/* 2620 disabilita PDFJS */
-defaultPref("pdfjs.enableScripting", false);
 /* 2640: disable CSP Level 2 Reporting */
 defaultPref("security.csp.reporting.enabled", false);
 
@@ -995,7 +1023,6 @@ defaultPref("extensions.formautofill.creditCards.enabled", false);
 defaultPref("dom.popup_allowed_events", "click dblclick mousedown pointerdown");
 
 /*** 7002 blocca richieste permessi (è possibile dare manualmente i permessi ai siti visitati) */
-defaultPref("permissions.default.geo", 2);
 defaultPref("permissions.default.camera", 2);
 defaultPref("permissions.default.microphone", 2);
 defaultPref("permissions.default.desktop-notification", 2);
@@ -1011,4 +1038,4 @@ lockPref("security.OCSP.enabled", 0);
 lockPref("security.OCSP.require", false);
 
 // [FINE]
-lockPref("rischio.fox", "142.19");
+lockPref("rischio.fox", "142.20");
