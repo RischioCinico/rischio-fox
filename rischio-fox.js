@@ -966,8 +966,6 @@ defaultPref("pdfjs.enableScripting", false);
 defaultPref("security.csp.reporting.enabled", false);
 
 /** EXTENSIONS **/
-/* 2660 permetti solo le estensioni in determinate cartelle */
-defaultPref("extensions.enabledScopes", 5); // [Nascosta]
 /* 2661 disabilita prompt di installazione esterni */
 defaultPref("extensions.postDownloadThirdPartyPrompt", false);
 
