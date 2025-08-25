@@ -454,6 +454,59 @@ lockPref("termsofuse.acceptedDate", "32503679999000");
 lockPref("termsofuse.acceptedVersion", 999);
 lockPref("termsofuse.bypassNotification", true);
 
+/*** 003 TRACKING PROTECTION ***/
+
+// Disable exceptions for minor issues by default
+defaultPref("privacy.trackingprotection.allow_list.convenience.enabled", true);
+
+// Block known tracking cookies
+defaultPref("network.cookie.cookieBehavior.trackerCookieBlocking", true);
+
+// Enable Bounce Tracking Protection
+defaultPref("privacy.bounceTrackingProtection.requireStatefulBounces", false);
+
+// Enable TCP/dFPI
+defaultPref("network.cookie.cookieBehavior.optInPartitioning", true);
+defaultPref("network.cookie.cookieBehavior.optInPartitioning.pbmode", true);
+
+// Lower the network priority of known trackers (if not blocked for whatever reason...)
+defaultPref("privacy.trackingprotection.lower_network_priority", true);
+
+/*** 004 FINGERPRINTING PROTECTION ***/
+
+// Disable VP9 Benchmark
+defaultPref("media.benchmark.vp9.threshold", 0);
+
+// Do not use the theme's toolbar color scheme for in-content pages by default
+defaultPref("browser.theme.unified-color-scheme", false);
+
+// Prevent exposing WebGL Renderer Info
+defaultPref("webgl.enable-renderer-query", false);
+defaultPref("webgl.override-unmasked-vendor", "Mozilla");
+defaultPref("webgl.sanitize-unmasked-renderer", false);
+
+// Prevent pre-allocating content processes
+defaultPref("dom.ipc.processPrelaunch.enabled", false);
+defaultPref("dom.ipc.processPrelaunch.fission.number", 0);
+
+// Prevent using system accent colors
+defaultPref("widget.non-native-theme.use-theme-accent", false);
+
+// Prevent using system colors
+defaultPref("browser.display.use_system_colors", false);
+defaultPref("ui.use_standins_for_native_colors", true);
+
+/// Reset the fingerprinting randomization key daily (in addition to per-session/when the browser restarts)
+defaultPref("privacy.resistFingerprinting.randomization.daily_reset.enabled", true);
+defaultPref("privacy.resistFingerprinting.randomization.daily_reset.private.enabled", true);
+
+// Round window sizes
+defaultPref("privacy.window.maxInnerHeight", 900);
+defaultPref("privacy.window.maxInnerWidth", 1600);
+
+// Set a fixed temporary storage limit
+pref("dom.quotaManager.temporaryStorage.fixedLimit", 52428800);
+
 /* ░█▀█░█▀▀░█▀▀░█░█░█░█░█▀▀░█▀█░█░█ */
 /* ░█▀▀░█▀▀░▀▀█░█▀▄░░█░░█▀▀░█░█░▄▀▄ */
 /* ░▀░░░▀▀▀░▀▀▀░▀░▀░░▀░░▀░░░▀▀▀░▀░▀ */
@@ -541,7 +594,6 @@ defaultPref("browser.bookmarks.max_backups", 5); // default=15
 /** TRACKING PROTECTION  **/
 /* permette eccezioni all'antitracking per consentire alle pagine di funzionare normalmente */
 lockPref("privacy.trackingprotection.allow_list.baseline.enabled", true);
-lockPref("privacy.trackingprotection.allow_list.convenience.enabled", true);
 /* Global Privacy Control (GPC) */
 defaultPref("privacy.globalprivacycontrol.enabled", true);
 
@@ -742,9 +794,6 @@ defaultPref("extensions.postDownloadThirdPartyPrompt", false);
 pref("privacy.sanitize.sanitizeOnShutdown", false);
 
 /*** [4500] RFP (ResistFingerPrinting) ***/
-/* 4502 arrotondamento dimensioni finestre */
-defaultPref("privacy.window.maxInnerWidth", 1600);
-defaultPref("privacy.window.maxInnerHeight", 900);
 /* 4503 disabilita mozAddonManager Web API */
 defaultPref("privacy.resistFingerprinting.block_mozAddonManager", true);
 /* 4513 obbliga a rispettare "browser.link.open_newwindow" (4512) */
@@ -786,4 +835,4 @@ lockPref("security.OCSP.enabled", 0);
 lockPref("security.OCSP.require", false);
 
 // [FINE]
-lockPref("rischio.fox", "142.12");
+lockPref("rischio.fox", "142.13");
