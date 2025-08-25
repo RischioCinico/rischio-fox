@@ -218,6 +218,34 @@ lockPref("toolkit.telemetry.user_characteristics_ping.uuid", "");
 lockPref("urlclassifier.features.emailtracking.datacollection.allowlistTables", "");
 lockPref("urlclassifier.features.emailtracking.datacollection.blocklistTables", "");
 
+// Disable Experiments/Studies (Shield/Nimbus/Normandy)
+lockPref("app.normandy.run_interval_seconds", 0);
+lockPref("app.normandy.api_url", "");
+lockPref("app.normandy.enabled", false);
+lockPref("app.normandy.experiments.lazy_classify", true);
+lockPref("app.normandy.first_run", false);
+lockPref("app.normandy.last_seen_buildid", "");
+lockPref("app.normandy.logging.level", 70);
+lockPref("app.normandy.user_id", "");
+lockPref("app.shield.optoutstudies.enabled", false);
+lockPref("messaging-system.log", "off");
+lockPref("messaging-system.rsexperimentloader.collection_id", "");
+lockPref("nimbus.appId", "");
+lockPref("nimbus.profileId", "");
+lockPref("nimbus.profilesdatastoreservice.enabled", false);
+lockPref("nimbus.profilesdatastoreservice.read.enabled", false);
+
+// Disable Origin Trials
+lockPref("dom.origin-trials.enabled", false);
+
+// Prevent automatically uploading profiler data (from `about:logging`) to Mozilla
+lockPref("toolkit.aboutLogging.uploadProfileToCloud", false);
+
+// Remove partner attribution
+lockPref("app.distributor", "");
+lockPref("app.distributor.channel", "");
+lockPref("mozilla.partner.id", "");
+
 /* ░█▀█░█▀▀░█▀▀░█░█░█░█░█▀▀░█▀█░█░█ */
 /* ░█▀▀░█▀▀░▀▀█░█▀▄░░█░░█▀▀░█░█░▄▀▄ */
 /* ░▀░░░▀▀▀░▀▀▀░▀░▀░░▀░░▀░░░▀▀▀░▀░▀ */
@@ -364,9 +392,6 @@ lockPref("browser.newtabpage.activity-stream.feeds.telemetry", false);
 lockPref("browser.newtabpage.activity-stream.telemetry", false);
 /* 0340: disable Studies */
 lockPref("app.shield.optoutstudies.enabled", false);
-/* 0341 disable Normandy/Shield */
-lockPref("app.normandy.enabled", false);
-lockPref("app.normandy.api_url", "");
 /* 0360 disabilita Captive Portal */
 defaultPref("captivedetect.canonicalURL", "");
 defaultPref("network.captive-portal-service.enabled", false);
@@ -570,4 +595,4 @@ lockPref("security.OCSP.enabled", 0);
 lockPref("security.OCSP.require", false);
 
 // [FINE]
-lockPref("rischio.fox", "142.8");
+lockPref("rischio.fox", "142.9");
