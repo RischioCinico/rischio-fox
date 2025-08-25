@@ -505,7 +505,47 @@ defaultPref("privacy.window.maxInnerHeight", 900);
 defaultPref("privacy.window.maxInnerWidth", 1600);
 
 // Set a fixed temporary storage limit
-pref("dom.quotaManager.temporaryStorage.fixedLimit", 52428800);
+defaultPref("dom.quotaManager.temporaryStorage.fixedLimit", 52428800);
+
+/*** 005 DISK AVOIDANCE ***/
+
+// Decrease the number of tabs saved in Session Store
+defaultPref("browser.sessionstore.max_tabs_undo", 7);
+
+// Disable back/forward cache (bfcache)
+defaultPref("browser.sessionhistory.max_total_viewers", 0);
+defaultPref("fission.bfcacheInParent", false);
+
+// Disable collection/generation of background thumbnails
+defaultPref("browser.pagethumbnails.capturing_disabled", true); // [Nascosta]
+
+// Disable coloring visited links
+defaultPref("layout.css.visited_links_enabled", false);
+
+// Disable logging blocked domains to `about:protections`
+defaultPref("browser.contentblocking.cfr-milestone.enabled", false);
+defaultPref("browser.contentblocking.cfr-milestone.milestone-shown-time", "999999999"); // [Nascosta]
+defaultPref("browser.contentblocking.cfr-milestone.update-interval", 0); // [Nascosta]
+defaultPref("browser.contentblocking.database.enabled", false);
+
+// Increase the interval between between Session Store save operations
+defaultPref("browser.sessionstore.interval", 300000); // 5 minute; default=15000 (15s)
+
+// Prevent exposing content in the window title for Private Browsing windows
+defaultPref("privacy.exposeContentTitleInWindow.pbm", false);
+
+// Prevent storing unnecessary extra session data
+defaultPref("browser.sessionstore.privacy_level", 2);
+
+// Prevent writing media cache (ex. for video streaming) to disk in private windows
+defaultPref("browser.privatebrowsing.forceMediaMemoryCache", true);
+
+// Remove cached files from browser windows opened with external applications
+defaultPref("browser.download.start_downloads_in_tmp_dir", true);
+defaultPref("browser.helperApps.deleteTempFileOnExit", true);
+
+/// Remove files from session list & history when deleted in Firefox
+defaultPref("browser.download.clearHistoryOnDelete", 2);
 
 /* ░█▀█░█▀▀░█▀▀░█░█░█░█░█▀▀░█▀█░█░█ */
 /* ░█▀▀░█▀▀░▀▀█░█▀▄░░█░░█▀▀░█░█░▄▀▄ */
@@ -596,10 +636,6 @@ defaultPref("browser.bookmarks.max_backups", 5); // default=15
 lockPref("privacy.trackingprotection.allow_list.baseline.enabled", true);
 /* Global Privacy Control (GPC) */
 defaultPref("privacy.globalprivacycontrol.enabled", true);
-
-/** DISK AVOIDANCE **/
-/* intervallo salvataggio sessioni */
-defaultPref("browser.sessionstore.interval", 300000); // 5 minute; default=15000 (15s);
 
 /** SANITIZE HISTORY **/
 /* purge session icon in Private Browsing windows */
@@ -711,12 +747,6 @@ defaultPref("signon.formlessCapture.enabled", false);
 /* 0905 limita (o disabilita) autenticazione HTTP */
 defaultPref("network.auth.subresource-http-auth-allow", 1);
 
-/*** [1000] LIMITARE SCRITTURA SUL DISCO ***/
-/* 1002 disabilita scrittura cache su disco dei media in modalità anonima */
-defaultPref("browser.privatebrowsing.forceMediaMemoryCache", true);
-/* 1003 disabilita la memorizzazione di dati di sessione aggiuntivi */
-defaultPref("browser.sessionstore.privacy_level", 2);
-
 /*** [1200] CONNESSIONI SICURE ***/
 /* 1201 richiedere una negoziazione SSL sicura */
 defaultPref("security.ssl.require_safe_negotiation", true);
@@ -757,13 +787,6 @@ defaultPref("media.peerconnection.ice.default_address_only", true);
 defaultPref("dom.disable_window_move_resize", true);
 
 /*** [2600] MISTO ***/
-/* 2603 download in cartella temporanea */
-defaultPref("browser.download.start_downloads_in_tmp_dir", true);
-defaultPref("browser.helperApps.deleteTempFileOnExit", true);
-/* 2606 disabilita UITour */
-defaultPref("browser.uitour.enabled", false);
-/* 2616 rimuove permessi speciali per domini Mozilla */
-defaultPref("permissions.manager.defaultsUrl", "");
 /* 2619 usa Punycode */
 defaultPref("network.IDN_show_punycode", true);
 /* 2620 disabilita PDFJS */
@@ -809,8 +832,6 @@ defaultPref("extensions.formautofill.addresses.enabled", false);
 defaultPref("extensions.formautofill.creditCards.enabled", false);
 /* 5018 limita eventi che possono aprire popup */
 defaultPref("dom.popup_allowed_events", "click dblclick mousedown pointerdown");
-/* 5019 disabilita salvataggio miniature delle pagine visitate */
-defaultPref("browser.pagethumbnails.capturing_disabled", true); // [Nascosta]
 /* 5508 DRM (EME: Encryption Media Extension) */
 defaultPref("media.eme.enabled", true);
 defaultPref("browser.eme.ui.enabled", false);
@@ -835,4 +856,4 @@ lockPref("security.OCSP.enabled", 0);
 lockPref("security.OCSP.require", false);
 
 // [FINE]
-lockPref("rischio.fox", "142.13");
+lockPref("rischio.fox", "142.14");
