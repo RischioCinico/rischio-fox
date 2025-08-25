@@ -246,6 +246,30 @@ lockPref("app.distributor", "");
 lockPref("app.distributor.channel", "");
 lockPref("mozilla.partner.id", "");
 
+/*** 002 MOZILLA ***/
+
+// Clear unnecessary/undesired Mozilla URLs
+lockPref("app.feedback.baseURL", "");
+lockPref("app.normandy.shieldLearnMoreUrl", "");
+lockPref("datareporting.healthreport.infoURL", "");
+lockPref("extensions.recommendations.privacyPolicyUrl", "");
+lockPref("toolkit.datacollection.infoURL", "");
+
+// Disable `about:welcome`/onboarding
+lockPref("browser.aboutwelcome.enabled", false);
+lockPref("browser.aboutwelcome.log", "off"); // [Nascosta]
+lockPref("browser.preonboarding.enabled", false); // [Nascosta]
+lockPref("browser.rights.3.shown", true); // [Nascosta]
+lockPref("browser.startup.homepage_override.buildID", "20100101"); // [Nascosta]
+lockPref("browser.startup.homepage_override.mstone", "ignore"); // [Nascosta]
+lockPref("browser.startup.upgradeDialog.enabled", false);
+lockPref("browser.suppress_first_window_animation", true);
+lockPref("startup.homepage_override_nimbus_disable_wnp", true);
+lockPref("startup.homepage_override_url", ""); //  
+lockPref("startup.homepage_override_url_nimbus", "");
+lockPref("startup.homepage_welcome_url", ""); //  
+lockPref("startup.homepage_welcome_url.additional", "");
+
 /* ░█▀█░█▀▀░█▀▀░█░█░█░█░█▀▀░█▀█░█░█ */
 /* ░█▀▀░█▀▀░▀▀█░█▀▄░░█░░█▀▀░█░█░▄▀▄ */
 /* ░▀░░░▀▀▀░▀▀▀░▀░▀░░▀░░▀░░░▀▀▀░▀░▀ */
@@ -581,8 +605,6 @@ defaultPref("permissions.default.desktop-notification", 2);
 defaultPref("permissions.default.xr", 2);
 
 /*** [9000] NON-PROJECT RELATED ***/
-/* 9001 disable welcome notices */
-lockPref("browser.startup.homepage_override.mstone", "ignore"); // [Nascosta]
 /* 9002 disable General>Browsing>Recommend extensions/features as you browse */
 defaultPref("browser.newtabpage.activity-stream.asrouter.userprefs.cfr.addons", false);
 defaultPref("browser.newtabpage.activity-stream.asrouter.userprefs.cfr.features", false);
@@ -595,4 +617,4 @@ lockPref("security.OCSP.enabled", 0);
 lockPref("security.OCSP.require", false);
 
 // [FINE]
-lockPref("rischio.fox", "142.9");
+lockPref("rischio.fox", "142.10");
