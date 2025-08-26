@@ -1030,6 +1030,47 @@ defaultPref("browser.xul.error_pages.show_safe_browsing_details_on_load", true);
 // Show 'Always ask' for camera & microphone in the permissions drop-down (when that's what the user chose...)
 pref("permissions.media.show_always_ask.enabled", true);
 
+/*** 025 DEBUGGING ***/
+
+// Allow inspecting the browser chrome by default
+defaultPref("devtools.chrome.enabled", true);
+// Allow inspecting the DOM by default
+defaultPref("devtools.dom.enabled", true);
+// Allow inspecting/debugging local tabs from `about:debugging` by default
+defaultPref("devtools.aboutdebugging.local-tab-debugging", true);
+// Always prompt before connecting to Remote Debugging...
+lockPref("devtools.debugger.prompt-connection", true);
+// Disable annoying "A simpler highlighter can be enabled in the settings..." banner when using developer tools
+defaultPref("devtools.inspector.simple-highlighters.message-dismissed", true); // [Nascosta]
+// Disable editor onboarding
+defaultPref("devtools.webconsole.input.editorOnboarding", false);
+// Disable pausing on debugger statements by default
+defaultPref("devtools.debugger.pause-on-debugger-statement", false);
+// Disable the Remote Debugging Web Socket
+lockPref("devtools.debugger.remote-websocket", false);
+// Display content scripts injected by extensions when debugging by default
+defaultPref("devtools.debugger.show-content-scripts", true);
+// Display Web Console timestamps by default
+defaultPref("devtools.webconsole.timestampMessages", true);
+// Disable WebDriver BiDi experimental commands and events
+lockPref("remote.experimental.enabled", false);
+// Enable the Web Console sidebar toggle
+defaultPref("devtools.webconsole.sidebarToggle", true);
+// Pretty print code when debugging by default
+defaultPref("devtools.debugger.auto-pretty-print", true);
+// Prevent logging URLs in Reader errors
+defaultPref("reader.errors.includeURLs", false);
+// Prevent WebDriver from overriding preferences by default
+defaultPref("remote.prefs.recommended", false);
+// Show default/browser styles in the Inspector by default
+defaultPref("devtools.inspector.showUserAgentStyles", true);
+// Unbreak debugging if `localhost` can't be looked up via DNS [NO-ANDROID]
+defaultPref("devtools.debugger.chrome-debugging-host", "127.0.0.1");
+// Wrap lines when debugging by default
+defaultPref("devtools.debugger.ui.editor-wrapping", true);
+// Wrap lines when viewing the source of webpages (via `view-source:`)
+defaultPref("view_source.wrap_long_lines", true);
+
 /* ░█▀█░█▀▀░█▀▀░█░█░█░█░█▀▀░█▀█░█░█ */
 /* ░█▀▀░█▀▀░▀▀█░█▀▄░░█░░█▀▀░█░█░▄▀▄ */
 /* ░▀░░░▀▀▀░▀▀▀░▀░▀░░▀░░▀░░░▀▀▀░▀░▀ */
@@ -1190,4 +1231,4 @@ clearPref("security.OCSP.enabled");
 clearPref("security.OCSP.require");
 
 // [FINE]
-lockPref("rischio.fox", "142.24");
+lockPref("rischio.fox", "142.25");
