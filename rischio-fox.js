@@ -1248,7 +1248,7 @@ defaultPref("browser.newtabpage.activity-stream.section.highlights.includeVisite
 // Disable sponsored shortcuts
 lockPref("browser.newtabpage.activity-stream.discoverystream.spoc-topsites-positions", "");
 lockPref("browser.newtabpage.activity-stream.discoverystream.spocTopsitesAdTypes", "");
-lockPref("browser.newtabpage.activity-stream.discoverystream.spocTopsitesPlacement.enabled", false, locked);
+lockPref("browser.newtabpage.activity-stream.discoverystream.spocTopsitesPlacement.enabled", false);
 lockPref("browser.newtabpage.activity-stream.discoverystream.spocTopsitesZoneIds", "");
 lockPref("browser.newtabpage.activity-stream.discoverystream.spocZoneIds", "");
 lockPref("browser.newtabpage.activity-stream.showSponsoredTopSites", false);
@@ -1456,4 +1456,4 @@ defaultPref("editor.word_select.delete_space_after_doubleclick_selection", true)
 defaultPref("widget.gtk.hide-pointer-while-typing.enabled", false); // [Linux]
 
 // [FINE]
-lockPref("rischio.fox", "142.32a");
+lockPref("rischio.fox", "142.32b");
