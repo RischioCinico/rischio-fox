@@ -1150,6 +1150,25 @@ defaultPref("layout.word_select.eat_space_to_next_word", false);
 // Prevent automatically closing the Bookmarks menu after selecting a bookmark
 defaultPref("browser.bookmarks.openInTabClosesMenu", false);
 
+/*** 028 UPDATES ***/
+
+// Ensure the browser's binary is always old enough to check for browser updates [NO-ANDROID]
+defaultPref("app.update.checkInstallTime.days", 0);
+// Alert users of browser updates ASAP
+defaultPref("app.update.badgeWaitTime", 0);
+defaultPref("app.update.notifyDuringDownload", true);
+defaultPref("app.update.promptWaitTime", 0);
+/// Check for browser updates hourly
+defaultPref("app.update.background.interval", 3600);
+defaultPref("app.update.interval", 3600);
+// Check for extension/theme updates hourly
+defaultPref("extensions.update.interval", 3600);
+// Notify users for extension updates by default
+defaultPref("extensions.update.notifyUser", true); // [Nascosta]
+// Sync with Remote Settings hourly, rather than the default of only once a day
+defaultPref("services.settings.poll_interval", 3600);
+defaultPref("browser.phoenix.status", "028");
+
 /* ░█▀█░█▀▀░█▀▀░█░█░█░█░█▀▀░█▀█░█░█ */
 /* ░█▀▀░█▀▀░▀▀█░█▀▄░░█░░█▀▀░█░█░▄▀▄ */
 /* ░▀░░░▀▀▀░▀▀▀░▀░▀░░▀░░▀░░░▀▀▀░▀░▀ */
@@ -1259,4 +1278,4 @@ clearPref("security.OCSP.enabled");
 clearPref("security.OCSP.require");
 
 // [FINE]
-lockPref("rischio.fox", "142.30");
+lockPref("rischio.fox", "142.31");
