@@ -1022,10 +1022,6 @@ defaultPref("browser.newtabpage.activity-stream.feeds.section.topstories", false
 defaultPref("browser.newtabpage.activity-stream.showSponsored", false);
 defaultPref("browser.newtabpage.activity-stream.showSponsoredCheckboxes", false);
 
-/** PDF **/
-/* apre PDF inline */
-defaultPref("browser.download.open_pdf_attachments_inline", true);
-
 /** TAB BEHAVIOR **/
 /* apri risultati di ricerca in una nuova scheda */
 defaultPref("browser.search.openintab", true);
