@@ -41,25 +41,6 @@ defaultPref("media.videocontrols.picture-in-picture.video-toggle.always-show", t
 /* nascondi barra del titolo */
 defaultPref("browser.tabs.inTitlebar", 2);
 
-/*** Prestazioni ***/
-/** GFX RENDERING TWEAKS **/
-defaultPref("gfx.webrender.precache-shaders", true);
-/** MEMORY CACHE **/
-defaultPref("browser.cache.memory.capacity", 4194304); // default=-1
-defaultPref("browser.cache.memory.max_entry_size", 10240); // default=5120
-/** MEDIA CACHE **/
-defaultPref("media.memory_caches_combined_limit_kb", 3145728); // default=524288
-defaultPref("media.memory_caches_combined_limit_pc_sysmem", 10); //default=5
-/** NETWORK **/
-defaultPref("network.buffer.cache.size", 65535); // default=32768
-defaultPref("network.buffer.cache.count", 48); // default=24
-defaultPref("network.http.pacing.requests.min-parallelism", 10); // default=6
-defaultPref("network.http.pacing.requests.burst", 14); // default=10
-/** TAB UNLOAD **/
-defaultPref("browser.low_commit_space_threshold_mb", 3276); // default=200
-defaultPref("browser.low_commit_space_threshold_percent", 20); // default=5
-defaultPref("browser.tabs.min_inactive_duration_before_unload", 300000); // default=600000
-
 /*** 000 ABOUT:CONFIG ***/
 
 // Disable annoying warnings when attempting to access the `about:config`
@@ -1273,4 +1254,4 @@ clearPref("security.OCSP.enabled");
 clearPref("security.OCSP.require");
 
 // [FINE]
-lockPref("rischio.fox", "142.27");
+lockPref("rischio.fox", "142.28");
