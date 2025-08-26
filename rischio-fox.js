@@ -42,15 +42,8 @@ defaultPref("media.videocontrols.picture-in-picture.video-toggle.always-show", t
 defaultPref("browser.tabs.inTitlebar", 2);
 
 /*** Prestazioni ***/
-/** GENERAL **/
-defaultPref("content.notify.interval", 100000); // default=120000
 /** GFX RENDERING TWEAKS **/
 defaultPref("gfx.webrender.precache-shaders", true);
-defaultPref("gfx.webrender.compositor", true);
-defaultPref("gfx.canvas.accelerated.cache-items", 16384); // default=8192
-defaultPref("gfx.canvas.accelerated.cache-size", 512); // default=256
-defaultPref("gfx.content.skia-font-cache-size", 20); // default=5
-defaultPref("media.ffmpeg.vaapi.enabled", true); // [LINUX]
 /** DISK CACHE **/
 defaultPref("browser.cache.disk.smart_size.enabled", false);
 defaultPref("browser.cache.disk.capacity", 8388608); // default=256000
@@ -58,33 +51,20 @@ defaultPref("browser.cache.disk.metadata_memory_limit", 102400); // default=5120
 defaultPref("browser.cache.frecency_half_life_hours", 18); // default=6
 defaultPref("browser.cache.disk.free_space_soft_limit", 10240); // default=5120
 defaultPref("browser.cache.disk.free_space_hard_limit", 2048); // default=1024
-defaultPref("browser.cache.jsbc_compression_level", 3); // default=0
 /** MEMORY CACHE **/
 defaultPref("browser.cache.memory.capacity", 4194304); // default=-1
 defaultPref("browser.cache.memory.max_entry_size", 10240); // default=5120
 /** MEDIA CACHE **/
-defaultPref("media.memory_cache_max_size", 3145728); // default=8192
 defaultPref("media.memory_caches_combined_limit_kb", 3145728); // default=524288
 defaultPref("media.memory_caches_combined_limit_pc_sysmem", 10); //default=5
-defaultPref("media.cache_readahead_limit", 7200); //default=3600
-defaultPref("media.cache_resume_threshold", 3600); //default=1800
 /** IMAGE CACHE **/
 defaultPref("image.cache.size", 10485760); // default=5242880
-defaultPref("image.mem.decode_bytes_at_a_time", 65536); // default=16384
 defaultPref("image.mem.shared.unmap.min_expiration_ms", 120000); // default=60000
 /** NETWORK **/
 defaultPref("network.buffer.cache.size", 65535); // default=32768
 defaultPref("network.buffer.cache.count", 48); // default=24
-defaultPref("network.http.max-connections", 1800); // default=900
-defaultPref("network.http.max-persistent-connections-per-server", 10); // default=6
-defaultPref("network.http.max-urgent-start-excessive-connections-per-host", 5); // default=3
-defaultPref("network.http.max-persistent-connections-per-proxy", 48); // default=32
-defaultPref("network.http.pacing.requests.enabled", false);
 defaultPref("network.http.pacing.requests.min-parallelism", 10); // default=6
 defaultPref("network.http.pacing.requests.burst", 14); // default=10
-defaultPref("network.ssl_tokens_cache_capacity", 32768); // default=2048
-/** EXPERIMENTAL **/
-defaultPref("layout.css.grid-template-masonry-value.enabled", true);
 /** TAB UNLOAD **/
 defaultPref("browser.low_commit_space_threshold_mb", 3276); // default=200
 defaultPref("browser.low_commit_space_threshold_percent", 20); // default=5
@@ -1071,6 +1051,75 @@ defaultPref("devtools.debugger.ui.editor-wrapping", true);
 // Wrap lines when viewing the source of webpages (via `view-source:`)
 defaultPref("view_source.wrap_long_lines", true);
 
+/*** 026 PERFORMANCE ***/
+
+// Compress cached JavaScript bytecode
+defaultPref("browser.cache.jsbc_compression_level", 3); // default=0
+// Decrease the content notification interval
+defaultPref("content.notify.interval", 100000); // default=120000
+// Disable certain UI animations by default
+defaultPref("sidebar.animation.enabled", false);
+defaultPref("ui.panelAnimations", 0); // [Nascosta]
+defaultPref("ui.prefersReducedMotion", 1); // [Nascosta] 
+defaultPref("ui.swipeAnimationEnabled", 0); // [Nascosta]
+// Disable CSS error reporting by default
+defaultPref("layout.css.report_errors", false);
+// Disable pacing requests
+defaultPref("network.http.pacing.requests.enabled", false);
+// Disable tab hover previews by default [ 
+defaultPref("browser.tabs.hoverPreview.enabled", false);
+defaultPref("browser.tabs.hoverPreview.showThumbnails", false);
+// Display advanced performance settings at `about:preferences#general` [ 
+defaultPref("browser.preferences.defaultPerformanceSettings.enabled", false);
+// Enable Branch Hinting
+defaultPref("javascript.options.wasm_branch_hinting", true);
+// Enable Canvas2D acceleration (if supported)
+defaultPref("gfx.canvas.accelerated.cache-items", 8192); // default=8192
+defaultPref("gfx.canvas.accelerated.cache-size", 512); // // default=256
+// Enable CSS Masonry Layout
+defaultPref("layout.css.grid-template-masonry-value.enabled", true);
+// Enable SIMD
+defaultPref("javascript.options.wasm_relaxed_simd", true);
+// Enable VA-API by default [LINUX-ONLY] 
+defaultPref("media.ffmpeg.vaapi.enabled", true); // [LINUX]
+// Enable the WebRender native compositor (if supported)
+defaultPref("gfx.webrender.compositor", true);
+// Increase buffering for video playback
+defaultPref("media.cache_readahead_limit", 7200); // Default = 3600
+defaultPref("media.cache_readahead_limit.cellular", 7200); // Default = 30
+defaultPref("media.cache_resume_threshold", 3600); // Default = 1800
+defaultPref("media.cache_resume_threshold.cellular", 3600); // Default = 10
+defaultPref("media.throttle-cellular-regardless-of-download-rate", false); // [Nascosta]
+// Increase the chunk size for calls to image decoders
+defaultPref("image.mem.decode_bytes_at_a_time", 65536); // default=16384
+// Increase DNS caching
+defaultPref("network.dnsCacheExpiration", 3600); // Default = 60
+defaultPref("network.dnsCacheExpirationGracePeriod", 240); // Default = 60
+defaultPref("network.dnsCacheEntries", 1000); // Default = 800
+// Increase the file-backed media cache size for cellular connections
+defaultPref("media.cache_size.cellular", 512000); // Default = 32768
+// Increase the memory-backed media cache size
+defaultPref("media.memory_cache_max_size", 3145728); // default=8192
+// Increase the skia font cache size (Like Chromium)
+defaultPref("gfx.content.skia-font-cache-size", 20); // default=5
+// Increase the maximum number of HTTP connections
+defaultPref("network.http.max-connections", 1800); // default=900
+defaultPref("network.http.max-persistent-connections-per-proxy", 48); // default=32
+defaultPref("network.http.max-persistent-connections-per-server", 10); // default=6
+defaultPref("network.http.max-urgent-start-excessive-connections-per-host", 5); // default=3
+// Increase TLS token caching
+defaultPref("network.ssl_tokens_cache_capacity", 32768); // default=2048
+// Use higher performance pinch-zoom
+defaultPref("gfx.webrender.low-quality-pinch-zoom", true);
+
+
+
+
+
+
+
+
+
 /* ░█▀█░█▀▀░█▀▀░█░█░█░█░█▀▀░█▀█░█░█ */
 /* ░█▀▀░█▀▀░▀▀█░█▀▄░░█░░█▀▀░█░█░▄▀▄ */
 /* ░▀░░░▀▀▀░▀▀▀░▀░▀░░▀░░▀░░░▀▀▀░▀░▀ */
@@ -1231,4 +1280,4 @@ clearPref("security.OCSP.enabled");
 clearPref("security.OCSP.require");
 
 // [FINE]
-lockPref("rischio.fox", "142.25");
+lockPref("rischio.fox", "142.26");
