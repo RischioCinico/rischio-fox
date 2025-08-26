@@ -683,12 +683,19 @@ defaultPref("network.http.microsoft-entra-sso.container-enabled.0", false);
 defaultPref("network.microsoft-sso-authority-list", "");
 // Disable NTLM
 defaultPref("network.automatic-ntlm-auth.allow-proxies", false);
+/// Disable Password Manager by default - Insecure & unencrypted
+defaultPref("extensions.formautofill.addresses.enabled", false);
+defaultPref("extensions.formautofill.creditCards.enabled", false);
 // Disable password truncation
 defaultPref("editor.truncate_user_pastes", false);
 // Disable SPNEGO
 defaultPref("network.negotiate-auth.allow-proxies", false);
 // Enable anti-spoof confirmation prompts
 defaultPref("network.auth.confirmAuth.enabled", true);
+// Prevent cross-origin sub-resources from opening HTTP authentication dialogs to protect against phishing
+defaultPref("network.auth.subresource-http-auth-allow", 1);
+
+
 
 /*** 016 EXTENSIONS ***/
 
@@ -704,6 +711,7 @@ defaultPref("extensions.sideloadScopes", 0); // [Nascosta]
 defaultPref("extensions.addonAbuseReport.url", "");
 // Disable mozAddonManager
 defaultPref("extensions.webapi.enabled", false);
+defaultPref("privacy.resistFingerprinting.block_mozAddonManager", true);
 // Enable Add-on Distribution Control (Install Origins)
 defaultPref("extensions.install_origins.enabled", true);
 // Enable restricted/quarantined domains by default
@@ -717,6 +725,8 @@ defaultPref("extensions.userContextIsolation.uBlock0@raymondhill.net.restricted"
 defaultPref("extensions.webextensions.base-content-security-policy", "script-src 'self' 'unsafe-inline'; upgrade-insecure-requests;");
 defaultPref("extensions.webextensions.base-content-security-policy.v3", "script-src 'self'; upgrade-insecure-requests;");
 defaultPref("extensions.webextensions.default-content-security-policy", "script-src 'self'; upgrade-insecure-requests;");
+// Never allow installing extensions without first prompting the user
+defaultPref("extensions.postDownloadThirdPartyPrompt", false);
 // Only allow installation and updates of extensions using Firefox's built-in certificates by default
 defaultPref("extensions.install.requireBuiltInCerts", true); // [Nascosta]
 defaultPref("extensions.update.requireBuiltInCerts", true); // [Nascosta]
@@ -1211,42 +1221,9 @@ defaultPref("browser.urlbar.weather.featureGate", false);
 defaultPref("browser.urlbar.wikipedia.featureGate", false);
 defaultPref("browser.urlbar.yelp.featureGate", false);
 
-/*** [0900] PASSWORDS ***/
-/* 0905 limita (o disabilita) autenticazione HTTP */
-defaultPref("network.auth.subresource-http-auth-allow", 1);
-
-/*** [2000] PLUGINS / MEDIA / WEBRTC ***/
-/* 2003 utilizza una singola interfaccia di rete per ICE */
-defaultPref("media.peerconnection.ice.default_address_only", true);
-
-
-/** EXTENSIONS **/
-/* 2661 disabilita prompt di installazione esterni */
-defaultPref("extensions.postDownloadThirdPartyPrompt", false);
-
 /*** [2800] SHUTDOWN & SANITIZING ***/
 /* 2810 previene pulizia dati automatica alla chiusura di Firefox */
 pref("privacy.sanitize.sanitizeOnShutdown", false);
-
-/*** [4500] RFP (ResistFingerPrinting) ***/
-/* 4503 disabilita mozAddonManager Web API */
-defaultPref("privacy.resistFingerprinting.block_mozAddonManager", true);
-
-/*** [5000] OPSEC ***/
-/* 5009 disabilita "apri con" per i download */
-defaultPref("browser.download.forbid_open_with", true);
-/* 5017 disabilita compilazione automatica form */
-defaultPref("extensions.formautofill.addresses.enabled", false);
-defaultPref("extensions.formautofill.creditCards.enabled", false);
-
-/*** 7002 blocca richieste permessi (è possibile dare manualmente i permessi ai siti visitati) */
-defaultPref("permissions.default.camera", 2);
-defaultPref("permissions.default.microphone", 2);
-
-/*** [9000] NON-PROJECT RELATED ***/
-/* 9002 disable General>Browsing>Recommend extensions/features as you browse */
-defaultPref("browser.newtabpage.activity-stream.asrouter.userprefs.cfr.addons", false);
-defaultPref("browser.newtabpage.activity-stream.asrouter.userprefs.cfr.features", false);
 
 /*** [9999] DEPRECATE ***/
 // FF142
@@ -1254,4 +1231,4 @@ clearPref("security.OCSP.enabled");
 clearPref("security.OCSP.require");
 
 // [FINE]
-lockPref("rischio.fox", "142.28");
+lockPref("rischio.fox", "142.29");
