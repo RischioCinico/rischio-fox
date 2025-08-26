@@ -990,6 +990,46 @@ defaultPref("security.block_fileuri_script_with_wrong_mime", true);
 // Yes, this is a real pref... 
 lockPref("security.turn_off_all_security_so_that_viruses_can_take_over_this_computer", false); // [Nascosta]
 
+/*** 024 MISC. ***/
+
+// Block websites from prompting to display notifications by default
+defaultPref("permissions.default.desktop-notification", 2);
+// Disable Captive Portal Detection & Connectivity Checks
+defaultPref("captivedetect.canonicalURL", "");
+defaultPref("network.connectivity-service.DNSv4.domain", "");
+defaultPref("network.connectivity-service.DNSv6.domain", "");
+defaultPref("network.connectivity-service.IPv4.url", "");
+defaultPref("network.connectivity-service.IPv6.url", "");
+// Disable Firefox's "Reset/Refresh Profile" prompt
+lockPref("browser.disableResetPrompt", true);
+// Disable network connectivity status monitoring
+defaultPref("network.manage-offline-status", false);
+defaultPref("offline.autoDetect", false); // [LINUX] RedHat/Fedora-specific
+// Disable network connectivity status monitoring
+defaultPref("toolkit.networkmanager.disable", true); // [LINUX] RedHat/Fedora-specific
+// Disable network requests to 0.0.0.0
+lockPref("network.socket.ip_addr_any.disabled", true);
+// Enable Firefox's newer 'Felt privacy' design for Certificate Errors
+defaultPref("security.certerrors.felt-privacy-v1", true);
+defaultPref("browser.privatebrowsing.felt-privacy-v1", true);
+// Limit what events can cause pop-ups
+defaultPref("dom.popup_allowed_events", "click dblclick");
+// Open links from external programs in new tabs by default
+defaultPref("browser.link.open_newwindow.override.external", 3);
+// Prevent Safe Mode from automatically starting by default
+defaultPref("toolkit.startup.max_resumed_crashes", -1);
+// Prevent scripts from moving, resizing, and messing with windows
+defaultPref("dom.disable_window_move_resize", true);
+// Prevent websites from automatically refreshing
+defaultPref("accessibility.blockautorefresh", true);
+defaultPref("browser.meta_refresh_when_inactive.disabled", true);
+// Reject invalid cookies
+defaultPref("extensions.cookie.rejectWhenInvalid", true);
+// Show advanced details on pages blocked by Safe Browsing by default
+defaultPref("browser.xul.error_pages.show_safe_browsing_details_on_load", true);
+// Show 'Always ask' for camera & microphone in the permissions drop-down (when that's what the user chose...)
+pref("permissions.media.show_always_ask.enabled", true);
+
 /* ░█▀█░█▀▀░█▀▀░█░█░█░█░█▀▀░█▀█░█░█ */
 /* ░█▀▀░█▀▀░▀▀█░█▀▄░░█░░█▀▀░█░█░▄▀▄ */
 /* ░▀░░░▀▀▀░▀▀▀░▀░▀░░▀░░▀░░░▀▀▀░▀░▀ */
@@ -1026,8 +1066,6 @@ defaultPref("browser.newtabpage.activity-stream.showSponsoredCheckboxes", false)
 /* apri risultati di ricerca in una nuova scheda */
 defaultPref("browser.search.openintab", true);
 defaultPref("browser.urlbar.openintab", true);
-/* apri link esterni in una nuova scheda nella finestra attuale */
-defaultPref("browser.link.open_newwindow.override.external", 3);
 /* carica in background le schede aperte da programmi esterni */
 defaultPref("browser.tabs.loadDivertedInBackground", true);
 /* apre segnalibri in una nuova scheda */
@@ -1080,9 +1118,6 @@ defaultPref("browser.newtabpage.activity-stream.default.sites", "");
 /* 0335 disable Firefox Home (Activity Stream) telemetry */
 lockPref("browser.newtabpage.activity-stream.feeds.telemetry", false);
 lockPref("browser.newtabpage.activity-stream.telemetry", false);
-/* 0360 disabilita Captive Portal */
-defaultPref("captivedetect.canonicalURL", "");
-defaultPref("network.captive-portal-service.enabled", false);
 /* 0361 disabilita controllo connettività */
 defaultPref("network.connectivity-service.enabled", false);
 
@@ -1120,9 +1155,6 @@ defaultPref("network.auth.subresource-http-auth-allow", 1);
 /* 2003 utilizza una singola interfaccia di rete per ICE */
 defaultPref("media.peerconnection.ice.default_address_only", true);
 
-/*** [2400] DOM (DOCUMENT OBJECT MODEL) ***/
-/* 2402 impedisci agli scripts di spostare e ridimensionare finestre */
-defaultPref("dom.disable_window_move_resize", true);
 
 /** EXTENSIONS **/
 /* 2661 disabilita prompt di installazione esterni */
@@ -1135,8 +1167,6 @@ pref("privacy.sanitize.sanitizeOnShutdown", false);
 /*** [4500] RFP (ResistFingerPrinting) ***/
 /* 4503 disabilita mozAddonManager Web API */
 defaultPref("privacy.resistFingerprinting.block_mozAddonManager", true);
-/* 4513 obbliga a rispettare "browser.link.open_newwindow" (4512) */
-defaultPref("browser.link.open_newwindow.restriction", 0);
 
 /*** [5000] OPSEC ***/
 /* 5009 disabilita "apri con" per i download */
@@ -1144,13 +1174,10 @@ defaultPref("browser.download.forbid_open_with", true);
 /* 5017 disabilita compilazione automatica form */
 defaultPref("extensions.formautofill.addresses.enabled", false);
 defaultPref("extensions.formautofill.creditCards.enabled", false);
-/* 5018 limita eventi che possono aprire popup */
-defaultPref("dom.popup_allowed_events", "click dblclick mousedown pointerdown");
 
 /*** 7002 blocca richieste permessi (è possibile dare manualmente i permessi ai siti visitati) */
 defaultPref("permissions.default.camera", 2);
 defaultPref("permissions.default.microphone", 2);
-defaultPref("permissions.default.desktop-notification", 2);
 
 /*** [9000] NON-PROJECT RELATED ***/
 /* 9002 disable General>Browsing>Recommend extensions/features as you browse */
@@ -1163,4 +1190,4 @@ clearPref("security.OCSP.enabled");
 clearPref("security.OCSP.require");
 
 // [FINE]
-lockPref("rischio.fox", "142.23");
+lockPref("rischio.fox", "142.24");
