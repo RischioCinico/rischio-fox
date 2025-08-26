@@ -20,8 +20,6 @@ defaultPref("browser.newtabpage.activity-stream.newtabWallpapers.customColor.ena
 defaultPref("browser.newtabpage.activity-stream.newtabWallpapers.customWallpaper.enabled", true)
 
 /*** Funzioni ***/
-/* abilita scorrimento automatico */
-defaultPref("general.autoScroll", true);
 /* Fork Server https://firefox-source-docs.mozilla.org/dom/ipc/process_model.html#fork-server */
 defaultPref("dom.ipc.forkserver.enable", true); // [LINUX]
 
