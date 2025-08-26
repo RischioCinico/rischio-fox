@@ -19,27 +19,15 @@ defaultPref("browser.newtabpage.activity-stream.newtabWallpapers.wallpaper", "da
 defaultPref("browser.newtabpage.activity-stream.newtabWallpapers.customColor.enabled", true);
 defaultPref("browser.newtabpage.activity-stream.newtabWallpapers.customWallpaper.enabled", true)
 
-/*** Barra Laterale ***/
-/* abilita la nuova sidebar */
-defaultPref("sidebar.revamp", true);
-/* strumenti da visualizzare nella sidebar */
-defaultPref("sidebar.main.tools", "aichat,syncedtabs,history,bookmarks");
-
 /*** Funzioni ***/
 /* abilita scorrimento automatico */
 defaultPref("general.autoScroll", true);
-/* attiva gruppi di schede */
-defaultPref("browser.tabs.groups.enabled", true);
 /* Fork Server https://firefox-source-docs.mozilla.org/dom/ipc/process_model.html#fork-server */
 defaultPref("dom.ipc.forkserver.enable", true); // [LINUX]
 
 /*** Fastidi ***/
-/* disabilita popup traduttore */
-defaultPref("browser.translations.automaticallyPopup", false);
 /* mostra sempre controlli picture in picture */
 defaultPref("media.videocontrols.picture-in-picture.video-toggle.always-show", true);
-/* nascondi barra del titolo */
-defaultPref("browser.tabs.inTitlebar", 2);
 
 /*** 000 ABOUT:CONFIG ***/
 
@@ -1096,13 +1084,71 @@ defaultPref("network.ssl_tokens_cache_capacity", 32768); // default=2048
 // Use higher performance pinch-zoom
 defaultPref("gfx.webrender.low-quality-pinch-zoom", true);
 
+/*** 027 Nice Stuff ***/
 
-
-
-
-
-
-
+// Allow Picture-in-Picture on all websites, even if they try to block it...
+defaultPref("media.videocontrols.picture-in-picture.respect-disablePictureInPicture", false);
+// Allow zoom on all websites, even if they try to block it...
+defaultPref("browser.ui.zoom.force-user-scalable", true);
+// Allow zooming out beyond the initial scale of websites by default
+defaultPref("apz.allow_zooming_out", true);
+// Allow the use of custom CSS by default
+defaultPref("toolkit.legacyUserProfileCustomizations.stylesheets", true);
+// Always load bookmarks in new tabs by default
+defaultPref("browser.tabs.loadBookmarksInTabs", true);
+// Disable annoying Web Speech API errors, especially relevant on Linux
+defaultPref("media.webspeech.synth.dont_notify_on_error", true); // [Nascosta]
+// Disable fullscreen delay
+defaultPref("full-screen-api.transition-duration.enter", "0 0");
+defaultPref("full-screen-api.transition-duration.leave", "0 0");
+// Display the option to enable `Compact` mode at `Customize toolbar...`
+defaultPref("browser.compactmode.show", true);
+// Display a spinning animation while websites are loading
+defaultPref("browser.spin_cursor_while_busy", true);
+// Enable autoscrolling
+defaultPref("general.autoScroll", true);
+// Enable Backup settings (at `about:preferences#general`)
+defaultPref("browser.backup.preferences.ui.enabled", true);
+// Enable + customize the new Sidebar by default
+defaultPref("browser.toolbarbuttons.introduced.sidebar-button", false);
+defaultPref("sidebar.backupState", '{"command":"","launcherWidth":0,"launcherExpanded":false,"launcherVisible":false}');
+defaultPref("sidebar.main.tools", "aichat,syncedtabs,history,bookmarks");
+defaultPref("sidebar.revamp", true);
+defaultPref("sidebar.visibility", "hide-sidebar");
+// Enable developer options for `about:profiling`
+defaultPref("devtools.performance.aboutprofiling.has-developer-options", true);
+// Enable Firefox Labs (`about:preferences#experimental`)
+defaultPref("browser.preferences.experimental", true);
+lockPref("browser.preferences.experimental.hidden", false);
+// Firefox Translations
+defaultPref("browser.translations.automaticallyPopup", false);
+defaultPref("browser.translations.newSettingsUI.enable", true);
+defaultPref("extensions.translations.disabled", false); // [Nascosta]
+// Enable Spellcheck for both multi-line and single-line boxes
+defaultPref("layout.spellcheckDefault", 2);
+// Enable Tab Groups
+defaultPref("browser.tabs.groups.enabled", true);
+// Enable Taskbar Tabs (PWAs)
+defaultPref("browser.taskbarTabs.enabled", true);
+// Enable the `Unload Tab` context menu item by default
+defaultPref("browser.tabs.unloadTabInContextMenu", true);
+// Enable the `View Image Info` context menu item
+defaultPref("browser.menu.showViewImageInfo", true);
+// Ensure users can always control Nimbus recipes
+defaultPref("nimbus.debug", true);
+defaultPref("nimbus.validation.enabled", false);
+// Hide the Title Bar by default
+defaultPref("browser.tabs.inTitlebar", 1);
+// Highlight all Findbar (Ctrl + F) results by default
+defaultPref("findbar.highlightAll", true);
+// Prevent the alt key from toggling menu bar by default
+defaultPref("ui.key.menuAccessKeyFocuses", false);
+// Prevent displaying Private Browsing windows as separate icons on the Windows Taskbar by default
+defaultPref("browser.privateWindowSeparation.enabled", false);
+// Prevent including the space next to words when double-clicking/selecting text
+defaultPref("layout.word_select.eat_space_to_next_word", false);
+// Prevent automatically closing the Bookmarks menu after selecting a bookmark
+defaultPref("browser.bookmarks.openInTabClosesMenu", false);
 
 /* ░█▀█░█▀▀░█▀▀░█░█░█░█░█▀▀░█▀█░█░█ */
 /* ░█▀▀░█▀▀░▀▀█░█▀▄░░█░░█▀▀░█░█░▄▀▄ */
@@ -1112,16 +1158,7 @@ defaultPref("gfx.webrender.low-quality-pinch-zoom", true);
 /* usa tasti nativi nella barra del titolo */
 defaultPref("widget.gtk.non-native-titlebar-buttons.enabled", true); // [LINUX]
 
-/** THEME ADJUSTMENTS **/
-/* abilita css e stili personalizzati */
-defaultPref("toolkit.legacyUserProfileCustomizations.stylesheets", true);
-/* mostra modalità compatta nelle opzioni */
-defaultPref("browser.compactmode.show", true);
-
 /** FULLSCREEN NOTICE **/
-/* rimuove ritardo schermo intero */
-defaultPref("full-screen-api.transition-duration.enter", "0 0");
-defaultPref("full-screen-api.transition-duration.leave", "0 0");
 /* disabilita avviso schermo intero */
 defaultPref("full-screen-api.warning.delay", -1);
 defaultPref("full-screen-api.warning.timeout", 0);
@@ -1143,20 +1180,11 @@ defaultPref("browser.urlbar.openintab", true);
 /* carica in background le schede aperte da programmi esterni */
 defaultPref("browser.tabs.loadDivertedInBackground", true);
 /* apre segnalibri in una nuova scheda */
-defaultPref("browser.tabs.loadBookmarksInTabs", true);
 defaultPref("browser.tabs.loadBookmarksInBackground", true);
-/* lascia il menu segnalibri aperto dopo aver aperto un segnalibro */
-defaultPref("browser.bookmarks.openInTabClosesMenu", false);
-/* mostra informazioni immagini nel menu contestuale */
-defaultPref("browser.menu.showViewImageInfo", true);
-/* evidenzia tutti i risultati di ricerca Ctrl+F */
-defaultPref("findbar.highlightAll", true);
 /* apri nuove schede subito dopo la scheda attuale */
 defaultPref("browser.tabs.insertAfterCurrent", true);
 /* lascia il browser aperto alla chiusura dell'ultima scheda */
 defaultPref("browser.tabs.closeWindowWithLastTab", false);
-/* non selezionare lo spazio dopo una parola */
-defaultPref("layout.word_select.eat_space_to_next_word", false);
 /* controls if a double-click word selection also deletes one adjacent whitespace */
 defaultPref("editor.word_select.delete_space_after_doubleclick_selection", true);
 /* non nascondere il cursore del mouse mentre si digita */
@@ -1231,4 +1259,4 @@ clearPref("security.OCSP.enabled");
 clearPref("security.OCSP.require");
 
 // [FINE]
-lockPref("rischio.fox", "142.29");
+lockPref("rischio.fox", "142.30");
