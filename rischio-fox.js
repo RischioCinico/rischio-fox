@@ -44,22 +44,12 @@ defaultPref("browser.tabs.inTitlebar", 2);
 /*** Prestazioni ***/
 /** GFX RENDERING TWEAKS **/
 defaultPref("gfx.webrender.precache-shaders", true);
-/** DISK CACHE **/
-defaultPref("browser.cache.disk.smart_size.enabled", false);
-defaultPref("browser.cache.disk.capacity", 8388608); // default=256000
-defaultPref("browser.cache.disk.metadata_memory_limit", 102400); // default=51200
-defaultPref("browser.cache.frecency_half_life_hours", 18); // default=6
-defaultPref("browser.cache.disk.free_space_soft_limit", 10240); // default=5120
-defaultPref("browser.cache.disk.free_space_hard_limit", 2048); // default=1024
 /** MEMORY CACHE **/
 defaultPref("browser.cache.memory.capacity", 4194304); // default=-1
 defaultPref("browser.cache.memory.max_entry_size", 10240); // default=5120
 /** MEDIA CACHE **/
 defaultPref("media.memory_caches_combined_limit_kb", 3145728); // default=524288
 defaultPref("media.memory_caches_combined_limit_pc_sysmem", 10); //default=5
-/** IMAGE CACHE **/
-defaultPref("image.cache.size", 10485760); // default=5242880
-defaultPref("image.mem.shared.unmap.min_expiration_ms", 120000); // default=60000
 /** NETWORK **/
 defaultPref("network.buffer.cache.size", 65535); // default=32768
 defaultPref("network.buffer.cache.count", 48); // default=24
@@ -446,6 +436,9 @@ defaultPref("fission.bfcacheInParent", false);
 defaultPref("browser.pagethumbnails.capturing_disabled", true); // [Nascosta]
 // Disable coloring visited links
 defaultPref("layout.css.visited_links_enabled", false);
+// Disable disk cache
+lockPref("browser.cache.disk.enable", false);
+lockPref("browser.cache.disk_cache_ssl", false);
 // Disable logging blocked domains to `about:protections`
 defaultPref("browser.contentblocking.cfr-milestone.enabled", false);
 defaultPref("browser.contentblocking.cfr-milestone.milestone-shown-time", "999999999"); // [Nascosta]
@@ -1280,4 +1273,4 @@ clearPref("security.OCSP.enabled");
 clearPref("security.OCSP.require");
 
 // [FINE]
-lockPref("rischio.fox", "142.26");
+lockPref("rischio.fox", "142.27");
