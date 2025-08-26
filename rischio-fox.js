@@ -1220,7 +1220,7 @@ lockPref("browser.newtabpage.activity-stream.mobileDownloadModal.variant-c", fal
 lockPref("browser.newtabpage.activity-stream.discoverystream.onboardingExperience.dismissed", true);
 lockPref("browser.newtabpage.activity-stream.discoverystream.onboardingExperience.enabled", false);
 lockPref("browser.newtabpage.activity-stream.discoverystream.topicSelection.onboarding.enabled", false);
-lockPref("browser.newtabpage.activity-stream.discoverystream.topicSelection.onboarding.maybeDisplay", false);\
+lockPref("browser.newtabpage.activity-stream.discoverystream.topicSelection.onboarding.maybeDisplay", false);
 // Disable Pocket
 defaultPref("browser.newtabpage.activity-stream.discoverystream.saveToPocketCard.enabled", false);
 defaultPref("browser.newtabpage.activity-stream.discoverystream.sendToPocket.enabled", false);
@@ -1456,4 +1456,4 @@ defaultPref("editor.word_select.delete_space_after_doubleclick_selection", true)
 defaultPref("widget.gtk.hide-pointer-while-typing.enabled", false); // [Linux]
 
 // [FINE]
-lockPref("rischio.fox", "142.32");
+lockPref("rischio.fox", "142.32a");
