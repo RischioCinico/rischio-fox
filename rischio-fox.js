@@ -1278,7 +1278,7 @@ defaultPref("browser.newtabpage.activity-stream.trendingSearch.enabled", false);
 // Disable wallpaper promotions
 defaultPref("browser.newtabpage.activity-stream.newtabWallpapers.highlightDismissed", true);
 // Enable wallpapers, but disable fetching them remotely by default
-defaultPref("browser.newtabpage.activity-stream.feeds.wallpaperfeed", false);
+defaultPref("browser.newtabpage.activity-stream.feeds.wallpaperfeed", true);
 defaultPref("browser.newtabpage.activity-stream.newtabWallpapers.wallpaper", "dark-landscape");
 // Hide checkboxes to enable sponsored shortcuts and Pocket sponsored stories
 lockPref("browser.newtabpage.activity-stream.showSponsoredCheckboxes", false);
@@ -1456,4 +1456,4 @@ defaultPref("editor.word_select.delete_space_after_doubleclick_selection", true)
 defaultPref("widget.gtk.hide-pointer-while-typing.enabled", false); // [LINUX]
 
 // [FINE]
-lockPref("rischio.fox", "142.32c");
+lockPref("rischio.fox", "142.33");
