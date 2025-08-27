@@ -1050,7 +1050,7 @@ defaultPref("gfx.canvas.accelerated.cache-size", 512); // // default=256
 defaultPref("layout.css.grid-template-masonry-value.enabled", true);
 // Enable SIMD
 defaultPref("javascript.options.wasm_relaxed_simd", true);
-// Enable VA-API by default [LINUX-ONLY] 
+// Enable VA-API by default
 defaultPref("media.ffmpeg.vaapi.enabled", true); // [LINUX]
 // Enable the WebRender native compositor (if supported)
 defaultPref("gfx.webrender.compositor", true);
@@ -1453,7 +1453,7 @@ defaultPref("browser.tabs.closeWindowWithLastTab", false);
 /* controls if a double-click word selection also deletes one adjacent whitespace */
 defaultPref("editor.word_select.delete_space_after_doubleclick_selection", true);
 /* non nascondere il cursore del mouse mentre si digita */
-defaultPref("widget.gtk.hide-pointer-while-typing.enabled", false); // [Linux]
+defaultPref("widget.gtk.hide-pointer-while-typing.enabled", false); // [LINUX]
 
 // [FINE]
-lockPref("rischio.fox", "142.32b");
+lockPref("rischio.fox", "142.32c");
