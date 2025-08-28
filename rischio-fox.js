@@ -1432,28 +1432,29 @@ defaultPref("services.sync.prefs.sync.view_source.wrap_long_lines", true);
 
 /*** 032 Rischio-Fox ***/
 
-// Fork Server https://firefox-source-docs.mozilla.org/dom/ipc/process_model.html#fork-server
-pref("dom.ipc.forkserver.enable", true); // [LINUX]
-
-// Mostra sempre controlli picture in picture
-pref("media.videocontrols.picture-in-picture.video-toggle.always-show", true);
-
-/** PeskyFox (v142) **/
-/* apri risultati di ricerca in una nuova scheda */
+// Disabilita avviso schermo intero
+defaultPref("full-screen-api.warning.delay", -1);
+defaultPref("full-screen-api.warning.timeout", 0);
+// apri risultati di ricerca in una nuova scheda
 defaultPref("browser.search.openintab", true);
 defaultPref("browser.urlbar.openintab", true);
-/* carica in background le schede aperte da programmi esterni */
+// carica in background le schede aperte da programmi esterni
 defaultPref("browser.tabs.loadDivertedInBackground", true);
-/* apre segnalibri in una nuova scheda */
+// apre segnalibri in una nuova scheda
 defaultPref("browser.tabs.loadBookmarksInBackground", true);
-/* apri nuove schede subito dopo la scheda attuale */
+// apri nuove schede subito dopo la scheda attuale
 defaultPref("browser.tabs.insertAfterCurrent", true);
-/* lascia il browser aperto alla chiusura dell'ultima scheda */
+// lascia il browser aperto alla chiusura dell'ultima scheda
 defaultPref("browser.tabs.closeWindowWithLastTab", false);
-/* controls if a double-click word selection also deletes one adjacent whitespace */
+// controls if a double-click word selection also deletes one adjacent whitespace
 defaultPref("editor.word_select.delete_space_after_doubleclick_selection", true);
-/* non nascondere il cursore del mouse mentre si digita */
+// non nascondere il cursore del mouse mentre si digita
 defaultPref("widget.gtk.hide-pointer-while-typing.enabled", false); // [LINUX]
 
+/* Fork Server https://firefox-source-docs.mozilla.org/dom/ipc/process_model.html#fork-server */
+pref("dom.ipc.forkserver.enable", true); // [LINUX]
+/* Mostra sempre controlli picture in picture */
+pref("media.videocontrols.picture-in-picture.video-toggle.always-show", true);
+
 // [FINE]
-lockPref("rischio.fox", "142.33");
+lockPref("rischio.fox", "142.34");
