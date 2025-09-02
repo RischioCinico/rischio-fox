@@ -33,7 +33,6 @@
     "DontCheckDefaultBrowser": true,
     "EnableTrackingProtection": {
       "Value": true,
-      "Locked": true,
       "Category": "strict"
     },
     "FirefoxHome": {
