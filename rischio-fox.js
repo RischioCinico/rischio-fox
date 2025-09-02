@@ -338,6 +338,8 @@ lockPref("termsofuse.bypassNotification", true);
 
 // Exceptions for minor issues
 defaultPref("privacy.trackingprotection.allow_list.convenience.enabled", true);
+// Enable ETP Strict
+lockPref("browser.contentblocking.category", "strict");
 // Block known tracking cookies
 defaultPref("network.cookie.cookieBehavior.trackerCookieBlocking", true);
 // Enable Bounce Tracking Protection
@@ -861,6 +863,7 @@ defaultPref("privacy.userContext.enabled", true);
 defaultPref("cookiebanners.service.mode", 1);
 defaultPref("cookiebanners.service.mode.privateBrowsing", 1);
 // Enable Do Not Track & Global Privacy Control
+lockPref("privacy.donottrackheader.enabled", true);
 defaultPref("privacy.globalprivacycontrol.enabled", true);
 // Enable the (new) UI for browser profiles by default
 defaultPref("browser.profiles.enabled", true);
@@ -1459,4 +1462,4 @@ pref("dom.ipc.forkserver.enable", true); // [LINUX]
 pref("media.videocontrols.picture-in-picture.video-toggle.always-show", true);
 
 // [FINE]
-lockPref("rischio.fox", "142.35");
+lockPref("rischio.fox", "142.36");
