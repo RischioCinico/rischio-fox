@@ -1070,7 +1070,7 @@ defaultPref("browser.preferences.defaultPerformanceSettings.enabled", false);
 defaultPref("javascript.options.wasm_branch_hinting", true);
 // Enable Canvas2D acceleration (if supported)
 defaultPref("gfx.canvas.accelerated.cache-items", 8192); // default=8192
-defaultPref("gfx.canvas.accelerated.cache-size", 512); // // default=256
+defaultPref("gfx.canvas.accelerated.cache-size", 512); // default=256
 // Enable CSS Masonry Layout
 defaultPref("layout.css.grid-template-masonry-value.enabled", true);
 // Enable SIMD
