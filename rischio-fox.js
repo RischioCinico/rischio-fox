@@ -13,7 +13,7 @@
 /*** 000 ABOUT:CONFIG ***/
 
 // Disable annoying warnings when attempting to access the `about:config`
-defaultPref("browser.aboutConfig.showWarning", false);
+lockPref("browser.aboutConfig.showWarning", false);
 // Ensure that the `about:config` is always enabled
 lockPref("general.aboutConfig.enable", true);
 // Ensure our policies aren't overriden...
