@@ -31,10 +31,6 @@
       "ProviderURL": "https://dns.quad9.net/dns-query"
     },
     "DontCheckDefaultBrowser": true,
-    "EnableTrackingProtection": {
-      "Value": true,
-      "Category": "strict"
-    },
     "FirefoxHome": {
       "Search": true,
       "TopSites": true,
