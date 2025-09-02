@@ -336,7 +336,7 @@ lockPref("termsofuse.bypassNotification", true);
 
 /*** 003 TRACKING PROTECTION ***/
 
-// Disable exceptions for minor issues by default
+// Exceptions for minor issues
 defaultPref("privacy.trackingprotection.allow_list.convenience.enabled", true);
 // Block known tracking cookies
 defaultPref("network.cookie.cookieBehavior.trackerCookieBlocking", true);
@@ -438,7 +438,7 @@ defaultPref("browser.download.alwaysOpenPanel", false);
 defaultPref("browser.download.manager.addToRecentDocs", false);
 // Prompt before downloading files
 defaultPref("browser.download.always_ask_before_handling_new_types", true);
-defaultPref("browser.download.useDownloadDir", false);
+lockPref("browser.download.useDownloadDir", false);
 
 /*** 007 HTTP(S) ***/
 
@@ -560,6 +560,8 @@ defaultPref("browser.search.separatePrivateDefault", true);
 
 /*** 010 DNS ***/
 
+// Customize list of built-in DoH resolvers
+defaultPref("doh-rollout.provider-list", '[{"uri":"https://dns.quad9.net/dns-query","UIName":"Quad9 🇨🇭","autoDefault":true},{"uri":"https://dns.adguard-dns.com/dns-query","UIName":"AdGuard 🇨🇾","autoDefault":false},{"uri":"https://unfiltered.adguard-dns.com/dns-query","UIName":"AdGuard (Unfiltered) 🇨🇾","autoDefault":false},{"uri":"https://mozilla.cloudflare-dns.com/dns-query","UIName":"Cloudflare 🇺🇸","autoDefault":false},{"uri":"https://security.cloudflare-dns.com/dns-query","UIName":"Cloudflare (Malware Protection) 🇺🇸","autoDefault":false},{"uri":"https://dns0.eu","UIName":"DNS0 🇫🇷","autoDefault":false},{"uri":"https://zero.dns0.eu","UIName":"DNS0 (ZERO) 🇫🇷","autoDefault":false},{"uri":"https://noads.joindns4.eu/dns-query","UIName":"DNS4EU (Ad Blocking) 🇨🇿","autoDefault":false},{"uri":"https://protective.joindns4.eu/dns-query","UIName":"DNS4EU (Protective) 🇨🇿","autoDefault":false},{"uri":"https://unfiltered.joindns4.eu/dns-query","UIName":"DNS4EU (Unfiltered) 🇨🇿","autoDefault":false},{"uri":"https://base.dns.mullvad.net/dns-query","UIName":"Mullvad (Base) 🇸🇪","autoDefault":false},{"uri":"https://dns.mullvad.net/dns-query","UIName":"Mullvad (Unfiltered) 🇸🇪","autoDefault":false},{"uri":"https://firefox.dns.nextdns.io/","UIName":"NextDNS 🇺🇸","autoDefault":false},{"uri":"https://wikimedia-dns.org/dns-query","UIName":"Wikimedia 🇺🇸","autoDefault":false}]');
 // Disable DoH Connectivity Checks
 defaultPref("network.connectivity-service.DNS_HTTPS.domain", "");
 defaultPref("network.trr.confirmationNS", "skip");
@@ -640,12 +642,12 @@ defaultPref("javascript.options.asmjs", false);
 defaultPref("gfx.font_rendering.graphite.enabled", false);
 defaultPref("gfx.font_rendering.opentype_svg.enabled", false);
 // Disable JavaScript Just-in-time Compilation (JIT)
-defaultPref("javascript.options.baselinejit", false); // Baseline Compiler
-defaultPref("javascript.options.ion", false); // WarpMonkey
-defaultPref("javascript.options.jithints", false); // Eager baseline hints https://bugzilla.mozilla.org/show_bug.cgi?id=1831572
-defaultPref("javascript.options.main_process_disable_jit", true); // [DEFAULT - iOS?] The JIT backend https://searchfox.org/mozilla-central/source/js/src/jit/JitOptions.cpp
-defaultPref("javascript.options.native_regexp", false); // irregexp https://gitlab.torproject.org/tpo/applications/tor-browser/-/issues/21865
-defaultPref("javascript.options.wasm_optimizingjit", false); // WASM-Ion (BaldrMonkey)
+defaultPref("javascript.options.baselinejit", false);
+defaultPref("javascript.options.ion", false);
+defaultPref("javascript.options.jithints", false);
+defaultPref("javascript.options.main_process_disable_jit", true);
+defaultPref("javascript.options.native_regexp", false);
+defaultPref("javascript.options.wasm_optimizingjit", false);
 // Disable MathML
 defaultPref("mathml.disabled", true);
 // Disable SharedArrayBuffer using window.postMessage
@@ -1457,4 +1459,4 @@ pref("dom.ipc.forkserver.enable", true); // [LINUX]
 pref("media.videocontrols.picture-in-picture.video-toggle.always-show", true);
 
 // [FINE]
-lockPref("rischio.fox", "142.34");
+lockPref("rischio.fox", "142.35");
