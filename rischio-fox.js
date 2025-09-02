@@ -340,15 +340,35 @@ lockPref("termsofuse.bypassNotification", true);
 defaultPref("privacy.trackingprotection.allow_list.convenience.enabled", true);
 // Enable ETP Strict
 lockPref("browser.contentblocking.category", "strict");
+// Block known consent managers (CMPs)
+defaultPref("privacy.trackingprotection.consentmanager.skip.pbmode.enabled", false);
+// Block known email trackers
+defaultPref("privacy.trackingprotection.emailtracking.enabled", true);
+// Block known fingerprinters
+defaultPref("privacy.trackingprotection.antifraud.skip.pbmode.enabled", false);
+// Block known social trackers
+defaultPref("privacy.trackingprotection.socialtracking.enabled", true);
+// Block known trackers
+defaultPref("privacy.trackingprotection.enabled", true);
+// Block known trackers using the `strict` (Level 2) list
+defaultPref("privacy.annotate_channels.strict_list.enabled", true);
 // Block known tracking cookies
 defaultPref("network.cookie.cookieBehavior.trackerCookieBlocking", true);
 // Enable Bounce Tracking Protection
+defaultPref("privacy.bounceTrackingProtection.mode", 1);
 defaultPref("privacy.bounceTrackingProtection.requireStatefulBounces", false);
+// Enable Query Parameter Stripping
+defaultPref("privacy.query_stripping.enabled", true);
+defaultPref("privacy.query_stripping.enabled.pbmode", true);
 // Enable TCP/dFPI
 defaultPref("network.cookie.cookieBehavior.optInPartitioning", true);
 defaultPref("network.cookie.cookieBehavior.optInPartitioning.pbmode", true);
 // Lower the network priority of known trackers (if not blocked for whatever reason...)
 defaultPref("privacy.trackingprotection.lower_network_priority", true);
+// Enable Suspected Fingerprinters Protection (FPP)
+defaultPref("privacy.fingerprintingProtection", true);
+// Ignore less restricted referer policies
+defaultPref("network.http.referer.disallowCrossSiteRelaxingDefault.top_navigation", true);
 
 /*** 004 FINGERPRINTING PROTECTION ***/
 
@@ -1462,4 +1482,4 @@ pref("dom.ipc.forkserver.enable", true); // [LINUX]
 pref("media.videocontrols.picture-in-picture.video-toggle.always-show", true);
 
 // [FINE]
-lockPref("rischio.fox", "142.36");
+lockPref("rischio.fox", "142.37");
