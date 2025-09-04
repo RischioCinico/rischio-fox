@@ -30,115 +30,20 @@ lockPref("mozilla.partner.id", "");
 
 /*** 002 MOZILLA ***/
 
-// Clear unnecessary/undesired Mozilla URLs
-lockPref("app.feedback.baseURL", "");
-lockPref("app.normandy.shieldLearnMoreUrl", "");
-lockPref("datareporting.healthreport.infoURL", "");
-lockPref("extensions.recommendations.privacyPolicyUrl", "");
-lockPref("toolkit.datacollection.infoURL", "");
-// Disable `about:welcome`/onboarding
-lockPref("browser.aboutwelcome.enabled", false);
-lockPref("browser.aboutwelcome.log", "off"); // [Nascosta]
-lockPref("browser.preonboarding.enabled", false); // [Nascosta]
-lockPref("browser.rights.3.shown", true); // [Nascosta]
-lockPref("browser.startup.homepage_override.buildID", "20100101"); // [Nascosta]
-lockPref("browser.startup.homepage_override.mstone", "ignore"); // [Nascosta]
-lockPref("browser.startup.upgradeDialog.enabled", false);
-lockPref("browser.suppress_first_window_animation", true);
-lockPref("startup.homepage_override_nimbus_disable_wnp", true);
-lockPref("startup.homepage_override_url", "");
-lockPref("startup.homepage_override_url_nimbus", "");
-lockPref("startup.homepage_welcome_url", "");
-lockPref("startup.homepage_welcome_url.additional", "");
-// Disable add-on/feature recommendations
-lockPref("browser.dataFeatureRecommendations.enabled", false);
-lockPref("browser.discovery.enabled", false);
-lockPref("browser.discovery.sites", "");
-lockPref("browser.newtabpage.activity-stream.asrouter.providers.cfr", "null");
-lockPref("browser.newtabpage.activity-stream.asrouter.providers.cfr-fxa", "null");
-lockPref("browser.newtabpage.activity-stream.asrouter.userprefs.cfr.addons", false);
-lockPref("browser.newtabpage.activity-stream.asrouter.userprefs.cfr.features", false);
-lockPref("browser.translations.panelShown", true); // [Nascosta]
-lockPref("extensions.getAddons.browseAddons", ""); // [Nascosta]
-lockPref("extensions.getAddons.discovery.api_url", "data;");
-lockPref("extensions.getAddons.showPane", false); // [Nascosta]
-lockPref("extensions.htmlaboutaddons.recommendations.enabled", false);
-lockPref("extensions.recommendations.hideNotice", true); // [Nascosta]
-lockPref("extensions.recommendations.themeRecommendationUrl", "");
-lockPref("extensions.ui.lastCategory", "addons://list/extension"); // [Nascosta]
-lockPref("extensions.webservice.discoverURL", ""); // [Nascosta]
-// Disable DoH Rollout/heuristics/steering
-lockPref("doh-rollout._testing", true); // [Nascosta]
-lockPref("doh-rollout.disable-heuristics", true); // [Nascosta]
-lockPref("doh-rollout.doneFirstRun", true); // [Nascosta]
-lockPref("doh-rollout.doorhanger-decision", "UIDisabled"); // [Nascosta]
-lockPref("doh-rollout.enabled", false); // [Nascosta]
-lockPref("doh-rollout.mode", 5); // [Nascosta]
-lockPref("doh-rollout.provider-steering.enabled", false); // [Nascosta]
-lockPref("doh-rollout.provider-steering.provider-list", ""); // [Nascosta]
-lockPref("doh-rollout.self-enabled", false); // [Nascosta]
-lockPref("doh-rollout.skipHeuristicsCheck", true); // [Nascosta]
-lockPref("doh-rollout.trr-selection.enabled", false); // [Nascosta]
-lockPref("doh-rollout.trr-selection.provider-list", ""); // [Nascosta]
-lockPref("doh-rollout.uri", ""); // [Nascosta]
-lockPref("network.android_doh.autoselect_enabled", false); // [DEFAULT]
-// Disable DoH performance measurements
-lockPref("doh-rollout.trrRace.canonicalDomain", ""); // [Nascosta]
-lockPref("doh-rollout.trrRace.complete", true); // [Nascosta]
-lockPref("doh-rollout.trrRace.enabled", false); // [Nascosta]
-lockPref("doh-rollout.trrRace.popularDomains", ""); // [Nascosta]
-lockPref("doh-rollout.trrRace.randomSubdomainCount", 0); // [Nascosta]
 // Disable 'Essential Domains Fallback'
 lockPref("network.essential_domains_fallback", false);
-// Disable Fakespot
-lockPref("toolkit.shopping.ohttpConfigURL", "");
-lockPref("toolkit.shopping.ohttpRelayURL", "");
-// Disable "Feature Tours"
-lockPref("browser.firefox-view.feature-tour", '{"screen":"","complete":true}');
-lockPref("browser.newtab.feature-tour", '{"screen":"","complete":true}'); // [Nascosta]
-lockPref("browser.pdfjs.feature-tour", '{"screen":"","complete":true}'); //
 // Disable fetching Firefox Relay's "allowlist" (list of sites known to support Relay)
 lockPref("signon.firefoxRelay.allowListRemoteSettingsCollection", ""); // [Nascosta]
 // Disable fetching Password Manager rules remotely by default
 lockPref("signon.recipes.remoteRecipes.enabled", false);
 // Disable Firefox Bridge
 lockPref("browser.firefoxbridge.enabled", false);
-// Disable Firefox Messaging System targeting information background updates  
-lockPref("app.update.background.messaging.targeting.snapshot.intervalSec", -1);
 // Disable "Interest-based Content Relevance Ranking and Personalization"
 lockPref("toolkit.contentRelevancy.enabled", false);
 lockPref("toolkit.contentRelevancy.ingestEnabled", false);
 lockPref("toolkit.contentRelevancy.log", false);
 // Disable Mozilla promotions  
-lockPref("browser.contentblocking.report.hide_vpn_banner", true);
-lockPref("browser.contentblocking.report.lockwise.enabled", false);
-lockPref("browser.contentblocking.report.mobile-android.url", "");
-lockPref("browser.contentblocking.report.mobile-ios.url", "");
-lockPref("browser.contentblocking.report.monitor.enabled", false);
-lockPref("browser.contentblocking.report.proxy.enabled", false);
-lockPref("browser.contentblocking.report.proxy_extension.url", "");
-lockPref("browser.contentblocking.report.show_mobile_app", false);
-lockPref("browser.contentblocking.report.vpn.url", "");
-lockPref("browser.contentblocking.report.vpn-android.url", "");
-lockPref("browser.contentblocking.report.vpn-ios.url", "");
-lockPref("browser.contentblocking.report.vpn-promo.url", "");
-lockPref("browser.privatebrowsing.vpnpromourl", "");
-lockPref("browser.promo.cookiebanners.enabled", false);
-lockPref("browser.promo.focus.enabled", false);
-lockPref("browser.promo.pin.enabled", false);
-lockPref("browser.protections_panel.infoMessage.seen", true);
-lockPref("browser.send_to_device_locales", "");
-lockPref("browser.vpn_promo.enabled", false);
 lockPref("cookiebanners.ui.desktop.showCallout", false);
-// Disable Mozilla.UITour   
-lockPref("browser.uitour.enabled", false);
-lockPref("browser.uitour.loglevel", "Off");
-lockPref("browser.uitour.requireSecure", true); // [Nascosta]
-lockPref("browser.uitour.surveyDuration", 0);
-lockPref("browser.uitour.testingOrigins", ""); // [Nascosta]
-lockPref("browser.uitour.url", ""); //  
-// Disable Pocket  
-lockPref("extensions.pocket.enabled", false);
 // Disable "Privacy-Preserving Attribution"
 lockPref("dom.origin-trials.private-attribution.state", 2);
 lockPref("dom.private-attribution.submission.enabled", false);
@@ -154,7 +59,6 @@ lockPref("browser.preferences.moreFromMozilla", false);
 // Opt out of add-on metadata updates
 lockPref("extensions.getAddons.cache.enabled", false);
 // Prevent checking if Firefox is the default browser  
-lockPref("browser.shell.checkDefaultBrowser", false);
 lockPref("browser.shell.skipDefaultBrowserCheckOnFirstRun", true);
 // Prevent checking if Firefox is the default `mailto:` handler  
 lockPref("browser.mailto.dualPrompt", false);
@@ -202,12 +106,6 @@ lockPref("signon.firefoxRelay.learn_more_url", "https://support.mozilla.org/kb/r
 lockPref("signon.firefoxRelay.manage_url", "https://relay.firefox.com/accounts/profile/");
 lockPref("signon.firefoxRelay.privacy_policy_url", "https://www.mozilla.org/privacy/subscription-services/");
 lockPref("signon.firefoxRelay.terms_of_service_url", "https://www.mozilla.org/about/legal/terms/subscription-services/");
-// Skip Mozilla's `Privacy Notice` and `Terms of Use`
-lockPref("datareporting.policy.dataSubmissionPolicyAcceptedVersion", 999);
-lockPref("datareporting.policy.dataSubmissionPolicyNotifiedTime", "32503679999000");
-lockPref("termsofuse.acceptedDate", "32503679999000");
-lockPref("termsofuse.acceptedVersion", 999);
-lockPref("termsofuse.bypassNotification", true);
 
 /*** 003 TRACKING PROTECTION ***/
 
@@ -1365,4 +1263,4 @@ pref("dom.ipc.forkserver.enable", true); // [LINUX]
 pref("media.videocontrols.picture-in-picture.video-toggle.always-show", true);
 
 // [FINE]
-lockPref("rischio.fox", "142.40");
+lockPref("rischio.fox", "142.41");
