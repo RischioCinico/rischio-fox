@@ -1,25 +1,5 @@
 {
   "policies": {
-      "ContentAnalysis": {
-        "DefaultResult": 0,
-        "Enabled": false,
-        "InterceptionPoints": {
-        "Clipboard": {
-          "Enabled": false
-        },
-        "DragAndDrop": {
-          "Enabled": false
-        },
-        "FileUpload": {
-          "Enabled": false
-        },
-        "Print": {
-          "Enabled": false
-        }
-      },
-      "MaxConnectionsCount": 0,
-      "ShowBlockedResult": true
-    },
     "DisableFeedbackCommands": true,
     "DisableFirefoxStudies": true,
     "DisableProfileRefresh": true,
