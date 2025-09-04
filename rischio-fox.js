@@ -54,8 +54,6 @@ lockPref("browser.search.param.search_rich_suggestions", "");
 // Disable the Web Compatibility Reporter
 lockPref("extensions.webcompat-reporter.enabled", false);
 lockPref("ui.new-webcompat-reporter.enabled", false);
-// Hide the "More from Mozilla" settings tab
-lockPref("browser.preferences.moreFromMozilla", false);
 // Opt out of add-on metadata updates
 lockPref("extensions.getAddons.cache.enabled", false);
 // Prevent checking if Firefox is the default browser  
@@ -1263,4 +1261,4 @@ pref("dom.ipc.forkserver.enable", true); // [LINUX]
 pref("media.videocontrols.picture-in-picture.video-toggle.always-show", true);
 
 // [FINE]
-lockPref("rischio.fox", "142.41");
+lockPref("rischio.fox", "142.42");
