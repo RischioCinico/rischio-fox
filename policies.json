@@ -1,6 +1,5 @@
 {
   "policies": {
-    "DisableCrashReporter": true,
     "DisableFeedbackCommands": true,
     "DisableFirefoxStudies": true,
     "DisableNormandy": true,
