@@ -10,16 +10,7 @@
 /*    ░     ░       ░ ░ ░      ░  ░  ░░     ░ ░               ░ ░  ░    ░   */
 /*                    ░                                                     */
 
-/*** 000 ABOUT:CONFIG ***/
-
-// Disable annoying warnings when attempting to access the `about:config`
-lockPref("browser.aboutConfig.showWarning", false);
-// Ensure that the `about:config` is always enabled
-lockPref("general.aboutConfig.enable", true);
-// Ensure our policies aren't overriden...
-lockPref("browser.policies.perUserDir", false); // [LINUX]
-
-/*** 001 DATA COLLECTION ***/
+/*** RACCOLTA DATI ***/
 
 // Prevent automatically uploading profiler data (from `about:logging`) to Mozilla
 lockPref("toolkit.aboutLogging.uploadProfileToCloud", false);
@@ -1260,5 +1251,11 @@ pref("dom.ipc.forkserver.enable", true); // [LINUX]
 /* Mostra sempre controlli picture in picture */
 pref("media.videocontrols.picture-in-picture.video-toggle.always-show", true);
 
-// [FINE]
+/*** Configurazione ***/
+
+// Disabilita gli avvisi quando si accede ad `about:config`
+lockPref("browser.aboutConfig.showWarning", false);
+// Assicura che le nostre policy non vengano sovrascritte
+lockPref("browser.policies.perUserDir", false); // [LINUX]
+// Controllo versione
 lockPref("rischio.fox", "142.42");
