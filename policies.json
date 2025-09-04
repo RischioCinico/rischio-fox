@@ -2,7 +2,6 @@
   "policies": {
     "DisableFeedbackCommands": true,
     "DisableFirefoxStudies": true,
-    "DisableNormandy": true,
     "DisablePocket": true,
     "DisableProfileRefresh": true,
     "DisableSetDesktopBackground": true,
