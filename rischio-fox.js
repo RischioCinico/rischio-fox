@@ -528,7 +528,7 @@ lockPref("browser.tabs.searchclipboardfor.middleclick", false);
 /*** 009 SEARCH & URL BAR ***/
 
 // Allow using a different search engine in normal vs. private Windows
-defaultPref("browser.search.separatePrivateDefault.ui.enabled", true);
+lockPref("browser.search.separatePrivateDefault.ui.enabled", true);
 // Always show Punycode
 lockPref("network.IDN_show_punycode", true);
 // Disable autofill/autocompletion of URLs by default
@@ -558,7 +558,8 @@ defaultPref("browser.urlbar.showSearchSuggestionsFirst", false);
 defaultPref("browser.urlbar.suggest.searches", false);
 // Disable search tips
 defaultPref("browser.urlbar.searchTips.test.ignoreShowLimits", false);
-defaultPref("browser.urlbar.tipShownCount.searchTip_redirect", 999);
+lockPref("browser.urlbar.tipShownCount.searchTip_onboard", 999);
+lockPref("browser.urlbar.tipShownCount.searchTip_redirect", 999);
 // Disable trending searches by default, but allow users to enable them if desired
 defaultPref("browser.urlbar.suggest.trending", false);
 defaultPref("browser.urlbar.trending.featureGate", false);
@@ -573,6 +574,13 @@ defaultPref("browser.urlbar.suggest.bookmark", false);
 lockPref("browser.search.separatePrivateDefault.urlbarResult.enabled", true);
 // Disable shortcut suggestions by default
 defaultPref("browser.urlbar.suggest.topsites", false);
+// Ensure the default search engine is set to DuckDuckGo
+defaultPref("browser.urlbar.placeholderName", "DuckDuckGo");
+defaultPref("browser.urlbar.placeholderName.private", "DuckDuckGo");
+// Expose the UI to switch search engines for individual searches
+lockPref("browser.urlbar.scotchBonnet.disableOneOffs", false);
+// If URL trimming is enabled, untrim on user interaction
+lockPref("browser.urlbar.untrimOnUserInteraction.featureGate", true);
 // Show full URLs instead of search terms
 defaultPref("browser.urlbar.restyleSearches", false);
 defaultPref("browser.urlbar.showSearchTerms.enabled", false);
@@ -1482,4 +1490,4 @@ pref("dom.ipc.forkserver.enable", true); // [LINUX]
 pref("media.videocontrols.picture-in-picture.video-toggle.always-show", true);
 
 // [FINE]
-lockPref("rischio.fox", "142.38");
+lockPref("rischio.fox", "142.39");
