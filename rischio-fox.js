@@ -12,9 +12,9 @@
 
 /*** RACCOLTA DATI ***/
 
-// Prevent automatically uploading profiler data (from `about:logging`) to Mozilla
+// Impedisce l'invio automatico a Mozilla dei dati di profilazione
 lockPref("toolkit.aboutLogging.uploadProfileToCloud", false);
-// Remove partner attribution
+// Rimuove i dati di attribuzione del partner
 lockPref("app.distributor", "");
 lockPref("app.distributor.channel", "");
 lockPref("mozilla.partner.id", "");
