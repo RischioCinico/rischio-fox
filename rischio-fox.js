@@ -373,29 +373,29 @@ defaultPref("network.http.referer.disallowCrossSiteRelaxingDefault.top_navigatio
 /*** 004 FINGERPRINTING PROTECTION ***/
 
 // Disable VP9 Benchmark
-defaultPref("media.benchmark.vp9.threshold", 0);
+lockPref("media.benchmark.vp9.threshold", 0);
 // Do not use the theme's toolbar color scheme for in-content pages by default
-defaultPref("browser.theme.unified-color-scheme", false);
+lockPref("browser.theme.unified-color-scheme", false);
 // Prevent exposing WebGL Renderer Info
-defaultPref("webgl.enable-renderer-query", false);
-defaultPref("webgl.override-unmasked-vendor", "Mozilla");
-defaultPref("webgl.sanitize-unmasked-renderer", false);
+lockPref("webgl.enable-renderer-query", false);
+lockPref("webgl.override-unmasked-vendor", "Mozilla");
+lockPref("webgl.sanitize-unmasked-renderer", false);
 // Prevent pre-allocating content processes
-defaultPref("dom.ipc.processPrelaunch.enabled", false);
-defaultPref("dom.ipc.processPrelaunch.fission.number", 0);
+lockPref("dom.ipc.processPrelaunch.enabled", false);
+lockPref("dom.ipc.processPrelaunch.fission.number", 0);
 // Prevent using system accent colors
-defaultPref("widget.non-native-theme.use-theme-accent", false);
+lockPref("widget.non-native-theme.use-theme-accent", false);
 // Prevent using system colors
-defaultPref("browser.display.use_system_colors", false);
-defaultPref("ui.use_standins_for_native_colors", true);
+lockPref("browser.display.use_system_colors", false);
+lockPref("ui.use_standins_for_native_colors", true);
 // Reset the fingerprinting randomization key daily (in addition to per-session/when the browser restarts)
-defaultPref("privacy.resistFingerprinting.randomization.daily_reset.enabled", true);
-defaultPref("privacy.resistFingerprinting.randomization.daily_reset.private.enabled", true);
+lockPref("privacy.resistFingerprinting.randomization.daily_reset.enabled", true);
+lockPref("privacy.resistFingerprinting.randomization.daily_reset.private.enabled", true);
 // Round window sizes
-defaultPref("privacy.window.maxInnerHeight", 900);
-defaultPref("privacy.window.maxInnerWidth", 1600);
+lockPref("privacy.window.maxInnerHeight", 900);
+lockPref("privacy.window.maxInnerWidth", 1600);
 // Set a fixed temporary storage limit
-defaultPref("dom.quotaManager.temporaryStorage.fixedLimit", 52428800);
+lockPref("dom.quotaManager.temporaryStorage.fixedLimit", 52428800);
 
 /*** 005 DISK AVOIDANCE ***/
 
@@ -418,58 +418,58 @@ pref("privacy.clearOnShutdown.siteSettings", false);
 pref("privacy.clearOnShutdown_v2.siteSettings", false);
 
 // Decrease the number of tabs saved in Session Store
-defaultPref("browser.sessionstore.max_tabs_undo", 7);
+lockPref("browser.sessionstore.max_tabs_undo", 5);
 // Disable back/forward cache (bfcache)
-defaultPref("browser.sessionhistory.max_total_viewers", 0);
-defaultPref("fission.bfcacheInParent", false);
+lockPref("browser.sessionhistory.max_total_viewers", 0);
+lockPref("fission.bfcacheInParent", false);
 // Disable collection/generation of background thumbnails
-defaultPref("browser.pagethumbnails.capturing_disabled", true); // [Nascosta]
+lockPref("browser.pagethumbnails.capturing_disabled", true); // [Nascosta]
 // Disable coloring visited links
-defaultPref("layout.css.visited_links_enabled", false);
+lockPref("layout.css.visited_links_enabled", false);
 // Disable disk cache
 lockPref("browser.cache.disk.enable", false);
 lockPref("browser.cache.disk_cache_ssl", false);
 // Disable logging blocked domains to `about:protections`
-defaultPref("browser.contentblocking.cfr-milestone.enabled", false);
-defaultPref("browser.contentblocking.cfr-milestone.milestone-shown-time", "999999999"); // [Nascosta]
-defaultPref("browser.contentblocking.cfr-milestone.update-interval", 0); // [Nascosta]
-defaultPref("browser.contentblocking.database.enabled", false);
+lockPref("browser.contentblocking.cfr-milestone.enabled", false);
+lockPref("browser.contentblocking.cfr-milestone.milestone-shown-time", "999999999"); // [Nascosta]
+lockPref("browser.contentblocking.cfr-milestone.update-interval", 0); // [Nascosta]
+lockPref("browser.contentblocking.database.enabled", false);
 // Disable Search & Form History
 defaultPref("browser.formfill.enable", false);
 // Enable a fire button in Private Browsing Windows to reset the session
-defaultPref("browser.privatebrowsing.resetPBM.enabled", true)
+lockPref("browser.privatebrowsing.resetPBM.enabled", true)
 // Increase the interval between between Session Store save operations
 defaultPref("browser.sessionstore.interval", 300000); // 5 minute; default=15000 (15s)
 // Prevent exposing content in the window title for Private Browsing windows
-defaultPref("privacy.exposeContentTitleInWindow.pbm", false);
+lockPref("privacy.exposeContentTitleInWindow.pbm", false);
 // Prevent storing unnecessary extra session data
-defaultPref("browser.sessionstore.privacy_level", 2);
+lockPref("browser.sessionstore.privacy_level", 2);
 // Prevent writing media cache (ex. for video streaming) to disk in private windows
-defaultPref("browser.privatebrowsing.forceMediaMemoryCache", true);
+lockPref("browser.privatebrowsing.forceMediaMemoryCache", true);
 // Remove cached files from browser windows opened with external applications
-defaultPref("browser.download.start_downloads_in_tmp_dir", true);
-defaultPref("browser.helperApps.deleteTempFileOnExit", true);
+lockPref("browser.download.start_downloads_in_tmp_dir", true);
+lockPref("browser.helperApps.deleteTempFileOnExit", true);
 // Remove files from session list & history when deleted in Firefox
-defaultPref("browser.download.clearHistoryOnDelete", 2);
+lockPref("browser.download.clearHistoryOnDelete", 2);
 
 /*** 006 DOWNLOADS ***/
 
 // Notify when downloading files
-defaultPref("browser.download.alwaysOpenPanel", false);
+lockPref("browser.download.alwaysOpenPanel", false);
 // Prevent adding downloads to "recent documents"...
-defaultPref("browser.download.manager.addToRecentDocs", false);
+lockPref("browser.download.manager.addToRecentDocs", false);
 // Prompt before downloading files
-defaultPref("browser.download.always_ask_before_handling_new_types", true);
+lockPref("browser.download.always_ask_before_handling_new_types", true);
 lockPref("browser.download.useDownloadDir", false);
 
 /*** 007 HTTP(S) ***/
 
 // Always warn on insecure webpages
-defaultPref("security.insecure_connection_text.enabled", true);
-defaultPref("security.insecure_connection_text.pbmode.enabled", true);
-defaultPref("security.ssl.treat_unsafe_negotiation_as_broken", true);
+lockPref("security.insecure_connection_text.enabled", true);
+lockPref("security.insecure_connection_text.pbmode.enabled", true);
+lockPref("security.ssl.treat_unsafe_negotiation_as_broken", true);
 // Always warn when submitting a form from HTTP to HTTPS, even on local IP addresses
-defaultPref("security.insecure_field_warning.ignore_local_ip_address", false);
+lockPref("security.insecure_field_warning.ignore_local_ip_address", false);
 // Disable the automatic import of OS client authentication certificates
 defaultPref("security.osclientcerts.autoload", false);
 // Disable insecure ciphers (Like Chromium & Tor Browser)
@@ -508,31 +508,31 @@ defaultPref("browser.xul.error_pages.expert_bad_cert", true);
 /*** 008 IMPLICIT CONNECTIONS ***/
 
 // Disable Early Hints (Like Cromite)
-defaultPref("network.early-hints.enabled", false);
-defaultPref("network.early-hints.over-http-v1-1.enabled", false);
-defaultPref("network.early-hints.preconnect.enabled", false);
-defaultPref("network.early-hints.preconnect.max_connections", 0);
+lockPref("network.early-hints.enabled", false);
+lockPref("network.early-hints.over-http-v1-1.enabled", false);
+lockPref("network.early-hints.preconnect.enabled", false);
+lockPref("network.early-hints.preconnect.max_connections", 0);
 // Disable Network Prefetching
-defaultPref("dom.prefetch_dns_for_anchor_http_document", false);
-defaultPref("network.http.speculative-parallel-limit", 0);
-defaultPref("network.predictor.enabled", false);
-defaultPref("network.prefetch-next", false);
+lockPref("dom.prefetch_dns_for_anchor_http_document", false);
+lockPref("network.http.speculative-parallel-limit", 0);
+lockPref("network.predictor.enabled", false);
+lockPref("network.prefetch-next", false);
 // Disable Preconnect
-defaultPref("network.preconnect", false);
+lockPref("network.preconnect", false);
 // Disable speculative pre-connections
-defaultPref("browser.places.speculativeConnect.enabled", false);
-defaultPref("browser.urlbar.speculativeConnect.enabled", false);
+lockPref("browser.places.speculativeConnect.enabled", false);
+lockPref("browser.urlbar.speculativeConnect.enabled", false);
 // Prevent middle mouse clicks on new tab button opening URLs or searches from clipboard
-defaultPref("browser.tabs.searchclipboardfor.middleclick", false);
+lockPref("browser.tabs.searchclipboardfor.middleclick", false);
 
 /*** 009 SEARCH & URL BAR ***/
 
 // Allow using a different search engine in normal vs. private Windows
 defaultPref("browser.search.separatePrivateDefault.ui.enabled", true);
 // Always show Punycode
-defaultPref("network.IDN_show_punycode", true);
+lockPref("network.IDN_show_punycode", true);
 // Disable autofill/autocompletion of URLs by default
-defaultPref("browser.urlbar.autoFill", false);
+lockPref("browser.urlbar.autoFill", false);
 // Disable clipboard suggestions by default, but allow users to enable them if desired
 defaultPref("browser.urlbar.clipboard.featureGate", false);
 defaultPref("browser.urlbar.suggest.clipboard", false);
@@ -563,14 +563,14 @@ defaultPref("browser.urlbar.tipShownCount.searchTip_redirect", 999);
 defaultPref("browser.urlbar.suggest.trending", false);
 defaultPref("browser.urlbar.trending.featureGate", false);
 // Disable URL trimming
-defaultPref("browser.urlbar.trimHttps", false);
-defaultPref("browser.urlbar.trimURLs", false);
+lockPref("browser.urlbar.trimHttps", false);
+lockPref("browser.urlbar.trimURLs", false);
 // Display the search bar at `Customize toolbar...`
 defaultPref("browser.search.widget.inNavBar", true);
 // Enable bookmark suggestions by default 
 defaultPref("browser.urlbar.suggest.bookmark", false);
 // Enable the "Search in Private Window" result by default
-defaultPref("browser.search.separatePrivateDefault.urlbarResult.enabled", true);
+lockPref("browser.search.separatePrivateDefault.urlbarResult.enabled", true);
 // Disable shortcut suggestions by default
 defaultPref("browser.urlbar.suggest.topsites", false);
 // Show full URLs instead of search terms
@@ -585,54 +585,54 @@ defaultPref("browser.search.separatePrivateDefault", true);
 // Customize list of built-in DoH resolvers
 defaultPref("doh-rollout.provider-list", '[{"uri":"https://dns.quad9.net/dns-query","UIName":"Quad9 🇨🇭","autoDefault":true},{"uri":"https://dns.adguard-dns.com/dns-query","UIName":"AdGuard 🇨🇾","autoDefault":false},{"uri":"https://unfiltered.adguard-dns.com/dns-query","UIName":"AdGuard (Unfiltered) 🇨🇾","autoDefault":false},{"uri":"https://mozilla.cloudflare-dns.com/dns-query","UIName":"Cloudflare 🇺🇸","autoDefault":false},{"uri":"https://security.cloudflare-dns.com/dns-query","UIName":"Cloudflare (Malware Protection) 🇺🇸","autoDefault":false},{"uri":"https://dns0.eu","UIName":"DNS0 🇫🇷","autoDefault":false},{"uri":"https://zero.dns0.eu","UIName":"DNS0 (ZERO) 🇫🇷","autoDefault":false},{"uri":"https://noads.joindns4.eu/dns-query","UIName":"DNS4EU (Ad Blocking) 🇨🇿","autoDefault":false},{"uri":"https://protective.joindns4.eu/dns-query","UIName":"DNS4EU (Protective) 🇨🇿","autoDefault":false},{"uri":"https://unfiltered.joindns4.eu/dns-query","UIName":"DNS4EU (Unfiltered) 🇨🇿","autoDefault":false},{"uri":"https://base.dns.mullvad.net/dns-query","UIName":"Mullvad (Base) 🇸🇪","autoDefault":false},{"uri":"https://dns.mullvad.net/dns-query","UIName":"Mullvad (Unfiltered) 🇸🇪","autoDefault":false},{"uri":"https://firefox.dns.nextdns.io/","UIName":"NextDNS 🇺🇸","autoDefault":false},{"uri":"https://wikimedia-dns.org/dns-query","UIName":"Wikimedia 🇺🇸","autoDefault":false}]');
 // Disable DoH Connectivity Checks
-defaultPref("network.connectivity-service.DNS_HTTPS.domain", "");
-defaultPref("network.trr.confirmationNS", "skip");
-defaultPref("network.trr.skip-check-for-blocked-host", true);
+lockPref("network.connectivity-service.DNS_HTTPS.domain", "");
+lockPref("network.trr.confirmationNS", "skip");
+lockPref("network.trr.skip-check-for-blocked-host", true);
 // Disable falling back to system DNS by default
-defaultPref("network.trr.strict_native_fallback", true);
+lockPref("network.trr.strict_native_fallback", true);
 // Disable nsNotifyAddrListener
-defaultPref("network.notify.changed", false);
-defaultPref("network.notify.checkForNRPT", false);
-defaultPref("network.notify.checkForProxies", false);
-defaultPref("network.notify.dnsSuffixList", false);
-defaultPref("network.notify.initial_call", false);
-defaultPref("network.notify.IPv6", false);
-defaultPref("network.notify.resolvers", false);
+lockPref("network.notify.changed", false);
+lockPref("network.notify.checkForNRPT", false);
+lockPref("network.notify.checkForProxies", false);
+lockPref("network.notify.dnsSuffixList", false);
+lockPref("network.notify.initial_call", false);
+lockPref("network.notify.IPv6", false);
+lockPref("network.notify.resolvers", false);
 // Enable DoH without fallback & Set to Quad9 by default
 defaultPref("network.trr.default_provider_uri", "https://dns.quad9.net/dns-query");
-defaultPref("network.trr.mode", 3);
+lockPref("network.trr.mode", 3);
 // Fix IPv6 connectivity when DoH is enabled
-defaultPref("network.dns.preferIPv6", true);
+lockPref("network.dns.preferIPv6", true);
 // Prevent bypassing DoH for /etc/HOSTS entries by default
-defaultPref("network.trr.exclude-etc-hosts", false);
+lockPref("network.trr.exclude-etc-hosts", false);
 
 /*** 011 PROXIES ***/
 
 // Prevent Firefox from automatically using the system's proxy configuration by default
 defaultPref("network.proxy.type", 0);
 // Always start proxy extensions (if installed) as soon as possible
-defaultPref("extensions.webextensions.early_background_wakeup_on_request", true);
+lockPref("extensions.webextensions.early_background_wakeup_on_request", true);
 // Disable automatic failover from the proxy (if configured) to direct connections when certain system requests fail
-defaultPref("network.proxy.failover_direct", false);
+lockPref("network.proxy.failover_direct", false);
 // Disable file:///net
-defaultPref("network.file.path_blacklist", "/net");
+lockPref("network.file.path_blacklist", "/net");
 // Disable GIO
-defaultPref("network.gio.supported-protocols", "");
+lockPref("network.gio.supported-protocols", "");
 // Disable Uniform Naming Convention (UNC) file paths
-defaultPref("network.file.disable_unc_paths", true);
+lockPref("network.file.disable_unc_paths", true);
 // Prevent bypassing the proxy (if configured) for system connections that include the `bypassProxy` flag
-defaultPref("network.proxy.allow_bypass", false);
+lockPref("network.proxy.allow_bypass", false);
 // Use the proxy (if configured) for remote DNS lookups
-defaultPref("network.proxy.socks_remote_dns", true);
+lockPref("network.proxy.socks_remote_dns", true);
 
 /*** 012 WEBRTC ***/
 
 // disabilita indicatori WebRTC (sono buggati)
-defaultPref("privacy.webrtc.hideGlobalIndicator", true);
+lockPref("privacy.webrtc.hideGlobalIndicator", true);
 // Prevent WebRTC from bypassing the proxy (if configured)
-defaultPref("media.peerconnection.ice.proxy_only_if_behind_proxy", true);
+lockPref("media.peerconnection.ice.proxy_only_if_behind_proxy", true);
 // Warn users when attempting to switch tabs in a window being shared over WebRTC
-defaultPref("privacy.webrtc.sharedTabWarning", true);
+lockPref("privacy.webrtc.sharedTabWarning", true);
 
 /*** 013 MEDIA ***/
 
@@ -1482,4 +1482,4 @@ pref("dom.ipc.forkserver.enable", true); // [LINUX]
 pref("media.videocontrols.picture-in-picture.video-toggle.always-show", true);
 
 // [FINE]
-lockPref("rischio.fox", "142.37");
+lockPref("rischio.fox", "142.38");
