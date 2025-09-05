@@ -35,7 +35,7 @@ lockPref("toolkit.aboutLogging.uploadProfileToCloud", false);
 // Blocca Origin Trials
 lockPref("dom.origin-trials.enabled", false);
 
-// Rimuove stringe di identificazione
+// Rimuove stringhe di identificazione
 lockPref("app.distributor", "");
 lockPref("app.distributor.channel", "");
 lockPref("mozilla.partner.id", "");
@@ -43,6 +43,55 @@ lockPref("mozilla.partner.id", "");
 // Disabilita Web Compatibility Reporter
 lockPref("extensions.webcompat-reporter.enabled", false);
 lockPref("ui.new-webcompat-reporter.enabled", false);
+
+// Impedisce la creazione di registri dei domini bloccati
+lockPref("browser.contentblocking.cfr-milestone.enabled", false);
+lockPref("browser.contentblocking.cfr-milestone.milestone-shown-time", "999999999"); // [Nascosta]
+lockPref("browser.contentblocking.cfr-milestone.update-interval", 0); // [Nascosta]
+lockPref("browser.contentblocking.database.enabled", false);
+
+/* -----------------------------------------------------------------------------------
+   TRACCE SU DISCO
+   ----------------------------------------------------------------------------------- */
+
+// Abilita la cancellazione dei dati alla chiusura di Firefox
+lockPref("privacy.sanitize.sanitizeOnShutdown", true);
+
+// Elimina la cache e previene l'eliminazione accidentale di altri dati
+lockPref("privacy.clearOnShutdown_v2.browsingHistoryAndDownloads", false);
+lockPref("privacy.clearOnShutdown_v2.cache", true);
+lockPref("privacy.clearOnShutdown_v2.cookiesAndStorage", false);
+lockPref("privacy.clearOnShutdown_v2.formdata", false);
+lockPref("privacy.clearOnShutdown_v2.siteSettings", false);
+
+// Disabilita cache su disco
+lockPref("browser.cache.disk.enable", false);
+lockPref("browser.cache.disk_cache_ssl", false);
+
+// Diminuisce il numero di salvataggi delle schede chiuse
+lockPref("browser.sessionstore.max_tabs_undo", 5);
+
+// Disabilita la cache Indietro/Avanti (bfcache)
+lockPref("browser.sessionhistory.max_total_viewers", 0);
+lockPref("fission.bfcacheInParent", false);
+
+// Disabilita la generazione di miniature delle pagine
+lockPref("browser.pagethumbnails.capturing_disabled", true); // [Nascosta]
+
+// Disabilita la cronologia di ricerca e dei moduli
+defaultPref("browser.formfill.enable", false);
+
+// Limita lo storage temporaneo (es. IndexedDB)
+lockPref("dom.quotaManager.temporaryStorage.fixedLimit", 52428800);
+
+// Aumenta l'intervallo di salvataggio automatico della sessione per ridurre le scritture su disco
+defaultPref("browser.sessionstore.interval", 300000); // 5 minuti
+
+// Impedisce il salvataggio di dati extra e non necessari nella sessione
+lockPref("browser.sessionstore.privacy_level", 2);
+
+// Impedisce la scrittura della cache multimediale su disco nelle finestre private
+lockPref("browser.privatebrowsing.forceMediaMemoryCache", true);
 
 /* -----------------------------------------------------------------------------------
    ELEMENTI FASTIDIOSI
@@ -86,7 +135,7 @@ lockPref("privacy.trackingprotection.lower_network_priority", true);
    FINGERPRINTING
    ----------------------------------------------------------------------------------- */
 
-// Disabilita l'uso delle proprietà di contesto SVG per prevenire il fingerprinting.
+// Disabilita l'uso delle proprietà di contesto SVG per prevenire il fingerprinting
 lockPref("svg.context-properties.content.allowed-domains", "");
 
 // Impedisce l'esposizione delle informazioni del renderer WebGL
@@ -107,8 +156,12 @@ lockPref("privacy.resistFingerprinting.randomization.daily_reset.private.enabled
 lockPref("privacy.window.maxInnerHeight", 900);
 lockPref("privacy.window.maxInnerWidth", 1600);
 
-// Limita lo storage temporaneo (es. IndexedDB)
-lockPref("dom.quotaManager.temporaryStorage.fixedLimit", 52428800);
+// Disabilita i selettori CSS per i link visitati per prevenire il "history sniffing"
+lockPref("layout.css.visited_links_enabled", false);
+
+
+
+
 
 
 
@@ -118,64 +171,22 @@ lockPref("dom.quotaManager.temporaryStorage.fixedLimit", 52428800);
 
 // Disabilita "suggerimenti avanzati" nella barra degli indirizzi
 lockPref("browser.search.param.search_rich_suggestions", "");
-
-
-/*** 005 DISK AVOIDANCE ***/
-
-pref("privacy.clearOnShutdown.downloads", false);
-pref("privacy.clearOnShutdown.history", false);
-pref("privacy.clearOnShutdown.sessions", false);
-pref("privacy.clearOnShutdown_v2.browsingHistoryAndDownloads", false);
-pref("privacy.clearOnShutdown_v2.downloads", false);
-pref("privacy.clearOnShutdown_v2.formdata", false);
-pref("privacy.clearOnShutdown_v2.historyFormDataAndDownloads", false);
-
-pref("privacy.clearOnShutdown.cache", true);
-pref("privacy.clearOnShutdown_v2.cache", true);
-pref("privacy.sanitize.sanitizeOnShutdown", true);
-
-pref("privacy.clearOnShutdown.cookies", false);
-pref("privacy.clearOnShutdown.offlineApps", false);
-pref("privacy.clearOnShutdown_v2.cookiesAndStorage", false);
-pref("privacy.clearOnShutdown.siteSettings", false);
-pref("privacy.clearOnShutdown_v2.siteSettings", false);
-
-// Decrease the number of tabs saved in Session Store
-lockPref("browser.sessionstore.max_tabs_undo", 5);
-// Disable back/forward cache (bfcache)
-lockPref("browser.sessionhistory.max_total_viewers", 0);
-lockPref("fission.bfcacheInParent", false);
-// Disable collection/generation of background thumbnails
-lockPref("browser.pagethumbnails.capturing_disabled", true); // [Nascosta]
-// Disable coloring visited links
-lockPref("layout.css.visited_links_enabled", false);
-// Disable disk cache
-lockPref("browser.cache.disk.enable", false);
-lockPref("browser.cache.disk_cache_ssl", false);
-// Disable logging blocked domains to `about:protections`
-lockPref("browser.contentblocking.cfr-milestone.enabled", false);
-lockPref("browser.contentblocking.cfr-milestone.milestone-shown-time", "999999999"); // [Nascosta]
-lockPref("browser.contentblocking.cfr-milestone.update-interval", 0); // [Nascosta]
-lockPref("browser.contentblocking.database.enabled", false);
-// Disable Search & Form History
-defaultPref("browser.formfill.enable", false);
 // Enable a fire button in Private Browsing Windows to reset the session
 lockPref("browser.privatebrowsing.resetPBM.enabled", true)
-// Increase the interval between between Session Store save operations
-defaultPref("browser.sessionstore.interval", 300000); // 5 minute; default=15000 (15s)
 // Prevent exposing content in the window title for Private Browsing windows
 lockPref("privacy.exposeContentTitleInWindow.pbm", false);
-// Prevent storing unnecessary extra session data
-lockPref("browser.sessionstore.privacy_level", 2);
-// Prevent writing media cache (ex. for video streaming) to disk in private windows
-lockPref("browser.privatebrowsing.forceMediaMemoryCache", true);
+
+
+
+
+/*** 006 DOWNLOADS ***/
+
 // Remove cached files from browser windows opened with external applications
 lockPref("browser.download.start_downloads_in_tmp_dir", true);
 lockPref("browser.helperApps.deleteTempFileOnExit", true);
 // Remove files from session list & history when deleted in Firefox
 lockPref("browser.download.clearHistoryOnDelete", 2);
 
-/*** 006 DOWNLOADS ***/
 
 // Notify when downloading files
 lockPref("browser.download.alwaysOpenPanel", false);
