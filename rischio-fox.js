@@ -19,17 +19,22 @@ lockPref("toolkit.telemetry.server", "data:,");
 lockPref("toolkit.telemetry.coverage.opt-out", true);
 lockPref("toolkit.coverage.opt-out", true);
 lockPref("toolkit.coverage.endpoint.base", "");
+
 // Disabilita la telemetria legata alla homepage
 lockPref("browser.newtabpage.activity-stream.feeds.telemetry", false);
 lockPref("browser.newtabpage.activity-stream.telemetry", false);
+
 // Disabilita Crash Reports
 lockPref("breakpad.reportURL", "");
 lockPref("browser.crashReports.unsubmittedCheck.autoSubmit2", false);
 lockPref("browser.crashReports.unsubmittedCheck.enabled", false);
+
 // Impedisce l'invio automatico a Mozilla dei dati di profilazione
 lockPref("toolkit.aboutLogging.uploadProfileToCloud", false);
+
 // Disabilita Origin Trials
 lockPref("dom.origin-trials.enabled", false);
+
 // Rimuove stringe di identificazione
 lockPref("app.distributor", "");
 lockPref("app.distributor.channel", "");
