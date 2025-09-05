@@ -243,11 +243,18 @@ defaultPref("security.ssl.require_safe_negotiation", true);
 // Mostra informazioni tecniche dettagliate sulle pagine di errore
 defaultPref("browser.xul.error_pages.expert_bad_cert", true);
 
+/* -----------------------------------------------------------------------------------
+   CONNESIONI IMPLICITE
+   ----------------------------------------------------------------------------------- */
 
+// Disabilita Early Hints (come in Cromite)
+lockPref("network.early-hints.enabled", false);
+lockPref("network.early-hints.over-http-v1-1.enabled", false);
+lockPref("network.early-hints.preconnect.enabled", false);
+lockPref("network.early-hints.preconnect.max_connections", 0);
 
-
-
-
+// Impedisci che il clic con il tasto centrale del mouse su una nuova scheda apra URL
+lockPref("browser.tabs.searchclipboardfor.middleclick", false);
 
 
 
@@ -269,27 +276,6 @@ lockPref("browser.privatebrowsing.resetPBM.enabled", true)
 // Prevent exposing content in the window title for Private Browsing windows
 lockPref("privacy.exposeContentTitleInWindow.pbm", false);
 
-
-
-/*** 008 IMPLICIT CONNECTIONS ***/
-
-// Disable Early Hints (Like Cromite)
-lockPref("network.early-hints.enabled", false);
-lockPref("network.early-hints.over-http-v1-1.enabled", false);
-lockPref("network.early-hints.preconnect.enabled", false);
-lockPref("network.early-hints.preconnect.max_connections", 0);
-// Disable Network Prefetching
-lockPref("dom.prefetch_dns_for_anchor_http_document", false);
-lockPref("network.http.speculative-parallel-limit", 0);
-lockPref("network.predictor.enabled", false);
-lockPref("network.prefetch-next", false);
-// Disable Preconnect
-lockPref("network.preconnect", false);
-// Disable speculative pre-connections
-lockPref("browser.places.speculativeConnect.enabled", false);
-lockPref("browser.urlbar.speculativeConnect.enabled", false);
-// Prevent middle mouse clicks on new tab button opening URLs or searches from clipboard
-lockPref("browser.tabs.searchclipboardfor.middleclick", false);
 
 /*** 009 SEARCH & URL BAR ***/
 
