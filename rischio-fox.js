@@ -14,7 +14,7 @@
    1. RACCOLTA DATI
    ----------------------------------------------------------------------------------- */
 
-// Blocca telemetria (disattivata anche nelle policies)
+// Blocca telemetria (disattivata anche in policies.json)
 lockPref("toolkit.telemetry.server", "data:,");
 lockPref("toolkit.telemetry.coverage.opt-out", true);
 lockPref("toolkit.coverage.opt-out", true);
