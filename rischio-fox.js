@@ -77,48 +77,48 @@ defaultPref("privacy.trackingprotection.consentmanager.skip.enabled", true);
 defaultPref("privacy.trackingprotection.consentmanager.skip.pbmode.enabled", true);
 
 // Abilita Bounce Tracking Protection
-defaultPref("privacy.bounceTrackingProtection.requireStatefulBounces", false);
+lockPref("privacy.bounceTrackingProtection.requireStatefulBounces", false);
 
 // Abbassa la priorità di rete per i tracker, velocizzando il caricamento della pagina
 lockPref("privacy.trackingprotection.lower_network_priority", true);
+
+/* -----------------------------------------------------------------------------------
+   FINGERPRINTING
+   ----------------------------------------------------------------------------------- */
+
+// Disabilita l'uso delle proprietà di contesto SVG per prevenire il fingerprinting.
+lockPref("svg.context-properties.content.allowed-domains", "");
+
+// Impedisce l'esposizione delle informazioni del renderer WebGL
+lockPref("webgl.enable-renderer-query", false);
+lockPref("webgl.override-unmasked-vendor", "Mozilla");
+lockPref("webgl.sanitize-unmasked-renderer", true);
+
+// Non usare colori di sistema
+lockPref("widget.non-native-theme.use-theme-accent", false);
+lockPref("browser.display.use_system_colors", false);
+lockPref("ui.use_standins_for_native_colors", true);
+
+// Reimposta ogni giorno la chiave di randomizzazione dell'impronta digitale (in aggiunta al reset per sessione e al riavvio del browser)
+lockPref("privacy.resistFingerprinting.randomization.daily_reset.enabled", true);
+lockPref("privacy.resistFingerprinting.randomization.daily_reset.private.enabled", true);
+
+// Arrotonda le dimensioni della finestra per prevenire il tracciamento
+lockPref("privacy.window.maxInnerHeight", 900);
+lockPref("privacy.window.maxInnerWidth", 1600);
+
+// Limita lo storage temporaneo (es. IndexedDB)
+lockPref("dom.quotaManager.temporaryStorage.fixedLimit", 52428800);
+
+
 
 
 
 /*** MOZILLA ***/
 
-
 // Disabilita "suggerimenti avanzati" nella barra degli indirizzi
 lockPref("browser.search.param.search_rich_suggestions", "");
-// Disabilita l'uso delle proprietà di contesto SVG per prevenire il fingerprinting.
-lockPref("svg.context-properties.content.allowed-domains", "");
 
-
-/*** 004 FINGERPRINTING PROTECTION ***/
-
-// Disable VP9 Benchmark
-lockPref("media.benchmark.vp9.threshold", 0);
-// Do not use the theme's toolbar color scheme for in-content pages by default
-lockPref("browser.theme.unified-color-scheme", false);
-// Prevent exposing WebGL Renderer Info
-lockPref("webgl.enable-renderer-query", false);
-lockPref("webgl.override-unmasked-vendor", "Mozilla");
-lockPref("webgl.sanitize-unmasked-renderer", false);
-// Prevent pre-allocating content processes
-lockPref("dom.ipc.processPrelaunch.enabled", false);
-lockPref("dom.ipc.processPrelaunch.fission.number", 0);
-// Prevent using system accent colors
-lockPref("widget.non-native-theme.use-theme-accent", false);
-// Prevent using system colors
-lockPref("browser.display.use_system_colors", false);
-lockPref("ui.use_standins_for_native_colors", true);
-// Reset the fingerprinting randomization key daily (in addition to per-session/when the browser restarts)
-lockPref("privacy.resistFingerprinting.randomization.daily_reset.enabled", true);
-lockPref("privacy.resistFingerprinting.randomization.daily_reset.private.enabled", true);
-// Round window sizes
-lockPref("privacy.window.maxInnerHeight", 900);
-lockPref("privacy.window.maxInnerWidth", 1600);
-// Set a fixed temporary storage limit
-lockPref("dom.quotaManager.temporaryStorage.fixedLimit", 52428800);
 
 /*** 005 DISK AVOIDANCE ***/
 
