@@ -76,15 +76,8 @@ defaultPref("privacy.trackingprotection.allow_list.convenience.enabled", true);
 defaultPref("privacy.trackingprotection.consentmanager.skip.enabled", true);
 defaultPref("privacy.trackingprotection.consentmanager.skip.pbmode.enabled", true);
 
-// Blocca cookie traccianti
-defaultPref("network.cookie.cookieBehavior.trackerCookieBlocking", true);
-
 // Abilita Bounce Tracking Protection
 defaultPref("privacy.bounceTrackingProtection.requireStatefulBounces", false);
-
-// Abilita Total Cookie Protection
-lockPref("network.cookie.cookieBehavior", 5);
-lockPref("network.cookie.cookieBehavior.pbmode", 5);
 
 // Abbassa la priorità di rete per i tracker, velocizzando il caricamento della pagina
 lockPref("privacy.trackingprotection.lower_network_priority", true);
