@@ -61,8 +61,37 @@ lockPref("browser.shell.skipDefaultBrowserCheckOnFirstRun", true);
 // Blocca avviso se Firefox non è il lettore PDF predefinito
 lockPref("browser.shell.checkDefaultPDF", false); // [Nascosta]
 
+/* -----------------------------------------------------------------------------------
+   TRACKING PROTECTION
+   ----------------------------------------------------------------------------------- */
 
-/*** 002 MOZILLA ***/
+// Abilita Enhanced Tracking Protection
+lockPref("browser.contentblocking.category", "strict");
+
+// Applica eccezioni per evitare malfunzionamenti delle pagine
+defaultPref("privacy.trackingprotection.allow_list.baseline.enabled", true);
+defaultPref("privacy.trackingprotection.allow_list.convenience.enabled", true);
+
+// Salta automaticamente i banner di consenso dei cookie
+defaultPref("privacy.trackingprotection.consentmanager.skip.enabled", true);
+defaultPref("privacy.trackingprotection.consentmanager.skip.pbmode.enabled", true);
+
+// Blocca cookie traccianti
+defaultPref("network.cookie.cookieBehavior.trackerCookieBlocking", true);
+
+// Abilita Bounce Tracking Protection
+defaultPref("privacy.bounceTrackingProtection.requireStatefulBounces", false);
+
+// Abilita Total Cookie Protection
+lockPref("network.cookie.cookieBehavior", 5);
+lockPref("network.cookie.cookieBehavior.pbmode", 5);
+
+// Abbassa la priorità di rete per i tracker, velocizzando il caricamento della pagina
+lockPref("privacy.trackingprotection.lower_network_priority", true);
+
+
+
+/*** MOZILLA ***/
 
 
 // Disabilita "suggerimenti avanzati" nella barra degli indirizzi
@@ -70,41 +99,6 @@ lockPref("browser.search.param.search_rich_suggestions", "");
 // Disabilita l'uso delle proprietà di contesto SVG per prevenire il fingerprinting.
 lockPref("svg.context-properties.content.allowed-domains", "");
 
-/*** 003 TRACKING PROTECTION ***/
-
-// Exceptions for minor issues
-defaultPref("privacy.trackingprotection.allow_list.convenience.enabled", true);
-// Enable ETP Strict
-lockPref("browser.contentblocking.category", "strict");
-// Block known consent managers (CMPs)
-defaultPref("privacy.trackingprotection.consentmanager.skip.pbmode.enabled", false);
-// Block known email trackers
-defaultPref("privacy.trackingprotection.emailtracking.enabled", true);
-// Block known fingerprinters
-defaultPref("privacy.trackingprotection.antifraud.skip.pbmode.enabled", false);
-// Block known social trackers
-defaultPref("privacy.trackingprotection.socialtracking.enabled", true);
-// Block known trackers
-defaultPref("privacy.trackingprotection.enabled", true);
-// Block known trackers using the `strict` (Level 2) list
-defaultPref("privacy.annotate_channels.strict_list.enabled", true);
-// Block known tracking cookies
-defaultPref("network.cookie.cookieBehavior.trackerCookieBlocking", true);
-// Enable Bounce Tracking Protection
-defaultPref("privacy.bounceTrackingProtection.mode", 1);
-defaultPref("privacy.bounceTrackingProtection.requireStatefulBounces", false);
-// Enable Query Parameter Stripping
-defaultPref("privacy.query_stripping.enabled", true);
-defaultPref("privacy.query_stripping.enabled.pbmode", true);
-// Enable TCP/dFPI
-defaultPref("network.cookie.cookieBehavior.optInPartitioning", true);
-defaultPref("network.cookie.cookieBehavior.optInPartitioning.pbmode", true);
-// Lower the network priority of known trackers (if not blocked for whatever reason...)
-defaultPref("privacy.trackingprotection.lower_network_priority", true);
-// Enable Suspected Fingerprinters Protection (FPP)
-defaultPref("privacy.fingerprintingProtection", true);
-// Ignore less restricted referer policies
-defaultPref("network.http.referer.disallowCrossSiteRelaxingDefault.top_navigation", true);
 
 /*** 004 FINGERPRINTING PROTECTION ***/
 
