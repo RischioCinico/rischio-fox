@@ -14,34 +14,23 @@
    1. RACCOLTA DATI
    ----------------------------------------------------------------------------------- */
 
-// Impedisce l'invio automatico a Mozilla dei dati di profilazione
-lockPref("toolkit.aboutLogging.uploadProfileToCloud", false);
-
-// Disabilita telemetria (disabilitata anche in policies.json)
+// Disabilita telemetria (disattivata anche nelle policies)
 lockPref("toolkit.telemetry.server", "data:,");
 lockPref("toolkit.telemetry.coverage.opt-out", true);
-lockPref("toolkit.coverage.enabled", false);
 lockPref("toolkit.coverage.opt-out", true);
 lockPref("toolkit.coverage.endpoint.base", "");
-
 // Disabilita la telemetria legata alla homepage
 lockPref("browser.newtabpage.activity-stream.feeds.telemetry", false);
 lockPref("browser.newtabpage.activity-stream.telemetry", false);
-
-// Disabilita l'invio automatico dei rapporti di crash
+// Disabilita Crash Reports
 lockPref("breakpad.reportURL", "");
-lockPref("browser.crashReports.crashPull", false);
-lockPref("browser.crashReports.requestedNeverShowAgain", true);
 lockPref("browser.crashReports.unsubmittedCheck.autoSubmit2", false);
 lockPref("browser.crashReports.unsubmittedCheck.enabled", false);
-lockPref("browser.tabs.crashReporting.includeURL", false);
-lockPref("browser.tabs.crashReporting.sendReport", false);
-lockPref("toolkit.crashreporter.include_context_heap", false);
-
-
-
-
-// Rimuove i dati di attribuzione del partner
+// Impedisce l'invio automatico a Mozilla dei dati di profilazione
+lockPref("toolkit.aboutLogging.uploadProfileToCloud", false);
+// Disabilita Origin Trials
+lockPref("dom.origin-trials.enabled", false);
+// Rimuove stringe di identificazione
 lockPref("app.distributor", "");
 lockPref("app.distributor.channel", "");
 lockPref("mozilla.partner.id", "");
