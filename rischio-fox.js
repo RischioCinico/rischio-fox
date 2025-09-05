@@ -40,82 +40,35 @@ lockPref("app.distributor", "");
 lockPref("app.distributor.channel", "");
 lockPref("mozilla.partner.id", "");
 
-/*** 002 MOZILLA ***/
-
-// Disable 'Essential Domains Fallback'
-lockPref("network.essential_domains_fallback", false);
-// Disable fetching Firefox Relay's "allowlist" (list of sites known to support Relay)
-lockPref("signon.firefoxRelay.allowListRemoteSettingsCollection", ""); // [Nascosta]
-// Disable fetching Password Manager rules remotely by default
-lockPref("signon.recipes.remoteRecipes.enabled", false);
-// Disable Firefox Bridge
-lockPref("browser.firefoxbridge.enabled", false);
-// Disable "Interest-based Content Relevance Ranking and Personalization"
-lockPref("toolkit.contentRelevancy.enabled", false);
-lockPref("toolkit.contentRelevancy.ingestEnabled", false);
-lockPref("toolkit.contentRelevancy.log", false);
-// Disable Mozilla promotions  
-lockPref("cookiebanners.ui.desktop.showCallout", false);
-// Disable "Privacy-Preserving Attribution"
-lockPref("dom.origin-trials.private-attribution.state", 2);
-lockPref("dom.private-attribution.submission.enabled", false);
-// Disable Remote Permissions
-lockPref("permissions.manager.remote.enabled", false);
-// Disable search attribution
-lockPref("browser.search.param.search_rich_suggestions", "");
-// Disable the Web Compatibility Reporter
+// Disabilita Web Compatibility Reporter
 lockPref("extensions.webcompat-reporter.enabled", false);
 lockPref("ui.new-webcompat-reporter.enabled", false);
-// Opt out of add-on metadata updates
-lockPref("extensions.getAddons.cache.enabled", false);
-// Prevent checking if Firefox is the default browser  
+
+/* -----------------------------------------------------------------------------------
+   ELEMENTI FASTIDIOSI
+   ----------------------------------------------------------------------------------- */
+
+// Disabilita avviso schermo intero
+lockPref("full-screen-api.warning.delay", -1);
+lockPref("full-screen-api.warning.timeout", 0);
+
+// Blocca pop-up presentazione blocco dei banner dei cookie
+lockPref("cookiebanners.ui.desktop.showCallout", false);
+
+// Blocca pop-up di avviso quando Firefox NON è il browser predefinito
 lockPref("browser.shell.skipDefaultBrowserCheckOnFirstRun", true);
-// Prevent checking if Firefox is the default `mailto:` handler  
-lockPref("browser.mailto.dualPrompt", false);
-// Prevent checking if Firefox is the default PDF viewer  
+
+// Blocca avviso se Firefox non è il lettore PDF predefinito
 lockPref("browser.shell.checkDefaultPDF", false); // [Nascosta]
-lockPref("browser.shell.checkDefaultPDF.silencedByUser", true); // [Nascosta]
-// Remove special privileges from Mozilla domains
-lockPref("browser.tabs.remote.separatePrivilegedMozillaWebContentProcess", false);
-lockPref("browser.tabs.remote.separatedMozillaDomains", "");
-lockPref("dom.ipc.processCount.privilegedmozilla", 0);
-lockPref("extensions.webextensions.restrictedDomains", "");
-lockPref("permissions.manager.defaultsUrl", "");
+
+
+/*** 002 MOZILLA ***/
+
+
+// Disabilita "suggerimenti avanzati" nella barra degli indirizzi
+lockPref("browser.search.param.search_rich_suggestions", "");
+// Disabilita l'uso delle proprietà di contesto SVG per prevenire il fingerprinting.
 lockPref("svg.context-properties.content.allowed-domains", "");
-// Remove tracking parameters from Mozilla URLs + prevent exposing locale & unnecessary information
-lockPref("app.releaseNotesURL", "https://www.mozilla.org/firefox/%VERSION%/releasenotes");
-lockPref("app.releaseNotesURL.aboutDialog", "https://www.mozilla.org/firefox/%VERSION%/releasenotes");
-lockPref("app.releaseNotesURL.prompt", "https://www.mozilla.org/firefox/%VERSION%/releasenotes");
-lockPref("app.update.url.details", "https://www.mozilla.org/firefox/notes");
-lockPref("app.update.url.manual", "https://www.mozilla.org/firefox/new");
-lockPref("browser.backup.template.fallback-download.aurora", "https://www.mozilla.org/firefox/channel/desktop/#developer");
-lockPref("browser.backup.template.fallback-download.beta", "https://www.mozilla.org/firefox/channel/desktop/#beta");
-lockPref("browser.backup.template.fallback-download.esr", "https://www.mozilla.org/firefox/enterprise/#download");
-lockPref("browser.backup.template.fallback-download.nightly", "https://www.mozilla.org/firefox/channel/desktop/#nightly");
-lockPref("browser.backup.template.fallback-download.release", "https://www.mozilla.org/firefox/download/thanks/?s=direct");
-lockPref("browser.contentblocking.report.cookie.url", "https://support.mozilla.org/kb/trackers-and-scripts-firefox-blocks-enhanced-track#w_cross-site-tracking-cookies");
-lockPref("browser.contentblocking.report.cryptominer.url", "https://support.mozilla.org/kb/trackers-and-scripts-firefox-blocks-enhanced-track#w_cryptominers");
-lockPref("browser.contentblocking.report.fingerprinter.url", "https://support.mozilla.org/kb/trackers-and-scripts-firefox-blocks-enhanced-track#w_fingerprinters");
-lockPref("browser.contentblocking.report.lockwise.how_it_works.url", "https://support.mozilla.org/kb/password-manager-remember-delete-edit-logins");
-lockPref("browser.contentblocking.report.monitor.sign_in_url", "https://monitor.firefox.com/oauth/init");
-lockPref("browser.contentblocking.report.monitor.url", "https://monitor.firefox.com/");
-lockPref("browser.contentblocking.report.social.url", "https://support.mozilla.org/kb/trackers-and-scripts-firefox-blocks-enhanced-track#w_social-media-trackers");
-lockPref("browser.contentblocking.report.tracker.url", "https://support.mozilla.org/kb/trackers-and-scripts-firefox-blocks-enhanced-track#w_tracking-content");
-lockPref("browser.dictionaries.download.url", "https://addons.mozilla.org/language-tools/");
-lockPref("browser.newtabpage.activity-stream.support.url", "https://support.mozilla.org/kb/new-tab");
-lockPref("browser.xr.warning.infoURL", "https://support.mozilla.org/kb/webxr-permission-info-page");
-lockPref("extensions.abuseReport.amoFormURL", "https://addons.mozilla.org/feedback/addon/%addonID%/");
-lockPref("extensions.blocklist.addonItemURL", "https://addons.mozilla.org/blocked-addon/%addonID%/%addonVersion%/");
-lockPref("extensions.getAddons.link.url", "https://addons.mozilla.org/");
-lockPref("extensions.getAddons.search.browseURL", "https://addons.mozilla.org/search?q=%TERMS%");
-lockPref("extensions.update.background.url", "https://versioncheck-bg.addons.mozilla.org/update/VersionCheck.php?reqVersion=%REQ_VERSION%&id=%ITEM_ID%&version=%ITEM_VERSION%&status=%ITEM_STATUS%&appID=%APP_ID%&appVersion=%APP_VERSION%&currentAppVersion=%CURRENT_APP_VERSION%&updateType=%UPDATE_TYPE%");
-lockPref("extensions.update.url", "https://versioncheck.addons.mozilla.org/update/VersionCheck.php?reqVersion=%REQ_VERSION%&id=%ITEM_ID%&version=%ITEM_VERSION%&status=%ITEM_STATUS%&appID=%APP_ID%&appVersion=%APP_VERSION%&currentAppVersion=%CURRENT_APP_VERSION%&updateType=%UPDATE_TYPE%");
-lockPref("lightweightThemes.getMoreURL", "https://addons.mozilla.org/themes/");
-lockPref("pdfjs.altTextLearnMoreUrl", "https://support.mozilla.org/kb/pdf-alt-text");
-lockPref("signon.firefoxRelay.learn_more_url", "https://support.mozilla.org/kb/relay-integration#w_frequently-asked-questions");
-lockPref("signon.firefoxRelay.manage_url", "https://relay.firefox.com/accounts/profile/");
-lockPref("signon.firefoxRelay.privacy_policy_url", "https://www.mozilla.org/privacy/subscription-services/");
-lockPref("signon.firefoxRelay.terms_of_service_url", "https://www.mozilla.org/about/legal/terms/subscription-services/");
 
 /*** 003 TRACKING PROTECTION ***/
 
@@ -1197,59 +1150,11 @@ defaultPref("services.sync.extension-storage.skipPercentageChance", 0);
 defaultPref("identity.fxaccounts.migrateToDevEdition", false);
 // Reduce information shared with Firefox Sync 
 defaultPref("services.sync.sendVersionInfo", false);
-// Sync additional preferences...  
-defaultPref("services.sync.prefs.sync.browser.bookmarks.autoExportHTML", true);
-defaultPref("services.sync.prefs.sync.browser.bookmarks.openInTabClosesMenu", true);
-defaultPref("services.sync.prefs.sync.browser.compactmode.show", true);
-defaultPref("services.sync.prefs.sync.browser.download.open_pdf_attachments_inline", true);
-defaultPref("services.sync.prefs.sync.browser.newtabpage.activity-stream.discoverystream.recentSaves.enabled", true);
-defaultPref("services.sync.prefs.sync.browser.newtabpage.activity-stream.improvesearch.handoffToAwesomebar", true);
-defaultPref("services.sync.prefs.sync.browser.newtabpage.activity-stream.showRecentSaves", true);
-defaultPref("services.sync.prefs.sync.browser.newtabpage.activity-stream.showWeather", true);
-defaultPref("services.sync.prefs.sync.browser.preferences.experimental", true);
-defaultPref("services.sync.prefs.sync.browser.privatebrowsing.resetPBM.enabled", true);
-defaultPref("services.sync.prefs.sync.browser.privateWindowSeparation.enabled", true);
-defaultPref("services.sync.prefs.sync.browser.search.openintab", true);
-defaultPref("services.sync.prefs.sync.browser.search.separatePrivateDefault.urlbarResult.enabled", true);
-defaultPref("services.sync.prefs.sync.browser.spin_cursor_while_busy", true);
-defaultPref("services.sync.prefs.sync.browser.tabs.groups.enabled", true);
-defaultPref("services.sync.prefs.sync.browser.tabs.loadBookmarksInTabs", true);
-defaultPref("services.sync.prefs.sync.browser.toolbars.bookmarks.visibility", true);
-defaultPref("services.sync.prefs.sync.browser.urlbar.openintab", true);
-defaultPref("services.sync.prefs.sync.browser.urlbar.suggest.calculator", true);
-defaultPref("services.sync.prefs.sync.browser.urlbar.suggest.clipboard", true);
-defaultPref("services.sync.prefs.sync.browser.urlbar.unitConversion.enabled", true);
-defaultPref("services.sync.prefs.sync.browser.urlbar.update2.engineAliasRefresh", true);
-defaultPref("services.sync.prefs.sync.browser.xul.error_pages.expert_bad_cert", true);
-defaultPref("services.sync.prefs.sync.browser.xul.error_pages.show_safe_browsing_details_on_load", true);
-defaultPref("services.sync.prefs.sync.devtools.chrome.enabled", true);
-defaultPref("services.sync.prefs.sync.devtools.command-button-measure.enabled", true);
-defaultPref("services.sync.prefs.sync.devtools.command-button-rulers.enabled", true);
-defaultPref("services.sync.prefs.sync.devtools.command-button-screenshot.enabled", true);
-defaultPref("services.sync.prefs.sync.devtools.dom.enabled", true);
-defaultPref("services.sync.prefs.sync.devtools.debugger.ui.editor-wrapping", true);
-defaultPref("services.sync.prefs.sync.dom.security.https_only_mode_error_page_user_suggestions", true);
-defaultPref("services.sync.prefs.sync.dom.security.https_only_mode_send_http_background_request", true);
-defaultPref("services.sync.prefs.sync.extensions.quarantineIgnoredByUser.{b86e4813-687a-43e6-ab65-0bde4ab75758}", true);
-defaultPref("services.sync.prefs.sync.extensions.quarantineIgnoredByUser.{d19a89b9-76c1-4a61-bcd4-49e8de916403}", true);
-defaultPref("services.sync.prefs.sync.findbar.highlightAll", true);
-defaultPref("services.sync.prefs.sync.layout.forms.reveal-password-button.enabled", true);
-defaultPref("services.sync.prefs.sync.media.autoplay.blocking_policy", true);
-defaultPref("services.sync.prefs.sync.media.ffmpeg.vaapi.enabled", true);
-defaultPref("services.sync.prefs.sync.middlemouse.paste", true);
-defaultPref("services.sync.prefs.sync.network.IDN_show_punycode", true);
-defaultPref("services.sync.prefs.sync.pdfjs.sidebarViewOnLoad", true);
-defaultPref("services.sync.prefs.sync.privacy.webrtc.globalMuteToggles", true);
-defaultPref("services.sync.prefs.sync.sidebar.main.tools", true);
-defaultPref("services.sync.prefs.sync.sidebar.revamp", true);
-defaultPref("services.sync.prefs.sync.startup.homepage_override_nimbus_disable_wnp", true);
-defaultPref("services.sync.prefs.sync.view_source.wrap_long_lines", true);
+
 
 /*** 032 Rischio-Fox ***/
 
-// Disabilita avviso schermo intero
-defaultPref("full-screen-api.warning.delay", -1);
-defaultPref("full-screen-api.warning.timeout", 0);
+
 // apri risultati di ricerca in una nuova scheda
 defaultPref("browser.search.openintab", true);
 defaultPref("browser.urlbar.openintab", true);
@@ -1278,4 +1183,4 @@ lockPref("browser.aboutConfig.showWarning", false);
 // Assicura che le nostre policy non vengano sovrascritte
 lockPref("browser.policies.perUserDir", false); // [LINUX]
 // Controllo versione
-lockPref("rischio.fox", "142.43");
+lockPref("rischio.fox", "142.44");
