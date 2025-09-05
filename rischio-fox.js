@@ -178,6 +178,83 @@ lockPref("privacy.window.maxInnerWidth", 1600);
 // Disabilita i selettori CSS per i link visitati per prevenire il "history sniffing"
 lockPref("layout.css.visited_links_enabled", false);
 
+/* -----------------------------------------------------------------------------------
+   CONNESIONI SICURE
+   ----------------------------------------------------------------------------------- */
+
+// Avvisa sempre sulle connessioni non sicure (HTTP)
+lockPref("security.insecure_connection_text.enabled", true);
+lockPref("security.insecure_connection_text.pbmode.enabled", true);
+
+// Blocca le negoziazioni di connessione insicure per prevenire gli attacchi di "downgrade"
+lockPref("security.ssl.treat_unsafe_negotiation_as_broken", true);
+
+// Avvisa sempre quando si invia un modulo da HTTP a HTTPS, anche su IP locali
+lockPref("security.insecure_field_warning.ignore_local_ip_address", false);
+
+// Disabilita l'importazione automatica dei certificati del sistema operativo
+defaultPref("security.osclientcerts.autoload", false);
+
+// Disabilita i cifrari obsoleti e non sicuri basati su SHA-1
+defaultPref("security.ssl3.ecdhe_ecdsa_aes_128_sha", false);
+defaultPref("security.ssl3.ecdhe_ecdsa_aes_256_sha", false);
+
+// Disabilita l'invio di richieste HTTP in background nella modalità Solo HTTPS
+defaultPref("dom.security.https_only_mode_send_http_background_request", false);
+
+// Disabilita i certificati root di terze parti a livello di sistema operativo per prevenire gli attacchi MITM
+lockPref("security.certerrors.mitm.auto_enable_enterprise_roots", false);
+lockPref("security.enterprise_roots.enabled", false);
+
+// Assicura che HTTP/3 non venga disabilitato in presenza di certificati root di terze parti
+defaultPref("network.http.http3.disable_when_third_party_roots_found", false);
+
+// Disabilita TLS 1.3 0-RTT per prevenire attacchi
+defaultPref("network.http.http3.enable_0rtt", false);
+defaultPref("security.tls.enable_0rtt_data", false);
+
+// Abilita i controlli di revoca CRLite e dà loro la priorità su OCSP
+defaultPref("security.pki.crlite_mode", 2);
+defaultPref("security.remote_settings.crlite_filters.enabled", true);
+
+// Disabilita completamente i controlli di revoca OCSP (obsoleto)
+lockPref("security.ocsp.enabled", 0);
+lockPref("security.OCSP.require", false);
+
+// Fornisce una protezione extra bloccando completamente le connessioni in caso di mancata corrispondenza del certificato
+defaultPref("security.cert_pinning.enforcement_level", 2);
+
+// Impone l'uso di HTTPS il più possibile, anche per indirizzi locali
+defaultPref("dom.security.https_first_for_local_addresses", true);
+defaultPref("dom.security.https_first_for_unknown_suffixes", true);
+lockPref("dom.security.https_only_mode", true);
+defaultPref("dom.security.https_only_mode.upgrade_local", true);
+lockPref("dom.security.https_only_mode_pbm", true);
+
+// Impedisci che i domini vengano esclusi automaticamente dalla modalità Solo HTTPS
+defaultPref("dom.security.https_first_add_exception_on_failure", false);
+
+// Consenti solo override temporanei per gli errori del certificato (per sessione)
+defaultPref("security.certerrors.permanentOverride", false);
+
+// Richiede negoziazioni sicure della connessione
+defaultPref("security.ssl.require_safe_negotiation", true);
+
+// Mostra informazioni tecniche dettagliate sulle pagine di errore
+defaultPref("browser.xul.error_pages.expert_bad_cert", true);
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
@@ -193,52 +270,6 @@ lockPref("browser.privatebrowsing.resetPBM.enabled", true)
 lockPref("privacy.exposeContentTitleInWindow.pbm", false);
 
 
-
-
-
-
-/*** 007 HTTP(S) ***/
-
-// Always warn on insecure webpages
-lockPref("security.insecure_connection_text.enabled", true);
-lockPref("security.insecure_connection_text.pbmode.enabled", true);
-lockPref("security.ssl.treat_unsafe_negotiation_as_broken", true);
-// Always warn when submitting a form from HTTP to HTTPS, even on local IP addresses
-lockPref("security.insecure_field_warning.ignore_local_ip_address", false);
-// Disable the automatic import of OS client authentication certificates
-defaultPref("security.osclientcerts.autoload", false);
-// Disable insecure ciphers (Like Chromium & Tor Browser)
-defaultPref("security.ssl3.ecdhe_ecdsa_aes_128_sha", false);
-defaultPref("security.ssl3.ecdhe_ecdsa_aes_256_sha", false);
-// Disable sending background HTTP requests to websites that do not respond quickly to check if they support HTTPS
-defaultPref("dom.security.https_only_mode_send_http_background_request", false);
-// Disable third-party/OS-level root certificates
-lockPref("security.certerrors.mitm.auto_enable_enterprise_roots", false);
-lockPref("security.enterprise_roots.enabled", false);
-// Ensure HTTP/3 isn't disabled when/if third-party/OS-level root certificates are found
-defaultPref("network.http.http3.disable_when_third_party_roots_found", false);
-// Disable TLS 1.3 0-RTT
-defaultPref("network.http.http3.enable_0rtt", false);
-defaultPref("security.tls.enable_0rtt_data", false);
-// Enable CRLite revocation checks & prioritize over OCSP
-defaultPref("security.pki.crlite_mode", 2); // [DEFAULT - Nightly]
-defaultPref("security.remote_settings.crlite_filters.enabled", true); // [DEFAULT - non-Android]
-// Enforce Strict Certificate Pinning
-defaultPref("security.cert_pinning.enforcement_level", 2);
-// Enforce using HTTPS as much as possible
-defaultPref("dom.security.https_first_for_local_addresses", true);
-defaultPref("dom.security.https_first_for_unknown_suffixes", true);
-lockPref("dom.security.https_only_mode", true);
-defaultPref("dom.security.https_only_mode.upgrade_local", true);
-lockPref("dom.security.https_only_mode_pbm", true);
-// If HTTPS-Only Mode is disabled in favor of HTTPS-First, prevent automatically exempting domains (to ensure we always try HTTPS first...)
-defaultPref("dom.security.https_first_add_exception_on_failure", false);
-// Only allow certificate error exceptions per-session
-defaultPref("security.certerrors.permanentOverride", false);
-// Require safe renegotiations
-defaultPref("security.ssl.require_safe_negotiation", true);
-// Show detailed information on insecure warning pages
-defaultPref("browser.xul.error_pages.expert_bad_cert", true);
 
 /*** 008 IMPLICIT CONNECTIONS ***/
 
