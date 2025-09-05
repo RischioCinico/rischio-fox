@@ -94,6 +94,25 @@ lockPref("browser.sessionstore.privacy_level", 2);
 lockPref("browser.privatebrowsing.forceMediaMemoryCache", true);
 
 /* -----------------------------------------------------------------------------------
+   FILE SCARICATI
+   ----------------------------------------------------------------------------------- */
+
+// Massimizza il controllo dell'utente sui download
+lockPref("browser.download.useDownloadDir", false);
+lockPref("browser.download.always_ask_before_handling_new_types", true);
+
+// Gestisce i file temporanei per evitare tracce
+lockPref("browser.download.start_downloads_in_tmp_dir", true);
+lockPref("browser.helperApps.deleteTempFileOnExit", true);
+
+// Previene l'aggiunta di tracce al sistema e alla cronologia del browser
+lockPref("browser.download.manager.addToRecentDocs", false);
+lockPref("browser.download.clearHistoryOnDelete", 2);
+
+// Impedisci apertura automatica finestra download
+lockPref("browser.download.alwaysOpenPanel", false);
+
+/* -----------------------------------------------------------------------------------
    ELEMENTI FASTIDIOSI
    ----------------------------------------------------------------------------------- */
 
@@ -164,9 +183,6 @@ lockPref("layout.css.visited_links_enabled", false);
 
 
 
-
-
-
 /*** MOZILLA ***/
 
 // Disabilita "suggerimenti avanzati" nella barra degli indirizzi
@@ -179,22 +195,7 @@ lockPref("privacy.exposeContentTitleInWindow.pbm", false);
 
 
 
-/*** 006 DOWNLOADS ***/
 
-// Remove cached files from browser windows opened with external applications
-lockPref("browser.download.start_downloads_in_tmp_dir", true);
-lockPref("browser.helperApps.deleteTempFileOnExit", true);
-// Remove files from session list & history when deleted in Firefox
-lockPref("browser.download.clearHistoryOnDelete", 2);
-
-
-// Notify when downloading files
-lockPref("browser.download.alwaysOpenPanel", false);
-// Prevent adding downloads to "recent documents"...
-lockPref("browser.download.manager.addToRecentDocs", false);
-// Prompt before downloading files
-lockPref("browser.download.always_ask_before_handling_new_types", true);
-lockPref("browser.download.useDownloadDir", false);
 
 /*** 007 HTTP(S) ***/
 
