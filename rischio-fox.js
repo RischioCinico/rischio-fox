@@ -10,10 +10,37 @@
 /*    ░     ░       ░ ░ ░      ░  ░  ░░     ░ ░               ░ ░  ░    ░   */
 /*                    ░                                                     */
 
-/*** RACCOLTA DATI ***/
+/* -----------------------------------------------------------------------------------
+   1. RACCOLTA DATI
+   ----------------------------------------------------------------------------------- */
 
 // Impedisce l'invio automatico a Mozilla dei dati di profilazione
 lockPref("toolkit.aboutLogging.uploadProfileToCloud", false);
+
+// Disabilita telemetria (disabilitata anche in policies.json)
+lockPref("toolkit.telemetry.server", "data:,");
+lockPref("toolkit.telemetry.coverage.opt-out", true);
+lockPref("toolkit.coverage.enabled", false);
+lockPref("toolkit.coverage.opt-out", true);
+lockPref("toolkit.coverage.endpoint.base", "");
+
+// Disabilita la telemetria legata alla homepage
+lockPref("browser.newtabpage.activity-stream.feeds.telemetry", false);
+lockPref("browser.newtabpage.activity-stream.telemetry", false);
+
+// Disabilita l'invio automatico dei rapporti di crash
+lockPref("breakpad.reportURL", "");
+lockPref("browser.crashReports.crashPull", false);
+lockPref("browser.crashReports.requestedNeverShowAgain", true);
+lockPref("browser.crashReports.unsubmittedCheck.autoSubmit2", false);
+lockPref("browser.crashReports.unsubmittedCheck.enabled", false);
+lockPref("browser.tabs.crashReporting.includeURL", false);
+lockPref("browser.tabs.crashReporting.sendReport", false);
+lockPref("toolkit.crashreporter.include_context_heap", false);
+
+
+
+
 // Rimuove i dati di attribuzione del partner
 lockPref("app.distributor", "");
 lockPref("app.distributor.channel", "");
@@ -1053,8 +1080,7 @@ defaultPref("browser.newtabpage.activity-stream.feeds.system.topstories", false)
 // Disable Telemetry
 lockPref("browser.contextual-services.contextId", "{foo-123-foo}");
 lockPref("browser.engagement.search_counts.pbm", false);
-lockPref("browser.newtabpage.activity-stream.feeds.telemetry", false);
-lockPref("browser.newtabpage.activity-stream.telemetry", false);
+lockPref("ry", false);
 lockPref("browser.newtabpage.activity-stream.telemetry.privatePing.enabled", false);
 lockPref("browser.newtabpage.activity-stream.telemetry.privatePing.inferredInterests.enabled", false);
 lockPref("browser.newtabpage.activity-stream.telemetry.privatePing.redactNewtabPing.enabled", true);
@@ -1258,4 +1284,4 @@ lockPref("browser.aboutConfig.showWarning", false);
 // Assicura che le nostre policy non vengano sovrascritte
 lockPref("browser.policies.perUserDir", false); // [LINUX]
 // Controllo versione
-lockPref("rischio.fox", "142.42");
+lockPref("rischio.fox", "142.43");
