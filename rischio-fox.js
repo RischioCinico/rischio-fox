@@ -22,6 +22,15 @@ INDICE:
 - PROXY: gestisce il comportamento del proxy.
 - CONNESIONI SICURE: imposta le regole per HTTPS e la validazione dei certificati.
 - CONNESIONI IMPLICITE: disabilita le connessioni non richieste.
+- GESTIONE CREDENZIALI: controlla password e compilazione automatica.
+- GEOLOCALIZZAZIONE: gestisce l'accesso alla tua posizione.
+- CONTENUTI MULTIMEDIALI: gestisce la riproduzione automatica e i plugin.
+- WEBRTC: previene le fughe di indirizzi IP.
+- PDF: gestisce la sicurezza del lettore PDF.
+- ESTENSIONI: imposta le regole per le estensioni.
+- SICUREZZA AVANZATA: include preferenze di sicurezza varie.
+- BARRE DI RICERCA: configura la barra degli indirizzi e di ricerca.
+- ELEMENTI FASTIDIOSI: rimuove i pop-up e le notifiche indesiderate.
 
 ***/
 
@@ -314,6 +323,190 @@ lockPref("network.early-hints.preconnect.max_connections", 0);
 lockPref("browser.tabs.searchclipboardfor.middleclick", false);
 
 /* -----------------------------------------------------------------------------------
+   GESTIONE CREDENZIALI
+   ----------------------------------------------------------------------------------- */
+
+// Mostra sempre il pulsante "Mostra Password"
+defaultPref("layout.forms.reveal-password-button.enabled", true);
+
+// Disabilita Autofill per maggiore sicurezza
+lockPref("signon.autofillForms", false);
+
+// Disabilita il Password Manager per il riempimento di indirizzi e carte di credito
+lockPref("extensions.formautofill.addresses.enabled", false);
+lockPref("extensions.formautofill.creditCards.enabled", false);
+
+// Disabilita l'autenticazione Basic su HTTP
+lockPref("network.http.basic_http_auth.enabled", false);
+
+// Disabilita la cattura credenziali al di fuori dei form di login
+lockPref("signon.formlessCapture.enabled", false);
+
+// Disabilita NTLM
+lockPref("network.automatic-ntlm-auth.allow-proxies", false);
+
+// Impedisci la troncatura di testo incollato
+defaultPref("editor.truncate_user_pastes", false);
+
+// Disabilita SPNEGO
+lockPref("network.negotiate-auth.allow-proxies", false);
+
+// Abilita i prompt di conferma per l'autenticazione
+lockPref("network.auth.confirmAuth.enabled", true);
+
+// Impedisci che le risorse interne aprano dialoghi di autenticazione HTTP
+lockPref("network.auth.subresource-http-auth-allow", 1);
+
+// Disable Microsoft SSO
+defaultPref("network.http.microsoft-entra-sso.container-enabled.0", false);
+defaultPref("network.microsoft-sso-authority-list", "");
+
+/* -----------------------------------------------------------------------------------
+   GEOLOCALIZZAZIONE
+   ----------------------------------------------------------------------------------- */
+
+// Blocca i prompt dei siti web per l'accesso alla geolocalizzazione
+defaultPref("permissions.default.geo", 2);
+
+// Abilita Geoclue per le distribuzioni GNU/Linux (più privato rispetto al servizio di rete)
+defaultPref("geo.provider.use_geoclue", true); // [LINUX]
+
+// Impedisci di fornire incondizionatamente un'alta precisione della posizione
+defaultPref("geo.provider.geoclue.always_high_accuracy", false); // [LINUX]
+
+// Imposta BeaconDB come provider di geolocalizzazione di rete predefinito
+defaultPref("geo.provider.network.url", "https://beacondb.net/v1/geolocate")
+
+/* -----------------------------------------------------------------------------------
+   CONTENUTI MULTIMEDIALI
+   ----------------------------------------------------------------------------------- */
+
+// Blocca la riproduzione automatica dei contenuti multimediali
+lockPref("media.autoplay.default", 5);
+
+// Disabilita i plugin multimediali obsoleti (es. OpenH264)
+lockPref("media.gmp-gmpopenh264.enabled", false);
+lockPref("media.gmp.insecure.allow", false);
+defaultPref("media.gmp-gmpopenh264.provider.enabled", false); // [LINUX] (per Fedora)
+
+// Disabilita la registrazione dei log per i plugin multimediali
+defaultPref("media.gmp.log.level", 70);
+
+// Abilita la decodifica hardware per i video H.264
+defaultPref("media.webrtc.hw.h264.enabled", true);
+
+// Abilita i DRM
+defaultPref("media.eme.enabled", true);
+defaultPref("media.eme.require-app-approval", true);
+
+/* -----------------------------------------------------------------------------------
+   WEBRTC
+   ----------------------------------------------------------------------------------- */
+
+// Previene i WebRTC IP leaks forzando l'uso del proxy
+lockPref("media.peerconnection.ice.proxy_only_if_behind_proxy", true);
+
+// Avvisa l'utente quando cambia scheda durante la condivisione dello schermo
+lockPref("privacy.webrtc.sharedTabWarning", true);
+
+// Disabilita l'indicatore globale WebRTC
+lockPref("privacy.webrtc.hideGlobalIndicator", true);
+
+/* -----------------------------------------------------------------------------------
+   PDF
+   ----------------------------------------------------------------------------------- */
+
+// Disabilita l'esecuzione di JavaScript all'interno dei PDF
+lockPref("pdfjs.enableScripting", false);
+
+// Disabilita il download automatico di un modello per il testo alternativo
+lockPref("pdfjs.enableAltTextModelDownload", false);
+
+// Disabilita i collegamenti ipertestuali automatici
+lockPref("pdfjs.enableAutoLinking", false);
+
+// Disabilita XFA, una fonte comune di vulnerabilità nei PDF
+lockPref("pdfjs.enableXfa", false);
+
+// Forzare l'uso del renderer di font interno
+lockPref("pdfjs.disableFontFace", true);
+
+// Forzare il download/la visualizzazione locale dei PDF e chiedere prima di aprire il visualizzatore PDF
+lockPref("pdfjs.disableRange", true);
+lockPref("pdfjs.disableStream", true);
+
+// Apri i link esterni in nuove schede/finestre
+lockPref("pdfjs.externalLinkTarget", 2);
+
+// Impedisci il tentativo di caricare/convertire file binari sconosciuti
+lockPref("pdfjs.handleOctetStream", false);
+
+// Abilita la possibilità di aggiungere firme
+defaultPref("pdfjs.enableSignatureEditor", true);
+
+// Abilita il testo alternativo
+defaultPref("pdfjs.enableAltText", true);
+defaultPref("pdfjs.enableAltTextForEnglish", true);
+
+// Mostra la barra laterale per impostazione predefinita durante la visualizzazione dei PDF
+defaultPref("pdfjs.sidebarViewOnLoad", 2);
+
+// Aggiorna l'URL quando si cambiano le pagine
+defaultPref("pdfjs.historyUpdateUrl", true);
+
+/* -----------------------------------------------------------------------------------
+   ESTENSIONI
+   ----------------------------------------------------------------------------------- */
+
+// Impedisci l'installazione di estensioni da fonti non ufficiali
+lockPref("extensions.autoDisableScopes", 15);
+lockPref("extensions.enabledScopes", 5); // [Nascosta]
+lockPref("extensions.installDistroAddons", false); // [Nascosta]
+lockPref("extensions.sideloadScopes", 0); // [Nascosta]
+
+// Disabilita API potenzialmente rischiose per la privacy
+lockPref("extensions.webapi.enabled", false);
+lockPref("privacy.resistFingerprinting.block_mozAddonManager", true);
+
+// Richiedi firme e origini sicure per le estensioni
+lockPref("extensions.install.requireBuiltInCerts", true); // [Nascosta]
+lockPref("extensions.update.requireBuiltInCerts", true); // [Nascosta]
+lockPref("extensions.install_origins.enabled", true);
+lockPref("extensions.install.requireSecureOrigin", true); // [Nascosta]
+
+// Disabilita l'assegnazione automatica di permessi pericolosi
+lockPref("extensions.originControls.grantByDefault", false);
+lockPref("extensions.manifestV2.actionsPopupURLRestricted", true);
+lockPref("extensions.geckoProfiler.acceptedExtensionIds", "");
+lockPref("extensions.content_web_accessible.enabled", true);
+
+/* -----------------------------------------------------------------------------------
+   SICUREZZA AVANZATA
+   ----------------------------------------------------------------------------------- */
+
+// Disabilita i font Graphite & SVG OpenType
+defaultPref("gfx.font_rendering.graphite.enabled", false);
+defaultPref("gfx.font_rendering.opentype_svg.enabled", false);
+
+// Disabilita MathML
+defaultPref("mathml.disabled", true);
+
+// Disabilita WebVR/WebXR
+defaultPref("permissions.default.xr", 2);
+
+// Disabilita ASM.JS
+defaultPref("javascript.options.asmjs", false);
+
+// Disabilita SharedArrayBuffer con COOP/COEP
+defaultPref("dom.postMessage.sharedArrayBuffer.withCOOP_COEP", false);
+
+// Disabilita il JIT per estensioni e contenuti locali
+defaultPref("javascript.options.jit_trustedprincipals", false);
+
+// Disabilita il JIT di ottimizzazione per WebAssembly
+defaultPref("javascript.options.wasm_optimizingjit", false);
+
+/* -----------------------------------------------------------------------------------
    BARRE DI RICERCA
    ----------------------------------------------------------------------------------- */
 
@@ -402,190 +595,6 @@ defaultPref("browser.urlbar.showSearchTerms.featureGate", false);
 
 // Usa lo stesso motore di ricerca per impostazione predefinita nelle finestre di navigazione normale e privata
 defaultPref("browser.search.separatePrivateDefault", true);
-
-/* -----------------------------------------------------------------------------------
-   WEBRTC
-   ----------------------------------------------------------------------------------- */
-
-// Previene i WebRTC IP leaks forzando l'uso del proxy
-lockPref("media.peerconnection.ice.proxy_only_if_behind_proxy", true);
-
-// Avvisa l'utente quando cambia scheda durante la condivisione dello schermo
-lockPref("privacy.webrtc.sharedTabWarning", true);
-
-// Disabilita l'indicatore globale WebRTC
-lockPref("privacy.webrtc.hideGlobalIndicator", true);
-
-/* -----------------------------------------------------------------------------------
-   CONTENUTI MULTIMEDIALI
-   ----------------------------------------------------------------------------------- */
-
-// Blocca la riproduzione automatica dei contenuti multimediali
-lockPref("media.autoplay.default", 5);
-
-// Disabilita i plugin multimediali obsoleti (es. OpenH264)
-lockPref("media.gmp-gmpopenh264.enabled", false);
-lockPref("media.gmp.insecure.allow", false);
-defaultPref("media.gmp-gmpopenh264.provider.enabled", false); // [LINUX] (per Fedora)
-
-// Disabilita la registrazione dei log per i plugin multimediali
-defaultPref("media.gmp.log.level", 70);
-
-// Abilita la decodifica hardware per i video H.264
-defaultPref("media.webrtc.hw.h264.enabled", true);
-
-// Abilita i DRM
-defaultPref("media.eme.enabled", true);
-defaultPref("media.eme.require-app-approval", true);
-
-/* -----------------------------------------------------------------------------------
-   SICUREZZA AVANZATA
-   ----------------------------------------------------------------------------------- */
-
-// Disabilita i font Graphite & SVG OpenType
-defaultPref("gfx.font_rendering.graphite.enabled", false);
-defaultPref("gfx.font_rendering.opentype_svg.enabled", false);
-
-// Disabilita MathML
-defaultPref("mathml.disabled", true);
-
-// Disabilita WebVR/WebXR
-defaultPref("permissions.default.xr", 2);
-
-// Disabilita ASM.JS
-defaultPref("javascript.options.asmjs", false);
-
-// Disabilita SharedArrayBuffer con COOP/COEP
-defaultPref("dom.postMessage.sharedArrayBuffer.withCOOP_COEP", false);
-
-// Disabilita il JIT per estensioni e contenuti locali
-defaultPref("javascript.options.jit_trustedprincipals", false);
-
-// Disabilita il JIT di ottimizzazione per WebAssembly
-defaultPref("javascript.options.wasm_optimizingjit", false);
-
-/* -----------------------------------------------------------------------------------
-   GESTIONE CREDENZIALI
-   ----------------------------------------------------------------------------------- */
-
-// Mostra sempre il pulsante "Mostra Password"
-defaultPref("layout.forms.reveal-password-button.enabled", true);
-
-// Disabilita Autofill per maggiore sicurezza
-lockPref("signon.autofillForms", false);
-
-// Disabilita il Password Manager per il riempimento di indirizzi e carte di credito
-lockPref("extensions.formautofill.addresses.enabled", false);
-lockPref("extensions.formautofill.creditCards.enabled", false);
-
-// Disabilita l'autenticazione Basic su HTTP
-lockPref("network.http.basic_http_auth.enabled", false);
-
-// Disabilita la cattura credenziali al di fuori dei form di login
-lockPref("signon.formlessCapture.enabled", false);
-
-// Disabilita NTLM
-lockPref("network.automatic-ntlm-auth.allow-proxies", false);
-
-// Impedisci la troncatura di testo incollato
-defaultPref("editor.truncate_user_pastes", false);
-
-// Disabilita SPNEGO
-lockPref("network.negotiate-auth.allow-proxies", false);
-
-// Abilita i prompt di conferma per l'autenticazione
-lockPref("network.auth.confirmAuth.enabled", true);
-
-// Impedisci che le risorse interne aprano dialoghi di autenticazione HTTP
-lockPref("network.auth.subresource-http-auth-allow", 1);
-
-// Disable Microsoft SSO
-defaultPref("network.http.microsoft-entra-sso.container-enabled.0", false);
-defaultPref("network.microsoft-sso-authority-list", "");
-
-/* -----------------------------------------------------------------------------------
-   ESTENSIONI
-   ----------------------------------------------------------------------------------- */
-
-// Impedisci l'installazione di estensioni da fonti non ufficiali
-lockPref("extensions.autoDisableScopes", 15);
-lockPref("extensions.enabledScopes", 5); // [Nascosta]
-lockPref("extensions.installDistroAddons", false); // [Nascosta]
-lockPref("extensions.sideloadScopes", 0); // [Nascosta]
-
-// Disabilita API potenzialmente rischiose per la privacy
-lockPref("extensions.webapi.enabled", false);
-lockPref("privacy.resistFingerprinting.block_mozAddonManager", true);
-
-// Richiedi firme e origini sicure per le estensioni
-lockPref("extensions.install.requireBuiltInCerts", true); // [Nascosta]
-lockPref("extensions.update.requireBuiltInCerts", true); // [Nascosta]
-lockPref("extensions.install_origins.enabled", true);
-lockPref("extensions.install.requireSecureOrigin", true); // [Nascosta]
-
-// Disabilita l'assegnazione automatica di permessi pericolosi
-lockPref("extensions.originControls.grantByDefault", false);
-lockPref("extensions.manifestV2.actionsPopupURLRestricted", true);
-lockPref("extensions.geckoProfiler.acceptedExtensionIds", "");
-lockPref("extensions.content_web_accessible.enabled", true);
-
-/* -----------------------------------------------------------------------------------
-   GEOLOCALIZZAZIONE
-   ----------------------------------------------------------------------------------- */
-
-// Blocca i prompt dei siti web per l'accesso alla geolocalizzazione
-defaultPref("permissions.default.geo", 2);
-
-// Abilita Geoclue per le distribuzioni GNU/Linux (più privato rispetto al servizio di rete)
-defaultPref("geo.provider.use_geoclue", true); // [LINUX]
-
-// Impedisci di fornire incondizionatamente un'alta precisione della posizione
-defaultPref("geo.provider.geoclue.always_high_accuracy", false); // [LINUX]
-
-// Imposta BeaconDB come provider di geolocalizzazione di rete predefinito
-defaultPref("geo.provider.network.url", "https://beacondb.net/v1/geolocate")
-
-/* -----------------------------------------------------------------------------------
-   PDF
-   ----------------------------------------------------------------------------------- */
-
-// Disabilita l'esecuzione di JavaScript all'interno dei PDF
-lockPref("pdfjs.enableScripting", false);
-
-// Disabilita il download automatico di un modello per il testo alternativo
-lockPref("pdfjs.enableAltTextModelDownload", false);
-
-// Disabilita i collegamenti ipertestuali automatici
-lockPref("pdfjs.enableAutoLinking", false);
-
-// Disabilita XFA, una fonte comune di vulnerabilità nei PDF
-lockPref("pdfjs.enableXfa", false);
-
-// Forzare l'uso del renderer di font interno
-lockPref("pdfjs.disableFontFace", true);
-
-// Forzare il download/la visualizzazione locale dei PDF e chiedere prima di aprire il visualizzatore PDF
-lockPref("pdfjs.disableRange", true);
-lockPref("pdfjs.disableStream", true);
-
-// Apri i link esterni in nuove schede/finestre
-lockPref("pdfjs.externalLinkTarget", 2);
-
-// Impedisci il tentativo di caricare/convertire file binari sconosciuti
-lockPref("pdfjs.handleOctetStream", false);
-
-// Abilita la possibilità di aggiungere firme
-defaultPref("pdfjs.enableSignatureEditor", true);
-
-// Abilita il testo alternativo
-defaultPref("pdfjs.enableAltText", true);
-defaultPref("pdfjs.enableAltTextForEnglish", true);
-
-// Mostra la barra laterale per impostazione predefinita durante la visualizzazione dei PDF
-defaultPref("pdfjs.sidebarViewOnLoad", 2);
-
-// Aggiorna l'URL quando si cambiano le pagine
-defaultPref("pdfjs.historyUpdateUrl", true);
 
 /* -----------------------------------------------------------------------------------
    ELEMENTI FASTIDIOSI
