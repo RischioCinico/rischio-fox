@@ -855,6 +855,26 @@ defaultPref("content.notify.interval", 100000); // default=120000
 
 
 
+
+
+/*** 017 AI ***/
+
+// AI Chat
+defaultPref("browser.ml.chat.enabled", true);
+// Link Preview
+defaultPref("browser.ml.linkPreview.enabled", true);
+defaultPref("browser.ml.linkPreview.optin", true);
+// Disable Perplexity URL bar promotion
+defaultPref("browser.urlbar.perplexity.hasBeenInSearchMode", true);
+// Suggest tabs and a name for tab groups
+defaultPref("browser.tabs.groups.smart.enabled", true);
+defaultPref("browser.tabs.groups.smart.optin", true);
+defaultPref("browser.tabs.groups.smart.userEnabled", true);
+// Do not censor Link Preview results
+defaultPref("browser.ml.linkPreview.blockListEnabled", false);
+
+
+
 /*** 027 Nice Stuff ***/
 
 // Allow zoom on all websites, even if they try to block it...
@@ -876,62 +896,6 @@ defaultPref("browser.privateWindowSeparation.enabled", false);
 defaultPref("layout.word_select.eat_space_to_next_word", false);
 // Prevent automatically closing the Bookmarks menu after selecting a bookmark
 defaultPref("browser.bookmarks.openInTabClosesMenu", false);
-
-/*** 017 AI ***/
-
-// AI Chat
-defaultPref("browser.ml.chat.enabled", true);
-// Link Preview
-defaultPref("browser.ml.linkPreview.enabled", true);
-defaultPref("browser.ml.linkPreview.optin", true);
-// Disable Perplexity URL bar promotion
-defaultPref("browser.urlbar.perplexity.hasBeenInSearchMode", true);
-// Suggest tabs and a name for tab groups
-defaultPref("browser.tabs.groups.smart.enabled", true);
-defaultPref("browser.tabs.groups.smart.optin", true);
-defaultPref("browser.tabs.groups.smart.userEnabled", true);
-// Do not censor Link Preview results
-defaultPref("browser.ml.linkPreview.blockListEnabled", false);
-
-
-/*** 031 SYNC ***/
-
-// Disable promotions  
-lockPref("identity.fxaccounts.toolbar.pxiToolbarEnabled", false);
-lockPref("identity.fxaccounts.toolbar.pxiToolbarEnabled.monitorEnabled", false);
-lockPref("identity.fxaccounts.toolbar.pxiToolbarEnabled.relayEnabled", false);
-lockPref("identity.fxaccounts.toolbar.pxiToolbarEnabled.vpnEnabled", false);
-lockPref("identity.mobilepromo.android", "");
-lockPref("identity.mobilepromo.ios", "");
-lockPref("identity.sendtabpromo.url", "");
-// Disable set-up/feature recommendation  
-lockPref("identity.fxaccounts.toolbar.syncSetup.panelAccessed", true);
-// Disable Telemetry  
-lockPref("identity.fxaccounts.account.telemetry.sanitized_uid", "");
-lockPref("identity.fxaccounts.telemetry.clientAssociationPing.enabled", false);
-lockPref("services.sync.log.logger.telemetry", "Fatal"); //  [Nascosta]
-lockPref("services.sync.telemetry.maxEventsCount", 0); //  [Nascosta]
-lockPref("services.sync.telemetry.maxPayloadCount", 0);
-lockPref("services.sync.telemetry.submissionInterval", 999999999);
-// Improve the reliability of extension storage sync  
-defaultPref("services.sync.extension-storage.skipPercentageChance", 0);
-// Prevent automatically sharing Firefox Sync accounts  
-defaultPref("identity.fxaccounts.migrateToDevEdition", false);
-// Reduce information shared with Firefox Sync 
-defaultPref("services.sync.sendVersionInfo", false);
-
-
-
-
-
-
-
-
-
-
-/*** 032 Rischio-Fox ***/
-
-
 // controls if a double-click word selection also deletes one adjacent whitespace
 defaultPref("editor.word_select.delete_space_after_doubleclick_selection", true);
 // non nascondere il cursore del mouse mentre si digita
