@@ -749,9 +749,6 @@ defaultPref("gfx.canvas.accelerated.cache-size", 512); // default=256
 defaultPref("image.mem.decode_bytes_at_a_time", 65536); // default=16384
 defaultPref("media.memory_cache_max_size", 3145728); // default=8192
 
-// Comprime il bytecode JavaScript nella cache su disco (se abilitata)
-defaultPref("browser.cache.jsbc_compression_level", 3); // default=0
-
 // Abilita WebAssembly (WASM) per prestazioni migliori in compiti pesanti
 defaultPref("javascript.options.wasm_branch_hinting", true);
 defaultPref("javascript.options.wasm_relaxed_simd", true);
