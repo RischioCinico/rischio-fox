@@ -74,6 +74,15 @@ lockPref("browser.contentblocking.cfr-milestone.milestone-shown-time", "99999999
 lockPref("browser.contentblocking.cfr-milestone.update-interval", 0); // [Nascosta]
 lockPref("browser.contentblocking.database.enabled", false);
 
+// Disabilita i report delle violazioni CSP
+lockPref("security.csp.reporting.enabled", false);
+
+// Disabilita l'API Beacon (Navigator.sendBeacon)
+defaultPref("beacon.enabled", false);
+
+// Disabilita il riconoscimento vocale online
+defaultPref("media.webspeech.service.endpoint", "data:,"); // [Mascosta]
+
 /* -----------------------------------------------------------------------------------
    TRACCE SU DISCO
    ----------------------------------------------------------------------------------- */
@@ -117,6 +126,9 @@ lockPref("browser.sessionstore.privacy_level", 2);
 // Impedisce la scrittura della cache multimediale su disco nelle finestre private
 lockPref("browser.privatebrowsing.forceMediaMemoryCache", true);
 
+// Limita la durata massima dei cookie a 6 mesi
+defaultPref("network.cookie.maxageCap", 15552000);
+
 /* -----------------------------------------------------------------------------------
    FILE SCARICATI
    ----------------------------------------------------------------------------------- */
@@ -147,9 +159,32 @@ lockPref("browser.contentblocking.category", "strict");
 defaultPref("privacy.trackingprotection.allow_list.baseline.enabled", true);
 defaultPref("privacy.trackingprotection.allow_list.convenience.enabled", true);
 
+// Abilita i Container
+lockPref("privacy.userContext.enabled", true);
+lockPref("privacy.userContext.ui.enabled", true);
+defaultPref("permissions.isolateBy.userContext", true);
+defaultPref("browser.link.force_default_user_context_id_for_external_opens", true);
+
+// Isola le risorse iniettate dalle estensioni
+defaultPref("privacy.antitracking.isolateContentScriptResources", true);
+
+// Abilita Do Not Track & Global Privacy Control
+lockPref("privacy.donottrackheader.enabled", true);
+lockPref("privacy.globalprivacycontrol.enabled", true);
+
 // Salta automaticamente i banner di consenso dei cookie
 defaultPref("privacy.trackingprotection.consentmanager.skip.enabled", true);
 defaultPref("privacy.trackingprotection.consentmanager.skip.pbmode.enabled", true);
+
+// Impedisci ai terzi di impostare cookie se non sono già stati un sito principale (first party)
+defaultPref("privacy.dynamic_firstparty.limitForeign", true);
+
+// Limita i referrer che tracciano
+defaultPref("network.http.referer.defaultPolicy.trackers", 1);
+defaultPref("network.http.referer.defaultPolicy.trackers.pbmode", 1);
+
+// Rimuovi i percorsi e le query dai referrer tra siti diversi
+defaultPref("network.http.referer.XOriginTrimmingPolicy", 2);
 
 // Abilita Bounce Tracking Protection
 lockPref("privacy.bounceTrackingProtection.requireStatefulBounces", false);
@@ -184,6 +219,9 @@ lockPref("privacy.window.maxInnerWidth", 1600);
 
 // Disabilita i selettori CSS per i link visitati per prevenire il "history sniffing"
 lockPref("layout.css.visited_links_enabled", false);
+
+// Disabilita l'API della batteria per prevenire il fingerprinting
+defaultPref("dom.battery.enabled", false);
 
 /* -----------------------------------------------------------------------------------
    DNS
@@ -494,6 +532,26 @@ defaultPref("urlclassifier.blockedTable", "moztest-block-simple,mozplugin-block-
 defaultPref("browser.safebrowsing.provider.google.reportURL", "https://transparencyreport.google.com/safe-browsing/search?url=");
 defaultPref("browser.safebrowsing.provider.google4.reportURL", "https://transparencyreport.google.com/safe-browsing/search?url=");
 
+// Disabilita i servizi di accessibilità
+defaultPref("accessibility.force_disabled", 1);
+defaultPref("devtools.accessibility.enabled", false);
+
+// Disabilita Clipboard API per impedire ai siti di leggere il contenuto degli appunti
+lockPref("dom.events.asyncClipboard.clipboardItem", false);
+lockPref("dom.events.asyncClipboard.readText", false);
+lockPref("dom.events.testing.asyncClipboard", false);
+
+// Disabilita Content Analysis SDK
+lockPref("browser.contentanalysis.default_result", 0);
+lockPref("browser.contentanalysis.enabled", false);
+lockPref("browser.contentanalysis.interception_point.clipboard.enabled", false);
+lockPref("browser.contentanalysis.interception_point.drag_and_drop.enabled", false);
+lockPref("browser.contentanalysis.interception_point.file_upload.enabled", false);
+lockPref("browser.contentanalysis.interception_point.print.enabled", false);
+lockPref("browser.contentanalysis.max_connections", 0);
+lockPref("browser.contentanalysis.show_blocked_result", true);
+lockPref("browser.contentanalysis.silent_notifications", false);
+
 // Disabilita i font Graphite & SVG OpenType
 defaultPref("gfx.font_rendering.graphite.enabled", false);
 defaultPref("gfx.font_rendering.opentype_svg.enabled", false);
@@ -515,6 +573,9 @@ defaultPref("javascript.options.jit_trustedprincipals", false);
 
 // Disabilita il JIT di ottimizzazione per WebAssembly
 defaultPref("javascript.options.wasm_optimizingjit", false);
+
+// Impedisci l'esposizione di componenti XPCOM ai siti web
+defaultPref("dom.use_components_shim", false);
 
 /* -----------------------------------------------------------------------------------
    BARRE DI RICERCA
@@ -623,6 +684,12 @@ lockPref("browser.shell.skipDefaultBrowserCheckOnFirstRun", true);
 // Blocca avviso se Firefox non è il lettore PDF predefinito
 lockPref("browser.shell.checkDefaultPDF", false); // [Nascosta]
 
+// Blocca banner dei cookie
+defaultPref("cookiebanners.service.mode", 1);
+defaultPref("cookiebanners.service.mode.privateBrowsing", 1);
+
+
+
 
 
 
@@ -643,82 +710,11 @@ defaultPref("browser.tabs.groups.smart.userEnabled", true);
 defaultPref("browser.ml.linkPreview.blockListEnabled", false);
 
 
-/*** 021 MISC. PRIVACY + SECURITY ***/
-
-// Disable Accessibility Services
-defaultPref("accessibility.force_disabled", 1);
-defaultPref("devtools.accessibility.enabled", false);
-// Disable automatic updates for OpenSearch engines
-defaultPref("browser.search.update", false);
-// Disable Battery API (Navigator.getBattery)
-defaultPref("dom.battery.enabled", false);
-// Disable Beacon API (Navigator.sendBeacon)
-defaultPref("beacon.enabled", false);
-// Disable Clipboard API
-lockPref("dom.events.asyncClipboard.clipboardItem", false);
-lockPref("dom.events.asyncClipboard.readText", false);
-lockPref("dom.events.testing.asyncClipboard", false);
-// Disable Content Analysis SDK
-lockPref("browser.contentanalysis.default_result", 0);
-lockPref("browser.contentanalysis.enabled", false);
-lockPref("browser.contentanalysis.interception_point.clipboard.enabled", false);
-lockPref("browser.contentanalysis.interception_point.drag_and_drop.enabled", false);
-lockPref("browser.contentanalysis.interception_point.file_upload.enabled", false);
-lockPref("browser.contentanalysis.interception_point.print.enabled", false);
-lockPref("browser.contentanalysis.max_connections", 0);
-lockPref("browser.contentanalysis.show_blocked_result", true);
-lockPref("browser.contentanalysis.silent_notifications", false);
-// Disable WebMIDI
-defaultPref("dom.sitepermsaddon-provider.enabled", false);
-// Enable Messaging Layer Security (MLS)
-defaultPref("dom.origin-trials.mls.state", 1);
-// Enable Private Network Access Restrictions
-defaultPref("network.lna.block_trackers", true);
-// Prevent exposing XPCOM Components.interfaces to websites
-defaultPref("dom.use_components_shim", false);
 
 /*** 022 MISC. PRIVACY ***/
 
-// Disable CSP reporting
-defaultPref("security.csp.reporting.enabled", false);
-// Disable Hyperlink Auditing (Click Tracking)
-defaultPref("browser.send_pings.require_same_host", true);
-// Disable online speech recognition
-defaultPref("media.webspeech.service.endpoint", "data;"); // [Mascosta]
-// Disable storage access heuristics
-defaultPref("dom.storage_access.auto_grants", false);
-defaultPref("privacy.restrict3rdpartystorage.heuristic.navigation", false);
-defaultPref("privacy.restrict3rdpartystorage.heuristic.opened_window_after_interaction", false);
-defaultPref("privacy.restrict3rdpartystorage.heuristic.recently_visited", false);
-defaultPref("privacy.restrict3rdpartystorage.heuristic.redirect", false);
-defaultPref("privacy.restrict3rdpartystorage.heuristic.window_open", false);
-// Enable Containers
-defaultPref("privacy.userContext.enabled", true);
-// Enable Cookie Banner Reduction
-defaultPref("cookiebanners.service.mode", 1);
-defaultPref("cookiebanners.service.mode.privateBrowsing", 1);
-// Enable Do Not Track & Global Privacy Control
-lockPref("privacy.donottrackheader.enabled", true);
-defaultPref("privacy.globalprivacycontrol.enabled", true);
 // Enable the (new) UI for browser profiles by default
 defaultPref("browser.profiles.enabled", true);
-// Disable the UI for containers
-defaultPref("privacy.userContext.ui.enabled", false);
-// Isolate permissions per container (if containers are enabled)
-defaultPref("permissions.isolateBy.userContext", true);
-// Isolate resources (ex. referrers & cookies) injected by extensions
-defaultPref("privacy.antitracking.isolateContentScriptResources", true);
-// Limit maximum cookie lifetime to 6 months/180 days (Like Brave)
-defaultPref("network.cookie.maxageCap", 15552000);
-// Prevent Firefox from automatically guessing which container to open an external link in
-defaultPref("browser.link.force_default_user_context_id_for_external_opens", true);
-// Prevent third parties from setting cookies unless the third party already has cookies as a first party (Like Safari)
-defaultPref("privacy.dynamic_firstparty.limitForeign", true);
-// Restrict tracking referers
-defaultPref("network.http.referer.defaultPolicy.trackers", 1);
-defaultPref("network.http.referer.defaultPolicy.trackers.pbmode", 1);
-// Trim cross-origin referers (Like Safari)
-defaultPref("network.http.referer.XOriginTrimmingPolicy", 2);
 
 /*** 023 MISC. SECURITY ***/
 
