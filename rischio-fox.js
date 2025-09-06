@@ -83,6 +83,11 @@ defaultPref("beacon.enabled", false);
 // Disabilita il riconoscimento vocale online
 defaultPref("media.webspeech.service.endpoint", "data:,"); // [Mascosta]
 
+// Disabilita il monitoraggio dello stato della connessione di rete
+defaultPref("network.manage-offline-status", false);
+defaultPref("offline.autoDetect", false); // [LINUX] RedHat/Fedora-specific
+defaultPref("toolkit.networkmanager.disable", true); // [LINUX] RedHat/Fedora-specific
+
 /* -----------------------------------------------------------------------------------
    TRACCE SU DISCO
    ----------------------------------------------------------------------------------- */
@@ -619,6 +624,9 @@ defaultPref("network.cookie.sameSite.schemeful", true);
 defaultPref("network.sniff.use_extension", true);
 defaultPref("security.block_fileuri_script_with_wrong_mime", true);
 
+// Impedisci le richieste di rete all'indirizzo 0.0.0.0
+lockPref("network.socket.ip_addr_any.disabled", true);
+
 /* -----------------------------------------------------------------------------------
    BARRE DI RICERCA
    ----------------------------------------------------------------------------------- */
@@ -713,6 +721,9 @@ defaultPref("browser.search.separatePrivateDefault", true);
    ELEMENTI FASTIDIOSI
    ----------------------------------------------------------------------------------- */
 
+// Blocca automaticamente le richieste di notifica dei siti web
+defaultPref("permissions.default.desktop-notification", 2);
+
 // Disabilita avviso schermo intero
 lockPref("full-screen-api.warning.delay", -1);
 lockPref("full-screen-api.warning.timeout", 0);
@@ -730,8 +741,11 @@ lockPref("browser.shell.checkDefaultPDF", false); // [Nascosta]
 defaultPref("cookiebanners.service.mode", 1);
 defaultPref("cookiebanners.service.mode.privateBrowsing", 1);
 
+// Limita gli eventi che possono causare pop-up
+defaultPref("dom.popup_allowed_events", "click dblclick");
 
-
+// Impedisci agli script di spostare e ridimensionare le finestre
+defaultPref("dom.disable_window_move_resize", true);
 
 
 
@@ -756,35 +770,6 @@ defaultPref("browser.ml.linkPreview.blockListEnabled", false);
 
 /*** 024 MISC. ***/
 
-// Block websites from prompting to display notifications by default
-defaultPref("permissions.default.desktop-notification", 2);
-// Disable Captive Portal Detection & Connectivity Checks
-defaultPref("captivedetect.canonicalURL", "");
-defaultPref("network.connectivity-service.DNSv4.domain", "");
-defaultPref("network.connectivity-service.DNSv6.domain", "");
-defaultPref("network.connectivity-service.enabled", false);
-defaultPref("network.connectivity-service.IPv4.url", "");
-defaultPref("network.connectivity-service.IPv6.url", "");
-// Disable Firefox's "Reset/Refresh Profile" prompt
-lockPref("browser.disableResetPrompt", true);
-// Disable network connectivity status monitoring
-defaultPref("network.manage-offline-status", false);
-defaultPref("offline.autoDetect", false); // [LINUX] RedHat/Fedora-specific
-// Disable network connectivity status monitoring
-defaultPref("toolkit.networkmanager.disable", true); // [LINUX] RedHat/Fedora-specific
-// Disable network requests to 0.0.0.0
-lockPref("network.socket.ip_addr_any.disabled", true);
-// Enable Firefox's newer 'Felt privacy' design for Certificate Errors
-defaultPref("security.certerrors.felt-privacy-v1", true);
-defaultPref("browser.privatebrowsing.felt-privacy-v1", true);
-// Limit what events can cause pop-ups
-defaultPref("dom.popup_allowed_events", "click dblclick");
-// Open links from external programs in new tabs by default
-defaultPref("browser.link.open_newwindow.override.external", 3);
-// Prevent Safe Mode from automatically starting by default
-defaultPref("toolkit.startup.max_resumed_crashes", -1);
-// Prevent scripts from moving, resizing, and messing with windows
-defaultPref("dom.disable_window_move_resize", true);
 // Prevent websites from automatically refreshing
 defaultPref("accessibility.blockautorefresh", true);
 defaultPref("browser.meta_refresh_when_inactive.disabled", true);
@@ -794,47 +779,6 @@ defaultPref("extensions.cookie.rejectWhenInvalid", true);
 defaultPref("browser.xul.error_pages.show_safe_browsing_details_on_load", true);
 // Show 'Always ask' for camera & microphone in the permissions drop-down (when that's what the user chose...)
 pref("permissions.media.show_always_ask.enabled", true);
-
-/*** 025 DEBUGGING ***/
-
-// Allow inspecting the browser chrome by default
-defaultPref("devtools.chrome.enabled", true);
-// Allow inspecting the DOM by default
-defaultPref("devtools.dom.enabled", true);
-// Allow inspecting/debugging local tabs from `about:debugging` by default
-defaultPref("devtools.aboutdebugging.local-tab-debugging", true);
-// Always prompt before connecting to Remote Debugging...
-lockPref("devtools.debugger.prompt-connection", true);
-// Disable annoying "A simpler highlighter can be enabled in the settings..." banner when using developer tools
-defaultPref("devtools.inspector.simple-highlighters.message-dismissed", true); // [Nascosta]
-// Disable editor onboarding
-defaultPref("devtools.webconsole.input.editorOnboarding", false);
-// Disable pausing on debugger statements by default
-defaultPref("devtools.debugger.pause-on-debugger-statement", false);
-// Disable the Remote Debugging Web Socket
-lockPref("devtools.debugger.remote-websocket", false);
-// Display content scripts injected by extensions when debugging by default
-defaultPref("devtools.debugger.show-content-scripts", true);
-// Display Web Console timestamps by default
-defaultPref("devtools.webconsole.timestampMessages", true);
-// Disable WebDriver BiDi experimental commands and events
-lockPref("remote.experimental.enabled", false);
-// Enable the Web Console sidebar toggle
-defaultPref("devtools.webconsole.sidebarToggle", true);
-// Pretty print code when debugging by default
-defaultPref("devtools.debugger.auto-pretty-print", true);
-// Prevent logging URLs in Reader errors
-defaultPref("reader.errors.includeURLs", false);
-// Prevent WebDriver from overriding preferences by default
-defaultPref("remote.prefs.recommended", false);
-// Show default/browser styles in the Inspector by default
-defaultPref("devtools.inspector.showUserAgentStyles", true);
-// Unbreak debugging if `localhost` can't be looked up via DNS [NO-ANDROID]
-defaultPref("devtools.debugger.chrome-debugging-host", "127.0.0.1");
-// Wrap lines when debugging by default
-defaultPref("devtools.debugger.ui.editor-wrapping", true);
-// Wrap lines when viewing the source of webpages (via `view-source:`)
-defaultPref("view_source.wrap_long_lines", true);
 
 /*** 026 PERFORMANCE ***/
 
@@ -1202,6 +1146,8 @@ lockPref("browser.privatebrowsing.resetPBM.enabled", true)
 lockPref("privacy.exposeContentTitleInWindow.pbm", false);
 // Enable the (new) UI for browser profiles by default
 defaultPref("browser.profiles.enabled", true);
+// Open links from external programs in new tabs by default
+defaultPref("browser.link.open_newwindow.override.external", 3);
 
 /*** 032 Rischio-Fox ***/
 
