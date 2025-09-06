@@ -531,8 +531,21 @@ lockPref("extensions.manifestV2.actionsPopupURLRestricted", true);
 lockPref("extensions.geckoProfiler.acceptedExtensionIds", "");
 lockPref("extensions.content_web_accessible.enabled", true);
 
+/* -----------------------------------------------------------------------------------
+   GEOLOCALIZZAZIONE
+   ----------------------------------------------------------------------------------- */
 
+// Blocca i prompt dei siti web per l'accesso alla geolocalizzazione
+defaultPref("permissions.default.geo", 2);
 
+// Abilita Geoclue per le distribuzioni GNU/Linux (più privato rispetto al servizio di rete)
+defaultPref("geo.provider.use_geoclue", true); // [LINUX]
+
+// Impedisci di fornire incondizionatamente un'alta precisione della posizione
+defaultPref("geo.provider.geoclue.always_high_accuracy", false); // [LINUX]
+
+// Imposta BeaconDB come provider di geolocalizzazione di rete predefinito
+defaultPref("geo.provider.network.url", "https://beacondb.net/v1/geolocate")
 
 
 
@@ -556,16 +569,7 @@ defaultPref("browser.tabs.groups.smart.userEnabled", true);
 // Do not censor Link Preview results
 defaultPref("browser.ml.linkPreview.blockListEnabled", false);
 
-/*** 018 GEOLOCATION ***/
 
-// Block websites from prompting to access geolocation by default
-defaultPref("permissions.default.geo", 2);
-// Enable Geoclue for GNU/Linux distros by default
-defaultPref("geo.provider.use_geoclue", false); // [LINUX]
-// Prevent unconditionally providing high location accuracy
-defaultPref("geo.provider.geoclue.always_high_accuracy", false); // [LINUX]
-// Set BeaconDB as the default network geolocation provider
-defaultPref("geo.provider.network.url", "https://beacondb.net/v1/geolocate");
 
 /*** 019 PDF.js ***/
 
