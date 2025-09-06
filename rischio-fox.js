@@ -673,7 +673,6 @@ defaultPref("browser.urlbar.suggest.trending", false);
 defaultPref("browser.urlbar.trending.featureGate", false);
 
 // Disabilita il taglio degli URL
-lockPref("browser.urlbar.trimHttps", false);
 lockPref("browser.urlbar.trimURLs", false);
 
 // Visualizza la barra di ricerca in `Personalizza la barra degli strumenti...`
