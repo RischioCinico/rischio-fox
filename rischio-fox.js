@@ -343,6 +343,45 @@ defaultPref("browser.urlbar.showSearchTerms.featureGate", false);
 // Usa lo stesso motore di ricerca per impostazione predefinita nelle finestre di navigazione normale e privata
 defaultPref("browser.search.separatePrivateDefault", true);
 
+/* -----------------------------------------------------------------------------------
+   DNS
+   ----------------------------------------------------------------------------------- */
+
+// Abilita DNS over HTTPS (DoH) senza fallback
+lockPref("network.trr.mode", 3);
+
+// Imposta Quad9 come provider DoH (versione senza EDNS Client Subnet per massima privacy)
+defaultPref("network.trr.uri", "https://dns10.quad9.net/dns-query");
+
+// Disabilita completamente il prefetch DNS non richiesto
+lockPref("network.dns.disablePrefetch", true);
+lockPref("network.dns.disablePrefetchFromHTTPS", true);
+
+// Disabilita il caching delle risposte DNS
+lockPref("network.dnsCacheEntries", 0);
+
+// Disabilita i controlli di connettività DoH di Firefox
+lockPref("network.connectivity-service.DNS_HTTPS.domain", "");
+lockPref("network.trr.confirmationNS", "skip");
+lockPref("network.trr.skip-check-for-blocked-host", true);
+
+// Disabilita il fallback automatico al DNS di sistema non cifrato
+lockPref("network.trr.strict_native_fallback", true);
+
+// Disabilita i "listener" di rete che aggiornano le impostazioni dal sistema operativo
+lockPref("network.notify.changed", false);
+lockPref("network.notify.checkForNRPT", false);
+lockPref("network.notify.checkForProxies", false);
+lockPref("network.notify.dnsSuffixList", false);
+lockPref("network.notify.initial_call", false);
+lockPref("network.notify.IPv6", false);
+lockPref("network.notify.resolvers", false);
+
+// Risolvi i problemi di connettività IPv6 quando il DoH è abilitato
+lockPref("network.dns.preferIPv6", true);
+
+// Impedisci il bypass del DoH per le voci del file hosts
+lockPref("network.trr.exclude-etc-hosts", false);
 
 
 
@@ -353,33 +392,6 @@ defaultPref("browser.search.separatePrivateDefault", true);
 lockPref("browser.privatebrowsing.resetPBM.enabled", true)
 // Prevent exposing content in the window title for Private Browsing windows
 lockPref("privacy.exposeContentTitleInWindow.pbm", false);
-
-
-/*** 010 DNS ***/
-
-// Customize list of built-in DoH resolvers
-defaultPref("doh-rollout.provider-list", '[{"uri":"https://dns.quad9.net/dns-query","UIName":"Quad9 🇨🇭","autoDefault":true},{"uri":"https://dns.adguard-dns.com/dns-query","UIName":"AdGuard 🇨🇾","autoDefault":false},{"uri":"https://unfiltered.adguard-dns.com/dns-query","UIName":"AdGuard (Unfiltered) 🇨🇾","autoDefault":false},{"uri":"https://mozilla.cloudflare-dns.com/dns-query","UIName":"Cloudflare 🇺🇸","autoDefault":false},{"uri":"https://security.cloudflare-dns.com/dns-query","UIName":"Cloudflare (Malware Protection) 🇺🇸","autoDefault":false},{"uri":"https://dns0.eu","UIName":"DNS0 🇫🇷","autoDefault":false},{"uri":"https://zero.dns0.eu","UIName":"DNS0 (ZERO) 🇫🇷","autoDefault":false},{"uri":"https://noads.joindns4.eu/dns-query","UIName":"DNS4EU (Ad Blocking) 🇨🇿","autoDefault":false},{"uri":"https://protective.joindns4.eu/dns-query","UIName":"DNS4EU (Protective) 🇨🇿","autoDefault":false},{"uri":"https://unfiltered.joindns4.eu/dns-query","UIName":"DNS4EU (Unfiltered) 🇨🇿","autoDefault":false},{"uri":"https://base.dns.mullvad.net/dns-query","UIName":"Mullvad (Base) 🇸🇪","autoDefault":false},{"uri":"https://dns.mullvad.net/dns-query","UIName":"Mullvad (Unfiltered) 🇸🇪","autoDefault":false},{"uri":"https://firefox.dns.nextdns.io/","UIName":"NextDNS 🇺🇸","autoDefault":false},{"uri":"https://wikimedia-dns.org/dns-query","UIName":"Wikimedia 🇺🇸","autoDefault":false}]');
-// Disable DoH Connectivity Checks
-lockPref("network.connectivity-service.DNS_HTTPS.domain", "");
-lockPref("network.trr.confirmationNS", "skip");
-lockPref("network.trr.skip-check-for-blocked-host", true);
-// Disable falling back to system DNS by default
-lockPref("network.trr.strict_native_fallback", true);
-// Disable nsNotifyAddrListener
-lockPref("network.notify.changed", false);
-lockPref("network.notify.checkForNRPT", false);
-lockPref("network.notify.checkForProxies", false);
-lockPref("network.notify.dnsSuffixList", false);
-lockPref("network.notify.initial_call", false);
-lockPref("network.notify.IPv6", false);
-lockPref("network.notify.resolvers", false);
-// Enable DoH without fallback & Set to Quad9 by default
-defaultPref("network.trr.default_provider_uri", "https://dns.quad9.net/dns-query");
-lockPref("network.trr.mode", 3);
-// Fix IPv6 connectivity when DoH is enabled
-lockPref("network.dns.preferIPv6", true);
-// Prevent bypassing DoH for /etc/HOSTS entries by default
-lockPref("network.trr.exclude-etc-hosts", false);
 
 /*** 011 PROXIES ***/
 
@@ -862,10 +874,6 @@ defaultPref("media.cache_resume_threshold.cellular", 3600); // Default = 10
 defaultPref("media.throttle-cellular-regardless-of-download-rate", false); // [Nascosta]
 // Increase the chunk size for calls to image decoders
 defaultPref("image.mem.decode_bytes_at_a_time", 65536); // default=16384
-// Increase DNS caching
-defaultPref("network.dnsCacheExpiration", 3600); // Default = 60
-defaultPref("network.dnsCacheExpirationGracePeriod", 240); // Default = 60
-defaultPref("network.dnsCacheEntries", 1000); // Default = 800
 // Increase the file-backed media cache size for cellular connections
 defaultPref("media.cache_size.cellular", 512000); // Default = 32768
 // Increase the memory-backed media cache size
