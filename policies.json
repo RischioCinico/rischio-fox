@@ -11,6 +11,11 @@
     "DisableProfileRefresh": true,
     "DisableSetDesktopBackground": true,
     "DisableTelemetry": true,
+    "DNSOverHTTPS": {
+      "Enabled": true,
+      "Fallback": false,
+      "ProviderURL": "https://dns.quad9.net/dns-query"
+    },
     "DontCheckDefaultBrowser": true,
     "FirefoxHome": {
       "Search": true,
