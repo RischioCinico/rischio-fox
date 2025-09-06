@@ -335,9 +335,6 @@ defaultPref("browser.urlbar.placeholderName.private", "DuckDuckGo");
 // Mostra l'interfaccia utente per cambiare motore di ricerca per singole ricerche
 lockPref("browser.urlbar.scotchBonnet.disableOneOffs", false);
 
-// Se il taglio degli URL è abilitato, ripristinalo all'interazione dell'utente
-lockPref("browser.urlbar.untrimOnUserInteraction.featureGate", true);
-
 // Mostra URL completi invece di termini di ricerca
 defaultPref("browser.urlbar.restyleSearches", false);
 defaultPref("browser.urlbar.showSearchTerms.enabled", false);
