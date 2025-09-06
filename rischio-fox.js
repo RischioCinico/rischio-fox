@@ -383,7 +383,24 @@ lockPref("network.dns.preferIPv6", true);
 // Impedisci il bypass del DoH per le voci del file hosts
 lockPref("network.trr.exclude-etc-hosts", false);
 
+/* -----------------------------------------------------------------------------------
+   PROXY
+   ----------------------------------------------------------------------------------- */
 
+// Impedisci il failover automatico a connessioni dirette (non-proxy)
+lockPref("network.proxy.failover_direct", false);
+
+// Impedisci di bypassare il proxy anche quando il sistema lo richiede
+lockPref("network.proxy.allow_bypass", false);
+
+// Usa il proxy per la risoluzione DNS remota (previene i DNS leaks)
+lockPref("network.proxy.socks_remote_dns", true);
+
+// Disabilita la gestione dei percorsi di sistema (es. file:///net)
+lockPref("network.file.path_blacklist", "/net");
+
+// Disabilita i percorsi UNC di Windows per prevenire il rischio di perdite di dati
+lockPref("network.file.disable_unc_paths", true);
 
 
 /*** MOZILLA ***/
@@ -392,25 +409,6 @@ lockPref("network.trr.exclude-etc-hosts", false);
 lockPref("browser.privatebrowsing.resetPBM.enabled", true)
 // Prevent exposing content in the window title for Private Browsing windows
 lockPref("privacy.exposeContentTitleInWindow.pbm", false);
-
-/*** 011 PROXIES ***/
-
-// Prevent Firefox from automatically using the system's proxy configuration by default
-defaultPref("network.proxy.type", 0);
-// Always start proxy extensions (if installed) as soon as possible
-lockPref("extensions.webextensions.early_background_wakeup_on_request", true);
-// Disable automatic failover from the proxy (if configured) to direct connections when certain system requests fail
-lockPref("network.proxy.failover_direct", false);
-// Disable file:///net
-lockPref("network.file.path_blacklist", "/net");
-// Disable GIO
-lockPref("network.gio.supported-protocols", "");
-// Disable Uniform Naming Convention (UNC) file paths
-lockPref("network.file.disable_unc_paths", true);
-// Prevent bypassing the proxy (if configured) for system connections that include the `bypassProxy` flag
-lockPref("network.proxy.allow_bypass", false);
-// Use the proxy (if configured) for remote DNS lookups
-lockPref("network.proxy.socks_remote_dns", true);
 
 /*** 012 WEBRTC ***/
 
