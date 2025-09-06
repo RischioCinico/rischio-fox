@@ -710,9 +710,17 @@ defaultPref("browser.search.separatePrivateDefault", true);
 // Blocca automaticamente le richieste di notifica dei siti web
 defaultPref("permissions.default.desktop-notification", 2);
 
-// Disabilita avviso schermo intero
+// Disabilita avviso e transizione quando si passa a schermo intero
 lockPref("full-screen-api.warning.delay", -1);
 lockPref("full-screen-api.warning.timeout", 0);
+lockPref("full-screen-api.transition-duration.enter", "0 0");
+lockPref("full-screen-api.transition-duration.leave", "0 0");
+
+// Blocca il pop-up automatico del traduttore
+defaultPref("browser.translations.automaticallyPopup", false);
+
+// Blocca gli errori fastidiosi dell'API di sintesi vocale
+defaultPref("media.webspeech.synth.dont_notify_on_error", true); // [Nascosta]
 
 // Blocca pop-up presentazione blocco dei banner dei cookie
 lockPref("cookiebanners.ui.desktop.showCallout", false);
@@ -796,11 +804,6 @@ defaultPref("apz.allow_zooming_out", true);
 defaultPref("toolkit.legacyUserProfileCustomizations.stylesheets", true);
 // Always load bookmarks in new tabs by default
 defaultPref("browser.tabs.loadBookmarksInTabs", true);
-// Disable annoying Web Speech API errors, especially relevant on Linux
-defaultPref("media.webspeech.synth.dont_notify_on_error", true); // [Nascosta]
-// Disable fullscreen delay
-defaultPref("full-screen-api.transition-duration.enter", "0 0");
-defaultPref("full-screen-api.transition-duration.leave", "0 0");
 // Display the option to enable `Compact` mode at `Customize toolbar...`
 defaultPref("browser.compactmode.show", true);
 // Display a spinning animation while websites are loading
@@ -821,7 +824,6 @@ defaultPref("devtools.performance.aboutprofiling.has-developer-options", true);
 defaultPref("browser.preferences.experimental", true);
 lockPref("browser.preferences.experimental.hidden", false);
 // Firefox Translations
-defaultPref("browser.translations.automaticallyPopup", false);
 defaultPref("browser.translations.newSettingsUI.enable", true);
 defaultPref("extensions.translations.disabled", false); // [Nascosta]
 // Enable Spellcheck for both multi-line and single-line boxes
