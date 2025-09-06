@@ -31,6 +31,7 @@ INDICE:
 - SICUREZZA AVANZATA: include preferenze di sicurezza varie.
 - BARRE DI RICERCA: configura la barra degli indirizzi e di ricerca.
 - ELEMENTI FASTIDIOSI: rimuove i pop-up e le notifiche indesiderate.
+- PRESTAZIONI
 
 ***/
 
@@ -733,83 +734,58 @@ defaultPref("dom.disable_window_move_resize", true);
 defaultPref("accessibility.blockautorefresh", true);
 defaultPref("browser.meta_refresh_when_inactive.disabled", true);
 
-/*** 017 AI ***/
+/* -----------------------------------------------------------------------------------
+   PRESTAZIONI
+   ----------------------------------------------------------------------------------- */
 
-// AI Chat
-defaultPref("browser.ml.chat.enabled", true);
-// Link Preview
-defaultPref("browser.ml.linkPreview.enabled", true);
-defaultPref("browser.ml.linkPreview.optin", true);
-// Disable Perplexity URL bar promotion
-defaultPref("browser.urlbar.perplexity.hasBeenInSearchMode", true);
-// Suggest tabs and a name for tab groups
-defaultPref("browser.tabs.groups.smart.enabled", true);
-defaultPref("browser.tabs.groups.smart.optin", true);
-defaultPref("browser.tabs.groups.smart.userEnabled", true);
-// Do not censor Link Preview results
-defaultPref("browser.ml.linkPreview.blockListEnabled", false);
-
-
-
-
-
-/*** 026 PERFORMANCE ***/
-
+// Abilita WebRender
 defaultPref("gfx.webrender.all", true);
-// Compress cached JavaScript bytecode
-defaultPref("browser.cache.jsbc_compression_level", 3); // default=0
-// Decrease the content notification interval
-defaultPref("content.notify.interval", 100000); // default=120000
-// Disable certain UI animations by default
-defaultPref("sidebar.animation.enabled", false);
-defaultPref("ui.panelAnimations", 0); // [Nascosta]
-defaultPref("ui.prefersReducedMotion", 1); // [Nascosta] 
-defaultPref("ui.swipeAnimationEnabled", 0); // [Nascosta]
-// Disable CSS error reporting by default
-defaultPref("layout.css.report_errors", false);
-// Disable pacing requests
-defaultPref("network.http.pacing.requests.enabled", false);
-// Disable tab hover previews by default [ 
-defaultPref("browser.tabs.hoverPreview.enabled", false);
-defaultPref("browser.tabs.hoverPreview.showThumbnails", false);
-// Display advanced performance settings at `about:preferences#general` [ 
-defaultPref("browser.preferences.defaultPerformanceSettings.enabled", false);
-// Enable Branch Hinting
-defaultPref("javascript.options.wasm_branch_hinting", true);
-// Enable Canvas2D acceleration (if supported)
+defaultPref("gfx.webrender.compositor", true);
+
+// Aumenta la dimensione delle cache per font, grafica e immagini
+defaultPref("gfx.content.skia-font-cache-size", 20); // default=5
 defaultPref("gfx.canvas.accelerated.cache-items", 8192); // default=8192
 defaultPref("gfx.canvas.accelerated.cache-size", 512); // default=256
-// Enable CSS Masonry Layout
-defaultPref("layout.css.grid-template-masonry-value.enabled", true);
-// Enable SIMD
-defaultPref("javascript.options.wasm_relaxed_simd", true);
-// Enable VA-API by default
-defaultPref("media.ffmpeg.vaapi.enabled", true); // [LINUX]
-// Enable the WebRender native compositor (if supported)
-defaultPref("gfx.webrender.compositor", true);
-// Increase buffering for video playback
-defaultPref("media.cache_readahead_limit", 7200); // Default = 3600
-defaultPref("media.cache_readahead_limit.cellular", 7200); // Default = 30
-defaultPref("media.cache_resume_threshold", 3600); // Default = 1800
-defaultPref("media.cache_resume_threshold.cellular", 3600); // Default = 10
-defaultPref("media.throttle-cellular-regardless-of-download-rate", false); // [Nascosta]
-// Increase the chunk size for calls to image decoders
 defaultPref("image.mem.decode_bytes_at_a_time", 65536); // default=16384
-// Increase the file-backed media cache size for cellular connections
-defaultPref("media.cache_size.cellular", 512000); // Default = 32768
-// Increase the memory-backed media cache size
 defaultPref("media.memory_cache_max_size", 3145728); // default=8192
-// Increase the skia font cache size (Like Chromium)
-defaultPref("gfx.content.skia-font-cache-size", 20); // default=5
-// Increase the maximum number of HTTP connections
-defaultPref("network.http.max-connections", 1800); // default=900
-defaultPref("network.http.max-persistent-connections-per-proxy", 48); // default=32
-defaultPref("network.http.max-persistent-connections-per-server", 10); // default=6
-defaultPref("network.http.max-urgent-start-excessive-connections-per-host", 5); // default=3
-// Increase TLS token caching
-defaultPref("network.ssl_tokens_cache_capacity", 32768); // default=2048
-// Use higher performance pinch-zoom
-defaultPref("gfx.webrender.low-quality-pinch-zoom", true);
+
+// Comprime il bytecode JavaScript nella cache su disco (se abilitata)
+defaultPref("browser.cache.jsbc_compression_level", 3); // default=0
+
+// Abilita WebAssembly (WASM) per prestazioni migliori in compiti pesanti
+defaultPref("javascript.options.wasm_branch_hinting", true);
+defaultPref("javascript.options.wasm_relaxed_simd", true);
+
+// Disabilita le animazioni superflue per migliorare la reattività dell'interfaccia utente
+defaultPref("sidebar.animation.enabled", false);
+defaultPref("ui.panelAnimations", 0); // [Nascosta]
+defaultPref("ui.prefersReducedMotion", 1); // [Nascosta]
+defaultPref("ui.swipeAnimationEnabled", 0); // [Nascosta]
+
+// Disabilita l'anteprima delle schede al passaggio del mouse per risparmiare risorse
+defaultPref("browser.tabs.hoverPreview.enabled", false);
+defaultPref("browser.tabs.hoverPreview.showThumbnails", false);
+
+// Disabilita il reporting degli errori CSS
+defaultPref("layout.css.report_errors", false);
+
+// Abilita la decodifica video hardware con VA-API
+defaultPref("media.ffmpeg.vaapi.enabled", true); // [LINUX]
+
+// Riduce l'intervallo di notifica per gli aggiornamenti dei contenuti, migliorando la reattività
+defaultPref("content.notify.interval", 100000); // default=120000
+
+
+
+
+
+
+
+
+
+
+
+
 
 /*** 027 Nice Stuff ***/
 
@@ -876,6 +852,22 @@ defaultPref("browser.privateWindowSeparation.enabled", false);
 defaultPref("layout.word_select.eat_space_to_next_word", false);
 // Prevent automatically closing the Bookmarks menu after selecting a bookmark
 defaultPref("browser.bookmarks.openInTabClosesMenu", false);
+
+/*** 017 AI ***/
+
+// AI Chat
+defaultPref("browser.ml.chat.enabled", true);
+// Link Preview
+defaultPref("browser.ml.linkPreview.enabled", true);
+defaultPref("browser.ml.linkPreview.optin", true);
+// Disable Perplexity URL bar promotion
+defaultPref("browser.urlbar.perplexity.hasBeenInSearchMode", true);
+// Suggest tabs and a name for tab groups
+defaultPref("browser.tabs.groups.smart.enabled", true);
+defaultPref("browser.tabs.groups.smart.optin", true);
+defaultPref("browser.tabs.groups.smart.userEnabled", true);
+// Do not censor Link Preview results
+defaultPref("browser.ml.linkPreview.blockListEnabled", false);
 
 /*** 028 UPDATES ***/
 
