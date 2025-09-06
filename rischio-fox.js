@@ -914,23 +914,6 @@ defaultPref("browser.tabs.groups.smart.userEnabled", true);
 // Do not censor Link Preview results
 defaultPref("browser.ml.linkPreview.blockListEnabled", false);
 
-/*** 028 UPDATES ***/
-
-// Ensure the browser's binary is always old enough to check for browser updates [NO-ANDROID]
-defaultPref("app.update.checkInstallTime.days", 0);
-// Alert users of browser updates ASAP
-defaultPref("app.update.badgeWaitTime", 0);
-defaultPref("app.update.notifyDuringDownload", true);
-defaultPref("app.update.promptWaitTime", 0);
-// Check for browser updates hourly
-defaultPref("app.update.background.interval", 3600);
-defaultPref("app.update.interval", 3600);
-// Check for extension/theme updates hourly
-defaultPref("extensions.update.interval", 3600);
-// Notify users for extension updates by default
-defaultPref("extensions.update.notifyUser", true); // [Nascosta]
-// Sync with Remote Settings hourly, rather than the default of only once a day
-defaultPref("services.settings.poll_interval", 3600);
 
 
 
