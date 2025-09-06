@@ -3,7 +3,7 @@
     "Cookies": {
       "Locked": true,
       "Behavior": "reject-tracker-and-partition-foreign",
-      "BehaviorPrivateBrowsing": "reject-tracker-and-partition-foreign",
+      "BehaviorPrivateBrowsing": "reject-tracker-and-partition-foreign"
     },
     "DisableFeedbackCommands": true,
     "DisableFirefoxStudies": true,
