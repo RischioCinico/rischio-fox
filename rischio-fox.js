@@ -20,8 +20,8 @@ INDICE:
 - FINGERPRINTING: protegge dall'identificazione tramite l'impronta digitale del browser.
 - DNS: configura il DNS over HTTPS per connessioni sicure.
 - PROXY: gestisce il comportamento del proxy.
-- CONNESIONI SICURE: imposta le regole per HTTPS e la validazione dei certificati.
-- CONNESIONI IMPLICITE: disabilita le connessioni non richieste.
+- CONNESSIONI SICURE: imposta le regole per HTTPS e la validazione dei certificati.
+- CONNESSIONI IMPLICITE: disabilita le connessioni non richieste.
 - GESTIONE CREDENZIALI: controlla password e compilazione automatica.
 - GEOLOCALIZZAZIONE: gestisce l'accesso alla tua posizione.
 - CONTENUTI MULTIMEDIALI: gestisce la riproduzione automatica e i plugin.
@@ -244,7 +244,7 @@ lockPref("network.file.path_blacklist", "/net");
 lockPref("network.file.disable_unc_paths", true);
 
 /* -----------------------------------------------------------------------------------
-   CONNESIONI SICURE
+   CONNESSIONI SICURE
    ----------------------------------------------------------------------------------- */
 
 // Avvisa sempre sulle connessioni non sicure (HTTP)
@@ -310,7 +310,7 @@ defaultPref("browser.xul.error_pages.expert_bad_cert", true);
 lockPref("security.csp.reporting.enabled", false);
 
 /* -----------------------------------------------------------------------------------
-   CONNESIONI IMPLICITE
+   CONNESSIONI IMPLICITE
    ----------------------------------------------------------------------------------- */
 
 // Disabilita Early Hints (come in Cromite)
@@ -413,7 +413,7 @@ defaultPref("media.eme.enabled", true);
 defaultPref("media.eme.require-app-approval", true);
 
 // Disabilita il riconoscimento vocale online
-defaultPref("media.webspeech.service.endpoint", "data:,"); // [Mascosta]
+defaultPref("media.webspeech.service.endpoint", "data:,"); // [Nascosta]
 
 /* -----------------------------------------------------------------------------------
    WEBRTC
