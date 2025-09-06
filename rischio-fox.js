@@ -774,6 +774,24 @@ lockPref("privacy.exposeContentTitleInWindow.pbm", false);
 // Abilita alcune funzionalità per la gestione dei profili
 defaultPref("browser.profiles.enabled", true);
 
+// Abilita schede nella barra delle applicazioni per le PWA
+defaultPref("browser.taskbarTabs.enabled", true);
+
+// Impedisce di mostrare finestre private come icone separate sulla barra delle applicazioni di Windows
+defaultPref("browser.privateWindowSeparation.enabled", false);
+
+// Impedisce al puntatore del mouse di nascondersi mentre si digita
+defaultPref("widget.gtk.hide-pointer-while-typing.enabled", false); // [LINUX]
+
+// Abilita lo zoom su tutti i siti
+defaultPref("browser.ui.zoom.force-user-scalable", true);
+
+// Abilita lo zoom oltre la scala iniziale
+defaultPref("apz.allow_zooming_out", true);
+
+// Abilita autoscrolling
+defaultPref("general.autoScroll", true);
+
 /* -----------------------------------------------------------------------------------
    GESTIONE SCHEDE
    ----------------------------------------------------------------------------------- */
@@ -795,6 +813,9 @@ defaultPref("browser.tabs.loadDivertedInBackground", true);
 
 // Apri i segnalibri in background
 defaultPref("browser.tabs.loadBookmarksInBackground", true);
+
+// Impedisce la chiusura automatica del menu dei segnalibri
+defaultPref("browser.bookmarks.openInTabClosesMenu", false);
 
 // Apri le nuove schede subito dopo quella attuale
 defaultPref("browser.tabs.insertAfterCurrent", true);
@@ -877,29 +898,15 @@ defaultPref("browser.ml.linkPreview.blockListEnabled", false);
 
 /*** 027 Nice Stuff ***/
 
-// Allow zoom on all websites, even if they try to block it...
-defaultPref("browser.ui.zoom.force-user-scalable", true);
-// Allow zooming out beyond the initial scale of websites by default
-defaultPref("apz.allow_zooming_out", true);
-// Enable autoscrolling
-defaultPref("general.autoScroll", true);
 // Firefox Translations
 defaultPref("browser.translations.newSettingsUI.enable", true);
 defaultPref("extensions.translations.disabled", false); // [Nascosta]
 // Enable Spellcheck for both multi-line and single-line boxes
 defaultPref("layout.spellcheckDefault", 2);
-// Enable Taskbar Tabs (PWAs)
-defaultPref("browser.taskbarTabs.enabled", true);
-// Prevent displaying Private Browsing windows as separate icons on the Windows Taskbar by default
-defaultPref("browser.privateWindowSeparation.enabled", false);
 // Prevent including the space next to words when double-clicking/selecting text
 defaultPref("layout.word_select.eat_space_to_next_word", false);
-// Prevent automatically closing the Bookmarks menu after selecting a bookmark
-defaultPref("browser.bookmarks.openInTabClosesMenu", false);
 // controls if a double-click word selection also deletes one adjacent whitespace
 defaultPref("editor.word_select.delete_space_after_doubleclick_selection", true);
-// non nascondere il cursore del mouse mentre si digita
-defaultPref("widget.gtk.hide-pointer-while-typing.enabled", false); // [LINUX]
 
 /* Fork Server https://firefox-source-docs.mozilla.org/dom/ipc/process_model.html#fork-server */
 pref("dom.ipc.forkserver.enable", true); // [LINUX]
