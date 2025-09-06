@@ -81,7 +81,8 @@ defaultPref("browser.newtabpage.activity-stream.logowordmark.alwaysVisible", fal
 // Impedisce il passaggio dei dati di ricerca alla barra degli indirizzi
 defaultPref("browser.newtabpage.activity-stream.improvesearch.handoffToAwesomebar", false);
 
-// Rimuove i collegamenti predefiniti e le scorciatoie di ricercalockPref("browser.newtabpage.activity-stream.default.sites", "");
+// Rimuove i collegamenti predefiniti e le scorciatoie di ricerca
+lockPref("browser.newtabpage.activity-stream.default.sites", "");
 lockPref("browser.newtabpage.activity-stream.improvesearch.noDefaultSearchTile", true);
 lockPref("browser.newtabpage.activity-stream.improvesearch.topSiteSearchShortcuts", false);
 lockPref("browser.newtabpage.activity-stream.improvesearch.topSiteSearchShortcuts.havePinned", "");
