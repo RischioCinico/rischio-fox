@@ -12,6 +12,7 @@
 
 /***
 INDICE:
+
 - RACCOLTA DATI: blocca l'invio di dati a Mozilla.
 - TRACCE SU DISCO: gestisce la cache, la cronologia e i dati salvati localmente.
 - FILE SCARICATI: controlla il comportamento di download.
@@ -21,6 +22,7 @@ INDICE:
 - PROXY: gestisce il comportamento del proxy.
 - CONNESIONI SICURE: imposta le regole per HTTPS e la validazione dei certificati.
 - CONNESIONI IMPLICITE: disabilita le connessioni non richieste.
+
 ***/
 
 /* -----------------------------------------------------------------------------------
