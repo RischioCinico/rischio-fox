@@ -32,6 +32,7 @@ INDICE:
 - BARRE DI RICERCA: configura la barra degli indirizzi e di ricerca.
 - ELEMENTI FASTIDIOSI: rimuove i pop-up e le notifiche indesiderate.
 - INTERFACCIA: impostazioni che modificano l'aspetto del browser.
+- ORTOGRAFIA E DIZIONARI: traduttore e correttore automatico.
 - GESTIONE SCHEDE: gestisce il comportamento delle schede
 - PRESTAZIONI
 - INTELLIGENZA ARTIFICIALE
@@ -793,6 +794,25 @@ defaultPref("apz.allow_zooming_out", true);
 defaultPref("general.autoScroll", true);
 
 /* -----------------------------------------------------------------------------------
+   ORTOGRAFIA E DIZIONARI
+   ----------------------------------------------------------------------------------- */
+
+// Abilita il controllo ortografico per testi su una o più righe
+defaultPref("layout.spellcheckDefault", 2);
+
+// Impedisce che la selezione di una parola con doppio clic includa lo spazio successivo
+defaultPref("layout.word_select.eat_space_to_next_word", false);
+
+// Cancella lo spazio dopo la parola selezionata con doppio clic
+defaultPref("editor.word_select.delete_space_after_doubleclick_selection", true);
+
+// Abilita l'interfaccia utente per le traduzioni
+defaultPref("browser.translations.newSettingsUI.enable", true);
+
+// Abilita le traduzioni di Firefox
+defaultPref("extensions.translations.disabled", false);
+
+/* -----------------------------------------------------------------------------------
    GESTIONE SCHEDE
    ----------------------------------------------------------------------------------- */
 
@@ -861,6 +881,9 @@ defaultPref("media.ffmpeg.vaapi.enabled", true); // [LINUX]
 // Riduce l'intervallo di notifica per gli aggiornamenti dei contenuti, migliorando la reattività
 defaultPref("content.notify.interval", 100000); // default=120000
 
+/* Fork Server https://firefox-source-docs.mozilla.org/dom/ipc/process_model.html#fork-server */
+pref("dom.ipc.forkserver.enable", true); // [LINUX]
+
 /* -----------------------------------------------------------------------------------
    INTELLIGENZA ARTIFICIALE
    ----------------------------------------------------------------------------------- */
@@ -872,13 +895,6 @@ defaultPref("content.notify.interval", 100000); // default=120000
 
 
 
-
-
-
-
-
-
-/*** 017 AI ***/
 
 // AI Chat
 defaultPref("browser.ml.chat.enabled", true);
@@ -896,20 +912,17 @@ defaultPref("browser.ml.linkPreview.blockListEnabled", false);
 
 
 
-/*** 027 Nice Stuff ***/
 
-// Firefox Translations
-defaultPref("browser.translations.newSettingsUI.enable", true);
-defaultPref("extensions.translations.disabled", false); // [Nascosta]
-// Enable Spellcheck for both multi-line and single-line boxes
-defaultPref("layout.spellcheckDefault", 2);
-// Prevent including the space next to words when double-clicking/selecting text
-defaultPref("layout.word_select.eat_space_to_next_word", false);
-// controls if a double-click word selection also deletes one adjacent whitespace
-defaultPref("editor.word_select.delete_space_after_doubleclick_selection", true);
 
-/* Fork Server https://firefox-source-docs.mozilla.org/dom/ipc/process_model.html#fork-server */
-pref("dom.ipc.forkserver.enable", true); // [LINUX]
+
+
+
+
+
+
+
+
+
 
 /*** Configurazione ***/
 
