@@ -60,6 +60,9 @@ lockPref("browser.newtabpage.activity-stream.section.highlights.enabled", false)
 lockPref("browser.newtabpage.activity-stream.unifiedAds.enabled", false);
 lockPref("browser.topsites.contile.enabled", false);
 
+// Disabilita le promozioni per il download mobile
+lockPref("browser.newtabpage.activity-stream.mobileDownloadModal.enabled", false);
+
 // Disabilita il sistema di messaggistica interna di Firefox
 lockPref("browser.newtabpage.activity-stream.asrouter.enabled", false);
 
