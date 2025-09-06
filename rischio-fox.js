@@ -762,6 +762,7 @@ defaultPref("browser.backup.preferences.ui.enabled", true);
 
 // Abilita il nuovo design della barra laterale
 defaultPref("sidebar.revamp", true);
+defaultPref("sidebar.main.tools, "aichat,syncedtabs,history,bookmarks");
 
 // Aggiunge la voce "Visualizza informazioni immagine" al menu contestuale
 defaultPref("browser.menu.showViewImageInfo", true);
@@ -917,4 +918,4 @@ lockPref("browser.aboutConfig.showWarning", false);
 // Assicura che le nostre policy non vengano sovrascritte
 lockPref("browser.policies.perUserDir", false); // [LINUX]
 // Controllo versione
-lockPref("rischio.fox", "142.45");
+lockPref("rischio.fox", "142.46");
