@@ -530,6 +530,9 @@ defaultPref("dom.ipc.keepProcessesAlive.extension", 0); // [Nascosta]
    SICUREZZA AVANZATA
    ----------------------------------------------------------------------------------- */
 
+// Chiedi sempre permessi per usare camera & microfono
+lockPref("permissions.media.show_always_ask.enabled", true);
+
 // Disabilita l'API Safe Browsing obsoleta (v3)
 lockPref("browser.safebrowsing.provider.google.lists", "disabled");
 
@@ -747,7 +750,9 @@ defaultPref("dom.popup_allowed_events", "click dblclick");
 // Impedisci agli script di spostare e ridimensionare le finestre
 defaultPref("dom.disable_window_move_resize", true);
 
-
+// Impedisci alle pagine di ricaricarsi automaticamente
+defaultPref("accessibility.blockautorefresh", true);
+defaultPref("browser.meta_refresh_when_inactive.disabled", true);
 
 /*** 017 AI ***/
 
@@ -768,17 +773,6 @@ defaultPref("browser.ml.linkPreview.blockListEnabled", false);
 
 
 
-/*** 024 MISC. ***/
-
-// Prevent websites from automatically refreshing
-defaultPref("accessibility.blockautorefresh", true);
-defaultPref("browser.meta_refresh_when_inactive.disabled", true);
-// Reject invalid cookies
-defaultPref("extensions.cookie.rejectWhenInvalid", true);
-// Show advanced details on pages blocked by Safe Browsing by default
-defaultPref("browser.xul.error_pages.show_safe_browsing_details_on_load", true);
-// Show 'Always ask' for camera & microphone in the permissions drop-down (when that's what the user chose...)
-pref("permissions.media.show_always_ask.enabled", true);
 
 /*** 026 PERFORMANCE ***/
 
