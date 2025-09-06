@@ -31,6 +31,7 @@ INDICE:
 - SICUREZZA AVANZATA: include preferenze di sicurezza varie.
 - BARRE DI RICERCA: configura la barra degli indirizzi e di ricerca.
 - ELEMENTI FASTIDIOSI: rimuove i pop-up e le notifiche indesiderate.
+- INTERFACCIA
 - PRESTAZIONI
 
 ***/
@@ -738,6 +739,40 @@ defaultPref("accessibility.blockautorefresh", true);
 defaultPref("browser.meta_refresh_when_inactive.disabled", true);
 
 /* -----------------------------------------------------------------------------------
+   INTERFACCIA
+   ----------------------------------------------------------------------------------- */
+
+// Nascondi la barra del titolo
+defaultPref("browser.tabs.inTitlebar", 1);
+
+// Abilita la personalizzazione dell'interfaccia utente tramite CSS
+defaultPref("toolkit.legacyUserProfileCustomizations.stylesheets", true);
+
+// Riattiva la Modalità Compatta nel menu di personalizzazione
+defaultPref("browser.compactmode.show", true);
+
+// Abilita il cursore animato durante il caricamento delle pagine
+defaultPref("browser.spin_cursor_while_busy", true);
+
+// Rende visibile l'interfaccia per il backup delle preferenze
+defaultPref("browser.backup.preferences.ui.enabled", true);
+
+// Abilita il nuovo design della barra laterale
+defaultPref("sidebar.revamp", true);
+
+// Aggiunge la voce "Visualizza informazioni immagine" al menu contestuale
+defaultPref("browser.menu.showViewImageInfo", true);
+
+// Impedisce al tasto Alt di attivare la barra dei menu
+defaultPref("ui.key.menuAccessKeyFocuses", false);
+
+// Impedisce al titolo della pagina di essere esposto in modalità privata
+lockPref("privacy.exposeContentTitleInWindow.pbm", false);
+
+// Abilita alcune funzionalità per la gestione dei profili
+defaultPref("browser.profiles.enabled", true);
+
+/* -----------------------------------------------------------------------------------
    PRESTAZIONI
    ----------------------------------------------------------------------------------- */
 
@@ -793,29 +828,10 @@ defaultPref("content.notify.interval", 100000); // default=120000
 defaultPref("browser.ui.zoom.force-user-scalable", true);
 // Allow zooming out beyond the initial scale of websites by default
 defaultPref("apz.allow_zooming_out", true);
-// Allow the use of custom CSS by default
-defaultPref("toolkit.legacyUserProfileCustomizations.stylesheets", true);
 // Always load bookmarks in new tabs by default
 defaultPref("browser.tabs.loadBookmarksInTabs", true);
-// Display the option to enable `Compact` mode at `Customize toolbar...`
-defaultPref("browser.compactmode.show", true);
-// Display a spinning animation while websites are loading
-defaultPref("browser.spin_cursor_while_busy", true);
 // Enable autoscrolling
 defaultPref("general.autoScroll", true);
-// Enable Backup settings (at `about:preferences#general`)
-defaultPref("browser.backup.preferences.ui.enabled", true);
-// Enable + customize the new Sidebar by default
-defaultPref("browser.toolbarbuttons.introduced.sidebar-button", false);
-defaultPref("sidebar.backupState", '{"command":"","launcherWidth":0,"launcherExpanded":false,"launcherVisible":false}');
-defaultPref("sidebar.main.tools", "aichat,syncedtabs,history,bookmarks");
-defaultPref("sidebar.revamp", true);
-defaultPref("sidebar.visibility", "hide-sidebar");
-// Enable developer options for `about:profiling`
-defaultPref("devtools.performance.aboutprofiling.has-developer-options", true);
-// Enable Firefox Labs (`about:preferences#experimental`)
-defaultPref("browser.preferences.experimental", true);
-lockPref("browser.preferences.experimental.hidden", false);
 // Firefox Translations
 defaultPref("browser.translations.newSettingsUI.enable", true);
 defaultPref("extensions.translations.disabled", false); // [Nascosta]
@@ -827,17 +843,6 @@ defaultPref("browser.tabs.groups.enabled", true);
 defaultPref("browser.taskbarTabs.enabled", true);
 // Enable the `Unload Tab` context menu item by default
 defaultPref("browser.tabs.unloadTabInContextMenu", true);
-// Enable the `View Image Info` context menu item
-defaultPref("browser.menu.showViewImageInfo", true);
-// Ensure users can always control Nimbus recipes
-defaultPref("nimbus.debug", true);
-defaultPref("nimbus.validation.enabled", false);
-// Hide the Title Bar by default
-defaultPref("browser.tabs.inTitlebar", 1);
-// Highlight all Findbar (Ctrl + F) results by default
-defaultPref("findbar.highlightAll", true);
-// Prevent the alt key from toggling menu bar by default
-defaultPref("ui.key.menuAccessKeyFocuses", false);
 // Prevent displaying Private Browsing windows as separate icons on the Windows Taskbar by default
 defaultPref("browser.privateWindowSeparation.enabled", false);
 // Prevent including the space next to words when double-clicking/selecting text
@@ -888,19 +893,19 @@ defaultPref("identity.fxaccounts.migrateToDevEdition", false);
 // Reduce information shared with Firefox Sync 
 defaultPref("services.sync.sendVersionInfo", false);
 
-/*** MOZILLA ***/
 
-// Enable a fire button in Private Browsing Windows to reset the session
-lockPref("browser.privatebrowsing.resetPBM.enabled", true)
-// Prevent exposing content in the window title for Private Browsing windows
-lockPref("privacy.exposeContentTitleInWindow.pbm", false);
-// Enable the (new) UI for browser profiles by default
-defaultPref("browser.profiles.enabled", true);
-// Open links from external programs in new tabs by default
-defaultPref("browser.link.open_newwindow.override.external", 3);
+
+
+
+
+
+
+
 
 /*** 032 Rischio-Fox ***/
 
+// Open links from external programs in new tabs by default
+defaultPref("browser.link.open_newwindow.override.external", 3);
 // carica in background le schede aperte da programmi esterni
 defaultPref("browser.tabs.loadDivertedInBackground", true);
 // apre segnalibri in una nuova scheda
