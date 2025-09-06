@@ -673,37 +673,8 @@ lockPref("network.IDN_show_punycode", true);
 // Disabilita l'autocompletamento degli URL
 lockPref("browser.urlbar.autoFill", false);
 
-// Disabilita i suggerimenti basati sui dati degli appunti
-defaultPref("browser.urlbar.suggest.clipboard", false);
-
-// Disabilita i suggerimenti basati sulla cronologia
-defaultPref("browser.urlbar.suggest.history", false);
-
-// Disabilita i suggerimenti di ricerca (Tab to Search)
-defaultPref("browser.urlbar.suggest.engines", false);
-
-// Disabilita i suggerimenti basati sulle ricerche recenti
-defaultPref("browser.urlbar.suggest.recentsearches", false);
-
-// Disabilita i suggerimenti di ricerca dal motore di ricerca
-defaultPref("browser.search.suggest.enabled", false);
-defaultPref("browser.urlbar.showSearchSuggestionsFirst", false);
-defaultPref("browser.urlbar.suggest.searches", false);
-
-// Disabilita i suggerimenti di ricerca di tendenza
-defaultPref("browser.urlbar.suggest.trending", false);
-
-// Disabilita i suggerimenti dei segnalibri
-defaultPref("browser.urlbar.suggest.bookmark", false);
-
-// Disabilita i suggerimenti dei siti più visitati
-defaultPref("browser.urlbar.suggest.topsites", false);
-
 // Impedisci a Firefox di raccomandare estensioni di ricerca
 defaultPref("browser.search.searchEnginesURL", "");
-
-// Disabilita "suggerimenti avanzati" nella barra degli indirizzi
-defaultPref("browser.search.param.search_rich_suggestions", "");
 
 // Abilita la possibilità di usare un motore di ricerca diverso in finestre normali e private
 defaultPref("browser.search.separatePrivateDefault", true);
@@ -711,10 +682,6 @@ lockPref("browser.search.separatePrivateDefault.ui.enabled", true);
 
 // Mostra l'interfaccia per cambiare motore di ricerca per singole ricerche
 lockPref("browser.urlbar.scotchBonnet.disableOneOffs", false);
-
-// Disabilita le azioni rapide
-defaultPref("browser.urlbar.shortcuts.actions", false);
-defaultPref("browser.urlbar.suggest.quickactions", false);
 
 // Visualizza URL completi invece di termini di ricerca
 defaultPref("browser.urlbar.restyleSearches", false);
@@ -727,9 +694,9 @@ lockPref("browser.search.separatePrivateDefault.urlbarResult.enabled", true);
 // Visualizza la barra di ricerca nella barra degli strumenti personalizzabile
 defaultPref("browser.search.widget.inNavBar", true);
 
-// Assicura che il motore di ricerca predefinito sia impostato su DuckDuckGo
-defaultPref("browser.urlbar.placeholderName", "DuckDuckGo");
-defaultPref("browser.urlbar.placeholderName.private", "DuckDuckGo");
+// Apre risultati di ricerca in una nuova scheda
+defaultPref("browser.search.openintab", true);
+defaultPref("browser.urlbar.openintab", true);
 
 /* -----------------------------------------------------------------------------------
    ELEMENTI FASTIDIOSI
@@ -895,64 +862,6 @@ defaultPref("browser.tabs.groups.smart.userEnabled", true);
 defaultPref("browser.ml.linkPreview.blockListEnabled", false);
 
 
-
-
-
-/*** 030 FIREFOX SUGGEST ***/
-
-// Disable impression stats
-lockPref("browser.urlbar.quicksuggest.impressionCaps.nonSponsoredEnabled", false);
-lockPref("browser.urlbar.quicksuggest.impressionCaps.sponsoredEnabled", false);
-
-
-// Disable AccuWeather suggestions
-defaultPref("browser.urlbar.suggest.weather", false);
-defaultPref("browser.urlbar.weather.featureGate", true);
-// Disable AMO suggestions
-defaultPref("browser.urlbar.addons.featureGate", true);
-defaultPref("browser.urlbar.suggest.addons", false);
-// Disable AMP suggestions
-defaultPref("browser.urlbar.amp.featureGate", false);
-defaultPref("browser.urlbar.suggest.amp", false);
-// Disable "Exposure" telemetry
-lockPref("browser.urlbar.exposureResults", "");
-lockPref("browser.urlbar.keywordExposureResults", "");
-lockPref("browser.urlbar.showExposureResults", false);
-// Disable Fakespot suggestions
-defaultPref("browser.urlbar.fakespot.featureGate", false);
-defaultPref("browser.urlbar.suggest.fakespot", false);
-// Disable fetching minimum keyword lengths from Nimbus and/or Remote Settings
-lockPref("browser.urlbar.addons.minKeywordLength", 4);
-lockPref("browser.urlbar.fakespot.minKeywordLength", 4);
-lockPref("browser.urlbar.weather.minKeywordLength", 4);
-lockPref("browser.urlbar.yelp.minKeywordLength", 4);
-// Disable Firefox Suggest
-lockPref("browser.urlbar.quicksuggest.enabled", false);
-// Disable MDN suggestions
-defaultPref("browser.urlbar.mdn.featureGate", true);
-defaultPref("browser.urlbar.suggest.mdn", false);
-// Disable partner links/attribution
-lockPref("browser.partnerlink.attributionURL", "");
-lockPref("browser.partnerlink.campaign.topsites", "");
-// Disable row labels
-defaultPref("browser.urlbar.groupLabels.enabled", false);
-// Disable sponsored suggestions
-lockPref("browser.urlbar.sponsoredTopSites", false);
-lockPref("browser.urlbar.suggest.quicksuggest.sponsored", false);
-// Disable Telemetry
-lockPref("browser.urlbar.quicksuggest.contextualOptIn", false);
-lockPref("browser.urlbar.quicksuggest.dataCollection.enabled", false);
-lockPref("browser.urlbar.quicksuggest.settingsUi", 2);
-// Disable web suggestions
-defaultPref("browser.urlbar.quicksuggest.scenario", "offline");
-defaultPref("browser.urlbar.suggest.quicksuggest.nonsponsored", false);
-// Disable Wikipedia suggestions
-defaultPref("browser.urlbar.suggest.wikipedia", false);
-defaultPref("browser.urlbar.wikipedia.featureGate", true);
-// Disable Yelp suggestions
-defaultPref("browser.urlbar.suggest.yelp", false);
-defaultPref("browser.urlbar.yelp.featureGate", false);
-
 /*** 031 SYNC ***/
 
 // Disable promotions  
@@ -992,9 +901,6 @@ defaultPref("browser.link.open_newwindow.override.external", 3);
 
 /*** 032 Rischio-Fox ***/
 
-// apri risultati di ricerca in una nuova scheda
-defaultPref("browser.search.openintab", true);
-defaultPref("browser.urlbar.openintab", true);
 // carica in background le schede aperte da programmi esterni
 defaultPref("browser.tabs.loadDivertedInBackground", true);
 // apre segnalibri in una nuova scheda
