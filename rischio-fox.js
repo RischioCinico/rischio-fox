@@ -547,6 +547,47 @@ defaultPref("geo.provider.geoclue.always_high_accuracy", false); // [LINUX]
 // Imposta BeaconDB come provider di geolocalizzazione di rete predefinito
 defaultPref("geo.provider.network.url", "https://beacondb.net/v1/geolocate")
 
+/* -----------------------------------------------------------------------------------
+   PDF
+   ----------------------------------------------------------------------------------- */
+
+// Disabilita l'esecuzione di JavaScript all'interno dei PDF
+lockPref("pdfjs.enableScripting", false);
+
+// Disabilita il download automatico di un modello per il testo alternativo
+lockPref("pdfjs.enableAltTextModelDownload", false);
+
+// Disabilita i collegamenti ipertestuali automatici
+lockPref("pdfjs.enableAutoLinking", false);
+
+// Disabilita XFA, una fonte comune di vulnerabilità nei PDF
+lockPref("pdfjs.enableXfa", false);
+
+// Forzare l'uso del renderer di font interno
+lockPref("pdfjs.disableFontFace", true);
+
+// Forzare il download/la visualizzazione locale dei PDF e chiedere prima di aprire il visualizzatore PDF
+lockPref("pdfjs.disableRange", true);
+lockPref("pdfjs.disableStream", true);
+
+// Apri i link esterni in nuove schede/finestre
+lockPref("pdfjs.externalLinkTarget", 2);
+
+// Impedisci il tentativo di caricare/convertire file binari sconosciuti
+lockPref("pdfjs.handleOctetStream", false);
+
+// Abilita la possibilità di aggiungere firme
+defaultPref("pdfjs.enableSignatureEditor", true);
+
+// Abilita il testo alternativo
+defaultPref("pdfjs.enableAltText", true);
+defaultPref("pdfjs.enableAltTextForEnglish", true);
+
+// Mostra la barra laterale per impostazione predefinita durante la visualizzazione dei PDF
+defaultPref("pdfjs.sidebarViewOnLoad", 2);
+
+// Aggiorna l'URL quando si cambiano le pagine
+defaultPref("pdfjs.historyUpdateUrl", true);
 
 
 
@@ -568,37 +609,6 @@ defaultPref("browser.tabs.groups.smart.optin", true);
 defaultPref("browser.tabs.groups.smart.userEnabled", true);
 // Do not censor Link Preview results
 defaultPref("browser.ml.linkPreview.blockListEnabled", false);
-
-
-
-/*** 019 PDF.js ***/
-
-// Disable Automatic Alt Text by default
-defaultPref("pdfjs.enableAltTextModelDownload", false);
-// Disable automatic hyperlinks
-defaultPref("pdfjs.enableAutoLinking", false);
-// Disable JavaScript
-defaultPref("pdfjs.enableScripting", false);
-// Disable XFA
-defaultPref("pdfjs.enableXfa", false);
-// Enable the ability to add signatures
-defaultPref("pdfjs.enableSignatureEditor", true);
-// Enable Alt Text
-defaultPref("pdfjs.enableAltText", true);
-defaultPref("pdfjs.enableAltTextForEnglish", true);
-// Enforce using the internal font renderer
-defaultPref("pdfjs.disableFontFace", true);
-// Force PDFs to be downloaded/viewed locally, and prompt before opening the PDF Viewer
-defaultPref("pdfjs.disableRange", true);
-defaultPref("pdfjs.disableStream", true);
-// Open external links in new tabs/windows
-defaultPref("pdfjs.externalLinkTarget", 2);
-// Prevent attempting to load/convert unknown binary files
-defaultPref("pdfjs.handleOctetStream", false);
-// Show sidebar by default when viewing PDFs
-defaultPref("pdfjs.sidebarViewOnLoad", 2);
-// Update URL when changing pages
-defaultPref("pdfjs.historyUpdateUrl", true);
 
 /*** 020 SAFE BROWSING ***/
 
