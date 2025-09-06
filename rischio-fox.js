@@ -375,7 +375,7 @@ defaultPref("geo.provider.use_geoclue", true); // [LINUX]
 defaultPref("geo.provider.geoclue.always_high_accuracy", false); // [LINUX]
 
 // Imposta BeaconDB come provider di geolocalizzazione di rete predefinito
-defaultPref("geo.provider.network.url", "https://beacondb.net/v1/geolocate")
+defaultPref("geo.provider.network.url", "https://beacondb.net/v1/geolocate");
 
 /* -----------------------------------------------------------------------------------
    CONTENUTI MULTIMEDIALI
