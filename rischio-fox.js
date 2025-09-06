@@ -73,9 +73,6 @@ lockPref("browser.newtabpage.activity-stream.asrouter.enabled", false);
 // Disabilita il download di impostazioni remote per i "Siti più visitati"
 lockPref("browser.topsites.useRemoteSetting", false);
 
-// Disabilita le ricerche di tendenza
-defaultPref("browser.newtabpage.activity-stream.trendingSearch.enabled", false);
-
 // Blocca l'highlight dei nuovi sfondi
 defaultPref("browser.newtabpage.activity-stream.newtabWallpapers.highlightDismissed", true);
 
