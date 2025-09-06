@@ -484,6 +484,16 @@ lockPref("extensions.content_web_accessible.enabled", true);
    SICUREZZA AVANZATA
    ----------------------------------------------------------------------------------- */
 
+// Disabilita l'API Safe Browsing obsoleta (v3)
+lockPref("browser.safebrowsing.provider.google.lists", "disabled");
+
+// Abilita un'ulteriore lista di blocco per i plugin di Mozilla
+defaultPref("urlclassifier.blockedTable", "moztest-block-simple,mozplugin-block-digest256");
+
+// Salta i reindirizzamenti Safe Browsing per migliorare le prestazioni
+defaultPref("browser.safebrowsing.provider.google.reportURL", "https://transparencyreport.google.com/safe-browsing/search?url=");
+defaultPref("browser.safebrowsing.provider.google4.reportURL", "https://transparencyreport.google.com/safe-browsing/search?url=");
+
 // Disabilita i font Graphite & SVG OpenType
 defaultPref("gfx.font_rendering.graphite.enabled", false);
 defaultPref("gfx.font_rendering.opentype_svg.enabled", false);
@@ -632,23 +642,6 @@ defaultPref("browser.tabs.groups.smart.userEnabled", true);
 // Do not censor Link Preview results
 defaultPref("browser.ml.linkPreview.blockListEnabled", false);
 
-/*** 020 SAFE BROWSING ***/
-
-// Improve privacy & speed by sending the domain *only* to Google & without sending your locale to anyone
-defaultPref("browser.safebrowsing.provider.google.reportMalwareMistakeURL", "https://safebrowsing.google.com/safebrowsing/report_error/?tpl=mozilla&url=");
-defaultPref("browser.safebrowsing.provider.google.reportPhishMistakeURL", "https://safebrowsing.google.com/safebrowsing/report_error/?tpl=mozilla&url=");
-defaultPref("browser.safebrowsing.provider.google4.reportMalwareMistakeURL", "https://safebrowsing.google.com/safebrowsing/report_error/?tpl=mozilla&url=");
-defaultPref("browser.safebrowsing.provider.google4.reportPhishMistakeURL", "https://safebrowsing.google.com/safebrowsing/report_error/?tpl=mozilla&url=");
-defaultPref("browser.safebrowsing.reportPhishURL", "https://safebrowsing.google.com/safebrowsing/report_phish/?tpl=mozilla&url=");
-// Disable the legacy (and broken) Safe Browsing API
-lockPref("browser.safebrowsing.provider.google.lists", "disabled");
-// Enable an additional plug-in blocklist from Mozilla
-defaultPref("urlclassifier.blockedTable", "moztest-block-simple,mozplugin-block-digest256");
-// Prevent sending metadata of downloaded files to Safe Browsing providers
-defaultPref("browser.safebrowsing.downloads.remote.enabled", false);
-// We can skip the redirect to improve performance
-defaultPref("browser.safebrowsing.provider.google.reportURL", "https://transparencyreport.google.com/safe-browsing/search?url=");
-defaultPref("browser.safebrowsing.provider.google4.reportURL", "https://transparencyreport.google.com/safe-browsing/search?url=");
 
 /*** 021 MISC. PRIVACY + SECURITY ***/
 
