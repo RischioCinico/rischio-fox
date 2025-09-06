@@ -31,8 +31,10 @@ INDICE:
 - SICUREZZA AVANZATA: include preferenze di sicurezza varie.
 - BARRE DI RICERCA: configura la barra degli indirizzi e di ricerca.
 - ELEMENTI FASTIDIOSI: rimuove i pop-up e le notifiche indesiderate.
-- INTERFACCIA
+- INTERFACCIA: impostazioni che modificano l'aspetto del browser.
+- GESTIONE SCHEDE: gestisce il comportamento delle schede
 - PRESTAZIONI
+- INTELLIGENZA ARTIFICIALE
 
 ***/
 
@@ -773,6 +775,34 @@ lockPref("privacy.exposeContentTitleInWindow.pbm", false);
 defaultPref("browser.profiles.enabled", true);
 
 /* -----------------------------------------------------------------------------------
+   GESTIONE SCHEDE
+   ----------------------------------------------------------------------------------- */
+
+// Apri i segnalibri in una nuova scheda
+defaultPref("browser.tabs.loadBookmarksInTabs", true);
+
+// Abilita la funzionalità di Gruppi di schede
+defaultPref("browser.tabs.groups.enabled", true);
+
+// Aggiunge l'opzione "Scarica scheda" al menu contestuale
+defaultPref("browser.tabs.unloadTabInContextMenu", true);
+
+// Forza i link esterni ad aprirsi in una nuova scheda
+defaultPref("browser.link.open_newwindow.override.external", 3);
+
+// Apri le nuove schede in background
+defaultPref("browser.tabs.loadDivertedInBackground", true);
+
+// Apri i segnalibri in background
+defaultPref("browser.tabs.loadBookmarksInBackground", true);
+
+// Apri le nuove schede subito dopo quella attuale
+defaultPref("browser.tabs.insertAfterCurrent", true);
+
+// Lascia il browser aperto alla chiusura dell'ultima scheda
+defaultPref("browser.tabs.closeWindowWithLastTab", false);
+
+/* -----------------------------------------------------------------------------------
    PRESTAZIONI
    ----------------------------------------------------------------------------------- */
 
@@ -810,6 +840,9 @@ defaultPref("media.ffmpeg.vaapi.enabled", true); // [LINUX]
 // Riduce l'intervallo di notifica per gli aggiornamenti dei contenuti, migliorando la reattività
 defaultPref("content.notify.interval", 100000); // default=120000
 
+/* -----------------------------------------------------------------------------------
+   INTELLIGENZA ARTIFICIALE
+   ----------------------------------------------------------------------------------- */
 
 
 
@@ -828,8 +861,6 @@ defaultPref("content.notify.interval", 100000); // default=120000
 defaultPref("browser.ui.zoom.force-user-scalable", true);
 // Allow zooming out beyond the initial scale of websites by default
 defaultPref("apz.allow_zooming_out", true);
-// Always load bookmarks in new tabs by default
-defaultPref("browser.tabs.loadBookmarksInTabs", true);
 // Enable autoscrolling
 defaultPref("general.autoScroll", true);
 // Firefox Translations
@@ -837,12 +868,8 @@ defaultPref("browser.translations.newSettingsUI.enable", true);
 defaultPref("extensions.translations.disabled", false); // [Nascosta]
 // Enable Spellcheck for both multi-line and single-line boxes
 defaultPref("layout.spellcheckDefault", 2);
-// Enable Tab Groups
-defaultPref("browser.tabs.groups.enabled", true);
 // Enable Taskbar Tabs (PWAs)
 defaultPref("browser.taskbarTabs.enabled", true);
-// Enable the `Unload Tab` context menu item by default
-defaultPref("browser.tabs.unloadTabInContextMenu", true);
 // Prevent displaying Private Browsing windows as separate icons on the Windows Taskbar by default
 defaultPref("browser.privateWindowSeparation.enabled", false);
 // Prevent including the space next to words when double-clicking/selecting text
@@ -904,16 +931,7 @@ defaultPref("services.sync.sendVersionInfo", false);
 
 /*** 032 Rischio-Fox ***/
 
-// Open links from external programs in new tabs by default
-defaultPref("browser.link.open_newwindow.override.external", 3);
-// carica in background le schede aperte da programmi esterni
-defaultPref("browser.tabs.loadDivertedInBackground", true);
-// apre segnalibri in una nuova scheda
-defaultPref("browser.tabs.loadBookmarksInBackground", true);
-// apri nuove schede subito dopo la scheda attuale
-defaultPref("browser.tabs.insertAfterCurrent", true);
-// lascia il browser aperto alla chiusura dell'ultima scheda
-defaultPref("browser.tabs.closeWindowWithLastTab", false);
+
 // controls if a double-click word selection also deletes one adjacent whitespace
 defaultPref("editor.word_select.delete_space_after_doubleclick_selection", true);
 // non nascondere il cursore del mouse mentre si digita
