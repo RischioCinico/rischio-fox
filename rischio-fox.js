@@ -59,6 +59,7 @@ lockPref("browser.newtabpage.activity-stream.discoverystream.enabled", false);
 
 // Disabilita la sezione Highlights (include tutti i contenuti)
 lockPref("browser.newtabpage.activity-stream.section.highlights.enabled", false);
+lockPref("browser.newtabpage.activity-stream.feeds.section.topstories", false);
 
 // Disabilita completamente il sistema di annunci
 lockPref("browser.newtabpage.activity-stream.unifiedAds.enabled", false);
@@ -922,4 +923,4 @@ lockPref("browser.aboutConfig.showWarning", false);
 // Assicura che le nostre policy non vengano sovrascritte
 lockPref("browser.policies.perUserDir", false); // [LINUX]
 // Controllo versione
-lockPref("rischio.fox", "142.51");
+lockPref("rischio.fox", "142.52");
