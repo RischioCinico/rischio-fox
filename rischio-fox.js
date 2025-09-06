@@ -463,33 +463,50 @@ defaultPref("javascript.options.jit_trustedprincipals", false);
 // Disabilita il JIT di ottimizzazione per WebAssembly
 defaultPref("javascript.options.wasm_optimizingjit", false);
 
+/* -----------------------------------------------------------------------------------
+   GESTIONE CREDENZIALI
+   ----------------------------------------------------------------------------------- */
 
-/*** 015 PASSWORDS & AUTHENTICATION ***/
-
-// Always display a `reveal password` button in `password` `<input>` types 
+// Mostra sempre il pulsante "Mostra Password"
 defaultPref("layout.forms.reveal-password-button.enabled", true);
-// Disable Autofill
-defaultPref("signon.autofillForms", false);
-// Disable Basic authentication over HTTP
-defaultPref("network.http.basic_http_auth.enabled", false);
-// Disable formless capture of log-in credentials
-defaultPref("signon.formlessCapture.enabled", false);
+
+// Disabilita Autofill per maggiore sicurezza
+lockPref("signon.autofillForms", false);
+
+// Disabilita il Password Manager per il riempimento di indirizzi e carte di credito
+lockPref("extensions.formautofill.addresses.enabled", false);
+lockPref("extensions.formautofill.creditCards.enabled", false);
+
+// Disabilita l'autenticazione Basic su HTTP
+lockPref("network.http.basic_http_auth.enabled", false);
+
+// Disabilita la cattura credenziali al di fuori dei form di login
+lockPref("signon.formlessCapture.enabled", false);
+
+// Disabilita NTLM
+lockPref("network.automatic-ntlm-auth.allow-proxies", false);
+
+// Impedisci la troncatura di testo incollato
+defaultPref("editor.truncate_user_pastes", false);
+
+// Disabilita SPNEGO
+lockPref("network.negotiate-auth.allow-proxies", false);
+
+
+// Abilita i prompt di conferma per l'autenticazione
+lockPref("network.auth.confirmAuth.enabled", true);
+
+// Impedisci che le risorse interne aprano dialoghi di autenticazione HTTP
+lockPref("network.auth.subresource-http-auth-allow", 1);
+
 // Disable Microsoft SSO
 defaultPref("network.http.microsoft-entra-sso.container-enabled.0", false);
 defaultPref("network.microsoft-sso-authority-list", "");
-// Disable NTLM
-defaultPref("network.automatic-ntlm-auth.allow-proxies", false);
-// Disable Password Manager by default - Insecure & unencrypted
-defaultPref("extensions.formautofill.addresses.enabled", false);
-defaultPref("extensions.formautofill.creditCards.enabled", false);
-// Disable password truncation
-defaultPref("editor.truncate_user_pastes", false);
-// Disable SPNEGO
-defaultPref("network.negotiate-auth.allow-proxies", false);
-// Enable anti-spoof confirmation prompts
-defaultPref("network.auth.confirmAuth.enabled", true);
-// Prevent cross-origin sub-resources from opening HTTP authentication dialogs to protect against phishing
-defaultPref("network.auth.subresource-http-auth-allow", 1);
+
+
+
+
+
 
 /*** 016 EXTENSIONS ***/
 
