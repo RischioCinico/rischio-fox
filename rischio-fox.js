@@ -398,6 +398,10 @@ defaultPref("geo.provider.network.url", "https://beacondb.net/v1/geolocate");
 // Blocca la riproduzione automatica dei contenuti multimediali
 lockPref("media.autoplay.default", 5);
 
+// Abilita il pulsante Picture-in-Picture su tutti i video
+defaultPref("media.videocontrols.picture-in-picture.respect-disablePictureInPicture", false);
+pref("media.videocontrols.picture-in-picture.video-toggle.always-show", true);
+
 // Disabilita i plugin multimediali obsoleti (es. OpenH264)
 lockPref("media.gmp-gmpopenh264.enabled", false);
 lockPref("media.gmp.insecure.allow", false);
@@ -794,8 +798,6 @@ defaultPref("content.notify.interval", 100000); // default=120000
 
 /*** 027 Nice Stuff ***/
 
-// Allow Picture-in-Picture on all websites, even if they try to block it...
-defaultPref("media.videocontrols.picture-in-picture.respect-disablePictureInPicture", false);
 // Allow zoom on all websites, even if they try to block it...
 defaultPref("browser.ui.zoom.force-user-scalable", true);
 // Allow zooming out beyond the initial scale of websites by default
@@ -1133,8 +1135,6 @@ defaultPref("widget.gtk.hide-pointer-while-typing.enabled", false); // [LINUX]
 
 /* Fork Server https://firefox-source-docs.mozilla.org/dom/ipc/process_model.html#fork-server */
 pref("dom.ipc.forkserver.enable", true); // [LINUX]
-/* Mostra sempre controlli picture in picture */
-pref("media.videocontrols.picture-in-picture.video-toggle.always-show", true);
 
 /*** Configurazione ***/
 
