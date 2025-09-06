@@ -408,8 +408,10 @@ lockPref("network.file.disable_unc_paths", true);
 
 // Previene i WebRTC IP leaks forzando l'uso del proxy
 lockPref("media.peerconnection.ice.proxy_only_if_behind_proxy", true);
+
 // Avvisa l'utente quando cambia scheda durante la condivisione dello schermo
 lockPref("privacy.webrtc.sharedTabWarning", true);
+
 // Disabilita l'indicatore globale WebRTC
 lockPref("privacy.webrtc.hideGlobalIndicator", true);
 
