@@ -247,9 +247,6 @@ lockPref("mozilla.partner.id", "");
    DNS
    ----------------------------------------------------------------------------------- */
 
-// Imposta Quad0 come DNS predefinito
-defaultPref("network.trr.default_provider_uri", "https://dns.quad9.net/dns-query");
-
 // Abilita protezione massima per DoH
 lockPref("network.trr.mode", 3);
 
@@ -924,4 +921,4 @@ lockPref("browser.aboutConfig.showWarning", false);
 // Assicura che le nostre policy non vengano sovrascritte
 lockPref("browser.policies.perUserDir", false); // [LINUX]
 // Controllo versione
-lockPref("rischio.fox", "142.48");
+lockPref("rischio.fox", "142.49");
