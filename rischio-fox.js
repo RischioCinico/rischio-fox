@@ -38,12 +38,6 @@ INDICE:
    RACCOLTA DATI
    ----------------------------------------------------------------------------------- */
 
-// Blocca telemetria (disattivata anche in policies.json)
-lockPref("toolkit.telemetry.server", "data:,");
-lockPref("toolkit.telemetry.coverage.opt-out", true);
-lockPref("toolkit.coverage.opt-out", true);
-lockPref("toolkit.coverage.endpoint.base", "");
-
 // Blocca la telemetria legata alla homepage
 lockPref("browser.newtabpage.activity-stream.feeds.telemetry", false);
 lockPref("browser.newtabpage.activity-stream.telemetry", false);
@@ -232,12 +226,6 @@ defaultPref("dom.battery.enabled", false);
    DNS
    ----------------------------------------------------------------------------------- */
 
-// Abilita DNS over HTTPS (DoH) senza fallback
-lockPref("network.trr.mode", 3);
-
-// Imposta Quad9 come provider DoH (versione senza EDNS Client Subnet per massima privacy)
-defaultPref("network.trr.uri", "https://dns10.quad9.net/dns-query");
-
 // Disabilita completamente il prefetch DNS non richiesto
 lockPref("network.dns.disablePrefetch", true);
 lockPref("network.dns.disablePrefetchFromHTTPS", true);
@@ -249,9 +237,6 @@ lockPref("network.dnsCacheEntries", 0);
 lockPref("network.connectivity-service.DNS_HTTPS.domain", "");
 lockPref("network.trr.confirmationNS", "skip");
 lockPref("network.trr.skip-check-for-blocked-host", true);
-
-// Disabilita il fallback automatico al DNS di sistema non cifrato
-lockPref("network.trr.strict_native_fallback", true);
 
 // Disabilita i "listener" di rete che aggiornano le impostazioni dal sistema operativo
 lockPref("network.notify.changed", false);
@@ -336,9 +321,7 @@ defaultPref("security.cert_pinning.enforcement_level", 2);
 // Impone l'uso di HTTPS il più possibile, anche per indirizzi locali
 defaultPref("dom.security.https_first_for_local_addresses", true);
 defaultPref("dom.security.https_first_for_unknown_suffixes", true);
-lockPref("dom.security.https_only_mode", true);
 defaultPref("dom.security.https_only_mode.upgrade_local", true);
-lockPref("dom.security.https_only_mode_pbm", true);
 
 // Impedisci che i domini vengano esclusi automaticamente dalla modalità Solo HTTPS
 defaultPref("dom.security.https_first_add_exception_on_failure", false);
@@ -733,9 +716,6 @@ lockPref("full-screen-api.warning.timeout", 0);
 
 // Blocca pop-up presentazione blocco dei banner dei cookie
 lockPref("cookiebanners.ui.desktop.showCallout", false);
-
-// Blocca pop-up di avviso quando Firefox NON è il browser predefinito
-lockPref("browser.shell.skipDefaultBrowserCheckOnFirstRun", true);
 
 // Blocca avviso se Firefox non è il lettore PDF predefinito
 lockPref("browser.shell.checkDefaultPDF", false); // [Nascosta]
