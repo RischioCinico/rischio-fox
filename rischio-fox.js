@@ -492,7 +492,6 @@ defaultPref("editor.truncate_user_pastes", false);
 // Disabilita SPNEGO
 lockPref("network.negotiate-auth.allow-proxies", false);
 
-
 // Abilita i prompt di conferma per l'autenticazione
 lockPref("network.auth.confirmAuth.enabled", true);
 
