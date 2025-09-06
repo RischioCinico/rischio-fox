@@ -13,7 +13,7 @@
 /***
 INDICE:
 
-- RACCOLTA DATI: blocca l'invio di dati a Mozilla.
+- PAGINA INIZIALE: configura l'homepage di Firefox
 - TRACCE SU DISCO: gestisce la cache, la cronologia e i dati salvati localmente.
 - FILE SCARICATI: controlla il comportamento di download.
 - TRACKING PROTECTION: attiva le misure anti-tracciamento di Firefox.
@@ -35,52 +35,12 @@ INDICE:
 ***/
 
 /* -----------------------------------------------------------------------------------
-   RACCOLTA DATI
+   PAGINA INIZIALE
    ----------------------------------------------------------------------------------- */
 
 // Blocca la telemetria legata alla homepage
 lockPref("browser.newtabpage.activity-stream.feeds.telemetry", false);
 lockPref("browser.newtabpage.activity-stream.telemetry", false);
-
-// Blocca Crash Reports
-lockPref("breakpad.reportURL", "");
-lockPref("browser.crashReports.unsubmittedCheck.autoSubmit2", false);
-lockPref("browser.crashReports.unsubmittedCheck.enabled", false);
-
-// Blocca l'invio automatico a Mozilla dei dati di profilazione
-lockPref("toolkit.aboutLogging.uploadProfileToCloud", false);
-
-// Blocca Origin Trials
-lockPref("dom.origin-trials.enabled", false);
-
-// Rimuove stringhe di identificazione
-lockPref("app.distributor", "");
-lockPref("app.distributor.channel", "");
-lockPref("mozilla.partner.id", "");
-
-// Disabilita Web Compatibility Reporter
-lockPref("extensions.webcompat-reporter.enabled", false);
-lockPref("ui.new-webcompat-reporter.enabled", false);
-
-// Impedisce la creazione di registri dei domini bloccati
-lockPref("browser.contentblocking.cfr-milestone.enabled", false);
-lockPref("browser.contentblocking.cfr-milestone.milestone-shown-time", "999999999"); // [Nascosta]
-lockPref("browser.contentblocking.cfr-milestone.update-interval", 0); // [Nascosta]
-lockPref("browser.contentblocking.database.enabled", false);
-
-// Disabilita i report delle violazioni CSP
-lockPref("security.csp.reporting.enabled", false);
-
-// Disabilita l'API Beacon (Navigator.sendBeacon)
-defaultPref("beacon.enabled", false);
-
-// Disabilita il riconoscimento vocale online
-defaultPref("media.webspeech.service.endpoint", "data:,"); // [Mascosta]
-
-// Disabilita il monitoraggio dello stato della connessione di rete
-defaultPref("network.manage-offline-status", false);
-defaultPref("offline.autoDetect", false); // [LINUX] RedHat/Fedora-specific
-defaultPref("toolkit.networkmanager.disable", true); // [LINUX] RedHat/Fedora-specific
 
 /* -----------------------------------------------------------------------------------
    TRACCE SU DISCO
@@ -127,6 +87,12 @@ lockPref("browser.privatebrowsing.forceMediaMemoryCache", true);
 
 // Limita la durata massima dei cookie a 6 mesi
 defaultPref("network.cookie.maxageCap", 15552000);
+
+// Impedisce la creazione di registri dei domini bloccati
+lockPref("browser.contentblocking.cfr-milestone.enabled", false);
+lockPref("browser.contentblocking.cfr-milestone.milestone-shown-time", "999999999"); // [Nascosta]
+lockPref("browser.contentblocking.cfr-milestone.update-interval", 0); // [Nascosta]
+lockPref("browser.contentblocking.database.enabled", false);
 
 /* -----------------------------------------------------------------------------------
    FILE SCARICATI
@@ -221,6 +187,11 @@ lockPref("layout.css.visited_links_enabled", false);
 
 // Disabilita l'API della batteria per prevenire il fingerprinting
 defaultPref("dom.battery.enabled", false);
+
+// Rimuove stringhe di identificazione
+lockPref("app.distributor", "");
+lockPref("app.distributor.channel", "");
+lockPref("mozilla.partner.id", "");
 
 /* -----------------------------------------------------------------------------------
    DNS
@@ -335,6 +306,9 @@ defaultPref("security.ssl.require_safe_negotiation", true);
 // Mostra informazioni tecniche dettagliate sulle pagine di errore
 defaultPref("browser.xul.error_pages.expert_bad_cert", true);
 
+// Disabilita i report delle violazioni CSP
+lockPref("security.csp.reporting.enabled", false);
+
 /* -----------------------------------------------------------------------------------
    CONNESIONI IMPLICITE
    ----------------------------------------------------------------------------------- */
@@ -347,6 +321,19 @@ lockPref("network.early-hints.preconnect.max_connections", 0);
 
 // Impedisci che il clic con il tasto centrale del mouse su una nuova scheda apra URL
 lockPref("browser.tabs.searchclipboardfor.middleclick", false);
+
+// Disabilita il monitoraggio dello stato della connessione di rete
+defaultPref("network.manage-offline-status", false);
+defaultPref("offline.autoDetect", false); // [LINUX] RedHat/Fedora-specific
+defaultPref("toolkit.networkmanager.disable", true); // [LINUX] RedHat/Fedora-specific
+
+// Disabilita l'API Beacon (Navigator.sendBeacon)
+defaultPref("beacon.enabled", false);
+
+// Blocca Crash Reports
+lockPref("breakpad.reportURL", "");
+lockPref("browser.crashReports.unsubmittedCheck.autoSubmit2", false);
+lockPref("browser.crashReports.unsubmittedCheck.enabled", false);
 
 /* -----------------------------------------------------------------------------------
    GESTIONE CREDENZIALI
@@ -424,6 +411,9 @@ defaultPref("media.webrtc.hw.h264.enabled", true);
 // Abilita i DRM
 defaultPref("media.eme.enabled", true);
 defaultPref("media.eme.require-app-approval", true);
+
+// Disabilita il riconoscimento vocale online
+defaultPref("media.webspeech.service.endpoint", "data:,"); // [Mascosta]
 
 /* -----------------------------------------------------------------------------------
    WEBRTC
@@ -508,6 +498,10 @@ lockPref("extensions.content_web_accessible.enabled", true);
 
 // Riduci la durata dei processi delle estensioni
 defaultPref("dom.ipc.keepProcessesAlive.extension", 0); // [Nascosta]
+
+// Disabilita Web Compatibility Reporter
+lockPref("extensions.webcompat-reporter.enabled", false);
+lockPref("ui.new-webcompat-reporter.enabled", false);
 
 /* -----------------------------------------------------------------------------------
    SICUREZZA AVANZATA
@@ -612,6 +606,12 @@ defaultPref("security.block_fileuri_script_with_wrong_mime", true);
 
 // Impedisci le richieste di rete all'indirizzo 0.0.0.0
 lockPref("network.socket.ip_addr_any.disabled", true);
+
+// Blocca Origin Trials
+lockPref("dom.origin-trials.enabled", false);
+
+// Blocca l'invio automatico a Mozilla dei dati di profilazione
+lockPref("toolkit.aboutLogging.uploadProfileToCloud", false);
 
 /* -----------------------------------------------------------------------------------
    BARRE DI RICERCA
