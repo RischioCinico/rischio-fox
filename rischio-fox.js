@@ -256,12 +256,95 @@ lockPref("network.early-hints.preconnect.max_connections", 0);
 // Impedisci che il clic con il tasto centrale del mouse su una nuova scheda apra URL
 lockPref("browser.tabs.searchclipboardfor.middleclick", false);
 
+/* -----------------------------------------------------------------------------------
+   BARRE DI RICERCA
+   ----------------------------------------------------------------------------------- */
 
+// Disabilita "suggerimenti avanzati" nella barra degli indirizzi
+defaultPref("browser.search.param.search_rich_suggestions", "");
 
+// Consenti l'uso di un motore di ricerca diverso nelle finestre normali e private
+lockPref("browser.search.separatePrivateDefault.ui.enabled", true);
 
+// Mostra sempre il Punycode
+lockPref("network.IDN_show_punycode", true);
 
+// Disabilita l'autocompletamento degli URL
+lockPref("browser.urlbar.autoFill", false);
 
+// Disabilita i suggerimenti dagli appunti
+defaultPref("browser.urlbar.clipboard.featureGate", false);
+defaultPref("browser.urlbar.suggest.clipboard", false);
 
+// Disabilita i suggerimenti della cronologia
+defaultPref("browser.urlbar.suggest.history", false);
+
+// Disabilita le azioni rapide
+defaultPref("browser.urlbar.quickactions.showPrefs", true);
+defaultPref("browser.urlbar.secondaryActions.featureGate", true);
+defaultPref("browser.urlbar.shortcuts.actions", false);
+defaultPref("browser.urlbar.suggest.quickactions", false);
+
+// Disabilita l'onboarding delle azioni rapide
+defaultPref("browser.urlbar.quickactions.timesToShowOnboardingLabel", 0);
+
+// Disabilita i suggerimenti di ricerca recenti
+defaultPref("browser.urlbar.recentsearches.featureGate", false);
+defaultPref("browser.urlbar.suggest.recentsearches", false);
+
+// Disabilita i suggerimenti del motore di ricerca (Tab to search)
+defaultPref("browser.urlbar.suggest.engines", false);
+
+// Disabilita l'onboarding dei suggerimenti del motore di ricerca (Tab to search)
+defaultPref("browser.urlbar.tabToSearch.onboard.interactionsLeft", 0);
+
+// Disabilita i suggerimenti di ricerca per impostazione predefinita
+defaultPref("browser.search.suggest.enabled", false);
+defaultPref("browser.urlbar.showSearchSuggestionsFirst", false);
+defaultPref("browser.urlbar.suggest.searches", false);
+
+// Disabilita i suggerimenti di ricerca
+defaultPref("browser.urlbar.searchTips.test.ignoreShowLimits", false);
+lockPref("browser.urlbar.tipShownCount.searchTip_onboard", 999);
+lockPref("browser.urlbar.tipShownCount.searchTip_redirect", 999);
+
+// Disabilita le ricerche di tendenza
+defaultPref("browser.urlbar.suggest.trending", false);
+defaultPref("browser.urlbar.trending.featureGate", false);
+
+// Disabilita il taglio degli URL
+lockPref("browser.urlbar.trimHttps", false);
+lockPref("browser.urlbar.trimURLs", false);
+
+// Visualizza la barra di ricerca in `Personalizza la barra degli strumenti...`
+defaultPref("browser.search.widget.inNavBar", true);
+
+// Abilita i suggerimenti dei segnalibri per impostazione predefinita 
+defaultPref("browser.urlbar.suggest.bookmark", false);
+
+// Abilita il risultato "Cerca in finestra privata" per impostazione predefinita
+lockPref("browser.search.separatePrivateDefault.urlbarResult.enabled", true);
+
+// Disabilita i suggerimenti di collegamento rapido per impostazione predefinita
+defaultPref("browser.urlbar.suggest.topsites", false);
+
+// Assicura che il motore di ricerca predefinito sia impostato su DuckDuckGo
+defaultPref("browser.urlbar.placeholderName", "DuckDuckGo");
+defaultPref("browser.urlbar.placeholderName.private", "DuckDuckGo");
+
+// Mostra l'interfaccia utente per cambiare motore di ricerca per singole ricerche
+lockPref("browser.urlbar.scotchBonnet.disableOneOffs", false);
+
+// Se il taglio degli URL è abilitato, ripristinalo all'interazione dell'utente
+lockPref("browser.urlbar.untrimOnUserInteraction.featureGate", true);
+
+// Mostra URL completi invece di termini di ricerca
+defaultPref("browser.urlbar.restyleSearches", false);
+defaultPref("browser.urlbar.showSearchTerms.enabled", false);
+defaultPref("browser.urlbar.showSearchTerms.featureGate", false);
+
+// Usa lo stesso motore di ricerca per impostazione predefinita nelle finestre di navigazione normale e privata
+defaultPref("browser.search.separatePrivateDefault", true);
 
 
 
@@ -269,76 +352,11 @@ lockPref("browser.tabs.searchclipboardfor.middleclick", false);
 
 /*** MOZILLA ***/
 
-// Disabilita "suggerimenti avanzati" nella barra degli indirizzi
-lockPref("browser.search.param.search_rich_suggestions", "");
 // Enable a fire button in Private Browsing Windows to reset the session
 lockPref("browser.privatebrowsing.resetPBM.enabled", true)
 // Prevent exposing content in the window title for Private Browsing windows
 lockPref("privacy.exposeContentTitleInWindow.pbm", false);
 
-
-/*** 009 SEARCH & URL BAR ***/
-
-// Allow using a different search engine in normal vs. private Windows
-lockPref("browser.search.separatePrivateDefault.ui.enabled", true);
-// Always show Punycode
-lockPref("network.IDN_show_punycode", true);
-// Disable autofill/autocompletion of URLs by default
-lockPref("browser.urlbar.autoFill", false);
-// Disable clipboard suggestions by default, but allow users to enable them if desired
-defaultPref("browser.urlbar.clipboard.featureGate", false);
-defaultPref("browser.urlbar.suggest.clipboard", false);
-// Disable history suggestions by default
-defaultPref("browser.urlbar.suggest.history", false);
-// Disable quick actions by default, but allow users to enable them if desired
-defaultPref("browser.urlbar.quickactions.showPrefs", true);
-defaultPref("browser.urlbar.secondaryActions.featureGate", true);
-defaultPref("browser.urlbar.shortcuts.actions", false);
-defaultPref("browser.urlbar.suggest.quickactions", false);
-// Disable the quick actions onboarding
-defaultPref("browser.urlbar.quickactions.timesToShowOnboardingLabel", 0);
-// Disable recent search suggestions by default, but allow users to enable them if desired
-defaultPref("browser.urlbar.recentsearches.featureGate", false);
-defaultPref("browser.urlbar.suggest.recentsearches", false);
-// Disable search engine suggestions (Tab to search) by default
-defaultPref("browser.urlbar.suggest.engines", false);
-// Disable search engine suggestion (Tab to search) onboarding results
-defaultPref("browser.urlbar.tabToSearch.onboard.interactionsLeft", 0);
-// Disable search suggestions by default
-defaultPref("browser.search.suggest.enabled", false);
-defaultPref("browser.urlbar.showSearchSuggestionsFirst", false);
-defaultPref("browser.urlbar.suggest.searches", false);
-// Disable search tips
-defaultPref("browser.urlbar.searchTips.test.ignoreShowLimits", false);
-lockPref("browser.urlbar.tipShownCount.searchTip_onboard", 999);
-lockPref("browser.urlbar.tipShownCount.searchTip_redirect", 999);
-// Disable trending searches by default, but allow users to enable them if desired
-defaultPref("browser.urlbar.suggest.trending", false);
-defaultPref("browser.urlbar.trending.featureGate", false);
-// Disable URL trimming
-lockPref("browser.urlbar.trimHttps", false);
-lockPref("browser.urlbar.trimURLs", false);
-// Display the search bar at `Customize toolbar...`
-defaultPref("browser.search.widget.inNavBar", true);
-// Enable bookmark suggestions by default 
-defaultPref("browser.urlbar.suggest.bookmark", false);
-// Enable the "Search in Private Window" result by default
-lockPref("browser.search.separatePrivateDefault.urlbarResult.enabled", true);
-// Disable shortcut suggestions by default
-defaultPref("browser.urlbar.suggest.topsites", false);
-// Ensure the default search engine is set to DuckDuckGo
-defaultPref("browser.urlbar.placeholderName", "DuckDuckGo");
-defaultPref("browser.urlbar.placeholderName.private", "DuckDuckGo");
-// Expose the UI to switch search engines for individual searches
-lockPref("browser.urlbar.scotchBonnet.disableOneOffs", false);
-// If URL trimming is enabled, untrim on user interaction
-lockPref("browser.urlbar.untrimOnUserInteraction.featureGate", true);
-// Show full URLs instead of search terms
-defaultPref("browser.urlbar.restyleSearches", false);
-defaultPref("browser.urlbar.showSearchTerms.enabled", false);
-defaultPref("browser.urlbar.showSearchTerms.featureGate", false);
-// Use the same search engine in normal and private browsing windows by default
-defaultPref("browser.search.separatePrivateDefault", true);
 
 /*** 010 DNS ***/
 
