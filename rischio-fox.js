@@ -402,67 +402,65 @@ lockPref("network.file.path_blacklist", "/net");
 // Disabilita i percorsi UNC di Windows per prevenire il rischio di perdite di dati
 lockPref("network.file.disable_unc_paths", true);
 
+/* -----------------------------------------------------------------------------------
+   WEBRTC
+   ----------------------------------------------------------------------------------- */
 
-/*** MOZILLA ***/
-
-// Enable a fire button in Private Browsing Windows to reset the session
-lockPref("browser.privatebrowsing.resetPBM.enabled", true)
-// Prevent exposing content in the window title for Private Browsing windows
-lockPref("privacy.exposeContentTitleInWindow.pbm", false);
-
-/*** 012 WEBRTC ***/
-
-// disabilita indicatori WebRTC (sono buggati)
-lockPref("privacy.webrtc.hideGlobalIndicator", true);
-// Prevent WebRTC from bypassing the proxy (if configured)
+// Previene i WebRTC IP leaks forzando l'uso del proxy
 lockPref("media.peerconnection.ice.proxy_only_if_behind_proxy", true);
-// Warn users when attempting to switch tabs in a window being shared over WebRTC
+// Avvisa l'utente quando cambia scheda durante la condivisione dello schermo
 lockPref("privacy.webrtc.sharedTabWarning", true);
+// Disabilita l'indicatore globale WebRTC
+lockPref("privacy.webrtc.hideGlobalIndicator", true);
 
-/*** 013 MEDIA ***/
+/* -----------------------------------------------------------------------------------
+   CONTENUTI MULTIMEDIALI
+   ----------------------------------------------------------------------------------- */
 
-// Block media autoplay by default
-defaultPref("media.autoplay.default", 5);
-defaultPref("media.geckoview.autoplay.request.testing", 2);
-// Encrypted Media Extensions (DRM)
-defaultPref("browser.eme.ui.enabled", false);
+// Blocca la riproduzione automatica dei contenuti multimediali
+lockPref("media.autoplay.default", 5);
+
+// Disabilita i plugin multimediali obsoleti (es. OpenH264)
+lockPref("media.gmp-gmpopenh264.enabled", false);
+lockPref("media.gmp.insecure.allow", false);
+defaultPref("media.gmp-gmpopenh264.provider.enabled", false); // [LINUX] (per Fedora)
+
+// Disabilita la registrazione dei log per i plugin multimediali
+defaultPref("media.gmp.log.level", 70);
+
+// Abilita la decodifica hardware per i video H.264
+defaultPref("media.webrtc.hw.h264.enabled", true);
+
+// Abilita i DRM
 defaultPref("media.eme.enabled", true);
 defaultPref("media.eme.require-app-approval", true);
-// Disable GMP logging by default
-defaultPref("media.gmp.log.level", 70);
-// Disable OpenH264 (in favor of hardware decoding)
-defaultPref("media.ffmpeg.allow-openh264", false);
-defaultPref("media.gmp-gmpopenh264.enabled", false);
-defaultPref("media.gmp-gmpopenh264.provider.enabled", false); // [LINUX] RedHat/Fedora-specific
-defaultPref("media.gmp-gmpopenh264.visible", false);
-defaultPref("media.webrtc.hw.h264.enabled", true);
-// Enable click to play UI for certain CSS skins by default
-defaultPref("userContent.player.click_to_play", true); // [Nascosta]
-// Sandbox GMP
-defaultPref("media.gmp.insecure.allow", false); // [LINUX]
 
-/*** 014 ATTACK SURFACE REDUCTION ***/
+/* -----------------------------------------------------------------------------------
+   SICUREZZA AVANZATA
+   ----------------------------------------------------------------------------------- */
 
-// Disable ASM.JS
-defaultPref("javascript.options.asmjs", false);
-// Disable Graphite & SVG OpenType fonts
+// Disabilita i font Graphite & SVG OpenType
 defaultPref("gfx.font_rendering.graphite.enabled", false);
 defaultPref("gfx.font_rendering.opentype_svg.enabled", false);
-// Disable JavaScript Just-in-time Compilation (JIT)
-defaultPref("javascript.options.baselinejit", false);
-defaultPref("javascript.options.ion", false);
-defaultPref("javascript.options.jithints", false);
-defaultPref("javascript.options.main_process_disable_jit", true);
-defaultPref("javascript.options.native_regexp", false);
-defaultPref("javascript.options.wasm_optimizingjit", false);
-// Disable MathML
+
+// Disabilita MathML
 defaultPref("mathml.disabled", true);
-// Disable SharedArrayBuffer using window.postMessage
+
+// Disabilita WebVR/WebXR
+defaultPref("permissions.default.xr", 2);
+
+// Disabilita ASM.JS
+defaultPref("javascript.options.asmjs", false);
+
+// Disabilita SharedArrayBuffer con COOP/COEP
 defaultPref("dom.postMessage.sharedArrayBuffer.withCOOP_COEP", false);
-// Disable WebVR/WebXR
-defaultPref("permissions.default.xr", 2); //
-// If JIT (Ion/WarpMonkey) is disabled, also disable it for extensions
+
+// Disabilita il JIT per estensioni e contenuti locali
 defaultPref("javascript.options.jit_trustedprincipals", false);
+
+// Disabilita il JIT di ottimizzazione per WebAssembly
+defaultPref("javascript.options.wasm_optimizingjit", false);
+
 
 /*** 015 PASSWORDS & AUTHENTICATION ***/
 
@@ -1188,9 +1186,14 @@ defaultPref("identity.fxaccounts.migrateToDevEdition", false);
 // Reduce information shared with Firefox Sync 
 defaultPref("services.sync.sendVersionInfo", false);
 
+/*** MOZILLA ***/
+
+// Enable a fire button in Private Browsing Windows to reset the session
+lockPref("browser.privatebrowsing.resetPBM.enabled", true)
+// Prevent exposing content in the window title for Private Browsing windows
+lockPref("privacy.exposeContentTitleInWindow.pbm", false);
 
 /*** 032 Rischio-Fox ***/
-
 
 // apri risultati di ricerca in una nuova scheda
 defaultPref("browser.search.openintab", true);
