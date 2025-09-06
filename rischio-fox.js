@@ -888,44 +888,27 @@ pref("dom.ipc.forkserver.enable", true); // [LINUX]
    INTELLIGENZA ARTIFICIALE
    ----------------------------------------------------------------------------------- */
 
+// Disabilita fastidioso badge per indicare nuove funzioni
+lockPref("browser.ml.chat.page.footerBadge", false);
 
+// Mostra tasto per riassumere pagine
+defaultPref("browser.ml.chat.page", true);
 
-
-
-
-
-
-
-// AI Chat
-defaultPref("browser.ml.chat.enabled", true);
-// Link Preview
+// Abilita Link Preview
 defaultPref("browser.ml.linkPreview.enabled", true);
 defaultPref("browser.ml.linkPreview.optin", true);
-// Disable Perplexity URL bar promotion
-defaultPref("browser.urlbar.perplexity.hasBeenInSearchMode", true);
-// Suggest tabs and a name for tab groups
-defaultPref("browser.tabs.groups.smart.enabled", true);
-defaultPref("browser.tabs.groups.smart.optin", true);
-defaultPref("browser.tabs.groups.smart.userEnabled", true);
-// Do not censor Link Preview results
+
+// Non censurare Link Preview
 defaultPref("browser.ml.linkPreview.blockListEnabled", false);
 
+// Disabilita suggerimenti nomi per gruppi di schede
+defaultPref("browser.tabs.groups.smart.enabled", false);
+defaultPref("browser.tabs.groups.smart.optin", false);
+defaultPref("browser.tabs.groups.smart.userEnabled", false);
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-/*** Configurazione ***/
-
+/* -----------------------------------------------------------------------------------
+   FINE
+   ----------------------------------------------------------------------------------- */
 
 // Abilita il sandboxing per questo file di configurazione
 lockPref("general.config.sandbox_enabled", true); // [Nascosta]
