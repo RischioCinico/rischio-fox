@@ -662,9 +662,41 @@ lockPref("dom.origin-trials.enabled", false);
 // Blocca l'invio automatico a Mozilla dei dati di profilazione
 lockPref("toolkit.aboutLogging.uploadProfileToCloud", false);
 
+// Mostra sempre il Punycode
+lockPref("network.IDN_show_punycode", true);
+
 /* -----------------------------------------------------------------------------------
    BARRE DI RICERCA
    ----------------------------------------------------------------------------------- */
+
+// Disabilita l'autocompletamento degli URL
+lockPref("browser.urlbar.autoFill", false);
+
+// Disabilita i suggerimenti basati sui dati degli appunti
+defaultPref("browser.urlbar.suggest.clipboard", false);
+
+// Disabilita i suggerimenti basati sulla cronologia
+defaultPref("browser.urlbar.suggest.history", false);
+
+// Disabilita i suggerimenti di ricerca (Tab to Search)
+defaultPref("browser.urlbar.suggest.engines", false);
+
+// Disabilita i suggerimenti basati sulle ricerche recenti
+defaultPref("browser.urlbar.suggest.recentsearches", false);
+
+// Disabilita i suggerimenti di ricerca dal motore di ricerca
+defaultPref("browser.search.suggest.enabled", false);
+defaultPref("browser.urlbar.showSearchSuggestionsFirst", false);
+defaultPref("browser.urlbar.suggest.searches", false);
+
+// Disabilita i suggerimenti di ricerca di tendenza
+defaultPref("browser.urlbar.suggest.trending", false);
+
+// Disabilita i suggerimenti dei segnalibri
+defaultPref("browser.urlbar.suggest.bookmark", false);
+
+// Disabilita i suggerimenti dei siti più visitati
+defaultPref("browser.urlbar.suggest.topsites", false);
 
 // Impedisci a Firefox di raccomandare estensioni di ricerca
 defaultPref("browser.search.searchEnginesURL", "");
@@ -672,84 +704,31 @@ defaultPref("browser.search.searchEnginesURL", "");
 // Disabilita "suggerimenti avanzati" nella barra degli indirizzi
 defaultPref("browser.search.param.search_rich_suggestions", "");
 
-// Consenti l'uso di un motore di ricerca diverso nelle finestre normali e private
+// Abilita la possibilità di usare un motore di ricerca diverso in finestre normali e private
+defaultPref("browser.search.separatePrivateDefault", true);
 lockPref("browser.search.separatePrivateDefault.ui.enabled", true);
 
-// Mostra sempre il Punycode
-lockPref("network.IDN_show_punycode", true);
-
-// Disabilita l'autocompletamento degli URL
-lockPref("browser.urlbar.autoFill", false);
-
-// Disabilita i suggerimenti dagli appunti
-defaultPref("browser.urlbar.clipboard.featureGate", false);
-defaultPref("browser.urlbar.suggest.clipboard", false);
-
-// Disabilita i suggerimenti della cronologia
-defaultPref("browser.urlbar.suggest.history", false);
+// Mostra l'interfaccia per cambiare motore di ricerca per singole ricerche
+lockPref("browser.urlbar.scotchBonnet.disableOneOffs", false);
 
 // Disabilita le azioni rapide
-defaultPref("browser.urlbar.quickactions.showPrefs", true);
-defaultPref("browser.urlbar.secondaryActions.featureGate", true);
 defaultPref("browser.urlbar.shortcuts.actions", false);
 defaultPref("browser.urlbar.suggest.quickactions", false);
 
-// Disabilita l'onboarding delle azioni rapide
-defaultPref("browser.urlbar.quickactions.timesToShowOnboardingLabel", 0);
-
-// Disabilita i suggerimenti di ricerca recenti
-defaultPref("browser.urlbar.recentsearches.featureGate", false);
-defaultPref("browser.urlbar.suggest.recentsearches", false);
-
-// Disabilita i suggerimenti del motore di ricerca (Tab to search)
-defaultPref("browser.urlbar.suggest.engines", false);
-
-// Disabilita l'onboarding dei suggerimenti del motore di ricerca (Tab to search)
-defaultPref("browser.urlbar.tabToSearch.onboard.interactionsLeft", 0);
-
-// Disabilita i suggerimenti di ricerca per impostazione predefinita
-defaultPref("browser.search.suggest.enabled", false);
-defaultPref("browser.urlbar.showSearchSuggestionsFirst", false);
-defaultPref("browser.urlbar.suggest.searches", false);
-
-// Disabilita i suggerimenti di ricerca
-defaultPref("browser.urlbar.searchTips.test.ignoreShowLimits", false);
-lockPref("browser.urlbar.tipShownCount.searchTip_onboard", 999);
-lockPref("browser.urlbar.tipShownCount.searchTip_redirect", 999);
-
-// Disabilita le ricerche di tendenza
-defaultPref("browser.urlbar.suggest.trending", false);
-defaultPref("browser.urlbar.trending.featureGate", false);
-
-// Disabilita il taglio degli URL
+// Visualizza URL completi invece di termini di ricerca
+defaultPref("browser.urlbar.restyleSearches", false);
+defaultPref("browser.urlbar.showSearchTerms.enabled", false);
 lockPref("browser.urlbar.trimURLs", false);
 
-// Visualizza la barra di ricerca in `Personalizza la barra degli strumenti...`
-defaultPref("browser.search.widget.inNavBar", true);
-
-// Abilita i suggerimenti dei segnalibri per impostazione predefinita 
-defaultPref("browser.urlbar.suggest.bookmark", false);
-
-// Abilita il risultato "Cerca in finestra privata" per impostazione predefinita
+// Abilita "Cerca in finestra privata"
 lockPref("browser.search.separatePrivateDefault.urlbarResult.enabled", true);
 
-// Disabilita i suggerimenti di collegamento rapido per impostazione predefinita
-defaultPref("browser.urlbar.suggest.topsites", false);
+// Visualizza la barra di ricerca nella barra degli strumenti personalizzabile
+defaultPref("browser.search.widget.inNavBar", true);
 
 // Assicura che il motore di ricerca predefinito sia impostato su DuckDuckGo
 defaultPref("browser.urlbar.placeholderName", "DuckDuckGo");
 defaultPref("browser.urlbar.placeholderName.private", "DuckDuckGo");
-
-// Mostra l'interfaccia utente per cambiare motore di ricerca per singole ricerche
-lockPref("browser.urlbar.scotchBonnet.disableOneOffs", false);
-
-// Mostra URL completi invece di termini di ricerca
-defaultPref("browser.urlbar.restyleSearches", false);
-defaultPref("browser.urlbar.showSearchTerms.enabled", false);
-defaultPref("browser.urlbar.showSearchTerms.featureGate", false);
-
-// Usa lo stesso motore di ricerca per impostazione predefinita nelle finestre di navigazione normale e privata
-defaultPref("browser.search.separatePrivateDefault", true);
 
 /* -----------------------------------------------------------------------------------
    ELEMENTI FASTIDIOSI
