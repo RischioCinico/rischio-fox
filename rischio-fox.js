@@ -10,6 +10,19 @@
 /*    ░     ░       ░ ░ ░      ░  ░  ░░     ░ ░               ░ ░  ░    ░   */
 /*                    ░                                                     */
 
+/***
+INDICE:
+- RACCOLTA DATI: blocca l'invio di dati a Mozilla.
+- TRACCE SU DISCO: gestisce la cache, la cronologia e i dati salvati localmente.
+- FILE SCARICATI: controlla il comportamento di download.
+- TRACKING PROTECTION: attiva le misure anti-tracciamento di Firefox.
+- FINGERPRINTING: protegge dall'identificazione tramite l'impronta digitale del browser.
+- DNS: configura il DNS over HTTPS per connessioni sicure.
+- PROXY: gestisce il comportamento del proxy.
+- CONNESIONI SICURE: imposta le regole per HTTPS e la validazione dei certificati.
+- CONNESIONI IMPLICITE: disabilita le connessioni non richieste.
+***/
+
 /* -----------------------------------------------------------------------------------
    RACCOLTA DATI
    ----------------------------------------------------------------------------------- */
@@ -113,23 +126,6 @@ lockPref("browser.download.clearHistoryOnDelete", 2);
 lockPref("browser.download.alwaysOpenPanel", false);
 
 /* -----------------------------------------------------------------------------------
-   ELEMENTI FASTIDIOSI
-   ----------------------------------------------------------------------------------- */
-
-// Disabilita avviso schermo intero
-lockPref("full-screen-api.warning.delay", -1);
-lockPref("full-screen-api.warning.timeout", 0);
-
-// Blocca pop-up presentazione blocco dei banner dei cookie
-lockPref("cookiebanners.ui.desktop.showCallout", false);
-
-// Blocca pop-up di avviso quando Firefox NON è il browser predefinito
-lockPref("browser.shell.skipDefaultBrowserCheckOnFirstRun", true);
-
-// Blocca avviso se Firefox non è il lettore PDF predefinito
-lockPref("browser.shell.checkDefaultPDF", false); // [Nascosta]
-
-/* -----------------------------------------------------------------------------------
    TRACKING PROTECTION
    ----------------------------------------------------------------------------------- */
 
@@ -177,6 +173,65 @@ lockPref("privacy.window.maxInnerWidth", 1600);
 
 // Disabilita i selettori CSS per i link visitati per prevenire il "history sniffing"
 lockPref("layout.css.visited_links_enabled", false);
+
+/* -----------------------------------------------------------------------------------
+   DNS
+   ----------------------------------------------------------------------------------- */
+
+// Abilita DNS over HTTPS (DoH) senza fallback
+lockPref("network.trr.mode", 3);
+
+// Imposta Quad9 come provider DoH (versione senza EDNS Client Subnet per massima privacy)
+defaultPref("network.trr.uri", "https://dns10.quad9.net/dns-query");
+
+// Disabilita completamente il prefetch DNS non richiesto
+lockPref("network.dns.disablePrefetch", true);
+lockPref("network.dns.disablePrefetchFromHTTPS", true);
+
+// Disabilita il caching delle risposte DNS
+lockPref("network.dnsCacheEntries", 0);
+
+// Disabilita i controlli di connettività DoH di Firefox
+lockPref("network.connectivity-service.DNS_HTTPS.domain", "");
+lockPref("network.trr.confirmationNS", "skip");
+lockPref("network.trr.skip-check-for-blocked-host", true);
+
+// Disabilita il fallback automatico al DNS di sistema non cifrato
+lockPref("network.trr.strict_native_fallback", true);
+
+// Disabilita i "listener" di rete che aggiornano le impostazioni dal sistema operativo
+lockPref("network.notify.changed", false);
+lockPref("network.notify.checkForNRPT", false);
+lockPref("network.notify.checkForProxies", false);
+lockPref("network.notify.dnsSuffixList", false);
+lockPref("network.notify.initial_call", false);
+lockPref("network.notify.IPv6", false);
+lockPref("network.notify.resolvers", false);
+
+// Risolvi i problemi di connettività IPv6 quando il DoH è abilitato
+lockPref("network.dns.preferIPv6", true);
+
+// Impedisci il bypass del DoH per le voci del file hosts
+lockPref("network.trr.exclude-etc-hosts", false);
+
+/* -----------------------------------------------------------------------------------
+   PROXY
+   ----------------------------------------------------------------------------------- */
+
+// Impedisci il failover automatico a connessioni dirette (non-proxy)
+lockPref("network.proxy.failover_direct", false);
+
+// Impedisci di bypassare il proxy anche quando il sistema lo richiede
+lockPref("network.proxy.allow_bypass", false);
+
+// Usa il proxy per la risoluzione DNS remota (previene i DNS leaks)
+lockPref("network.proxy.socks_remote_dns", true);
+
+// Disabilita la gestione dei percorsi di sistema (es. file:///net)
+lockPref("network.file.path_blacklist", "/net");
+
+// Disabilita i percorsi UNC di Windows per prevenire il rischio di perdite di dati
+lockPref("network.file.disable_unc_paths", true);
 
 /* -----------------------------------------------------------------------------------
    CONNESIONI SICURE
@@ -345,65 +400,6 @@ defaultPref("browser.urlbar.showSearchTerms.featureGate", false);
 
 // Usa lo stesso motore di ricerca per impostazione predefinita nelle finestre di navigazione normale e privata
 defaultPref("browser.search.separatePrivateDefault", true);
-
-/* -----------------------------------------------------------------------------------
-   DNS
-   ----------------------------------------------------------------------------------- */
-
-// Abilita DNS over HTTPS (DoH) senza fallback
-lockPref("network.trr.mode", 3);
-
-// Imposta Quad9 come provider DoH (versione senza EDNS Client Subnet per massima privacy)
-defaultPref("network.trr.uri", "https://dns10.quad9.net/dns-query");
-
-// Disabilita completamente il prefetch DNS non richiesto
-lockPref("network.dns.disablePrefetch", true);
-lockPref("network.dns.disablePrefetchFromHTTPS", true);
-
-// Disabilita il caching delle risposte DNS
-lockPref("network.dnsCacheEntries", 0);
-
-// Disabilita i controlli di connettività DoH di Firefox
-lockPref("network.connectivity-service.DNS_HTTPS.domain", "");
-lockPref("network.trr.confirmationNS", "skip");
-lockPref("network.trr.skip-check-for-blocked-host", true);
-
-// Disabilita il fallback automatico al DNS di sistema non cifrato
-lockPref("network.trr.strict_native_fallback", true);
-
-// Disabilita i "listener" di rete che aggiornano le impostazioni dal sistema operativo
-lockPref("network.notify.changed", false);
-lockPref("network.notify.checkForNRPT", false);
-lockPref("network.notify.checkForProxies", false);
-lockPref("network.notify.dnsSuffixList", false);
-lockPref("network.notify.initial_call", false);
-lockPref("network.notify.IPv6", false);
-lockPref("network.notify.resolvers", false);
-
-// Risolvi i problemi di connettività IPv6 quando il DoH è abilitato
-lockPref("network.dns.preferIPv6", true);
-
-// Impedisci il bypass del DoH per le voci del file hosts
-lockPref("network.trr.exclude-etc-hosts", false);
-
-/* -----------------------------------------------------------------------------------
-   PROXY
-   ----------------------------------------------------------------------------------- */
-
-// Impedisci il failover automatico a connessioni dirette (non-proxy)
-lockPref("network.proxy.failover_direct", false);
-
-// Impedisci di bypassare il proxy anche quando il sistema lo richiede
-lockPref("network.proxy.allow_bypass", false);
-
-// Usa il proxy per la risoluzione DNS remota (previene i DNS leaks)
-lockPref("network.proxy.socks_remote_dns", true);
-
-// Disabilita la gestione dei percorsi di sistema (es. file:///net)
-lockPref("network.file.path_blacklist", "/net");
-
-// Disabilita i percorsi UNC di Windows per prevenire il rischio di perdite di dati
-lockPref("network.file.disable_unc_paths", true);
 
 /* -----------------------------------------------------------------------------------
    WEBRTC
@@ -589,7 +585,22 @@ defaultPref("pdfjs.sidebarViewOnLoad", 2);
 // Aggiorna l'URL quando si cambiano le pagine
 defaultPref("pdfjs.historyUpdateUrl", true);
 
+/* -----------------------------------------------------------------------------------
+   ELEMENTI FASTIDIOSI
+   ----------------------------------------------------------------------------------- */
 
+// Disabilita avviso schermo intero
+lockPref("full-screen-api.warning.delay", -1);
+lockPref("full-screen-api.warning.timeout", 0);
+
+// Blocca pop-up presentazione blocco dei banner dei cookie
+lockPref("cookiebanners.ui.desktop.showCallout", false);
+
+// Blocca pop-up di avviso quando Firefox NON è il browser predefinito
+lockPref("browser.shell.skipDefaultBrowserCheckOnFirstRun", true);
+
+// Blocca avviso se Firefox non è il lettore PDF predefinito
+lockPref("browser.shell.checkDefaultPDF", false); // [Nascosta]
 
 
 
