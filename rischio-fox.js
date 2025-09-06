@@ -63,6 +63,7 @@ lockPref("browser.newtabpage.activity-stream.section.highlights.enabled", false)
 // Disabilita completamente il sistema di annunci
 lockPref("browser.newtabpage.activity-stream.unifiedAds.enabled", false);
 lockPref("browser.topsites.contile.enabled", false);
+lockPref("browser.newtabpage.activity-stream.showSponsoredCheckboxes", false);
 
 // Disabilita le promozioni per il download mobile
 lockPref("browser.newtabpage.activity-stream.mobileDownloadModal.enabled", false);
@@ -921,4 +922,4 @@ lockPref("browser.aboutConfig.showWarning", false);
 // Assicura che le nostre policy non vengano sovrascritte
 lockPref("browser.policies.perUserDir", false); // [LINUX]
 // Controllo versione
-lockPref("rischio.fox", "142.50");
+lockPref("rischio.fox", "142.51");
