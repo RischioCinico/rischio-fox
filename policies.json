@@ -22,6 +22,9 @@
       "TopSites": true,
       "SponsoredTopSites": false,
       "Highlights": false,
+      "Pocket": false,
+      "SponsoredPocket": false,
+      "SponsoredStories": false,
       "Snippets": false,
       "Locked": true
     },
