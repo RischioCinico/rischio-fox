@@ -353,9 +353,6 @@ defaultPref("network.microsoft-sso-authority-list", "");
    GEOLOCALIZZAZIONE
    ----------------------------------------------------------------------------------- */
 
-// Blocca i prompt dei siti web per l'accesso alla geolocalizzazione
-defaultPref("permissions.default.geo", 2);
-
 // Impedisci di fornire incondizionatamente un'alta precisione della posizione
 defaultPref("geo.provider.geoclue.always_high_accuracy", false); // [LINUX]
 
@@ -480,9 +477,6 @@ defaultPref("gfx.font_rendering.opentype_svg.enabled", false);
 // Disabilita MathML
 defaultPref("mathml.disabled", true);
 
-// Disabilita WebVR/WebXR
-defaultPref("permissions.default.xr", 2);
-
 // Impostazioni per il compilatore JIT
 defaultPref("javascript.options.asmjs", false);
 defaultPref("javascript.options.jit_trustedprincipals", false);
@@ -577,9 +571,6 @@ defaultPref("browser.urlbar.openintab", true);
 /* -----------------------------------------------------------------------------------
    ELEMENTI FASTIDIOSI
    ----------------------------------------------------------------------------------- */
-
-// Blocca automaticamente le richieste di notifica dei siti web
-defaultPref("permissions.default.desktop-notification", 2);
 
 // Disabilita avviso e transizione quando si passa a schermo intero
 lockPref("full-screen-api.warning.delay", -1);
