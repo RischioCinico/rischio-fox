@@ -50,27 +50,8 @@ defaultPref("browser.newtabpage.pinned", "[{\"url\":\"https://www.youtube.com/\"
 defaultPref("browser.newtabpage.activity-stream.feeds.wallpaperfeed", true);
 defaultPref("browser.newtabpage.activity-stream.newtabWallpapers.wallpaper", "dark-landscape");
 
-// Blocca la telemetria legata alla homepage
-lockPref("browser.newtabpage.activity-stream.feeds.telemetry", false);
-lockPref("browser.newtabpage.activity-stream.telemetry", false);
-
-// Disabilita completamente Discovery Stream (include Fakespot, Pocket, e annunci)
-lockPref("browser.newtabpage.activity-stream.discoverystream.enabled", false);
-
-// Disabilita la sezione Highlights (include tutti i contenuti)
-lockPref("browser.newtabpage.activity-stream.section.highlights.enabled", false);
-lockPref("browser.newtabpage.activity-stream.feeds.section.topstories", false);
-
-// Disabilita completamente il sistema di annunci
-lockPref("browser.newtabpage.activity-stream.unifiedAds.enabled", false);
-lockPref("browser.topsites.contile.enabled", false);
-lockPref("browser.newtabpage.activity-stream.showSponsoredCheckboxes", false);
-
 // Disabilita le promozioni per il download mobile
 lockPref("browser.newtabpage.activity-stream.mobileDownloadModal.enabled", false);
-
-// Disabilita il sistema di messaggistica interna di Firefox
-lockPref("browser.newtabpage.activity-stream.asrouter.enabled", false);
 
 // Disabilita il download di impostazioni remote per i "Siti più visitati"
 lockPref("browser.topsites.useRemoteSetting", false);
@@ -86,10 +67,6 @@ defaultPref("browser.newtabpage.activity-stream.improvesearch.handoffToAwesomeba
 
 // Rimuove i collegamenti predefiniti e le scorciatoie di ricerca
 lockPref("browser.newtabpage.activity-stream.default.sites", "");
-lockPref("browser.newtabpage.activity-stream.improvesearch.noDefaultSearchTile", true);
-lockPref("browser.newtabpage.activity-stream.improvesearch.topSiteSearchShortcuts", false);
-lockPref("browser.newtabpage.activity-stream.improvesearch.topSiteSearchShortcuts.havePinned", "");
-lockPref("browser.newtabpage.activity-stream.improvesearch.topSiteSearchShortcuts.searchEngines", "");
 
 /* -----------------------------------------------------------------------------------
    TRACCE SU DISCO
@@ -384,11 +361,6 @@ defaultPref("toolkit.networkmanager.disable", true); // [LINUX] RedHat/Fedora-sp
 
 // Disabilita l'API Beacon (Navigator.sendBeacon)
 defaultPref("beacon.enabled", false);
-
-// Blocca Crash Reports
-lockPref("breakpad.reportURL", "");
-lockPref("browser.crashReports.unsubmittedCheck.autoSubmit2", false);
-lockPref("browser.crashReports.unsubmittedCheck.enabled", false);
 
 /* -----------------------------------------------------------------------------------
    GESTIONE CREDENZIALI
