@@ -562,7 +562,6 @@ lockPref("browser.urlbar.scotchBonnet.disableOneOffs", false);
 
 // Visualizza URL completi invece di termini di ricerca
 defaultPref("browser.urlbar.restyleSearches", false);
-defaultPref("browser.urlbar.showSearchTerms.enabled", false);
 lockPref("browser.urlbar.trimURLs", false);
 
 // Abilita "Cerca in finestra privata"
@@ -747,16 +746,12 @@ defaultPref("ui.swipeAnimationEnabled", 0); // [Nascosta]
 
 // Disabilita l'anteprima delle schede al passaggio del mouse per risparmiare risorse
 defaultPref("browser.tabs.hoverPreview.enabled", false);
-defaultPref("browser.tabs.hoverPreview.showThumbnails", false);
 
 // Disabilita il reporting degli errori CSS
 defaultPref("layout.css.report_errors", false);
 
 // Abilita la decodifica video hardware con VA-API
 defaultPref("media.ffmpeg.vaapi.enabled", true); // [LINUX]
-
-// Riduce l'intervallo di notifica per gli aggiornamenti dei contenuti, migliorando la reattività
-defaultPref("content.notify.interval", 100000); // default=120000
 
 /* Fork Server https://firefox-source-docs.mozilla.org/dom/ipc/process_model.html#fork-server */
 pref("dom.ipc.forkserver.enable", true); // [LINUX]
