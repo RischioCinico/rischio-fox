@@ -513,7 +513,6 @@ lockPref("privacy.resistFingerprinting.block_mozAddonManager", true);
 // Richiedi firme e origini sicure per le estensioni
 lockPref("extensions.install.requireBuiltInCerts", true); // [Nascosta]
 lockPref("extensions.update.requireBuiltInCerts", true); // [Nascosta]
-lockPref("extensions.install_origins.enabled", true);
 lockPref("extensions.install.requireSecureOrigin", true); // [Nascosta]
 
 // Disabilita l'assegnazione automatica di permessi pericolosi
