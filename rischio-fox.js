@@ -25,7 +25,6 @@ INDICE:
 - GESTIONE CREDENZIALI: controlla password e compilazione automatica.
 - GEOLOCALIZZAZIONE: gestisce l'accesso alla tua posizione.
 - CONTENUTI MULTIMEDIALI: gestisce la riproduzione automatica e i plugin.
-- WEBRTC: previene le fughe di indirizzi IP.
 - PDF: gestisce la sicurezza del lettore PDF.
 - ESTENSIONI: imposta le regole per le estensioni.
 - SICUREZZA AVANZATA: include preferenze di sicurezza varie.
