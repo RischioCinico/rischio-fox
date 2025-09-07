@@ -47,26 +47,13 @@ INDICE:
 defaultPref("browser.newtabpage.pinned", "[{\"url\":\"https://www.youtube.com/\",\"label\":\"YouTube\"},{\"url\":\"https://www.reddit.com/\",\"label\":\"Reddit\"},{\"url\":\"https://mail.google.com/mail/u/0/?hl=it#inbox\",\"label\":\"Gmail\"},{\"url\":\"https://addons.mozilla.org/it/firefox/\",\"label\":\"Estensioni\"},{\"url\":\"https://wiki.archlinux.org/title/List_of_applications\",\"label\":\"Applicazioni\"},{\"url\":\"https://it.wikipedia.org/wiki/Pagina_principale\",\"label\":\"Wikipedia\"},{\"url\":\"https://github.com/\",\"label\":\"GitHub\"},{\"url\":\"https://www.diretta.it/\",\"label\":\"Diretta\"}]");
 
 // Imposta sfondo
-defaultPref("browser.newtabpage.activity-stream.feeds.wallpaperfeed", true);
 defaultPref("browser.newtabpage.activity-stream.newtabWallpapers.wallpaper", "dark-landscape");
-
-// Disabilita le promozioni per il download mobile
-lockPref("browser.newtabpage.activity-stream.mobileDownloadModal.enabled", false);
-
-// Disabilita il download di impostazioni remote per i "Siti più visitati"
-lockPref("browser.topsites.useRemoteSetting", false);
-
-// Blocca l'highlight dei nuovi sfondi
-defaultPref("browser.newtabpage.activity-stream.newtabWallpapers.highlightDismissed", true);
 
 // Nasconde il logo di Firefox dalla pagina iniziale
 defaultPref("browser.newtabpage.activity-stream.logowordmark.alwaysVisible", false);
 
 // Impedisce il passaggio dei dati di ricerca alla barra degli indirizzi
 defaultPref("browser.newtabpage.activity-stream.improvesearch.handoffToAwesomebar", false);
-
-// Rimuove i collegamenti predefiniti e le scorciatoie di ricerca
-lockPref("browser.newtabpage.activity-stream.default.sites", "");
 
 /* -----------------------------------------------------------------------------------
    TRACCE SU DISCO
