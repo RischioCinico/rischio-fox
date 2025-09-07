@@ -115,13 +115,6 @@ lockPref("browser.download.alwaysOpenPanel", false);
    TRACKING PROTECTION
    ----------------------------------------------------------------------------------- */
 
-// Abilita Enhanced Tracking Protection
-lockPref("browser.contentblocking.category", "strict");
-
-// Applica eccezioni per evitare malfunzionamenti delle pagine
-defaultPref("privacy.trackingprotection.allow_list.baseline.enabled", true);
-defaultPref("privacy.trackingprotection.allow_list.convenience.enabled", true);
-
 // Abilita i Container
 lockPref("privacy.userContext.enabled", true);
 lockPref("privacy.userContext.ui.enabled", true);
