@@ -217,9 +217,6 @@ lockPref("network.trr.exclude-etc-hosts", false);
 // Impedisci il failover automatico a connessioni dirette (non-proxy)
 lockPref("network.proxy.failover_direct", false);
 
-// Impedisci di bypassare il proxy anche quando il sistema lo richiede
-lockPref("network.proxy.allow_bypass", false);
-
 // Usa il proxy per la risoluzione DNS remota (previene i DNS leaks)
 lockPref("network.proxy.socks_remote_dns", true);
 
