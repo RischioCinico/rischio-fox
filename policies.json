@@ -45,6 +45,15 @@
       "Default": false,
       "Locked": true
     },
+    "SanitizeOnShutdown": {
+    "Cache": true,
+    "Downloads": false,
+    "History": false,
+    "FormData": false,
+    "OfflineApps": false,
+    "Cookies": false,
+    "SiteSettings": false
+    },
     "SearchBar": "unified",
     "SkipTermsOfUse": true,
     "UserMessaging": {
