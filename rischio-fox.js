@@ -24,7 +24,6 @@ INDICE:
 - CONNESSIONI IMPLICITE: disabilita le connessioni non richieste.
 - GESTIONE CREDENZIALI: controlla password e compilazione automatica.
 - GEOLOCALIZZAZIONE: gestisce l'accesso alla tua posizione.
-- CONTENUTI MULTIMEDIALI: gestisce la riproduzione automatica e i plugin.
 - PDF: gestisce la sicurezza del lettore PDF.
 - ESTENSIONI: imposta le regole per le estensioni.
 - SICUREZZA AVANZATA: include preferenze di sicurezza varie.
@@ -360,17 +359,6 @@ defaultPref("geo.provider.geoclue.always_high_accuracy", false); // [LINUX]
 defaultPref("geo.provider.network.url", "https://beacondb.net/v1/geolocate");
 
 /* -----------------------------------------------------------------------------------
-   CONTENUTI MULTIMEDIALI
-   ----------------------------------------------------------------------------------- */
-
-// Blocca la riproduzione automatica dei contenuti multimediali
-lockPref("media.autoplay.default", 5);
-
-// Abilita il pulsante Picture-in-Picture su tutti i video
-defaultPref("media.videocontrols.picture-in-picture.respect-disablePictureInPicture", false);
-pref("media.videocontrols.picture-in-picture.video-toggle.always-show", true);
-
-/* -----------------------------------------------------------------------------------
    PDF
    ----------------------------------------------------------------------------------- */
 
@@ -632,6 +620,10 @@ defaultPref("sidebar.main.tools", "aichat,syncedtabs,history,bookmarks");
 
 // Aggiunge la voce "Visualizza informazioni immagine" al menu contestuale
 defaultPref("browser.menu.showViewImageInfo", true);
+
+// Abilita il pulsante Picture-in-Picture su tutti i video
+defaultPref("media.videocontrols.picture-in-picture.respect-disablePictureInPicture", false);
+pref("media.videocontrols.picture-in-picture.video-toggle.always-show", true);
 
 // Impedisce al tasto Alt di attivare la barra dei menu
 defaultPref("ui.key.menuAccessKeyFocuses", false);
