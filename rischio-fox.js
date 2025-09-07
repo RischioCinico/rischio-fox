@@ -71,14 +71,12 @@ lockPref("privacy.clearOnShutdown_v2.siteSettings", false);
 
 // Disabilita cache su disco
 lockPref("browser.cache.disk.enable", false);
-lockPref("browser.cache.disk_cache_ssl", false);
 
 // Diminuisce il numero di salvataggi delle schede chiuse
 lockPref("browser.sessionstore.max_tabs_undo", 5);
 
 // Disabilita la cache Indietro/Avanti (bfcache)
 lockPref("browser.sessionhistory.max_total_viewers", 0);
-lockPref("fission.bfcacheInParent", false);
 
 // Disabilita la generazione di miniature delle pagine
 lockPref("browser.pagethumbnails.capturing_disabled", true); // [Nascosta]
@@ -102,9 +100,6 @@ lockPref("browser.privatebrowsing.forceMediaMemoryCache", true);
 defaultPref("network.cookie.maxageCap", 15552000);
 
 // Impedisce la creazione di registri dei domini bloccati
-lockPref("browser.contentblocking.cfr-milestone.enabled", false);
-lockPref("browser.contentblocking.cfr-milestone.milestone-shown-time", "999999999"); // [Nascosta]
-lockPref("browser.contentblocking.cfr-milestone.update-interval", 0); // [Nascosta]
 lockPref("browser.contentblocking.database.enabled", false);
 
 /* -----------------------------------------------------------------------------------
