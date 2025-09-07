@@ -197,8 +197,6 @@ lockPref("network.dnsCacheEntries", 0);
 
 // Disabilita i controlli di connettività DoH di Firefox
 lockPref("network.connectivity-service.DNS_HTTPS.domain", "");
-lockPref("network.trr.confirmationNS", "skip");
-lockPref("network.trr.skip-check-for-blocked-host", true);
 
 // Disabilita i "listener" di rete che aggiornano le impostazioni dal sistema operativo
 lockPref("network.notify.changed", false);
@@ -208,9 +206,6 @@ lockPref("network.notify.dnsSuffixList", false);
 lockPref("network.notify.initial_call", false);
 lockPref("network.notify.IPv6", false);
 lockPref("network.notify.resolvers", false);
-
-// Risolvi i problemi di connettività IPv6 quando il DoH è abilitato
-lockPref("network.dns.preferIPv6", true);
 
 // Impedisci il bypass del DoH per le voci del file hosts
 lockPref("network.trr.exclude-etc-hosts", false);
