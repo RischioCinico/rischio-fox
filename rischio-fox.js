@@ -918,4 +918,4 @@ lockPref("browser.aboutConfig.showWarning", false);
 // Assicura che le nostre policy non vengano sovrascritte
 lockPref("browser.policies.perUserDir", false); // [LINUX]
 // Controllo versione
-lockPref("rischio.fox", "142.52");
+lockPref("rischio.fox", "142.53");
