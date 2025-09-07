@@ -1,5 +1,7 @@
 {
   "policies": {
+    "AutofillAddressEnabled": false,
+    "AutofillCreditCardEnabled": false,
     "Cookies": {
       "Locked": true,
       "Behavior": "reject-tracker-and-partition-foreign",
