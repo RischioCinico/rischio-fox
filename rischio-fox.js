@@ -148,6 +148,9 @@ lockPref("privacy.bounceTrackingProtection.requireStatefulBounces", false);
 // Abbassa la priorità di rete per i tracker, velocizzando il caricamento della pagina
 lockPref("privacy.trackingprotection.lower_network_priority", true);
 
+// Avvisa l'utente quando cambia scheda durante la condivisione dello schermo
+lockPref("privacy.webrtc.sharedTabWarning", true);
+
 /* -----------------------------------------------------------------------------------
    FINGERPRINTING
    ----------------------------------------------------------------------------------- */
@@ -226,6 +229,9 @@ lockPref("network.file.path_blacklist", "/net");
 // Disabilita i percorsi UNC di Windows per prevenire il rischio di perdite di dati
 lockPref("network.file.disable_unc_paths", true);
 
+// Previene i WebRTC IP leaks forzando l'uso del proxy
+lockPref("media.peerconnection.ice.proxy_only_if_behind_proxy", true);
+
 /* -----------------------------------------------------------------------------------
    CONNESSIONI SICURE
    ----------------------------------------------------------------------------------- */
@@ -258,7 +264,6 @@ lockPref("security.enterprise_roots.enabled", false);
 defaultPref("network.http.http3.disable_when_third_party_roots_found", false);
 
 // Disabilita TLS 1.3 0-RTT per prevenire attacchi
-defaultPref("network.http.http3.enable_0rtt", false);
 defaultPref("security.tls.enable_0rtt_data", false);
 
 // Abilita i controlli di revoca CRLite e dà loro la priorità su OCSP
@@ -300,15 +305,12 @@ lockPref("security.csp.reporting.enabled", false);
 lockPref("network.early-hints.enabled", false);
 lockPref("network.early-hints.over-http-v1-1.enabled", false);
 lockPref("network.early-hints.preconnect.enabled", false);
-lockPref("network.early-hints.preconnect.max_connections", 0);
 
 // Impedisci che il clic con il tasto centrale del mouse su una nuova scheda apra URL
 lockPref("browser.tabs.searchclipboardfor.middleclick", false);
 
 // Disabilita il monitoraggio dello stato della connessione di rete
 defaultPref("network.manage-offline-status", false);
-defaultPref("offline.autoDetect", false); // [LINUX] RedHat/Fedora-specific
-defaultPref("toolkit.networkmanager.disable", true); // [LINUX] RedHat/Fedora-specific
 
 // Disabilita l'API Beacon (Navigator.sendBeacon)
 defaultPref("beacon.enabled", false);
@@ -355,9 +357,6 @@ defaultPref("network.microsoft-sso-authority-list", "");
 // Blocca i prompt dei siti web per l'accesso alla geolocalizzazione
 defaultPref("permissions.default.geo", 2);
 
-// Abilita Geoclue per le distribuzioni GNU/Linux (più privato rispetto al servizio di rete)
-defaultPref("geo.provider.use_geoclue", true); // [LINUX]
-
 // Impedisci di fornire incondizionatamente un'alta precisione della posizione
 defaultPref("geo.provider.geoclue.always_high_accuracy", false); // [LINUX]
 
@@ -374,32 +373,6 @@ lockPref("media.autoplay.default", 5);
 // Abilita il pulsante Picture-in-Picture su tutti i video
 defaultPref("media.videocontrols.picture-in-picture.respect-disablePictureInPicture", false);
 pref("media.videocontrols.picture-in-picture.video-toggle.always-show", true);
-
-// Disabilita la registrazione dei log per i plugin multimediali
-defaultPref("media.gmp.log.level", 70);
-
-// Abilita la decodifica hardware per i video H.264
-defaultPref("media.webrtc.hw.h264.enabled", true);
-
-// Abilita i DRM
-defaultPref("media.eme.enabled", true);
-defaultPref("media.eme.require-app-approval", true);
-
-// Disabilita il riconoscimento vocale online
-defaultPref("media.webspeech.service.endpoint", "data:,"); // [Nascosta]
-
-/* -----------------------------------------------------------------------------------
-   WEBRTC
-   ----------------------------------------------------------------------------------- */
-
-// Previene i WebRTC IP leaks forzando l'uso del proxy
-lockPref("media.peerconnection.ice.proxy_only_if_behind_proxy", true);
-
-// Avvisa l'utente quando cambia scheda durante la condivisione dello schermo
-lockPref("privacy.webrtc.sharedTabWarning", true);
-
-// Disabilita l'indicatore globale WebRTC
-lockPref("privacy.webrtc.hideGlobalIndicator", true);
 
 /* -----------------------------------------------------------------------------------
    PDF
@@ -658,6 +631,9 @@ defaultPref("dom.disable_window_move_resize", true);
 // Impedisci alle pagine di ricaricarsi automaticamente
 defaultPref("accessibility.blockautorefresh", true);
 defaultPref("browser.meta_refresh_when_inactive.disabled", true);
+
+// Disabilita l'indicatore globale WebRTC
+lockPref("privacy.webrtc.hideGlobalIndicator", true);
 
 /* -----------------------------------------------------------------------------------
    INTERFACCIA
