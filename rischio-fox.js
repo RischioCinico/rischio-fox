@@ -407,7 +407,6 @@ defaultPref("pdfjs.enableSignatureEditor", true);
 
 // Abilita il testo alternativo
 defaultPref("pdfjs.enableAltText", true);
-defaultPref("pdfjs.enableAltTextForEnglish", true);
 
 // Mostra la barra laterale per impostazione predefinita durante la visualizzazione dei PDF
 defaultPref("pdfjs.sidebarViewOnLoad", 2);
@@ -437,7 +436,6 @@ lockPref("extensions.install.requireSecureOrigin", true); // [Nascosta]
 // Disabilita l'assegnazione automatica di permessi pericolosi
 lockPref("extensions.originControls.grantByDefault", false);
 lockPref("extensions.manifestV2.actionsPopupURLRestricted", true);
-lockPref("extensions.geckoProfiler.acceptedExtensionIds", "");
 lockPref("extensions.content_web_accessible.enabled", true);
 
 // Riduci la durata dei processi delle estensioni
@@ -471,18 +469,9 @@ defaultPref("devtools.accessibility.enabled", false);
 // Disabilita Clipboard API per impedire ai siti di leggere il contenuto degli appunti
 lockPref("dom.events.asyncClipboard.clipboardItem", false);
 lockPref("dom.events.asyncClipboard.readText", false);
-lockPref("dom.events.testing.asyncClipboard", false);
 
 // Disabilita Content Analysis SDK
-lockPref("browser.contentanalysis.default_result", 0);
 lockPref("browser.contentanalysis.enabled", false);
-lockPref("browser.contentanalysis.interception_point.clipboard.enabled", false);
-lockPref("browser.contentanalysis.interception_point.drag_and_drop.enabled", false);
-lockPref("browser.contentanalysis.interception_point.file_upload.enabled", false);
-lockPref("browser.contentanalysis.interception_point.print.enabled", false);
-lockPref("browser.contentanalysis.max_connections", 0);
-lockPref("browser.contentanalysis.show_blocked_result", true);
-lockPref("browser.contentanalysis.silent_notifications", false);
 
 // Disabilita i font Graphite & SVG OpenType
 defaultPref("gfx.font_rendering.graphite.enabled", false);
@@ -494,20 +483,14 @@ defaultPref("mathml.disabled", true);
 // Disabilita WebVR/WebXR
 defaultPref("permissions.default.xr", 2);
 
-// Disabilita ASM.JS
+// Impostazioni per il compilatore JIT
 defaultPref("javascript.options.asmjs", false);
+defaultPref("javascript.options.jit_trustedprincipals", false);
+defaultPref("javascript.options.wasm_optimizingjit", false);
+defaultPref("javascript.options.content_process_write_protect_code", true);
 
 // Disabilita SharedArrayBuffer con COOP/COEP
 defaultPref("dom.postMessage.sharedArrayBuffer.withCOOP_COEP", false);
-
-// Prevent marking JIT code pages as both writable and executable, only one or the other...
-defaultPref("javascript.options.content_process_write_protect_code", true);
-
-// Disabilita il JIT per estensioni e contenuti locali
-defaultPref("javascript.options.jit_trustedprincipals", false);
-
-// Disabilita il JIT di ottimizzazione per WebAssembly
-defaultPref("javascript.options.wasm_optimizingjit", false);
 
 // Impedisci l'esposizione di componenti XPCOM ai siti web
 defaultPref("dom.use_components_shim", false);
