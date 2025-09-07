@@ -59,16 +59,6 @@ defaultPref("browser.newtabpage.activity-stream.improvesearch.handoffToAwesomeba
    TRACCE SU DISCO
    ----------------------------------------------------------------------------------- */
 
-// Abilita la cancellazione dei dati alla chiusura di Firefox
-lockPref("privacy.sanitize.sanitizeOnShutdown", true);
-
-// Elimina la cache e previene l'eliminazione accidentale di altri dati
-lockPref("privacy.clearOnShutdown_v2.browsingHistoryAndDownloads", false);
-lockPref("privacy.clearOnShutdown_v2.cache", true);
-lockPref("privacy.clearOnShutdown_v2.cookiesAndStorage", false);
-lockPref("privacy.clearOnShutdown_v2.formdata", false);
-lockPref("privacy.clearOnShutdown_v2.siteSettings", false);
-
 // Disabilita cache su disco
 lockPref("browser.cache.disk.enable", false);
 
