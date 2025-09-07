@@ -456,11 +456,6 @@ lockPref("media.autoplay.default", 5);
 defaultPref("media.videocontrols.picture-in-picture.respect-disablePictureInPicture", false);
 pref("media.videocontrols.picture-in-picture.video-toggle.always-show", true);
 
-// Disabilita i plugin multimediali obsoleti (es. OpenH264)
-lockPref("media.gmp-gmpopenh264.enabled", false);
-lockPref("media.gmp.insecure.allow", false);
-defaultPref("media.gmp-gmpopenh264.provider.enabled", false); // [LINUX] (per Fedora)
-
 // Disabilita la registrazione dei log per i plugin multimediali
 defaultPref("media.gmp.log.level", 70);
 
