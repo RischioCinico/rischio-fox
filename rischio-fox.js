@@ -372,10 +372,6 @@ defaultPref("layout.forms.reveal-password-button.enabled", true);
 // Disabilita Autofill per maggiore sicurezza
 lockPref("signon.autofillForms", false);
 
-// Disabilita il Password Manager per il riempimento di indirizzi e carte di credito
-lockPref("extensions.formautofill.addresses.enabled", false);
-lockPref("extensions.formautofill.creditCards.enabled", false);
-
 // Disabilita l'autenticazione Basic su HTTP
 lockPref("network.http.basic_http_auth.enabled", false);
 
