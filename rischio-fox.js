@@ -223,12 +223,6 @@ lockPref("mozilla.partner.id", "");
    DNS
    ----------------------------------------------------------------------------------- */
 
-// Imposta DNS predefinito
-defaultPref("network.trr.default_provider_uri", "https://dns.quad9.net/dns-query");
-
-// Abilita protezione massima per DoH
-lockPref("network.trr.mode", 3);
-
 // Disabilita completamente il prefetch DNS non richiesto
 lockPref("network.dns.disablePrefetch", true);
 lockPref("network.dns.disablePrefetchFromHTTPS", true);
