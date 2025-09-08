@@ -20,11 +20,6 @@
       "Locked": true
     },
     "DontCheckDefaultBrowser": true,
-    "EnableTrackingProtection": {
-      "Value": true,
-      "Category": "strict",
-      "Locked": true
-    },
     "FirefoxHome": {
       "Search": true,
       "TopSites": true,
