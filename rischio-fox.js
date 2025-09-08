@@ -122,8 +122,7 @@ defaultPref("browser.link.force_default_user_context_id_for_external_opens", tru
 // Isola le risorse iniettate dalle estensioni
 defaultPref("privacy.antitracking.isolateContentScriptResources", true);
 
-// Abilita Do Not Track & Global Privacy Control
-lockPref("privacy.donottrackheader.enabled", true);
+// Abilita Global Privacy Control
 lockPref("privacy.globalprivacycontrol.enabled", true);
 
 // Salta automaticamente i banner di consenso dei cookie
