@@ -766,9 +766,12 @@ defaultPref("browser.tabs.groups.smart.userEnabled", false);
 
 // Abilita il sandboxing per questo file di configurazione
 lockPref("general.config.sandbox_enabled", true); // [Nascosta]
+
 // Disabilita gli avvisi quando si accede ad `about:config`
 lockPref("browser.aboutConfig.showWarning", false);
+
 // Assicura che le nostre policy non vengano sovrascritte
 lockPref("browser.policies.perUserDir", false); // [LINUX]
+
 // Controllo versione
 lockPref("rischio.fox", "142.54");
