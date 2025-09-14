@@ -57,6 +57,10 @@ defaultPref("browser.newtabpage.activity-stream.logowordmark.alwaysVisible", fal
 // Impedisce il passaggio dei dati di ricerca alla barra degli indirizzi
 defaultPref("browser.newtabpage.activity-stream.improvesearch.handoffToAwesomebar", false);
 
+// Meteo
+lockPref("browser.newtabpage.activity-stream.system.showWeather", true);
+defaultPref("browser.newtabpage.activity-stream.weather.display", "detailed");
+
 /* -----------------------------------------------------------------------------------
    TRACCE SU DISCO
    ----------------------------------------------------------------------------------- */
