@@ -782,4 +782,4 @@ lockPref("browser.aboutConfig.showWarning", false);
 lockPref("browser.policies.perUserDir", false); // [LINUX]
 
 // Controllo versione
-lockPref("rischio.fox", "142.55");
+lockPref("rischio.fox", "143");
