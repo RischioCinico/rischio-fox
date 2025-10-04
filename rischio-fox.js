@@ -437,6 +437,9 @@ defaultPref("dom.ipc.keepProcessesAlive.extension", 0); // [Nascosta]
 lockPref("extensions.webcompat-reporter.enabled", false);
 lockPref("ui.new-webcompat-reporter.enabled", false);
 
+// Non permettere alle estensioni di raccogliere dati
+lockPref("extensions.dataCollectionPermissions.enabled", false);
+
 /* -----------------------------------------------------------------------------------
    SICUREZZA AVANZATA
    ----------------------------------------------------------------------------------- */
@@ -782,4 +785,4 @@ lockPref("browser.aboutConfig.showWarning", false);
 lockPref("browser.policies.perUserDir", false); // [LINUX]
 
 // Controllo versione
-lockPref("rischio.fox", "143");
+lockPref("rischio.fox", "143.1");
