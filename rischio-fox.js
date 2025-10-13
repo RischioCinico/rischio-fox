@@ -480,6 +480,8 @@ defaultPref("javascript.options.asmjs", false);
 defaultPref("javascript.options.jit_trustedprincipals", false);
 defaultPref("javascript.options.wasm_optimizingjit", false);
 defaultPref("javascript.options.content_process_write_protect_code", true);
+defaultPref("javascript.options.self_hosted.use_shared_memory", false);
+defaultPref("javascript.options.throw_on_asmjs_validation_failure", true); 
 
 // Disabilita SharedArrayBuffer con COOP/COEP
 defaultPref("dom.postMessage.sharedArrayBuffer.withCOOP_COEP", false);
@@ -785,4 +787,4 @@ lockPref("browser.aboutConfig.showWarning", false);
 lockPref("browser.policies.perUserDir", false); // [LINUX]
 
 // Controllo versione
-lockPref("rischio.fox", "143.1");
+lockPref("rischio.fox", "143.2");
