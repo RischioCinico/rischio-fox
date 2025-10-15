@@ -275,7 +275,7 @@ defaultPref("network.http.http3.disable_when_third_party_roots_found", false);
 defaultPref("security.tls.enable_0rtt_data", false);
 
 // Abilita i controlli di revoca CRLite e dà loro la priorità su OCSP
-defaultPref("security.pki.crlite_mode", 2);
+lockPref("security.pki.crlite_mode", 2);
 defaultPref("security.remote_settings.crlite_filters.enabled", true);
 
 // Disabilita completamente i controlli di revoca OCSP (obsoleto)
