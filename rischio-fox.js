@@ -117,6 +117,9 @@ lockPref("browser.download.clearHistoryOnDelete", 2);
 // Impedisci apertura automatica finestra download
 lockPref("browser.download.alwaysOpenPanel", false);
 
+// Riproduci video MKV nel browser
+defaultPref("media.mkv.enabled", true);
+
 /* -----------------------------------------------------------------------------------
    TRACKING PROTECTION
    ----------------------------------------------------------------------------------- */
@@ -787,4 +790,4 @@ lockPref("browser.aboutConfig.showWarning", false);
 lockPref("browser.policies.perUserDir", false); // [LINUX]
 
 // Controllo versione
-lockPref("rischio.fox", "143.2");
+lockPref("rischio.fox", "143.3");
