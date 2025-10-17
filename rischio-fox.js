@@ -85,9 +85,6 @@ lockPref("dom.quotaManager.temporaryStorage.fixedLimit", 52428800);
 // Aumenta l'intervallo di salvataggio automatico della sessione per ridurre le scritture su disco
 defaultPref("browser.sessionstore.interval", 300000); // 5 minuti
 
-// Impedisce il salvataggio di dati extra e non necessari nella sessione
-lockPref("browser.sessionstore.privacy_level", 2);
-
 // Impedisce la scrittura della cache multimediale su disco nelle finestre private
 lockPref("browser.privatebrowsing.forceMediaMemoryCache", true);
 
@@ -108,10 +105,6 @@ lockPref("browser.download.always_ask_before_handling_new_types", true);
 // Gestisce i file temporanei per evitare tracce
 lockPref("browser.download.start_downloads_in_tmp_dir", true);
 lockPref("browser.helperApps.deleteTempFileOnExit", true);
-
-// Previene l'aggiunta di tracce al sistema e alla cronologia del browser
-lockPref("browser.download.manager.addToRecentDocs", false);
-lockPref("browser.download.clearHistoryOnDelete", 2);
 
 // Impedisci apertura automatica finestra download
 lockPref("browser.download.alwaysOpenPanel", false);
@@ -611,9 +604,6 @@ defaultPref("layout.word_select.eat_space_to_next_word", false);
 // Cancella lo spazio dopo la parola selezionata con doppio clic
 defaultPref("editor.word_select.delete_space_after_doubleclick_selection", true);
 
-// Abilita l'interfaccia utente per le traduzioni
-defaultPref("browser.translations.newSettingsUI.enable", true);
-
 // Abilita le traduzioni di Firefox
 defaultPref("extensions.translations.disabled", false);
 
@@ -717,4 +707,4 @@ lockPref("browser.aboutConfig.showWarning", false);
 lockPref("browser.policies.perUserDir", false); // [LINUX]
 
 // Controllo versione
-lockPref("rischio.fox", "143.6");
+lockPref("rischio.fox", "143.7");
