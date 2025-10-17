@@ -481,16 +481,12 @@ defaultPref("mathml.disabled", true);
 // Impostazioni per il compilatore JIT
 defaultPref("javascript.options.asmjs", false);
 defaultPref("javascript.options.jit_trustedprincipals", false);
-defaultPref("javascript.options.wasm_optimizingjit", false);
 defaultPref("javascript.options.content_process_write_protect_code", true);
 defaultPref("javascript.options.self_hosted.use_shared_memory", false);
 defaultPref("javascript.options.throw_on_asmjs_validation_failure", true); 
 
 // Disabilita SharedArrayBuffer con COOP/COEP
 defaultPref("dom.postMessage.sharedArrayBuffer.withCOOP_COEP", false);
-
-// Impedisci l'esposizione di componenti XPCOM ai siti web
-defaultPref("dom.use_components_shim", false);
 
 // Avvisa prima di aprire link esterni con mailto:
 defaultPref("network.protocol-handler.warn-external.mailto", true);
@@ -649,9 +645,6 @@ lockPref("privacy.exposeContentTitleInWindow.pbm", false);
 // Abilita alcune funzionalità per la gestione dei profili
 defaultPref("browser.profiles.enabled", true);
 
-// Abilita schede nella barra delle applicazioni per le PWA
-defaultPref("browser.taskbarTabs.enabled", true);
-
 // Impedisce di mostrare finestre private come icone separate sulla barra delle applicazioni di Windows
 defaultPref("browser.privateWindowSeparation.enabled", false);
 
@@ -790,4 +783,4 @@ lockPref("browser.aboutConfig.showWarning", false);
 lockPref("browser.policies.perUserDir", false); // [LINUX]
 
 // Controllo versione
-lockPref("rischio.fox", "143.3");
+lockPref("rischio.fox", "143.4");
