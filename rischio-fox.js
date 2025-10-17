@@ -237,9 +237,6 @@ defaultPref("security.remote_settings.crlite_filters.enabled", true);
 // Fornisce una protezione extra bloccando completamente le connessioni in caso di mancata corrispondenza del certificato
 defaultPref("security.cert_pinning.enforcement_level", 2);
 
-// Impone l'uso di HTTPS il più possibile
-defaultPref("dom.security.https_first_for_unknown_suffixes", true);
-
 // Consenti solo override temporanei per gli errori del certificato (per sessione)
 defaultPref("security.certerrors.permanentOverride", false);
 
@@ -249,11 +246,6 @@ defaultPref("browser.xul.error_pages.expert_bad_cert", true);
 /* -----------------------------------------------------------------------------------
    CONNESSIONI IMPLICITE
    ----------------------------------------------------------------------------------- */
-
-// Disabilita Early Hints (come in Cromite)
-lockPref("network.early-hints.enabled", false);
-lockPref("network.early-hints.over-http-v1-1.enabled", false);
-lockPref("network.early-hints.preconnect.enabled", false);
 
 // Impedisci che il clic con il tasto centrale del mouse su una nuova scheda apra URL
 lockPref("browser.tabs.searchclipboardfor.middleclick", false);
@@ -387,9 +379,6 @@ lockPref("extensions.dataCollectionPermissions.enabled", false);
 // Chiedi sempre permessi per usare camera & microfono
 lockPref("permissions.media.show_always_ask.enabled", true);
 
-// Disabilita l'API Safe Browsing obsoleta (v3)
-lockPref("browser.safebrowsing.provider.google.lists", "disabled");
-
 // Abilita un'ulteriore lista di blocco per i plugin di Mozilla
 defaultPref("urlclassifier.blockedTable", "moztest-block-simple,mozplugin-block-digest256");
 
@@ -513,9 +502,6 @@ defaultPref("browser.translations.automaticallyPopup", false);
 
 // Blocca gli errori fastidiosi dell'API di sintesi vocale
 defaultPref("media.webspeech.synth.dont_notify_on_error", true); // [Nascosta]
-
-// Blocca pop-up presentazione blocco dei banner dei cookie
-lockPref("cookiebanners.ui.desktop.showCallout", false);
 
 // Blocca avviso se Firefox non è il lettore PDF predefinito
 lockPref("browser.shell.checkDefaultPDF", false); // [Nascosta]
@@ -701,4 +687,4 @@ lockPref("browser.aboutConfig.showWarning", false);
 lockPref("browser.policies.perUserDir", false); // [LINUX]
 
 // Controllo versione
-lockPref("rischio.fox", "143.9");
+lockPref("rischio.fox", "143.10");
