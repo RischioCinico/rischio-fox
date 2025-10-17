@@ -18,7 +18,6 @@ INDICE:
 - FILE SCARICATI: controlla il comportamento di download.
 - TRACKING PROTECTION: attiva le misure anti-tracciamento di Firefox.
 - FINGERPRINTING: protegge dall'identificazione tramite l'impronta digitale del browser.
-- DNS: configura il DNS over HTTPS per connessioni sicure.
 - PROXY: gestisce il comportamento del proxy.
 - CONNESSIONI SICURE: imposta le regole per HTTPS e la validazione dei certificati.
 - CONNESSIONI IMPLICITE: disabilita le connessioni non richieste.
@@ -190,28 +189,6 @@ lockPref("app.distributor.channel", "");
 lockPref("mozilla.partner.id", "");
 
 /* -----------------------------------------------------------------------------------
-   DNS
-   ----------------------------------------------------------------------------------- */
-
-// Disabilita il caching delle risposte DNS
-lockPref("network.dnsCacheEntries", 0);
-
-// Disabilita i controlli di connettività DoH di Firefox
-lockPref("network.connectivity-service.DNS_HTTPS.domain", "");
-
-// Disabilita i "listener" di rete che aggiornano le impostazioni dal sistema operativo
-lockPref("network.notify.changed", false);
-lockPref("network.notify.checkForNRPT", false);
-lockPref("network.notify.checkForProxies", false);
-lockPref("network.notify.dnsSuffixList", false);
-lockPref("network.notify.initial_call", false);
-lockPref("network.notify.IPv6", false);
-lockPref("network.notify.resolvers", false);
-
-// Impedisci il bypass del DoH per le voci del file hosts
-lockPref("network.trr.exclude-etc-hosts", false);
-
-/* -----------------------------------------------------------------------------------
    PROXY
    ----------------------------------------------------------------------------------- */
 
@@ -247,10 +224,6 @@ lockPref("security.insecure_field_warning.ignore_local_ip_address", false);
 // Disabilita l'importazione automatica dei certificati del sistema operativo
 defaultPref("security.osclientcerts.autoload", false);
 
-// Disabilita i cifrari obsoleti e non sicuri basati su SHA-1
-defaultPref("security.ssl3.ecdhe_ecdsa_aes_128_sha", false);
-defaultPref("security.ssl3.ecdhe_ecdsa_aes_256_sha", false);
-
 // Disabilita l'invio di richieste HTTP in background nella modalità Solo HTTPS
 defaultPref("dom.security.https_only_mode_send_http_background_request", false);
 
@@ -268,27 +241,17 @@ defaultPref("security.tls.enable_0rtt_data", false);
 lockPref("security.pki.crlite_mode", 2);
 defaultPref("security.remote_settings.crlite_filters.enabled", true);
 
-// Disabilita completamente i controlli di revoca OCSP (obsoleto)
-lockPref("security.ocsp.enabled", 0);
-lockPref("security.OCSP.require", false);
-
 // Fornisce una protezione extra bloccando completamente le connessioni in caso di mancata corrispondenza del certificato
 defaultPref("security.cert_pinning.enforcement_level", 2);
 
 // Impone l'uso di HTTPS il più possibile
 defaultPref("dom.security.https_first_for_unknown_suffixes", true);
 
-// Impedisci che i domini vengano esclusi automaticamente dalla modalità Solo HTTPS
-defaultPref("dom.security.https_first_add_exception_on_failure", false);
-
 // Consenti solo override temporanei per gli errori del certificato (per sessione)
 defaultPref("security.certerrors.permanentOverride", false);
 
 // Mostra informazioni tecniche dettagliate sulle pagine di errore
 defaultPref("browser.xul.error_pages.expert_bad_cert", true);
-
-// Disabilita i report delle violazioni CSP
-lockPref("security.csp.reporting.enabled", false);
 
 /* -----------------------------------------------------------------------------------
    CONNESSIONI IMPLICITE
@@ -421,10 +384,6 @@ lockPref("extensions.content_web_accessible.enabled", true);
 // Riduci la durata dei processi delle estensioni
 defaultPref("dom.ipc.keepProcessesAlive.extension", 0); // [Nascosta]
 
-// Disabilita Web Compatibility Reporter
-lockPref("extensions.webcompat-reporter.enabled", false);
-lockPref("ui.new-webcompat-reporter.enabled", false);
-
 // Non permettere alle estensioni di raccogliere dati
 lockPref("extensions.dataCollectionPermissions.enabled", false);
 
@@ -515,9 +474,6 @@ lockPref("network.socket.ip_addr_any.disabled", true);
 // Blocca Origin Trials
 lockPref("dom.origin-trials.enabled", false);
 
-// Blocca l'invio automatico a Mozilla dei dati di profilazione
-lockPref("toolkit.aboutLogging.uploadProfileToCloud", false);
-
 // Mostra sempre il Punycode
 lockPref("network.IDN_show_punycode", true);
 
@@ -527,9 +483,6 @@ lockPref("network.IDN_show_punycode", true);
 
 // Disabilita l'autocompletamento degli URL
 lockPref("browser.urlbar.autoFill", false);
-
-// Impedisci a Firefox di raccomandare estensioni di ricerca
-defaultPref("browser.search.searchEnginesURL", "");
 
 // Abilita la possibilità di usare un motore di ricerca diverso in finestre normali e private
 defaultPref("browser.search.separatePrivateDefault", true);
@@ -764,4 +717,4 @@ lockPref("browser.aboutConfig.showWarning", false);
 lockPref("browser.policies.perUserDir", false); // [LINUX]
 
 // Controllo versione
-lockPref("rischio.fox", "143.5");
+lockPref("rischio.fox", "143.6");
