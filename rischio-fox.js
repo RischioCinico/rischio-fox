@@ -124,12 +124,6 @@ defaultPref("media.mkv.enabled", true);
    TRACKING PROTECTION
    ----------------------------------------------------------------------------------- */
 
-// Abilita i Container
-lockPref("privacy.userContext.enabled", true);
-lockPref("privacy.userContext.ui.enabled", true);
-defaultPref("permissions.isolateBy.userContext", true);
-defaultPref("browser.link.force_default_user_context_id_for_external_opens", true);
-
 // Isola le risorse iniettate dalle estensioni
 defaultPref("privacy.antitracking.isolateContentScriptResources", true);
 
@@ -198,10 +192,6 @@ lockPref("mozilla.partner.id", "");
 /* -----------------------------------------------------------------------------------
    DNS
    ----------------------------------------------------------------------------------- */
-
-// Disabilita completamente il prefetch DNS non richiesto
-lockPref("network.dns.disablePrefetch", true);
-lockPref("network.dns.disablePrefetchFromHTTPS", true);
 
 // Disabilita il caching delle risposte DNS
 lockPref("network.dnsCacheEntries", 0);
@@ -285,19 +275,14 @@ lockPref("security.OCSP.require", false);
 // Fornisce una protezione extra bloccando completamente le connessioni in caso di mancata corrispondenza del certificato
 defaultPref("security.cert_pinning.enforcement_level", 2);
 
-// Impone l'uso di HTTPS il più possibile, anche per indirizzi locali
-defaultPref("dom.security.https_first_for_local_addresses", true);
+// Impone l'uso di HTTPS il più possibile
 defaultPref("dom.security.https_first_for_unknown_suffixes", true);
-defaultPref("dom.security.https_only_mode.upgrade_local", true);
 
 // Impedisci che i domini vengano esclusi automaticamente dalla modalità Solo HTTPS
 defaultPref("dom.security.https_first_add_exception_on_failure", false);
 
 // Consenti solo override temporanei per gli errori del certificato (per sessione)
 defaultPref("security.certerrors.permanentOverride", false);
-
-// Richiede negoziazioni sicure della connessione
-defaultPref("security.ssl.require_safe_negotiation", true);
 
 // Mostra informazioni tecniche dettagliate sulle pagine di errore
 defaultPref("browser.xul.error_pages.expert_bad_cert", true);
@@ -783,4 +768,4 @@ lockPref("browser.aboutConfig.showWarning", false);
 lockPref("browser.policies.perUserDir", false); // [LINUX]
 
 // Controllo versione
-lockPref("rischio.fox", "143.4");
+lockPref("rischio.fox", "143.5");
