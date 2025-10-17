@@ -699,10 +699,6 @@ defaultPref("browser.tabs.closeWindowWithLastTab", false);
    PRESTAZIONI
    ----------------------------------------------------------------------------------- */
 
-// Abilita WebRender
-defaultPref("gfx.webrender.all", true);
-defaultPref("gfx.webrender.compositor", true);
-
 // Aumenta la dimensione delle cache per font, grafica e immagini
 defaultPref("gfx.content.skia-font-cache-size", 20); // default=5
 defaultPref("gfx.canvas.accelerated.cache-items", 8192); // default=8192
