@@ -665,9 +665,6 @@ defaultPref("layout.css.report_errors", false);
 // Abilita la decodifica video hardware con VA-API
 defaultPref("media.ffmpeg.vaapi.enabled", true); // [LINUX]
 
-/* Fork Server https://firefox-source-docs.mozilla.org/dom/ipc/process_model.html#fork-server */
-pref("dom.ipc.forkserver.enable", true); // [LINUX]
-
 /* -----------------------------------------------------------------------------------
    INTELLIGENZA ARTIFICIALE
    ----------------------------------------------------------------------------------- */
@@ -704,4 +701,4 @@ lockPref("browser.aboutConfig.showWarning", false);
 lockPref("browser.policies.perUserDir", false); // [LINUX]
 
 // Controllo versione
-lockPref("rischio.fox", "143.8");
+lockPref("rischio.fox", "143.9");
