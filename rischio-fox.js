@@ -565,7 +565,7 @@ defaultPref("browser.menu.showViewImageInfo", true);
 
 // Abilita il pulsante Picture-in-Picture su tutti i video
 defaultPref("media.videocontrols.picture-in-picture.respect-disablePictureInPicture", false);
-pref("media.videocontrols.picture-in-picture.video-toggle.always-show", true);
+defaultPref("media.videocontrols.picture-in-picture.video-toggle.always-show", true);
 
 // Impedisce al tasto Alt di attivare la barra dei menu
 defaultPref("ui.key.menuAccessKeyFocuses", false);
@@ -704,4 +704,4 @@ lockPref("browser.aboutConfig.showWarning", false);
 lockPref("browser.policies.perUserDir", false); // [LINUX]
 
 // Controllo versione
-lockPref("rischio.fox", "143.7");
+lockPref("rischio.fox", "143.8");
