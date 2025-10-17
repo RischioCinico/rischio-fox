@@ -604,9 +604,6 @@ defaultPref("layout.word_select.eat_space_to_next_word", false);
 // Cancella lo spazio dopo la parola selezionata con doppio clic
 defaultPref("editor.word_select.delete_space_after_doubleclick_selection", true);
 
-// Abilita le traduzioni di Firefox
-defaultPref("extensions.translations.disabled", false);
-
 /* -----------------------------------------------------------------------------------
    GESTIONE SCHEDE
    ----------------------------------------------------------------------------------- */
