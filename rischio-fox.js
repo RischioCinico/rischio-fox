@@ -231,7 +231,10 @@ defaultPref("network.http.http3.disable_when_third_party_roots_found", false);
 defaultPref("security.tls.enable_0rtt_data", false);
 
 // Abilita i controlli di revoca CRLite e dà loro la priorità su OCSP
+lockPref("security.OCSP.enabled", 0);
+lockPref("security.ssl.enable_ocsp_stapling", false);
 lockPref("security.pki.crlite_mode", 2);
+lockPref("security.csp.reporting.enabled", false);
 defaultPref("security.remote_settings.crlite_filters.enabled", true);
 
 // Fornisce una protezione extra bloccando completamente le connessioni in caso di mancata corrispondenza del certificato
@@ -625,12 +628,28 @@ defaultPref("browser.tabs.closeWindowWithLastTab", false);
    PRESTAZIONI
    ----------------------------------------------------------------------------------- */
 
-// Aumenta la dimensione delle cache per font, grafica e immagini
-defaultPref("gfx.content.skia-font-cache-size", 20); // default=5
-defaultPref("gfx.canvas.accelerated.cache-items", 8192); // default=8192
-defaultPref("gfx.canvas.accelerated.cache-size", 512); // default=256
-defaultPref("image.mem.decode_bytes_at_a_time", 65536); // default=16384
-defaultPref("media.memory_cache_max_size", 3145728); // default=8192
+defaultPref("gfx.content.skia-font-cache-size", 32);
+defaultPref("gfx.canvas.accelerated.cache-items", 32768);
+defaultPref("gfx.canvas.accelerated.cache-size", 4096);
+defaultPref("webgl.max-size", 16384);
+defaultPref("browser.cache.memory.capacity", 131072);
+defaultPref("browser.cache.memory.max_entry_size", 20480);
+defaultPref("media.memory_cache_max_size", 262144);
+defaultPref("media.memory_caches_combined_limit_kb", 1048576);
+defaultPref("media.cache_readahead_limit", 600);
+defaultPref("media.cache_resume_threshold", 300);
+defaultPref("image.cache.size", 10485760);
+defaultPref("image.mem.decode_bytes_at_a_time", 65536);
+
+/** NETWORK ***/
+defaultPref("network.http.max-connections", 1800);
+defaultPref("network.http.max-persistent-connections-per-server", 10);
+defaultPref("network.http.max-urgent-start-excessive-connections-per-host", 5);
+defaultPref("network.http.request.max-start-delay", 5);
+defaultPref("network.http.pacing.requests.enabled", false);
+defaultPref("network.dnsCacheEntries", 10000);
+defaultPref("network.dnsCacheExpiration", 3600);
+defaultPref("network.ssl_tokens_cache_capacity", 10240);
 
 // Abilita WebAssembly (WASM) per prestazioni migliori in compiti pesanti
 defaultPref("javascript.options.wasm_branch_hinting", true);
@@ -687,4 +706,4 @@ lockPref("browser.aboutConfig.showWarning", false);
 lockPref("browser.policies.perUserDir", false); // [LINUX]
 
 // Controllo versione
-lockPref("rischio.fox", "143.10");
+lockPref("rischio.fox", "144");
