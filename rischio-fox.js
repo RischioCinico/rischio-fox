@@ -56,9 +56,20 @@ defaultPref("browser.newtabpage.activity-stream.logowordmark.alwaysVisible", fal
 // Impedisce il passaggio dei dati di ricerca alla barra degli indirizzi
 defaultPref("browser.newtabpage.activity-stream.improvesearch.handoffToAwesomebar", false);
 
+// Widgets
+defaultPref("browser.newtabpage.activity-stream.widgets.system.enabled", true);
+
+// Task list
+defaultPref("browser.newtabpage.activity-stream.widgets.system.lists.enabled", true);
+
+// Timer
+defaultPref("browser.newtabpage.activity-stream.widgets.system.focusTimer.enabled", true);
+defaultPref("browser.newtabpage.activity-stream.widgets.focusTimer.showSystemNotifications", true);
+
 // Meteo
-lockPref("browser.newtabpage.activity-stream.system.showWeather", true);
+defaultPref("browser.newtabpage.activity-stream.system.showWeather", true);
 defaultPref("browser.newtabpage.activity-stream.weather.display", "detailed");
+
 
 /* -----------------------------------------------------------------------------------
    TRACCE SU DISCO
@@ -706,4 +717,4 @@ lockPref("browser.aboutConfig.showWarning", false);
 lockPref("browser.policies.perUserDir", false); // [LINUX]
 
 // Controllo versione
-lockPref("rischio.fox", "144");
+lockPref("rischio.fox", "144.1");
