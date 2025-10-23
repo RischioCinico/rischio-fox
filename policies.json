@@ -52,12 +52,12 @@
     },
     "SanitizeOnShutdown": {
       "Cache": true,
-      "Downloads": false,
-      "History": false,
-      "FormData": false,
-      "OfflineApps": false,
       "Cookies": false,
-      "SiteSettings": false
+      "FormData": true,
+      "History": false,
+      "Sessions": false,
+      "SiteSettings": false,
+      "Locked": false
     },
     "SearchBar": "unified",
     "SkipTermsOfUse": true,
