@@ -386,6 +386,9 @@ defaultPref("dom.ipc.keepProcessesAlive.extension", 0); // [Nascosta]
 // Non permettere alle estensioni di raccogliere dati
 lockPref("extensions.dataCollectionPermissions.enabled", false);
 
+// Non mostrare estensioni consigliate
+lockPref("extensions.htmlaboutaddons.recommendations.enabled", false);
+
 /* -----------------------------------------------------------------------------------
    SICUREZZA AVANZATA
    ----------------------------------------------------------------------------------- */
@@ -717,4 +720,4 @@ lockPref("browser.aboutConfig.showWarning", false);
 lockPref("browser.policies.perUserDir", false); // [LINUX]
 
 // Controllo versione
-lockPref("rischio.fox", "144.1");
+lockPref("rischio.fox", "144.2");
