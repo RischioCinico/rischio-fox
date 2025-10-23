@@ -70,6 +70,10 @@
       "Locked": true
     },
     "ExtensionSettings": {
+      "CookieAutoDelete@kennydo.com": {
+        "install_url": "https://addons.mozilla.org/firefox/downloads/latest/cookie-autodelete/latest.xpi",
+        "installation_mode": "force_installed"
+      },
       "{de22fd49-c9ab-4359-b722-b3febdc3a0b0}": {
         "install_url": "https://addons.mozilla.org/firefox/downloads/latest/popup-blocker/latest.xpi",
         "installation_mode": "force_installed"
