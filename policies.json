@@ -70,6 +70,10 @@
       "Locked": true
     },
     "ExtensionSettings": {
+      "private-relay@firefox.com" {
+        "install_url": "https://addons.mozilla.org/firefox/downloads/latest/private-relay/latest.xpi",
+        "installation_mode": "force_installed"
+      },
       "CookieAutoDelete@kennydo.com": {
         "install_url": "https://addons.mozilla.org/firefox/downloads/latest/cookie-autodelete/latest.xpi",
         "installation_mode": "force_installed"
