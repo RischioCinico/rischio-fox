@@ -257,6 +257,9 @@ defaultPref("security.certerrors.permanentOverride", false);
 // Mostra informazioni tecniche dettagliate sulle pagine di errore
 defaultPref("browser.xul.error_pages.expert_bad_cert", true);
 
+// Disabilita TLS sessione identifiers
+defaultPref("security.ssl.disable_session_identifiers", true);
+
 /* -----------------------------------------------------------------------------------
    CONNESSIONI IMPLICITE
    ----------------------------------------------------------------------------------- */
@@ -428,7 +431,6 @@ defaultPref("javascript.options.asmjs", false);
 defaultPref("javascript.options.jit_trustedprincipals", false);
 defaultPref("javascript.options.content_process_write_protect_code", true);
 defaultPref("javascript.options.self_hosted.use_shared_memory", false);
-defaultPref("javascript.options.throw_on_asmjs_validation_failure", true); 
 
 // Disabilita SharedArrayBuffer con COOP/COEP
 defaultPref("dom.postMessage.sharedArrayBuffer.withCOOP_COEP", false);
@@ -596,6 +598,10 @@ defaultPref("apz.allow_zooming_out", true);
 // Abilita autoscrolling
 defaultPref("general.autoScroll", true);
 
+// Mostra maggiori informazioni `about:processes`
+defaultPref("toolkit.aboutProcesses.showAllSubframes", true);
+defaultPref("toolkit.aboutProcesses.showThreads", true);
+
 /* -----------------------------------------------------------------------------------
    ORTOGRAFIA E DIZIONARI
    ----------------------------------------------------------------------------------- */
@@ -722,4 +728,4 @@ lockPref("browser.aboutConfig.showWarning", false);
 lockPref("browser.policies.perUserDir", false); // [LINUX]
 
 // Controllo versione
-lockPref("rischio.fox", "144.3");
+lockPref("rischio.fox", "144.4");
