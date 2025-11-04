@@ -426,36 +426,13 @@ lockPref("browser.discovery.enabled", false);
 // Chiedi sempre permessi per usare camera & microfono
 lockPref("permissions.media.show_always_ask.enabled", true);
 
-// Abilita un'ulteriore lista di blocco per i plugin di Mozilla
-defaultPref("urlclassifier.blockedTable", "moztest-block-simple,mozplugin-block-digest256");
-
-// Salta i reindirizzamenti Safe Browsing per migliorare le prestazioni
-defaultPref("browser.safebrowsing.provider.google.reportURL", "https://transparencyreport.google.com/safe-browsing/search?url=");
-defaultPref("browser.safebrowsing.provider.google4.reportURL", "https://transparencyreport.google.com/safe-browsing/search?url=");
-
 // Disabilita i servizi di accessibilità
 defaultPref("accessibility.force_disabled", 1);
 defaultPref("devtools.accessibility.enabled", false);
 
-// Disabilita Clipboard API per impedire ai siti di leggere il contenuto degli appunti
-lockPref("dom.events.asyncClipboard.clipboardItem", false);
-lockPref("dom.events.asyncClipboard.readText", false);
-
-// Disabilita Content Analysis SDK
-lockPref("browser.contentanalysis.enabled", false);
-
-// Disabilita i font Graphite & SVG OpenType
-defaultPref("gfx.font_rendering.graphite.enabled", false);
-defaultPref("gfx.font_rendering.opentype_svg.enabled", false);
-
-// Disabilita MathML
-defaultPref("mathml.disabled", true);
-
 // Impostazioni per il compilatore JIT
-defaultPref("javascript.options.asmjs", false);
 defaultPref("javascript.options.jit_trustedprincipals", false);
 defaultPref("javascript.options.content_process_write_protect_code", true);
-defaultPref("javascript.options.self_hosted.use_shared_memory", false);
 
 // Disabilita SharedArrayBuffer con COOP/COEP
 defaultPref("dom.postMessage.sharedArrayBuffer.withCOOP_COEP", false);
@@ -751,4 +728,4 @@ lockPref("browser.aboutConfig.showWarning", false);
 lockPref("browser.policies.perUserDir", false); // [LINUX]
 
 // Controllo versione
-lockPref("rischio.fox", "144.7");
+lockPref("rischio.fox", "144.8");
