@@ -288,9 +288,6 @@ lockPref("browser.urlbar.speculativeConnect.enabled", false);
 lockPref("browser.fixup.dns_first_for_single_words", false);
 lockPref("browser.urlbar.dnsResolveSingleWordsAfterSearch", 0);
 
-// Prevent middle mouse clicks from pasting clipboard contents by default
-lockPref("middlemouse.paste", false);
-
 // Impedisci che il clic con il tasto centrale del mouse su una nuova scheda apra URL
 lockPref("browser.tabs.searchclipboardfor.middleclick", false);
 lockPref("middlemouse.contentLoadURL", false);
@@ -756,4 +753,4 @@ lockPref("browser.aboutConfig.showWarning", false);
 lockPref("browser.policies.perUserDir", false); // [LINUX]
 
 // Controllo versione
-lockPref("rischio.fox", "144.6");
+lockPref("rischio.fox", "144.7");
