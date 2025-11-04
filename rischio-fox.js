@@ -687,8 +687,6 @@ defaultPref("media.cache_readahead_limit", 600);
 defaultPref("media.cache_resume_threshold", 300);
 defaultPref("image.cache.size", 10485760);
 defaultPref("image.mem.decode_bytes_at_a_time", 65536);
-
-/** NETWORK ***/
 defaultPref("network.http.max-connections", 1800);
 defaultPref("network.http.max-persistent-connections-per-server", 10);
 defaultPref("network.http.max-urgent-start-excessive-connections-per-host", 5);
