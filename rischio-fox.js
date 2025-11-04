@@ -652,6 +652,7 @@ defaultPref("browser.tabs.closeWindowWithLastTab", false);
    PRESTAZIONI
    ----------------------------------------------------------------------------------- */
 
+// Cache
 defaultPref("gfx.content.skia-font-cache-size", 32);
 defaultPref("gfx.canvas.accelerated.cache-items", 32768);
 defaultPref("gfx.canvas.accelerated.cache-size", 4096);
@@ -664,6 +665,8 @@ defaultPref("media.cache_readahead_limit", 600);
 defaultPref("media.cache_resume_threshold", 300);
 defaultPref("image.cache.size", 10485760);
 defaultPref("image.mem.decode_bytes_at_a_time", 65536);
+
+// Network
 defaultPref("network.http.max-connections", 1800);
 defaultPref("network.http.max-persistent-connections-per-server", 10);
 defaultPref("network.http.max-urgent-start-excessive-connections-per-host", 5);
@@ -689,8 +692,15 @@ defaultPref("browser.tabs.hoverPreview.enabled", false);
 // Disabilita il reporting degli errori CSS
 defaultPref("layout.css.report_errors", false);
 
-// Abilita la decodifica video hardware con VA-API
+// GFX Rendering
+defaultPref("gfx.webrender.all", true);
+defaultPref("gfx.webrender.precache-shaders", true);
+defaultPref("gfx.webrender.compositor", true);
+
+// Abilita la decodifica video hardware
 defaultPref("media.ffmpeg.vaapi.enabled", true); // [LINUX]
+defaultPref("layers.gpu-process.enabled", true);
+defaultPref("media.gpu-process-decoder", true);
 
 /* -----------------------------------------------------------------------------------
    INTELLIGENZA ARTIFICIALE
@@ -728,4 +738,4 @@ lockPref("browser.aboutConfig.showWarning", false);
 lockPref("browser.policies.perUserDir", false); // [LINUX]
 
 // Controllo versione
-lockPref("rischio.fox", "144.8");
+lockPref("rischio.fox", "144.10");
