@@ -352,11 +352,16 @@ lockPref("browser.download.manager.addToRecentDocs", false);
 // [2654] Chiedi sempre come aprire nuovi tipi di file
 lockPref("browser.download.always_ask_before_handling_new_types", true);
 
+// [2660] Limita cartelle consentite per le estensioni
+lockPref("extensions.enabledScopes", 5); // [Nascosta]
+lockPref("extensions.autoDisableScopes", 15);
+
+// [2661] Mostra sempre prompt di installazione
+lockPref("extensions.postDownloadThirdPartyPrompt", false);
 
 /* -----------------------------------------------------------------------------------
    DA CONTROLLARE
    ----------------------------------------------------------------------------------- */
-
 
 // Diminuisce il numero di salvataggi delle schede chiuse
 lockPref("browser.sessionstore.max_tabs_undo", 5);
@@ -469,12 +474,6 @@ lockPref("mozilla.partner.id", "");
 /* -----------------------------------------------------------------------------------
    ESTENSIONI
    ----------------------------------------------------------------------------------- */
-
-// Impedisci l'installazione di estensioni da fonti non ufficiali
-lockPref("extensions.autoDisableScopes", 15);
-lockPref("extensions.enabledScopes", 5); // [Nascosta]
-lockPref("extensions.installDistroAddons", false); // [Nascosta]
-lockPref("extensions.sideloadScopes", 0); // [Nascosta]
 
 // Disabilita API potenzialmente rischiose per la privacy
 lockPref("extensions.webapi.enabled", false);
@@ -774,4 +773,4 @@ defaultPref("browser.tabs.groups.smart.userEnabled", false);
    ----------------------------------------------------------------------------------- */
 
 // Controllo versione
-lockPref("rischio.fox", "144.14");
+lockPref("rischio.fox", "144.15");
