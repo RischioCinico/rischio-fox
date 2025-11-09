@@ -61,23 +61,23 @@ defaultPref("browser.newtabpage.activity-stream.improvesearch.handoffToAwesomeba
 // [PF] Nasconde il logo di Firefox dalla pagina iniziale
 defaultPref("browser.newtabpage.activity-stream.logowordmark.alwaysVisible", false);
 
-// Imposta i siti preferiti nella pagina iniziale
+// [RF] Imposta i siti preferiti nella pagina iniziale
 defaultPref("browser.newtabpage.pinned", "[{\"url\":\"https://www.youtube.com/\",\"label\":\"YouTube\"},{\"url\":\"https://www.reddit.com/\",\"label\":\"Reddit\"},{\"url\":\"https://mail.google.com/mail/u/0/?hl=it#inbox\",\"label\":\"Gmail\"},{\"url\":\"https://addons.mozilla.org/it/firefox/\",\"label\":\"Estensioni\"},{\"url\":\"https://wiki.archlinux.org/title/List_of_applications\",\"label\":\"Applicazioni\"},{\"url\":\"https://it.wikipedia.org/wiki/Pagina_principale\",\"label\":\"Wikipedia\"},{\"url\":\"https://github.com/\",\"label\":\"GitHub\"},{\"url\":\"https://www.diretta.it/\",\"label\":\"Diretta\"}]");
 
-// Imposta sfondo
+// [RF] Imposta sfondo
 defaultPref("browser.newtabpage.activity-stream.newtabWallpapers.wallpaper", "dark-landscape");
 
-// Abilita Widgets
+// [RF] Abilita Widgets
 defaultPref("browser.newtabpage.activity-stream.widgets.system.enabled", true);
 
-// Task list
+// [RF] Task list
 defaultPref("browser.newtabpage.activity-stream.widgets.system.lists.enabled", true);
 
-// Timer
+// [RF] Timer
 defaultPref("browser.newtabpage.activity-stream.widgets.system.focusTimer.enabled", true);
 defaultPref("browser.newtabpage.activity-stream.widgets.focusTimer.showSystemNotifications", true);
 
-// Meteo
+// [RF] Meteo
 defaultPref("browser.newtabpage.activity-stream.system.showWeather", true);
 defaultPref("browser.newtabpage.activity-stream.weather.display", "detailed");
 
