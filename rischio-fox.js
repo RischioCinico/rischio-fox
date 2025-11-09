@@ -360,8 +360,17 @@ lockPref("extensions.autoDisableScopes", 15);
 lockPref("extensions.postDownloadThirdPartyPrompt", false);
 
 /* -----------------------------------------------------------------------------------
+   [2700] ENHANCED TRACKING PROTECTION
+   ----------------------------------------------------------------------------------- */
+
+// [2701] Abilita ETP in modalità restrittiva
+lockPref("browser.contentblocking.category", "strict"); 
+
+
+/* -----------------------------------------------------------------------------------
    DA CONTROLLARE
    ----------------------------------------------------------------------------------- */
+
 
 // Diminuisce il numero di salvataggi delle schede chiuse
 lockPref("browser.sessionstore.max_tabs_undo", 5);
