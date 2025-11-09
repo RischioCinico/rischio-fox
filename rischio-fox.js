@@ -520,22 +520,6 @@ lockPref("privacy.webrtc.sharedTabWarning", true);
    ESTENSIONI
    ----------------------------------------------------------------------------------- */
 
-// Disabilita API potenzialmente rischiose per la privacy
-lockPref("extensions.webapi.enabled", false);
-
-// Richiedi firme e origini sicure per le estensioni
-lockPref("extensions.install.requireBuiltInCerts", true); // [Nascosta]
-lockPref("extensions.update.requireBuiltInCerts", true); // [Nascosta]
-lockPref("extensions.install.requireSecureOrigin", true); // [Nascosta]
-
-// Disabilita l'assegnazione automatica di permessi pericolosi
-lockPref("extensions.originControls.grantByDefault", false);
-lockPref("extensions.manifestV2.actionsPopupURLRestricted", true);
-lockPref("extensions.content_web_accessible.enabled", true);
-
-// Riduci la durata dei processi delle estensioni
-defaultPref("dom.ipc.keepProcessesAlive.extension", 0); // [Nascosta]
-
 // Non permettere alle estensioni di raccogliere dati
 lockPref("extensions.dataCollectionPermissions.enabled", false);
 
@@ -549,56 +533,6 @@ lockPref("permissions.media.show_always_ask.enabled", true);
 // Disabilita i servizi di accessibilità
 defaultPref("accessibility.force_disabled", 1);
 defaultPref("devtools.accessibility.enabled", false);
-
-// Impostazioni per il compilatore JIT
-defaultPref("javascript.options.jit_trustedprincipals", false);
-defaultPref("javascript.options.content_process_write_protect_code", true);
-
-// Disabilita SharedArrayBuffer con COOP/COEP
-defaultPref("dom.postMessage.sharedArrayBuffer.withCOOP_COEP", false);
-
-// Avvisa prima di aprire link esterni con mailto:
-defaultPref("network.protocol-handler.warn-external.mailto", true);
-
-// Riduci la durata dei processi privilegiati per le pagine about:
-defaultPref("dom.ipc.keepProcessesAlive.privilegedabout", 0);
-
-// Abilita Subresource Integrity
-lockPref("security.integrity_policy.enabled", true);
-lockPref("security.integrity_policy.stylesheet.enabled", true);
-
-// Abilita l'isolamento dei processi basato sull'origine
-defaultPref("dom.origin_agent_cluster.default", true);
-
-// Abilita il Sanificatore HTML per prevenire gli attacchi XSS
-defaultPref("dom.security.sanitizer.enabled", true);
-
-// Abilita il sandboxing per il processo di rete
-defaultPref("security.sandbox.socket.process.level", 1);
-
-// Abilita le contromisure di sicurezza contro Spectre
-defaultPref("javascript.options.spectre.disable_for_isolated_content", false);
-
-// Preferisci nuovi processi per i subframe
-defaultPref("browser.tabs.remote.subframesPreferUsed", false);
-
-// Impedisci ai tipi di processi remoti di avviare l'isolamento impropriamente
-defaultPref("browser.tabs.remote.enforceRemoteTypeRestrictions", true);
-
-// Proteggi dagli attacchi CSRF con il "SameSite" dei cookie
-defaultPref("network.cookie.sameSite.laxByDefault", true);
-defaultPref("network.cookie.sameSite.schemeful", true);
-
-// Proteggi dagli attacchi MIME
-defaultPref("network.sniff.use_extension", true);
-defaultPref("security.block_fileuri_script_with_wrong_mime", true);
-
-// Impedisci le richieste di rete all'indirizzo 0.0.0.0
-lockPref("network.socket.ip_addr_any.disabled", true);
-
-// Blocca Origin Trials
-lockPref("dom.origin-trials.enabled", false);
-
 
 /* -----------------------------------------------------------------------------------
    ELEMENTI FASTIDIOSI
@@ -813,4 +747,4 @@ defaultPref("browser.tabs.groups.smart.userEnabled", false);
    ----------------------------------------------------------------------------------- */
 
 // Controllo versione
-lockPref("rischio.fox", "144.16");
+lockPref("rischio.fox", "144.17");
