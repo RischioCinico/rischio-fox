@@ -13,7 +13,7 @@
 /***
 INDICE:
 
-- PAGINA INIZIALE: configura l'homepage di Firefox
+- AVVIO: configura l'avvio e l'homepage di Firefox
 - TRACCE SU DISCO: gestisce la cache, la cronologia e i dati salvati localmente.
 - FILE SCARICATI: controlla il comportamento di download.
 - TRACKING PROTECTION: attiva le misure anti-tracciamento di Firefox.
@@ -36,16 +36,23 @@ INDICE:
 
 ***/
 
+// [0000] Disabilita gli avvisi quando si accede ad `about:config`
+lockPref("browser.aboutConfig.showWarning", false);
+
 /* -----------------------------------------------------------------------------------
-   PAGINA INIZIALE
+   [0100] AVVIO
    ----------------------------------------------------------------------------------- */
+
+// [0102] Ripristina sessione precedente
+defaultPref("browser.startup.page", 3);
+
+// [0105] Disabilita contenuti sponsorizzati nella home page di Firefox
+lockPref("browser.newtabpage.activity-stream.showSponsored", false);
+lockPref("browser.newtabpage.activity-stream.showSponsoredTopSites", false);
+lockPref("browser.newtabpage.activity-stream.showSponsoredCheckboxes", false);
 
 // Imposta i siti preferiti nella pagina iniziale
 defaultPref("browser.newtabpage.pinned", "[{\"url\":\"https://www.youtube.com/\",\"label\":\"YouTube\"},{\"url\":\"https://www.reddit.com/\",\"label\":\"Reddit\"},{\"url\":\"https://mail.google.com/mail/u/0/?hl=it#inbox\",\"label\":\"Gmail\"},{\"url\":\"https://addons.mozilla.org/it/firefox/\",\"label\":\"Estensioni\"},{\"url\":\"https://wiki.archlinux.org/title/List_of_applications\",\"label\":\"Applicazioni\"},{\"url\":\"https://it.wikipedia.org/wiki/Pagina_principale\",\"label\":\"Wikipedia\"},{\"url\":\"https://github.com/\",\"label\":\"GitHub\"},{\"url\":\"https://www.diretta.it/\",\"label\":\"Diretta\"}]");
-
-// Disabilita sponsorizzazioni
-lockPref("browser.newtabpage.activity-stream.showSponsoredCheckboxes", false);
-lockPref("browser.newtabpage.activity-stream.showSponsoredTopSites", false);
 
 // Imposta sfondo
 defaultPref("browser.newtabpage.activity-stream.newtabWallpapers.wallpaper", "dark-landscape");
@@ -728,14 +735,5 @@ defaultPref("browser.tabs.groups.smart.userEnabled", false);
    FINE
    ----------------------------------------------------------------------------------- */
 
-// Abilita il sandboxing per questo file di configurazione
-lockPref("general.config.sandbox_enabled", true); // [Nascosta]
-
-// Disabilita gli avvisi quando si accede ad `about:config`
-lockPref("browser.aboutConfig.showWarning", false);
-
-// Assicura che le nostre policy non vengano sovrascritte
-lockPref("browser.policies.perUserDir", false); // [LINUX]
-
 // Controllo versione
-lockPref("rischio.fox", "144.10");
+lockPref("rischio.fox", "144.11");
