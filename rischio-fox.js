@@ -564,9 +564,21 @@ defaultPref("network.dnsCacheEntries", 10000);
 defaultPref("network.dnsCacheExpiration", 3600);
 defaultPref("network.ssl_tokens_cache_capacity", 10240);
 
+// GFX Rendering Tweaks
+defaultPref("gfx.webrender.all", true);
+defaultPref("gfx.webrender.precache-shaders", true);
+defaultPref("gfx.webrender.compositor", true);
+
+// Accelerazione hardware
+defaultPref("layers.gpu-process.enabled", true);
+//defaultPref("layers.mlgpu.enabled", true); // LINUX (sperimentale?)
+defaultPref("media.hardware-video-decoding.enabled", true);
+defaultPref("media.gpu-process-decoder", true);
+defaultPref("media.ffmpeg.vaapi.enabled", true); // LINUX
+
 /* -----------------------------------------------------------------------------------
    FINE
    ----------------------------------------------------------------------------------- */
 
 // Controllo versione
-lockPref("rischio.fox", "144.19");
+lockPref("rischio.fox", "144.20");
