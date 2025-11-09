@@ -20,14 +20,14 @@ INDICE:
 - CONNESSIONI IMPLICITE: disabilita le connessioni non richieste.
 - DNS / DoH / PROXY / SOCKS
 - BARRE DI RICERCA: configura la barra degli indirizzi e di ricerca.
-
+- GESTIONE CREDENZIALI: controlla password e compilazione automatica.
 - TRACCE SU DISCO: gestisce la cache, la cronologia e i dati salvati localmente.
+- CONNESSIONI SICURE: imposta le regole per HTTPS e la validazione dei certificati.
+
 - FILE SCARICATI: controlla il comportamento di download.
 - TRACKING PROTECTION: attiva le misure anti-tracciamento di Firefox.
 - FINGERPRINTING: protegge dall'identificazione tramite l'impronta digitale del browser.
 - PROXY: gestisce il comportamento del proxy.
-- CONNESSIONI SICURE: imposta le regole per HTTPS e la validazione dei certificati.
-- GESTIONE CREDENZIALI: controlla password e compilazione automatica.
 - PDF: gestisce la sicurezza del lettore PDF.
 - ESTENSIONI: imposta le regole per le estensioni.
 - SICUREZZA AVANZATA: include preferenze di sicurezza varie.
@@ -176,7 +176,7 @@ lockPref("browser.places.speculativeConnect.enabled", false);
 // [0610] Blocca "Hyperlink Auditing" (click tracking)
 lockPref("browser.send_pings", false);
 
-// Disabilita Preconnect (potrebbe bypassare la protezione di uBlock!)
+// [RF] Disabilita Preconnect (potrebbe bypassare la protezione di uBlock!)
 // https://github.com/uBlockOrigin/uBlock-issues/issues/2913
 lockPref("network.preconnect", false);
 
@@ -242,12 +242,104 @@ defaultPref("browser.search.separatePrivateDefault", true);
 lockPref("browser.search.separatePrivateDefault.ui.enabled", true);
 
 /* -----------------------------------------------------------------------------------
+   [0900] GESTIONE CREDENZIALI
+   ----------------------------------------------------------------------------------- */
+
+// [0903] Disabilita Autofill per maggiore sicurezza
+lockPref("signon.autofillForms", false);
+
+// [0904] Disabilita la cattura credenziali al di fuori dei form di login
+lockPref("signon.formlessCapture.enabled", false);
+
+// [0905] Impedisci che le risorse interne aprano dialoghi di autenticazione HTTP
+lockPref("network.auth.subresource-http-auth-allow", 1);
+
+/* -----------------------------------------------------------------------------------
+   [1000] TRACCE SU DISCO
+   ----------------------------------------------------------------------------------- */
+
+// [1001] Disabilita cache su disco
+lockPref("browser.cache.disk.enable", false);
+
+// [1002] Impedisce la scrittura della cache multimediale su disco nelle finestre private
+lockPref("browser.privatebrowsing.forceMediaMemoryCache", true);
+
+// [1003] Disabilita scrittura dati di sessione
+lockPref("browser.sessionstore.privacy_level", 2);
+
+/* -----------------------------------------------------------------------------------
+   [1200] CONNESSIONI SICURE
+   ----------------------------------------------------------------------------------- */
+
+// [1201] Richiedi negoziazione sicura SSL
+lockPref("security.ssl.require_safe_negotiation", true);
+
+// [1206] Disabilita TLS 1.3 0-RTT
+lockPref("security.tls.enable_0rtt_data", false);
+
+// [1211] Disabilita OCSP
+lockPref("security.OCSP.enabled", 0);
+
+// [1212] Non richiedere OCSP
+lockPref("security.OCSP.require", false);
+
+// [1223] Fornisce una protezione extra bloccando completamente le connessioni in caso di mancata corrispondenza del certificato
+lockPref("security.cert_pinning.enforcement_level", 2);
+
+// [1224] Abilita CRLite
+lockPref("security.remote_settings.crlite_filters.enabled", true);
+lockPref("security.pki.crlite_mode", 2);
+
+// [1244] Abilita HTTPS-Only
+lockPref("dom.security.https_only_mode", true);
+lockPref("dom.security.https_only_mode_pbm", true);
+
+// [1246] Disabilita l'invio di richieste HTTP in background
+lockPref("dom.security.https_only_mode_send_http_background_request", false);
+
+// [1270] Mostra avviso connessione insicure
+lockPref("security.ssl.treat_unsafe_negotiation_as_broken", true);
+
+// [1272] Mostra informazioni dettagliate sulle pagine di errore
+lockPref("browser.xul.error_pages.expert_bad_cert", true);
+
+/* -----------------------------------------------------------------------------------
+   [1600] REFERERS
+   ----------------------------------------------------------------------------------- */
+
+// [1602] Rimuovi i percorsi e le query dai referrer tra siti diversi
+defaultPref("network.http.referer.XOriginTrimmingPolicy", 2);
+
+
+
+
+/* -----------------------------------------------------------------------------------
    DA CONTROLLARE
    ----------------------------------------------------------------------------------- */
 
+// Abilita i controlli di revoca CRLite e dà loro la priorità su OCSP
+lockPref("security.csp.reporting.enabled", false);
+
+// Diminuisce il numero di salvataggi delle schede chiuse
+lockPref("browser.sessionstore.max_tabs_undo", 5);
+
+// Disabilita la cache Indietro/Avanti (bfcache)
+lockPref("browser.sessionhistory.max_total_viewers", 0);
+
+// Disabilita la generazione di miniature delle pagine
+lockPref("browser.pagethumbnails.capturing_disabled", true); // [Nascosta]
+
+// Aumenta l'intervallo di salvataggio automatico della sessione per ridurre le scritture su disco
+defaultPref("browser.sessionstore.interval", 300000); // 5 minuti
+
+// Limita la durata massima dei cookie a 6 mesi
+defaultPref("network.cookie.maxageCap", 15552000);
+
+// Impedisce la creazione di registri dei domini bloccati
+lockPref("browser.contentblocking.database.enabled", false);
+
 // Disabilita l'autocompletamento degli URL
 lockPref("browser.urlbar.autoFill", false);
-
 
 // Mostra l'interfaccia per cambiare motore di ricerca per singole ricerche
 lockPref("browser.urlbar.scotchBonnet.disableOneOffs", false);
@@ -276,34 +368,6 @@ lockPref("browser.urlbar.dnsResolveSingleWordsAfterSearch", 0);
 // Impedisci che il clic con il tasto centrale del mouse su una nuova scheda apra URL
 lockPref("browser.tabs.searchclipboardfor.middleclick", false);
 lockPref("middlemouse.contentLoadURL", false);
-
-/* -----------------------------------------------------------------------------------
-   TRACCE SU DISCO
-   ----------------------------------------------------------------------------------- */
-
-// Disabilita cache su disco
-lockPref("browser.cache.disk.enable", false);
-
-// Diminuisce il numero di salvataggi delle schede chiuse
-lockPref("browser.sessionstore.max_tabs_undo", 5);
-
-// Disabilita la cache Indietro/Avanti (bfcache)
-lockPref("browser.sessionhistory.max_total_viewers", 0);
-
-// Disabilita la generazione di miniature delle pagine
-lockPref("browser.pagethumbnails.capturing_disabled", true); // [Nascosta]
-
-// Aumenta l'intervallo di salvataggio automatico della sessione per ridurre le scritture su disco
-defaultPref("browser.sessionstore.interval", 300000); // 5 minuti
-
-// Impedisce la scrittura della cache multimediale su disco nelle finestre private
-lockPref("browser.privatebrowsing.forceMediaMemoryCache", true);
-
-// Limita la durata massima dei cookie a 6 mesi
-defaultPref("network.cookie.maxageCap", 15552000);
-
-// Impedisce la creazione di registri dei domini bloccati
-lockPref("browser.contentblocking.database.enabled", false);
 
 /* -----------------------------------------------------------------------------------
    FILE SCARICATI
@@ -343,9 +407,6 @@ defaultPref("privacy.dynamic_firstparty.limitForeign", true);
 // Limita i referrer che tracciano
 defaultPref("network.http.referer.defaultPolicy.trackers", 1);
 defaultPref("network.http.referer.defaultPolicy.trackers.pbmode", 1);
-
-// Rimuovi i percorsi e le query dai referrer tra siti diversi
-defaultPref("network.http.referer.XOriginTrimmingPolicy", 2);
 
 // Abilita Bounce Tracking Protection
 lockPref("privacy.bounceTrackingProtection.requireStatefulBounces", false);
@@ -388,90 +449,6 @@ defaultPref("dom.battery.enabled", false);
 lockPref("app.distributor", "");
 lockPref("app.distributor.channel", "");
 lockPref("mozilla.partner.id", "");
-
-/* -----------------------------------------------------------------------------------
-   CONNESSIONI SICURE
-   ----------------------------------------------------------------------------------- */
-
-// Avvisa sempre sulle connessioni non sicure (HTTP)
-lockPref("security.insecure_connection_text.enabled", true);
-lockPref("security.insecure_connection_text.pbmode.enabled", true);
-
-// Blocca le negoziazioni di connessione insicure per prevenire gli attacchi di "downgrade"
-lockPref("security.ssl.treat_unsafe_negotiation_as_broken", true);
-
-// Avvisa sempre quando si invia un modulo da HTTP a HTTPS, anche su IP locali
-lockPref("security.insecure_field_warning.ignore_local_ip_address", false);
-
-// Disabilita l'importazione automatica dei certificati del sistema operativo
-defaultPref("security.osclientcerts.autoload", false);
-
-// Disabilita l'invio di richieste HTTP in background nella modalità Solo HTTPS
-defaultPref("dom.security.https_only_mode_send_http_background_request", false);
-
-// Disabilita i certificati root di terze parti a livello di sistema operativo per prevenire gli attacchi MITM
-lockPref("security.certerrors.mitm.auto_enable_enterprise_roots", false);
-lockPref("security.enterprise_roots.enabled", false);
-
-// Assicura che HTTP/3 non venga disabilitato in presenza di certificati root di terze parti
-defaultPref("network.http.http3.disable_when_third_party_roots_found", false);
-
-// Disabilita TLS 1.3 0-RTT per prevenire attacchi
-defaultPref("security.tls.enable_0rtt_data", false);
-
-// Abilita i controlli di revoca CRLite e dà loro la priorità su OCSP
-lockPref("security.OCSP.enabled", 0);
-lockPref("security.ssl.enable_ocsp_stapling", false);
-lockPref("security.pki.crlite_mode", 2);
-lockPref("security.csp.reporting.enabled", false);
-defaultPref("security.remote_settings.crlite_filters.enabled", true);
-
-// Fornisce una protezione extra bloccando completamente le connessioni in caso di mancata corrispondenza del certificato
-defaultPref("security.cert_pinning.enforcement_level", 2);
-
-// Consenti solo override temporanei per gli errori del certificato (per sessione)
-defaultPref("security.certerrors.permanentOverride", false);
-
-// Mostra informazioni tecniche dettagliate sulle pagine di errore
-defaultPref("browser.xul.error_pages.expert_bad_cert", true);
-
-// Disabilita TLS sessione identifiers
-defaultPref("security.ssl.disable_session_identifiers", true);
-
-/* -----------------------------------------------------------------------------------
-   GESTIONE CREDENZIALI
-   ----------------------------------------------------------------------------------- */
-
-// Mostra sempre il pulsante "Mostra Password"
-defaultPref("layout.forms.reveal-password-button.enabled", true);
-
-// Disabilita Autofill per maggiore sicurezza
-lockPref("signon.autofillForms", false);
-
-// Disabilita l'autenticazione Basic su HTTP
-lockPref("network.http.basic_http_auth.enabled", false);
-
-// Disabilita la cattura credenziali al di fuori dei form di login
-lockPref("signon.formlessCapture.enabled", false);
-
-// Disabilita NTLM
-lockPref("network.automatic-ntlm-auth.allow-proxies", false);
-
-// Impedisci la troncatura di testo incollato
-defaultPref("editor.truncate_user_pastes", false);
-
-// Disabilita SPNEGO
-lockPref("network.negotiate-auth.allow-proxies", false);
-
-// Abilita i prompt di conferma per l'autenticazione
-lockPref("network.auth.confirmAuth.enabled", true);
-
-// Impedisci che le risorse interne aprano dialoghi di autenticazione HTTP
-lockPref("network.auth.subresource-http-auth-allow", 1);
-
-// Disable Microsoft SSO
-defaultPref("network.http.microsoft-entra-sso.container-enabled.0", false);
-defaultPref("network.microsoft-sso-authority-list", "");
 
 /* -----------------------------------------------------------------------------------
    PDF
@@ -826,4 +803,4 @@ defaultPref("browser.tabs.groups.smart.userEnabled", false);
    ----------------------------------------------------------------------------------- */
 
 // Controllo versione
-lockPref("rischio.fox", "144.13");
+lockPref("rischio.fox", "144.14");
