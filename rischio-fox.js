@@ -10,36 +10,6 @@
 /*    ░     ░       ░ ░ ░      ░  ░  ░░     ░ ░               ░ ░  ░    ░   */
 /*                    ░                                                     */
 
-/***
-INDICE:
-
-- AVVIO: configura l'avvio e l'homepage di Firefox.
-- GEOLOCALIZZAZIONE: gestisce l'accesso alla tua posizione.
-- RACCOLTA DATI: blocca la raccolta di vari tipi di informazioni.
-- SAFE BROWSING: preferenze per il servizio Google Safe Browsing
-- CONNESSIONI IMPLICITE: disabilita le connessioni non richieste.
-- DNS / DoH / PROXY / SOCKS
-- BARRE DI RICERCA: configura la barra degli indirizzi e di ricerca.
-- GESTIONE CREDENZIALI: controlla password e compilazione automatica.
-- TRACCE SU DISCO: gestisce la cache, la cronologia e i dati salvati localmente.
-- CONNESSIONI SICURE: imposta le regole per HTTPS e la validazione dei certificati.
-
-- FILE SCARICATI: controlla il comportamento di download.
-- TRACKING PROTECTION: attiva le misure anti-tracciamento di Firefox.
-- FINGERPRINTING: protegge dall'identificazione tramite l'impronta digitale del browser.
-- PROXY: gestisce il comportamento del proxy.
-- PDF: gestisce la sicurezza del lettore PDF.
-- ESTENSIONI: imposta le regole per le estensioni.
-- SICUREZZA AVANZATA: include preferenze di sicurezza varie.
-- ELEMENTI FASTIDIOSI: rimuove i pop-up e le notifiche indesiderate.
-- INTERFACCIA: impostazioni che modificano l'aspetto del browser.
-- ORTOGRAFIA E DIZIONARI: traduttore e correttore automatico.
-- GESTIONE SCHEDE: gestisce il comportamento delle schede
-- PRESTAZIONI
-- INTELLIGENZA ARTIFICIALE
-
-***/
-
 // [0000] Disabilita gli avvisi quando si accede ad `about:config`
 lockPref("browser.aboutConfig.showWarning", false);
 
@@ -310,15 +280,83 @@ lockPref("browser.xul.error_pages.expert_bad_cert", true);
 // [1602] Rimuovi i percorsi e le query dai referrer tra siti diversi
 defaultPref("network.http.referer.XOriginTrimmingPolicy", 2);
 
+/* -----------------------------------------------------------------------------------
+   [1700] CONTAINERS
+   ----------------------------------------------------------------------------------- */
 
+// [1701] Abilita Container
+lockPref("privacy.userContext.enabled", true);
+lockPref("privacy.userContext.ui.enabled", true);
+
+/* -----------------------------------------------------------------------------------
+   [2000] MEDIA
+   ----------------------------------------------------------------------------------- */
+
+// [2002] Previene i WebRTC IP leaks forzando l'uso del proxy
+defaultPref("media.peerconnection.ice.proxy_only_if_behind_proxy", true);
+
+// [2003] Mitiga il WebRTC IP Leak
+defaultPref("media.peerconnection.ice.default_address_only", true);
+
+/* -----------------------------------------------------------------------------------
+   [2400] DOM (DOCUMENT OBJECT MODEL)
+   ----------------------------------------------------------------------------------- */
+
+// [2402] Impedisci agli script di spostare e ridimensionare le finestre
+defaultPref("dom.disable_window_move_resize", true);
+
+/* -----------------------------------------------------------------------------------
+   [2600] MISCELLANEA
+   ----------------------------------------------------------------------------------- */
+
+// [2603] Gestisce i file temporanei per evitare tracce
+lockPref("browser.download.start_downloads_in_tmp_dir", true);
+lockPref("browser.helperApps.deleteTempFileOnExit", true);
+
+// [2606] Disabilita UITour
+lockPref("browser.uitour.enabled", false);
+lockPref("browser.uitour.url", "");
+
+// [2616] Rimuove permessi speciali per domini Mozilla
+lockPref("permissions.manager.defaultsUrl", "");
+
+// [2619] Mostra sempre il Punycode
+lockPref("network.IDN_show_punycode", true);
+
+// [2620] Disabilita l'esecuzione di JavaScript all'interno dei PDF
+lockPref("pdfjs.disabled", false);
+lockPref("pdfjs.enableScripting", false);
+
+// [2624] Non aprire URL negli appunti cliccando con il tasto centrale sul tasto per aprire schede
+lockPref("browser.tabs.searchclipboardfor.middleclick", false);
+
+// [2630] Disabilita content analysis
+lockPref("browser.contentanalysis.enabled", false);
+lockPref("browser.contentanalysis.default_result", 0);
+
+// [2635] Isola le risorse iniettate dalle estensioni
+defaultPref("privacy.antitracking.isolateContentScriptResources", true);
+
+// [2640] Disabilita Content Security Policy
+lockPref("security.csp.reporting.enabled", false);
+
+// [2651] Chiedi sempre dove salvare i download
+lockPref("browser.download.useDownloadDir", false);
+
+// [2652] Impedisci apertura automatica finestra download
+lockPref("browser.download.alwaysOpenPanel", false);
+
+// [2653] Non aggiungere i file scaricati ai documenti recenti di sistema
+lockPref("browser.download.manager.addToRecentDocs", false);
+
+// [2654] Chiedi sempre come aprire nuovi tipi di file
+lockPref("browser.download.always_ask_before_handling_new_types", true);
 
 
 /* -----------------------------------------------------------------------------------
    DA CONTROLLARE
    ----------------------------------------------------------------------------------- */
 
-// Abilita i controlli di revoca CRLite e dà loro la priorità su OCSP
-lockPref("security.csp.reporting.enabled", false);
 
 // Diminuisce il numero di salvataggi delle schede chiuse
 lockPref("browser.sessionstore.max_tabs_undo", 5);
@@ -358,31 +396,12 @@ defaultPref("browser.search.widget.inNavBar", true);
 defaultPref("browser.search.openintab", true);
 defaultPref("browser.urlbar.openintab", true);
 
-// Previene i WebRTC IP leaks forzando l'uso del proxy
-lockPref("media.peerconnection.ice.proxy_only_if_behind_proxy", true);
-
 // Prevent leaking single word searches to DNS provider
 lockPref("browser.fixup.dns_first_for_single_words", false);
 lockPref("browser.urlbar.dnsResolveSingleWordsAfterSearch", 0);
 
-// Impedisci che il clic con il tasto centrale del mouse su una nuova scheda apra URL
-lockPref("browser.tabs.searchclipboardfor.middleclick", false);
+
 lockPref("middlemouse.contentLoadURL", false);
-
-/* -----------------------------------------------------------------------------------
-   FILE SCARICATI
-   ----------------------------------------------------------------------------------- */
-
-// Massimizza il controllo dell'utente sui download
-lockPref("browser.download.useDownloadDir", false);
-lockPref("browser.download.always_ask_before_handling_new_types", true);
-
-// Gestisce i file temporanei per evitare tracce
-lockPref("browser.download.start_downloads_in_tmp_dir", true);
-lockPref("browser.helperApps.deleteTempFileOnExit", true);
-
-// Impedisci apertura automatica finestra download
-lockPref("browser.download.alwaysOpenPanel", false);
 
 // Riproduci video MKV nel browser
 defaultPref("media.mkv.enabled", true);
@@ -390,9 +409,6 @@ defaultPref("media.mkv.enabled", true);
 /* -----------------------------------------------------------------------------------
    TRACKING PROTECTION
    ----------------------------------------------------------------------------------- */
-
-// Isola le risorse iniettate dalle estensioni
-defaultPref("privacy.antitracking.isolateContentScriptResources", true);
 
 // Abilita Global Privacy Control
 lockPref("privacy.globalprivacycontrol.enabled", true);
@@ -449,47 +465,6 @@ defaultPref("dom.battery.enabled", false);
 lockPref("app.distributor", "");
 lockPref("app.distributor.channel", "");
 lockPref("mozilla.partner.id", "");
-
-/* -----------------------------------------------------------------------------------
-   PDF
-   ----------------------------------------------------------------------------------- */
-
-// Disabilita l'esecuzione di JavaScript all'interno dei PDF
-lockPref("pdfjs.enableScripting", false);
-
-// Disabilita il download automatico di un modello per il testo alternativo
-lockPref("pdfjs.enableAltTextModelDownload", false);
-
-// Disabilita i collegamenti ipertestuali automatici
-lockPref("pdfjs.enableAutoLinking", false);
-
-// Disabilita XFA, una fonte comune di vulnerabilità nei PDF
-lockPref("pdfjs.enableXfa", false);
-
-// Forzare l'uso del renderer di font interno
-lockPref("pdfjs.disableFontFace", true);
-
-// Forzare il download/la visualizzazione locale dei PDF e chiedere prima di aprire il visualizzatore PDF
-lockPref("pdfjs.disableRange", true);
-lockPref("pdfjs.disableStream", true);
-
-// Apri i link esterni in nuove schede/finestre
-lockPref("pdfjs.externalLinkTarget", 2);
-
-// Impedisci il tentativo di caricare/convertire file binari sconosciuti
-lockPref("pdfjs.handleOctetStream", false);
-
-// Abilita la possibilità di aggiungere firme
-defaultPref("pdfjs.enableSignatureEditor", true);
-
-// Abilita il testo alternativo
-defaultPref("pdfjs.enableAltText", true);
-
-// Mostra la barra laterale per impostazione predefinita durante la visualizzazione dei PDF
-defaultPref("pdfjs.sidebarViewOnLoad", 2);
-
-// Aggiorna l'URL quando si cambiano le pagine
-defaultPref("pdfjs.historyUpdateUrl", true);
 
 /* -----------------------------------------------------------------------------------
    ESTENSIONI
@@ -581,8 +556,6 @@ lockPref("network.socket.ip_addr_any.disabled", true);
 // Blocca Origin Trials
 lockPref("dom.origin-trials.enabled", false);
 
-// Mostra sempre il Punycode
-lockPref("network.IDN_show_punycode", true);
 
 /* -----------------------------------------------------------------------------------
    ELEMENTI FASTIDIOSI
@@ -610,8 +583,6 @@ defaultPref("cookiebanners.service.mode.privateBrowsing", 1);
 // Limita gli eventi che possono causare pop-up
 defaultPref("dom.popup_allowed_events", "click dblclick");
 
-// Impedisci agli script di spostare e ridimensionare le finestre
-defaultPref("dom.disable_window_move_resize", true);
 
 // Impedisci alle pagine di ricaricarsi automaticamente
 defaultPref("accessibility.blockautorefresh", true);
