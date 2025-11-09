@@ -571,7 +571,6 @@ defaultPref("gfx.webrender.compositor", true);
 
 // Accelerazione hardware
 defaultPref("layers.gpu-process.enabled", true);
-//defaultPref("layers.mlgpu.enabled", true); // LINUX (sperimentale?)
 defaultPref("media.hardware-video-decoding.enabled", true);
 defaultPref("media.gpu-process-decoder", true);
 defaultPref("media.ffmpeg.vaapi.enabled", true); // LINUX
