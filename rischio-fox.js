@@ -173,7 +173,7 @@ lockPref("network.trr.mode", 3);
 lockPref("network.trr.uri", "https://dns.quad9.net/dns-query");
 
 /* -----------------------------------------------------------------------------------
-   BARRE DI RICERCA
+   [0800] BARRE DI RICERCA
    ----------------------------------------------------------------------------------- */
 
 // [0801] Disabilita connessioni speculative nella barra degli indirizzi
