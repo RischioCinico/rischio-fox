@@ -446,6 +446,62 @@ lockPref("browser.startup.homepage_override.mstone", "ignore"); // [Nascosta]
 lockPref("browser.newtabpage.activity-stream.asrouter.userprefs.cfr.addons", false);
 lockPref("browser.newtabpage.activity-stream.asrouter.userprefs.cfr.features", false);
 
+/* -----------------------------------------------------------------------------------
+   PRESTAZIONI
+   ----------------------------------------------------------------------------------- */
+
+defaultPref("gfx.content.skia-font-cache-size", 32); // default=5
+defaultPref("gfx.canvas.accelerated.cache-items", 32768); // default=8192
+defaultPref("gfx.canvas.accelerated.cache-size", 4096); // default=256
+
+defaultPref("webgl.max-size", 16384); // default=1024
+
+// Abilita la decodifica video hardware
+defaultPref("layers.gpu-process.enabled", true);
+defaultPref("media.gpu-process-decoder", true);
+defaultPref("media.ffmpeg.vaapi.enabled", true); // [LINUX]
+
+defaultPref("browser.cache.memory.capacity", 131072);
+
+
+defaultPref("browser.cache.memory.max_entry_size", 20480);
+defaultPref("media.memory_cache_max_size", 262144);
+defaultPref("media.memory_caches_combined_limit_kb", 1048576);
+defaultPref("media.cache_readahead_limit", 600);
+defaultPref("media.cache_resume_threshold", 300);
+defaultPref("image.cache.size", 10485760);
+defaultPref("image.mem.decode_bytes_at_a_time", 65536);
+
+// Network
+defaultPref("network.http.max-connections", 1800);
+defaultPref("network.http.max-persistent-connections-per-server", 10);
+defaultPref("network.http.max-urgent-start-excessive-connections-per-host", 5);
+defaultPref("network.http.request.max-start-delay", 5);
+defaultPref("network.http.pacing.requests.enabled", false);
+defaultPref("network.dnsCacheEntries", 10000);
+defaultPref("network.dnsCacheExpiration", 3600);
+defaultPref("network.ssl_tokens_cache_capacity", 10240);
+
+// Abilita WebAssembly (WASM) per prestazioni migliori in compiti pesanti
+defaultPref("javascript.options.wasm_branch_hinting", true);
+defaultPref("javascript.options.wasm_relaxed_simd", true);
+
+// Disabilita le animazioni superflue per migliorare la reattività dell'interfaccia utente
+defaultPref("sidebar.animation.enabled", false);
+defaultPref("ui.panelAnimations", 0); // [Nascosta]
+defaultPref("ui.prefersReducedMotion", 1); // [Nascosta]
+defaultPref("ui.swipeAnimationEnabled", 0); // [Nascosta]
+
+// Disabilita l'anteprima delle schede al passaggio del mouse per risparmiare risorse
+defaultPref("browser.tabs.hoverPreview.enabled", false);
+
+// Disabilita il reporting degli errori CSS
+defaultPref("layout.css.report_errors", false);
+
+// GFX Rendering
+defaultPref("gfx.webrender.all", true);
+defaultPref("gfx.webrender.precache-shaders", true);
+defaultPref("gfx.webrender.compositor", true);
 
 /* -----------------------------------------------------------------------------------
    DA CONTROLLARE
@@ -665,60 +721,6 @@ defaultPref("browser.tabs.insertAfterCurrent", true);
 
 // Lascia il browser aperto alla chiusura dell'ultima scheda
 defaultPref("browser.tabs.closeWindowWithLastTab", false);
-
-/* -----------------------------------------------------------------------------------
-   PRESTAZIONI
-   ----------------------------------------------------------------------------------- */
-
-// Cache
-defaultPref("gfx.content.skia-font-cache-size", 32);
-defaultPref("gfx.canvas.accelerated.cache-items", 32768);
-defaultPref("gfx.canvas.accelerated.cache-size", 4096);
-defaultPref("webgl.max-size", 16384);
-defaultPref("browser.cache.memory.capacity", 131072);
-defaultPref("browser.cache.memory.max_entry_size", 20480);
-defaultPref("media.memory_cache_max_size", 262144);
-defaultPref("media.memory_caches_combined_limit_kb", 1048576);
-defaultPref("media.cache_readahead_limit", 600);
-defaultPref("media.cache_resume_threshold", 300);
-defaultPref("image.cache.size", 10485760);
-defaultPref("image.mem.decode_bytes_at_a_time", 65536);
-
-// Network
-defaultPref("network.http.max-connections", 1800);
-defaultPref("network.http.max-persistent-connections-per-server", 10);
-defaultPref("network.http.max-urgent-start-excessive-connections-per-host", 5);
-defaultPref("network.http.request.max-start-delay", 5);
-defaultPref("network.http.pacing.requests.enabled", false);
-defaultPref("network.dnsCacheEntries", 10000);
-defaultPref("network.dnsCacheExpiration", 3600);
-defaultPref("network.ssl_tokens_cache_capacity", 10240);
-
-// Abilita WebAssembly (WASM) per prestazioni migliori in compiti pesanti
-defaultPref("javascript.options.wasm_branch_hinting", true);
-defaultPref("javascript.options.wasm_relaxed_simd", true);
-
-// Disabilita le animazioni superflue per migliorare la reattività dell'interfaccia utente
-defaultPref("sidebar.animation.enabled", false);
-defaultPref("ui.panelAnimations", 0); // [Nascosta]
-defaultPref("ui.prefersReducedMotion", 1); // [Nascosta]
-defaultPref("ui.swipeAnimationEnabled", 0); // [Nascosta]
-
-// Disabilita l'anteprima delle schede al passaggio del mouse per risparmiare risorse
-defaultPref("browser.tabs.hoverPreview.enabled", false);
-
-// Disabilita il reporting degli errori CSS
-defaultPref("layout.css.report_errors", false);
-
-// GFX Rendering
-defaultPref("gfx.webrender.all", true);
-defaultPref("gfx.webrender.precache-shaders", true);
-defaultPref("gfx.webrender.compositor", true);
-
-// Abilita la decodifica video hardware
-defaultPref("media.ffmpeg.vaapi.enabled", true); // [LINUX]
-defaultPref("layers.gpu-process.enabled", true);
-defaultPref("media.gpu-process-decoder", true);
 
 /* -----------------------------------------------------------------------------------
    INTELLIGENZA ARTIFICIALE
