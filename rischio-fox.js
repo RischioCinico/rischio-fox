@@ -400,9 +400,6 @@ lockPref("browser.link.open_newwindow.restriction", 0)
    [5000] OPTIONAL OPSEC
    ----------------------------------------------------------------------------------- */
 
-// [5007] Diminuisce il numero di salvataggi delle schede chiuse
-defaultPref("browser.sessionstore.max_tabs_undo", 5);
-
 // [5012] Disabilita l'autocompletamento degli URL
 lockPref("browser.urlbar.autoFill", false);
 
@@ -549,6 +546,7 @@ defaultPref("webgl.max-size", 16384);
 defaultPref("browser.cache.memory.capacity", 131072);
 defaultPref("browser.cache.memory.max_entry_size", 20480);
 defaultPref("browser.sessionhistory.max_total_viewers", 4);
+defaultPref("browser.sessionstore.max_tabs_undo", 5);
 defaultPref("media.memory_cache_max_size", 262144);
 defaultPref("media.memory_caches_combined_limit_kb", 1048576);
 defaultPref("media.cache_readahead_limit", 600);
