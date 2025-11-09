@@ -13,7 +13,9 @@
 /***
 INDICE:
 
-- AVVIO: configura l'avvio e l'homepage di Firefox
+- AVVIO: configura l'avvio e l'homepage di Firefox.
+- GEOLOCALIZZAZIONE: gestisce l'accesso alla tua posizione.
+- RACCOLTA DATI: blocca la raccolta di vari tipi di informazioni.
 - TRACCE SU DISCO: gestisce la cache, la cronologia e i dati salvati localmente.
 - FILE SCARICATI: controlla il comportamento di download.
 - TRACKING PROTECTION: attiva le misure anti-tracciamento di Firefox.
@@ -22,7 +24,6 @@ INDICE:
 - CONNESSIONI SICURE: imposta le regole per HTTPS e la validazione dei certificati.
 - CONNESSIONI IMPLICITE: disabilita le connessioni non richieste.
 - GESTIONE CREDENZIALI: controlla password e compilazione automatica.
-- GEOLOCALIZZAZIONE: gestisce l'accesso alla tua posizione.
 - PDF: gestisce la sicurezza del lettore PDF.
 - ESTENSIONI: imposta le regole per le estensioni.
 - SICUREZZA AVANZATA: include preferenze di sicurezza varie.
@@ -51,19 +52,22 @@ lockPref("browser.newtabpage.activity-stream.showSponsored", false);
 lockPref("browser.newtabpage.activity-stream.showSponsoredTopSites", false);
 lockPref("browser.newtabpage.activity-stream.showSponsoredCheckboxes", false);
 
+// [0106] clear default topsites
+lockPref("browser.newtabpage.activity-stream.default.sites", "");
+
+// [PF] Impedisce il passaggio dei dati di ricerca alla barra degli indirizzi
+defaultPref("browser.newtabpage.activity-stream.improvesearch.handoffToAwesomebar", false);
+
+// [PF] Nasconde il logo di Firefox dalla pagina iniziale
+defaultPref("browser.newtabpage.activity-stream.logowordmark.alwaysVisible", false);
+
 // Imposta i siti preferiti nella pagina iniziale
 defaultPref("browser.newtabpage.pinned", "[{\"url\":\"https://www.youtube.com/\",\"label\":\"YouTube\"},{\"url\":\"https://www.reddit.com/\",\"label\":\"Reddit\"},{\"url\":\"https://mail.google.com/mail/u/0/?hl=it#inbox\",\"label\":\"Gmail\"},{\"url\":\"https://addons.mozilla.org/it/firefox/\",\"label\":\"Estensioni\"},{\"url\":\"https://wiki.archlinux.org/title/List_of_applications\",\"label\":\"Applicazioni\"},{\"url\":\"https://it.wikipedia.org/wiki/Pagina_principale\",\"label\":\"Wikipedia\"},{\"url\":\"https://github.com/\",\"label\":\"GitHub\"},{\"url\":\"https://www.diretta.it/\",\"label\":\"Diretta\"}]");
 
 // Imposta sfondo
 defaultPref("browser.newtabpage.activity-stream.newtabWallpapers.wallpaper", "dark-landscape");
 
-// Nasconde il logo di Firefox dalla pagina iniziale
-defaultPref("browser.newtabpage.activity-stream.logowordmark.alwaysVisible", false);
-
-// Impedisce il passaggio dei dati di ricerca alla barra degli indirizzi
-defaultPref("browser.newtabpage.activity-stream.improvesearch.handoffToAwesomebar", false);
-
-// Widgets
+// Abilita Widgets
 defaultPref("browser.newtabpage.activity-stream.widgets.system.enabled", true);
 
 // Task list
@@ -77,6 +81,54 @@ defaultPref("browser.newtabpage.activity-stream.widgets.focusTimer.showSystemNot
 defaultPref("browser.newtabpage.activity-stream.system.showWeather", true);
 defaultPref("browser.newtabpage.activity-stream.weather.display", "detailed");
 
+/* -----------------------------------------------------------------------------------
+   [0200] GEOLOCALIZZAZIONE
+   ----------------------------------------------------------------------------------- */
+
+// [0202] Disabilita servizio di geolocalizzazione del sistema
+defaultPref("geo.provider.use_geoclue", false); // [LINUX]
+
+// [SF] Imposta BeaconDB come provider di geolocalizzazione di rete predefinito
+defaultPref("geo.provider.network.url", "https://beacondb.net/v1/geolocate");
+
+/* -----------------------------------------------------------------------------------
+   [0300] RACCOLTA DATI
+   ----------------------------------------------------------------------------------- */
+
+// [0320] Disabilita pannello raccomandazioni in about:addons
+lockPref("extensions.getAddons.showPane", false); // [Nascosta]
+
+// [0321] Disabilita raccomandazioni di temi ed estensioni
+lockPref("extensions.htmlaboutaddons.recommendations.enabled", false);
+
+// [0322] Disabilita suggerimenti personalizzati per le estensioni
+lockPref("browser.discovery.enabled", false);
+
+// [0335] Blocca telemetria nella home page di Firefox
+lockPref("browser.newtabpage.activity-stream.feeds.telemetry", false);
+lockPref("browser.newtabpage.activity-stream.telemetry", false);
+
+// [0340] Disabilita Studies
+lockPref("app.shield.optoutstudies.enabled", false);
+
+// [0341] Disabilita Normandy/Shield
+lockPref("app.normandy.enabled", false);
+lockPref("app.normandy.api_url", "");
+
+// [0350] Disabilita Crash Reports
+lockPref("breakpad.reportURL", "");
+lockPref("browser.tabs.crashReporting.sendReport", false);
+lockPref("browser.crashReports.unsubmittedCheck.enabled", false);
+
+// [0351] Blocca invio di Crash Reports arretrati
+lockPref("browser.crashReports.unsubmittedCheck.autoSubmit2", false);
+
+// [0360] Disabilita Captive Portal
+defaultPref("captivedetect.canonicalURL", "");
+defaultPref("network.captive-portal-service.enabled", false);
+
+// [0361] Disabilita controlli connettività
+defaultPref("network.connectivity-service.enabled", false);
 
 /* -----------------------------------------------------------------------------------
    TRACCE SU DISCO
@@ -341,16 +393,6 @@ defaultPref("network.http.microsoft-entra-sso.container-enabled.0", false);
 defaultPref("network.microsoft-sso-authority-list", "");
 
 /* -----------------------------------------------------------------------------------
-   GEOLOCALIZZAZIONE
-   ----------------------------------------------------------------------------------- */
-
-// Impedisci di fornire incondizionatamente un'alta precisione della posizione
-defaultPref("geo.provider.geoclue.always_high_accuracy", false); // [LINUX]
-
-// Imposta BeaconDB come provider di geolocalizzazione di rete predefinito
-defaultPref("geo.provider.network.url", "https://beacondb.net/v1/geolocate");
-
-/* -----------------------------------------------------------------------------------
    PDF
    ----------------------------------------------------------------------------------- */
 
@@ -420,11 +462,6 @@ defaultPref("dom.ipc.keepProcessesAlive.extension", 0); // [Nascosta]
 
 // Non permettere alle estensioni di raccogliere dati
 lockPref("extensions.dataCollectionPermissions.enabled", false);
-
-// Non mostrare estensioni consigliate
-lockPref("extensions.getAddons.showPane", false); // [Nascosta]
-lockPref("extensions.htmlaboutaddons.recommendations.enabled", false);
-lockPref("browser.discovery.enabled", false);
 
 /* -----------------------------------------------------------------------------------
    SICUREZZA AVANZATA
@@ -736,4 +773,4 @@ defaultPref("browser.tabs.groups.smart.userEnabled", false);
    ----------------------------------------------------------------------------------- */
 
 // Controllo versione
-lockPref("rischio.fox", "144.11");
+lockPref("rischio.fox", "144.12");
