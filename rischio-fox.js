@@ -371,18 +371,88 @@ lockPref("privacy.trackingprotection.allow_list.baseline.enabled", true);
 lockPref("privacy.trackingprotection.allow_list.convenience.enabled", true);
 
 /* -----------------------------------------------------------------------------------
+   [4000] FINGERPRINTING
+   ----------------------------------------------------------------------------------- */
+
+// [4502] Arrotonda le dimensioni della finestra per prevenire il tracciamento
+defaultPref("privacy.window.maxInnerHeight", 900);
+defaultPref("privacy.window.maxInnerWidth", 1600);
+
+// [4503] Disabilita mozAddonManager Web API
+lockPref("privacy.resistFingerprinting.block_mozAddonManager", true);
+
+// [4503] Non usare colori di sistema
+lockPref("widget.non-native-theme.use-theme-accent", false);
+
+// [4512] Forza apertura link in una nuova scheda
+lockPref("browser.link.open_newwindow", 3);
+
+// [4513] Imponi sempre apertura in una nuova scheda
+lockPref("browser.link.open_newwindow.restriction", 0)
+
+/* -----------------------------------------------------------------------------------
+   [5000] OPTIONAL OPSEC
+   ----------------------------------------------------------------------------------- */
+
+// [5007] Diminuisce il numero di salvataggi delle schede chiuse
+defaultPref("browser.sessionstore.max_tabs_undo", 5);
+
+// [5012] Disabilita l'autocompletamento degli URL
+lockPref("browser.urlbar.autoFill", false);
+
+// [5017] Disabilita Form Autofill
+lockPref("extensions.formautofill.addresses.enabled", false);
+lockPref("extensions.formautofill.creditCards.enabled", false);
+
+// [5018] Limita gli eventi che possono causare pop-up
+defaultPref("dom.popup_allowed_events", "click dblclick");
+
+// [5019] Disabilita la generazione di miniature delle pagine
+lockPref("browser.pagethumbnails.capturing_disabled", true); // [Nascosta]
+
+// [5021] Non inviare URL invalidi al motore di ricerca
+lockPref("keyword.enabled", false);
+
+/* -----------------------------------------------------------------------------------
+   [8500] TELEMETRIA
+   ----------------------------------------------------------------------------------- */
+
+// [8500] Disabilita data submission
+lockPref("datareporting.policy.dataSubmissionEnabled", false);
+// [8501] Disabilita Health Reports
+lockPref("datareporting.healthreport.uploadEnabled", false);
+// [0802] Disabilita telemetria
+lockPref("toolkit.telemetry.unified", false);
+lockPref("toolkit.telemetry.enabled", false);
+lockPref("toolkit.telemetry.server", "data:,");
+lockPref("toolkit.telemetry.archive.enabled", false);
+lockPref("toolkit.telemetry.newProfilePing.enabled", false);
+lockPref("toolkit.telemetry.shutdownPingSender.enabled", false);
+lockPref("toolkit.telemetry.updatePing.enabled", false);
+lockPref("toolkit.telemetry.bhrPing.enabled", false);
+lockPref("toolkit.telemetry.firstShutdownPing.enabled", false);
+// [8503] Disabilita Telemetry Coverage
+lockPref("toolkit.telemetry.coverage.opt-out", true);
+lockPref("toolkit.coverage.opt-out", true);
+lockPref("toolkit.coverage.endpoint.base", "");
+
+/* -----------------------------------------------------------------------------------
+   [9000] ALTRO
+   ----------------------------------------------------------------------------------- */
+
+/* [9001] disable welcome notices ***/
+lockPref("browser.startup.homepage_override.mstone", "ignore"); // [Nascosta]
+/* [9002] disable General>Browsing>Recommend extensions/features as you browse [FF67+] ***/
+lockPref("browser.newtabpage.activity-stream.asrouter.userprefs.cfr.addons", false);
+lockPref("browser.newtabpage.activity-stream.asrouter.userprefs.cfr.features", false);
+
+
+/* -----------------------------------------------------------------------------------
    DA CONTROLLARE
    ----------------------------------------------------------------------------------- */
 
-
-// Diminuisce il numero di salvataggi delle schede chiuse
-lockPref("browser.sessionstore.max_tabs_undo", 5);
-
 // Disabilita la cache Indietro/Avanti (bfcache)
 lockPref("browser.sessionhistory.max_total_viewers", 0);
-
-// Disabilita la generazione di miniature delle pagine
-lockPref("browser.pagethumbnails.capturing_disabled", true); // [Nascosta]
 
 // Aumenta l'intervallo di salvataggio automatico della sessione per ridurre le scritture su disco
 defaultPref("browser.sessionstore.interval", 300000); // 5 minuti
@@ -392,9 +462,6 @@ defaultPref("network.cookie.maxageCap", 15552000);
 
 // Impedisce la creazione di registri dei domini bloccati
 lockPref("browser.contentblocking.database.enabled", false);
-
-// Disabilita l'autocompletamento degli URL
-lockPref("browser.urlbar.autoFill", false);
 
 // Mostra l'interfaccia per cambiare motore di ricerca per singole ricerche
 lockPref("browser.urlbar.scotchBonnet.disableOneOffs", false);
@@ -416,7 +483,6 @@ defaultPref("browser.urlbar.openintab", true);
 // Prevent leaking single word searches to DNS provider
 lockPref("browser.fixup.dns_first_for_single_words", false);
 lockPref("browser.urlbar.dnsResolveSingleWordsAfterSearch", 0);
-
 
 lockPref("middlemouse.contentLoadURL", false);
 
@@ -451,45 +517,11 @@ lockPref("privacy.trackingprotection.lower_network_priority", true);
 lockPref("privacy.webrtc.sharedTabWarning", true);
 
 /* -----------------------------------------------------------------------------------
-   FINGERPRINTING
-   ----------------------------------------------------------------------------------- */
-
-// Disabilita l'uso delle proprietà di contesto SVG per prevenire il fingerprinting
-lockPref("svg.context-properties.content.allowed-domains", "");
-
-// Impedisce l'esposizione delle informazioni del renderer WebGL
-lockPref("webgl.enable-renderer-query", false);
-lockPref("webgl.override-unmasked-vendor", "Mozilla");
-lockPref("webgl.sanitize-unmasked-renderer", true);
-
-// Non usare colori di sistema
-lockPref("widget.non-native-theme.use-theme-accent", false);
-lockPref("browser.display.use_system_colors", false);
-lockPref("ui.use_standins_for_native_colors", true);
-
-// Reimposta ogni giorno la chiave di randomizzazione dell'impronta digitale (in aggiunta al reset per sessione e al riavvio del browser)
-lockPref("privacy.resistFingerprinting.randomization.daily_reset.enabled", true);
-lockPref("privacy.resistFingerprinting.randomization.daily_reset.private.enabled", true);
-
-// Arrotonda le dimensioni della finestra per prevenire il tracciamento
-lockPref("privacy.window.maxInnerHeight", 900);
-lockPref("privacy.window.maxInnerWidth", 1600);
-
-// Disabilita l'API della batteria per prevenire il fingerprinting
-defaultPref("dom.battery.enabled", false);
-
-// Rimuove stringhe di identificazione
-lockPref("app.distributor", "");
-lockPref("app.distributor.channel", "");
-lockPref("mozilla.partner.id", "");
-
-/* -----------------------------------------------------------------------------------
    ESTENSIONI
    ----------------------------------------------------------------------------------- */
 
 // Disabilita API potenzialmente rischiose per la privacy
 lockPref("extensions.webapi.enabled", false);
-lockPref("privacy.resistFingerprinting.block_mozAddonManager", true);
 
 // Richiedi firme e origini sicure per le estensioni
 lockPref("extensions.install.requireBuiltInCerts", true); // [Nascosta]
@@ -590,10 +622,6 @@ lockPref("browser.shell.checkDefaultPDF", false); // [Nascosta]
 // Blocca banner dei cookie
 defaultPref("cookiebanners.service.mode", 1);
 defaultPref("cookiebanners.service.mode.privateBrowsing", 1);
-
-// Limita gli eventi che possono causare pop-up
-defaultPref("dom.popup_allowed_events", "click dblclick");
-
 
 // Impedisci alle pagine di ricaricarsi automaticamente
 defaultPref("accessibility.blockautorefresh", true);
@@ -785,4 +813,4 @@ defaultPref("browser.tabs.groups.smart.userEnabled", false);
    ----------------------------------------------------------------------------------- */
 
 // Controllo versione
-lockPref("rischio.fox", "144.15");
+lockPref("rischio.fox", "144.16");
