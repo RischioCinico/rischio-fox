@@ -457,32 +457,6 @@ defaultPref("accessibility.force_disabled", 1);
 defaultPref("devtools.accessibility.enabled", false);
 
 /* -----------------------------------------------------------------------------------
-   PRESTAZIONI
-   ----------------------------------------------------------------------------------- */
-
-defaultPref("gfx.content.skia-font-cache-size", 32);
-defaultPref("gfx.canvas.accelerated.cache-items", 32768);
-defaultPref("gfx.canvas.accelerated.cache-size", 4096);
-defaultPref("webgl.max-size", 16384);
-defaultPref("browser.cache.memory.capacity", 131072);
-defaultPref("browser.cache.memory.max_entry_size", 20480);
-defaultPref("browser.sessionhistory.max_total_viewers", 4);
-defaultPref("media.memory_cache_max_size", 262144);
-defaultPref("media.memory_caches_combined_limit_kb", 1048576);
-defaultPref("media.cache_readahead_limit", 600);
-defaultPref("media.cache_resume_threshold", 300);
-defaultPref("image.cache.size", 10485760);
-defaultPref("image.mem.decode_bytes_at_a_time", 65536);
-defaultPref("network.http.max-connections", 1800);
-defaultPref("network.http.max-persistent-connections-per-server", 10);
-defaultPref("network.http.max-urgent-start-excessive-connections-per-host", 5);
-defaultPref("network.http.request.max-start-delay", 5);
-defaultPref("network.http.pacing.requests.enabled", false);
-defaultPref("network.dnsCacheEntries", 10000);
-defaultPref("network.dnsCacheExpiration", 3600);
-defaultPref("network.ssl_tokens_cache_capacity", 10240);
-
-/* -----------------------------------------------------------------------------------
    INTERFACCIA
    ----------------------------------------------------------------------------------- */
 
@@ -565,30 +539,34 @@ defaultPref("browser.tabs.insertAfterCurrent", true);
 defaultPref("browser.tabs.closeWindowWithLastTab", false);
 
 /* -----------------------------------------------------------------------------------
-   INTELLIGENZA ARTIFICIALE
+   PRESTAZIONI
    ----------------------------------------------------------------------------------- */
 
-// Disabilita fastidioso badge per indicare nuove funzioni
-lockPref("browser.ml.chat.page.footerBadge", false);
-
-// Mostra tasto per riassumere pagine
-defaultPref("browser.ml.chat.page", true);
-
-// Abilita Link Preview
-defaultPref("browser.ml.linkPreview.enabled", true);
-defaultPref("browser.ml.linkPreview.optin", true);
-
-// Non censurare Link Preview
-defaultPref("browser.ml.linkPreview.blockListEnabled", false);
-
-// Disabilita suggerimenti nomi per gruppi di schede
-defaultPref("browser.tabs.groups.smart.enabled", false);
-defaultPref("browser.tabs.groups.smart.optin", false);
-defaultPref("browser.tabs.groups.smart.userEnabled", false);
+defaultPref("gfx.content.skia-font-cache-size", 32);
+defaultPref("gfx.canvas.accelerated.cache-items", 32768);
+defaultPref("gfx.canvas.accelerated.cache-size", 4096);
+defaultPref("webgl.max-size", 16384);
+defaultPref("browser.cache.memory.capacity", 131072);
+defaultPref("browser.cache.memory.max_entry_size", 20480);
+defaultPref("browser.sessionhistory.max_total_viewers", 4);
+defaultPref("media.memory_cache_max_size", 262144);
+defaultPref("media.memory_caches_combined_limit_kb", 1048576);
+defaultPref("media.cache_readahead_limit", 600);
+defaultPref("media.cache_resume_threshold", 300);
+defaultPref("image.cache.size", 10485760);
+defaultPref("image.mem.decode_bytes_at_a_time", 65536);
+defaultPref("network.http.max-connections", 1800);
+defaultPref("network.http.max-persistent-connections-per-server", 10);
+defaultPref("network.http.max-urgent-start-excessive-connections-per-host", 5);
+defaultPref("network.http.request.max-start-delay", 5);
+defaultPref("network.http.pacing.requests.enabled", false);
+defaultPref("network.dnsCacheEntries", 10000);
+defaultPref("network.dnsCacheExpiration", 3600);
+defaultPref("network.ssl_tokens_cache_capacity", 10240);
 
 /* -----------------------------------------------------------------------------------
    FINE
    ----------------------------------------------------------------------------------- */
 
 // Controllo versione
-lockPref("rischio.fox", "144.18");
+lockPref("rischio.fox", "144.19");
