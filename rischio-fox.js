@@ -235,7 +235,10 @@ lockPref("browser.cache.disk.enable", false);
 lockPref("browser.privatebrowsing.forceMediaMemoryCache", true);
 
 // [1003] Disabilita scrittura dati di sessione
-lockPref("browser.sessionstore.privacy_level", 2);
+lockPref("browser..privacy_level", 2);
+
+// [SF] Aumenta l'intervallo di salvataggio automatico della sessione per ridurre le scritture su disco
+defaultPref("browser.sessionstore.interval", 1800000); // default=15000
 
 /* -----------------------------------------------------------------------------------
    [1200] CONNESSIONI SICURE
@@ -297,6 +300,9 @@ defaultPref("media.peerconnection.ice.proxy_only_if_behind_proxy", true);
 
 // [2003] Mitiga il WebRTC IP Leak
 defaultPref("media.peerconnection.ice.default_address_only", true);
+
+// [RF] Riproduci video MKV nel browser
+defaultPref("media.mkv.enabled", true);
 
 /* -----------------------------------------------------------------------------------
    [2400] DOM (DOCUMENT OBJECT MODEL)
@@ -446,33 +452,27 @@ lockPref("browser.startup.homepage_override.mstone", "ignore"); // [Nascosta]
 lockPref("browser.newtabpage.activity-stream.asrouter.userprefs.cfr.addons", false);
 lockPref("browser.newtabpage.activity-stream.asrouter.userprefs.cfr.features", false);
 
+// [SF] Disabilita i servizi di accessibilità
+defaultPref("accessibility.force_disabled", 1);
+defaultPref("devtools.accessibility.enabled", false);
+
 /* -----------------------------------------------------------------------------------
    PRESTAZIONI
    ----------------------------------------------------------------------------------- */
 
-defaultPref("gfx.content.skia-font-cache-size", 32); // default=5
-defaultPref("gfx.canvas.accelerated.cache-items", 32768); // default=8192
-defaultPref("gfx.canvas.accelerated.cache-size", 4096); // default=256
-
-defaultPref("webgl.max-size", 16384); // default=1024
-
-// Abilita la decodifica video hardware
-defaultPref("layers.gpu-process.enabled", true);
-defaultPref("media.gpu-process-decoder", true);
-defaultPref("media.ffmpeg.vaapi.enabled", true); // [LINUX]
-
+defaultPref("gfx.content.skia-font-cache-size", 32);
+defaultPref("gfx.canvas.accelerated.cache-items", 32768);
+defaultPref("gfx.canvas.accelerated.cache-size", 4096);
+defaultPref("webgl.max-size", 16384);
 defaultPref("browser.cache.memory.capacity", 131072);
-
-
 defaultPref("browser.cache.memory.max_entry_size", 20480);
+defaultPref("browser.sessionhistory.max_total_viewers", 4);
 defaultPref("media.memory_cache_max_size", 262144);
 defaultPref("media.memory_caches_combined_limit_kb", 1048576);
 defaultPref("media.cache_readahead_limit", 600);
 defaultPref("media.cache_resume_threshold", 300);
 defaultPref("image.cache.size", 10485760);
 defaultPref("image.mem.decode_bytes_at_a_time", 65536);
-
-// Network
 defaultPref("network.http.max-connections", 1800);
 defaultPref("network.http.max-persistent-connections-per-server", 10);
 defaultPref("network.http.max-urgent-start-excessive-connections-per-host", 5);
@@ -482,244 +482,86 @@ defaultPref("network.dnsCacheEntries", 10000);
 defaultPref("network.dnsCacheExpiration", 3600);
 defaultPref("network.ssl_tokens_cache_capacity", 10240);
 
-// Abilita WebAssembly (WASM) per prestazioni migliori in compiti pesanti
-defaultPref("javascript.options.wasm_branch_hinting", true);
-defaultPref("javascript.options.wasm_relaxed_simd", true);
-
-// Disabilita le animazioni superflue per migliorare la reattività dell'interfaccia utente
-defaultPref("sidebar.animation.enabled", false);
-defaultPref("ui.panelAnimations", 0); // [Nascosta]
-defaultPref("ui.prefersReducedMotion", 1); // [Nascosta]
-defaultPref("ui.swipeAnimationEnabled", 0); // [Nascosta]
-
-// Disabilita l'anteprima delle schede al passaggio del mouse per risparmiare risorse
-defaultPref("browser.tabs.hoverPreview.enabled", false);
-
-// Disabilita il reporting degli errori CSS
-defaultPref("layout.css.report_errors", false);
-
-// GFX Rendering
-defaultPref("gfx.webrender.all", true);
-defaultPref("gfx.webrender.precache-shaders", true);
-defaultPref("gfx.webrender.compositor", true);
-
-/* -----------------------------------------------------------------------------------
-   DA CONTROLLARE
-   ----------------------------------------------------------------------------------- */
-
-// Disabilita la cache Indietro/Avanti (bfcache)
-lockPref("browser.sessionhistory.max_total_viewers", 0);
-
-// Aumenta l'intervallo di salvataggio automatico della sessione per ridurre le scritture su disco
-defaultPref("browser.sessionstore.interval", 300000); // 5 minuti
-
-// Limita la durata massima dei cookie a 6 mesi
-defaultPref("network.cookie.maxageCap", 15552000);
-
-// Impedisce la creazione di registri dei domini bloccati
-lockPref("browser.contentblocking.database.enabled", false);
-
-// Mostra l'interfaccia per cambiare motore di ricerca per singole ricerche
-lockPref("browser.urlbar.scotchBonnet.disableOneOffs", false);
-
-// Visualizza URL completi invece di termini di ricerca
-defaultPref("browser.urlbar.restyleSearches", false);
-lockPref("browser.urlbar.trimURLs", false);
-
-// Abilita "Cerca in finestra privata"
-lockPref("browser.search.separatePrivateDefault.urlbarResult.enabled", true);
-
-// Visualizza la barra di ricerca nella barra degli strumenti personalizzabile
-defaultPref("browser.search.widget.inNavBar", true);
-
-// Apre risultati di ricerca in una nuova scheda
-defaultPref("browser.search.openintab", true);
-defaultPref("browser.urlbar.openintab", true);
-
-// Prevent leaking single word searches to DNS provider
-lockPref("browser.fixup.dns_first_for_single_words", false);
-lockPref("browser.urlbar.dnsResolveSingleWordsAfterSearch", 0);
-
-lockPref("middlemouse.contentLoadURL", false);
-
-// Riproduci video MKV nel browser
-defaultPref("media.mkv.enabled", true);
-
-/* -----------------------------------------------------------------------------------
-   TRACKING PROTECTION
-   ----------------------------------------------------------------------------------- */
-
-// Abilita Global Privacy Control
-lockPref("privacy.globalprivacycontrol.enabled", true);
-
-// Salta automaticamente i banner di consenso dei cookie
-defaultPref("privacy.trackingprotection.consentmanager.skip.enabled", true);
-defaultPref("privacy.trackingprotection.consentmanager.skip.pbmode.enabled", true);
-
-// Impedisci ai terzi di impostare cookie se non sono già stati un sito principale (first party)
-defaultPref("privacy.dynamic_firstparty.limitForeign", true);
-
-// Limita i referrer che tracciano
-defaultPref("network.http.referer.defaultPolicy.trackers", 1);
-defaultPref("network.http.referer.defaultPolicy.trackers.pbmode", 1);
-
-// Abilita Bounce Tracking Protection
-lockPref("privacy.bounceTrackingProtection.requireStatefulBounces", false);
-
-// Abbassa la priorità di rete per i tracker, velocizzando il caricamento della pagina
-lockPref("privacy.trackingprotection.lower_network_priority", true);
-
-// Avvisa l'utente quando cambia scheda durante la condivisione dello schermo
-lockPref("privacy.webrtc.sharedTabWarning", true);
-
-/* -----------------------------------------------------------------------------------
-   ESTENSIONI
-   ----------------------------------------------------------------------------------- */
-
-// Non permettere alle estensioni di raccogliere dati
-lockPref("extensions.dataCollectionPermissions.enabled", false);
-
-/* -----------------------------------------------------------------------------------
-   SICUREZZA AVANZATA
-   ----------------------------------------------------------------------------------- */
-
-// Chiedi sempre permessi per usare camera & microfono
-lockPref("permissions.media.show_always_ask.enabled", true);
-
-// Disabilita i servizi di accessibilità
-defaultPref("accessibility.force_disabled", 1);
-defaultPref("devtools.accessibility.enabled", false);
-
-/* -----------------------------------------------------------------------------------
-   ELEMENTI FASTIDIOSI
-   ----------------------------------------------------------------------------------- */
-
-// Disabilita avviso e transizione quando si passa a schermo intero
-lockPref("full-screen-api.warning.delay", -1);
-lockPref("full-screen-api.warning.timeout", 0);
-lockPref("full-screen-api.transition-duration.enter", "0 0");
-lockPref("full-screen-api.transition-duration.leave", "0 0");
-
-// Blocca il pop-up automatico del traduttore
-defaultPref("browser.translations.automaticallyPopup", false);
-
-// Blocca gli errori fastidiosi dell'API di sintesi vocale
-defaultPref("media.webspeech.synth.dont_notify_on_error", true); // [Nascosta]
-
-// Blocca avviso se Firefox non è il lettore PDF predefinito
-lockPref("browser.shell.checkDefaultPDF", false); // [Nascosta]
-
-// Blocca banner dei cookie
-defaultPref("cookiebanners.service.mode", 1);
-defaultPref("cookiebanners.service.mode.privateBrowsing", 1);
-
-// Impedisci alle pagine di ricaricarsi automaticamente
-defaultPref("accessibility.blockautorefresh", true);
-defaultPref("browser.meta_refresh_when_inactive.disabled", true);
-
-// Disabilita l'indicatore globale WebRTC
-lockPref("privacy.webrtc.hideGlobalIndicator", true);
-
 /* -----------------------------------------------------------------------------------
    INTERFACCIA
    ----------------------------------------------------------------------------------- */
 
-// Nascondi la barra del titolo
-defaultPref("browser.tabs.inTitlebar", 1);
+// [PF] Disabilita transizione schermo intero
+lockPref("full-screen-api.transition-duration.enter", "0 0");
+lockPref("full-screen-api.transition-duration.leave", "0 0");
 
-// Abilita la personalizzazione dell'interfaccia utente tramite CSS
+// [PF] Disabilita avviso schermo intero
+lockPref("full-screen-api.warning.delay", -1);
+lockPref("full-screen-api.warning.timeout", 0);
+
+// [PF] Abilita la personalizzazione dell'interfaccia utente tramite CSS
 defaultPref("toolkit.legacyUserProfileCustomizations.stylesheets", true);
 
-// Riattiva la Modalità Compatta nel menu di personalizzazione
-defaultPref("browser.compactmode.show", true);
-
-// Abilita il cursore animato durante il caricamento delle pagine
-defaultPref("browser.spin_cursor_while_busy", true);
-
-// Rende visibile l'interfaccia per il backup delle preferenze
-defaultPref("browser.backup.preferences.ui.enabled", true);
-
-// Abilita il nuovo design della barra laterale
-defaultPref("sidebar.revamp", true);
-defaultPref("sidebar.main.tools", "aichat,syncedtabs,history,bookmarks");
-
-// Aggiunge la voce "Visualizza informazioni immagine" al menu contestuale
+// [PF] Aggiunge la voce "Visualizza informazioni immagine" al menu contestuale
 defaultPref("browser.menu.showViewImageInfo", true);
 
-// Abilita il pulsante Picture-in-Picture su tutti i video
+// [PF] Abilita la Modalità Compatta nel menu di personalizzazione
+defaultPref("browser.compactmode.show", true);
+
+// [PF] Abilita alcune funzionalità per la gestione dei profili
+defaultPref("browser.profiles.enabled", true);
+
+// [PF] Impedisce al puntatore del mouse di nascondersi mentre si digita
+defaultPref("widget.gtk.hide-pointer-while-typing.enabled", false); // [LINUX]
+
+// [RF] Blocca il pop-up automatico del traduttore
+defaultPref("browser.translations.automaticallyPopup", false);
+
+// [RF] Blocca gli errori fastidiosi dell'API di sintesi vocale
+defaultPref("media.webspeech.synth.dont_notify_on_error", true); // [Nascosta]
+
+// [RF] Disabilita l'indicatore globale WebRTC
+lockPref("privacy.webrtc.hideGlobalIndicator", true);
+
+// [RF] Nascondi la barra del titolo
+defaultPref("browser.tabs.inTitlebar", 1);
+
+// [RF] Rende visibile l'interfaccia per il backup delle preferenze
+defaultPref("browser.backup.preferences.ui.enabled", true);
+
+// [RF] Abilita il pulsante Picture-in-Picture su tutti i video
 defaultPref("media.videocontrols.picture-in-picture.respect-disablePictureInPicture", false);
 defaultPref("media.videocontrols.picture-in-picture.video-toggle.always-show", true);
 
-// Impedisce al tasto Alt di attivare la barra dei menu
-defaultPref("ui.key.menuAccessKeyFocuses", false);
+// [RF] Abilita il nuovo design della barra laterale
+defaultPref("sidebar.revamp", true);
+defaultPref("sidebar.main.tools", "aichat,syncedtabs,history,bookmarks");
 
-// Impedisce al titolo della pagina di essere esposto in modalità privata
-lockPref("privacy.exposeContentTitleInWindow.pbm", false);
-
-// Abilita alcune funzionalità per la gestione dei profili
-defaultPref("browser.profiles.enabled", true);
-
-// Impedisce di mostrare finestre private come icone separate sulla barra delle applicazioni di Windows
-defaultPref("browser.privateWindowSeparation.enabled", false);
-
-// Impedisce al puntatore del mouse di nascondersi mentre si digita
-defaultPref("widget.gtk.hide-pointer-while-typing.enabled", false); // [LINUX]
-
-// Abilita lo zoom su tutti i siti
-defaultPref("browser.ui.zoom.force-user-scalable", true);
-
-// Abilita lo zoom oltre la scala iniziale
-defaultPref("apz.allow_zooming_out", true);
-
-// Abilita autoscrolling
+// [RF] Abilita autoscrolling
 defaultPref("general.autoScroll", true);
 
-// Mostra maggiori informazioni `about:processes`
+// [RF] Mostra maggiori informazioni `about:processes`
 defaultPref("toolkit.aboutProcesses.showAllSubframes", true);
 defaultPref("toolkit.aboutProcesses.showThreads", true);
-
-/* -----------------------------------------------------------------------------------
-   ORTOGRAFIA E DIZIONARI
-   ----------------------------------------------------------------------------------- */
-
-// Abilita il controllo ortografico per testi su una o più righe
-defaultPref("layout.spellcheckDefault", 2);
-
-// Impedisce che la selezione di una parola con doppio clic includa lo spazio successivo
-defaultPref("layout.word_select.eat_space_to_next_word", false);
-
-// Cancella lo spazio dopo la parola selezionata con doppio clic
-defaultPref("editor.word_select.delete_space_after_doubleclick_selection", true);
 
 /* -----------------------------------------------------------------------------------
    GESTIONE SCHEDE
    ----------------------------------------------------------------------------------- */
 
-// Apri i segnalibri in una nuova scheda
+// [PF] Apri i segnalibri in una nuova scheda
 defaultPref("browser.tabs.loadBookmarksInTabs", true);
 
-// Abilita la funzionalità di Gruppi di schede
-defaultPref("browser.tabs.groups.enabled", true);
-
-// Aggiunge l'opzione "Scarica scheda" al menu contestuale
-defaultPref("browser.tabs.unloadTabInContextMenu", true);
-
-// Forza i link esterni ad aprirsi in una nuova scheda
+// [PF] Forza i link esterni ad aprirsi in una nuova scheda
 defaultPref("browser.link.open_newwindow.override.external", 3);
 
-// Apri le nuove schede in background
+// [PF] Apri le nuove schede in background
 defaultPref("browser.tabs.loadDivertedInBackground", true);
 
-// Apri i segnalibri in background
+// [PF] Apri i segnalibri in background
 defaultPref("browser.tabs.loadBookmarksInBackground", true);
 
-// Impedisce la chiusura automatica del menu dei segnalibri
+// [PF] Impedisce la chiusura automatica del menu dei segnalibri
 defaultPref("browser.bookmarks.openInTabClosesMenu", false);
 
-// Apri le nuove schede subito dopo quella attuale
+// [PF] Apri le nuove schede subito dopo quella attuale
 defaultPref("browser.tabs.insertAfterCurrent", true);
 
-// Lascia il browser aperto alla chiusura dell'ultima scheda
+// [PF] Lascia il browser aperto alla chiusura dell'ultima scheda
 defaultPref("browser.tabs.closeWindowWithLastTab", false);
 
 /* -----------------------------------------------------------------------------------
@@ -749,4 +591,4 @@ defaultPref("browser.tabs.groups.smart.userEnabled", false);
    ----------------------------------------------------------------------------------- */
 
 // Controllo versione
-lockPref("rischio.fox", "144.17");
+lockPref("rischio.fox", "144.18");
