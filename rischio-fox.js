@@ -16,18 +16,21 @@ INDICE:
 - AVVIO: configura l'avvio e l'homepage di Firefox.
 - GEOLOCALIZZAZIONE: gestisce l'accesso alla tua posizione.
 - RACCOLTA DATI: blocca la raccolta di vari tipi di informazioni.
+- SAFE BROWSING: preferenze per il servizio Google Safe Browsing
+- CONNESSIONI IMPLICITE: disabilita le connessioni non richieste.
+- DNS / DoH / PROXY / SOCKS
+- BARRE DI RICERCA: configura la barra degli indirizzi e di ricerca.
+
 - TRACCE SU DISCO: gestisce la cache, la cronologia e i dati salvati localmente.
 - FILE SCARICATI: controlla il comportamento di download.
 - TRACKING PROTECTION: attiva le misure anti-tracciamento di Firefox.
 - FINGERPRINTING: protegge dall'identificazione tramite l'impronta digitale del browser.
 - PROXY: gestisce il comportamento del proxy.
 - CONNESSIONI SICURE: imposta le regole per HTTPS e la validazione dei certificati.
-- CONNESSIONI IMPLICITE: disabilita le connessioni non richieste.
 - GESTIONE CREDENZIALI: controlla password e compilazione automatica.
 - PDF: gestisce la sicurezza del lettore PDF.
 - ESTENSIONI: imposta le regole per le estensioni.
 - SICUREZZA AVANZATA: include preferenze di sicurezza varie.
-- BARRE DI RICERCA: configura la barra degli indirizzi e di ricerca.
 - ELEMENTI FASTIDIOSI: rimuove i pop-up e le notifiche indesiderate.
 - INTERFACCIA: impostazioni che modificano l'aspetto del browser.
 - ORTOGRAFIA E DIZIONARI: traduttore e correttore automatico.
@@ -131,6 +134,150 @@ defaultPref("network.captive-portal-service.enabled", false);
 defaultPref("network.connectivity-service.enabled", false);
 
 /* -----------------------------------------------------------------------------------
+   [0400] SAFE BROWSING
+   ----------------------------------------------------------------------------------- */
+
+// [0401] Safe Browsing
+lockPref("browser.safebrowsing.malware.enabled", true);
+lockPref("browser.safebrowsing.phishing.enabled", true);
+
+// [0402] Blocca download pericolosi
+lockPref("browser.safebrowsing.downloads.enabled", true);
+
+// [0403] Disabilita controlli remoti
+lockPref("browser.safebrowsing.downloads.remote.enabled", false);
+lockPref("browser.safebrowsing.downloads.remote.url", "");
+
+// [0404] Blocca download di software potenzialmente indesiderato
+lockPref("browser.safebrowsing.downloads.remote.block_potentially_unwanted", true);
+lockPref("browser.safebrowsing.downloads.remote.block_uncommon", true);
+
+/* -----------------------------------------------------------------------------------
+   [0600] CONNESSIONI IMPLICITE
+   ----------------------------------------------------------------------------------- */
+
+// [0601] Disabilita link prefetching
+lockPref("network.prefetch-next", false);
+
+// [0602] Disabilita DNS prefetching
+lockPref("network.dns.disablePrefetch", true);
+lockPref("network.dns.disablePrefetchFromHTTPS", true);
+
+// [0603] Disabilita predictor
+lockPref("network.predictor.enabled", false);
+lockPref("network.predictor.enable-prefetch", false);
+
+// [0604] Blocca connessioni speculative al passaggio del mouse sui link
+lockPref("network.http.speculative-parallel-limit", 0);
+
+// [0605] Blocca connessioni speculative nei segnalibri e nella cronologia
+lockPref("browser.places.speculativeConnect.enabled", false);
+
+// [0610] Blocca "Hyperlink Auditing" (click tracking)
+lockPref("browser.send_pings", false);
+
+// Disabilita Preconnect (potrebbe bypassare la protezione di uBlock!)
+// https://github.com/uBlockOrigin/uBlock-issues/issues/2913
+lockPref("network.preconnect", false);
+
+/* -----------------------------------------------------------------------------------
+   [0700] DNS / DoH / PROXY / SOCKS
+   ----------------------------------------------------------------------------------- */
+
+// [0702] Usa il proxy per la risoluzione DNS remota
+lockPref("network.proxy.socks_remote_dns", true);
+
+// [0703] Disabilita i percorsi UNC di Windows per prevenire il rischio di perdite di dati
+lockPref("network.file.disable_unc_paths", true);
+
+// [0704] Disabilita GIO (Gnome Input/Output)
+lockPref("network.gio.supported-protocols", "");
+
+// [0705] Impedisci il failover automatico a connessioni dirette
+lockPref("network.proxy.failover_direct", false);
+
+// [0710] Abilita DNS-over-HTTPS (DoH) con protezione massima
+lockPref("network.trr.mode", 3);
+
+// [0712] Imposta Quad9 come DoH provider
+lockPref("network.trr.uri", "https://dns.quad9.net/dns-query");
+
+/* -----------------------------------------------------------------------------------
+   BARRE DI RICERCA
+   ----------------------------------------------------------------------------------- */
+
+// [0801] Disabilita connessioni speculative nella barra degli indirizzi
+lockPref("browser.urlbar.speculativeConnect.enabled", false);
+
+// [0802] Disabilita suggerimenti sponsorizzati
+lockPref("browser.urlbar.quicksuggest.enabled", false);
+lockPref("browser.urlbar.suggest.quicksuggest.nonsponsored", false);
+lockPref("browser.urlbar.suggest.quicksuggest.sponsored", false);
+
+// [0805] Disabilita suggerimenti ricerche di tendenza
+defaultPref("browser.urlbar.trending.featureGate", false);
+
+// [0806] Disabilita determinate categorie di suggerimenti
+defaultPref("browser.urlbar.addons.featureGate", false); // Estensioni
+lockPref("browser.urlbar.amp.featureGate", false); // adMarketplace
+lockPref("browser.urlbar.fakespot.featureGate", false); // Deprecato
+lockPref("browser.urlbar.mdn.featureGate", false); // Strumento per sviluppatori
+lockPref("browser.urlbar.weather.featureGate", false); // Meteo
+lockPref("browser.urlbar.wikipedia.featureGate", false);
+
+// [0807] Disabilita suggerimenti dagli appunti
+lockPref("browser.urlbar.clipboard.featureGate", false);
+
+// [0808] Disabilita ricerche recenti
+lockPref("browser.urlbar.recentsearches.featureGate", false);
+
+// [0810] Disabilita la cronologia di ricerca e dei moduli
+defaultPref("browser.formfill.enable", false);
+
+// [0820] Disabilita colorazione link visitati per prevenire "history sniffing"
+defaultPref("layout.css.visited_links_enabled", false);
+
+// [0830] Abilita la possibilità di usare un motore di ricerca diverso in finestre normali e private
+defaultPref("browser.search.separatePrivateDefault", true);
+lockPref("browser.search.separatePrivateDefault.ui.enabled", true);
+
+/* -----------------------------------------------------------------------------------
+   DA CONTROLLARE
+   ----------------------------------------------------------------------------------- */
+
+// Disabilita l'autocompletamento degli URL
+lockPref("browser.urlbar.autoFill", false);
+
+
+// Mostra l'interfaccia per cambiare motore di ricerca per singole ricerche
+lockPref("browser.urlbar.scotchBonnet.disableOneOffs", false);
+
+// Visualizza URL completi invece di termini di ricerca
+defaultPref("browser.urlbar.restyleSearches", false);
+lockPref("browser.urlbar.trimURLs", false);
+
+// Abilita "Cerca in finestra privata"
+lockPref("browser.search.separatePrivateDefault.urlbarResult.enabled", true);
+
+// Visualizza la barra di ricerca nella barra degli strumenti personalizzabile
+defaultPref("browser.search.widget.inNavBar", true);
+
+// Apre risultati di ricerca in una nuova scheda
+defaultPref("browser.search.openintab", true);
+defaultPref("browser.urlbar.openintab", true);
+
+// Previene i WebRTC IP leaks forzando l'uso del proxy
+lockPref("media.peerconnection.ice.proxy_only_if_behind_proxy", true);
+
+// Prevent leaking single word searches to DNS provider
+lockPref("browser.fixup.dns_first_for_single_words", false);
+lockPref("browser.urlbar.dnsResolveSingleWordsAfterSearch", 0);
+
+// Impedisci che il clic con il tasto centrale del mouse su una nuova scheda apra URL
+lockPref("browser.tabs.searchclipboardfor.middleclick", false);
+lockPref("middlemouse.contentLoadURL", false);
+
+/* -----------------------------------------------------------------------------------
    TRACCE SU DISCO
    ----------------------------------------------------------------------------------- */
 
@@ -145,9 +292,6 @@ lockPref("browser.sessionhistory.max_total_viewers", 0);
 
 // Disabilita la generazione di miniature delle pagine
 lockPref("browser.pagethumbnails.capturing_disabled", true); // [Nascosta]
-
-// Disabilita la cronologia di ricerca e dei moduli
-defaultPref("browser.formfill.enable", false);
 
 // Aumenta l'intervallo di salvataggio automatico della sessione per ridurre le scritture su disco
 defaultPref("browser.sessionstore.interval", 300000); // 5 minuti
@@ -237,9 +381,6 @@ lockPref("privacy.resistFingerprinting.randomization.daily_reset.private.enabled
 lockPref("privacy.window.maxInnerHeight", 900);
 lockPref("privacy.window.maxInnerWidth", 1600);
 
-// Disabilita i selettori CSS per i link visitati per prevenire il "history sniffing"
-lockPref("layout.css.visited_links_enabled", false);
-
 // Disabilita l'API della batteria per prevenire il fingerprinting
 defaultPref("dom.battery.enabled", false);
 
@@ -247,25 +388,6 @@ defaultPref("dom.battery.enabled", false);
 lockPref("app.distributor", "");
 lockPref("app.distributor.channel", "");
 lockPref("mozilla.partner.id", "");
-
-/* -----------------------------------------------------------------------------------
-   PROXY
-   ----------------------------------------------------------------------------------- */
-
-// Impedisci il failover automatico a connessioni dirette (non-proxy)
-lockPref("network.proxy.failover_direct", false);
-
-// Usa il proxy per la risoluzione DNS remota (previene i DNS leaks)
-lockPref("network.proxy.socks_remote_dns", true);
-
-// Disabilita la gestione dei percorsi di sistema (es. file:///net)
-lockPref("network.file.path_blacklist", "/net");
-
-// Disabilita i percorsi UNC di Windows per prevenire il rischio di perdite di dati
-lockPref("network.file.disable_unc_paths", true);
-
-// Previene i WebRTC IP leaks forzando l'uso del proxy
-lockPref("media.peerconnection.ice.proxy_only_if_behind_proxy", true);
 
 /* -----------------------------------------------------------------------------------
    CONNESSIONI SICURE
@@ -315,47 +437,6 @@ defaultPref("browser.xul.error_pages.expert_bad_cert", true);
 
 // Disabilita TLS sessione identifiers
 defaultPref("security.ssl.disable_session_identifiers", true);
-
-/* -----------------------------------------------------------------------------------
-   CONNESSIONI IMPLICITE
-   ----------------------------------------------------------------------------------- */
-
-// Disabilita Early Hints
-lockPref("network.early-hints.enabled", false);
-lockPref("network.early-hints.over-http-v1-1.enabled", false);
-lockPref("network.early-hints.preconnect.enabled", false);
-lockPref("network.early-hints.preconnect.max_connections", 0);
-
-// Disabilita Network Prefetching
-lockPref("dom.prefetch_dns_for_anchor_http_document", false);
-lockPref("dom.prefetch_dns_for_anchor_https_document", false);
-lockPref("network.dns.prefetch_via_proxy", false);
-lockPref("network.http.speculative-parallel-limit", 0);
-lockPref("network.predictor.enable-hover-on-ssl", false);
-lockPref("network.predictor.enable-prefetch", false);
-lockPref("network.predictor.enabled", false);
-lockPref("network.prefetch-next", false);
-
-// Disabilita Preconnect
-lockPref("network.preconnect", false);
-
-// Disable speculative pre-connections
-lockPref("browser.places.speculativeConnect.enabled", false);
-lockPref("browser.urlbar.speculativeConnect.enabled", false);
-
-// Prevent leaking single word searches to DNS provider
-lockPref("browser.fixup.dns_first_for_single_words", false);
-lockPref("browser.urlbar.dnsResolveSingleWordsAfterSearch", 0);
-
-// Impedisci che il clic con il tasto centrale del mouse su una nuova scheda apra URL
-lockPref("browser.tabs.searchclipboardfor.middleclick", false);
-lockPref("middlemouse.contentLoadURL", false);
-
-// Disabilita il monitoraggio dello stato della connessione di rete
-defaultPref("network.manage-offline-status", false);
-
-// Disabilita l'API Beacon (Navigator.sendBeacon)
-defaultPref("beacon.enabled", false);
 
 /* -----------------------------------------------------------------------------------
    GESTIONE CREDENZIALI
@@ -525,34 +606,6 @@ lockPref("dom.origin-trials.enabled", false);
 
 // Mostra sempre il Punycode
 lockPref("network.IDN_show_punycode", true);
-
-/* -----------------------------------------------------------------------------------
-   BARRE DI RICERCA
-   ----------------------------------------------------------------------------------- */
-
-// Disabilita l'autocompletamento degli URL
-lockPref("browser.urlbar.autoFill", false);
-
-// Abilita la possibilità di usare un motore di ricerca diverso in finestre normali e private
-defaultPref("browser.search.separatePrivateDefault", true);
-lockPref("browser.search.separatePrivateDefault.ui.enabled", true);
-
-// Mostra l'interfaccia per cambiare motore di ricerca per singole ricerche
-lockPref("browser.urlbar.scotchBonnet.disableOneOffs", false);
-
-// Visualizza URL completi invece di termini di ricerca
-defaultPref("browser.urlbar.restyleSearches", false);
-lockPref("browser.urlbar.trimURLs", false);
-
-// Abilita "Cerca in finestra privata"
-lockPref("browser.search.separatePrivateDefault.urlbarResult.enabled", true);
-
-// Visualizza la barra di ricerca nella barra degli strumenti personalizzabile
-defaultPref("browser.search.widget.inNavBar", true);
-
-// Apre risultati di ricerca in una nuova scheda
-defaultPref("browser.search.openintab", true);
-defaultPref("browser.urlbar.openintab", true);
 
 /* -----------------------------------------------------------------------------------
    ELEMENTI FASTIDIOSI
@@ -773,4 +826,4 @@ defaultPref("browser.tabs.groups.smart.userEnabled", false);
    ----------------------------------------------------------------------------------- */
 
 // Controllo versione
-lockPref("rischio.fox", "144.12");
+lockPref("rischio.fox", "144.13");
