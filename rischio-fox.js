@@ -372,7 +372,7 @@ lockPref("extensions.postDownloadThirdPartyPrompt", false);
 // [2701] Abilita ETP in modalità restrittiva
 lockPref("browser.contentblocking.category", "strict"); 
 
-// [SF] Risolvi problemi (sia gravi che minori) con i siti causati da ETP Strict
+// [SF] Risolvi problemi (sia gravi che minori) causati da ETP Strict
 lockPref("privacy.trackingprotection.allow_list.baseline.enabled", true);
 lockPref("privacy.trackingprotection.allow_list.convenience.enabled", true);
 
