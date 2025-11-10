@@ -419,9 +419,6 @@ defaultPref("dom.popup_allowed_events", "click dblclick");
 // [5019] Disabilita la generazione di miniature delle pagine
 lockPref("browser.pagethumbnails.capturing_disabled", true); // [Nascosta]
 
-// [5021] Non inviare URL invalidi al motore di ricerca
-defaultPref("keyword.enabled", false);
-
 // [SF] Disabilita i servizi di accessibilità
 defaultPref("accessibility.force_disabled", 1);
 defaultPref("devtools.accessibility.enabled", false);
@@ -578,4 +575,4 @@ defaultPref("media.ffmpeg.vaapi.enabled", true); // LINUX
    ----------------------------------------------------------------------------------- */
 
 // Controllo versione
-lockPref("rischio.fox", "144.21");
+lockPref("rischio.fox", "144.22");
