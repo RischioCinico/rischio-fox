@@ -54,6 +54,12 @@ defaultPref("browser.newtabpage.activity-stream.widgets.focusTimer.showSystemNot
 defaultPref("browser.newtabpage.activity-stream.system.showWeather", true);
 defaultPref("browser.newtabpage.activity-stream.weather.display", "detailed");
 
+/* [9001] disable welcome notices ***/
+lockPref("browser.startup.homepage_override.mstone", "ignore"); // [Nascosta]
+/* [9002] disable General>Browsing>Recommend extensions/features as you browse [FF67+] ***/
+lockPref("browser.newtabpage.activity-stream.asrouter.userprefs.cfr.addons", false);
+lockPref("browser.newtabpage.activity-stream.asrouter.userprefs.cfr.features", false);
+
 /* -----------------------------------------------------------------------------------
    [0200] GEOLOCALIZZAZIONE
    ----------------------------------------------------------------------------------- */
@@ -397,11 +403,11 @@ lockPref("browser.link.open_newwindow", 3);
 lockPref("browser.link.open_newwindow.restriction", 0)
 
 /* -----------------------------------------------------------------------------------
-   [5000] OPTIONAL OPSEC
+   [5000] SICUREZZA
    ----------------------------------------------------------------------------------- */
 
 // [5012] Disabilita l'autocompletamento degli URL
-lockPref("browser.urlbar.autoFill", false);
+defaultPref("browser.urlbar.autoFill", false);
 
 // [5017] Disabilita Form Autofill
 lockPref("extensions.formautofill.addresses.enabled", false);
@@ -414,7 +420,11 @@ defaultPref("dom.popup_allowed_events", "click dblclick");
 lockPref("browser.pagethumbnails.capturing_disabled", true); // [Nascosta]
 
 // [5021] Non inviare URL invalidi al motore di ricerca
-lockPref("keyword.enabled", false);
+defaultPref("keyword.enabled", false);
+
+// [SF] Disabilita i servizi di accessibilità
+defaultPref("accessibility.force_disabled", 1);
+defaultPref("devtools.accessibility.enabled", false);
 
 /* -----------------------------------------------------------------------------------
    [8500] TELEMETRIA
@@ -438,20 +448,6 @@ lockPref("toolkit.telemetry.firstShutdownPing.enabled", false);
 lockPref("toolkit.telemetry.coverage.opt-out", true);
 lockPref("toolkit.coverage.opt-out", true);
 lockPref("toolkit.coverage.endpoint.base", "");
-
-/* -----------------------------------------------------------------------------------
-   [9000] ALTRO
-   ----------------------------------------------------------------------------------- */
-
-/* [9001] disable welcome notices ***/
-lockPref("browser.startup.homepage_override.mstone", "ignore"); // [Nascosta]
-/* [9002] disable General>Browsing>Recommend extensions/features as you browse [FF67+] ***/
-lockPref("browser.newtabpage.activity-stream.asrouter.userprefs.cfr.addons", false);
-lockPref("browser.newtabpage.activity-stream.asrouter.userprefs.cfr.features", false);
-
-// [SF] Disabilita i servizi di accessibilità
-defaultPref("accessibility.force_disabled", 1);
-defaultPref("devtools.accessibility.enabled", false);
 
 /* -----------------------------------------------------------------------------------
    INTERFACCIA
@@ -509,6 +505,10 @@ defaultPref("general.autoScroll", true);
 // [RF] Mostra maggiori informazioni `about:processes`
 defaultPref("toolkit.aboutProcesses.showAllSubframes", true);
 defaultPref("toolkit.aboutProcesses.showThreads", true);
+
+// [RF] Mostra opzioni stampa avanzate
+defaultPref("print.more-settings.open", true);
+defaultPref("print.show_page_setup_menu", true);
 
 /* -----------------------------------------------------------------------------------
    GESTIONE SCHEDE
@@ -578,4 +578,4 @@ defaultPref("media.ffmpeg.vaapi.enabled", true); // LINUX
    ----------------------------------------------------------------------------------- */
 
 // Controllo versione
-lockPref("rischio.fox", "144.20");
+lockPref("rischio.fox", "144.21");
