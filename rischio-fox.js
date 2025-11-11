@@ -307,9 +307,6 @@ defaultPref("media.peerconnection.ice.proxy_only_if_behind_proxy", true);
 // [2003] Mitiga il WebRTC IP Leak
 defaultPref("media.peerconnection.ice.default_address_only", true);
 
-// [RF] Riproduci video MKV nel browser
-defaultPref("media.mkv.enabled", true);
-
 /* -----------------------------------------------------------------------------------
    [2400] DOM (DOCUMENT OBJECT MODEL)
    ----------------------------------------------------------------------------------- */
@@ -575,4 +572,4 @@ defaultPref("media.ffmpeg.vaapi.enabled", true); // LINUX
    ----------------------------------------------------------------------------------- */
 
 // Controllo versione
-lockPref("rischio.fox", "144.22");
+lockPref("rischio.fox", "145");
