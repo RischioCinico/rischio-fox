@@ -491,7 +491,7 @@ defaultPref("media.videocontrols.picture-in-picture.video-toggle.always-show", t
 
 // [RF] Abilita il nuovo design della barra laterale
 defaultPref("sidebar.revamp", true);
-defaultPref("sidebar.main.tools", "aichat,syncedtabs,history,bookmarks");
+defaultPref("sidebar.main.tools", "aichat,syncedtabs,history,bookmarks,passwords");
 
 // [RF] Abilita autoscrolling
 defaultPref("general.autoScroll", true);
@@ -572,4 +572,4 @@ defaultPref("media.ffmpeg.vaapi.enabled", true); // LINUX
    ----------------------------------------------------------------------------------- */
 
 // Controllo versione
-lockPref("rischio.fox", "145");
+lockPref("rischio.fox", "145.1");
