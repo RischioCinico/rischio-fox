@@ -140,9 +140,7 @@
               "uiAccentCustom0": "#04cdff",
               "importedLists": [
                 "https://raw.githubusercontent.com/DandelionSprout/adfilt/master/BrowseWebsitesWithoutLoggingIn.txt",
-                "https://raw.githubusercontent.com/DandelionSprout/adfilt/master/LegitimateURLShortener.txt",
                 "https://raw.githubusercontent.com/RischioCinico/Filterc/refs/heads/main/filterc.txt",
-                "https://raw.githubusercontent.com/gioxx/xfiles/master/filtri.txt",
                 "https://raw.githubusercontent.com/yokoffing/filterlists/main/privacy_essentials.txt"
               ]
             },
@@ -155,6 +153,7 @@
               "ublock-unbreak",
               "easylist",
               "easyprivacy",
+              "adguard-spyware-url",
               "block-lan",
               "urlhaus-1",
               "curben-phishing",
@@ -169,10 +168,8 @@
               "easylist-annoyances",
               "ublock-annoyances",
               "ITA-0",
-              "https://raw.githubusercontent.com/DandelionSprout/adfilt/master/LegitimateURLShortener.txt",
               "https://raw.githubusercontent.com/DandelionSprout/adfilt/master/BrowseWebsitesWithoutLoggingIn.txt",
               "https://raw.githubusercontent.com/RischioCinico/Filterc/refs/heads/main/filterc.txt",
-              "https://raw.githubusercontent.com/gioxx/xfiles/master/filtri.txt",
               "https://raw.githubusercontent.com/yokoffing/filterlists/main/privacy_essentials.txt"
             ]  
           }
