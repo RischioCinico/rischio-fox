@@ -139,7 +139,6 @@
               "uiAccentCustom": true,
               "uiAccentCustom0": "#04cdff",
               "importedLists": [
-                "https://raw.githubusercontent.com/DandelionSprout/adfilt/master/BrowseWebsitesWithoutLoggingIn.txt",
                 "https://raw.githubusercontent.com/RischioCinico/Filterc/refs/heads/main/filterc.txt",
                 "https://raw.githubusercontent.com/yokoffing/filterlists/main/privacy_essentials.txt"
               ]
@@ -168,7 +167,6 @@
               "easylist-annoyances",
               "ublock-annoyances",
               "ITA-0",
-              "https://raw.githubusercontent.com/DandelionSprout/adfilt/master/BrowseWebsitesWithoutLoggingIn.txt",
               "https://raw.githubusercontent.com/RischioCinico/Filterc/refs/heads/main/filterc.txt",
               "https://raw.githubusercontent.com/yokoffing/filterlists/main/privacy_essentials.txt"
             ]  
