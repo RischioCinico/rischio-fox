@@ -560,16 +560,18 @@ defaultPref("network.ssl_tokens_cache_capacity", 10240);
 defaultPref("gfx.webrender.all", true);
 defaultPref("gfx.webrender.precache-shaders", true);
 defaultPref("gfx.webrender.compositor", true);
+defaultPref("gfx.webrender.layer-compositor", true);
 
 // Accelerazione hardware
 defaultPref("layers.gpu-process.enabled", true);
 defaultPref("media.hardware-video-decoding.enabled", true);
 defaultPref("media.gpu-process-decoder", true);
 defaultPref("media.ffmpeg.vaapi.enabled", true); // LINUX
+defaultPref("media.rdd-vpx.enabled", false); // LINUX
 
 /* -----------------------------------------------------------------------------------
    FINE
    ----------------------------------------------------------------------------------- */
 
 // Controllo versione
-lockPref("rischio.fox", "145.1");
+lockPref("rischio.fox", "145.2");
