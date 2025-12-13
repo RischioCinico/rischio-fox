@@ -557,10 +557,10 @@ defaultPref("network.dnsCacheExpiration", 3600);
 defaultPref("network.ssl_tokens_cache_capacity", 10240);
 
 // GFX Rendering Tweaks
+defaultPref("gfx.webrender.layer-compositor", true);
 defaultPref("gfx.webrender.all", true);
 defaultPref("gfx.webrender.precache-shaders", true);
 defaultPref("gfx.webrender.compositor", true);
-defaultPref("gfx.webrender.layer-compositor", true);
 
 // Accelerazione hardware
 defaultPref("layers.gpu-process.enabled", true);
@@ -574,4 +574,4 @@ defaultPref("media.rdd-vpx.enabled", false); // LINUX
    ----------------------------------------------------------------------------------- */
 
 // Controllo versione
-lockPref("rischio.fox", "145.2");
+lockPref("rischio.fox", "146");
