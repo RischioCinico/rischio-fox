@@ -529,6 +529,9 @@ defaultPref("browser.tabs.insertAfterCurrent", true);
 // [PF] Lascia il browser aperto alla chiusura dell'ultima scheda
 defaultPref("browser.tabs.closeWindowWithLastTab", false);
 
+// Abilita Slit View
+defaultPref("browser.tabs.splitView.enabled", true);
+
 /* -----------------------------------------------------------------------------------
    PRESTAZIONI
    ----------------------------------------------------------------------------------- */
@@ -584,4 +587,4 @@ defaultPref("media.rdd-vpx.enabled", false); // LINUX [RF]
    ----------------------------------------------------------------------------------- */
 
 // Controllo versione
-lockPref("rischio.fox", "146.1");
+lockPref("rischio.fox", "146.2");
