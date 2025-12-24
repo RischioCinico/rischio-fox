@@ -534,19 +534,30 @@ defaultPref("browser.tabs.closeWindowWithLastTab", false);
    ----------------------------------------------------------------------------------- */
 
 defaultPref("gfx.content.skia-font-cache-size", 32);
+
+// GFX
+defaultPref("gfx.webrender.layer-compositor", true);
 defaultPref("gfx.canvas.accelerated.cache-items", 32768);
 defaultPref("gfx.canvas.accelerated.cache-size", 4096);
 defaultPref("webgl.max-size", 16384);
+
+// Memoria
 defaultPref("browser.cache.memory.capacity", 131072);
 defaultPref("browser.cache.memory.max_entry_size", 20480);
 defaultPref("browser.sessionhistory.max_total_viewers", 4);
 defaultPref("browser.sessionstore.max_tabs_undo", 5);
+
+// Media
 defaultPref("media.memory_cache_max_size", 262144);
 defaultPref("media.memory_caches_combined_limit_kb", 1048576);
 defaultPref("media.cache_readahead_limit", 600);
 defaultPref("media.cache_resume_threshold", 300);
+
+// Immagini
 defaultPref("image.cache.size", 10485760);
 defaultPref("image.mem.decode_bytes_at_a_time", 65536);
+
+// Rete
 defaultPref("network.http.max-connections", 1800);
 defaultPref("network.http.max-persistent-connections-per-server", 10);
 defaultPref("network.http.max-urgent-start-excessive-connections-per-host", 5);
@@ -556,22 +567,21 @@ defaultPref("network.dnsCacheEntries", 10000);
 defaultPref("network.dnsCacheExpiration", 3600);
 defaultPref("network.ssl_tokens_cache_capacity", 10240);
 
-// GFX Rendering Tweaks
-defaultPref("gfx.webrender.layer-compositor", true);
-defaultPref("gfx.webrender.all", true);
-defaultPref("gfx.webrender.precache-shaders", true);
-defaultPref("gfx.webrender.compositor", true);
+// Webrender
+defaultPref("gfx.webrender.all", true); // [FastFox]
+defaultPref("gfx.webrender.precache-shaders", true); // [FastFox]
+defaultPref("gfx.webrender.compositor", true); // [FastFox]
 
 // Accelerazione hardware
-defaultPref("layers.gpu-process.enabled", true);
-defaultPref("media.hardware-video-decoding.enabled", true);
-defaultPref("media.gpu-process-decoder", true);
-defaultPref("media.ffmpeg.vaapi.enabled", true); // LINUX
-defaultPref("media.rdd-vpx.enabled", false); // LINUX
+defaultPref("layers.gpu-process.enabled", true); // [FastFox]
+defaultPref("media.hardware-video-decoding.enabled", true); // [FastFox]
+defaultPref("media.gpu-process-decoder", true); // [FastFox]
+defaultPref("media.ffmpeg.vaapi.enabled", true); // LINUX [FastFox]
+defaultPref("media.rdd-vpx.enabled", false); // LINUX [RF]
 
 /* -----------------------------------------------------------------------------------
    FINE
    ----------------------------------------------------------------------------------- */
 
 // Controllo versione
-lockPref("rischio.fox", "146");
+lockPref("rischio.fox", "146.1");
