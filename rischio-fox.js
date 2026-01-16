@@ -241,7 +241,7 @@ lockPref("browser.cache.disk.enable", false);
 lockPref("browser.privatebrowsing.forceMediaMemoryCache", true);
 
 // [1003] Disabilita scrittura dati di sessione
-lockPref("browser..privacy_level", 2);
+lockPref("browser.sessionstore.privacy_level", 2);
 
 // [SF] Aumenta l'intervallo di salvataggio automatico della sessione per ridurre le scritture su disco
 defaultPref("browser.sessionstore.interval", 1800000); // default=15000
@@ -587,4 +587,4 @@ defaultPref("media.rdd-vpx.enabled", false); // LINUX [RF]
    ----------------------------------------------------------------------------------- */
 
 // Controllo versione
-lockPref("rischio.fox", "146.2");
+lockPref("rischio.fox", "146.3");
