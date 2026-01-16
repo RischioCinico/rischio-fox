@@ -586,5 +586,4 @@ defaultPref("media.rdd-vpx.enabled", false); // LINUX [RF]
    FINE
    ----------------------------------------------------------------------------------- */
 
-// Controllo versione
 lockPref("rischio.fox", "146.3");
