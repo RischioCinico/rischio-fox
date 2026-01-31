@@ -533,23 +533,7 @@ defaultPref("browser.tabs.closeWindowWithLastTab", false);
 defaultPref("browser.tabs.splitView.enabled", true);
 
 /* -----------------------------------------------------------------------------------
-   PRESTAZIONI
-   ----------------------------------------------------------------------------------- */
-
-// Webrender
-defaultPref("gfx.webrender.all", true); // [FastFox]
-defaultPref("gfx.webrender.precache-shaders", true); // [FastFox]
-defaultPref("gfx.webrender.compositor", true); // [FastFox]
-
-// Accelerazione hardware
-defaultPref("layers.gpu-process.enabled", true); // [FastFox]
-defaultPref("media.hardware-video-decoding.enabled", true); // [FastFox]
-defaultPref("media.gpu-process-decoder", true); // [FastFox]
-defaultPref("media.ffmpeg.vaapi.enabled", true); // LINUX [FastFox]
-defaultPref("media.rdd-vpx.enabled", false); // LINUX [RF]
-
-/* -----------------------------------------------------------------------------------
    FINE
    ----------------------------------------------------------------------------------- */
 
-lockPref("rischio.fox", "146.4");
+lockPref("rischio.fox", "146.5");
