@@ -139,10 +139,6 @@ lockPref("network.prefetch-next", false);
 lockPref("network.dns.disablePrefetch", true);
 lockPref("network.dns.disablePrefetchFromHTTPS", true);
 
-// [0603] Disabilita predictor
-lockPref("network.predictor.enabled", false);
-lockPref("network.predictor.enable-prefetch", false);
-
 // [0604] Blocca connessioni speculative al passaggio del mouse sui link
 lockPref("network.http.speculative-parallel-limit", 0);
 
@@ -195,11 +191,14 @@ defaultPref("browser.urlbar.trending.featureGate", false);
 
 // [0806] Disabilita determinate categorie di suggerimenti
 defaultPref("browser.urlbar.addons.featureGate", false); // Estensioni
-lockPref("browser.urlbar.amp.featureGate", false); // adMarketplace
-lockPref("browser.urlbar.fakespot.featureGate", false); // Deprecato
-lockPref("browser.urlbar.mdn.featureGate", false); // Strumento per sviluppatori
-lockPref("browser.urlbar.weather.featureGate", false); // Meteo
-lockPref("browser.urlbar.wikipedia.featureGate", false);
+defaultPref("browser.urlbar.amp.featureGate", false); // adMarketplace
+defaultPref("browser.urlbar.importantDates.featureGate", false); // Festività e ricorrenze
+defaultPref("browser.urlbar.market.featureGate", false); // Shopping/Mercati
+defaultPref("browser.urlbar.mdn.featureGate", false); // Strumento per sviluppatori
+defaultPref("browser.urlbar.weather.featureGate", false); // Meteo
+defaultPref("browser.urlbar.wikipedia.featureGate", false); // Anteprime dirette da Wikipedia
+defaultPref("browser.urlbar.yelp.featureGate", false); // Yelp (recensioni di ristoranti e locali)
+defaultPref("browser.urlbar.yelpRealtime.featureGate", false); // Yelp Realtime (aggiornamenti live su orari e affollamento)
 
 // [0807] Disabilita suggerimenti dagli appunti
 lockPref("browser.urlbar.clipboard.featureGate", false);
@@ -256,18 +255,8 @@ lockPref("security.ssl.require_safe_negotiation", true);
 // [1206] Disabilita TLS 1.3 0-RTT
 lockPref("security.tls.enable_0rtt_data", false);
 
-// [1211] Disabilita OCSP
-lockPref("security.OCSP.enabled", 0);
-
-// [1212] Non richiedere OCSP
-lockPref("security.OCSP.require", false);
-
 // [1223] Fornisce una protezione extra bloccando completamente le connessioni in caso di mancata corrispondenza del certificato
 lockPref("security.cert_pinning.enforcement_level", 2);
-
-// [1224] Abilita CRLite
-lockPref("security.remote_settings.crlite_filters.enabled", true);
-lockPref("security.pki.crlite_mode", 2);
 
 // [1244] Abilita HTTPS-Only
 lockPref("dom.security.https_only_mode", true);
@@ -375,7 +364,7 @@ lockPref("extensions.postDownloadThirdPartyPrompt", false);
 // [2701] Abilita ETP in modalità restrittiva
 lockPref("browser.contentblocking.category", "strict"); 
 
-// [SF] Risolvi problemi (sia gravi che minori) causati da ETP Strict
+// [2705] Eccezioni ETP Strict
 lockPref("privacy.trackingprotection.allow_list.baseline.enabled", true);
 lockPref("privacy.trackingprotection.allow_list.convenience.enabled", true);
 
@@ -529,11 +518,11 @@ defaultPref("browser.tabs.insertAfterCurrent", true);
 // [PF] Lascia il browser aperto alla chiusura dell'ultima scheda
 defaultPref("browser.tabs.closeWindowWithLastTab", false);
 
-// Abilita Slit View
+// [RF ]Abilita Slit View
 defaultPref("browser.tabs.splitView.enabled", true);
 
 /* -----------------------------------------------------------------------------------
    FINE
    ----------------------------------------------------------------------------------- */
 
-lockPref("rischio.fox", "146.5");
+lockPref("rischio.fox", "147");
