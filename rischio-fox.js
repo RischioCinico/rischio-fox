@@ -517,7 +517,7 @@ defaultPref("browser.tabs.insertAfterCurrent", true);
 // [PF] Lascia il browser aperto alla chiusura dell'ultima scheda
 defaultPref("browser.tabs.closeWindowWithLastTab", false);
 
-// [RF ]Abilita Slit View
+// [RF] Abilita Slit View
 defaultPref("browser.tabs.splitView.enabled", true);
 
 /* -----------------------------------------------------------------------------------
