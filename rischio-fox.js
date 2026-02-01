@@ -418,7 +418,7 @@ defaultPref("devtools.accessibility.enabled", false);
 lockPref("datareporting.policy.dataSubmissionEnabled", false);
 // [8501] Disabilita Health Reports
 lockPref("datareporting.healthreport.uploadEnabled", false);
-// [0802] Disabilita telemetria
+// [0502] Disabilita telemetria
 lockPref("toolkit.telemetry.unified", false);
 lockPref("toolkit.telemetry.enabled", false);
 lockPref("toolkit.telemetry.server", "data:,");
