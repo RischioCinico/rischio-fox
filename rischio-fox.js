@@ -57,7 +57,7 @@ defaultPref("browser.newtabpage.activity-stream.weather.display", "detailed");
 /* [9001] disable welcome notices ***/
 lockPref("browser.startup.homepage_override.mstone", "ignore"); // [Nascosta]
 
-/* [9002] disable General>Browsing>Recommend extensions/features as you browse [FF67+] ***/
+/* [9002] disable General>Browsing>Recommend extensions/features as you browse ***/
 lockPref("browser.newtabpage.activity-stream.asrouter.userprefs.cfr.addons", false);
 lockPref("browser.newtabpage.activity-stream.asrouter.userprefs.cfr.features", false);
 
