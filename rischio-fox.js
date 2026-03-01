@@ -37,18 +37,12 @@ defaultPref("browser.newtabpage.pinned", "[{\"url\":\"https://www.youtube.com/\"
 // [RF] Imposta sfondo
 defaultPref("browser.newtabpage.activity-stream.newtabWallpapers.wallpaper", "dark-landscape");
 
-// [RF] Abilita Widgets
-defaultPref("browser.newtabpage.activity-stream.widgets.system.enabled", true);
-
-// [RF] Task list
-defaultPref("browser.newtabpage.activity-stream.widgets.system.lists.enabled", true);
-
-// [RF] Timer
-defaultPref("browser.newtabpage.activity-stream.widgets.system.focusTimer.enabled", true);
-defaultPref("browser.newtabpage.activity-stream.widgets.focusTimer.showSystemNotifications", true);
-
-// [RF] Meteo
-lockPref("browser.newtabpage.activity-stream.system.showWeather", false);
+// [RF] Widgets
+defaultPref("browser.newtabpage.activity-stream.widgets.system.enabled", true); // abilita i widgets
+defaultPref("browser.newtabpage.activity-stream.widgets.system.lists.enabled", true); // abilita Task list
+defaultPref("browser.newtabpage.activity-stream.widgets.system.focusTimer.enabled", true); // abilita Timer
+defaultPref("browser.newtabpage.activity-stream.widgets.focusTimer.showSystemNotifications", true); // abilita notifiche Timer
+lockPref("browser.newtabpage.activity-stream.system.showWeather", false); // disabilita Meteo (non funzionante)
 
 /* [9001] disable welcome notices ***/
 lockPref("browser.startup.homepage_override.mstone", "ignore"); // [Nascosta]
@@ -515,4 +509,4 @@ defaultPref("browser.tabs.closeWindowWithLastTab", false);
    FINE
    ----------------------------------------------------------------------------------- */
 
-lockPref("rischio.fox", "147.3");
+lockPref("rischio.fox", "148");
