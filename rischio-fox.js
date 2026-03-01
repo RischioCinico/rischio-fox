@@ -28,9 +28,6 @@ lockPref("browser.newtabpage.activity-stream.showSponsoredCheckboxes", false);
 // [0106] clear default topsites
 lockPref("browser.newtabpage.activity-stream.default.sites", "");
 
-// [PF] Impedisce il passaggio dei dati di ricerca alla barra degli indirizzi
-defaultPref("browser.newtabpage.activity-stream.improvesearch.handoffToAwesomebar", false);
-
 // [PF] Nasconde il logo di Firefox dalla pagina iniziale
 defaultPref("browser.newtabpage.activity-stream.logowordmark.alwaysVisible", false);
 
@@ -51,8 +48,7 @@ defaultPref("browser.newtabpage.activity-stream.widgets.system.focusTimer.enable
 defaultPref("browser.newtabpage.activity-stream.widgets.focusTimer.showSystemNotifications", true);
 
 // [RF] Meteo
-defaultPref("browser.newtabpage.activity-stream.system.showWeather", true);
-defaultPref("browser.newtabpage.activity-stream.weather.display", "detailed");
+lockPref("browser.newtabpage.activity-stream.system.showWeather", false);
 
 /* [9001] disable welcome notices ***/
 lockPref("browser.startup.homepage_override.mstone", "ignore"); // [Nascosta]
@@ -525,4 +521,4 @@ defaultPref("browser.tabs.splitView.enabled", true);
    FINE
    ----------------------------------------------------------------------------------- */
 
-lockPref("rischio.fox", "147.1");
+lockPref("rischio.fox", "147.2");
