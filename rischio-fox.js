@@ -447,9 +447,6 @@ defaultPref("toolkit.legacyUserProfileCustomizations.stylesheets", true);
 // [PF] Aggiunge la voce "Visualizza informazioni immagine" al menu contestuale
 defaultPref("browser.menu.showViewImageInfo", true);
 
-// [PF] Abilita la Modalità Compatta nel menu di personalizzazione
-defaultPref("browser.compactmode.show", true);
-
 // [PF] Abilita alcune funzionalità per la gestione dei profili
 defaultPref("browser.profiles.enabled", true);
 
@@ -514,11 +511,8 @@ defaultPref("browser.tabs.insertAfterCurrent", true);
 // [PF] Lascia il browser aperto alla chiusura dell'ultima scheda
 defaultPref("browser.tabs.closeWindowWithLastTab", false);
 
-// [RF] Abilita Slit View
-defaultPref("browser.tabs.splitView.enabled", true);
-
 /* -----------------------------------------------------------------------------------
    FINE
    ----------------------------------------------------------------------------------- */
 
-lockPref("rischio.fox", "147.2");
+lockPref("rischio.fox", "147.3");
