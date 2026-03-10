@@ -177,7 +177,7 @@
      "SearchEngines": {
       "Add": [
         {
-          "Name": "SearXNG",
+          "Name": "Gugol",
           "Description": "Istanza locale",
           "Alias": "@xng",
           "Method": "GET",
