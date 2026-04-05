@@ -505,8 +505,11 @@ defaultPref("browser.tabs.insertAfterCurrent", true);
 // [PF] Lascia il browser aperto alla chiusura dell'ultima scheda
 defaultPref("browser.tabs.closeWindowWithLastTab", false);
 
+// [RF] Abilita note per le schede
+defaultPref("browser.tabs.notes.enabled", true);
+
 /* -----------------------------------------------------------------------------------
    FINE
    ----------------------------------------------------------------------------------- */
 
-lockPref("rischio.fox", "148");
+lockPref("rischio.fox", "149");
