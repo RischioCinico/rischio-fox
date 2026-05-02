@@ -512,4 +512,4 @@ defaultPref("browser.tabs.notes.enabled", true);
    FINE
    ----------------------------------------------------------------------------------- */
 
-lockPref("rischio.fox", "149");
+lockPref("rischio.fox", "150");
