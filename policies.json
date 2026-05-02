@@ -133,6 +133,7 @@
               "uiAccentCustom0": "#04cdff",
               "importedLists": [
                 "https://raw.githubusercontent.com/RischioCinico/Filterc/refs/heads/main/filterc.txt",
+                "https://raw.githubusercontent.com/hagezi/dns-blocklists/main/adblock/pro.mini.txt",
                 "https://raw.githubusercontent.com/yokoffing/filterlists/main/privacy_essentials.txt"
               ]
             },
@@ -161,7 +162,8 @@
               "ublock-annoyances",
               "ITA-0",
               "https://raw.githubusercontent.com/RischioCinico/Filterc/refs/heads/main/filterc.txt",
-              "https://raw.githubusercontent.com/yokoffing/filterlists/main/privacy_essentials.txt"
+              "https://raw.githubusercontent.com/yokoffing/filterlists/main/privacy_essentials.txt",
+              "https://raw.githubusercontent.com/hagezi/dns-blocklists/main/adblock/pro.mini.txt"
             ]  
           }
         }
