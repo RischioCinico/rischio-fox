@@ -166,10 +166,7 @@
               "https://raw.githubusercontent.com/yokoffing/filterlists/main/privacy_essentials.txt",
               "https://raw.githubusercontent.com/DandelionSprout/adfilt/master/LegitimateURLShortener.txt",
               "https://raw.githubusercontent.com/RischioCinico/Filterc/refs/heads/main/filterc.txt"
-            ],
-            "hiddenSettings": {
-              "trustedListPrefixes": "ublock- user- https://raw.githubusercontent.com/RischioCinico/Filterc/refs/heads/main/filterc.txt"
-            }
+            ]
           }
         }
       }
