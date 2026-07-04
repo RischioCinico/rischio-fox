@@ -348,6 +348,9 @@ lockPref("extensions.autoDisableScopes", 15);
 // [2661] Mostra sempre prompt di installazione
 lockPref("extensions.postDownloadThirdPartyPrompt", false);
 
+// [PF] Disabilita ricerca aggiornamenti
+lockPref("app.update.auto", false); // [LINUX]
+
 /* -----------------------------------------------------------------------------------
    [2700] ENHANCED TRACKING PROTECTION
    ----------------------------------------------------------------------------------- */
@@ -520,4 +523,4 @@ defaultPref("browser.tabs.notes.enabled", true);
    FINE
    ----------------------------------------------------------------------------------- */
 
-lockPref("rischio.fox", "150.1");
+lockPref("rischio.fox", "150.2");
