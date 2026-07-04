@@ -377,7 +377,10 @@ lockPref("widget.non-native-theme.use-theme-accent", false);
 lockPref("browser.link.open_newwindow", 3);
 
 // [4513] Imponi sempre apertura in una nuova scheda
-lockPref("browser.link.open_newwindow.restriction", 0)
+lockPref("browser.link.open_newwindow.restriction", 0);
+
+// [SF] Disabilita service workers durante navigazione anonima
+defaultPref("dom.serviceWorkers.privateBrowsing.enabled", false);
 
 /* -----------------------------------------------------------------------------------
    [5000] SICUREZZA
@@ -399,6 +402,11 @@ lockPref("browser.pagethumbnails.capturing_disabled", true); // [Nascosta]
 // [SF] Disabilita i servizi di accessibilità
 defaultPref("accessibility.force_disabled", 1);
 defaultPref("devtools.accessibility.enabled", false);
+
+// [SF] Mitigazione attacchi FROST
+lockPref("dom.fs.enabled", false);
+lockPref("dom.fs.writable_file_stream.enabled", false);
+lockPref("app.update.BITS.enabled", false); // [WINDOWS]
 
 /* -----------------------------------------------------------------------------------
    [8500] TELEMETRIA
@@ -512,4 +520,4 @@ defaultPref("browser.tabs.notes.enabled", true);
    FINE
    ----------------------------------------------------------------------------------- */
 
-lockPref("rischio.fox", "150");
+lockPref("rischio.fox", "150.1");
