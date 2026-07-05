@@ -31,6 +31,9 @@ lockPref("browser.newtabpage.activity-stream.default.sites", "");
 // [PF] Nasconde il logo di Firefox dalla pagina iniziale
 defaultPref("browser.newtabpage.activity-stream.logowordmark.alwaysVisible", false);
 
+// [RF] Mantenere il vecchio stile per la nuova scheda
+defaultPref("browser.newtabpage.activity-stream.nova.enabled", false);
+
 // [RF] Blocca il passaggio automatico dalla barra di ricerca a quella degli indirizzi
 defaultPref("browser.newtabpage.activity-stream.improvesearch.handoffToAwesomebar", false);
 
@@ -526,4 +529,4 @@ defaultPref("browser.tabs.notes.enabled", true);
    FINE
    ----------------------------------------------------------------------------------- */
 
-lockPref("rischio.fox", "150.3");
+lockPref("rischio.fox", "150.4");
