@@ -17,10 +17,11 @@ INDICE:
    004: FINGERPRINTING
    005: TRACCE
    006: DOWNLOADS
+   007: HTTP(S)
 */
 
 /* -----------------------------------------------------------------------------------
-   [001] TELEMETRIA
+   001: TELEMETRIA
    ----------------------------------------------------------------------------------- */
 
 // Disable automatic upload of profiler data (from `about:logging`) to Mozilla
@@ -182,7 +183,7 @@ lockPref("app.distributor.channel", "");
 lockPref("mozilla.partner.id", "");
 
 /* -----------------------------------------------------------------------------------
-   [002] MOZILLA
+   002: MOZILLA
    ----------------------------------------------------------------------------------- */
 
 // Clear unnecessary/undesired Mozilla URLs
@@ -239,14 +240,11 @@ lockPref("doh-rollout.trr-selection.enabled", false);
 lockPref("doh-rollout.trr-selection.provider-list", "");
 
 // Disable DoH performance measurements
-lockPref("doh-rollout.trrRace.canonicalDomain", "");
-lockPref("doh-rollout.trrRace.complete", true);
-lockPref("doh-rollout.trrRace.enabled", false);
-lockPref("doh-rollout.trrRace.popularDomains", "");
-lockPref("doh-rollout.trrRace.randomSubdomainCount", 0);
-
-// Disable 'Essential Domains Fallback'
-lockPref("network.essential_domains_fallback", false);
+defaultPref("doh-rollout.trrRace.canonicalDomain", "");
+defaultPref("doh-rollout.trrRace.complete", true);
+defaultPref("doh-rollout.trrRace.enabled", false);
+defaultPref("doh-rollout.trrRace.popularDomains", "");
+defaultPref("doh-rollout.trrRace.randomSubdomainCount", 0);
 
 // Disable "Feature Tours"
 lockPref("browser.firefox-view.feature-tour", "{\"screen\":\"\",\"complete\":true}");
@@ -387,7 +385,7 @@ lockPref("termsofuse.acceptedVersion", 999);
 lockPref("termsofuse.bypassNotification", true);
 
 /* -----------------------------------------------------------------------------------
-   [003] TRACKING
+   003: TRACKING
    ----------------------------------------------------------------------------------- */
 
 // Abilita eccezioni per evitare problemi minori
@@ -397,94 +395,94 @@ lockPref("privacy.trackingprotection.allow_list.convenience.enabled", true);
 lockPref("browser.contentblocking.category", "strict"); 
 
 // Block harmful add-on URLs
-lockPref("privacy.trackingprotection.harmfuladdon.enabled", true); // [DEFAULT - Desktop Firefox] https://searchfox.org/firefox-main/rev/93aad2a6615f670b1279c229dd37f7397236131a/browser/app/profile/firefox.js#2434
+defaultPref("privacy.trackingprotection.harmfuladdon.enabled", true); // [DEFAULT - Desktop Firefox] https://searchfox.org/firefox-main/rev/93aad2a6615f670b1279c229dd37f7397236131a/browser/app/profile/firefox.js#2434
 
 // Block known consent managers (CMPs)
-lockPref("privacy.trackingprotection.consentmanager.annotate_channels", true); // [DEFAULT]
-lockPref("privacy.trackingprotection.consentmanager.skip.enabled", false); // [DEFAULT]
-lockPref("privacy.trackingprotection.consentmanager.skip.pbmode.enabled", false);
+defaultPref("privacy.trackingprotection.consentmanager.annotate_channels", true); // [DEFAULT]
+defaultPref("privacy.trackingprotection.consentmanager.skip.enabled", false); // [DEFAULT]
+defaultPref("privacy.trackingprotection.consentmanager.skip.pbmode.enabled", false);
 
 // Block known cryptominers
-lockPref("privacy.trackingprotection.cryptomining.enabled", true); 
+defaultPref("privacy.trackingprotection.cryptomining.enabled", true); 
 
 // Block known email trackers
-lockPref("privacy.trackingprotection.emailtracking.enabled", true);
-lockPref("privacy.trackingprotection.emailtracking.pbmode.enabled", true);
+defaultPref("privacy.trackingprotection.emailtracking.enabled", true);
+defaultPref("privacy.trackingprotection.emailtracking.pbmode.enabled", true);
 
 // Block known fingerprinters
-lockPref("privacy.trackingprotection.antifraud.annotate_channels", true);
-lockPref("privacy.trackingprotection.antifraud.skip.enabled", false);
-lockPref("privacy.trackingprotection.antifraud.skip.pbmode.enabled", false);
-lockPref("privacy.trackingprotection.fingerprinting.enabled", true);
+defaultPref("privacy.trackingprotection.antifraud.annotate_channels", true);
+defaultPref("privacy.trackingprotection.antifraud.skip.enabled", false);
+defaultPref("privacy.trackingprotection.antifraud.skip.pbmode.enabled", false);
+defaultPref("privacy.trackingprotection.fingerprinting.enabled", true);
 
 // Block known social trackers
-lockPref("privacy.trackingprotection.socialtracking.enabled", true);
+defaultPref("privacy.trackingprotection.socialtracking.enabled", true);
 
 // Block known trackers
-lockPref("privacy.trackingprotection.annotate_channels", true);
-lockPref("privacy.trackingprotection.enabled", true);
-lockPref("privacy.trackingprotection.pbmode.enabled", true);
+defaultPref("privacy.trackingprotection.annotate_channels", true);
+defaultPref("privacy.trackingprotection.enabled", true);
+defaultPref("privacy.trackingprotection.pbmode.enabled", true);
 
 // Block known trackers using the `strict` (Level 2) list
-lockPref("privacy.annotate_channels.strict_list.enabled", true);
-lockPref("privacy.annotate_channels.strict_list.pbmode.enabled", true);
+defaultPref("privacy.annotate_channels.strict_list.enabled", true);
+defaultPref("privacy.annotate_channels.strict_list.pbmode.enabled", true);
 
 // Block known tracking cookies
-lockPref("network.cookie.cookieBehavior.trackerCookieBlocking", true);
-lockPref("privacy.socialtracking.block_cookies.enabled", true);
+defaultPref("network.cookie.cookieBehavior.trackerCookieBlocking", true);
+defaultPref("privacy.socialtracking.block_cookies.enabled", true);
 
 // Enable Bounce Tracking Protection
-lockPref("privacy.bounceTrackingProtection.mode", 1);
+defaultPref("privacy.bounceTrackingProtection.mode", 1);
 
 // Enable Query Parameter Stripping
-lockPref("privacy.query_stripping.enabled", true);
-lockPref("privacy.query_stripping.enabled.pbmode", true);
-lockPref("privacy.query_stripping.redirect", true);
+defaultPref("privacy.query_stripping.enabled", true);
+defaultPref("privacy.query_stripping.enabled.pbmode", true);
+defaultPref("privacy.query_stripping.redirect", true);
 
 // Enable SmartBlock and Web Compatibility interventions by default
-lockPref("extensions.webcompat.enable_interventions", true);
-lockPref("extensions.webcompat.enable_shims", true);
-lockPref("extensions.webcompat.perform_injections", true);
-lockPref("extensions.webcompat.perform_ua_overrides", true);
-lockPref("extensions.webcompat.smartblockEmbeds.enabled", true);
-lockPref("extensions.pictureinpicture.enable_picture_in_picture_overrides", true);
+defaultPref("extensions.webcompat.enable_interventions", true);
+defaultPref("extensions.webcompat.enable_shims", true);
+defaultPref("extensions.webcompat.perform_injections", true);
+defaultPref("extensions.webcompat.perform_ua_overrides", true);
+defaultPref("extensions.webcompat.smartblockEmbeds.enabled", true);
+defaultPref("extensions.pictureinpicture.enable_picture_in_picture_overrides", true);
 
 // State Partitioning (Total Cookie Protection / Isolamento Risorse)
-lockPref("network.fetch.cache_partition_cross_origin", true);
-lockPref("privacy.partition.bloburl_per_partition_key", true);
-lockPref("privacy.partition.serviceWorkers", true);
+defaultPref("network.fetch.cache_partition_cross_origin", true);
+defaultPref("privacy.partition.bloburl_per_partition_key", true);
+defaultPref("privacy.partition.serviceWorkers", true);
 
 // Enable Suspected Fingerprinters Protection (FPP)
-lockPref("privacy.fingerprintingProtection", true);
-lockPref("privacy.fingerprintingProtection.pbmode", true);
-lockPref("privacy.reduceTimerPrecision", true);
-lockPref("privacy.resistFingerprinting", false);
-lockPref("privacy.resistFingerprinting.pbmode", false);
+defaultPref("privacy.fingerprintingProtection", true);
+defaultPref("privacy.fingerprintingProtection.pbmode", true);
+defaultPref("privacy.reduceTimerPrecision", true);
+defaultPref("privacy.resistFingerprinting", false);
+defaultPref("privacy.resistFingerprinting.pbmode", false);
 
 // Enable TCP/dFPI
-lockPref("network.cookie.cookieBehavior", 5);
-lockPref("network.cookie.cookieBehavior.pbmode", 5);
-lockPref("network.cookie.cookieBehavior.optInPartitioning", true);
-lockPref("network.cookie.cookieBehavior.optInPartitioning.pbmode", true);
+defaultPref("network.cookie.cookieBehavior", 5);
+defaultPref("network.cookie.cookieBehavior.pbmode", 5);
+defaultPref("network.cookie.cookieBehavior.optInPartitioning", true);
+defaultPref("network.cookie.cookieBehavior.optInPartitioning.pbmode", true);
 
 // Ignore less restricted referer policies (than the default)
-lockPref("network.http.referer.disallowCrossSiteRelaxingDefault", true);
-lockPref("network.http.referer.disallowCrossSiteRelaxingDefault.pbmode", true);
-lockPref("network.http.referer.disallowCrossSiteRelaxingDefault.pbmode.top_navigation", true);
-lockPref("network.http.referer.disallowCrossSiteRelaxingDefault.top_navigation", true);
+defaultPref("network.http.referer.disallowCrossSiteRelaxingDefault", true);
+defaultPref("network.http.referer.disallowCrossSiteRelaxingDefault.pbmode", true);
+defaultPref("network.http.referer.disallowCrossSiteRelaxingDefault.pbmode.top_navigation", true);
+defaultPref("network.http.referer.disallowCrossSiteRelaxingDefault.top_navigation", true);
 
 // Enable exceptions required to avoid major breakage by default
 lockPref("privacy.trackingprotection.allow_list.baseline.enabled", true);
 lockPref("privacy.trackingprotection.allow_list.hasMigratedCategoryPrefs", true);
 
 // Lower the network priority of known trackers (if not blocked for whatever reason...)
-lockPref("privacy.trackingprotection.lower_network_priority", true);
+defaultPref("privacy.trackingprotection.lower_network_priority", true);
 
 // Purge first-party tracking cookies
-lockPref("privacy.purge_trackers.enabled", true);
+defaultPref("privacy.purge_trackers.enabled", true);
 
 /* -----------------------------------------------------------------------------------
-   [004] FINGERPRINTING
+   004: FINGERPRINTING
    ----------------------------------------------------------------------------------- */
 
 // Unnecessarily fingerprintable
@@ -492,85 +490,49 @@ clearPref("dom.webmidi.enabled");
 clearPref("geo.enabled");
 
 // Always load fonts bundled with Firefox
-lockPref("gfx.bundled-fonts.activate", 1);
+defaultPref("gfx.bundled-fonts.activate", 1);
 
 // Disable the ability to switch locales without requiring a restart
-lockPref("intl.multilingual.liveReload", false);
-lockPref("intl.multilingual.liveReloadBidirectional", false);
-
-// Disable failIfMajorPerformanceCaveat in WebGL contexts
-lockPref("webgl.disable-fail-if-major-performance-caveat", true); 
+defaultPref("intl.multilingual.liveReload", false);
 
 // Disable VP9 Benchmark
-lockPref("media.benchmark.vp9.threshold", 0);
-
-// Do not use the theme's toolbar color scheme for in-content pages by default
-lockPref("browser.theme.unified-color-scheme", false);
-
-// Enable fdlibm for Math.sin, Math.cos, and Math.tan
-lockPref("javascript.options.use_fdlibm_for_sin_cos_tan", true);
+defaultPref("media.benchmark.vp9.threshold", 0);
 
 // Limit font visibility to base system fonts + fonts from optional language packs
-lockPref("layout.css.font-visibility", 2);
-
-// Prevent enumeration of media devices
-lockPref("media.devices.enumerate.legacy.enabled", false);
+defaultPref("layout.css.font-visibility", 2);
 
 // Prevent exposing WebGL Renderer Info
-lockPref("webgl.enable-renderer-query", false);
-lockPref("webgl.override-unmasked-renderer", "Mozilla");
-lockPref("webgl.override-unmasked-vendor", "Mozilla");
-lockPref("webgl.sanitize-unmasked-renderer", false);
+defaultPref("webgl.enable-renderer-query", false);
+defaultPref("webgl.override-unmasked-renderer", "Mozilla");
+defaultPref("webgl.override-unmasked-vendor", "Mozilla");
+defaultPref("webgl.sanitize-unmasked-renderer", false);
 
 // Prevent pre-allocating content processes
-lockPref("dom.ipc.processPrelaunch.enabled", false);
-lockPref("dom.ipc.processPrelaunch.fission.number", 0);
+defaultPref("dom.ipc.processPrelaunch.enabled", false);
+defaultPref("dom.ipc.processPrelaunch.fission.number", 0);
 
 // Prevent using system accent colors
-lockPref("widget.non-native-theme.use-theme-accent", false);
+defaultPref("widget.non-native-theme.use-theme-accent", false);
 
 // Prevent using system colors
-lockPref("browser.display.document_color_use", 1);
-lockPref("ui.use_standins_for_native_colors", true);
-
-// Prompt to spoof locale to en-US
-lockPref("privacy.spoof_english", 0);
-
-// Reset the fingerprinting randomization key daily (in addition to per-session/when the browser restarts)
-lockPref("privacy.resistFingerprinting.randomization.daily_reset.enabled", true);
-lockPref("privacy.resistFingerprinting.randomization.daily_reset.private.enabled", true);
-
-// Round window sizes
-lockPref("browser.startup.blankWindow", false);
-lockPref("privacy.window.maxInnerHeight", 900);
-lockPref("privacy.window.maxInnerWidth", 1600);
-lockPref("privacy.resistFingerprinting.skipEarlyBlankFirstPaint", true);
+defaultPref("ui.use_standins_for_native_colors", true);
 
 // Set a fixed temporary storage limit
-lockPref("dom.quotaManager.temporaryStorage.fixedLimit", 52428800);
-
-// Set target video resolution to 1080p
-lockPref("privacy.resistFingerprinting.target_video_res", 1080);
-
-// Set zoom levels on a per-site basis
-lockPref("browser.zoom.siteSpecific", true);
+defaultPref("dom.quotaManager.temporaryStorage.fixedLimit", 52428800);
 
 /* -----------------------------------------------------------------------------------
-   [005] TRACCE
+   005: TRACCE
    ----------------------------------------------------------------------------------- */
 
 // Decrease the number of tabs saved in Session Store
-lockPref("browser.sessionstore.max_tabs_undo", 7);
+defaultPref("browser.sessionstore.max_tabs_undo", 7);
 
 // Disable back/forward cache (bfcache)
-lockPref("browser.sessionhistory.max_total_viewers", 0);
-lockPref("fission.bfcacheInParent", false);
+defaultPref("browser.sessionhistory.max_total_viewers", 0);
+defaultPref("fission.bfcacheInParent", false);
 
 // Disable collection/generation of background thumbnails
-lockPref("browser.pagethumbnails.capturing_disabled", true);
-
-// Disable collection/generation of wireframes
-lockPref("browser.history.collectWireframes", false);
+defaultPref("browser.pagethumbnails.capturing_disabled", true);
 
 // Disable coloring visited links
 lockPref("layout.css.visited_links_enabled", false);
@@ -580,45 +542,39 @@ lockPref("browser.cache.disk.enable", false);
 lockPref("browser.cache.disk_cache_ssl", true);
 
 // Disable favicons in shortcuts
-lockPref("browser.shell.shortcutFavicons", false);
-
-// Disable LaterRun
-lockPref("browser.laterrun.enabled", false);
+defaultPref("browser.shell.shortcutFavicons", false);
 
 // Disable logging blocked domains to `about:protections`
-lockPref("browser.contentblocking.database.enabled", false);
-lockPref("browser.contentblocking.cfr-milestone.enabled", false);
-lockPref("browser.contentblocking.cfr-milestone.milestone-shown-time", "999999999");
-lockPref("browser.contentblocking.cfr-milestone.update-interval", 0);
-lockPref("browser.contentblocking.report.privacy_metrics.enabled", false);
+defaultPref("browser.contentblocking.database.enabled", false);
+defaultPref("browser.contentblocking.cfr-milestone.enabled", false);
+defaultPref("browser.contentblocking.cfr-milestone.milestone-shown-time", "999999999");
+defaultPref("browser.contentblocking.cfr-milestone.update-interval", 0);
+defaultPref("browser.contentblocking.report.privacy_metrics.enabled", false);
 
 // Disable search and form history
-lockPref("browser.formfill.enable", false);
+defaultPref("browser.formfill.enable", false);
 
 // Disable WebRTC history
-lockPref("media.aboutwebrtc.hist.enabled", false);
+defaultPref("media.aboutwebrtc.hist.enabled", false);
 
 // Disable window state restoration
-lockPref("browser.restoreWindowState.disabled", true);
+defaultPref("browser.restoreWindowState.disabled", true);
 
 // Increase the interval between between Session Store save operations
-lockPref("browser.sessionstore.interval", 1800000);
-
-// Prevent persistence of TLS session resumption tokens across restarts
-lockPref("network.ssl_tokens_cache_persistence", false);
+defaultPref("browser.sessionstore.interval", 1800000);
 
 // Prevent storing unnecessary extra session data
-lockPref("browser.sessionstore.privacy_level", 2);
+defaultPref("browser.sessionstore.privacy_level", 2);
 
 // Prevent writing media cache (ex. for video streaming) to disk in private windows
-lockPref("browser.privatebrowsing.forceMediaMemoryCache", true);
+defaultPref("browser.privatebrowsing.forceMediaMemoryCache", true);
 
 // Remove cached files from browser windows opened with external applications
-lockPref("browser.download.start_downloads_in_tmp_dir", true);
-lockPref("browser.helperApps.deleteTempFileOnExit", true);
+defaultPref("browser.download.start_downloads_in_tmp_dir", true);
+defaultPref("browser.helperApps.deleteTempFileOnExit", true);
 
 /* -----------------------------------------------------------------------------------
-   [006] DOWNLOADS
+   006: DOWNLOADS
    ----------------------------------------------------------------------------------- */
 
 // Block insecure downloads
@@ -633,6 +589,80 @@ lockPref("browser.download.manager.addToRecentDocs", false);
 // Prompt before downloading files
 lockPref("browser.download.always_ask_before_handling_new_types", true);
 lockPref("browser.download.useDownloadDir", false);
+
+/* -----------------------------------------------------------------------------------
+   007: HTTP(S)
+   ----------------------------------------------------------------------------------- */
+
+// Always attempt to resolve HTTPS resource records, regardless of connectivity checks/other factors
+defaultPref("network.dns.force_use_https_rr", true);
+
+// Always warn on insecure webpages
+defaultPref("security.insecure_connection_text.enabled", true);
+defaultPref("security.insecure_connection_text.pbmode.enabled", true);
+defaultPref("security.ssl.treat_unsafe_negotiation_as_broken", true);
+
+// Always warn when submitting a form from HTTP to HTTPS, even on local IP addresses
+defaultPref("security.insecure_field_warning.ignore_local_ip_address", false);
+
+// Disable the automatic import of OS client authentication certificates
+defaultPref("security.osclientcerts.autoload", false);
+
+// Disable OCSP revocation checks
+lockPref("security.OCSP.enabled", 0);
+lockPref("security.OCSP.require", false);
+
+// Disable sending background HTTP requests to websites that do not respond quickly to check if they support HTTPS
+defaultPref("dom.security.https_only_mode_send_http_background_request", false);
+
+// Disable third-party/OS-level root certificates
+defaultPref("security.certerrors.mitm.auto_enable_enterprise_roots", false);
+defaultPref("security.enterprise_roots.enabled", false);
+lockPref("security.certerrors.mitm.auto_enable_enterprise_roots", false);
+lockPref("security.enterprise_roots.enabled", false);
+
+// Ensure HTTP/3 isn't disabled when/if third-party/OS-level root certificates are found
+defaultPref("network.http.http3.disable_when_third_party_roots_found", false);
+
+// Disable TLS 1.3 0-RTT
+defaultPref("network.http.http3.enable_0rtt", false);
+defaultPref("security.tls.enable_0rtt_data", false);
+
+// Enable CRLite revocation checks (and prioritize over OCSP)
+defaultPref("security.pki.crlite_mode", 2);
+
+// Enable HTTPS-First
+defaultPref("dom.security.https_first_add_exception_on_failure", false);
+defaultPref("dom.security.https_first_for_custom_ports", true);
+defaultPref("dom.security.https_first_for_local_addresses", true);
+defaultPref("dom.security.https_first_for_unknown_suffixes", true);
+
+// Enable HTTPS-Only Mode
+defaultPref("dom.security.https_only_mode", true);
+defaultPref("dom.security.https_only_mode.upgrade_local", true);
+defaultPref("dom.security.https_only_mode_pbm", true);
+defaultPref("dom.security.https_only_mode_error_page_user_suggestions", true);
+lockPref("dom.security.https_only_mode", true);
+lockPref("dom.security.https_only_mode_pbm", true);
+
+// Enable MITM Detection
+defaultPref("security.certerrors.mitm.priming.enabled", true);
+defaultPref("security.certerrors.mitm.priming.endpoint", "https://mitmdetection.services.mozilla.com/");
+
+// Enable prompts for unsafe HTTP redirects
+defaultPref("network.http.prompt-temp-redirect", true);
+
+// Enforce Strict Certificate Pinning
+defaultPref("security.cert_pinning.enforcement_level", 3);
+
+// Only allow certificate error exceptions per-session
+defaultPref("security.certerrors.permanentOverride", false);
+
+// Require safe renegotiations
+defaultPref("security.ssl.require_safe_negotiation", true);
+
+
+
 
 /* -----------------------------------------------------------------------------------
    [0100] AVVIO
@@ -835,9 +865,6 @@ lockPref("security.cert_pinning.enforcement_level", 2);
 // [1244] Abilita HTTPS-Only
 lockPref("dom.security.https_only_mode", true);
 lockPref("dom.security.https_only_mode_pbm", true);
-
-// [1246] Disabilita l'invio di richieste HTTP in background
-lockPref("dom.security.https_only_mode_send_http_background_request", false);
 
 // [1270] Mostra avviso connessione insicure
 lockPref("security.ssl.treat_unsafe_negotiation_as_broken", true);
@@ -1042,4 +1069,4 @@ defaultPref("browser.tabs.notes.enabled", true);
    FINE
    ----------------------------------------------------------------------------------- */
 
-lockPref("rischio.fox", "150.11");
+lockPref("rischio.fox", "150.12");
