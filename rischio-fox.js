@@ -11,14 +11,15 @@
 
 /*
 INDICE:
-   001: RACCOLTA DATI
+   001: TELEMETRIA
    002: MOZILLA
    003: TRACKING
    004: FINGERPRINTING
+   005: TRACCE
 */
 
 /* -----------------------------------------------------------------------------------
-   [001] RACCOLTA DATI
+   [001] TELEMETRIA
    ----------------------------------------------------------------------------------- */
 
 // Disable automatic upload of profiler data (from `about:logging`) to Mozilla
@@ -490,69 +491,130 @@ clearPref("dom.webmidi.enabled");
 clearPref("geo.enabled");
 
 // Always load fonts bundled with Firefox
-defaultPref("gfx.bundled-fonts.activate", 1);
+lockPref("gfx.bundled-fonts.activate", 1);
 
 // Disable the ability to switch locales without requiring a restart
-defaultPref("intl.multilingual.liveReload", false);
-defaultPref("intl.multilingual.liveReloadBidirectional", false);
+lockPref("intl.multilingual.liveReload", false);
+lockPref("intl.multilingual.liveReloadBidirectional", false);
 
 // Disable failIfMajorPerformanceCaveat in WebGL contexts
-defaultPref("webgl.disable-fail-if-major-performance-caveat", true); 
+lockPref("webgl.disable-fail-if-major-performance-caveat", true); 
 
 // Disable VP9 Benchmark
-defaultPref("media.benchmark.vp9.threshold", 0);
+lockPref("media.benchmark.vp9.threshold", 0);
 
 // Do not use the theme's toolbar color scheme for in-content pages by default
-defaultPref("browser.theme.unified-color-scheme", false);
+lockPref("browser.theme.unified-color-scheme", false);
 
 // Enable fdlibm for Math.sin, Math.cos, and Math.tan
-defaultPref("javascript.options.use_fdlibm_for_sin_cos_tan", true);
+lockPref("javascript.options.use_fdlibm_for_sin_cos_tan", true);
 
 // Limit font visibility to base system fonts + fonts from optional language packs
-defaultPref("layout.css.font-visibility", 2);
+lockPref("layout.css.font-visibility", 2);
 
 // Prevent enumeration of media devices
-defaultPref("media.devices.enumerate.legacy.enabled", false);
+lockPref("media.devices.enumerate.legacy.enabled", false);
 
 // Prevent exposing WebGL Renderer Info
-defaultPref("webgl.enable-renderer-query", false);
-defaultPref("webgl.override-unmasked-renderer", "Mozilla");
-defaultPref("webgl.override-unmasked-vendor", "Mozilla");
-defaultPref("webgl.sanitize-unmasked-renderer", false);
+lockPref("webgl.enable-renderer-query", false);
+lockPref("webgl.override-unmasked-renderer", "Mozilla");
+lockPref("webgl.override-unmasked-vendor", "Mozilla");
+lockPref("webgl.sanitize-unmasked-renderer", false);
 
 // Prevent pre-allocating content processes
-defaultPref("dom.ipc.processPrelaunch.enabled", false);
-defaultPref("dom.ipc.processPrelaunch.fission.number", 0);
+lockPref("dom.ipc.processPrelaunch.enabled", false);
+lockPref("dom.ipc.processPrelaunch.fission.number", 0);
 
 // Prevent using system accent colors
-defaultPref("widget.non-native-theme.use-theme-accent", false);
+lockPref("widget.non-native-theme.use-theme-accent", false);
 
 // Prevent using system colors
-defaultPref("browser.display.document_color_use", 1);
-defaultPref("ui.use_standins_for_native_colors", true);
+lockPref("browser.display.document_color_use", 1);
+lockPref("ui.use_standins_for_native_colors", true);
 
 // Prompt to spoof locale to en-US
-defaultPref("privacy.spoof_english", 0);
+lockPref("privacy.spoof_english", 0);
 
 // Reset the fingerprinting randomization key daily (in addition to per-session/when the browser restarts)
-defaultPref("privacy.resistFingerprinting.randomization.daily_reset.enabled", true);
-defaultPref("privacy.resistFingerprinting.randomization.daily_reset.private.enabled", true);
+lockPref("privacy.resistFingerprinting.randomization.daily_reset.enabled", true);
+lockPref("privacy.resistFingerprinting.randomization.daily_reset.private.enabled", true);
 
 // Round window sizes
-efaultPref("browser.startup.blankWindow", false);
-defaultPref("privacy.window.maxInnerHeight", 900);
-defaultPref("privacy.window.maxInnerWidth", 1600);
-defaultPref("privacy.resistFingerprinting.skipEarlyBlankFirstPaint", true);
+lockPref("browser.startup.blankWindow", false);
+lockPref("privacy.window.maxInnerHeight", 900);
+lockPref("privacy.window.maxInnerWidth", 1600);
+lockPref("privacy.resistFingerprinting.skipEarlyBlankFirstPaint", true);
 
 // Set a fixed temporary storage limit
-defaultPref("dom.quotaManager.temporaryStorage.fixedLimit", 52428800);
+lockPref("dom.quotaManager.temporaryStorage.fixedLimit", 52428800);
 
 // Set target video resolution to 1080p
-defaultPref("privacy.resistFingerprinting.target_video_res", 1080);
+lockPref("privacy.resistFingerprinting.target_video_res", 1080);
 
 // Set zoom levels on a per-site basis
-defaultPref("browser.zoom.siteSpecific", true);
+lockPref("browser.zoom.siteSpecific", true);
 
+/* -----------------------------------------------------------------------------------
+   [005] TRACCE
+   ----------------------------------------------------------------------------------- */
+
+// Decrease the number of tabs saved in Session Store
+lockPref("browser.sessionstore.max_tabs_undo", 7);
+
+// Disable back/forward cache (bfcache)
+lockPref("browser.sessionhistory.max_total_viewers", 0);
+lockPref("fission.bfcacheInParent", false);
+
+// Disable collection/generation of background thumbnails
+lockPref("browser.pagethumbnails.capturing_disabled", true);
+
+// Disable collection/generation of wireframes
+lockPref("browser.history.collectWireframes", false);
+
+// Disable coloring visited links
+lockPref("layout.css.visited_links_enabled", false);
+
+// Disable disk cache
+lockPref("browser.cache.disk.enable", false);
+lockPref("browser.cache.disk_cache_ssl", true);
+
+// Disable favicons in shortcuts
+lockPref("browser.shell.shortcutFavicons", false);
+
+// Disable LaterRun
+lockPref("browser.laterrun.enabled", false);
+
+// Disable logging blocked domains to `about:protections`
+lockPref("browser.contentblocking.database.enabled", false);
+lockPref("browser.contentblocking.cfr-milestone.enabled", false);
+lockPref("browser.contentblocking.cfr-milestone.milestone-shown-time", "999999999");
+lockPref("browser.contentblocking.cfr-milestone.update-interval", 0);
+lockPref("browser.contentblocking.report.privacy_metrics.enabled", false);
+
+// Disable search and form history
+lockPref("browser.formfill.enable", false);
+
+// Disable WebRTC history
+lockPref("media.aboutwebrtc.hist.enabled", false);
+
+// Disable window state restoration
+lockPref("browser.restoreWindowState.disabled", true);
+
+// Increase the interval between between Session Store save operations
+lockPref("browser.sessionstore.interval", 1800000);
+
+// Prevent persistence of TLS session resumption tokens across restarts
+lockPref("network.ssl_tokens_cache_persistence", false);
+
+// Prevent storing unnecessary extra session data
+lockPref("browser.sessionstore.privacy_level", 2);
+
+// Prevent writing media cache (ex. for video streaming) to disk in private windows
+lockPref("browser.privatebrowsing.forceMediaMemoryCache", true);
+
+// Remove cached files from browser windows opened with external applications
+lockPref("browser.download.start_downloads_in_tmp_dir", true);
+lockPref("browser.helperApps.deleteTempFileOnExit", true);
 
 /* -----------------------------------------------------------------------------------
    [0100] AVVIO
@@ -740,22 +802,6 @@ lockPref("signon.formlessCapture.enabled", false);
 lockPref("network.auth.subresource-http-auth-allow", 1);
 
 /* -----------------------------------------------------------------------------------
-   [1000] TRACCE SU DISCO
-   ----------------------------------------------------------------------------------- */
-
-// [1001] Disabilita cache su disco
-lockPref("browser.cache.disk.enable", false);
-
-// [1002] Impedisce la scrittura della cache multimediale su disco nelle finestre private
-lockPref("browser.privatebrowsing.forceMediaMemoryCache", true);
-
-// [1003] Disabilita scrittura dati di sessione
-lockPref("browser.sessionstore.privacy_level", 2);
-
-// [SF] Aumenta l'intervallo di salvataggio automatico della sessione per ridurre le scritture su disco
-defaultPref("browser.sessionstore.interval", 1800000); // default=15000
-
-/* -----------------------------------------------------------------------------------
    [1200] CONNESSIONI SICURE
    ----------------------------------------------------------------------------------- */
 
@@ -900,9 +946,6 @@ lockPref("extensions.formautofill.creditCards.enabled", false);
 // [5018] Limita gli eventi che possono causare pop-up
 defaultPref("dom.popup_allowed_events", "click dblclick");
 
-// [5019] Disabilita la generazione di miniature delle pagine
-lockPref("browser.pagethumbnails.capturing_disabled", true); // [Nascosta]
-
 // [SF] Disabilita i servizi di accessibilità
 defaultPref("accessibility.force_disabled", 1);
 defaultPref("devtools.accessibility.enabled", false);
@@ -1001,4 +1044,4 @@ defaultPref("browser.tabs.notes.enabled", true);
    FINE
    ----------------------------------------------------------------------------------- */
 
-lockPref("rischio.fox", "150.9");
+lockPref("rischio.fox", "150.10");
