@@ -9,12 +9,181 @@
 /*   ░░   ░ ▒ ░  ░  ░ ░        ░  ░░ ░▒ ░ ░ ░ ▒      ░ ░  ░ ░ ░ ▒  ░    ░   */
 /*    ░     ░       ░ ░ ░      ░  ░  ░░     ░ ░               ░ ░  ░    ░   */
 
-// [0000] Disabilita gli avvisi quando si accede ad `about:config`
-lockPref("browser.aboutConfig.showWarning", false);
+/*
+INDICE:
+   001: RACCOLTA DATI
+   
+*/
+
+/* -----------------------------------------------------------------------------------
+   [001] RACCOLTA DATI
+   ----------------------------------------------------------------------------------- */
+
+// Disable automatic upload of profiler data (from `about:logging`) to Mozilla
+lockPref("toolkit.aboutLogging.uploadProfileToCloud", false);
+lockPref("toolkit.aboutLogging.uploadProfileUrl", "");
+
+// Disable Browser Search/Usage Telemetry metrics
+lockPref("browser.engagement.ctrlTab.has-used", true);
+lockPref("browser.engagement.downloads-button.has-used", true);
+lockPref("browser.engagement.fxa-toolbar-menu-button.has-used", true);
+lockPref("browser.engagement.home-button.has-used", true);
+lockPref("browser.engagement.library-button.has-used", true);
+lockPref("browser.engagement.sidebar-button.has-used", true);
+lockPref("browser.engagement.total_uri_count.pbm", false);
+lockPref("browser.engagement.search_counts.pbm", false);
+lockPref("browser.search.totalSearches", 100);
+
+// Disable Coverage
+lockPref("toolkit.coverage.enabled", false);
+lockPref("toolkit.coverage.endpoint.base", "");
+lockPref("toolkit.coverage.log-level", 70);
+lockPref("toolkit.coverage.opt-out", true);
+
+// Disable crash reporting
+lockPref("breakpad.reportURL", "");
+lockPref("browser.crashReports.onDemand", false);
+lockPref("browser.crashReports.requestedNeverShowAgain", true);
+lockPref("dom.ipc.tabs.createKillHardCrashReports", false);
+lockPref("toolkit.crashreporter.include_context_heap", false);
+lockPref("browser.crashReports.unsubmittedCheck.autoSubmit2", false);
+lockPref("browser.crashReports.unsubmittedCheck.enabled", false);
+lockPref("browser.crashReports.cleanupCheck.enabled", false);
+lockPref("browser.tabs.crashReporting.includeURL", false);
+lockPref("browser.tabs.crashReporting.sendReport", false);
+
+// Disable data reporting and telemetry
+clearPref("app.update.lastUpdateTime.glean-addons-daily");
+lockPref("browser.safebrowsing.features.emailtracking.datacollection.update", false);
+lockPref("captchadetection.actor.enabled", false);
+lockPref("captchadetection.hasUnsubmittedData", false);
+lockPref("captchadetection.loglevel", "Off");
+lockPref("datareporting.dau.cachedUsageProfileID", "beefbeef-beef-beef-beef-beeefbeefbee");
+lockPref("datareporting.dau.cachedUsageProfileGroupID", "b0bacafe-b0ba-cafe-b0ba-cafeb0bacafe");
+lockPref("datareporting.healthreport.uploadEnabled", false);
+lockPref("datareporting.policy.dataSubmissionEnabled", false);
+lockPref("datareporting.policy.dataSubmissionPolicyBypassNotification", true);
+lockPref("datareporting.policy.firstRunURL", "");
+lockPref("datareporting.usage.uploadEnabled", false);
+lockPref("dom.security.unexpected_system_load_telemetry_enabled", false);
+lockPref("extensions.dataCollectionPermissions.enabled", false);
+lockPref("extensions.gleanPingAddons.daily.interval", 2147483647);
+lockPref("extensions.gleanPingAddons.updated.delay", 2147483647);
+lockPref("extensions.gleanPingAddons.updated.idleTimeout", 2147483647);
+lockPref("extensions.gleanPingAddons.updated.testing", false);
+lockPref("extensions.telemetry.EnvironmentAddonBuilder", false);
+lockPref("network.jar.record_failure_reason", false);
+lockPref("network.traffic_analyzer.enabled", false);
+lockPref("nimbus.telemetry.targetingContextEnabled", false);
+lockPref("privacy.trackingprotection.emailtracking.data_collection.enabled", false);
+lockPref("telemetry.fog.artifact_build", false);
+lockPref("telemetry.fog.test.activity_limit", -1);
+lockPref("telemetry.fog.test.inactivity_limit", -1);
+lockPref("telemetry.fog.init_on_shutdown", false);
+lockPref("telemetry.fog.test.localhost_port", 70000);
+lockPref("telemetry.glean.internal.finalInactive", false);
+lockPref("telemetry.glean.internal.maxPingsPerMinute", 0);
+lockPref("telemetry.number_of_site_origin.min_interval", 2147483647);
+lockPref("toolkit.content-background-hang-monitor.disabled", true);
+lockPref("toolkit.profiles.newProfileSubmitted", true);
+lockPref("toolkit.telemetry.archive.enabled", false);
+lockPref("toolkit.telemetry.bhrPing.enabled", false);
+lockPref("toolkit.telemetry.cachedClientID", "c0ffeec0-ffee-c0ff-eec0-ffeec0ffeec0");
+lockPref("toolkit.telemetry.cachedProfileGroupID", "decafdec-afde-cafd-ecaf-decafdecafde");
+lockPref("toolkit.telemetry.collectInterval", 2147483647);
+lockPref("toolkit.telemetry.dap.helper.hpke", "");
+lockPref("toolkit.telemetry.dap.helper.url", "");
+lockPref("toolkit.telemetry.dap.leader.hpke", "");
+lockPref("toolkit.telemetry.dap.leader.url", "");
+lockPref("toolkit.telemetry.dap.logLevel", "Off");
+lockPref("toolkit.telemetry.dap_enabled", false);
+lockPref("toolkit.telemetry.dap_task1_enabled", false);
+lockPref("toolkit.telemetry.dap_task1_taskid", "");
+lockPref("toolkit.telemetry.dap_visit_counting_enabled", false);
+lockPref("toolkit.telemetry.dap_visit_counting_experiment_list", "[]");
+lockPref("toolkit.telemetry.debugSlowSql", false);
+lockPref("toolkit.telemetry.enabled", false);
+lockPref("toolkit.telemetry.eventping.maximumFrequency", 2147483647);
+lockPref("toolkit.telemetry.eventping.minimumFrequency", 2147483647);
+lockPref("toolkit.telemetry.firstShutdownPing.enabled", false);
+lockPref("toolkit.telemetry.healthping.enabled", false);
+lockPref("toolkit.telemetry.initDelay", 2147483647);
+lockPref("toolkit.telemetry.log.dump", false);
+lockPref("toolkit.telemetry.log.level", "Fatal");
+lockPref("toolkit.telemetry.minSubsessionLength", 2147483647);
+lockPref("toolkit.telemetry.newProfilePing.delay", 2147483647);
+lockPref("toolkit.telemetry.newProfilePing.enabled", false);
+lockPref("toolkit.telemetry.overrideUpdateChannel", "release");
+lockPref("toolkit.telemetry.previousBuildID", "");
+lockPref("toolkit.telemetry.reportingpolicy.firstRun", false);
+lockPref("toolkit.telemetry.scheduler.idleTickInterval", 2147483647);
+lockPref("toolkit.telemetry.scheduler.tickInterval", 2147483647);
+lockPref("toolkit.telemetry.send.overrideOfficialCheck", false);
+lockPref("toolkit.telemetry.server", "data;");
+lockPref("toolkit.telemetry.server_owner", "");
+lockPref("toolkit.telemetry.shutdownPingSender.backgroundtask.enabled", false);
+lockPref("toolkit.telemetry.shutdownPingSender.enabled", false);
+lockPref("toolkit.telemetry.shutdownPingSender.enabledFirstSession", false);
+lockPref("toolkit.telemetry.testing.disableFuzzingDelay", false);
+lockPref("toolkit.telemetry.testing.overridePreRelease", false);
+lockPref("toolkit.telemetry.testing.overrideProductsCheck", false);
+lockPref("toolkit.telemetry.testing.suppressPingsender", true);
+lockPref("toolkit.telemetry.translations.logLevel", "Off");
+lockPref("toolkit.telemetry.unified", false);
+lockPref("toolkit.telemetry.untrustedModulesPing.frequency", 2147483647);
+lockPref("toolkit.telemetry.updatePing.enabled", false);
+lockPref("toolkit.telemetry.user_characteristics_ping.current_version", 0);
+lockPref("toolkit.telemetry.user_characteristics_ping.last_version_sent", 0);
+lockPref("toolkit.telemetry.user_characteristics_ping.logLevel", "Off");
+lockPref("toolkit.telemetry.user_characteristics_ping.opt-out", true);
+lockPref("toolkit.telemetry.user_characteristics_ping.send-once", false);
+lockPref("toolkit.telemetry.user_characteristics_ping.uuid", "");
+lockPref("urlclassifier.features.emailtracking.datacollection.allowlistTables", "");
+lockPref("urlclassifier.features.emailtracking.datacollection.blocklistTables", "");
+lockPref("telemetry.fog.aboutGlean.debugTag", "");
+lockPref("browser.aboutwelcome.entrypoint", "");
+
+// Disable experimentation and A/B testing
+lockPref("app.normandy.run_interval_seconds", 0);
+lockPref("app.shield.optoutstudies.enabled", false);
+lockPref("extensions.formautofill.addresses.experiments.enabled", false);
+lockPref("messaging-system.rsexperimentloader.collection_id", "");
+lockPref("nimbus.appId", "");
+lockPref("nimbus.firstUpdateComplete", true);
+pref("nimbus.profileId", "");
+lockPref("nimbus.profileId", "");
+lockPref("nimbus.profilesdatastoreservice.enabled", false);
+lockPref("nimbus.profilesdatastoreservice.read.enabled", false);
+lockPref("nimbus.profilesdatastoreservice.sync.enabled", false);
+lockPref("nimbus.rollouts.enabled", false);
+lockPref("app.normandy.api_url", "");
+lockPref("app.normandy.enabled", false);
+lockPref("app.normandy.experiments.lazy_classify", true);
+lockPref("app.normandy.first_run", false);
+lockPref("app.normandy.last_seen_buildid", "");
+lockPref("app.normandy.logging.level", 70);
+lockPref("app.normandy.user_id", "");
+lockPref("browser.aboutwelcome.experimentsGate.enabled", false);
+lockPref("browser.aboutwelcome.experimentsGate.skipSplashIfLoaded", true);
+
+// Disable notification permission telemetry
+lockPref("permissions.desktop-notification.telemetry.siteCategories", "{}");
+
+// Disable Origin Trials
+lockPref("dom.origin-trials.enabled", false);
+
+// Remove partner attribution
+lockPref("app.distributor", "");
+lockPref("app.distributor.channel", "");
+lockPref("mozilla.partner.id", "");
+
 
 /* -----------------------------------------------------------------------------------
    [0100] AVVIO
    ----------------------------------------------------------------------------------- */
+
+// [0000] Disabilita gli avvisi quando si accede ad `about:config`
+lockPref("browser.aboutConfig.showWarning", false);
 
 // [0102] Ripristina sessione precedente
 defaultPref("browser.startup.page", 3);
@@ -89,14 +258,6 @@ lockPref("app.shield.optoutstudies.enabled", false);
 // [0341] Disabilita Normandy/Shield
 lockPref("app.normandy.enabled", false);
 lockPref("app.normandy.api_url", "");
-
-// [0350] Disabilita Crash Reports
-lockPref("breakpad.reportURL", "");
-lockPref("browser.tabs.crashReporting.sendReport", false);
-lockPref("browser.crashReports.unsubmittedCheck.enabled", false);
-
-// [0351] Blocca invio di Crash Reports arretrati
-lockPref("browser.crashReports.unsubmittedCheck.autoSubmit2", false);
 
 // [0360] Disabilita Captive Portal
 defaultPref("captivedetect.canonicalURL", "");
@@ -417,29 +578,6 @@ lockPref("dom.fs.writable_file_stream.enabled", false);
 lockPref("app.update.BITS.enabled", false); // [WINDOWS]
 
 /* -----------------------------------------------------------------------------------
-   [8500] TELEMETRIA
-   ----------------------------------------------------------------------------------- */
-
-// [8500] Disabilita data submission
-lockPref("datareporting.policy.dataSubmissionEnabled", false);
-// [8501] Disabilita Health Reports
-lockPref("datareporting.healthreport.uploadEnabled", false);
-// [0502] Disabilita telemetria
-lockPref("toolkit.telemetry.unified", false);
-lockPref("toolkit.telemetry.enabled", false);
-lockPref("toolkit.telemetry.server", "data:,");
-lockPref("toolkit.telemetry.archive.enabled", false);
-lockPref("toolkit.telemetry.newProfilePing.enabled", false);
-lockPref("toolkit.telemetry.shutdownPingSender.enabled", false);
-lockPref("toolkit.telemetry.updatePing.enabled", false);
-lockPref("toolkit.telemetry.bhrPing.enabled", false);
-lockPref("toolkit.telemetry.firstShutdownPing.enabled", false);
-// [8503] Disabilita Telemetry Coverage
-lockPref("toolkit.telemetry.coverage.opt-out", true);
-lockPref("toolkit.coverage.opt-out", true);
-lockPref("toolkit.coverage.endpoint.base", "");
-
-/* -----------------------------------------------------------------------------------
    INTERFACCIA
    ----------------------------------------------------------------------------------- */
 
@@ -528,4 +666,4 @@ defaultPref("browser.tabs.notes.enabled", true);
    FINE
    ----------------------------------------------------------------------------------- */
 
-lockPref("rischio.fox", "150.4");
+lockPref("rischio.fox", "150.5");
