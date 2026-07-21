@@ -12,7 +12,7 @@
 /*
 INDICE:
    001: RACCOLTA DATI
-   
+   002: MOZILLA
 */
 
 /* -----------------------------------------------------------------------------------
@@ -177,6 +177,210 @@ lockPref("app.distributor", "");
 lockPref("app.distributor.channel", "");
 lockPref("mozilla.partner.id", "");
 
+/* -----------------------------------------------------------------------------------
+   [002] MOZILLA
+   ----------------------------------------------------------------------------------- */
+
+// Clear unnecessary/undesired Mozilla URLs
+lockPref("extensions.recommendations.privacyPolicyUrl", "");
+lockPref("app.feedback.baseURL", "");
+lockPref("datareporting.healthreport.infoURL", "");
+lockPref("toolkit.datacollection.infoURL", "");
+lockPref("app.normandy.shieldLearnMoreUrl", "");
+lockPref("browser.newtabpage.activity-stream.privacyInfo.url", "");
+
+// Disable `about:welcome`/onboarding
+lockPref("browser.preonboarding.enabled", false);
+lockPref("browser.aboutwelcome.enabled", false);
+lockPref("browser.aboutwelcome.log", "off");
+lockPref("browser.rights.3.shown", true);
+lockPref("browser.startup.firstrunSkipsHomepage", false);
+lockPref("browser.startup.homepage_override.buildID", "20100101");
+lockPref("browser.startup.homepage_override.mstone", "ignore");
+lockPref("browser.startup.upgradeDialog.enabled", false);
+lockPref("browser.suppress_first_window_animation", true);
+lockPref("startup.homepage_override_nimbus_disable_wnp", true);
+lockPref("startup.homepage_override_url", "");
+lockPref("startup.homepage_override_url_nimbus", "");
+lockPref("startup.homepage_welcome_url", "");
+lockPref("startup.homepage_welcome_url.additional", "");
+
+// Disable add-on/feature recommendations
+lockPref("browser.discovery.enabled", false);
+lockPref("browser.translations.mostRecentTargetLanguages", "en-US");
+lockPref("browser.translations.panelShown", true);
+lockPref("extensions.getAddons.browseAddons", "");
+lockPref("extensions.getAddons.discovery.api_url", "data;");
+lockPref("extensions.getAddons.showPane", false);
+lockPref("extensions.htmlaboutaddons.recommendations.enabled", false);
+lockPref("extensions.recommendations.hideNotice", true);
+lockPref("extensions.recommendations.themeRecommendationUrl", "");
+lockPref("extensions.ui.lastCategory", "addons://list/extension");
+lockPref("extensions.webservice.discoverURL", "");
+lockPref("browser.dataFeatureRecommendations.enabled", false);
+lockPref("browser.discovery.sites", "");
+lockPref("browser.newtabpage.activity-stream.asrouter.userprefs.cfr.addons", false);
+lockPref("browser.newtabpage.activity-stream.asrouter.userprefs.cfr.features", false);
+
+// Disable DoH Rollout/heuristics/steering
+lockPref("doh-rollout._testing", false);
+lockPref("doh-rollout.disable-heuristics", true);
+lockPref("doh-rollout.doneFirstRun", true);
+lockPref("doh-rollout.enabled", false);
+lockPref("doh-rollout.provider-steering.enabled", false);
+lockPref("doh-rollout.provider-steering.provider-list", "");
+lockPref("doh-rollout.self-enabled", false);
+lockPref("doh-rollout.skipHeuristicsCheck", true);
+lockPref("doh-rollout.trr-selection.enabled", false);
+lockPref("doh-rollout.trr-selection.provider-list", "");
+
+// Disable DoH performance measurements
+lockPref("doh-rollout.trrRace.canonicalDomain", "");
+lockPref("doh-rollout.trrRace.complete", true);
+lockPref("doh-rollout.trrRace.enabled", false);
+lockPref("doh-rollout.trrRace.popularDomains", "");
+lockPref("doh-rollout.trrRace.randomSubdomainCount", 0);
+
+// Disable 'Essential Domains Fallback'
+lockPref("network.essential_domains_fallback", false);
+
+// Disable "Feature Tours"
+lockPref("browser.firefox-view.feature-tour", "{\"screen\":\"\",\"complete\":true}");
+lockPref("browser.newtab.feature-tour", "{\"screen\":\"\",\"complete\":true}");
+lockPref("browser.pdfjs.feature-tour", "{\"screen\":\"\",\"complete\":true}");
+
+// Disable fetching Firefox Relay's "allowlist" and "denylist"
+lockPref("signon.firefoxRelay.allowListRemoteSettingsCollection", "");
+lockPref("signon.firefoxRelay.denyListRemoteSettingsCollection", "");
+
+// Disable fetching Password Manager rules remotely by default
+lockPref("signon.recipes.remoteRecipes.enabled", false);
+
+// Disable Firefox Bridge
+lockPref("browser.firefoxbridge.enabled", false);
+
+// Disable (no-op) the Firefox/Gecko Profiler
+lockPref("devtools.performance.popup.feature-flag", false);
+lockPref("devtools.performance.recording.ui-base-url", "http://localhost:3");
+lockPref("logging.config.output_type", "file");
+lockPref("toolkit.aboutProcesses.showProfilerIcons", false);
+defaultPref("devtools.performance.enabled", false);
+
+// Disable the Firefox Messaging System
+lockPref("app.update.background.messaging.targeting.snapshot.intervalSec", -1);
+lockPref("browser.newtabpage.activity-stream.asrouter.providers.cfr", "null");
+lockPref("browser.newtabpage.activity-stream.asrouter.providers.cfr-fxa", "null");
+lockPref("browser.newtabpage.activity-stream.asrouter.providers.message-groups", "null");
+lockPref("browser.newtabpage.activity-stream.asrouter.providers.messaging-experiments", "null");
+lockPref("browser.newtabpage.activity-stream.asrouter.providers.onboarding", "null");
+lockPref("browser.newtabpage.activity-stream.asrouter.providers.snippets", "null");
+lockPref("browser.newtabpage.activity-stream.feeds.newtabmessaging", false);
+lockPref("messaging-system.askForFeedback", false);
+lockPref("messaging-system.log", "off");
+lockPref("messaging-system.profile.messagingProfileId", -1);
+lockPref("messaging-system.profile.singleProfileMessaging.disable", false);
+
+// Disable import of Mozilla's default bookmarks
+lockPref("browser.bookmarks.restore_default_bookmarks", false);
+lockPref("browser.bookmarks.testing.skipDefaultBookmarksImport", true);
+lockPref("browser.places.importBookmarksHTML", true);
+
+// Disable import of Mozilla's default protocol handlers
+lockPref("gecko.handlerService.defaultHandlersVersion", 2147483647);
+
+// Disable "Interest-based Content Relevance Ranking and Personalization"
+lockPref("toolkit.contentRelevancy.enabled", false);
+lockPref("toolkit.contentRelevancy.ingestEnabled", false);
+lockPref("toolkit.contentRelevancy.log", false);
+
+// Disable Mozilla nags/promotions
+lockPref("browser.promo.cookiebanners.enabled", false);
+lockPref("browser.promo.focus.disallowed_regions", "xx");
+lockPref("browser.promo.focus.enabled", false);
+lockPref("browser.promo.pin.enabled", false);
+lockPref("browser.send_to_device_locales", "");
+lockPref("browser.vpn_promo.disallowed_regions", "xx");
+lockPref("browser.vpn_promo.enabled", false);
+lockPref("pdfjs.enableNewBadge", false);
+lockPref("privacy.trackingprotection.allow_list.hasUserInteractedWithETPSettings", true);
+lockPref("browser.contentblocking.report.hide_vpn_banner", true);
+lockPref("browser.contentblocking.report.lockwise.enabled", false);
+lockPref("browser.contentblocking.report.mobile-android.url", "");
+lockPref("browser.contentblocking.report.mobile-ios.url", "");
+lockPref("browser.contentblocking.report.monitor.enabled", false);
+lockPref("browser.contentblocking.report.show_mobile_app", false);
+lockPref("browser.contentblocking.report.vpn.url", "");
+lockPref("browser.contentblocking.report.vpn-android.url", "");
+lockPref("browser.contentblocking.report.vpn-ios.url", "");
+lockPref("browser.contentblocking.report.vpn-promo.url", "");
+lockPref("browser.ipProtection.blockIPProtectionCallouts", true);
+lockPref("browser.ipProtection.locationButtonBadgeDismissed", true);
+lockPref("browser.ipProtection.openedPanelWithLocation", true);
+lockPref("browser.ipProtection.productVpn.endpoint", "");
+lockPref("browser.ipProtection.upgradeNotAvailable", true);
+lockPref("browser.protections_panel.infoMessage.seen", true);
+lockPref("browser.settings-redesign.promo.dismissed", true);
+lockPref("browser.tabs.notes.newBadge.enabled", false);
+lockPref("browser.tabs.splitview.hasUsed", true);
+lockPref("cookiebanners.ui.desktop.showCallout", false);
+lockPref("identity.fxaccounts.toolbar.accessed", true);
+lockPref("sidebar.verticalTabs.dragToPinPromo.dismissed", true);
+lockPref("trailhead.firstrun.didHandleCampaignAction", true);
+
+// Disable Mozilla.UITour
+lockPref("browser.uitour.enabled", false);
+lockPref("browser.uitour.loglevel", "Off");
+lockPref("browser.uitour.requireSecure", true);
+lockPref("browser.uitour.surveyDuration", 0);
+lockPref("browser.uitour.testingOrigins", "");
+lockPref("browser.uitour.url", "");
+
+// Disable "Privacy-Preserving Attribution"
+lockPref("dom.origin-trials.private-attribution.state", 2);
+lockPref("dom.private-attribution.submission.enabled", false);
+lockPref("toolkit.shopping.ohttpConfigURL", "");
+lockPref("toolkit.shopping.ohttpRelayURL", "");
+
+// Disable Remote Permissions
+lockPref("permissions.manager.remote.enabled", false);
+
+/// Disable Remote Settings 'Preview' Buckets
+lockPref("services.settings.preview_enabled", false);
+
+/// Disable search attribution
+lockPref("browser.search.param.search_rich_suggestions", "");
+
+// Disable the Web Compatibility Reporter
+lockPref("extensions.webcompat-reporter.enabled", false);
+lockPref("extensions.webcompat-reporter.newIssueEndpoint", "https://phoenix.celenity.dev/issues");
+lockPref("media.decoder-doctor.new-issue-endpoint", "https://phoenix.celenity.dev/issues");
+lockPref("ui.new-webcompat-reporter.enabled", false);
+lockPref("ui.new-webcompat-reporter.new-report-endpoint", "https://phoenix.celenity.dev/issues");
+
+// Hide the "More from Mozilla" settings tab (`about:preferences#moreFromMozilla`)
+lockPref("browser.preferences.moreFromMozilla", false);
+
+// Opt out of add-on metadata updates (This prevents themes from displaying previews in `about:addons`)
+defaultPref("extensions.getAddons.cache.enabled", false);
+
+// Prevent checking if Firefox is the default browser
+lockPref("browser.shell.checkDefaultBrowser", false);
+lockPref("browser.shell.skipDefaultBrowserCheckOnFirstRun", true);
+
+// Prevent checking if Firefox is the default `mailto:` handler
+lockPref("browser.mailto.dualPrompt", false);
+
+// Prevent checking if Firefox is the default PDF viewer
+lockPref("browser.shell.checkDefaultPDF", false);
+lockPref("browser.shell.checkDefaultPDF.silencedByUser", true);
+lockPref("browser.shell.setDefaultPDFHandler.onlyReplaceBrowsers", false);
+
+// Skip Mozilla's `Privacy Notice` and `Terms of Use`
+lockPref("datareporting.policy.dataSubmissionPolicyAcceptedVersion", 999);
+lockPref("datareporting.policy.dataSubmissionPolicyNotifiedTime", "32503679999000");
+lockPref("termsofuse.acceptedDate", "32503679999000");
+lockPref("termsofuse.acceptedVersion", 999);
+lockPref("termsofuse.bypassNotification", true);
 
 /* -----------------------------------------------------------------------------------
    [0100] AVVIO
@@ -218,13 +422,6 @@ defaultPref("browser.newtabpage.activity-stream.widgets.system.focusTimer.enable
 defaultPref("browser.newtabpage.activity-stream.widgets.focusTimer.showSystemNotifications", true); // abilita notifiche Timer
 lockPref("browser.newtabpage.activity-stream.system.showWeather", false); // disabilita Meteo (non funzionante)
 
-/* [9001] disable welcome notices ***/
-lockPref("browser.startup.homepage_override.mstone", "ignore"); // [Nascosta]
-
-/* [9002] disable General>Browsing>Recommend extensions/features as you browse ***/
-lockPref("browser.newtabpage.activity-stream.asrouter.userprefs.cfr.addons", false);
-lockPref("browser.newtabpage.activity-stream.asrouter.userprefs.cfr.features", false);
-
 /* -----------------------------------------------------------------------------------
    [0200] GEOLOCALIZZAZIONE
    ----------------------------------------------------------------------------------- */
@@ -238,15 +435,6 @@ defaultPref("geo.provider.network.url", "https://beacondb.net/v1/geolocate");
 /* -----------------------------------------------------------------------------------
    [0300] RACCOLTA DATI
    ----------------------------------------------------------------------------------- */
-
-// [0320] Disabilita pannello raccomandazioni in about:addons
-lockPref("extensions.getAddons.showPane", false); // [Nascosta]
-
-// [0321] Disabilita raccomandazioni di temi ed estensioni
-lockPref("extensions.htmlaboutaddons.recommendations.enabled", false);
-
-// [0322] Disabilita suggerimenti personalizzati per le estensioni
-lockPref("browser.discovery.enabled", false);
 
 // [0335] Blocca telemetria nella home page di Firefox
 lockPref("browser.newtabpage.activity-stream.feeds.telemetry", false);
@@ -659,4 +847,4 @@ defaultPref("browser.tabs.notes.enabled", true);
    FINE
    ----------------------------------------------------------------------------------- */
 
-lockPref("rischio.fox", "150.6");
+lockPref("rischio.fox", "150.7");
