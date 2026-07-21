@@ -13,6 +13,7 @@
 INDICE:
    001: RACCOLTA DATI
    002: MOZILLA
+   003: TRACKING
 */
 
 /* -----------------------------------------------------------------------------------
@@ -383,6 +384,103 @@ lockPref("termsofuse.acceptedVersion", 999);
 lockPref("termsofuse.bypassNotification", true);
 
 /* -----------------------------------------------------------------------------------
+   [003] TRACKING
+   ----------------------------------------------------------------------------------- */
+
+// Abilita eccezioni per evitare problemi minori
+lockPref("privacy.trackingprotection.allow_list.convenience.enabled", true);
+
+// Enable ETP Strict
+lockPref("browser.contentblocking.category", "strict"); 
+
+// Block harmful add-on URLs
+lockPref("privacy.trackingprotection.harmfuladdon.enabled", true); // [DEFAULT - Desktop Firefox] https://searchfox.org/firefox-main/rev/93aad2a6615f670b1279c229dd37f7397236131a/browser/app/profile/firefox.js#2434
+
+// Block known consent managers (CMPs)
+lockPref("privacy.trackingprotection.consentmanager.annotate_channels", true); // [DEFAULT]
+lockPref("privacy.trackingprotection.consentmanager.skip.enabled", false); // [DEFAULT]
+lockPref("privacy.trackingprotection.consentmanager.skip.pbmode.enabled", false);
+
+// Block known cryptominers
+lockPref("privacy.trackingprotection.cryptomining.enabled", true); 
+
+// Block known email trackers
+lockPref("privacy.trackingprotection.emailtracking.enabled", true);
+lockPref("privacy.trackingprotection.emailtracking.pbmode.enabled", true);
+
+// Block known fingerprinters
+lockPref("privacy.trackingprotection.antifraud.annotate_channels", true);
+lockPref("privacy.trackingprotection.antifraud.skip.enabled", false);
+lockPref("privacy.trackingprotection.antifraud.skip.pbmode.enabled", false);
+lockPref("privacy.trackingprotection.fingerprinting.enabled", true);
+
+// Block known social trackers
+lockPref("privacy.trackingprotection.socialtracking.enabled", true);
+
+// Block known trackers
+lockPref("privacy.trackingprotection.annotate_channels", true);
+lockPref("privacy.trackingprotection.enabled", true);
+lockPref("privacy.trackingprotection.pbmode.enabled", true);
+
+// Block known trackers using the `strict` (Level 2) list
+lockPref("privacy.annotate_channels.strict_list.enabled", true);
+lockPref("privacy.annotate_channels.strict_list.pbmode.enabled", true);
+
+// Block known tracking cookies
+lockPref("network.cookie.cookieBehavior.trackerCookieBlocking", true);
+lockPref("privacy.socialtracking.block_cookies.enabled", true);
+
+// Enable Bounce Tracking Protection
+lockPref("privacy.bounceTrackingProtection.mode", 1);
+
+// Enable Query Parameter Stripping
+lockPref("privacy.query_stripping.enabled", true);
+lockPref("privacy.query_stripping.enabled.pbmode", true);
+lockPref("privacy.query_stripping.redirect", true);
+
+// Enable SmartBlock and Web Compatibility interventions by default
+lockPref("extensions.webcompat.enable_interventions", true);
+lockPref("extensions.webcompat.enable_shims", true);
+lockPref("extensions.webcompat.perform_injections", true);
+lockPref("extensions.webcompat.perform_ua_overrides", true);
+lockPref("extensions.webcompat.smartblockEmbeds.enabled", true);
+lockPref("extensions.pictureinpicture.enable_picture_in_picture_overrides", true);
+
+// State Partitioning (Total Cookie Protection / Isolamento Risorse)
+lockPref("network.fetch.cache_partition_cross_origin", true);
+lockPref("privacy.partition.bloburl_per_partition_key", true);
+lockPref("privacy.partition.serviceWorkers", true);
+
+// Enable Suspected Fingerprinters Protection (FPP)
+lockPref("privacy.fingerprintingProtection", true);
+lockPref("privacy.fingerprintingProtection.pbmode", true);
+lockPref("privacy.reduceTimerPrecision", true);
+lockPref("privacy.resistFingerprinting", false);
+lockPref("privacy.resistFingerprinting.pbmode", false);
+
+// Enable TCP/dFPI
+lockPref("network.cookie.cookieBehavior", 5);
+lockPref("network.cookie.cookieBehavior.pbmode", 5);
+lockPref("network.cookie.cookieBehavior.optInPartitioning", true);
+lockPref("network.cookie.cookieBehavior.optInPartitioning.pbmode", true);
+
+// Ignore less restricted referer policies (than the default)
+lockPref("network.http.referer.disallowCrossSiteRelaxingDefault", true);
+lockPref("network.http.referer.disallowCrossSiteRelaxingDefault.pbmode", true);
+lockPref("network.http.referer.disallowCrossSiteRelaxingDefault.pbmode.top_navigation", true);
+lockPref("network.http.referer.disallowCrossSiteRelaxingDefault.top_navigation", true);
+
+// Enable exceptions required to avoid major breakage by default
+lockPref("privacy.trackingprotection.allow_list.baseline.enabled", true);
+lockPref("privacy.trackingprotection.allow_list.hasMigratedCategoryPrefs", true);
+
+// Lower the network priority of known trackers (if not blocked for whatever reason...)
+lockPref("privacy.trackingprotection.lower_network_priority", true);
+
+// Purge first-party tracking cookies
+lockPref("privacy.purge_trackers.enabled", true);
+
+/* -----------------------------------------------------------------------------------
    [0100] AVVIO
    ----------------------------------------------------------------------------------- */
 
@@ -699,17 +797,6 @@ lockPref("extensions.postDownloadThirdPartyPrompt", false);
 lockPref("app.update.auto", false); // [LINUX]
 
 /* -----------------------------------------------------------------------------------
-   [2700] ENHANCED TRACKING PROTECTION
-   ----------------------------------------------------------------------------------- */
-
-// [2701] Abilita ETP in modalità restrittiva
-lockPref("browser.contentblocking.category", "strict"); 
-
-// [2705] Eccezioni ETP Strict
-lockPref("privacy.trackingprotection.allow_list.baseline.enabled", true);
-lockPref("privacy.trackingprotection.allow_list.convenience.enabled", true);
-
-/* -----------------------------------------------------------------------------------
    [4000] FINGERPRINTING
    ----------------------------------------------------------------------------------- */
 
@@ -847,4 +934,4 @@ defaultPref("browser.tabs.notes.enabled", true);
    FINE
    ----------------------------------------------------------------------------------- */
 
-lockPref("rischio.fox", "150.7");
+lockPref("rischio.fox", "150.8");
