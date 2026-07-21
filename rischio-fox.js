@@ -14,6 +14,7 @@ INDICE:
    001: RACCOLTA DATI
    002: MOZILLA
    003: TRACKING
+   004: FINGERPRINTING
 */
 
 /* -----------------------------------------------------------------------------------
@@ -481,6 +482,79 @@ lockPref("privacy.trackingprotection.lower_network_priority", true);
 lockPref("privacy.purge_trackers.enabled", true);
 
 /* -----------------------------------------------------------------------------------
+   [004] FINGERPRINTING
+   ----------------------------------------------------------------------------------- */
+
+// Unnecessarily fingerprintable
+clearPref("dom.webmidi.enabled");
+clearPref("geo.enabled");
+
+// Always load fonts bundled with Firefox
+defaultPref("gfx.bundled-fonts.activate", 1);
+
+// Disable the ability to switch locales without requiring a restart
+defaultPref("intl.multilingual.liveReload", false);
+defaultPref("intl.multilingual.liveReloadBidirectional", false);
+
+// Disable failIfMajorPerformanceCaveat in WebGL contexts
+defaultPref("webgl.disable-fail-if-major-performance-caveat", true); 
+
+// Disable VP9 Benchmark
+defaultPref("media.benchmark.vp9.threshold", 0);
+
+// Do not use the theme's toolbar color scheme for in-content pages by default
+defaultPref("browser.theme.unified-color-scheme", false);
+
+// Enable fdlibm for Math.sin, Math.cos, and Math.tan
+defaultPref("javascript.options.use_fdlibm_for_sin_cos_tan", true);
+
+// Limit font visibility to base system fonts + fonts from optional language packs
+defaultPref("layout.css.font-visibility", 2);
+
+// Prevent enumeration of media devices
+defaultPref("media.devices.enumerate.legacy.enabled", false);
+
+// Prevent exposing WebGL Renderer Info
+defaultPref("webgl.enable-renderer-query", false);
+defaultPref("webgl.override-unmasked-renderer", "Mozilla");
+defaultPref("webgl.override-unmasked-vendor", "Mozilla");
+defaultPref("webgl.sanitize-unmasked-renderer", false);
+
+// Prevent pre-allocating content processes
+defaultPref("dom.ipc.processPrelaunch.enabled", false);
+defaultPref("dom.ipc.processPrelaunch.fission.number", 0);
+
+// Prevent using system accent colors
+defaultPref("widget.non-native-theme.use-theme-accent", false);
+
+// Prevent using system colors
+defaultPref("browser.display.document_color_use", 1);
+defaultPref("ui.use_standins_for_native_colors", true);
+
+// Prompt to spoof locale to en-US
+defaultPref("privacy.spoof_english", 0);
+
+// Reset the fingerprinting randomization key daily (in addition to per-session/when the browser restarts)
+defaultPref("privacy.resistFingerprinting.randomization.daily_reset.enabled", true);
+defaultPref("privacy.resistFingerprinting.randomization.daily_reset.private.enabled", true);
+
+// Round window sizes
+efaultPref("browser.startup.blankWindow", false);
+defaultPref("privacy.window.maxInnerHeight", 900);
+defaultPref("privacy.window.maxInnerWidth", 1600);
+defaultPref("privacy.resistFingerprinting.skipEarlyBlankFirstPaint", true);
+
+// Set a fixed temporary storage limit
+defaultPref("dom.quotaManager.temporaryStorage.fixedLimit", 52428800);
+
+// Set target video resolution to 1080p
+defaultPref("privacy.resistFingerprinting.target_video_res", 1080);
+
+// Set zoom levels on a per-site basis
+defaultPref("browser.zoom.siteSpecific", true);
+
+
+/* -----------------------------------------------------------------------------------
    [0100] AVVIO
    ----------------------------------------------------------------------------------- */
 
@@ -800,15 +874,8 @@ lockPref("app.update.auto", false); // [LINUX]
    [4000] FINGERPRINTING
    ----------------------------------------------------------------------------------- */
 
-// [4502] Arrotonda le dimensioni della finestra per prevenire il tracciamento
-defaultPref("privacy.window.maxInnerHeight", 900);
-defaultPref("privacy.window.maxInnerWidth", 1600);
-
 // [4503] Disabilita mozAddonManager Web API
 lockPref("privacy.resistFingerprinting.block_mozAddonManager", true);
-
-// [4503] Non usare colori di sistema
-lockPref("widget.non-native-theme.use-theme-accent", false);
 
 // [4512] Forza apertura link in una nuova scheda
 lockPref("browser.link.open_newwindow", 3);
@@ -934,4 +1001,4 @@ defaultPref("browser.tabs.notes.enabled", true);
    FINE
    ----------------------------------------------------------------------------------- */
 
-lockPref("rischio.fox", "150.8");
+lockPref("rischio.fox", "150.9");
