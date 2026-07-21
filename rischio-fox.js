@@ -252,13 +252,6 @@ lockPref("browser.discovery.enabled", false);
 lockPref("browser.newtabpage.activity-stream.feeds.telemetry", false);
 lockPref("browser.newtabpage.activity-stream.telemetry", false);
 
-// [0340] Disabilita Studies
-lockPref("app.shield.optoutstudies.enabled", false);
-
-// [0341] Disabilita Normandy/Shield
-lockPref("app.normandy.enabled", false);
-lockPref("app.normandy.api_url", "");
-
 // [0360] Disabilita Captive Portal
 defaultPref("captivedetect.canonicalURL", "");
 defaultPref("network.captive-portal-service.enabled", false);
@@ -666,4 +659,4 @@ defaultPref("browser.tabs.notes.enabled", true);
    FINE
    ----------------------------------------------------------------------------------- */
 
-lockPref("rischio.fox", "150.5");
+lockPref("rischio.fox", "150.6");
