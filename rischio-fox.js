@@ -16,6 +16,7 @@ INDICE:
    003: TRACKING
    004: FINGERPRINTING
    005: TRACCE
+   006: DOWNLOADS
 */
 
 /* -----------------------------------------------------------------------------------
@@ -617,6 +618,23 @@ lockPref("browser.download.start_downloads_in_tmp_dir", true);
 lockPref("browser.helperApps.deleteTempFileOnExit", true);
 
 /* -----------------------------------------------------------------------------------
+   [006] DOWNLOADS
+   ----------------------------------------------------------------------------------- */
+
+// Block insecure downloads
+lockPref("dom.block_download_insecure", true);
+
+// Notify when downloading files
+lockPref("browser.download.alwaysOpenPanel", true);
+
+// Prevent adding downloads to "recent documents"...
+lockPref("browser.download.manager.addToRecentDocs", false);
+
+// Prompt before downloading files
+lockPref("browser.download.always_ask_before_handling_new_types", true);
+lockPref("browser.download.useDownloadDir", false);
+
+/* -----------------------------------------------------------------------------------
    [0100] AVVIO
    ----------------------------------------------------------------------------------- */
 
@@ -886,18 +904,6 @@ defaultPref("privacy.antitracking.isolateContentScriptResources", true);
 // [2640] Disabilita Content Security Policy
 lockPref("security.csp.reporting.enabled", false);
 
-// [2651] Chiedi sempre dove salvare i download
-lockPref("browser.download.useDownloadDir", false);
-
-// [2652] Impedisci apertura automatica finestra download
-lockPref("browser.download.alwaysOpenPanel", false);
-
-// [2653] Non aggiungere i file scaricati ai documenti recenti di sistema
-lockPref("browser.download.manager.addToRecentDocs", false);
-
-// [2654] Chiedi sempre come aprire nuovi tipi di file
-lockPref("browser.download.always_ask_before_handling_new_types", true);
-
 // [2660] Limita cartelle consentite per le estensioni
 lockPref("extensions.enabledScopes", 5); // [Nascosta]
 lockPref("extensions.autoDisableScopes", 15);
@@ -1036,4 +1042,4 @@ defaultPref("browser.tabs.notes.enabled", true);
    FINE
    ----------------------------------------------------------------------------------- */
 
-lockPref("rischio.fox", "150.10");
+lockPref("rischio.fox", "150.11");
