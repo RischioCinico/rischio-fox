@@ -863,14 +863,6 @@ defaultPref("dom.disable_window_move_resize", true);
    [2600] MISCELLANEA
    ----------------------------------------------------------------------------------- */
 
-// [2603] Gestisce i file temporanei per evitare tracce
-lockPref("browser.download.start_downloads_in_tmp_dir", true);
-lockPref("browser.helperApps.deleteTempFileOnExit", true);
-
-// [2606] Disabilita UITour
-lockPref("browser.uitour.enabled", false);
-lockPref("browser.uitour.url", "");
-
 // [2616] Rimuove permessi speciali per domini Mozilla
 lockPref("permissions.manager.defaultsUrl", "");
 
