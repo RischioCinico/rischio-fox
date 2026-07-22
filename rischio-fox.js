@@ -848,6 +848,37 @@ defaultPref("privacy.webrtc.sharedTabWarning", true);
    013: MEDIA
    ----------------------------------------------------------------------------------- */
 
+// Block media autoplay by default
+defaultPref("media.autoplay.default", 5);
+defaultPref("media.geckoview.autoplay.request.testing", 2);
+
+// Configure the media autoplay blocking policy
+defaultPref("media.autoplay.blocking_policy", 1);
+
+// Disable OpenH264 (in favor of hardware decoding)
+defaultPref("media.ffmpeg.allow-openh264", false);
+defaultPref("media.gmp-gmpopenh264.enabled", false);
+defaultPref("media.gmp-gmpopenh264.visible", false);
+defaultPref("media.webrtc.encoder_creation_strategy", 1);
+defaultPref("media.webrtc.hw.h264.enabled", true);
+
+// Enable click to play UI for certain CSS skins by default
+defaultPref("userContent.player.click_to_play", true);
+
+// Enable multi-threaded media encoding/decoding
+defaultPref("media.gmp.decoder.multithreaded", true);
+defaultPref("media.gmp.encoder.multithreaded", true);
+
+// Sandbox GMP
+defaultPref("media.gmp.insecure.allow", false); // [LINUX]
+
+
+
+
+
+
+
+
 
 
 
@@ -1174,4 +1205,4 @@ defaultPref("browser.tabs.notes.enabled", true);
    FINE
    ----------------------------------------------------------------------------------- */
 
-lockPref("rischio.fox", "150.16");
+lockPref("rischio.fox", "150.17");
