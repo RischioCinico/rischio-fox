@@ -18,6 +18,8 @@ INDICE:
    005: TRACCE
    006: DOWNLOADS
    007: HTTP(S)
+   008: CONNESSIONI IMPLICITE
+   009: BARRE DI RICERCA
 */
 
 /* -----------------------------------------------------------------------------------
@@ -255,7 +257,7 @@ lockPref("browser.pdfjs.feature-tour", "{\"screen\":\"\",\"complete\":true}");
 lockPref("signon.firefoxRelay.allowListRemoteSettingsCollection", "");
 lockPref("signon.firefoxRelay.denyListRemoteSettingsCollection", "");
 
-// Disable fetching Password Manager rules remotely by default
+// Disable fetching Password Manager rules remotely
 lockPref("signon.recipes.remoteRecipes.enabled", false);
 
 // Disable Firefox Bridge
@@ -439,7 +441,7 @@ defaultPref("privacy.query_stripping.enabled", true);
 defaultPref("privacy.query_stripping.enabled.pbmode", true);
 defaultPref("privacy.query_stripping.redirect", true);
 
-// Enable SmartBlock and Web Compatibility interventions by default
+// Enable SmartBlock and Web Compatibility interventions
 defaultPref("extensions.webcompat.enable_interventions", true);
 defaultPref("extensions.webcompat.enable_shims", true);
 defaultPref("extensions.webcompat.perform_injections", true);
@@ -471,7 +473,7 @@ defaultPref("network.http.referer.disallowCrossSiteRelaxingDefault.pbmode", true
 defaultPref("network.http.referer.disallowCrossSiteRelaxingDefault.pbmode.top_navigation", true);
 defaultPref("network.http.referer.disallowCrossSiteRelaxingDefault.top_navigation", true);
 
-// Enable exceptions required to avoid major breakage by default
+// Enable exceptions required to avoid major breakage
 lockPref("privacy.trackingprotection.allow_list.baseline.enabled", true);
 lockPref("privacy.trackingprotection.allow_list.hasMigratedCategoryPrefs", true);
 
@@ -684,12 +686,77 @@ defaultPref("network.preconnect", false);
 defaultPref("browser.places.speculativeConnect.enabled", false);
 defaultPref("browser.urlbar.speculativeConnect.enabled", false);
 
-// Prevent middle mouse clicks from pasting clipboard contents by default
+// Prevent middle mouse clicks from pasting clipboard contents
 defaultPref("middlemouse.paste", false);
 
 // Prevent middle mouse clicks on new tab button opening URLs or searches from clipboard
 defaultPref("browser.tabs.searchclipboardfor.middleclick", false);
 
+/* -----------------------------------------------------------------------------------
+   009: BARRE DI RICERCA
+   ----------------------------------------------------------------------------------- */
+
+// Abilita la possibilità di usare un motore di ricerca diverso in finestre normali e private
+defaultPref("browser.search.separatePrivateDefault", true);
+defaultPref("browser.search.separatePrivateDefault.ui.enabled", true);
+
+// Always show Punycode
+defaultPref("network.IDN_show_punycode", true);
+
+// Disable autofill/autocompletion of URLs
+defaultPref("browser.urlbar.autoFill", false);
+
+// Disable clipboard suggestions
+defaultPref("browser.urlbar.clipboard.featureGate", true);
+defaultPref("browser.urlbar.suggest.clipboard", false);
+
+// Disable Firefox's new 'Unified Trust Panel'
+defaultPref("browser.urlbar.trustPanel.featureGate", false);
+
+// Disable quick actions
+defaultPref("browser.urlbar.quickactions.showPrefs", true);
+defaultPref("browser.urlbar.secondaryActions.featureGate", true);
+defaultPref("browser.urlbar.shortcuts.actions", false);
+defaultPref("browser.urlbar.suggest.quickactions", false);
+
+// Disable the quick actions onboarding
+defaultPref("browser.urlbar.quickactions.timesToShowOnboardingLabel", 0);
+
+// Disable search engine suggestions (Tab to search)
+defaultPref("browser.urlbar.suggest.engines", false);
+
+// Disable search engine suggestion (Tab to search) onboarding results
+defaultPref("browser.urlbar.tabToSearch.onboard.interactionsLeft", 0);
+
+// Disable search suggestions
+defaultPref("browser.urlbar.showSearchSuggestionsFirst", false);
+defaultPref("browser.urlbar.suggest.searches", false);
+
+// Disable search tips
+lockPref("browser.urlbar.tipShownCount.searchTip_onboard", 999);
+lockPref("browser.urlbar.tipShownCount.searchTip_redirect", 999);
+
+// Disable trending searches
+defaultPref("browser.urlbar.suggest.trending", false);
+
+// Disable URL trimming
+defaultPref("browser.urlbar.trimURLs", false);
+
+// Enable the "Search in Private Window" result
+defaultPref("browser.search.separatePrivateDefault.urlbarResult.enabled", true);
+
+// Ensure UI reflects that the default search engine is set to DuckDuckGo
+defaultPref("browser.urlbar.placeholderName", "DuckDuckGo");
+defaultPref("browser.urlbar.placeholderName.private", "DuckDuckGo");
+
+// Expose the UI to switch search engines for individual searches
+defaultPref("browser.urlbar.scotchBonnet.disableOneOffs", false);
+
+// If URL trimming is enabled, untrim on user interaction
+defaultPref("browser.urlbar.untrimOnUserInteraction.featureGate", true);
+
+// Show full URLs instead of search terms
+defaultPref("browser.urlbar.showSearchTerms.enabled", false);
 
 
 
@@ -701,12 +768,23 @@ defaultPref("browser.tabs.searchclipboardfor.middleclick", false);
 
 
 
+/* ----------------------------------------------------------------------------------- */
 
+// [0802] Disabilita suggerimenti sponsorizzati
+lockPref("browser.urlbar.quicksuggest.enabled", false);
+lockPref("browser.urlbar.suggest.quicksuggest.nonsponsored", false);
+lockPref("browser.urlbar.suggest.quicksuggest.sponsored", false);
 
-
-
-
-
+// [0806] Disabilita determinate categorie di suggerimenti
+defaultPref("browser.urlbar.addons.featureGate", false); // Estensioni
+defaultPref("browser.urlbar.amp.featureGate", false); // adMarketplace
+defaultPref("browser.urlbar.importantDates.featureGate", false); // Festività e ricorrenze
+defaultPref("browser.urlbar.market.featureGate", false); // Shopping/Mercati
+defaultPref("browser.urlbar.mdn.featureGate", false); // Strumento per sviluppatori
+defaultPref("browser.urlbar.weather.featureGate", false); // Meteo
+defaultPref("browser.urlbar.wikipedia.featureGate", false); // Anteprime dirette da Wikipedia
+defaultPref("browser.urlbar.yelp.featureGate", false); // Yelp (recensioni di ristoranti e locali)
+defaultPref("browser.urlbar.yelpRealtime.featureGate", false); // Yelp Realtime (aggiornamenti live su orari e affollamento)
 
 /* -----------------------------------------------------------------------------------
    [0100] AVVIO
@@ -818,48 +896,6 @@ lockPref("network.trr.mode", 3);
 lockPref("network.trr.uri", "https://dns.quad9.net/dns-query");
 
 /* -----------------------------------------------------------------------------------
-   [0800] BARRE DI RICERCA
-   ----------------------------------------------------------------------------------- */
-
-// [0801] Disabilita connessioni speculative nella barra degli indirizzi
-lockPref("browser.urlbar.speculativeConnect.enabled", false);
-
-// [0802] Disabilita suggerimenti sponsorizzati
-lockPref("browser.urlbar.quicksuggest.enabled", false);
-lockPref("browser.urlbar.suggest.quicksuggest.nonsponsored", false);
-lockPref("browser.urlbar.suggest.quicksuggest.sponsored", false);
-
-// [0805] Disabilita suggerimenti ricerche di tendenza
-defaultPref("browser.urlbar.trending.featureGate", false);
-
-// [0806] Disabilita determinate categorie di suggerimenti
-defaultPref("browser.urlbar.addons.featureGate", false); // Estensioni
-defaultPref("browser.urlbar.amp.featureGate", false); // adMarketplace
-defaultPref("browser.urlbar.importantDates.featureGate", false); // Festività e ricorrenze
-defaultPref("browser.urlbar.market.featureGate", false); // Shopping/Mercati
-defaultPref("browser.urlbar.mdn.featureGate", false); // Strumento per sviluppatori
-defaultPref("browser.urlbar.weather.featureGate", false); // Meteo
-defaultPref("browser.urlbar.wikipedia.featureGate", false); // Anteprime dirette da Wikipedia
-defaultPref("browser.urlbar.yelp.featureGate", false); // Yelp (recensioni di ristoranti e locali)
-defaultPref("browser.urlbar.yelpRealtime.featureGate", false); // Yelp Realtime (aggiornamenti live su orari e affollamento)
-
-// [0807] Disabilita suggerimenti dagli appunti
-lockPref("browser.urlbar.clipboard.featureGate", false);
-
-// [0808] Disabilita ricerche recenti
-lockPref("browser.urlbar.recentsearches.featureGate", false);
-
-// [0810] Disabilita la cronologia di ricerca e dei moduli
-defaultPref("browser.formfill.enable", false);
-
-// [0820] Disabilita colorazione link visitati per prevenire "history sniffing"
-defaultPref("layout.css.visited_links_enabled", false);
-
-// [0830] Abilita la possibilità di usare un motore di ricerca diverso in finestre normali e private
-defaultPref("browser.search.separatePrivateDefault", true);
-lockPref("browser.search.separatePrivateDefault.ui.enabled", true);
-
-/* -----------------------------------------------------------------------------------
    [0900] GESTIONE CREDENZIALI
    ----------------------------------------------------------------------------------- */
 
@@ -934,9 +970,6 @@ defaultPref("dom.disable_window_move_resize", true);
 // [2616] Rimuove permessi speciali per domini Mozilla
 lockPref("permissions.manager.defaultsUrl", "");
 
-// [2619] Mostra sempre il Punycode
-lockPref("network.IDN_show_punycode", true);
-
 // [2620] Disabilita l'esecuzione di JavaScript all'interno dei PDF
 lockPref("pdfjs.disabled", false);
 lockPref("pdfjs.enableScripting", false);
@@ -983,9 +1016,6 @@ defaultPref("dom.serviceWorkers.privateBrowsing.enabled", false);
 /* -----------------------------------------------------------------------------------
    [5000] SICUREZZA
    ----------------------------------------------------------------------------------- */
-
-// [5012] Disabilita l'autocompletamento degli URL
-defaultPref("browser.urlbar.autoFill", false);
 
 // [5017] Disabilita Form Autofill
 lockPref("extensions.formautofill.addresses.enabled", false);
@@ -1092,4 +1122,4 @@ defaultPref("browser.tabs.notes.enabled", true);
    FINE
    ----------------------------------------------------------------------------------- */
 
-lockPref("rischio.fox", "150.13");
+lockPref("rischio.fox", "150.14");
