@@ -24,6 +24,7 @@ INDICE:
    011: PROXIES
    012: WEBRTC
    013: MEDIA
+   014: ATTACK SURFACE
 */
 
 /* -----------------------------------------------------------------------------------
@@ -872,6 +873,40 @@ defaultPref("media.gmp.encoder.multithreaded", true);
 // Sandbox GMP
 defaultPref("media.gmp.insecure.allow", false); // [LINUX]
 
+/* -----------------------------------------------------------------------------------
+   014: ATTACK SURFACE
+   ----------------------------------------------------------------------------------- */
+
+// Disable Graphite & SVG OpenType fonts
+defaultPref("gfx.font_rendering.graphite.enabled", false);
+defaultPref("gfx.font_rendering.opentype_svg.enabled", false);
+
+// Disable JavaScript Just-in-time Compilation (JIT)
+defaultPref("javascript.options.baselinejit", false);
+defaultPref("javascript.options.ion", false);
+defaultPref("javascript.options.jithints", false);
+defaultPref("javascript.options.native_regexp", false);
+defaultPref("javascript.options.wasm_optimizingjit", false);
+
+// Disable MathML
+defaultPref("mathml.disabled", true);
+
+// Disable shared memory allocation from the parent process to content processes
+defaultPref("javascript.options.self_hosted.use_shared_memory", false);
+
+// Disable SharedArrayBuffer using window.postMessage
+defaultPref("dom.postMessage.sharedArrayBuffer.withCOOP_COEP", false);
+
+// Disable WebVR/WebXR
+defaultPref("permissions.default.xr", 2);
+
+// Disable XSLT
+defaultPref("dom.xslt.enabled", false);
+
+
+
+
+
 
 
 
@@ -1205,4 +1240,4 @@ defaultPref("browser.tabs.notes.enabled", true);
    FINE
    ----------------------------------------------------------------------------------- */
 
-lockPref("rischio.fox", "150.17");
+lockPref("rischio.fox", "150.18");
