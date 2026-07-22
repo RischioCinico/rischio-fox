@@ -212,7 +212,7 @@ lockPref("startup.homepage_welcome_url.additional", "");
 
 // Disable add-on/feature recommendations
 lockPref("browser.discovery.enabled", false);
-lockPref("browser.translations.mostRecentTargetLanguages", "en-US");
+defaultPref("browser.translations.mostRecentTargetLanguages", "en-US");
 lockPref("browser.translations.panelShown", true);
 lockPref("extensions.getAddons.browseAddons", "");
 lockPref("extensions.getAddons.discovery.api_url", "data;");
@@ -552,7 +552,7 @@ defaultPref("browser.contentblocking.cfr-milestone.update-interval", 0);
 defaultPref("browser.contentblocking.report.privacy_metrics.enabled", false);
 
 // Disable search and form history
-defaultPref("browser.formfill.enable", false);
+lockPref("browser.formfill.enable", false);
 
 // Disable WebRTC history
 defaultPref("media.aboutwebrtc.hist.enabled", false);
@@ -567,7 +567,7 @@ defaultPref("browser.sessionstore.interval", 1800000);
 defaultPref("browser.sessionstore.privacy_level", 2);
 
 // Prevent writing media cache (ex. for video streaming) to disk in private windows
-defaultPref("browser.privatebrowsing.forceMediaMemoryCache", true);
+lockPref("browser.privatebrowsing.forceMediaMemoryCache", true);
 
 // Remove cached files from browser windows opened with external applications
 defaultPref("browser.download.start_downloads_in_tmp_dir", true);
@@ -581,14 +581,14 @@ defaultPref("browser.helperApps.deleteTempFileOnExit", true);
 lockPref("dom.block_download_insecure", true);
 
 // Notify when downloading files
-lockPref("browser.download.alwaysOpenPanel", true);
+defaultPref("browser.download.alwaysOpenPanel", true);
 
 // Prevent adding downloads to "recent documents"...
-lockPref("browser.download.manager.addToRecentDocs", false);
+defaultPref("browser.download.manager.addToRecentDocs", false);
 
 // Prompt before downloading files
-lockPref("browser.download.always_ask_before_handling_new_types", true);
-lockPref("browser.download.useDownloadDir", false);
+defaultPref("browser.download.always_ask_before_handling_new_types", true);
+defaultPref("browser.download.useDownloadDir", false);
 
 /* -----------------------------------------------------------------------------------
    007: HTTP(S)
@@ -616,8 +616,6 @@ lockPref("security.OCSP.require", false);
 defaultPref("dom.security.https_only_mode_send_http_background_request", false);
 
 // Disable third-party/OS-level root certificates
-defaultPref("security.certerrors.mitm.auto_enable_enterprise_roots", false);
-defaultPref("security.enterprise_roots.enabled", false);
 lockPref("security.certerrors.mitm.auto_enable_enterprise_roots", false);
 lockPref("security.enterprise_roots.enabled", false);
 
@@ -660,6 +658,52 @@ defaultPref("security.certerrors.permanentOverride", false);
 
 // Require safe renegotiations
 defaultPref("security.ssl.require_safe_negotiation", true);
+
+/* -----------------------------------------------------------------------------------
+   008: CONNESSIONI IMPLICITE
+   ----------------------------------------------------------------------------------- */
+
+// Disable Early Hints
+defaultPref("network.early-hints.enabled", false);
+defaultPref("network.early-hints.over-http-v1-1.enabled", false);
+defaultPref("network.early-hints.preconnect.enabled", false);
+defaultPref("network.early-hints.preconnect.max_connections", 0);
+
+// Disable network prefetching
+defaultPref("dom.prefetch_dns_for_anchor_http_document", false);
+defaultPref("dom.prefetch_dns_for_anchor_https_document", false);
+defaultPref("network.dns.disablePrefetch", true);
+defaultPref("network.dns.disablePrefetchFromHTTPS", true);
+defaultPref("network.http.speculative-parallel-limit", 0); // [DEFAULT - Thunderbird]
+defaultPref("network.prefetch-next", false);
+
+// Disable preconnect
+defaultPref("network.preconnect", false);
+
+// Disable speculative pre-connections
+defaultPref("browser.places.speculativeConnect.enabled", false);
+defaultPref("browser.urlbar.speculativeConnect.enabled", false);
+
+// Prevent middle mouse clicks from pasting clipboard contents by default
+defaultPref("middlemouse.paste", false);
+
+// Prevent middle mouse clicks on new tab button opening URLs or searches from clipboard
+defaultPref("browser.tabs.searchclipboardfor.middleclick", false);
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
@@ -749,32 +793,11 @@ lockPref("browser.safebrowsing.downloads.remote.block_potentially_unwanted", tru
 lockPref("browser.safebrowsing.downloads.remote.block_uncommon", true);
 
 /* -----------------------------------------------------------------------------------
-   [0600] CONNESSIONI IMPLICITE
+   [0700] DNS / DoH / PROXY / SOCKS
    ----------------------------------------------------------------------------------- */
-
-// [0601] Disabilita link prefetching
-lockPref("network.prefetch-next", false);
-
-// [0602] Disabilita DNS prefetching
-lockPref("network.dns.disablePrefetch", true);
-lockPref("network.dns.disablePrefetchFromHTTPS", true);
-
-// [0604] Blocca connessioni speculative al passaggio del mouse sui link
-lockPref("network.http.speculative-parallel-limit", 0);
-
-// [0605] Blocca connessioni speculative nei segnalibri e nella cronologia
-lockPref("browser.places.speculativeConnect.enabled", false);
 
 // [0610] Blocca "Hyperlink Auditing" (click tracking)
 lockPref("browser.send_pings", false);
-
-// [RF] Disabilita Preconnect (potrebbe bypassare la protezione di uBlock!)
-// https://github.com/uBlockOrigin/uBlock-issues/issues/2913
-lockPref("network.preconnect", false);
-
-/* -----------------------------------------------------------------------------------
-   [0700] DNS / DoH / PROXY / SOCKS
-   ----------------------------------------------------------------------------------- */
 
 // [0702] Usa il proxy per la risoluzione DNS remota
 lockPref("network.proxy.socks_remote_dns", true);
@@ -1069,4 +1092,4 @@ defaultPref("browser.tabs.notes.enabled", true);
    FINE
    ----------------------------------------------------------------------------------- */
 
-lockPref("rischio.fox", "150.12");
+lockPref("rischio.fox", "150.13");
