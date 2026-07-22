@@ -23,6 +23,7 @@ INDICE:
    010: DNS
    011: PROXIES
    012: WEBRTC
+   013: MEDIA
 */
 
 /* -----------------------------------------------------------------------------------
@@ -799,7 +800,6 @@ defaultPref("network.trr.exclude-etc-hosts", false);
 defaultPref("network.trr.allow_default_http3_first", true);
 defaultPref("network.trr.force_http3_first", true);
 
-
 /* -----------------------------------------------------------------------------------
    011: PROXIES
    ----------------------------------------------------------------------------------- */
@@ -843,6 +843,12 @@ defaultPref("media.peerconnection.ice.proxy_only_if_behind_proxy", true);
 
 // Warn users when attempting to switch tabs in a window being shared over WebRTC
 defaultPref("privacy.webrtc.sharedTabWarning", true);
+
+/* -----------------------------------------------------------------------------------
+   013: MEDIA
+   ----------------------------------------------------------------------------------- */
+
+
 
 
 /* ----------------------------------------------------------------------------------- */
