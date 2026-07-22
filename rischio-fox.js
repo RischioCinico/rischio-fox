@@ -1039,22 +1039,6 @@ lockPref("network.auth.subresource-http-auth-allow", 1);
    [1200] CONNESSIONI SICURE
    ----------------------------------------------------------------------------------- */
 
-// [1201] Richiedi negoziazione sicura SSL
-lockPref("security.ssl.require_safe_negotiation", true);
-
-// [1206] Disabilita TLS 1.3 0-RTT
-lockPref("security.tls.enable_0rtt_data", false);
-
-// [1223] Fornisce una protezione extra bloccando completamente le connessioni in caso di mancata corrispondenza del certificato
-lockPref("security.cert_pinning.enforcement_level", 2);
-
-// [1244] Abilita HTTPS-Only
-lockPref("dom.security.https_only_mode", true);
-lockPref("dom.security.https_only_mode_pbm", true);
-
-// [1270] Mostra avviso connessione insicure
-lockPref("security.ssl.treat_unsafe_negotiation_as_broken", true);
-
 // [1272] Mostra informazioni dettagliate sulle pagine di errore
 lockPref("browser.xul.error_pages.expert_bad_cert", true);
 
@@ -1240,4 +1224,4 @@ defaultPref("browser.tabs.notes.enabled", true);
    FINE
    ----------------------------------------------------------------------------------- */
 
-lockPref("rischio.fox", "150.18");
+lockPref("rischio.fox", "150.19");
