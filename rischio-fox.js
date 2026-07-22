@@ -20,6 +20,7 @@ INDICE:
    007: HTTP(S)
    008: CONNESSIONI IMPLICITE
    009: BARRE DI RICERCA
+   010: DNS
 */
 
 /* -----------------------------------------------------------------------------------
@@ -758,10 +759,63 @@ defaultPref("browser.urlbar.untrimOnUserInteraction.featureGate", true);
 // Show full URLs instead of search terms
 defaultPref("browser.urlbar.showSearchTerms.enabled", false);
 
+/* -----------------------------------------------------------------------------------
+   010: DNS
+   ----------------------------------------------------------------------------------- */
+
+// Imposta Quad9 come DoH provider
+lockPref("network.trr.uri", "https://dns.quad9.net/dns-query");
+
+// Disable DoH Connectivity Checks
+defaultPref("network.connectivity-service.DNS_HTTPS.domain", "");
+defaultPref("network.trr.attempt-when-retrying-confirmation", true);
+defaultPref("network.trr.confirmationNS", "skip");
+defaultPref("network.trr.skip-check-for-blocked-host", true);
+
+// Disable DoH GET
+defaultPref("network.trr.useGET", false);
+
+// Disable nsNotifyAddrListener
+defaultPref("network.notify.changed", false);
+defaultPref("network.notify.checkForNRPT", false);
+defaultPref("network.notify.checkForProxies", false);
+defaultPref("network.notify.dnsSuffixList", false);
+defaultPref("network.notify.initial_call", false);
+defaultPref("network.notify.IPv6", false);
+defaultPref("network.notify.resolvers", false);
+
+// Enable DoH without fallback by default
+defaultPref("network.trr.mode", 3);
+
+// Fix IPv6 connectivity when DoH is enabled
+defaultPref("network.dns.preferIPv6", true);
+
+// Prevent bypassing DoH for /etc/HOSTS entries by default
+defaultPref("network.trr.exclude-etc-hosts", false);
+
+// Prioritize HTTP/3
+defaultPref("network.trr.allow_default_http3_first", true);
+defaultPref("network.trr.force_http3_first", true);
 
 
+/* -----------------------------------------------------------------------------------
+   [0700] DNS / DoH / PROXY / SOCKS
+   ----------------------------------------------------------------------------------- */
 
+// [0610] Blocca "Hyperlink Auditing" (click tracking)
+lockPref("browser.send_pings", false);
 
+// [0702] Usa il proxy per la risoluzione DNS remota
+lockPref("network.proxy.socks_remote_dns", true);
+
+// [0703] Disabilita i percorsi UNC di Windows per prevenire il rischio di perdite di dati
+lockPref("network.file.disable_unc_paths", true);
+
+// [0704] Disabilita GIO (Gnome Input/Output)
+lockPref("network.gio.supported-protocols", "");
+
+// [0705] Impedisci il failover automatico a connessioni dirette
+lockPref("network.proxy.failover_direct", false);
 
 
 
@@ -869,31 +923,6 @@ lockPref("browser.safebrowsing.downloads.remote.url", "");
 // [0404] Blocca download di software potenzialmente indesiderato
 lockPref("browser.safebrowsing.downloads.remote.block_potentially_unwanted", true);
 lockPref("browser.safebrowsing.downloads.remote.block_uncommon", true);
-
-/* -----------------------------------------------------------------------------------
-   [0700] DNS / DoH / PROXY / SOCKS
-   ----------------------------------------------------------------------------------- */
-
-// [0610] Blocca "Hyperlink Auditing" (click tracking)
-lockPref("browser.send_pings", false);
-
-// [0702] Usa il proxy per la risoluzione DNS remota
-lockPref("network.proxy.socks_remote_dns", true);
-
-// [0703] Disabilita i percorsi UNC di Windows per prevenire il rischio di perdite di dati
-lockPref("network.file.disable_unc_paths", true);
-
-// [0704] Disabilita GIO (Gnome Input/Output)
-lockPref("network.gio.supported-protocols", "");
-
-// [0705] Impedisci il failover automatico a connessioni dirette
-lockPref("network.proxy.failover_direct", false);
-
-// [0710] Abilita DNS-over-HTTPS (DoH) con protezione massima
-lockPref("network.trr.mode", 3);
-
-// [0712] Imposta Quad9 come DoH provider
-lockPref("network.trr.uri", "https://dns.quad9.net/dns-query");
 
 /* -----------------------------------------------------------------------------------
    [0900] GESTIONE CREDENZIALI
@@ -1122,4 +1151,4 @@ defaultPref("browser.tabs.notes.enabled", true);
    FINE
    ----------------------------------------------------------------------------------- */
 
-lockPref("rischio.fox", "150.14");
+lockPref("rischio.fox", "150.15");
