@@ -21,6 +21,8 @@ INDICE:
    008: CONNESSIONI IMPLICITE
    009: BARRE DI RICERCA
    010: DNS
+   011: PROXIES
+   012: WEBRTC
 */
 
 /* -----------------------------------------------------------------------------------
@@ -799,30 +801,54 @@ defaultPref("network.trr.force_http3_first", true);
 
 
 /* -----------------------------------------------------------------------------------
-   [0700] DNS / DoH / PROXY / SOCKS
+   011: PROXIES
    ----------------------------------------------------------------------------------- */
 
-// [0610] Blocca "Hyperlink Auditing" (click tracking)
-lockPref("browser.send_pings", false);
+// Prevent Firefox from automatically using the system's proxy configuration by default
+lockPref("network.proxy.type", 0);
 
-// [0702] Usa il proxy per la risoluzione DNS remota
-lockPref("network.proxy.socks_remote_dns", true);
+// Always start proxy extensions (if installed) as soon as possible, instead of waiting for the first browser window to open
+defaultPref("extensions.webextensions.early_background_wakeup_on_request", true);
 
-// [0703] Disabilita i percorsi UNC di Windows per prevenire il rischio di perdite di dati
-lockPref("network.file.disable_unc_paths", true);
+// Disable automatic failover from the proxy (if configured) to direct connections when certain system requests fail
+defaultPref("network.proxy.failover_direct", false);
 
-// [0704] Disabilita GIO (Gnome Input/Output)
-lockPref("network.gio.supported-protocols", "");
+// Disable file:///net
+defaultPref("network.file.path_blacklist", "/net");
 
-// [0705] Impedisci il failover automatico a connessioni dirette
-lockPref("network.proxy.failover_direct", false);
+// Disable GIO
+defaultPref("network.gio.supported-protocols", "");
 
+// Disable Uniform Naming Convention (UNC) file paths
+defaultPref("network.file.disable_unc_paths", true);
 
+// Prevent bypassing the proxy (if configured) for system connections that include the `bypassProxy` flag
+defaultPref("network.proxy.allow_bypass", false);
 
+// Use the proxy (if configured) for remote DNS lookups
+defaultPref("network.proxy.socks_remote_dns", true);
 
+/* -----------------------------------------------------------------------------------
+   012: WEBRTC
+   ----------------------------------------------------------------------------------- */
+
+// Disable RTP Control Protocol (RTCP) reception
+defaultPref("media.webrtc.net.force_disable_rtcp_reception", true);
+
+// Enable global toggles for muting the camera/microphone
+defaultPref("privacy.webrtc.globalMuteToggles", true);
+
+// Prevent WebRTC from bypassing the proxy (if configured)
+defaultPref("media.peerconnection.ice.proxy_only_if_behind_proxy", true);
+
+// Warn users when attempting to switch tabs in a window being shared over WebRTC
+defaultPref("privacy.webrtc.sharedTabWarning", true);
 
 
 /* ----------------------------------------------------------------------------------- */
+
+// [0610] Blocca "Hyperlink Auditing" (click tracking)
+lockPref("browser.send_pings", false);
 
 // [0802] Disabilita suggerimenti sponsorizzati
 lockPref("browser.urlbar.quicksuggest.enabled", false);
@@ -975,15 +1001,6 @@ defaultPref("network.http.referer.XOriginTrimmingPolicy", 2);
 lockPref("privacy.userContext.enabled", true);
 lockPref("privacy.userContext.ui.enabled", true);
 
-/* -----------------------------------------------------------------------------------
-   [2000] MEDIA
-   ----------------------------------------------------------------------------------- */
-
-// [2002] Previene i WebRTC IP leaks forzando l'uso del proxy
-defaultPref("media.peerconnection.ice.proxy_only_if_behind_proxy", true);
-
-// [2003] Mitiga il WebRTC IP Leak
-defaultPref("media.peerconnection.ice.default_address_only", true);
 
 /* -----------------------------------------------------------------------------------
    [2400] DOM (DOCUMENT OBJECT MODEL)
@@ -1151,4 +1168,4 @@ defaultPref("browser.tabs.notes.enabled", true);
    FINE
    ----------------------------------------------------------------------------------- */
 
-lockPref("rischio.fox", "150.15");
+lockPref("rischio.fox", "150.16");
