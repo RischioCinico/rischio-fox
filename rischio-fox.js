@@ -37,6 +37,9 @@ INDICE:
    025: MISC
    026: DEBUGGING
    027: CONTROL
+   028: UI
+   029: UX
+   030: PERFORMANCE
 */
 
 /* -----------------------------------------------------------------------------------
@@ -1412,7 +1415,11 @@ defaultPref("editor.resizing.enabled_by_default", true);
 // Ensure users can always control Nimbus recipes
 defaultPref("nimbus.debug", true);
 
-// Disable warning when attempting to access `about:config`
+/* -----------------------------------------------------------------------------------
+   028: UI
+   ----------------------------------------------------------------------------------- */
+
+// Disable warning when attempting to access `about:config` by default
 defaultPref("browser.aboutConfig.showWarning", false);
 
 // Display "More settings" on print previews by default
@@ -1470,106 +1477,151 @@ defaultPref("browser.xul.error_pages.expert_bad_cert", true);
 // Show an error page/details instead of a blank page for HTTP responses with certain error codes
 defaultPref("browser.http.blank_page_with_error_response.enabled", false);
 
+/* -----------------------------------------------------------------------------------
+   029: UX
+   ----------------------------------------------------------------------------------- */
 
+// Always load bookmarks in new tabs by default
+defaultPref("browser.tabs.loadBookmarksInTabs", true);
 
+// Disable annoying Web Speech API error pop-ups, especially relevant on Linux
+defaultPref("media.webspeech.synth.dont_notify_on_error", true);
 
+// Disable fullscreen delay
+defaultPref("full-screen-api.transition-duration.enter", "0 0");
+defaultPref("full-screen-api.transition-duration.leave", "0 0");
 
+// Display hidden/stray "control" characters
+defaultPref("layout.css.control-characters.visible", true);
 
+// Display an icon to clear search boxes (for `search` `<input>` types)
+defaultPref("layout.forms.input-type-search.enabled", true);
 
+// Display a spinning animation while websites are loading
+defaultPref("browser.spin_cursor_while_busy", true);
 
+// Do not close the browser window if all tabs are closed
+defaultPref("browser.tabs.closeWindowWithLastTab", false);
 
+// Enable autoscrolling
+defaultPref("general.autoScroll", true);
 
+// Enable Firefox Translations (ma disabilita il fastidioso pop-up)
+defaultPref("browser.ai.control.translations", "enabled");
+defaultPref("browser.translations.automaticallyPopup", false);
+defaultPref("extensions.translations.disabled", false);
 
+// Enable QR code creation (from the `Share` (URL) menu) and disable embedding of logo
+defaultPref("browser.shareqrcode.embed_logo", false);
 
+// Enable spellcheck for both multi-line and single-line boxes
+defaultPref("layout.spellcheckDefault", 2);
 
+// Export bookmarks to a `bookmarks.html` file
+defaultPref("browser.bookmarks.autoExportHTML", true);
 
+// Force pop-ups to open in new tabs instead of new windows
+defaultPref("browser.link.open_newwindow.restriction", 0);
 
+// Highlight all Findbar (Ctrl + F) results
+defaultPref("findbar.highlightAll", true);
 
+// If a connection with HTTP/3 fails, allow retrying it with a different IP address
+defaultPref("network.http.http3.retry_different_ip_family", true);
 
+// If a connection fails retry with the one that is still connecting
+defaultPref("network.http.retry_with_another_half_open", true); 
 
+// Limit what events can cause pop-ups
+defaultPref("dom.popup_allowed_events", "click dblclick");
 
+// Open links from external programs in new tabs
+defaultPref("browser.link.open_newwindow.override.external", 3);
 
+// Prevent automatically closing the Bookmarks menu after selecting a bookmark
+defaultPref("browser.bookmarks.openInTabClosesMenu", false);
 
+// Prevent websites from automatically refreshing
+defaultPref("accessibility.blockautorefresh", true);
 
+// Set default URL to load when navigating to `moz://a`
+defaultPref("toolkit.mozprotocol.url", "about:mozilla");
 
+/* -----------------------------------------------------------------------------------
+   030: PERFORMANCE
+   ----------------------------------------------------------------------------------- */
 
+// Compress cached JavaScript bytecode
+defaultPref("browser.cache.jsbc_compression_level", 3);
 
+// Disable async stack tracing by default
+defaultPref("javascript.options.asyncstack", false);
 
+// Disable CSS error reporting by default
+defaultPref("layout.css.report_errors", false);
 
+// Disable pacing requests
+defaultPref("network.http.pacing.requests.enabled", false);
 
+// Display advanced performance settings at `about:preferences#general`
+defaultPref("browser.preferences.defaultPerformanceSettings.enabled", false);
 
+// Enable Canvas2D acceleration
+defaultPref("gfx.canvas.accelerated.cache-items", 32768);
+defaultPref("gfx.canvas.accelerated.cache-size", 4096);
 
+// Enable CSS Masonry Layout
+defaultPref("layout.css.grid-template-masonry-value.enabled", true);
 
+// Enable dynamic reflow roots
+defaultPref("layout.dynamic-reflow-roots.enabled", true);
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
+// Enable the WebRender native compositor
+defaultPref("gfx.webrender.compositor", true);
+
+// Increase buffering for video playback
+defaultPref("media.cache_readahead_limit", 600);
+defaultPref("media.cache_readahead_limit.cellular", 600);
+defaultPref("media.cache_resume_threshold", 300);
+defaultPref("media.cache_resume_threshold.cellular", 300);
+defaultPref("media.throttle-cellular-regardless-of-download-rate", false);
+
+// Increase the chunk size for calls to image decoders
+defaultPref("image.mem.decode_bytes_at_a_time", 65536);
+
+// Increase DNS caching
+defaultPref("network.dnsCacheExpiration", 3600);
+defaultPref("network.dnsCacheEntries", 10000);
+
+// Increase the file-backed media cache size for cellular connections
+defaultPref("media.cache_size.cellular", 512000);
+
+// Increase the memory-backed media cache size
+defaultPref("media.memory_cache_max_size", 262144);
+defaultPref("media.memory_caches_combined_limit_kb", 1048576);
+
+// Increase memory cache
+defaultPref("browser.cache.memory.capacity", 131072);
+defaultPref("browser.cache.memory.max_entry_size", 20480);
+
+// Increase the skia font cache size
+defaultPref("gfx.content.skia-font-cache-size", 32);
+
+// Increase the maximum number of HTTP connections
+defaultPref("network.http.max-connections", 1800);
+defaultPref("network.http.max-persistent-connections-per-proxy", 48);
+defaultPref("network.http.max-persistent-connections-per-server", 10);
+defaultPref("network.http.max-urgent-start-excessive-connections-per-host", 5);
+defaultPref("network.http.request.max-start-delay", 5);
+
+// Set TCP_NOTSENT_LOWAT on TCP sockets
+defaultPref("network.tcp.notsent_lowat", 32768);
+
+// Set TCP_USER_TIMEOUT
+defaultPref("network.tcp.user_timeout", 30);
+
+// Use higher performance pinch-zoom
+defaultPref("gfx.webrender.low-quality-pinch-zoom", true);
 
 
 
@@ -1799,13 +1851,6 @@ defaultPref("browser.newtabpage.activity-stream.feeds.telemetry", false);
 defaultPref("browser.newtabpage.activity-stream.telemetry", false);
 
 /* -----------------------------------------------------------------------------------
-   [2400] DOM (DOCUMENT OBJECT MODEL)
-   ----------------------------------------------------------------------------------- */
-
-// [2402] Impedisci agli script di spostare e ridimensionare le finestre
-defaultPref("dom.disable_window_move_resize", true);
-
-/* -----------------------------------------------------------------------------------
    [2600] MISCELLANEA
    ----------------------------------------------------------------------------------- */
 
@@ -1833,12 +1878,6 @@ defaultPref("app.update.auto", false); // [LINUX]
 // [4503] Disabilita mozAddonManager Web API
 defaultPref("privacy.resistFingerprinting.block_mozAddonManager", true);
 
-// [4512] Forza apertura link in una nuova scheda
-defaultPref("browser.link.open_newwindow", 3);
-
-// [4513] Imponi sempre apertura in una nuova scheda
-defaultPref("browser.link.open_newwindow.restriction", 0);
-
 // [SF] Disabilita service workers durante navigazione anonima
 defaultPref("dom.serviceWorkers.privateBrowsing.enabled", false);
 
@@ -1849,9 +1888,6 @@ defaultPref("dom.serviceWorkers.privateBrowsing.enabled", false);
 // [5017] Disabilita Form Autofill
 defaultPref("extensions.formautofill.addresses.enabled", false);
 defaultPref("extensions.formautofill.creditCards.enabled", false);
-
-// [5018] Limita gli eventi che possono causare pop-up
-defaultPref("dom.popup_allowed_events", "click dblclick");
 
 
 defaultPref("devtools.accessibility.enabled", false);
@@ -1865,24 +1901,14 @@ defaultPref("app.update.BITS.enabled", false); // [WINDOWS]
    INTERFACCIA
    ----------------------------------------------------------------------------------- */
 
-// [PF] Disabilita transizione schermo intero
-defaultPref("full-screen-api.transition-duration.enter", "0 0");
-defaultPref("full-screen-api.transition-duration.leave", "0 0");
-
 // [PF] Disabilita avviso schermo intero
 defaultPref("full-screen-api.warning.delay", -1);
 defaultPref("full-screen-api.warning.timeout", 0);
 
-
-
 // [PF] Impedisce al puntatore del mouse di nascondersi mentre si digita
 defaultPref("widget.gtk.hide-pointer-while-typing.enabled", false); // [LINUX]
 
-// [RF] Blocca il pop-up automatico del traduttore
-defaultPref("browser.translations.automaticallyPopup", false);
 
-// [RF] Blocca gli errori fastidiosi dell'API di sintesi vocale
-defaultPref("media.webspeech.synth.dont_notify_on_error", true); // [Nascosta]
 
 // [RF] Disabilita l'indicatore globale WebRTC
 defaultPref("privacy.webrtc.hideGlobalIndicator", true);
@@ -1893,18 +1919,12 @@ defaultPref("browser.backup.preferences.ui.enabled", true);
 // [RF] Abilita il pulsante Picture-in-Picture su tutti i video
 defaultPref("media.videocontrols.picture-in-picture.video-toggle.always-show", true);
 
-// [RF] Abilita autoscrolling
-defaultPref("general.autoScroll", true);
 
 /* -----------------------------------------------------------------------------------
    GESTIONE SCHEDE
    ----------------------------------------------------------------------------------- */
 
-// [PF] Apri i segnalibri in una nuova scheda
-defaultPref("browser.tabs.loadBookmarksInTabs", true);
 
-// [PF] Forza i link esterni ad aprirsi in una nuova scheda
-defaultPref("browser.link.open_newwindow.override.external", 3);
 
 // [PF] Apri le nuove schede in background
 defaultPref("browser.tabs.loadDivertedInBackground", true);
@@ -1912,14 +1932,8 @@ defaultPref("browser.tabs.loadDivertedInBackground", true);
 // [PF] Apri i segnalibri in background
 defaultPref("browser.tabs.loadBookmarksInBackground", true);
 
-// [PF] Impedisce la chiusura automatica del menu dei segnalibri
-defaultPref("browser.bookmarks.openInTabClosesMenu", false);
-
 // [PF] Apri le nuove schede subito dopo quella attuale
 defaultPref("browser.tabs.insertAfterCurrent", true);
-
-// [PF] Lascia il browser aperto alla chiusura dell'ultima scheda
-defaultPref("browser.tabs.closeWindowWithLastTab", false);
 
 // [RF] Abilita note per le schede
 defaultPref("browser.tabs.notes.enabled", true);
@@ -1928,4 +1942,4 @@ defaultPref("browser.tabs.notes.enabled", true);
    FINE
    ----------------------------------------------------------------------------------- */
 
-defaultPref("rischio.fox", "150.30");
+defaultPref("rischio.fox", "150.31");
