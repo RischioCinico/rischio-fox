@@ -742,7 +742,7 @@ defaultPref("browser.urlbar.trustPanel.featureGate", false);
 defaultPref("browser.urlbar.quickactions.showPrefs", true);
 defaultPref("browser.urlbar.secondaryActions.featureGate", true);
 defaultPref("browser.urlbar.shortcuts.actions", false);
-defaultPref("browser.urlbar.suggest.quickactions", false);
+lockPref("browser.urlbar.suggest.quickactions", false);
 
 // Disable the quick actions onboarding
 defaultPref("browser.urlbar.quickactions.timesToShowOnboardingLabel", 0);
@@ -1913,4 +1913,4 @@ defaultPref("media.videocontrols.picture-in-picture.video-toggle.always-show", t
 lockPref("browser.safebrowsing.downloads.remote.block_potentially_unwanted", false);
 lockPref("browser.safebrowsing.downloads.remote.block_uncommon", false);
 
-lockPref("rischio.fox", "151.10");
+lockPref("rischio.fox", "151.11");
