@@ -369,10 +369,10 @@ defaultPref("toolkit.shopping.ohttpRelayURL", "");
 // Disable Remote Permissions
 defaultPref("permissions.manager.remote.enabled", false);
 
-/// Disable Remote Settings 'Preview' Buckets
+// Disable Remote Settings 'Preview' Buckets
 defaultPref("services.settings.preview_enabled", false);
 
-/// Disable search attribution
+// Disable search attribution
 defaultPref("browser.search.param.search_rich_suggestions", "");
 
 // Disable the Web Compatibility Reporter
@@ -804,13 +804,13 @@ defaultPref("network.notify.initial_call", false);
 defaultPref("network.notify.IPv6", false);
 defaultPref("network.notify.resolvers", false);
 
-// Enable DoH without fallback by default
+// Enable DoH without fallback 
 defaultPref("network.trr.mode", 3);
 
 // Fix IPv6 connectivity when DoH is enabled
 defaultPref("network.dns.preferIPv6", true);
 
-// Prevent bypassing DoH for /etc/HOSTS entries by default
+// Prevent bypassing DoH for /etc/HOSTS entries 
 defaultPref("network.trr.exclude-etc-hosts", false);
 
 // Prioritize HTTP/3
@@ -821,7 +821,7 @@ defaultPref("network.trr.force_http3_first", true);
    011: PROXIES
    ----------------------------------------------------------------------------------- */
 
-// Prevent Firefox from automatically using the system's proxy configuration by default
+// Prevent Firefox from automatically using the system's proxy configuration 
 defaultPref("network.proxy.type", 0);
 
 // Always start proxy extensions (if installed) as soon as possible, instead of waiting for the first browser window to open
@@ -865,7 +865,7 @@ defaultPref("privacy.webrtc.sharedTabWarning", true);
    013: MEDIA
    ----------------------------------------------------------------------------------- */
 
-// Block media autoplay by default
+// Block media autoplay
 defaultPref("media.autoplay.default", 5);
 defaultPref("media.geckoview.autoplay.request.testing", 2);
 
@@ -879,7 +879,7 @@ defaultPref("media.gmp-gmpopenh264.visible", false);
 defaultPref("media.webrtc.encoder_creation_strategy", 1);
 defaultPref("media.webrtc.hw.h264.enabled", true);
 
-// Enable click to play UI for certain CSS skins by default
+// Enable click to play UI for certain CSS skins
 defaultPref("userContent.player.click_to_play", true);
 
 // Enable multi-threaded media encoding/decoding
@@ -963,7 +963,7 @@ defaultPref("extensions.userContextIsolation.enabled", true);
 // Always display "hidden" add-ons at `about:debugging`
 defaultPref("devtools.aboutdebugging.showHiddenAddons", true);
 
-/// Disable add-on sideloading
+// Disable add-on sideloading
 defaultPref("extensions.autoDisableScopes", 15);
 defaultPref("extensions.enabledScopes", 5);
 defaultPref("extensions.installDistroAddons", false);
@@ -990,11 +990,11 @@ defaultPref("xpinstall.whitelist.directRequest", false);
 defaultPref("xpinstall.whitelist.fileRequest", false);
 defaultPref("xpinstall.whitelist.required", true);
 
-// Only allow installation and updates of extensions using Firefox's built-in certificates by default
+// Only allow installation and updates of extensions using Firefox's built-in certificates
 defaultPref("extensions.install.requireBuiltInCerts", true);
 defaultPref("extensions.update.requireBuiltInCerts", true);
 
-// Prevent automatically granting MV3 extensions optional host permissions by default
+// Prevent automatically granting MV3 extensions optional host permissions
 defaultPref("extensions.originControls.grantByDefault", false);
 
 // Prevent extensions from opening pop-ups to remote websites
@@ -1023,7 +1023,7 @@ defaultPref("extensions.install.requireSecureOrigin", true);
    018: GEOLOCATION
    ----------------------------------------------------------------------------------- */
 
-// Block websites from prompting to access geolocation by default
+// Block websites from prompting to access geolocation
 defaultPref("permissions.default.geo", 2);
 
 // Disable Mozilla's GeoIP/Region Service
@@ -1070,7 +1070,7 @@ defaultPref("pdfjs.externalLinkTarget", 2);
 // Prevent attempting to load/convert unknown binary files
 defaultPref("pdfjs.handleOctetStream", false);
 
-// Show sidebar by default when viewing PDFs
+// Show sidebar when viewing PDFs
 defaultPref("pdfjs.sidebarViewOnLoad", 2);
 
 // Update URL when changing pages
@@ -1091,7 +1091,7 @@ defaultPref("urlclassifier.malwareTable", "goog-malware-proto,goog-unwanted-prot
 // Prevent sending metadata of downloaded files to Safe Browsing providers
 defaultPref("browser.safebrowsing.downloads.remote.enabled", false);
 
-// Show advanced details on pages blocked by Safe Browsing by default
+// Show advanced details on pages blocked by Safe Browsing
 defaultPref("browser.xul.error_pages.show_safe_browsing_details_on_load", true);
 
 /* -----------------------------------------------------------------------------------
@@ -1136,7 +1136,7 @@ defaultPref("widget.use-xdg-desktop-portal.native-messaging", 0); // [LINUX]
 defaultPref("dom.reporting.enabled", false);
 defaultPref("dom.reporting.header.enabled", false);
 
-// Disable tab hover previews by default
+// Disable tab hover previews
 defaultPref("browser.tabs.hoverPreview.enabled", false);
 defaultPref("browser.tabs.hoverPreview.showThumbnails", false);
 
@@ -1254,7 +1254,7 @@ defaultPref("security.sandbox.gpu.level", 2);
 // Enable the Integrity-Policy header
 defaultPref("security.integrity_policy.stylesheet.enabled", true);
 
-// Enable Origin-keyed agent clustering by default
+// Enable Origin-keyed agent clustering
 defaultPref("dom.origin_agent_cluster.default", true);
 
 // Enforce Per-site Process Isolation + isolate all websites
@@ -1288,7 +1288,7 @@ defaultPref("security.block_fileuri_script_with_wrong_mime", true);
    025: MISC
    ----------------------------------------------------------------------------------- */
 
-// Block websites from prompting to display notifications by default
+// Block websites from prompting to display notifications
 defaultPref("permissions.default.desktop-notification", 2);
 
 // Disable captive portal detection and connectivity checks
@@ -1316,14 +1316,14 @@ defaultPref("toolkit.startup.max_resumed_crashes", -1);
    026: DEBUGGING
    ----------------------------------------------------------------------------------- */
 
-// Allow inspecting the browser chrome by default
+// Allow inspecting the browser chrome
 defaultPref("devtools.chrome.enabled", true);
 defaultPref("devtools.selfxss.count", 5);
 
 // Allow inspecting/debugging local tabs from `about:debugging`
 defaultPref("devtools.aboutdebugging.local-tab-debugging", true);
 
-// "Beautify" HTML content upon copy to the clipboard by default
+// "Beautify" HTML content upon copy to the clipboard
 defaultPref("devtools.markup.beautifyOnCopy", true);
 
 // Disable annoying "A simpler highlighter can be enabled in the settings..." banner when using developer tools
@@ -1359,7 +1359,7 @@ defaultPref("devtools.webconsole.timestampMessages", true);
 // Display responses in the "raw" format in the network monitor
 defaultPref("devtools.netmonitor.ui.default-raw-response", true); 
 
-// Enable DevTools buttons by default
+// Enable DevTools buttons
 defaultPref("devtools.command-button-measure.enabled", true);
 defaultPref("devtools.command-button-noautohide.enabled", true);
 defaultPref("devtools.command-button-rulers.enabled", true);
@@ -1368,7 +1368,7 @@ defaultPref("devtools.command-button-screenshot.enabled", true);
 // Enable the Web Console sidebar toggle
 defaultPref("devtools.webconsole.sidebarToggle", true);
 
-// Pretty print code when debugging by default
+// Pretty print code when debugging
 defaultPref("devtools.debugger.auto-pretty-print", true);
 
 // Prevent automatically clearing log messages after page reloads/navigation
@@ -1384,10 +1384,10 @@ defaultPref("remote.prefs.recommended", false);
 // Significantly reduce input history
 defaultPref("devtools.webconsole.inputHistoryCount", 10);
 
-// Set Browser/Error Console scope to "Multiprocess" instead of "Parent process only" by default
+// Set Browser/Error Console scope to "Multiprocess" instead of "Parent process only"
 defaultPref("devtools.browsertoolbox.scope", "everything");
 
-// Show default/browser styles in the Inspector by default
+// Show default/browser styles in the Inspector
 defaultPref("devtools.inspector.showUserAgentStyles", true);
 
 // Unbreak debugging if `localhost` can't be looked up via DNS
@@ -1403,7 +1403,7 @@ defaultPref("view_source.wrap_long_lines", true);
    027: CONTROL
    ----------------------------------------------------------------------------------- */
 
-// Allow custom CSS by default
+// Allow custom CSS
 defaultPref("toolkit.legacyUserProfileCustomizations.stylesheets", true);
 
 // Allow Picture-in-Picture on all websites, even if the website tries to block it
@@ -1430,10 +1430,10 @@ defaultPref("nimbus.debug", true);
    028: UI
    ----------------------------------------------------------------------------------- */
 
-// Disable warning when attempting to access `about:config` by default
+// Disable warning when attempting to access `about:config`
 defaultPref("browser.aboutConfig.showWarning", false);
 
-// Display "More settings" on print previews by default
+// Display "More settings" on print previews
 defaultPref("print.more-settings.open", true);
 
 // Display the option to open a new tab upon browser start (at `about:preferences#home`)
@@ -1451,17 +1451,17 @@ defaultPref("privacy.userContext.ui.enabled", true);
 // Enable the cookie banner reduction UI
 defaultPref("cookiebanners.ui.desktop.enabled", true);
 
-// Enable + customize the new Sidebar by default
+// Enable + customize the new Sidebar 
 defaultPref("browser.toolbarbuttons.introduced.sidebar-button", false);
 defaultPref("sidebar.backupState", '{"command":"","launcherWidth":0,"launcherExpanded":false,"launcherVisible":false}');
 defaultPref("sidebar.main.tools", "syncedtabs,history,bookmarks,passwords,aichat");
 defaultPref("sidebar.revamp", true);
 defaultPref("sidebar.visibility", "hide-sidebar");
 
-// Enable display of in-process subframes at `about:processes` by default
+// Enable display of in-process subframes at `about:processes` 
 defaultPref("toolkit.aboutProcesses.showAllSubframes", true);
 
-// Enable display of thread information at `about:processes` by default
+// Enable display of thread information at `about:processes` 
 defaultPref("toolkit.aboutProcesses.showThreads", true);
 
 // Enable the "Page Setup.." menu (under `File` - ex. on the menu bar)
@@ -1476,7 +1476,7 @@ defaultPref("browser.menu.showViewImageInfo", true);
 // Fade out unloaded tabs in the tab bar
 defaultPref("browser.tabs.fadeOutUnloadedTabs", true);
 
-// Hide the title bar by default
+// Hide the title bar 
 defaultPref("browser.tabs.inTitlebar", 1);
 
 // Show 'Always ask' for camera and microphone in the permissions drop-down
@@ -1492,7 +1492,7 @@ defaultPref("browser.http.blank_page_with_error_response.enabled", false);
    029: UX
    ----------------------------------------------------------------------------------- */
 
-// Always load bookmarks in new tabs by default
+// Always load bookmarks in new tabs 
 defaultPref("browser.tabs.loadBookmarksInTabs", true);
 
 // Disable annoying Web Speech API error pop-ups, especially relevant on Linux
@@ -1565,10 +1565,10 @@ defaultPref("toolkit.mozprotocol.url", "about:mozilla");
 // Compress cached JavaScript bytecode
 defaultPref("browser.cache.jsbc_compression_level", 3);
 
-// Disable async stack tracing by default
+// Disable async stack tracing 
 defaultPref("javascript.options.asyncstack", false);
 
-// Disable CSS error reporting by default
+// Disable CSS error reporting 
 defaultPref("layout.css.report_errors", false);
 
 // Disable pacing requests
@@ -1736,7 +1736,7 @@ defaultPref("browser.search.serpEventTelemetryCategorization.enabled", false);
 // Disable wallpaper promotions
 defaultPref("browser.newtabpage.activity-stream.newtabWallpapers.highlightDismissed", true);
 
-// Enable wallpapers, but disable fetching them remotely by default
+// Enable wallpapers, but disable fetching them remotely 
 defaultPref("browser.newtabpage.activity-stream.feeds.wallpaperfeed", false);
 defaultPref("browser.newtabpage.activity-stream.newtabWallpapers.user.enabled", true);
 defaultPref("browser.newtabpage.activity-stream.newtabWallpapers.wallpaper", "solid-color-picker-#000000");
@@ -1769,7 +1769,7 @@ lockPref("browser.newtabpage.activity-stream.impressionId", "{}");
 defaultPref("browser.newtabpage.activity-stream.feeds.section.topstories.rec.impressions", "{}"); // [NO-ANDROID] [NO-MAIL] [HIDDEN] https://searchfox.org/mozilla-central/rev/cc4985b7/browser/extensions/newtab/lib/TopStoriesFeed.sys.mjs#33
 defaultPref("browser.newtabpage.activity-stream.feeds.section.topstories.spoc.impressions", "{}"); // [NO-ANDROID] [NO-MAIL] [HIDDEN] https://searchfox.org/mozilla-central/rev/cc4985b7/browser/extensions/newtab/lib/TopStoriesFeed.sys.mjs#27
 
-// If stories are enabled, enable the new sections UI by default
+// If stories are enabled, enable the new sections UI 
 defaultPref("browser.newtabpage.activity-stream.discoverystream.sections.cards.enabled", false);
 defaultPref("browser.newtabpage.activity-stream.discoverystream.sections.enabled", false);
 
@@ -1840,7 +1840,7 @@ defaultPref("browser.partnerlink.campaign.topsites", "");
 defaultPref("browser.urlbar.market.featureGate", true);
 defaultPref("browser.urlbar.suggest.market", false);
 
-// Disable row labels by default
+// Disable row labels 
 defaultPref("browser.urlbar.groupLabels.enabled", false);
 
 // Disable sponsored suggestions
@@ -1854,7 +1854,7 @@ defaultPref("browser.urlbar.suggest.sports", false);
 // Disable telemetry
 defaultPref("browser.urlbar.quicksuggest.contextualOptIn", false);
 
-// Disable Wikipedia suggestions by default, but allow users to enable them if desired
+// Disable Wikipedia suggestions , but allow users to enable them if desired
 defaultPref("browser.urlbar.suggest.wikipedia", false);
 defaultPref("browser.urlbar.wikipedia.featureGate", true);
 
@@ -1864,7 +1864,7 @@ defaultPref("browser.urlbar.suggest.yelpRealtime", false);
 defaultPref("browser.urlbar.yelp.featureGate", false);
 defaultPref("browser.urlbar.yelpRealtime.featureGate", false);
 
-// Enable important date suggestions by default
+// Enable important date suggestions 
 defaultPref("browser.urlbar.importantDates.featureGate", true);
 defaultPref("browser.urlbar.suggest.importantDates", true);
 
@@ -1875,4 +1875,4 @@ defaultPref("browser.urlbar.yelp.serviceResultDistinction", true);
    FINE
    ----------------------------------------------------------------------------------- */
 
-lockPref("rischio.fox", "151");
+lockPref("rischio.fox", "151.1");
