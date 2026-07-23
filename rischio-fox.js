@@ -27,6 +27,7 @@ INDICE:
    014: ATTACK SURFACE
    015: PASSWORDS
    016: EXTENSIONS
+   017: AI
    
 */
 
@@ -994,6 +995,36 @@ defaultPref("extensions.content_web_accessible.enabled", true);
 defaultPref("extensions.install.requireSecureOrigin", true);
 
 
+/* -----------------------------------------------------------------------------------
+   017: AI
+   ----------------------------------------------------------------------------------- */
+
+/* -----------------------------------------------------------------------------------
+   018: GEOLOCATION
+   ----------------------------------------------------------------------------------- */
+
+// Block websites from prompting to access geolocation by default
+defaultPref("permissions.default.geo", 2);
+
+// Disable Mozilla's GeoIP/Region Service
+defaultPref("browser.region.network.url", "");
+defaultPref("browser.region.update.enabled", false);
+defaultPref("browser.search.region", "XX");
+defaultPref("doh-rollout.home-region", "XX");
+
+// Enable Geoclue for GNU/Linux
+defaultPref("geo.provider.use_geoclue", false); // [LINUX]
+
+// Prevent unconditionally providing high location accuracy
+defaultPref("geo.provider.geoclue.always_high_accuracy", false); // [LINUX]
+
+// Set BeaconDB as the default network geolocation provider
+defaultPref("geo.provider.network.url", "https://beacondb.net/v1/geolocate");
+
+/* -----------------------------------------------------------------------------------
+   019: PDF
+   ----------------------------------------------------------------------------------- */
+
 
 
 /* ----------------------------------------------------------------------------------- */
@@ -1056,16 +1087,6 @@ defaultPref("browser.newtabpage.activity-stream.widgets.system.lists.enabled", t
 defaultPref("browser.newtabpage.activity-stream.widgets.system.focusTimer.enabled", true); // abilita Timer
 defaultPref("browser.newtabpage.activity-stream.widgets.focusTimer.showSystemNotifications", true); // abilita notifiche Timer
 lockPref("browser.newtabpage.activity-stream.system.showWeather", false); // disabilita Meteo (non funzionante)
-
-/* -----------------------------------------------------------------------------------
-   [0200] GEOLOCALIZZAZIONE
-   ----------------------------------------------------------------------------------- */
-
-// [0202] Disabilita servizio di geolocalizzazione del sistema
-defaultPref("geo.provider.use_geoclue", false); // [LINUX]
-
-// [SF] Imposta BeaconDB come provider di geolocalizzazione di rete predefinito
-defaultPref("geo.provider.network.url", "https://beacondb.net/v1/geolocate");
 
 /* -----------------------------------------------------------------------------------
    [0300] RACCOLTA DATI
@@ -1281,4 +1302,4 @@ defaultPref("browser.tabs.notes.enabled", true);
    FINE
    ----------------------------------------------------------------------------------- */
 
-lockPref("rischio.fox", "150.21");
+lockPref("rischio.fox", "150.22");
