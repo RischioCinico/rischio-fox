@@ -11,15 +11,15 @@
 
 /*
 INDICE:
-   001: TELEMETRIA
+   001: DATA COLLECTION
    002: MOZILLA
-   003: TRACKING
-   004: FINGERPRINTING
-   005: TRACCE
+   003: TRACKING PROTECTION
+   004: FINGERPRINTING PROTECTION
+   005: DISK AVOIDANCE
    006: DOWNLOADS
    007: HTTP(S)
-   008: CONNESSIONI IMPLICITE
-   009: BARRE DI RICERCA
+   008: IMPLICIT CONNECTIONS
+   009: SEARCH & URL BAR
    010: DNS
    011: PROXIES
    012: WEBRTC
@@ -28,11 +28,13 @@ INDICE:
    015: PASSWORDS
    016: EXTENSIONS
    017: AI
+   018: GEOLOCATION
+   019: PDF
    
 */
 
 /* -----------------------------------------------------------------------------------
-   001: TELEMETRIA
+   001: DATA COLLECTION
    ----------------------------------------------------------------------------------- */
 
 // Disable automatic upload of profiler data (from `about:logging`) to Mozilla
@@ -396,7 +398,7 @@ lockPref("termsofuse.acceptedVersion", 999);
 lockPref("termsofuse.bypassNotification", true);
 
 /* -----------------------------------------------------------------------------------
-   003: TRACKING
+   003: TRACKING PROTECTION
    ----------------------------------------------------------------------------------- */
 
 // Abilita eccezioni per evitare problemi minori
@@ -493,7 +495,7 @@ defaultPref("privacy.trackingprotection.lower_network_priority", true);
 defaultPref("privacy.purge_trackers.enabled", true);
 
 /* -----------------------------------------------------------------------------------
-   004: FINGERPRINTING
+   004: FINGERPRINTING PROTECTION
    ----------------------------------------------------------------------------------- */
 
 // Unnecessarily fingerprintable
@@ -532,7 +534,7 @@ defaultPref("ui.use_standins_for_native_colors", true);
 defaultPref("dom.quotaManager.temporaryStorage.fixedLimit", 52428800);
 
 /* -----------------------------------------------------------------------------------
-   005: TRACCE
+   005: DISK AVOIDANCE
    ----------------------------------------------------------------------------------- */
 
 // Decrease the number of tabs saved in Session Store
@@ -671,7 +673,7 @@ defaultPref("security.certerrors.permanentOverride", false);
 defaultPref("security.ssl.require_safe_negotiation", true);
 
 /* -----------------------------------------------------------------------------------
-   008: CONNESSIONI IMPLICITE
+   008: IMPLICIT CONNECTIONS
    ----------------------------------------------------------------------------------- */
 
 // Disable Early Hints
@@ -702,7 +704,7 @@ defaultPref("middlemouse.paste", false);
 defaultPref("browser.tabs.searchclipboardfor.middleclick", false);
 
 /* -----------------------------------------------------------------------------------
-   009: BARRE DI RICERCA
+   009: SEARCH & URL BAR
    ----------------------------------------------------------------------------------- */
 
 // Abilita la possibilità di usare un motore di ricerca diverso in finestre normali e private
@@ -1025,6 +1027,38 @@ defaultPref("geo.provider.network.url", "https://beacondb.net/v1/geolocate");
    019: PDF
    ----------------------------------------------------------------------------------- */
 
+// Disable automatic hyperlinks
+defaultPref("pdfjs.enableAutoLinking", false);
+
+// Disable JavaScript
+defaultPref("pdfjs.enableScripting", false);
+
+// Disable WebGPU
+defaultPref("pdfjs.enableWebGPU", false);
+
+// Disable XFA
+defaultPref("pdfjs.enableXfa", false);
+
+// Enforce using the internal font renderer
+defaultPref("pdfjs.disableFontFace", true);
+
+// Force PDFs to be downloaded/viewed locally, and prompt before opening the PDF Viewer
+defaultPref("pdfjs.disableRange", true);
+defaultPref("pdfjs.disableStream", true);
+
+// Open external links in new tabs/windows
+defaultPref("pdfjs.externalLinkTarget", 2);
+
+// Prevent attempting to load/convert unknown binary files
+defaultPref("pdfjs.handleOctetStream", false);
+
+// Show sidebar by default when viewing PDFs
+defaultPref("pdfjs.sidebarViewOnLoad", 2);
+
+// Update URL when changing pages
+defaultPref("pdfjs.historyUpdateUrl", true);
+
+
 
 
 /* ----------------------------------------------------------------------------------- */
@@ -1302,4 +1336,4 @@ defaultPref("browser.tabs.notes.enabled", true);
    FINE
    ----------------------------------------------------------------------------------- */
 
-lockPref("rischio.fox", "150.22");
+lockPref("rischio.fox", "150.23");
