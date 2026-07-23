@@ -964,6 +964,9 @@ defaultPref("extensions.formautofill.creditCards.supported", "on");
 // Disable password truncation
 defaultPref("editor.truncate_user_pastes", false);
 
+// Enable alerts for breached and vulnerable passwords
+lockPref("signon.management.page.breach-alerts.enabled", true);
+
 // Prevent cross-origin sub-resources from opening HTTP authentication dialogs
 defaultPref("network.auth.subresource-http-auth-allow", 1);
 
@@ -1910,4 +1913,4 @@ defaultPref("media.videocontrols.picture-in-picture.video-toggle.always-show", t
 lockPref("browser.safebrowsing.downloads.remote.block_potentially_unwanted", false);
 lockPref("browser.safebrowsing.downloads.remote.block_uncommon", false);
 
-lockPref("rischio.fox", "151.8");
+lockPref("rischio.fox", "151.9");
