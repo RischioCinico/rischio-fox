@@ -1651,13 +1651,13 @@ defaultPref("browser.newtabpage.activity-stream.widgets.system.enabled", true); 
 defaultPref("browser.newtabpage.activity-stream.widgets.system.focusTimer.enabled", true);
 defaultPref("browser.newtabpage.activity-stream.widgets.system.lists.enabled", true);
 
-// Disable AccuWeather
-defaultPref("browser.newtabpage.activity-stream.showWeather", false);
+// AccuWeather
+defaultPref("browser.newtabpage.activity-stream.showWeather", true);
 defaultPref("browser.newtabpage.activity-stream.system.showWeather", true);
 defaultPref("browser.newtabpage.activity-stream.widgets.system.weather.enabled", true);
 defaultPref("browser.newtabpage.activity-stream.widgets.system.weatherForecast.enabled", true);
-defaultPref("browser.newtabpage.activity-stream.widgets.weather.enabled", false);
-defaultPref("browser.newtabpage.activity-stream.widgets.weatherForecast.enabled", false);
+defaultPref("browser.newtabpage.activity-stream.widgets.weather.enabled", true);
+defaultPref("browser.newtabpage.activity-stream.widgets.weatherForecast.enabled", true);
 
 // Disable Contile (Sponsored tiles)
 lockPref("browser.newtabpage.activity-stream.sov.name", "");
@@ -1897,4 +1897,4 @@ defaultPref("browser.tabs.notes.enabled", true);
 // [RF] Abilita il pulsante Picture-in-Picture su tutti i video
 defaultPref("media.videocontrols.picture-in-picture.video-toggle.always-show", true);
 
-lockPref("rischio.fox", "151.4");
+lockPref("rischio.fox", "151.5");
