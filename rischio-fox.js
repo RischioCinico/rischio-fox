@@ -35,7 +35,7 @@ INDICE:
    023: PRIVACY
    024: SECURITY
    025: MISC
-   
+   026: DEBUGGING
 */
 
 /* -----------------------------------------------------------------------------------
@@ -1299,6 +1299,427 @@ defaultPref("security.tls.grease_http3_enable", true);
 // Prevent Safe Mode from automatically starting
 defaultPref("toolkit.startup.max_resumed_crashes", -1);
 
+/* -----------------------------------------------------------------------------------
+   026: DEBUGGING
+   ----------------------------------------------------------------------------------- */
+
+// Allow inspecting the browser chrome by default
+defaultPref("devtools.chrome.enabled", true);
+defaultPref("devtools.selfxss.count", 5);
+
+// Allow inspecting/debugging local tabs from `about:debugging`
+defaultPref("devtools.aboutdebugging.local-tab-debugging", true);
+
+// "Beautify" HTML content upon copy to the clipboard by default
+defaultPref("devtools.markup.beautifyOnCopy", true);
+
+// Disable annoying "A simpler highlighter can be enabled in the settings..." banner when using developer tools
+defaultPref("devtools.inspector.simple-highlighters.message-dismissed", true);
+
+// Disable annoying "Firefox Profiler is now integrated into Developer Tools" banner when opening the performance panel
+defaultPref("devtools.performance.new-panel-onboarding", false);
+
+// Disable automatic bracket/quote closing
+defaultPref("devtools.editor.autoclosebrackets", false);
+
+// Disable editor onboarding
+defaultPref("devtools.webconsole.input.editorOnboarding", false);
+
+// Disable pausing on debugger statements
+defaultPref("devtools.debugger.pause-on-debugger-statement", false);
+
+// Disable the performance panel intro
+defaultPref("devtools.performance.popup.intro-displayed", true);
+
+// Disable truncation of DOM attributes in the inspector
+defaultPref("devtools.markup.collapseAttributes", false);
+
+// Display content scripts injected by extensions when debugging
+defaultPref("devtools.debugger.show-content-scripts", true);
+
+// Display native anonymous content in the inspector
+defaultPref("devtools.inspector.showAllAnonymousContent", true);
+
+// Display web console timestamps
+defaultPref("devtools.webconsole.timestampMessages", true);
+
+// Display responses in the "raw" format in the network monitor
+defaultPref("devtools.netmonitor.ui.default-raw-response", true); 
+
+// Enable DevTools buttons by default
+defaultPref("devtools.command-button-measure.enabled", true);
+defaultPref("devtools.command-button-noautohide.enabled", true);
+defaultPref("devtools.command-button-rulers.enabled", true);
+defaultPref("devtools.command-button-screenshot.enabled", true);
+
+// Enable the Web Console sidebar toggle
+defaultPref("devtools.webconsole.sidebarToggle", true);
+
+// Pretty print code when debugging by default
+defaultPref("devtools.debugger.auto-pretty-print", true);
+
+// Prevent automatically clearing log messages after page reloads/navigation
+defaultPref("devtools.netmonitor.persistlog", true);
+defaultPref("devtools.webconsole.persistlog", true); 
+
+// Prevent logging URLs in Reader errors
+defaultPref("reader.errors.includeURLs", false);
+
+// Prevent WebDriver from overriding preferences
+defaultPref("remote.prefs.recommended", false);
+
+// Significantly reduce input history
+defaultPref("devtools.webconsole.inputHistoryCount", 10);
+
+// Set Browser/Error Console scope to "Multiprocess" instead of "Parent process only" by default
+defaultPref("devtools.browsertoolbox.scope", "everything");
+
+// Show default/browser styles in the Inspector by default
+defaultPref("devtools.inspector.showUserAgentStyles", true);
+
+// Unbreak debugging if `localhost` can't be looked up via DNS
+defaultPref("devtools.debugger.chrome-debugging-host", "127.0.0.1"); 
+
+// Wrap lines when debugging
+defaultPref("devtools.debugger.ui.editor-wrapping", true);
+
+// Wrap lines when viewing the source of webpages (via `view-source:`)
+defaultPref("view_source.wrap_long_lines", true);
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
@@ -1532,4 +1953,4 @@ defaultPref("browser.tabs.notes.enabled", true);
    FINE
    ----------------------------------------------------------------------------------- */
 
-lockPref("rischio.fox", "150.27");
+lockPref("rischio.fox", "150.28");
