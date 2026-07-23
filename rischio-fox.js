@@ -34,6 +34,7 @@ INDICE:
    022: PRIVACY + SECURITY
    023: PRIVACY
    024: SECURITY
+   025: MISC
    
 */
 
@@ -1270,12 +1271,37 @@ defaultPref("network.cookie.sameSite.schemeful", true);
 // Protect against MIME Exploits
 defaultPref("security.block_fileuri_script_with_wrong_mime", true);
 
+/* -----------------------------------------------------------------------------------
+   025: MISC
+   ----------------------------------------------------------------------------------- */
+
+// Block websites from prompting to display notifications by default
+defaultPref("permissions.default.desktop-notification", 2);
+
+// Disable captive portal detection and connectivity checks
+defaultPref("network.captive-portal-service.enabled", false);
+defaultPref("network.connectivity-service.DNSv4.domain", "");
+defaultPref("network.connectivity-service.DNSv6.domain", "");
+defaultPref("network.connectivity-service.enabled", false);
+
+// Disable Firefox's "Reset/Refresh Profile" prompt
+lockPref("browser.disableResetPrompt", true);
+
+// Disable keyboard locking
+defaultPref("dom.fullscreen.keyboard_lock.enabled", false); 
+
+// Disable network connectivity status monitoring
+defaultPref("network.manage-offline-status", false);
+
+// Enable GREASE (Generate Random Extensions And Sustain Extensibility)
+defaultPref("security.tls.grease_http3_enable", true);
+
+// Prevent Safe Mode from automatically starting
+defaultPref("toolkit.startup.max_resumed_crashes", -1);
 
 
 
 
-         
-   
 /* ----------------------------------------------------------------------------------- */
 
 // [0802] Disabilita suggerimenti sponsorizzati
@@ -1506,4 +1532,4 @@ defaultPref("browser.tabs.notes.enabled", true);
    FINE
    ----------------------------------------------------------------------------------- */
 
-lockPref("rischio.fox", "150.26");
+lockPref("rischio.fox", "150.27");
