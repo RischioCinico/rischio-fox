@@ -53,157 +53,157 @@ defaultPref("toolkit.aboutLogging.uploadProfileToCloud", false);
 defaultPref("toolkit.aboutLogging.uploadProfileUrl", "");
 
 // Disable Browser Search/Usage Telemetry metrics
-defaultPref("browser.engagement.ctrlTab.has-used", true);
-defaultPref("browser.engagement.downloads-button.has-used", true);
-defaultPref("browser.engagement.fxa-toolbar-menu-button.has-used", true);
-defaultPref("browser.engagement.home-button.has-used", true);
-defaultPref("browser.engagement.library-button.has-used", true);
-defaultPref("browser.engagement.sidebar-button.has-used", true);
-defaultPref("browser.engagement.total_uri_count.pbm", false);
-defaultPref("browser.engagement.search_counts.pbm", false);
-defaultPref("browser.search.totalSearches", 100);
+lockPref("browser.engagement.ctrlTab.has-used", true);
+lockPref("browser.engagement.downloads-button.has-used", true);
+lockPref("browser.engagement.fxa-toolbar-menu-button.has-used", true);
+lockPref("browser.engagement.home-button.has-used", true);
+lockPref("browser.engagement.library-button.has-used", true);
+lockPref("browser.engagement.sidebar-button.has-used", true);
+lockPref("browser.engagement.total_uri_count.pbm", false);
+lockPref("browser.engagement.search_counts.pbm", false);
+lockPref("browser.search.totalSearches", 100);
 
 // Disable Coverage
-defaultPref("toolkit.coverage.enabled", false);
-defaultPref("toolkit.coverage.endpoint.base", "");
+lockPref("toolkit.coverage.enabled", false);
+lockPref("toolkit.coverage.endpoint.base", "");
 defaultPref("toolkit.coverage.log-level", 70);
-defaultPref("toolkit.coverage.opt-out", true);
+lockPref("toolkit.coverage.opt-out", true);
 
 // Disable crash reporting
-defaultPref("breakpad.reportURL", "");
-defaultPref("browser.crashReports.onDemand", false);
-defaultPref("browser.crashReports.requestedNeverShowAgain", true);
-defaultPref("dom.ipc.tabs.createKillHardCrashReports", false);
-defaultPref("toolkit.crashreporter.include_context_heap", false);
-defaultPref("browser.crashReports.unsubmittedCheck.autoSubmit2", false);
-defaultPref("browser.crashReports.unsubmittedCheck.enabled", false);
-defaultPref("browser.crashReports.cleanupCheck.enabled", false);
-defaultPref("browser.tabs.crashReporting.includeURL", false);
-defaultPref("browser.tabs.crashReporting.sendReport", false);
+lockPref("breakpad.reportURL", "");
+lockPref("browser.crashReports.onDemand", false);
+lockPref("browser.crashReports.requestedNeverShowAgain", true);
+lockPref("dom.ipc.tabs.createKillHardCrashReports", false);
+lockPref("toolkit.crashreporter.include_context_heap", false);
+lockPref("browser.crashReports.unsubmittedCheck.autoSubmit2", false);
+lockPref("browser.crashReports.unsubmittedCheck.enabled", false);
+lockPref("browser.crashReports.cleanupCheck.enabled", false);
+lockPref("browser.tabs.crashReporting.includeURL", false);
+lockPref("browser.tabs.crashReporting.sendReport", false);
 
 // Disable data reporting and telemetry
 clearPref("app.update.lastUpdateTime.glean-addons-daily");
-defaultPref("browser.safebrowsing.features.emailtracking.datacollection.update", false);
-defaultPref("captchadetection.actor.enabled", false);
-defaultPref("captchadetection.hasUnsubmittedData", false);
+lockPref("browser.safebrowsing.features.emailtracking.datacollection.update", false);
+lockPref("captchadetection.actor.enabled", false);
+lockPref("captchadetection.hasUnsubmittedData", false);
 defaultPref("captchadetection.loglevel", "Off");
-defaultPref("datareporting.dau.cachedUsageProfileID", "beefbeef-beef-beef-beef-beeefbeefbee");
-defaultPref("datareporting.dau.cachedUsageProfileGroupID", "b0bacafe-b0ba-cafe-b0ba-cafeb0bacafe");
-defaultPref("datareporting.healthreport.uploadEnabled", false);
-defaultPref("datareporting.policy.dataSubmissionEnabled", false);
-defaultPref("datareporting.policy.dataSubmissionPolicyBypassNotification", true);
-defaultPref("datareporting.policy.firstRunURL", "");
-defaultPref("datareporting.usage.uploadEnabled", false);
-defaultPref("dom.security.unexpected_system_load_telemetry_enabled", false);
-defaultPref("extensions.dataCollectionPermissions.enabled", false);
-defaultPref("extensions.gleanPingAddons.daily.interval", 2147483647);
-defaultPref("extensions.gleanPingAddons.updated.delay", 2147483647);
-defaultPref("extensions.gleanPingAddons.updated.idleTimeout", 2147483647);
-defaultPref("extensions.gleanPingAddons.updated.testing", false);
-defaultPref("extensions.telemetry.EnvironmentAddonBuilder", false);
-defaultPref("network.jar.record_failure_reason", false);
-defaultPref("network.traffic_analyzer.enabled", false);
-defaultPref("nimbus.telemetry.targetingContextEnabled", false);
-defaultPref("privacy.trackingprotection.emailtracking.data_collection.enabled", false);
-defaultPref("telemetry.fog.artifact_build", false);
-defaultPref("telemetry.fog.test.activity_limit", -1);
-defaultPref("telemetry.fog.test.inactivity_limit", -1);
-defaultPref("telemetry.fog.init_on_shutdown", false);
-defaultPref("telemetry.fog.test.localhost_port", 70000);
-defaultPref("telemetry.glean.internal.finalInactive", false);
-defaultPref("telemetry.glean.internal.maxPingsPerMinute", 0);
-defaultPref("telemetry.number_of_site_origin.min_interval", 2147483647);
-defaultPref("toolkit.content-background-hang-monitor.disabled", true);
-defaultPref("toolkit.profiles.newProfileSubmitted", true);
-defaultPref("toolkit.telemetry.archive.enabled", false);
-defaultPref("toolkit.telemetry.bhrPing.enabled", false);
-defaultPref("toolkit.telemetry.cachedClientID", "c0ffeec0-ffee-c0ff-eec0-ffeec0ffeec0");
-defaultPref("toolkit.telemetry.cachedProfileGroupID", "decafdec-afde-cafd-ecaf-decafdecafde");
-defaultPref("toolkit.telemetry.collectInterval", 2147483647);
-defaultPref("toolkit.telemetry.dap.helper.hpke", "");
-defaultPref("toolkit.telemetry.dap.helper.url", "");
-defaultPref("toolkit.telemetry.dap.leader.hpke", "");
-defaultPref("toolkit.telemetry.dap.leader.url", "");
+lockPref("datareporting.dau.cachedUsageProfileID", "beefbeef-beef-beef-beef-beeefbeefbee");
+lockPref("datareporting.dau.cachedUsageProfileGroupID", "b0bacafe-b0ba-cafe-b0ba-cafeb0bacafe");
+lockPref("datareporting.healthreport.uploadEnabled", false);
+lockPref("datareporting.policy.dataSubmissionEnabled", false);
+lockPref("datareporting.policy.dataSubmissionPolicyBypassNotification", true);
+lockPref("datareporting.policy.firstRunURL", "");
+lockPref("datareporting.usage.uploadEnabled", false);
+lockPref("dom.security.unexpected_system_load_telemetry_enabled", false);
+lockPref("extensions.dataCollectionPermissions.enabled", false);
+lockPref("extensions.gleanPingAddons.daily.interval", 2147483647);
+lockPref("extensions.gleanPingAddons.updated.delay", 2147483647);
+lockPref("extensions.gleanPingAddons.updated.idleTimeout", 2147483647);
+lockPref("extensions.gleanPingAddons.updated.testing", false);
+lockPref("extensions.telemetry.EnvironmentAddonBuilder", false);
+lockPref("network.jar.record_failure_reason", false);
+lockPref("network.traffic_analyzer.enabled", false);
+lockPref("nimbus.telemetry.targetingContextEnabled", false);
+lockPref("privacy.trackingprotection.emailtracking.data_collection.enabled", false);
+lockPref("telemetry.fog.artifact_build", false);
+lockPref("telemetry.fog.test.activity_limit", -1);
+lockPref("telemetry.fog.test.inactivity_limit", -1);
+lockPref("telemetry.fog.init_on_shutdown", false);
+lockPref("telemetry.fog.test.localhost_port", 70000);
+lockPref("telemetry.glean.internal.finalInactive", false);
+lockPref("telemetry.glean.internal.maxPingsPerMinute", 0);
+lockPref("telemetry.number_of_site_origin.min_interval", 2147483647);
+lockPref("toolkit.content-background-hang-monitor.disabled", true);
+lockPref("toolkit.profiles.newProfileSubmitted", true);
+lockPref("toolkit.telemetry.archive.enabled", false);
+lockPref("toolkit.telemetry.bhrPing.enabled", false);
+lockPref("toolkit.telemetry.cachedClientID", "c0ffeec0-ffee-c0ff-eec0-ffeec0ffeec0");
+lockPref("toolkit.telemetry.cachedProfileGroupID", "decafdec-afde-cafd-ecaf-decafdecafde");
+lockPref("toolkit.telemetry.collectInterval", 2147483647);
+lockPref("toolkit.telemetry.dap.helper.hpke", "");
+lockPref("toolkit.telemetry.dap.helper.url", "");
+lockPref("toolkit.telemetry.dap.leader.hpke", "");
+lockPref("toolkit.telemetry.dap.leader.url", "");
 defaultPref("toolkit.telemetry.dap.logLevel", "Off");
-defaultPref("toolkit.telemetry.dap_enabled", false);
-defaultPref("toolkit.telemetry.dap_task1_enabled", false);
-defaultPref("toolkit.telemetry.dap_task1_taskid", "");
-defaultPref("toolkit.telemetry.dap_visit_counting_enabled", false);
-defaultPref("toolkit.telemetry.dap_visit_counting_experiment_list", "[]");
+lockPref("toolkit.telemetry.dap_enabled", false);
+lockPref("toolkit.telemetry.dap_task1_enabled", false);
+lockPref("toolkit.telemetry.dap_task1_taskid", "");
+lockPref("toolkit.telemetry.dap_visit_counting_enabled", false);
+lockPref("toolkit.telemetry.dap_visit_counting_experiment_list", "[]");
 defaultPref("toolkit.telemetry.debugSlowSql", false);
-defaultPref("toolkit.telemetry.enabled", false);
-defaultPref("toolkit.telemetry.eventping.maximumFrequency", 2147483647);
-defaultPref("toolkit.telemetry.eventping.minimumFrequency", 2147483647);
-defaultPref("toolkit.telemetry.firstShutdownPing.enabled", false);
-defaultPref("toolkit.telemetry.healthping.enabled", false);
-defaultPref("toolkit.telemetry.initDelay", 2147483647);
+lockPref("toolkit.telemetry.enabled", false);
+lockPref("toolkit.telemetry.eventping.maximumFrequency", 2147483647);
+lockPref("toolkit.telemetry.eventping.minimumFrequency", 2147483647);
+lockPref("toolkit.telemetry.firstShutdownPing.enabled", false);
+lockPref("toolkit.telemetry.healthping.enabled", false);
+lockPref("toolkit.telemetry.initDelay", 2147483647);
 defaultPref("toolkit.telemetry.log.dump", false);
 defaultPref("toolkit.telemetry.log.level", "Fatal");
-defaultPref("toolkit.telemetry.minSubsessionLength", 2147483647);
-defaultPref("toolkit.telemetry.newProfilePing.delay", 2147483647);
-defaultPref("toolkit.telemetry.newProfilePing.enabled", false);
-defaultPref("toolkit.telemetry.overrideUpdateChannel", "release");
-defaultPref("toolkit.telemetry.previousBuildID", "");
-defaultPref("toolkit.telemetry.reportingpolicy.firstRun", false);
-defaultPref("toolkit.telemetry.scheduler.idleTickInterval", 2147483647);
-defaultPref("toolkit.telemetry.scheduler.tickInterval", 2147483647);
-defaultPref("toolkit.telemetry.send.overrideOfficialCheck", false);
-defaultPref("toolkit.telemetry.server", "data;");
-defaultPref("toolkit.telemetry.server_owner", "");
-defaultPref("toolkit.telemetry.shutdownPingSender.backgroundtask.enabled", false);
-defaultPref("toolkit.telemetry.shutdownPingSender.enabled", false);
-defaultPref("toolkit.telemetry.shutdownPingSender.enabledFirstSession", false);
-defaultPref("toolkit.telemetry.testing.disableFuzzingDelay", false);
-defaultPref("toolkit.telemetry.testing.overridePreRelease", false);
-defaultPref("toolkit.telemetry.testing.overrideProductsCheck", false);
-defaultPref("toolkit.telemetry.testing.suppressPingsender", true);
+lockPref("toolkit.telemetry.minSubsessionLength", 2147483647);
+lockPref("toolkit.telemetry.newProfilePing.delay", 2147483647);
+lockPref("toolkit.telemetry.newProfilePing.enabled", false);
+lockPref("toolkit.telemetry.overrideUpdateChannel", "release");
+lockPref("toolkit.telemetry.previousBuildID", "");
+lockPref("toolkit.telemetry.reportingpolicy.firstRun", false);
+lockPref("toolkit.telemetry.scheduler.idleTickInterval", 2147483647);
+lockPref("toolkit.telemetry.scheduler.tickInterval", 2147483647);
+lockPref("toolkit.telemetry.send.overrideOfficialCheck", false);
+lockPref("toolkit.telemetry.server", "data;");
+lockPref("toolkit.telemetry.server_owner", "");
+lockPref("toolkit.telemetry.shutdownPingSender.backgroundtask.enabled", false);
+lockPref("toolkit.telemetry.shutdownPingSender.enabled", false);
+lockPref("toolkit.telemetry.shutdownPingSender.enabledFirstSession", false);
+lockPref("toolkit.telemetry.testing.disableFuzzingDelay", false);
+lockPref("toolkit.telemetry.testing.overridePreRelease", false);
+lockPref("toolkit.telemetry.testing.overrideProductsCheck", false);
+lockPref("toolkit.telemetry.testing.suppressPingsender", true);
 defaultPref("toolkit.telemetry.translations.logLevel", "Off");
-defaultPref("toolkit.telemetry.unified", false);
-defaultPref("toolkit.telemetry.untrustedModulesPing.frequency", 2147483647);
-defaultPref("toolkit.telemetry.updatePing.enabled", false);
-defaultPref("toolkit.telemetry.user_characteristics_ping.current_version", 0);
-defaultPref("toolkit.telemetry.user_characteristics_ping.last_version_sent", 0);
+lockPref("toolkit.telemetry.unified", false);
+lockPref("toolkit.telemetry.untrustedModulesPing.frequency", 2147483647);
+lockPref("toolkit.telemetry.updatePing.enabled", false);
+lockPref("toolkit.telemetry.user_characteristics_ping.current_version", 0);
+lockPref("toolkit.telemetry.user_characteristics_ping.last_version_sent", 0);
 defaultPref("toolkit.telemetry.user_characteristics_ping.logLevel", "Off");
-defaultPref("toolkit.telemetry.user_characteristics_ping.opt-out", true);
-defaultPref("toolkit.telemetry.user_characteristics_ping.send-once", false);
-defaultPref("toolkit.telemetry.user_characteristics_ping.uuid", "");
-defaultPref("urlclassifier.features.emailtracking.datacollection.allowlistTables", "");
-defaultPref("urlclassifier.features.emailtracking.datacollection.blocklistTables", "");
-defaultPref("telemetry.fog.aboutGlean.debugTag", "");
-defaultPref("browser.aboutwelcome.entrypoint", "");
+lockPref("toolkit.telemetry.user_characteristics_ping.opt-out", true);
+lockPref("toolkit.telemetry.user_characteristics_ping.send-once", false);
+lockPref("toolkit.telemetry.user_characteristics_ping.uuid", "");
+lockPref("urlclassifier.features.emailtracking.datacollection.allowlistTables", "");
+lockPref("urlclassifier.features.emailtracking.datacollection.blocklistTables", "");
+lockPref("telemetry.fog.aboutGlean.debugTag", "");
+lockPref("browser.aboutwelcome.entrypoint", "");
 
 // Disable experimentation and A/B testing
-defaultPref("app.normandy.run_interval_seconds", 0);
-defaultPref("app.shield.optoutstudies.enabled", false);
-defaultPref("extensions.formautofill.addresses.experiments.enabled", false);
+lockPref("app.normandy.run_interval_seconds", 0);
+lockPref("app.shield.optoutstudies.enabled", false);
+lockPref("extensions.formautofill.addresses.experiments.enabled", false);
 defaultPref("messaging-system.rsexperimentloader.collection_id", "");
 defaultPref("nimbus.appId", "");
-defaultPref("nimbus.firstUpdateComplete", true);
-defaultPref("nimbus.profileId", "");
-defaultPref("nimbus.profilesdatastoreservice.enabled", false);
-defaultPref("nimbus.profilesdatastoreservice.read.enabled", false);
-defaultPref("nimbus.profilesdatastoreservice.sync.enabled", false);
-defaultPref("nimbus.rollouts.enabled", false);
-defaultPref("app.normandy.api_url", "");
-defaultPref("app.normandy.enabled", false);
-defaultPref("app.normandy.experiments.lazy_classify", true);
-defaultPref("app.normandy.first_run", false);
-defaultPref("app.normandy.last_seen_buildid", "");
+lockPref("nimbus.firstUpdateComplete", true);
+lockPref("nimbus.profileId", "");
+lockPref("nimbus.profilesdatastoreservice.enabled", false);
+lockPref("nimbus.profilesdatastoreservice.read.enabled", false);
+lockPref("nimbus.profilesdatastoreservice.sync.enabled", false);
+lockPref("nimbus.rollouts.enabled", false);
+lockPref("app.normandy.api_url", "");
+lockPref("app.normandy.enabled", false);
+lockPref("app.normandy.experiments.lazy_classify", true);
+lockPref("app.normandy.first_run", false);
+lockPref("app.normandy.last_seen_buildid", "");
 defaultPref("app.normandy.logging.level", 70);
-defaultPref("app.normandy.user_id", "");
-defaultPref("browser.aboutwelcome.experimentsGate.enabled", false);
-defaultPref("browser.aboutwelcome.experimentsGate.skipSplashIfLoaded", true);
+lockPref("app.normandy.user_id", "");
+lockPref("browser.aboutwelcome.experimentsGate.enabled", false);
+lockPref("browser.aboutwelcome.experimentsGate.skipSplashIfLoaded", true);
 
 // Disable notification permission telemetry
-defaultPref("permissions.desktop-notification.telemetry.siteCategories", "{}");
+lockPref("permissions.desktop-notification.telemetry.siteCategories", "{}");
 
 // Disable Origin Trials
 defaultPref("dom.origin-trials.enabled", false);
 
 // Remove partner attribution
-defaultPref("app.distributor", "");
-defaultPref("app.distributor.channel", "");
-defaultPref("mozilla.partner.id", "");
+lockPref("app.distributor", "");
+lockPref("app.distributor.channel", "");
+lockPref("mozilla.partner.id", "");
 
 /* -----------------------------------------------------------------------------------
    002: MOZILLA
@@ -223,8 +223,8 @@ defaultPref("browser.aboutwelcome.enabled", false);
 defaultPref("browser.aboutwelcome.log", "off");
 defaultPref("browser.rights.3.shown", true);
 defaultPref("browser.startup.firstrunSkipsHomepage", false);
-defaultPref("browser.startup.homepage_override.buildID", "20100101");
-defaultPref("browser.startup.homepage_override.mstone", "ignore");
+lockPref("browser.startup.homepage_override.buildID", "20100101");
+lockPref("browser.startup.homepage_override.mstone", "ignore");
 defaultPref("browser.startup.upgradeDialog.enabled", false);
 defaultPref("browser.suppress_first_window_animation", true);
 defaultPref("startup.homepage_override_nimbus_disable_wnp", true);
@@ -234,33 +234,33 @@ defaultPref("startup.homepage_welcome_url", "");
 defaultPref("startup.homepage_welcome_url.additional", "");
 
 // Disable add-on/feature recommendations
-defaultPref("browser.discovery.enabled", false);
+lockPref("browser.discovery.enabled", false);
 defaultPref("browser.translations.mostRecentTargetLanguages", "en-US");
-defaultPref("browser.translations.panelShown", true);
+lockPref("browser.translations.panelShown", true);
 defaultPref("extensions.getAddons.browseAddons", "");
 defaultPref("extensions.getAddons.discovery.api_url", "data;");
 defaultPref("extensions.getAddons.showPane", false);
 defaultPref("extensions.htmlaboutaddons.recommendations.enabled", false);
-defaultPref("extensions.recommendations.hideNotice", true);
+lockPref("extensions.recommendations.hideNotice", true);
 defaultPref("extensions.recommendations.themeRecommendationUrl", "");
 defaultPref("extensions.ui.lastCategory", "addons://list/extension");
 defaultPref("extensions.webservice.discoverURL", "");
-defaultPref("browser.dataFeatureRecommendations.enabled", false);
+lockPref("browser.dataFeatureRecommendations.enabled", false);
 defaultPref("browser.discovery.sites", "");
-defaultPref("browser.newtabpage.activity-stream.asrouter.userprefs.cfr.addons", false);
-defaultPref("browser.newtabpage.activity-stream.asrouter.userprefs.cfr.features", false);
+lockPref("browser.newtabpage.activity-stream.asrouter.userprefs.cfr.addons", false);
+lockPref("browser.newtabpage.activity-stream.asrouter.userprefs.cfr.features", false);
 
 // Disable DoH Rollout/heuristics/steering
 defaultPref("doh-rollout._testing", false);
-defaultPref("doh-rollout.disable-heuristics", true);
-defaultPref("doh-rollout.doneFirstRun", true);
-defaultPref("doh-rollout.enabled", false);
-defaultPref("doh-rollout.provider-steering.enabled", false);
-defaultPref("doh-rollout.provider-steering.provider-list", "");
-defaultPref("doh-rollout.self-enabled", false);
-defaultPref("doh-rollout.skipHeuristicsCheck", true);
-defaultPref("doh-rollout.trr-selection.enabled", false);
-defaultPref("doh-rollout.trr-selection.provider-list", "");
+lockPref("doh-rollout.disable-heuristics", true);
+lockPref("doh-rollout.doneFirstRun", true);
+lockPref("doh-rollout.enabled", false);
+lockPref("doh-rollout.provider-steering.enabled", false);
+lockPref("doh-rollout.provider-steering.provider-list", "");
+lockPref("doh-rollout.self-enabled", false);
+lockPref("doh-rollout.skipHeuristicsCheck", true);
+lockPref("doh-rollout.trr-selection.enabled", false);
+lockPref("doh-rollout.trr-selection.provider-list", "");
 
 // Disable DoH performance measurements
 defaultPref("doh-rollout.trrRace.canonicalDomain", "");
@@ -285,86 +285,87 @@ defaultPref("signon.recipes.remoteRecipes.enabled", false);
 defaultPref("browser.firefoxbridge.enabled", false);
 
 // Disable (no-op) the Firefox/Gecko Profiler
-defaultPref("devtools.performance.popup.feature-flag", false);
+lockPref("devtools.performance.popup.feature-flag", false);
 defaultPref("devtools.performance.recording.ui-base-url", "http://localhost:3");
-defaultPref("logging.config.output_type", "file");
+lockPref("logging.config.output_type", "file");
 defaultPref("toolkit.aboutProcesses.showProfilerIcons", false);
 defaultPref("devtools.performance.enabled", false);
 
 // Disable the Firefox Messaging System
 defaultPref("app.update.background.messaging.targeting.snapshot.intervalSec", -1);
-defaultPref("browser.newtabpage.activity-stream.asrouter.providers.cfr", "null");
-defaultPref("browser.newtabpage.activity-stream.asrouter.providers.cfr-fxa", "null");
-defaultPref("browser.newtabpage.activity-stream.asrouter.providers.message-groups", "null");
-defaultPref("browser.newtabpage.activity-stream.asrouter.providers.messaging-experiments", "null");
-defaultPref("browser.newtabpage.activity-stream.asrouter.providers.onboarding", "null");
-defaultPref("browser.newtabpage.activity-stream.asrouter.providers.snippets", "null");
-defaultPref("browser.newtabpage.activity-stream.feeds.newtabmessaging", false);
-defaultPref("messaging-system.askForFeedback", false);
+lockPref("browser.newtabpage.activity-stream.asrouter.providers.cfr", "null");
+lockPref("browser.newtabpage.activity-stream.asrouter.providers.cfr-fxa", "null");
+lockPref("browser.newtabpage.activity-stream.asrouter.providers.message-groups", "null");
+lockPref("browser.newtabpage.activity-stream.asrouter.providers.messaging-experiments", "null");
+lockPref("browser.newtabpage.activity-stream.asrouter.providers.onboarding", "null");
+lockPref("browser.newtabpage.activity-stream.asrouter.providers.snippets", "null");
+lockPref("browser.newtabpage.activity-stream.feeds.newtabmessaging", false);
+lockPref("messaging-system.askForFeedback", false);
 defaultPref("messaging-system.log", "off");
-defaultPref("messaging-system.profile.messagingProfileId", -1);
+lockPref("messaging-system.profile.messagingProfileId", -1);
 defaultPref("messaging-system.profile.singleProfileMessaging.disable", false);
 
 // Disable import of Mozilla's default bookmarks
-defaultPref("browser.bookmarks.restore_default_bookmarks", false);
-defaultPref("browser.bookmarks.testing.skipDefaultBookmarksImport", true);
+lockPref("browser.bookmarks.restore_default_bookmarks", false);
+lockPref("browser.bookmarks.testing.skipDefaultBookmarksImport", true);
 defaultPref("browser.places.importBookmarksHTML", true);
 
 // Disable import of Mozilla's default protocol handlers
-defaultPref("gecko.handlerService.defaultHandlersVersion", 2147483647);
+lockPref("gecko.handlerService.defaultHandlersVersion", 2147483647);
 
 // Disable "Interest-based Content Relevance Ranking and Personalization"
-defaultPref("toolkit.contentRelevancy.enabled", false);
-defaultPref("toolkit.contentRelevancy.ingestEnabled", false);
+lockPref("toolkit.contentRelevancy.enabled", false);
+lockPref("toolkit.contentRelevancy.ingestEnabled", false);
 defaultPref("toolkit.contentRelevancy.log", false);
 
 // Disable Mozilla nags/promotions
-defaultPref("browser.promo.cookiebanners.enabled", false);
+lockPref("browser.aboutpdf.promo.dismissed", true);
+lockPref("browser.promo.cookiebanners.enabled", false);
 defaultPref("browser.promo.focus.disallowed_regions", "xx");
-defaultPref("browser.promo.focus.enabled", false);
-defaultPref("browser.promo.pin.enabled", false);
-defaultPref("browser.send_to_device_locales", "");
+lockPref("browser.promo.focus.enabled", false);
+lockPref("browser.promo.pin.enabled", false);
+lockPref("browser.send_to_device_locales", "");
 defaultPref("browser.vpn_promo.disallowed_regions", "xx");
-defaultPref("browser.vpn_promo.enabled", false);
-defaultPref("pdfjs.enableNewBadge", false);
-defaultPref("privacy.trackingprotection.allow_list.hasUserInteractedWithETPSettings", true);
-defaultPref("browser.contentblocking.report.hide_vpn_banner", true);
-defaultPref("browser.contentblocking.report.lockwise.enabled", false);
-defaultPref("browser.contentblocking.report.mobile-android.url", "");
-defaultPref("browser.contentblocking.report.mobile-ios.url", "");
-defaultPref("browser.contentblocking.report.monitor.enabled", false);
-defaultPref("browser.contentblocking.report.show_mobile_app", false);
-defaultPref("browser.contentblocking.report.vpn.url", "");
-defaultPref("browser.contentblocking.report.vpn-android.url", "");
-defaultPref("browser.contentblocking.report.vpn-ios.url", "");
-defaultPref("browser.contentblocking.report.vpn-promo.url", "");
-defaultPref("browser.ipProtection.blockIPProtectionCallouts", true);
-defaultPref("browser.ipProtection.locationButtonBadgeDismissed", true);
-defaultPref("browser.ipProtection.openedPanelWithLocation", true);
-defaultPref("browser.ipProtection.productVpn.endpoint", "");
-defaultPref("browser.ipProtection.upgradeNotAvailable", true);
-defaultPref("browser.protections_panel.infoMessage.seen", true);
-defaultPref("browser.settings-redesign.promo.dismissed", true);
-defaultPref("browser.tabs.notes.newBadge.enabled", false);
-defaultPref("browser.tabs.splitview.hasUsed", true);
-defaultPref("cookiebanners.ui.desktop.showCallout", false);
-defaultPref("identity.fxaccounts.toolbar.accessed", true);
-defaultPref("sidebar.verticalTabs.dragToPinPromo.dismissed", true);
-defaultPref("trailhead.firstrun.didHandleCampaignAction", true);
+lockPref("browser.vpn_promo.enabled", false);
+lockPref("pdfjs.enableNewBadge", false);
+lockPref("privacy.trackingprotection.allow_list.hasUserInteractedWithETPSettings", true);
+lockPref("browser.contentblocking.report.hide_vpn_banner", true);
+lockPref("browser.contentblocking.report.lockwise.enabled", false);
+lockPref("browser.contentblocking.report.mobile-android.url", "");
+lockPref("browser.contentblocking.report.mobile-ios.url", "");
+lockPref("browser.contentblocking.report.monitor.enabled", false);
+lockPref("browser.contentblocking.report.show_mobile_app", false);
+lockPref("browser.contentblocking.report.vpn.url", "");
+lockPref("browser.contentblocking.report.vpn-android.url", "");
+lockPref("browser.contentblocking.report.vpn-ios.url", "");
+lockPref("browser.contentblocking.report.vpn-promo.url", "");
+lockPref("browser.ipProtection.blockIPProtectionCallouts", true);
+lockPref("browser.ipProtection.locationButtonBadgeDismissed", true);
+lockPref("browser.ipProtection.openedPanelWithLocation", true);
+lockPref("browser.ipProtection.productVpn.endpoint", "");
+lockPref("browser.ipProtection.upgradeNotAvailable", true);
+lockPref("browser.protections_panel.infoMessage.seen", true);
+lockPref("browser.settings-redesign.promo.dismissed", true);
+lockPref("browser.tabs.notes.newBadge.enabled", false);
+lockPref("browser.tabs.splitview.hasUsed", true);
+lockPref("cookiebanners.ui.desktop.showCallout", false);
+lockPref("identity.fxaccounts.toolbar.accessed", true);
+lockPref("sidebar.verticalTabs.dragToPinPromo.dismissed", true);
+lockPref("trailhead.firstrun.didHandleCampaignAction", true);
 
 // Disable Mozilla.UITour
-defaultPref("browser.uitour.enabled", false);
+lockPref("browser.uitour.enabled", false);
 defaultPref("browser.uitour.loglevel", "Off");
-defaultPref("browser.uitour.requireSecure", true);
-defaultPref("browser.uitour.surveyDuration", 0);
-defaultPref("browser.uitour.testingOrigins", "");
-defaultPref("browser.uitour.url", "");
+lockPref("browser.uitour.requireSecure", true);
+lockPref("browser.uitour.surveyDuration", 0);
+lockPref("browser.uitour.testingOrigins", "");
+lockPref("browser.uitour.url", "");
 
 // Disable "Privacy-Preserving Attribution"
-defaultPref("dom.origin-trials.private-attribution.state", 2);
-defaultPref("dom.private-attribution.submission.enabled", false);
-defaultPref("toolkit.shopping.ohttpConfigURL", "");
-defaultPref("toolkit.shopping.ohttpRelayURL", "");
+lockPref("dom.origin-trials.private-attribution.state", 2);
+lockPref("dom.private-attribution.submission.enabled", false);
+lockPref("toolkit.shopping.ohttpConfigURL", "");
+lockPref("toolkit.shopping.ohttpRelayURL", "");
 
 // Disable Remote Permissions
 defaultPref("permissions.manager.remote.enabled", false);
@@ -373,7 +374,7 @@ defaultPref("permissions.manager.remote.enabled", false);
 defaultPref("services.settings.preview_enabled", false);
 
 // Disable search attribution
-defaultPref("browser.search.param.search_rich_suggestions", "");
+lockPref("browser.search.param.search_rich_suggestions", "");
 
 // Disable the Web Compatibility Reporter
 defaultPref("extensions.webcompat-reporter.enabled", false);
@@ -383,7 +384,7 @@ defaultPref("ui.new-webcompat-reporter.enabled", false);
 defaultPref("ui.new-webcompat-reporter.new-report-endpoint", "https://phoenix.celenity.dev/issues");
 
 // Hide the "More from Mozilla" settings tab (`about:preferences#moreFromMozilla`)
-defaultPref("browser.preferences.moreFromMozilla", false);
+lockPref("browser.preferences.moreFromMozilla", false);
 
 // Opt out of add-on metadata updates (This prevents themes from displaying previews in `about:addons`)
 defaultPref("extensions.getAddons.cache.enabled", false);
@@ -401,18 +402,18 @@ defaultPref("browser.shell.checkDefaultPDF.silencedByUser", true);
 defaultPref("browser.shell.setDefaultPDFHandler.onlyReplaceBrowsers", false);
 
 // Skip Mozilla's `Privacy Notice` and `Terms of Use`
-defaultPref("datareporting.policy.dataSubmissionPolicyAcceptedVersion", 999);
-defaultPref("datareporting.policy.dataSubmissionPolicyNotifiedTime", "32503679999000");
-defaultPref("termsofuse.acceptedDate", "32503679999000");
-defaultPref("termsofuse.acceptedVersion", 999);
-defaultPref("termsofuse.bypassNotification", true);
+lockPref("datareporting.policy.dataSubmissionPolicyAcceptedVersion", 999);
+lockPref("datareporting.policy.dataSubmissionPolicyNotifiedTime", "32503679999000");
+lockPref("termsofuse.acceptedDate", "32503679999000");
+lockPref("termsofuse.acceptedVersion", 999);
+lockPref("termsofuse.bypassNotification", true);
 
 /* -----------------------------------------------------------------------------------
    003: TRACKING PROTECTION
    ----------------------------------------------------------------------------------- */
 
 // Abilita eccezioni per evitare problemi minori
-defaultPref("privacy.trackingprotection.allow_list.convenience.enabled", true);
+lockPref("privacy.trackingprotection.allow_list.convenience.enabled", true);
 
 // Enable ETP Strict
 lockPref("browser.contentblocking.category", "strict"); 
@@ -496,7 +497,7 @@ defaultPref("network.http.referer.disallowCrossSiteRelaxingDefault.top_navigatio
 
 // Enable exceptions required to avoid major breakage
 defaultPref("privacy.trackingprotection.allow_list.baseline.enabled", true);
-defaultPref("privacy.trackingprotection.allow_list.hasMigratedCategoryPrefs", true);
+lockPref("privacy.trackingprotection.allow_list.hasMigratedCategoryPrefs", true);
 
 // Lower the network priority of known trackers (if not blocked for whatever reason...)
 defaultPref("privacy.trackingprotection.lower_network_priority", true);
@@ -632,8 +633,8 @@ defaultPref("security.insecure_field_warning.ignore_local_ip_address", false);
 defaultPref("security.osclientcerts.autoload", false);
 
 // Disable OCSP revocation checks
-defaultPref("security.OCSP.enabled", 0);
-defaultPref("security.OCSP.require", false);
+lockPref("security.OCSP.enabled", 0);
+lockPref("security.OCSP.require", false);
 
 // Disable sending background HTTP requests to websites that do not respond quickly to check if they support HTTPS
 defaultPref("dom.security.https_only_mode_send_http_background_request", false);
@@ -663,8 +664,8 @@ defaultPref("dom.security.https_only_mode", true);
 defaultPref("dom.security.https_only_mode.upgrade_local", true);
 defaultPref("dom.security.https_only_mode_pbm", true);
 defaultPref("dom.security.https_only_mode_error_page_user_suggestions", true);
-defaultPref("dom.security.https_only_mode", true);
-defaultPref("dom.security.https_only_mode_pbm", true);
+lockPref("dom.security.https_only_mode", true);
+lockPref("dom.security.https_only_mode_pbm", true);
 
 // Enable MITM Detection
 defaultPref("security.certerrors.mitm.priming.enabled", true);
@@ -754,8 +755,8 @@ defaultPref("browser.urlbar.showSearchSuggestionsFirst", false);
 defaultPref("browser.urlbar.suggest.searches", false);
 
 // Disable search tips
-defaultPref("browser.urlbar.tipShownCount.searchTip_onboard", 999);
-defaultPref("browser.urlbar.tipShownCount.searchTip_redirect", 999);
+lockPref("browser.urlbar.tipShownCount.searchTip_onboard", 999);
+lockPref("browser.urlbar.tipShownCount.searchTip_redirect", 999);
 
 // Disable trending searches
 defaultPref("browser.urlbar.suggest.trending", false);
@@ -964,7 +965,7 @@ defaultPref("network.auth.subresource-http-auth-allow", 1);
 defaultPref("extensions.userContextIsolation.enabled", true);
 
 // Always display "hidden" add-ons at `about:debugging`
-defaultPref("devtools.aboutdebugging.showHiddenAddons", true);
+lockPref("devtools.aboutdebugging.showHiddenAddons", true);
 
 // Disable add-on sideloading
 defaultPref("extensions.autoDisableScopes", 15);
@@ -988,10 +989,10 @@ defaultPref("extensions.webextensions.base-content-security-policy.v3-with-local
 defaultPref("extensions.webextensions.default-content-security-policy", "script-src 'self'; upgrade-insecure-requests;");
 
 // Never allow installing extensions without first prompting the user
-defaultPref("extensions.postDownloadThirdPartyPrompt", false);
+lockPref("extensions.postDownloadThirdPartyPrompt", false);
 defaultPref("xpinstall.whitelist.directRequest", false);
 defaultPref("xpinstall.whitelist.fileRequest", false);
-defaultPref("xpinstall.whitelist.required", true);
+lockPref("xpinstall.whitelist.required", true);
 
 // Only allow installation and updates of extensions using Firefox's built-in certificates
 defaultPref("extensions.install.requireBuiltInCerts", true);
@@ -1118,15 +1119,15 @@ defaultPref("dom.battery.enabled", false);
 defaultPref("beacon.enabled", false);
 
 // Disable Content Analysis SDK
-defaultPref("browser.contentanalysis.default_result", 0);
-defaultPref("browser.contentanalysis.enabled", false);
-defaultPref("browser.contentanalysis.interception_point.clipboard.enabled", false);
-defaultPref("browser.contentanalysis.interception_point.drag_and_drop.enabled", false);
-defaultPref("browser.contentanalysis.interception_point.file_upload.enabled", false);
-defaultPref("browser.contentanalysis.interception_point.print.enabled", false);
-defaultPref("browser.contentanalysis.max_connections", 0);
-defaultPref("browser.contentanalysis.show_blocked_result", true);
-defaultPref("browser.contentanalysis.silent_notifications", false);
+lockPref("browser.contentanalysis.default_result", 0);
+lockPref("browser.contentanalysis.enabled", false);
+lockPref("browser.contentanalysis.interception_point.clipboard.enabled", false);
+lockPref("browser.contentanalysis.interception_point.drag_and_drop.enabled", false);
+lockPref("browser.contentanalysis.interception_point.file_upload.enabled", false);
+lockPref("browser.contentanalysis.interception_point.print.enabled", false);
+lockPref("browser.contentanalysis.max_connections", 0);
+lockPref("browser.contentanalysis.show_blocked_result", true);
+lockPref("browser.contentanalysis.silent_notifications", false);
 
 // Disable Native Messaging
 defaultPref("webextensions.native-messaging.max-input-message-bytes", 0);
@@ -1301,7 +1302,7 @@ defaultPref("network.connectivity-service.DNSv6.domain", "");
 defaultPref("network.connectivity-service.enabled", false);
 
 // Disable Firefox's "Reset/Refresh Profile" prompt
-defaultPref("browser.disableResetPrompt", true);
+lockPref("browser.disableResetPrompt", true);
 
 // Disable keyboard locking
 defaultPref("dom.fullscreen.keyboard_lock.enabled", false); 
@@ -1659,13 +1660,13 @@ defaultPref("browser.newtabpage.activity-stream.widgets.weather.enabled", false)
 defaultPref("browser.newtabpage.activity-stream.widgets.weatherForecast.enabled", false);
 
 // Disable Contile (Sponsored tiles)
-defaultPref("browser.newtabpage.activity-stream.sov.name", "");
-defaultPref("browser.topsites.contile.enabled", false);
-defaultPref("browser.topsites.contile.endpoint", "");
-defaultPref("browser.topsites.contile.sov.enabled", false);
+lockPref("browser.newtabpage.activity-stream.sov.name", "");
+lockPref("browser.topsites.contile.enabled", false);
+lockPref("browser.topsites.contile.endpoint", "");
+lockPref("browser.topsites.contile.sov.enabled", false);
 
 // Disable Fakespot
-defaultPref("browser.newtabpage.activity-stream.discoverystream.contextualContent.feeds", "need_to_know");
+lockPref("browser.newtabpage.activity-stream.discoverystream.contextualContent.feeds", "need_to_know");
 
 // Disable fetching favicons remotely from Mozila's remote Tippy Top service
 defaultPref("browser.newtabpage.activity-stream.feeds.favicon", false);
@@ -1683,35 +1684,35 @@ defaultPref("browser.topsites.useRemoteSetting", false);
 defaultPref("browser.newtabpage.activity-stream.fxaccounts.endpoint", "");
 
 // Disable MARS (Mozilla Ad Routing Service)
-defaultPref("browser.newtabpage.activity-stream.discoverystream.reportAds.enabled", false);
-defaultPref("browser.newtabpage.activity-stream.discoverystream.sections.contextualAds.locale-config", "");
-defaultPref("browser.newtabpage.activity-stream.discoverystream.sections.contextualAds.region-config", "");
-defaultPref("browser.newtabpage.activity-stream.feeds.adsfeed", false);
-defaultPref("browser.newtabpage.activity-stream.unifiedAds.adsFeed.spocs.enabled", false);
-defaultPref("browser.newtabpage.activity-stream.unifiedAds.adsFeed.tiles.enabled", false);
-defaultPref("browser.newtabpage.activity-stream.unifiedAds.enabled", false);
-defaultPref("browser.newtabpage.activity-stream.unifiedAds.endpoint", "");
-defaultPref("browser.newtabpage.activity-stream.unifiedAds.spocs.enabled", false);
-defaultPref("browser.newtabpage.activity-stream.unifiedAds.tiles.enabled", false);
+lockPref("browser.newtabpage.activity-stream.discoverystream.reportAds.enabled", false);
+lockPref("browser.newtabpage.activity-stream.discoverystream.sections.contextualAds.locale-config", "");
+lockPref("browser.newtabpage.activity-stream.discoverystream.sections.contextualAds.region-config", "");
+lockPref("browser.newtabpage.activity-stream.feeds.adsfeed", false);
+lockPref("browser.newtabpage.activity-stream.unifiedAds.adsFeed.spocs.enabled", false);
+lockPref("browser.newtabpage.activity-stream.unifiedAds.adsFeed.tiles.enabled", false);
+lockPref("browser.newtabpage.activity-stream.unifiedAds.enabled", false);
+lockPref("browser.newtabpage.activity-stream.unifiedAds.endpoint", "");
+lockPref("browser.newtabpage.activity-stream.unifiedAds.spocs.enabled", false);
+lockPref("browser.newtabpage.activity-stream.unifiedAds.tiles.enabled", false);
 
 // Disable new tab attribution
-defaultPref("browser.newtabpage.activity-stream.feeds.newtabattributionfeed", false);
-defaultPref("dap.ohttp.hpke", "");
-defaultPref("dap.ohttp.relayURL", "");
+lockPref("browser.newtabpage.activity-stream.feeds.newtabattributionfeed", false);
+lockPref("dap.ohttp.hpke", "");
+lockPref("dap.ohttp.relayURL", "");
 
 // Disable onboarding
-defaultPref("browser.newtabpage.activity-stream.discoverystream.topicSelection.onboarding.maybeDisplay", false);
+lockPref("browser.newtabpage.activity-stream.discoverystream.topicSelection.onboarding.maybeDisplay", false);
 
 // Disable Pocket sponsored stories
-defaultPref("browser.newtabpage.activity-stream.discoverystream.placements.spocs", "");
-defaultPref("browser.newtabpage.activity-stream.discoverystream.placements.spocs.counts", "");
-defaultPref("browser.newtabpage.activity-stream.discoverystream.endpointSpocsClear", "");
-defaultPref("browser.newtabpage.activity-stream.discoverystream.region-spocs-config", "");
-defaultPref("browser.newtabpage.activity-stream.showSponsored", false);
-defaultPref("browser.newtabpage.activity-stream.system.showSponsored", false);
+lockPref("browser.newtabpage.activity-stream.discoverystream.placements.spocs", "");
+lockPref("browser.newtabpage.activity-stream.discoverystream.placements.spocs.counts", "");
+lockPref("browser.newtabpage.activity-stream.discoverystream.endpointSpocsClear", "");
+lockPref("browser.newtabpage.activity-stream.discoverystream.region-spocs-config", "");
+lockPref("browser.newtabpage.activity-stream.showSponsored", false);
+lockPref("browser.newtabpage.activity-stream.system.showSponsored", false);
 
 // Disable the promotion card
-defaultPref("browser.newtabpage.activity-stream.discoverystream.promoCard.visible", false);
+lockPref("browser.newtabpage.activity-stream.discoverystream.promoCard.visible", false);
 
 // Disable recent activity
 defaultPref("browser.newtabpage.activity-stream.section.highlights.includeBookmarks", false);
@@ -1722,22 +1723,22 @@ defaultPref("browser.newtabpage.activity-stream.section.highlights.includeVisite
 defaultPref("browser.newtabpage.activity-stream.feeds.smartshortcutsfeed", false);
 
 // Disable sponsored shortcuts
-defaultPref("browser.newtabpage.activity-stream.showSponsoredTopSites", false);
+lockPref("browser.newtabpage.activity-stream.showSponsoredTopSites", false);
 
 // Disable stories
 defaultPref("browser.newtabpage.activity-stream.feeds.section.topstories", false);
 
 // Disable telemetry
-defaultPref("browser.newtabpage.activity-stream.feeds.telemetry", false);
-defaultPref("browser.newtabpage.activity-stream.telemetry", false);
-defaultPref("browser.newtabpage.activity-stream.telemetry.privatePing.enabled", false);
-defaultPref("browser.newtabpage.activity-stream.telemetry.structuredIngestion.endpoint", "");
-defaultPref("browser.newtabpage.ping.enabled", false);
-defaultPref("browser.places.interactions.enabled", false);
-defaultPref("browser.search.serpEventTelemetryCategorization.enabled", false);
+lockPref("browser.newtabpage.activity-stream.feeds.telemetry", false);
+lockPref("browser.newtabpage.activity-stream.telemetry", false);
+lockPref("browser.newtabpage.activity-stream.telemetry.privatePing.enabled", false);
+lockPref("browser.newtabpage.activity-stream.telemetry.structuredIngestion.endpoint", "");
+lockPref("browser.newtabpage.ping.enabled", false);
+lockPref("browser.places.interactions.enabled", false);
+lockPref("browser.search.serpEventTelemetryCategorization.enabled", false);
 
 // Disable wallpaper promotions
-defaultPref("browser.newtabpage.activity-stream.newtabWallpapers.highlightDismissed", true);
+lockPref("browser.newtabpage.activity-stream.newtabWallpapers.highlightDismissed", true);
 
 // Enable wallpapers, but disable fetching them remotely 
 defaultPref("browser.newtabpage.activity-stream.feeds.wallpaperfeed", false);
@@ -1748,11 +1749,11 @@ defaultPref("browser.newtabpage.activity-stream.newtabWallpapers.wallpaper", "so
 defaultPref("browser.startup.page", 3);
 
 // Hide checkboxes to enable sponsored shortcuts and Pocket sponsored stories
-defaultPref("browser.newtabpage.activity-stream.showSponsoredCheckboxes", false);
+lockPref("browser.newtabpage.activity-stream.showSponsoredCheckboxes", false);
 
 // Hide the Firefox logo
-defaultPref("browser.newtabpage.activity-stream.hideLogo", true);
-defaultPref("browser.newtabpage.activity-stream.logowordmark.alwaysVisible", false);
+lockPref("browser.newtabpage.activity-stream.hideLogo", true);
+lockPref("browser.newtabpage.activity-stream.logowordmark.alwaysVisible", false);
 
 // If Merino is enabled, use OHTTP for superior privacy
 defaultPref("browser.newtabpage.activity-stream.discoverystream.merino-provider.ohttp.enabled", true);
@@ -1762,15 +1763,15 @@ defaultPref("browser.newtabpage.activity-stream.discoverystream.sections.interes
 defaultPref("browser.newtabpage.activity-stream.discoverystream.topicSelection.enabled", true);
 
 // If stories are enabled, disable "personalization"
-defaultPref("browser.newtabpage.activity-stream.discoverystream.sections.personalization.inferred.locale-config", "");
-defaultPref("browser.newtabpage.activity-stream.discoverystream.sections.personalization.inferred.user.enabled", false);
-defaultPref("browser.newtabpage.activity-stream.discoverystream.shortcuts.personalization.enabled", false);
-defaultPref("browser.newtabpage.activity-stream.feeds.inferredpersonalizationfeed", false);
+lockPref("browser.newtabpage.activity-stream.discoverystream.sections.personalization.inferred.locale-config", "");
+lockPref("browser.newtabpage.activity-stream.discoverystream.sections.personalization.inferred.user.enabled", false);
+lockPref("browser.newtabpage.activity-stream.discoverystream.shortcuts.personalization.enabled", false);
+lockPref("browser.newtabpage.activity-stream.feeds.inferredpersonalizationfeed", false);
 
 // If stories are enabled, disable impression tracking
 lockPref("browser.newtabpage.activity-stream.impressionId", "{}");
-defaultPref("browser.newtabpage.activity-stream.feeds.section.topstories.rec.impressions", "{}"); // [NO-ANDROID] [NO-MAIL] [HIDDEN] https://searchfox.org/mozilla-central/rev/cc4985b7/browser/extensions/newtab/lib/TopStoriesFeed.sys.mjs#33
-defaultPref("browser.newtabpage.activity-stream.feeds.section.topstories.spoc.impressions", "{}"); // [NO-ANDROID] [NO-MAIL] [HIDDEN] https://searchfox.org/mozilla-central/rev/cc4985b7/browser/extensions/newtab/lib/TopStoriesFeed.sys.mjs#27
+lockPref("browser.newtabpage.activity-stream.feeds.section.topstories.rec.impressions", "{}"); // [NO-ANDROID] [NO-MAIL] [HIDDEN] https://searchfox.org/mozilla-central/rev/cc4985b7/browser/extensions/newtab/lib/TopStoriesFeed.sys.mjs#33
+lockPref("browser.newtabpage.activity-stream.feeds.section.topstories.spoc.impressions", "{}"); // [NO-ANDROID] [NO-MAIL] [HIDDEN] https://searchfox.org/mozilla-central/rev/cc4985b7/browser/extensions/newtab/lib/TopStoriesFeed.sys.mjs#27
 
 // If stories are enabled, enable the new sections UI 
 defaultPref("browser.newtabpage.activity-stream.discoverystream.sections.cards.enabled", false);
@@ -1794,17 +1795,17 @@ defaultPref("browser.urlbar.suggest.weather", false);
 defaultPref("browser.urlbar.weather.featureGate", true);
 
 // Disable adMarketplace (AMP) suggestions
-defaultPref("browser.urlbar.amp.featureGate", false);
-defaultPref("browser.urlbar.suggest.amp", false);
+lockPref("browser.urlbar.amp.featureGate", false);
+lockPref("browser.urlbar.suggest.amp", false);
 
 // Disable AMO suggestions
 defaultPref("browser.urlbar.addons.featureGate", true);
 defaultPref("browser.urlbar.suggest.addons", false);
 
 // Disable "Exposure" telemetry
-defaultPref("browser.urlbar.exposureResults", "");
-defaultPref("browser.urlbar.keywordExposureResults", "");
-defaultPref("browser.urlbar.showExposureResults", false);
+lockPref("browser.urlbar.exposureResults", "");
+lockPref("browser.urlbar.keywordExposureResults", "");
+lockPref("browser.urlbar.showExposureResults", false);
 
 // Disable Fakespot suggestions
 defaultPref("browser.urlbar.fakespot.featureGate", false);
@@ -1826,7 +1827,7 @@ defaultPref("browser.urlbar.mdn.featureGate", true);
 defaultPref("browser.urlbar.suggest.mdn", false);
 
 // Disable nags to opt-in to "real-time suggestions"
-defaultPref("browser.urlbar.suggest.realtimeOptIn", false);
+lockPref("browser.urlbar.suggest.realtimeOptIn", false);
 
 // Disable online suggestions
 defaultPref("browser.urlbar.quicksuggest.online.available", false);
@@ -1836,8 +1837,8 @@ defaultPref("browser.urlbar.suggest.quicksuggest.all", false);
 defaultPref("browser.urlbar.suggest.quicksuggest.nonsponsored", false);
 
 // Disable partner links/attribution
-defaultPref("browser.partnerlink.attributionURL", "");
-defaultPref("browser.partnerlink.campaign.topsites", "");
+lockPref("browser.partnerlink.attributionURL", "");
+lockPref("browser.partnerlink.campaign.topsites", "");
 
 // Disable Polygon (stock market) suggestions
 defaultPref("browser.urlbar.market.featureGate", true);
@@ -1847,7 +1848,7 @@ defaultPref("browser.urlbar.suggest.market", false);
 defaultPref("browser.urlbar.groupLabels.enabled", false);
 
 // Disable sponsored suggestions
-defaultPref("browser.urlbar.sponsoredTopSites", false);
+lockPref("browser.urlbar.sponsoredTopSites", false);
 defaultPref("browser.urlbar.suggest.quicksuggest.sponsored", false);
 
 // Disable sports suggestions
@@ -1855,7 +1856,7 @@ defaultPref("browser.urlbar.sports.featureGate", true);
 defaultPref("browser.urlbar.suggest.sports", false);
 
 // Disable telemetry
-defaultPref("browser.urlbar.quicksuggest.contextualOptIn", false);
+lockPref("browser.urlbar.quicksuggest.contextualOptIn", false);
 
 // Disable Wikipedia suggestions , but allow users to enable them if desired
 defaultPref("browser.urlbar.suggest.wikipedia", false);
@@ -1896,4 +1897,4 @@ defaultPref("browser.tabs.notes.enabled", true);
 // [RF] Abilita il pulsante Picture-in-Picture su tutti i video
 defaultPref("media.videocontrols.picture-in-picture.video-toggle.always-show", true);
 
-lockPref("rischio.fox", "151.3");
+lockPref("rischio.fox", "151.4");
