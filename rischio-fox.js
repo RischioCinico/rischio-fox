@@ -26,6 +26,8 @@ INDICE:
    013: MEDIA
    014: ATTACK SURFACE
    015: PASSWORDS
+   016: EXTENSIONS
+   
 */
 
 /* -----------------------------------------------------------------------------------
@@ -932,6 +934,68 @@ defaultPref("editor.truncate_user_pastes", false);
 // Prevent cross-origin sub-resources from opening HTTP authentication dialogs
 defaultPref("network.auth.subresource-http-auth-allow", 1);
 
+/* -----------------------------------------------------------------------------------
+   016: EXTENSIONS
+   ----------------------------------------------------------------------------------- */
+
+// Allow enabling/disabling extensions per-container
+defaultPref("extensions.userContextIsolation.enabled", true);
+
+// Always display "hidden" add-ons at `about:debugging`
+defaultPref("devtools.aboutdebugging.showHiddenAddons", true);
+
+/// Disable add-on sideloading
+defaultPref("extensions.autoDisableScopes", 15);
+defaultPref("extensions.enabledScopes", 5);
+defaultPref("extensions.installDistroAddons", false);
+defaultPref("extensions.sideloadScopes", 0);
+
+// Disable the AMO Abuse Report API
+defaultPref("extensions.addonAbuseReport.url", "");
+
+// Enable Add-on Distribution Control (Install Origins)
+defaultPref("extensions.install_origins.enabled", true);
+
+// Harden CSP policy
+defaultPref("extensions.webextensions.base-content-security-policy", "script-src 'self' 'unsafe-inline'; upgrade-insecure-requests;");
+defaultPref("extensions.webextensions.base-content-security-policy.v3", "script-src 'self'; upgrade-insecure-requests;");
+defaultPref("extensions.webextensions.base-content-security-policy.v3-with-localhost", "script-src 'self'; upgrade-insecure-requests;");
+defaultPref("extensions.webextensions.default-content-security-policy", "script-src 'self'; upgrade-insecure-requests;");
+
+// Never allow installing extensions without first prompting the user
+lockPref("extensions.postDownloadThirdPartyPrompt", false);
+defaultPref("xpinstall.whitelist.directRequest", false);
+defaultPref("xpinstall.whitelist.fileRequest", false);
+lockPref("xpinstall.whitelist.required", true);
+
+// Only allow installation and updates of extensions using Firefox's built-in certificates by default
+defaultPref("extensions.install.requireBuiltInCerts", true);
+defaultPref("extensions.update.requireBuiltInCerts", true);
+
+// Prevent automatically granting MV3 extensions optional host permissions by default
+defaultPref("extensions.originControls.grantByDefault", false);
+
+// Prevent extensions from opening pop-ups to remote websites
+defaultPref("extensions.manifestV2.actionsPopupURLRestricted", true); 
+
+// Prevent extensions from opening pop-ups without user interaction
+defaultPref("extensions.openPopupWithoutUserGesture.enabled", false);
+
+// Prevent extensions from using the Gecko Profiler
+defaultPref("extensions.geckoProfiler.acceptedExtensionIds", "");
+
+// Prevent recommending search extensions
+defaultPref("browser.search.searchEnginesURL", "");
+
+// Require resources loaded by MV2 extensions to be specified under web_accessible_resources in the extension's manifest
+defaultPref("extensions.content_web_accessible.enabled", true);
+
+// Require secure origins to install add-ons
+defaultPref("extensions.install.requireSecureOrigin", true);
+
+
+
+
 /* ----------------------------------------------------------------------------------- */
 
 // [0610] Blocca "Hyperlink Auditing" (click tracking)
@@ -1038,9 +1102,6 @@ lockPref("browser.safebrowsing.downloads.remote.block_potentially_unwanted", tru
 lockPref("browser.safebrowsing.downloads.remote.block_uncommon", true);
 
 
-/* -----------------------------------------------------------------------------------
-   [1200] CONNESSIONI SICURE
-   ----------------------------------------------------------------------------------- */
 
 // [1272] Mostra informazioni dettagliate sulle pagine di errore
 lockPref("browser.xul.error_pages.expert_bad_cert", true);
@@ -1091,13 +1152,6 @@ defaultPref("privacy.antitracking.isolateContentScriptResources", true);
 
 // [2640] Disabilita Content Security Policy
 lockPref("security.csp.reporting.enabled", false);
-
-// [2660] Limita cartelle consentite per le estensioni
-lockPref("extensions.enabledScopes", 5); // [Nascosta]
-lockPref("extensions.autoDisableScopes", 15);
-
-// [2661] Mostra sempre prompt di installazione
-lockPref("extensions.postDownloadThirdPartyPrompt", false);
 
 // [PF] Disabilita ricerca aggiornamenti
 lockPref("app.update.auto", false); // [LINUX]
@@ -1227,4 +1281,4 @@ defaultPref("browser.tabs.notes.enabled", true);
    FINE
    ----------------------------------------------------------------------------------- */
 
-lockPref("rischio.fox", "150.20");
+lockPref("rischio.fox", "150.21");
