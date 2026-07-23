@@ -614,8 +614,8 @@ defaultPref("browser.download.alwaysOpenPanel", true);
 defaultPref("browser.download.manager.addToRecentDocs", false);
 
 // Prompt before downloading files
-defaultPref("browser.download.always_ask_before_handling_new_types", true);
-defaultPref("browser.download.useDownloadDir", false);
+lockPref("browser.download.always_ask_before_handling_new_types", true);
+lockPref("browser.download.useDownloadDir", false);
 
 /* -----------------------------------------------------------------------------------
    007: HTTP(S)
@@ -1732,7 +1732,7 @@ lockPref("browser.newtabpage.activity-stream.discoverystream.promoCard.visible",
 
 // Disable recent activity
 defaultPref("browser.newtabpage.activity-stream.section.highlights.includeBookmarks", false);
-defaultPref("browser.newtabpage.activity-stream.section.highlights.includeDownloads", false);
+defaultPref("browser.newtabpage.activity-stream.section.highlights.include", false);
 defaultPref("browser.newtabpage.activity-stream.section.highlights.includeVisited", false);
 
 // Disable "smart" shortcut personalization
@@ -1915,5 +1915,6 @@ defaultPref("media.videocontrols.picture-in-picture.video-toggle.always-show", t
 
 lockPref("browser.safebrowsing.downloads.remote.block_potentially_unwanted", false);
 lockPref("browser.safebrowsing.downloads.remote.block_uncommon", false);
+lockPref("browser.download.deletePrivate.chosen", false);
 
-lockPref("rischio.fox", "151.12");
+lockPref("rischio.fox", "151.13");
