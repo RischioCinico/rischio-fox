@@ -1219,19 +1219,63 @@ defaultPref("network.http.referer.XOriginTrimmingPolicy", 2);
    024: SECURITY
    ----------------------------------------------------------------------------------- */
 
+// Block privileged `about:` pages from loading remote scripts
+defaultPref("security.disallow_privilegedabout_remote_script_loads", true);
+
+// Decrease the lifetime of privileged processes for `about:` pages
+defaultPref("dom.ipc.keepProcessesAlive.privilegedabout", 0);
+
+// Disable the Document Picture-in-Picture API
+defaultPref("dom.documentpip.enabled", false);
+
+// Disable GNOME Integration
+defaultPref("browser.gnome-search-provider.enabled", false); // [LINUX]
+   
+// Enable the Cross-Origin-Embedder Policy Header
+defaultPref("dom.origin-trials.coep-credentialless.state", 1);
+
+// Enable GPU Sandboxing
+defaultPref("security.sandbox.gpu.level", 2);
+
+// Enable the Integrity-Policy header
+defaultPref("security.integrity_policy.stylesheet.enabled", true);
+
+// Enable Origin-keyed agent clustering by default
+defaultPref("dom.origin_agent_cluster.default", true);
+
+// Enforce Per-site Process Isolation + isolate all websites
+defaultPref("fission.highValue.login.monitor", true);
+defaultPref("gfx.webrender.all", true);
+
+// Enable Spectre mitigations for isolated content
+defaultPref("javascript.options.spectre.disable_for_isolated_content", false);
+
+// Enable WebAssembly Memory Control
+defaultPref("javascript.options.wasm_memory_control", true);
+
+// Prefer to create new content processes, instead of re-using existing ones
+defaultPref("browser.tabs.remote.subframesPreferUsed", false);
+
+// Prevent marking JIT code pages as both writable and executable, only one or the other...
+lockPref("general.config.sandbox_enabled", true);
+
+// Prevent remoteTypes from triggering process switches they shouldn't be able to...
+defaultPref("browser.tabs.remote.enforceRemoteTypeRestrictions", true);
+
+// Protect against CSRF Attacks
+defaultPref("network.cookie.sameSite.laxByDefault", true);
+defaultPref("network.cookie.sameSite.laxByDefaultWarningsForBeta", true);
+defaultPref("network.cookie.sameSite.schemeful", true);
+
+// Protect against MIME Exploits
+defaultPref("security.block_fileuri_script_with_wrong_mime", true);
 
 
 
 
 
-
-
-
-
-
-
-
-
+         
+   
 /* ----------------------------------------------------------------------------------- */
 
 // [0802] Disabilita suggerimenti sponsorizzati
@@ -1462,4 +1506,4 @@ defaultPref("browser.tabs.notes.enabled", true);
    FINE
    ----------------------------------------------------------------------------------- */
 
-lockPref("rischio.fox", "150.25");
+lockPref("rischio.fox", "150.26");
