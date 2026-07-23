@@ -41,7 +41,7 @@ INDICE:
    029: UX
    030: PERFORMANCE
    032: HOME
-   033: FIREFOX SUGGEST
+   033: SUGGESTIONS
 */
 
 /* -----------------------------------------------------------------------------------
@@ -1783,7 +1783,7 @@ defaultPref("browser.newtabpage.activity-stream.improvesearch.topSiteSearchShort
 defaultPref("browser.newtabpage.pinned", "[{\"url\":\"https://www.youtube.com/\",\"label\":\"YouTube\"},{\"url\":\"https://www.reddit.com/\",\"label\":\"Reddit\"},{\"url\":\"https://mail.google.com/mail/u/0/?hl=it#inbox\",\"label\":\"Gmail\"},{\"url\":\"https://addons.mozilla.org/it/firefox/\",\"label\":\"Estensioni\"},{\"url\":\"https://wiki.archlinux.org/title/List_of_applications\",\"label\":\"Applicazioni\"},{\"url\":\"https://it.wikipedia.org/wiki/Pagina_principale\",\"label\":\"Wikipedia\"},{\"url\":\"https://github.com/\",\"label\":\"GitHub\"},{\"url\":\"https://www.diretta.it/\",\"label\":\"Diretta\"}]");
 
 /* -----------------------------------------------------------------------------------
-   033: FIREFOX SUGGEST
+   033: SUGGESTIONS
    ----------------------------------------------------------------------------------- */
 
 // Disable AccuWeather suggestions
