@@ -1878,4 +1878,22 @@ defaultPref("browser.urlbar.yelp.serviceResultDistinction", true);
    FINE
    ----------------------------------------------------------------------------------- */
 
-lockPref("rischio.fox", "151.2");
+// [PF] Impedisce al puntatore del mouse di nascondersi mentre si digita
+defaultPref("widget.gtk.hide-pointer-while-typing.enabled", false); // [LINUX]
+
+// [PF] Apri le nuove schede in background
+defaultPref("browser.tabs.loadDivertedInBackground", true);
+
+// [PF] Apri i segnalibri in background
+defaultPref("browser.tabs.loadBookmarksInBackground", true);
+
+// [PF] Apri le nuove schede subito dopo quella attuale
+defaultPref("browser.tabs.insertAfterCurrent", true);
+
+// [RF] Abilita note per le schede
+defaultPref("browser.tabs.notes.enabled", true);
+
+// [RF] Abilita il pulsante Picture-in-Picture su tutti i video
+defaultPref("media.videocontrols.picture-in-picture.video-toggle.always-show", true);
+
+lockPref("rischio.fox", "151.3");
