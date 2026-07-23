@@ -730,7 +730,7 @@ defaultPref("browser.urlbar.autoFill", false);
 
 // Disable clipboard suggestions
 defaultPref("browser.urlbar.clipboard.featureGate", true);
-defaultPref("browser.urlbar.suggest.clipboard", false);
+lockPref("browser.urlbar.suggest.clipboard", false);
 
 // Disable Firefox's new 'Unified Trust Panel'
 defaultPref("browser.urlbar.trustPanel.featureGate", false);
@@ -743,6 +743,10 @@ defaultPref("browser.urlbar.suggest.quickactions", false);
 
 // Disable the quick actions onboarding
 defaultPref("browser.urlbar.quickactions.timesToShowOnboardingLabel", 0);
+
+// Disable recent search suggestions
+defaultPref("browser.urlbar.recentsearches.featureGate", true);
+lockPref("browser.urlbar.suggest.recentsearches", false);
 
 // Disable search engine suggestions (Tab to search)
 defaultPref("browser.urlbar.suggest.engines", false);
@@ -767,6 +771,9 @@ defaultPref("browser.urlbar.trimURLs", false);
 // Enable the "Search in Private Window" result
 defaultPref("browser.search.separatePrivateDefault.urlbarResult.enabled", true);
 
+// Enable shortcut suggestions by default
+lockPref("browser.urlbar.suggest.topsites", false);
+
 // Ensure UI reflects that the default search engine is set to DuckDuckGo
 defaultPref("browser.urlbar.placeholderName", "DuckDuckGo");
 defaultPref("browser.urlbar.placeholderName.private", "DuckDuckGo");
@@ -778,7 +785,7 @@ defaultPref("browser.urlbar.scotchBonnet.disableOneOffs", false);
 defaultPref("browser.urlbar.untrimOnUserInteraction.featureGate", true);
 
 // Show full URLs instead of search terms
-defaultPref("browser.urlbar.showSearchTerms.enabled", false);
+lockPref("browser.urlbar.showSearchTerms.enabled", false);
 
 /* -----------------------------------------------------------------------------------
    010: DNS
@@ -1825,11 +1832,11 @@ defaultPref("browser.urlbar.suggest.mdn", false);
 lockPref("browser.urlbar.suggest.realtimeOptIn", false);
 
 // Disable online suggestions
-defaultPref("browser.urlbar.quicksuggest.online.available", false);
-defaultPref("browser.urlbar.quicksuggest.online.enabled", false);
-defaultPref("browser.urlbar.quicksuggest.settingsUi", 2);
-defaultPref("browser.urlbar.suggest.quicksuggest.all", false);
-defaultPref("browser.urlbar.suggest.quicksuggest.nonsponsored", false);
+lockPref("browser.urlbar.quicksuggest.online.available", false);
+lockPref("browser.urlbar.quicksuggest.online.enabled", false);
+lockPref("browser.urlbar.quicksuggest.settingsUi", 2);
+lockPref("browser.urlbar.suggest.quicksuggest.all", false);
+lockPref("browser.urlbar.suggest.quicksuggest.nonsponsored", false);
 
 // Disable partner links/attribution
 lockPref("browser.partnerlink.attributionURL", "");
@@ -1892,4 +1899,4 @@ defaultPref("browser.tabs.notes.enabled", true);
 // [RF] Abilita il pulsante Picture-in-Picture su tutti i video
 defaultPref("media.videocontrols.picture-in-picture.video-toggle.always-show", true);
 
-lockPref("rischio.fox", "151.6");
+lockPref("rischio.fox", "151.7");
