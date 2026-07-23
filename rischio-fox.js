@@ -25,6 +25,7 @@ INDICE:
    012: WEBRTC
    013: MEDIA
    014: ATTACK SURFACE
+   015: PASSWORDS
 */
 
 /* -----------------------------------------------------------------------------------
@@ -903,19 +904,33 @@ defaultPref("permissions.default.xr", 2);
 // Disable XSLT
 defaultPref("dom.xslt.enabled", false);
 
+/* -----------------------------------------------------------------------------------
+   015: PASSWORDS
+   ----------------------------------------------------------------------------------- */
 
+// Always display a `reveal password` button in `password` `<input>` types
+defaultPref("layout.forms.reveal-password-button.enabled", true);
 
+// Disable autofill
+defaultPref("signon.autofillForms", false);
 
+// Disable Basic authentication over HTTP
+defaultPref("network.http.basic_http_auth.enabled", false);
 
+// Disable formless capture of log-in credentials
+defaultPref("signon.privateBrowsingCapture.enabled", false);
+defaultPref("signon.formlessCapture.enabled", false);
 
+// Disable Microsoft SSO
+defaultPref("network.http.microsoft-entra-sso.container-enabled.0", false);
+defaultPref("network.http.windows-sso.container-enabled.0", false);
+defaultPref("network.microsoft-sso-authority-list", "");
 
+// Disable password truncation
+defaultPref("editor.truncate_user_pastes", false);
 
-
-
-
-
-
-
+// Prevent cross-origin sub-resources from opening HTTP authentication dialogs
+defaultPref("network.auth.subresource-http-auth-allow", 1);
 
 /* ----------------------------------------------------------------------------------- */
 
@@ -1022,18 +1037,6 @@ lockPref("browser.safebrowsing.downloads.remote.url", "");
 lockPref("browser.safebrowsing.downloads.remote.block_potentially_unwanted", true);
 lockPref("browser.safebrowsing.downloads.remote.block_uncommon", true);
 
-/* -----------------------------------------------------------------------------------
-   [0900] GESTIONE CREDENZIALI
-   ----------------------------------------------------------------------------------- */
-
-// [0903] Disabilita Autofill per maggiore sicurezza
-lockPref("signon.autofillForms", false);
-
-// [0904] Disabilita la cattura credenziali al di fuori dei form di login
-lockPref("signon.formlessCapture.enabled", false);
-
-// [0905] Impedisci che le risorse interne aprano dialoghi di autenticazione HTTP
-lockPref("network.auth.subresource-http-auth-allow", 1);
 
 /* -----------------------------------------------------------------------------------
    [1200] CONNESSIONI SICURE
@@ -1224,4 +1227,4 @@ defaultPref("browser.tabs.notes.enabled", true);
    FINE
    ----------------------------------------------------------------------------------- */
 
-lockPref("rischio.fox", "150.19");
+lockPref("rischio.fox", "150.20");
