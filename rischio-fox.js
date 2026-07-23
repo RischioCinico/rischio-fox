@@ -305,6 +305,9 @@ defaultPref("messaging-system.log", "off");
 lockPref("messaging-system.profile.messagingProfileId", -1);
 defaultPref("messaging-system.profile.singleProfileMessaging.disable", false);
 
+// Disable Firefox Relay by default
+lockPref("signon.firefoxRelay.feature", "available");
+
 // Disable import of Mozilla's default bookmarks
 lockPref("browser.bookmarks.restore_default_bookmarks", false);
 lockPref("browser.bookmarks.testing.skipDefaultBookmarksImport", true);
@@ -496,7 +499,7 @@ defaultPref("network.http.referer.disallowCrossSiteRelaxingDefault.pbmode.top_na
 defaultPref("network.http.referer.disallowCrossSiteRelaxingDefault.top_navigation", true);
 
 // Enable exceptions required to avoid major breakage
-defaultPref("privacy.trackingprotection.allow_list.baseline.enabled", true);
+lockPref("privacy.trackingprotection.allow_list.baseline.enabled", true);
 lockPref("privacy.trackingprotection.allow_list.hasMigratedCategoryPrefs", true);
 
 // Lower the network priority of known trackers (if not blocked for whatever reason...)
@@ -938,7 +941,7 @@ defaultPref("dom.xslt.enabled", false);
 defaultPref("layout.forms.reveal-password-button.enabled", true);
 
 // Disable autofill
-defaultPref("signon.autofillForms", false);
+lockPref("signon.autofillForms", false);
 
 // Disable Basic authentication over HTTP
 defaultPref("network.http.basic_http_auth.enabled", false);
@@ -1099,6 +1102,11 @@ defaultPref("browser.safebrowsing.provider.google.lists.default", "goog-badbinur
 // Enable the Potentially Harmful Application list (when Safe Browsing is enabled)
 defaultPref("urlclassifier.malwareTable", "goog-malware-proto,goog-unwanted-proto,moztest-harmful-simple,moztest-malware-simple,moztest-unwanted-simple,goog-harmful-proto");
 
+// Enable Safe Browsing by default
+lockPref("browser.safebrowsing.downloads.enabled", true);
+lockPref("browser.safebrowsing.malware.enabled", true);
+lockPref("browser.safebrowsing.phishing.enabled", true);
+
 // Prevent sending metadata of downloaded files to Safe Browsing providers
 defaultPref("browser.safebrowsing.downloads.remote.enabled", false);
 
@@ -1212,7 +1220,7 @@ defaultPref("cookiebanners.service.mode.privateBrowsing", 1);
 defaultPref("privacy.donottrackheader.enabled", true);
 
 // Enable Global Privacy Control
-defaultPref("privacy.globalprivacycontrol.enabled", true);
+lockPref("privacy.globalprivacycontrol.enabled", true);
 
 // Enable support for Mozilla IP Protection
 defaultPref("browser.ipProtection.enabled", true);
@@ -1899,4 +1907,7 @@ defaultPref("browser.tabs.notes.enabled", true);
 // [RF] Abilita il pulsante Picture-in-Picture su tutti i video
 defaultPref("media.videocontrols.picture-in-picture.video-toggle.always-show", true);
 
-lockPref("rischio.fox", "151.7");
+lockPref("browser.safebrowsing.downloads.remote.block_potentially_unwanted", false);
+lockPref("browser.safebrowsing.downloads.remote.block_uncommon", false);
+
+lockPref("rischio.fox", "151.8");
