@@ -849,6 +849,9 @@ defaultPref("network.proxy.socks_remote_dns", true);
    012: WEBRTC
    ----------------------------------------------------------------------------------- */
 
+// Allow user to silence notifications when screen sharing
+defaultPref("privacy.webrtc.hideGlobalIndicator", true);
+
 // Disable RTP Control Protocol (RTCP) reception
 defaultPref("media.webrtc.net.force_disable_rtcp_reception", true);
 
@@ -1875,4 +1878,4 @@ defaultPref("browser.urlbar.yelp.serviceResultDistinction", true);
    FINE
    ----------------------------------------------------------------------------------- */
 
-lockPref("rischio.fox", "151.1");
+lockPref("rischio.fox", "151.2");
