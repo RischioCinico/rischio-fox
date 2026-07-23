@@ -30,6 +30,8 @@ INDICE:
    017: AI
    018: GEOLOCATION
    019: PDF
+   020: SAFE BROWSING
+   022: PRIVACY + SECURITY
    
 */
 
@@ -1058,8 +1060,94 @@ defaultPref("pdfjs.sidebarViewOnLoad", 2);
 // Update URL when changing pages
 defaultPref("pdfjs.historyUpdateUrl", true);
 
+/* -----------------------------------------------------------------------------------
+   020: SAFE BROWSING
+   ----------------------------------------------------------------------------------- */
 
+// Disable the legacy (v2.2) Safe Browsing API
+defaultPref("browser.safebrowsing.provider.google.advisoryName", "Google Safe Browsing (Legacy)");
+defaultPref("browser.safebrowsing.provider.google.lists", "disabled");
+defaultPref("browser.safebrowsing.provider.google.lists.default", "goog-badbinurl-shavar,goog-downloadwhite-digest256,goog-phish-shavar,googpub-phish-shavar,goog-malware-shavar,goog-unwanted-shavar");
 
+// Enable the Potentially Harmful Application list (when Safe Browsing is enabled)
+defaultPref("urlclassifier.malwareTable", "goog-malware-proto,goog-unwanted-proto,moztest-harmful-simple,moztest-malware-simple,moztest-unwanted-simple,goog-harmful-proto");
+
+// Prevent sending metadata of downloaded files to Safe Browsing providers
+defaultPref("browser.safebrowsing.downloads.remote.enabled", false);
+
+// Show advanced details on pages blocked by Safe Browsing by default
+defaultPref("browser.xul.error_pages.show_safe_browsing_details_on_load", true);
+
+/* -----------------------------------------------------------------------------------
+   022: PRIVACY + SECURITY
+   ----------------------------------------------------------------------------------- */
+
+// Block background/hidden extension pages from opening file pickers
+defaultPref("browser.disable_pickers_in_hidden_extension_pages", true);
+
+// Disable Accessibility Services
+defaultPref("accessibility.force_disabled", 1);
+
+// Disable automatic updates for OpenSearch engines
+defaultPref("browser.search.update", false);
+
+// Disable Battery API
+defaultPref("dom.battery.enabled", false);
+
+// Disable Beacon API (Navigator.sendBeacon)
+defaultPref("beacon.enabled", false);
+
+// Disable Content Analysis SDK
+lockPref("browser.contentanalysis.default_result", 0);
+lockPref("browser.contentanalysis.enabled", false);
+lockPref("browser.contentanalysis.interception_point.clipboard.enabled", false);
+lockPref("browser.contentanalysis.interception_point.drag_and_drop.enabled", false);
+lockPref("browser.contentanalysis.interception_point.file_upload.enabled", false);
+lockPref("browser.contentanalysis.interception_point.print.enabled", false);
+lockPref("browser.contentanalysis.max_connections", 0);
+lockPref("browser.contentanalysis.show_blocked_result", true);
+lockPref("browser.contentanalysis.silent_notifications", false);
+
+// Disable Native Messaging
+defaultPref("webextensions.native-messaging.max-input-message-bytes", 0);
+defaultPref("webextensions.native-messaging.max-output-message-bytes", 0);
+lockPref("webextensions.native-messaging.max-input-message-bytes.default", 1048576);
+lockPref("webextensions.native-messaging.max-output-message-bytes.default", 2147483647);
+defaultPref("widget.use-xdg-desktop-portal.native-messaging", 0); // [LINUX]
+
+// Disable Reporting API
+defaultPref("dom.reporting.enabled", false);
+defaultPref("dom.reporting.header.enabled", false);
+
+// Disable tab hover previews by default
+defaultPref("browser.tabs.hoverPreview.enabled", false);
+defaultPref("browser.tabs.hoverPreview.showThumbnails", false);
+
+// Disable WebMIDI
+defaultPref("dom.sitepermsaddon-provider.enabled", false);
+defaultPref("permissions.default.midi", 2);
+defaultPref("permissions.default.midi-sysex", 2);
+
+// Enable Local Network Access Restrictions
+defaultPref("network.lna.allow_top_level_navigation", false);
+defaultPref("network.lna.benchmarking-is-local", true);
+defaultPref("network.lna.block_trackers", true);
+defaultPref("network.lna.defer_https_check", false);
+defaultPref("network.lna.etp.enabled", false);
+defaultPref("network.lna.local-network-to-localhost.skip-checks", false);
+defaultPref("network.lna.skip-domains", "secure-login.attwifi.com");
+defaultPref("network.lna.websocket.enabled", true);
+defaultPref("permissions.default.local-network", 2);
+defaultPref("permissions.default.loopback-network", 0);
+
+// Enable Messaging Layer Security (MLS)
+defaultPref("dom.origin-trials.mls.state", 1);
+
+// Enable unused permission expiration
+defaultPref("permissions.expireUnused.enabled", true);
+
+// Prevent exposing XPCOM Components.interfaces to websites
+defaultPref("dom.use_components_shim", false);
 
 /* ----------------------------------------------------------------------------------- */
 
@@ -1136,25 +1224,6 @@ defaultPref("network.captive-portal-service.enabled", false);
 
 // [0361] Disabilita controlli connettività
 defaultPref("network.connectivity-service.enabled", false);
-
-/* -----------------------------------------------------------------------------------
-   [0400] SAFE BROWSING
-   ----------------------------------------------------------------------------------- */
-
-// [0401] Safe Browsing
-lockPref("browser.safebrowsing.malware.enabled", true);
-lockPref("browser.safebrowsing.phishing.enabled", true);
-
-// [0402] Blocca download pericolosi
-lockPref("browser.safebrowsing.downloads.enabled", true);
-
-// [0403] Disabilita controlli remoti
-lockPref("browser.safebrowsing.downloads.remote.enabled", false);
-lockPref("browser.safebrowsing.downloads.remote.url", "");
-
-// [0404] Blocca download di software potenzialmente indesiderato
-lockPref("browser.safebrowsing.downloads.remote.block_potentially_unwanted", true);
-lockPref("browser.safebrowsing.downloads.remote.block_uncommon", true);
 
 
 
@@ -1238,8 +1307,7 @@ lockPref("extensions.formautofill.creditCards.enabled", false);
 // [5018] Limita gli eventi che possono causare pop-up
 defaultPref("dom.popup_allowed_events", "click dblclick");
 
-// [SF] Disabilita i servizi di accessibilità
-defaultPref("accessibility.force_disabled", 1);
+
 defaultPref("devtools.accessibility.enabled", false);
 
 // [SF] Mitigazione attacchi FROST
@@ -1336,4 +1404,4 @@ defaultPref("browser.tabs.notes.enabled", true);
    FINE
    ----------------------------------------------------------------------------------- */
 
-lockPref("rischio.fox", "150.23");
+lockPref("rischio.fox", "150.24");
