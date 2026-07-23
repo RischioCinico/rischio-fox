@@ -32,6 +32,8 @@ INDICE:
    019: PDF
    020: SAFE BROWSING
    022: PRIVACY + SECURITY
+   023: PRIVACY
+   024: SECURITY
    
 */
 
@@ -1149,10 +1151,88 @@ defaultPref("permissions.expireUnused.enabled", true);
 // Prevent exposing XPCOM Components.interfaces to websites
 defaultPref("dom.use_components_shim", false);
 
-/* ----------------------------------------------------------------------------------- */
+/* -----------------------------------------------------------------------------------
+   023: PRIVACY
+   ----------------------------------------------------------------------------------- */
 
-// [0610] Blocca "Hyperlink Auditing" (click tracking)
-lockPref("browser.send_pings", false);
+// Block ports currently known to be abused by Android apps for tracking/fingerprinting
+defaultPref("network.security.ports.banned", "29009, 29010, 30102, 30103, 12387, 12388, 12580, 12581, 12582, 12583, 12584, 12585, 12586, 12587, 12588, 12589, 12590, 12591");
+
+// Disable CSP reporting
+defaultPref("security.csp.reporting.enabled", false);
+
+// Disable Hyperlink Auditing (Click Tracking)
+defaultPref("browser.send_pings.require_same_host", true);
+
+// Disable online speech recognition
+defaultPref("media.webspeech.service.endpoint", "data;");
+
+// Disable storage access heuristics
+defaultPref("dom.storage_access.auto_grants", false);
+defaultPref("privacy.restrict3rdpartystorage.heuristic.opened_window_after_interaction", false);
+defaultPref("privacy.restrict3rdpartystorage.heuristic.recently_visited_time", 0);
+
+// Disable TLS session identifiers
+defaultPref("security.ssl.disable_session_identifiers", true);
+
+// Enable containers
+lockPref("privacy.userContext.enabled", true);
+lockPref("privacy.userContext.ui.enabled", true);
+
+// Enable cookie banner reduction
+defaultPref("cookiebanners.service.mode", 1);
+defaultPref("cookiebanners.service.mode.privateBrowsing", 1);
+
+// Enable Do Not Track
+defaultPref("privacy.donottrackheader.enabled", true);
+
+// Enable Global Privacy Control
+defaultPref("privacy.globalprivacycontrol.enabled", true);
+
+// Enable support for Mozilla IP Protection
+defaultPref("browser.ipProtection.enabled", true);
+defaultPref("browser.ipProtection.added", true);
+defaultPref("browser.ipProtection.features.siteExceptions", true);
+
+// Isolate permissions per container
+defaultPref("permissions.isolateBy.userContext", true);
+
+// Isolate resources (ex. referrers and cookies) injected by extensions
+defaultPref("privacy.antitracking.isolateContentScriptResources", true);
+
+// Limit maximum cookie lifetime to 6 months/180 days
+defaultPref("network.cookie.maxageCap", 15552000);
+
+// Prevent Firefox from automatically guessing which container to open an external link in
+defaultPref("browser.link.force_default_user_context_id_for_external_opens", true);
+
+// Prevent third parties from setting cookies unless the third party already has cookies as a first party
+defaultPref("privacy.dynamic_firstparty.limitForeign", true);
+
+// Strip tracking parameters from URLs when shared
+defaultPref("privacy.query_stripping.strip_on_share.enabled", true);
+
+// Trim cross-origin referers
+defaultPref("network.http.referer.XOriginTrimmingPolicy", 2);
+
+/* -----------------------------------------------------------------------------------
+   024: SECURITY
+   ----------------------------------------------------------------------------------- */
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+/* ----------------------------------------------------------------------------------- */
 
 // [0802] Disabilita suggerimenti sponsorizzati
 lockPref("browser.urlbar.quicksuggest.enabled", false);
@@ -1231,22 +1311,6 @@ defaultPref("network.connectivity-service.enabled", false);
 lockPref("browser.xul.error_pages.expert_bad_cert", true);
 
 /* -----------------------------------------------------------------------------------
-   [1600] REFERERS
-   ----------------------------------------------------------------------------------- */
-
-// [1602] Rimuovi i percorsi e le query dai referrer tra siti diversi
-defaultPref("network.http.referer.XOriginTrimmingPolicy", 2);
-
-/* -----------------------------------------------------------------------------------
-   [1700] CONTAINERS
-   ----------------------------------------------------------------------------------- */
-
-// [1701] Abilita Container
-lockPref("privacy.userContext.enabled", true);
-lockPref("privacy.userContext.ui.enabled", true);
-
-
-/* -----------------------------------------------------------------------------------
    [2400] DOM (DOCUMENT OBJECT MODEL)
    ----------------------------------------------------------------------------------- */
 
@@ -1270,12 +1334,6 @@ lockPref("browser.tabs.searchclipboardfor.middleclick", false);
 // [2630] Disabilita content analysis
 lockPref("browser.contentanalysis.enabled", false);
 lockPref("browser.contentanalysis.default_result", 0);
-
-// [2635] Isola le risorse iniettate dalle estensioni
-defaultPref("privacy.antitracking.isolateContentScriptResources", true);
-
-// [2640] Disabilita Content Security Policy
-lockPref("security.csp.reporting.enabled", false);
 
 // [PF] Disabilita ricerca aggiornamenti
 lockPref("app.update.auto", false); // [LINUX]
@@ -1404,4 +1462,4 @@ defaultPref("browser.tabs.notes.enabled", true);
    FINE
    ----------------------------------------------------------------------------------- */
 
-lockPref("rischio.fox", "150.24");
+lockPref("rischio.fox", "150.25");
