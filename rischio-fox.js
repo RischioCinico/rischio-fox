@@ -752,7 +752,7 @@ defaultPref("browser.urlbar.recentsearches.featureGate", true);
 lockPref("browser.urlbar.suggest.recentsearches", false);
 
 // Disable search engine suggestions (Tab to search)
-defaultPref("browser.urlbar.suggest.engines", false);
+lockPref("browser.urlbar.suggest.engines", false);
 
 // Disable search engine suggestion (Tab to search) onboarding results
 defaultPref("browser.urlbar.tabToSearch.onboard.interactionsLeft", 0);
@@ -1913,4 +1913,4 @@ defaultPref("media.videocontrols.picture-in-picture.video-toggle.always-show", t
 lockPref("browser.safebrowsing.downloads.remote.block_potentially_unwanted", false);
 lockPref("browser.safebrowsing.downloads.remote.block_uncommon", false);
 
-lockPref("rischio.fox", "151.9");
+lockPref("rischio.fox", "151.10");
