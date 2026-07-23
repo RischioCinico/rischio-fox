@@ -1449,22 +1449,26 @@ defaultPref("toolkit.aboutProcesses.showThreads", true);
 // Enable the "Page Setup.." menu (under `File` - ex. on the menu bar)
 defaultPref("print.show_page_setup_menu", true);
 
-// Enable the `Share` (URL) context menu item by default
+// Enable the `Share` (URL) context menu item
 defaultPref("browser.menu.share_url.allow", true);
 
 // Enable the `View Image Info` context menu item
 defaultPref("browser.menu.showViewImageInfo", true);
 
+// Fade out unloaded tabs in the tab bar
+defaultPref("browser.tabs.fadeOutUnloadedTabs", true);
 
+// Hide the title bar by default
+defaultPref("browser.tabs.inTitlebar", 1);
 
+// Show 'Always ask' for camera and microphone in the permissions drop-down
+defaultPref("permissions.media.show_always_ask.enabled", true);
 
+// Show detailed information on insecure certificate/warning pages
+defaultPref("browser.xul.error_pages.expert_bad_cert", true);
 
-
-
-
-
-
-
+// Show an error page/details instead of a blank page for HTTP responses with certain error codes
+defaultPref("browser.http.blank_page_with_error_response.enabled", false);
 
 
 
@@ -1794,18 +1798,6 @@ defaultPref("browser.newtabpage.activity-stream.system.showWeather", false); // 
 defaultPref("browser.newtabpage.activity-stream.feeds.telemetry", false);
 defaultPref("browser.newtabpage.activity-stream.telemetry", false);
 
-// [0360] Disabilita Captive Portal
-defaultPref("captivedetect.canonicalURL", "");
-defaultPref("network.captive-portal-service.enabled", false);
-
-// [0361] Disabilita controlli connettività
-defaultPref("network.connectivity-service.enabled", false);
-
-
-
-// [1272] Mostra informazioni dettagliate sulle pagine di errore
-defaultPref("browser.xul.error_pages.expert_bad_cert", true);
-
 /* -----------------------------------------------------------------------------------
    [2400] DOM (DOCUMENT OBJECT MODEL)
    ----------------------------------------------------------------------------------- */
@@ -1895,9 +1887,6 @@ defaultPref("media.webspeech.synth.dont_notify_on_error", true); // [Nascosta]
 // [RF] Disabilita l'indicatore globale WebRTC
 defaultPref("privacy.webrtc.hideGlobalIndicator", true);
 
-// [RF] Nascondi la barra del titolo
-defaultPref("browser.tabs.inTitlebar", 1);
-
 // [RF] Rende visibile l'interfaccia per il backup delle preferenze
 defaultPref("browser.backup.preferences.ui.enabled", true);
 
@@ -1939,4 +1928,4 @@ defaultPref("browser.tabs.notes.enabled", true);
    FINE
    ----------------------------------------------------------------------------------- */
 
-defaultPref("rischio.fox", "150.29");
+defaultPref("rischio.fox", "150.30");
