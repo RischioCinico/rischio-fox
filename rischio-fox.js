@@ -415,7 +415,7 @@ defaultPref("termsofuse.bypassNotification", true);
 defaultPref("privacy.trackingprotection.allow_list.convenience.enabled", true);
 
 // Enable ETP Strict
-defaultPref("browser.contentblocking.category", "strict"); 
+lockPref("browser.contentblocking.category", "strict"); 
 
 // Block harmful add-on URLs
 defaultPref("privacy.trackingprotection.harmfuladdon.enabled", true); // [DEFAULT - Desktop Firefox] https://searchfox.org/firefox-main/rev/93aad2a6615f670b1279c229dd37f7397236131a/browser/app/profile/firefox.js#2434
