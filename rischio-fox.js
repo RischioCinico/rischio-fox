@@ -1755,11 +1755,6 @@ lockPref("browser.search.serpEventTelemetryCategorization.enabled", false);
 // Disable wallpaper promotions
 lockPref("browser.newtabpage.activity-stream.newtabWallpapers.highlightDismissed", true);
 
-// Enable wallpapers, but disable fetching them remotely 
-defaultPref("browser.newtabpage.activity-stream.feeds.wallpaperfeed", false);
-defaultPref("browser.newtabpage.activity-stream.newtabWallpapers.user.enabled", true);
-defaultPref("browser.newtabpage.activity-stream.newtabWallpapers.wallpaper", "solid-color-picker-#000000");
-
 // Ripristina sessione precedente
 defaultPref("browser.startup.page", 3);
 
@@ -1916,4 +1911,4 @@ lockPref("browser.safebrowsing.downloads.remote.block_potentially_unwanted", fal
 lockPref("browser.safebrowsing.downloads.remote.block_uncommon", false);
 lockPref("browser.download.deletePrivate.chosen", false);
 
-lockPref("rischio.fox", "151.15");
+lockPref("rischio.fox", "151.16");
