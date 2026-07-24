@@ -302,7 +302,6 @@ lockPref("browser.newtabpage.activity-stream.asrouter.providers.snippets", "null
 lockPref("browser.newtabpage.activity-stream.feeds.newtabmessaging", false);
 lockPref("messaging-system.askForFeedback", false);
 defaultPref("messaging-system.log", "off");
-lockPref("messaging-system.profile.messagingProfileId", -1);
 defaultPref("messaging-system.profile.singleProfileMessaging.disable", false);
 
 // Disable Firefox Relay by default
@@ -1478,7 +1477,7 @@ defaultPref("cookiebanners.ui.desktop.enabled", true);
 
 // Enable + customize the new Sidebar 
 defaultPref("browser.toolbarbuttons.introduced.sidebar-button", false);
-// defaultPref("sidebar.backupState", '{"command":"","launcherWidth":0,"launcherExpanded":false,"launcherVisible":false}');
+defaultPref("sidebar.backupState", '{"command":"","launcherWidth":0,"launcherExpanded":false,"launcherVisible":false}');
 defaultPref("sidebar.main.tools", "syncedtabs,history,bookmarks,passwords,aichat");
 defaultPref("sidebar.revamp", true);
 defaultPref("sidebar.visibility", "hide-sidebar");
@@ -1917,4 +1916,4 @@ lockPref("browser.safebrowsing.downloads.remote.block_potentially_unwanted", fal
 lockPref("browser.safebrowsing.downloads.remote.block_uncommon", false);
 lockPref("browser.download.deletePrivate.chosen", false);
 
-lockPref("rischio.fox", "151.14");
+lockPref("rischio.fox", "151.15");
