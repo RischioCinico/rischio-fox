@@ -77,7 +77,7 @@ lockPref("dom.ipc.tabs.createKillHardCrashReports", false);
 lockPref("toolkit.crashreporter.include_context_heap", false);
 lockPref("browser.crashReports.unsubmittedCheck.autoSubmit2", false);
 lockPref("browser.crashReports.unsubmittedCheck.enabled", false);
-lockPref("browser.crashReports.cleanupCheck.enabled", false);
+lockPref("browser.crashReports.cleanupCheck.enabled", false); // [LINUX]
 lockPref("browser.tabs.crashReporting.includeURL", false);
 lockPref("browser.tabs.crashReporting.sendReport", false);
 
@@ -1911,4 +1911,4 @@ lockPref("browser.safebrowsing.downloads.remote.block_potentially_unwanted", fal
 lockPref("browser.safebrowsing.downloads.remote.block_uncommon", false);
 lockPref("browser.download.deletePrivate.chosen", false);
 
-lockPref("rischio.fox", "151.16");
+lockPref("rischio.fox", "151.17");
