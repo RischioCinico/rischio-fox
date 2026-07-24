@@ -1886,29 +1886,33 @@ defaultPref("browser.urlbar.suggest.importantDates", true);
 defaultPref("browser.urlbar.yelp.serviceResultDistinction", true);
 
 /* -----------------------------------------------------------------------------------
+   PESKYFOX
+   ----------------------------------------------------------------------------------- */
+
+// Impedisce al puntatore del mouse di nascondersi mentre si digita
+defaultPref("widget.gtk.hide-pointer-while-typing.enabled", false); // [LINUX]
+
+// Apri le nuove schede in background
+defaultPref("browser.tabs.loadDivertedInBackground", true);
+
+// Apri i segnalibri in background
+defaultPref("browser.tabs.loadBookmarksInBackground", true);
+
+// Apri le nuove schede subito dopo quella attuale
+defaultPref("browser.tabs.insertAfterCurrent", true);
+
+/* -----------------------------------------------------------------------------------
    FINE
    ----------------------------------------------------------------------------------- */
 
-// [PF] Impedisce al puntatore del mouse di nascondersi mentre si digita
-defaultPref("widget.gtk.hide-pointer-while-typing.enabled", false); // [LINUX]
-
-// [PF] Apri le nuove schede in background
-defaultPref("browser.tabs.loadDivertedInBackground", true);
-
-// [PF] Apri i segnalibri in background
-defaultPref("browser.tabs.loadBookmarksInBackground", true);
-
-// [PF] Apri le nuove schede subito dopo quella attuale
-defaultPref("browser.tabs.insertAfterCurrent", true);
-
-// [RF] Abilita note per le schede
+// Abilita note per le schede
 defaultPref("browser.tabs.notes.enabled", true);
 
-// [RF] Abilita il pulsante Picture-in-Picture su tutti i video
+// Abilita il pulsante Picture-in-Picture su tutti i video
 defaultPref("media.videocontrols.picture-in-picture.video-toggle.always-show", true);
 
 lockPref("browser.safebrowsing.downloads.remote.block_potentially_unwanted", false);
 lockPref("browser.safebrowsing.downloads.remote.block_uncommon", false);
 lockPref("browser.download.deletePrivate.chosen", false);
 
-lockPref("rischio.fox", "151.17");
+lockPref("rischio.fox", "151.18");
