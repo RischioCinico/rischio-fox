@@ -1911,8 +1911,11 @@ defaultPref("browser.tabs.notes.enabled", true);
 // Abilita il pulsante Picture-in-Picture su tutti i video
 defaultPref("media.videocontrols.picture-in-picture.video-toggle.always-show", true);
 
+// Disabilita avviso schermo intero
+defaultPref("full-screen-api.warning.timeout", 0);
+
 lockPref("browser.safebrowsing.downloads.remote.block_potentially_unwanted", false);
 lockPref("browser.safebrowsing.downloads.remote.block_uncommon", false);
 lockPref("browser.download.deletePrivate.chosen", false);
 
-lockPref("rischio.fox", "151.18");
+lockPref("rischio.fox", "151.19");
