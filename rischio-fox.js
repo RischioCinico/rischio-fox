@@ -944,12 +944,6 @@ defaultPref("network.http.microsoft-entra-sso.container-enabled.0", false);
 defaultPref("network.http.windows-sso.container-enabled.0", false);
 defaultPref("network.microsoft-sso-authority-list", "");
 
-// Disable Password Manager
-defaultPref("extensions.formautofill.addresses.enabled", false);
-defaultPref("extensions.formautofill.addresses.supported", "on");
-defaultPref("extensions.formautofill.creditCards.enabled", false);
-defaultPref("extensions.formautofill.creditCards.supported", "on");
-
 // Disable password truncation
 defaultPref("editor.truncate_user_pastes", false);
 
@@ -1908,4 +1902,4 @@ lockPref("browser.safebrowsing.downloads.remote.block_potentially_unwanted", fal
 lockPref("browser.safebrowsing.downloads.remote.block_uncommon", false);
 lockPref("browser.download.deletePrivate.chosen", false);
 
-lockPref("rischio.fox", "151.20");
+lockPref("rischio.fox", "151.21");
