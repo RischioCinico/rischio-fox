@@ -11,7 +11,7 @@
 
 /*
 INDICE:
-   001: DATA COLLECTION
+   001: TELEMETRIA
    002: MOZILLA
    003: TRACKING PROTECTION
    004: FINGERPRINTING PROTECTION
@@ -45,12 +45,8 @@ INDICE:
 */
 
 /* -----------------------------------------------------------------------------------
-   001: DATA COLLECTION
+   001: TELEMETRIA
    ----------------------------------------------------------------------------------- */
-
-// Disable automatic upload of profiler data (from `about:logging`) to Mozilla
-defaultPref("toolkit.aboutLogging.uploadProfileToCloud", false);
-defaultPref("toolkit.aboutLogging.uploadProfileUrl", "");
 
 // Disable Browser Search/Usage Telemetry metrics
 lockPref("browser.engagement.ctrlTab.has-used", true);
@@ -62,12 +58,6 @@ lockPref("browser.engagement.sidebar-button.has-used", true);
 lockPref("browser.engagement.total_uri_count.pbm", false);
 lockPref("browser.engagement.search_counts.pbm", false);
 lockPref("browser.search.totalSearches", 100);
-
-// Disable Coverage
-lockPref("toolkit.coverage.enabled", false);
-lockPref("toolkit.coverage.endpoint.base", "");
-defaultPref("toolkit.coverage.log-level", 70);
-lockPref("toolkit.coverage.opt-out", true);
 
 // Disable crash reporting
 lockPref("breakpad.reportURL", "");
@@ -1918,4 +1908,4 @@ lockPref("browser.safebrowsing.downloads.remote.block_potentially_unwanted", fal
 lockPref("browser.safebrowsing.downloads.remote.block_uncommon", false);
 lockPref("browser.download.deletePrivate.chosen", false);
 
-lockPref("rischio.fox", "151.19");
+lockPref("rischio.fox", "151.20");
