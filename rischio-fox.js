@@ -60,15 +60,9 @@ lockPref("browser.engagement.search_counts.pbm", false);
 lockPref("browser.search.totalSearches", 100);
 
 // Disable crash reporting
-lockPref("breakpad.reportURL", "");
 lockPref("browser.crashReports.onDemand", false);
 lockPref("browser.crashReports.requestedNeverShowAgain", true);
-lockPref("dom.ipc.tabs.createKillHardCrashReports", false);
-lockPref("toolkit.crashreporter.include_context_heap", false);
-lockPref("browser.crashReports.unsubmittedCheck.autoSubmit2", false);
-lockPref("browser.crashReports.unsubmittedCheck.enabled", false);
 lockPref("browser.crashReports.cleanupCheck.enabled", false); // [LINUX]
-lockPref("browser.tabs.crashReporting.includeURL", false);
 lockPref("browser.tabs.crashReporting.sendReport", false);
 
 // Disable data reporting and telemetry
