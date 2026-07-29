@@ -3,6 +3,12 @@
     "AutofillAddressEnabled": false,
     "AutofillCreditCardEnabled": false,
     "CaptivePortal": false,
+    "Cookies": {
+      "Behavior": "reject-tracker-and-partition-foreign",
+      "BehaviorPrivateBrowsing": "reject-tracker-and-partition-foreign",
+      "Locked": true,
+      "RejectTracker": true
+    },
     "DisableFeedbackCommands": true,
     "DisableFirefoxStudies": true,
     "DisablePocket": true,
