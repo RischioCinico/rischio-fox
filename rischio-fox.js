@@ -70,8 +70,6 @@ lockPref("browser.crashReports.requestedNeverShowAgain", true);
 lockPref("browser.tabs.crashReporting.sendReport", false);
 
 // Disable data reporting and telemetry
-clearPref("app.update.lastUpdateTime.glean-addons-daily");
-lockPref("browser.safebrowsing.features.emailtracking.datacollection.update", false);
 lockPref("captchadetection.actor.enabled", false);
 lockPref("captchadetection.hasUnsubmittedData", false);
 defaultPref("captchadetection.loglevel", "Off");
