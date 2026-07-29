@@ -11,7 +11,7 @@
     "DisableFeedbackCommands": true,
     "DisableFirefoxStudies": true,
     "DisableProfileRefresh": true,
-    "DisableRemoteImprovements": true
+    "DisableRemoteImprovements": true,
     "DisableSetDesktopBackground": true,
     "DisableTelemetry": true,
     
