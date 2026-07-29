@@ -82,14 +82,6 @@ defaultPref("dom.origin-trials.enabled", false);
    002: MOZILLA
    ----------------------------------------------------------------------------------- */
 
-// Clear unnecessary/undesired Mozilla URLs
-defaultPref("extensions.recommendations.privacyPolicyUrl", "");
-defaultPref("app.feedback.baseURL", "");
-defaultPref("datareporting.healthreport.infoURL", "");
-defaultPref("toolkit.datacollection.infoURL", "");
-defaultPref("app.normandy.shieldLearnMoreUrl", "");
-defaultPref("browser.newtabpage.activity-stream.privacyInfo.url", "");
-
 // Disable `about:welcome`/onboarding
 defaultPref("browser.preonboarding.enabled", false);
 defaultPref("browser.aboutwelcome.enabled", false);
@@ -1768,4 +1760,4 @@ lockPref("browser.safebrowsing.downloads.remote.block_potentially_unwanted", fal
 lockPref("browser.safebrowsing.downloads.remote.block_uncommon", false);
 lockPref("browser.download.deletePrivate.chosen", false);
 
-lockPref("rischio.fox", "151.25");
+lockPref("rischio.fox", "151.26");
