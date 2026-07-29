@@ -48,7 +48,6 @@ INDICE:
    001: TELEMETRIA
    ----------------------------------------------------------------------------------- */
 
-// Disable Browser Search/Usage Telemetry metrics
 lockPref("browser.engagement.ctrlTab.has-used", true);
 lockPref("browser.engagement.downloads-button.has-used", true);
 lockPref("browser.engagement.fxa-toolbar-menu-button.has-used", true);
@@ -59,7 +58,13 @@ lockPref("browser.engagement.total_uri_count.pbm", false);
 lockPref("browser.engagement.search_counts.pbm", false);
 lockPref("browser.search.totalSearches", 100);
 
-// Disable crash reporting
+// Blocca "Allow Firefox to improve features, performance, and stability between updates"
+lockPref("nimbus.rollouts.enabled", false);
+
+// Blocca "Automatically send crash reports"
+lockPref("browser.crashReports.unsubmittedCheck.autoSubmit2", true);
+
+// Disabilita crash report
 lockPref("browser.crashReports.onDemand", false);
 lockPref("browser.crashReports.requestedNeverShowAgain", true);
 lockPref("browser.tabs.crashReporting.sendReport", false);
@@ -166,7 +171,6 @@ lockPref("nimbus.profileId", "");
 lockPref("nimbus.profilesdatastoreservice.enabled", false);
 lockPref("nimbus.profilesdatastoreservice.read.enabled", false);
 lockPref("nimbus.profilesdatastoreservice.sync.enabled", false);
-lockPref("nimbus.rollouts.enabled", false);
 lockPref("app.normandy.api_url", "");
 lockPref("app.normandy.enabled", false);
 lockPref("app.normandy.experiments.lazy_classify", true);
