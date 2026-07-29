@@ -1122,17 +1122,6 @@ defaultPref("dom.battery.enabled", false);
 // Disable Beacon API (Navigator.sendBeacon)
 defaultPref("beacon.enabled", false);
 
-// Disable Content Analysis SDK
-lockPref("browser.contentanalysis.default_result", 0);
-lockPref("browser.contentanalysis.enabled", false);
-lockPref("browser.contentanalysis.interception_point.clipboard.enabled", false);
-lockPref("browser.contentanalysis.interception_point.drag_and_drop.enabled", false);
-lockPref("browser.contentanalysis.interception_point.file_upload.enabled", false);
-lockPref("browser.contentanalysis.interception_point.print.enabled", false);
-lockPref("browser.contentanalysis.max_connections", 0);
-lockPref("browser.contentanalysis.show_blocked_result", true);
-lockPref("browser.contentanalysis.silent_notifications", false);
-
 // Disable Native Messaging
 defaultPref("webextensions.native-messaging.max-input-message-bytes", 0);
 defaultPref("webextensions.native-messaging.max-output-message-bytes", 0);
@@ -1896,4 +1885,4 @@ lockPref("browser.safebrowsing.downloads.remote.block_potentially_unwanted", fal
 lockPref("browser.safebrowsing.downloads.remote.block_uncommon", false);
 lockPref("browser.download.deletePrivate.chosen", false);
 
-lockPref("rischio.fox", "151.22");
+lockPref("rischio.fox", "151.23");
