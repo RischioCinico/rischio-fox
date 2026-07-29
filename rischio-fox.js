@@ -76,7 +76,7 @@ lockPref("captchadetection.actor.enabled", false);
 lockPref("app.normandy.enabled", false);
 
 // Disabilita Origin Trials
-defaultPref("dom.origin-trials.enabled", false);
+lockPref("dom.origin-trials.enabled", false);
 
 /* -----------------------------------------------------------------------------------
    002: MOZILLA
