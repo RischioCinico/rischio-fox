@@ -72,42 +72,11 @@ lockPref("browser.tabs.crashReporting.sendReport", false);
 // Disattiva il rilevatore interno di CAPTCHA
 lockPref("captchadetection.actor.enabled", false);
 
-
-
-
-
-
-// Disable experimentation and A/B testing
-lockPref("app.normandy.run_interval_seconds", 0);
-lockPref("app.shield.optoutstudies.enabled", false);
-lockPref("extensions.formautofill.addresses.experiments.enabled", false);
-defaultPref("messaging-system.rsexperimentloader.collection_id", "");
-defaultPref("nimbus.appId", "");
-lockPref("nimbus.firstUpdateComplete", true);
-lockPref("nimbus.profileId", "");
-lockPref("nimbus.profilesdatastoreservice.enabled", false);
-lockPref("nimbus.profilesdatastoreservice.read.enabled", false);
-lockPref("nimbus.profilesdatastoreservice.sync.enabled", false);
-lockPref("app.normandy.api_url", "");
+// Disabilita Normandy
 lockPref("app.normandy.enabled", false);
-lockPref("app.normandy.experiments.lazy_classify", true);
-lockPref("app.normandy.first_run", false);
-lockPref("app.normandy.last_seen_buildid", "");
-defaultPref("app.normandy.logging.level", 70);
-lockPref("app.normandy.user_id", "");
-lockPref("browser.aboutwelcome.experimentsGate.enabled", false);
-lockPref("browser.aboutwelcome.experimentsGate.skipSplashIfLoaded", true);
 
-// Disable notification permission telemetry
-lockPref("permissions.desktop-notification.telemetry.siteCategories", "{}");
-
-// Disable Origin Trials
+// Disabilita Origin Trials
 defaultPref("dom.origin-trials.enabled", false);
-
-// Remove partner attribution
-lockPref("app.distributor", "");
-lockPref("app.distributor.channel", "");
-lockPref("mozilla.partner.id", "");
 
 /* -----------------------------------------------------------------------------------
    002: MOZILLA
@@ -1799,4 +1768,4 @@ lockPref("browser.safebrowsing.downloads.remote.block_potentially_unwanted", fal
 lockPref("browser.safebrowsing.downloads.remote.block_uncommon", false);
 lockPref("browser.download.deletePrivate.chosen", false);
 
-lockPref("rischio.fox", "151.24");
+lockPref("rischio.fox", "151.25");
