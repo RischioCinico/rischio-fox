@@ -10,10 +10,11 @@
     },
     "DisableFeedbackCommands": true,
     "DisableFirefoxStudies": true,
-    
     "DisableProfileRefresh": true,
+    "DisableRemoteImprovements": true
     "DisableSetDesktopBackground": true,
     "DisableTelemetry": true,
+    
     "DNSOverHTTPS": {
       "Enabled": true,
       "Fallback": false,
