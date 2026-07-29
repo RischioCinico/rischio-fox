@@ -62,7 +62,6 @@ lockPref("browser.search.totalSearches", 100);
 // Disable crash reporting
 lockPref("browser.crashReports.onDemand", false);
 lockPref("browser.crashReports.requestedNeverShowAgain", true);
-lockPref("browser.crashReports.cleanupCheck.enabled", false); // [LINUX]
 lockPref("browser.tabs.crashReporting.sendReport", false);
 
 // Disable data reporting and telemetry
