@@ -1299,12 +1299,6 @@ defaultPref("security.block_fileuri_script_with_wrong_mime", true);
 // Block websites from prompting to display notifications
 defaultPref("permissions.default.desktop-notification", 2);
 
-// Disable captive portal detection and connectivity checks
-defaultPref("network.captive-portal-service.enabled", false);
-defaultPref("network.connectivity-service.DNSv4.domain", "");
-defaultPref("network.connectivity-service.DNSv6.domain", "");
-defaultPref("network.connectivity-service.enabled", false);
-
 // Disable Firefox's "Reset/Refresh Profile" prompt
 lockPref("browser.disableResetPrompt", true);
 
@@ -1902,4 +1896,4 @@ lockPref("browser.safebrowsing.downloads.remote.block_potentially_unwanted", fal
 lockPref("browser.safebrowsing.downloads.remote.block_uncommon", false);
 lockPref("browser.download.deletePrivate.chosen", false);
 
-lockPref("rischio.fox", "151.21");
+lockPref("rischio.fox", "151.22");
