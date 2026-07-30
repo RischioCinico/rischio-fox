@@ -164,14 +164,6 @@ defaultPref("ui.new-webcompat-reporter.enabled", false);
 // Opt out of add-on metadata updates (This prevents themes from displaying previews in `about:addons`)
 defaultPref("extensions.getAddons.cache.enabled", false);
 
-// Prevent checking if Firefox is the default `mailto:` handler
-defaultPref("browser.mailto.dualPrompt", false);
-
-// Prevent checking if Firefox is the default PDF viewer
-defaultPref("browser.shell.checkDefaultPDF", false);
-defaultPref("browser.shell.checkDefaultPDF.silencedByUser", true);
-defaultPref("browser.shell.setDefaultPDFHandler.onlyReplaceBrowsers", false);
-
 // Skip Mozilla's `Privacy Notice` and `Terms of Use`
 lockPref("datareporting.policy.dataSubmissionPolicyAcceptedVersion", 999);
 lockPref("datareporting.policy.dataSubmissionPolicyNotifiedTime", "32503679999000");
@@ -1678,4 +1670,4 @@ lockPref("browser.safebrowsing.downloads.remote.block_potentially_unwanted", fal
 lockPref("browser.safebrowsing.downloads.remote.block_uncommon", false);
 lockPref("browser.download.deletePrivate.chosen", false);
 
-lockPref("rischio.fox", "151.29");
+lockPref("rischio.fox", "151.30");
