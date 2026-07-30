@@ -14,6 +14,7 @@ INDICE:
    001: TELEMETRIA
    002: UX
    003: AVVIO
+   004: RICERCA
    005: FINGERPRINTING PROTECTION
    006: DISK AVOIDANCE
    007: DOWNLOADS
@@ -39,7 +40,6 @@ INDICE:
    027: CONTROL
    028: UI
    030: PERFORMANCE
-   031: SUGGESTIONS
 */
 
 /* -----------------------------------------------------------------------------------
@@ -212,6 +212,35 @@ lockPref("browser.newtabpage.activity-stream.telemetry.privatePing.enabled", fal
 lockPref("browser.places.interactions.enabled", false);
 lockPref("browser.search.serpEventTelemetryCategorization.enabled", false);
 lockPref("browser.newtabpage.activity-stream.discoverystream.merino-provider.ohttp.enabled", true);
+
+/* -----------------------------------------------------------------------------------
+   004: RICERCA
+   ----------------------------------------------------------------------------------- */
+
+// Disabilita suggerimenti inutili
+lockPref("browser.urlbar.quicksuggest.enabled", false);
+defaultPref("browser.urlbar.suggest.addons", false);
+defaultPref("browser.urlbar.suggest.amp", false);
+defaultPref("browser.urlbar.suggest.bookmark", false);
+defaultPref("browser.urlbar.suggest.history", false);
+defaultPref("browser.urlbar.suggest.importantDates", false);
+defaultPref("browser.urlbar.suggest.mdn", false);
+defaultPref("browser.urlbar.suggest.realtimeOptIn", false);
+defaultPref("browser.urlbar.suggest.sports", false);
+defaultPref("browser.urlbar.suggest.weather", false);
+defaultPref("browser.urlbar.suggest.wikipedia", false);
+defaultPref("browser.urlbar.suggest.yelp", false);
+defaultPref("browser.urlbar.suggest.yelpRealtime", false);
+
+// FeatureGate
+defaultPref("browser.search.visualSearch.featureGate", false);
+defaultPref("browser.urlbar.clipboard.featureGate", false);
+defaultPref("browser.urlbar.importantDates.featureGate", false);
+defaultPref("browser.urlbar.recentsearches.featureGate", false);
+defaultPref("browser.urlbar.richSuggestions.featureGate", false);
+defaultPref("browser.urlbar.secondaryActions.featureGate", false);
+defaultPref("browser.urlbar.trending.featureGate", false);
+defaultPref("browser.urlbar.trustPanel.breachAlerts.featureGate", false);
 
 /* -----------------------------------------------------------------------------------
    005: FINGERPRINTING PROTECTION
@@ -1350,92 +1379,6 @@ defaultPref("network.tcp.user_timeout", 30);
 defaultPref("gfx.webrender.low-quality-pinch-zoom", true);
 
 /* -----------------------------------------------------------------------------------
-   031: SUGGESTIONS
-   ----------------------------------------------------------------------------------- */
-
-// Disable AccuWeather suggestions
-defaultPref("browser.urlbar.suggest.weather", false);
-defaultPref("browser.urlbar.weather.featureGate", true);
-
-// Disable adMarketplace (AMP) suggestions
-lockPref("browser.urlbar.amp.featureGate", false);
-lockPref("browser.urlbar.suggest.amp", false);
-
-// Disable AMO suggestions
-defaultPref("browser.urlbar.addons.featureGate", true);
-defaultPref("browser.urlbar.suggest.addons", false);
-
-// Disable "Exposure" telemetry
-lockPref("browser.urlbar.exposureResults", "");
-lockPref("browser.urlbar.keywordExposureResults", "");
-lockPref("browser.urlbar.showExposureResults", false);
-
-// Disable Fakespot suggestions
-defaultPref("browser.urlbar.fakespot.featureGate", false);
-defaultPref("browser.urlbar.suggest.fakespot", false);
-
-// Disable Firefox Suggest
-defaultPref("browser.urlbar.quicksuggest.enabled", false);
-
-// Disable FlightAware (flight status) suggestions
-defaultPref("browser.urlbar.flightStatus.featureGate", true);
-defaultPref("browser.urlbar.suggest.flightStatus", false);
-
-// Disable machine learning
-defaultPref("browser.urlbar.quicksuggest.mlEnabled", false);
-defaultPref("browser.urlbar.yelp.mlEnabled", false);
-
-// Disable MDN suggestions
-defaultPref("browser.urlbar.mdn.featureGate", true);
-defaultPref("browser.urlbar.suggest.mdn", false);
-
-// Disable nags to opt-in to "real-time suggestions"
-lockPref("browser.urlbar.suggest.realtimeOptIn", false);
-
-// Disable online suggestions
-lockPref("browser.urlbar.quicksuggest.online.enabled", false);
-lockPref("browser.urlbar.quicksuggest.settingsUi", 2);
-
-// Disable partner links/attribution
-lockPref("browser.partnerlink.attributionURL", "");
-lockPref("browser.partnerlink.campaign.topsites", "");
-
-// Disable Polygon (stock market) suggestions
-defaultPref("browser.urlbar.market.featureGate", true);
-defaultPref("browser.urlbar.suggest.market", false);
-
-// Disable row labels 
-defaultPref("browser.urlbar.groupLabels.enabled", false);
-
-// Disable sponsored suggestions
-lockPref("browser.urlbar.sponsoredTopSites", false);
-defaultPref("browser.urlbar.suggest.quicksuggest.sponsored", false);
-
-// Disable sports suggestions
-defaultPref("browser.urlbar.sports.featureGate", true);
-defaultPref("browser.urlbar.suggest.sports", false);
-
-// Disable telemetry
-lockPref("browser.urlbar.quicksuggest.contextualOptIn", false);
-
-// Disable Wikipedia suggestions , but allow users to enable them if desired
-defaultPref("browser.urlbar.suggest.wikipedia", false);
-defaultPref("browser.urlbar.wikipedia.featureGate", true);
-
-// Disable Yelp suggestions
-defaultPref("browser.urlbar.suggest.yelp", false);
-defaultPref("browser.urlbar.suggest.yelpRealtime", false);
-defaultPref("browser.urlbar.yelp.featureGate", false);
-defaultPref("browser.urlbar.yelpRealtime.featureGate", false);
-
-// Enable important date suggestions 
-defaultPref("browser.urlbar.importantDates.featureGate", true);
-defaultPref("browser.urlbar.suggest.importantDates", true);
-
-// If Yelp suggestions are enabled, show subject/title for results
-defaultPref("browser.urlbar.yelp.serviceResultDistinction", true);
-
-/* -----------------------------------------------------------------------------------
    PESKYFOX
    ----------------------------------------------------------------------------------- */
 
@@ -1465,4 +1408,4 @@ lockPref("browser.safebrowsing.downloads.remote.block_potentially_unwanted", fal
 lockPref("browser.safebrowsing.downloads.remote.block_uncommon", false);
 lockPref("browser.download.deletePrivate.chosen", false);
 
-lockPref("rischio.fox", "151.37");
+lockPref("rischio.fox", "151.38");
