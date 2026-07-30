@@ -20,7 +20,6 @@ INDICE:
    007: DOWNLOADS
    008: HTTP(S)
    009: IMPLICIT CONNECTIONS
-   010: SEARCH & URL BAR
    011: DNS
    012: PROXIES
    013: WEBRTC
@@ -217,16 +216,36 @@ lockPref("browser.newtabpage.activity-stream.discoverystream.merino-provider.oht
    004: RICERCA
    ----------------------------------------------------------------------------------- */
 
+// Abilita la possibilità di usare un motore di ricerca diverso in finestre normali e private
+defaultPref("browser.search.separatePrivateDefault", true);
+defaultPref("browser.search.separatePrivateDefault.ui.enabled", true);
+
+// Disattiva il completamento automatico degli URL nella barra degli indirizzi
+defaultPref("browser.urlbar.autoFill", false);
+
+// Mostra URL completi disabilitando "Trimming" e "Search Terms"
+defaultPref("browser.urlbar.trimURLs", false);
+defaultPref("browser.urlbar.showSearchTerms.enabled", false);
+
+// Forza la visualizzazione in Punycode dei domini
+defaultPref("network.IDN_show_punycode", true);
+
 // Disabilita suggerimenti inutili
 lockPref("browser.urlbar.quicksuggest.enabled", false);
 defaultPref("browser.urlbar.suggest.addons", false);
 defaultPref("browser.urlbar.suggest.amp", false);
 defaultPref("browser.urlbar.suggest.bookmark", false);
+defaultPref("browser.urlbar.suggest.clipboard", false);
 defaultPref("browser.urlbar.suggest.history", false);
 defaultPref("browser.urlbar.suggest.importantDates", false);
 defaultPref("browser.urlbar.suggest.mdn", false);
+defaultPref("browser.urlbar.suggest.quickactions", false);
 defaultPref("browser.urlbar.suggest.realtimeOptIn", false);
+defaultPref("browser.urlbar.suggest.recentsearches", false);
+defaultPref("browser.urlbar.suggest.searches", false);
 defaultPref("browser.urlbar.suggest.sports", false);
+defaultPref("browser.urlbar.suggest.topsites", false);
+defaultPref("browser.urlbar.suggest.trending", false);
 defaultPref("browser.urlbar.suggest.weather", false);
 defaultPref("browser.urlbar.suggest.wikipedia", false);
 defaultPref("browser.urlbar.suggest.yelp", false);
@@ -446,76 +465,6 @@ defaultPref("middlemouse.paste", false);
 
 // Prevent middle mouse clicks on new tab button opening URLs or searches from clipboard
 defaultPref("browser.tabs.searchclipboardfor.middleclick", false);
-
-/* -----------------------------------------------------------------------------------
-   010: SEARCH & URL BAR
-   ----------------------------------------------------------------------------------- */
-
-// Abilita la possibilità di usare un motore di ricerca diverso in finestre normali e private
-defaultPref("browser.search.separatePrivateDefault", true);
-defaultPref("browser.search.separatePrivateDefault.ui.enabled", true);
-
-// Always show Punycode
-defaultPref("network.IDN_show_punycode", true);
-
-// Disable autofill/autocompletion of URLs
-defaultPref("browser.urlbar.autoFill", false);
-
-// Disable clipboard suggestions
-defaultPref("browser.urlbar.clipboard.featureGate", true);
-lockPref("browser.urlbar.suggest.clipboard", false);
-
-// Disable quick actions
-defaultPref("browser.urlbar.quickactions.showPrefs", true);
-defaultPref("browser.urlbar.secondaryActions.featureGate", true);
-defaultPref("browser.urlbar.shortcuts.actions", false);
-lockPref("browser.urlbar.suggest.quickactions", false);
-
-// Disable the quick actions onboarding
-defaultPref("browser.urlbar.quickactions.timesToShowOnboardingLabel", 0);
-
-// Disable recent search suggestions
-defaultPref("browser.urlbar.recentsearches.featureGate", true);
-lockPref("browser.urlbar.suggest.recentsearches", false);
-
-// Disable search engine suggestions (Tab to search)
-lockPref("browser.urlbar.suggest.engines", false);
-
-// Disable search engine suggestion (Tab to search) onboarding results
-defaultPref("browser.urlbar.tabToSearch.onboard.interactionsLeft", 0);
-
-// Disable search suggestions
-defaultPref("browser.urlbar.showSearchSuggestionsFirst", false);
-defaultPref("browser.urlbar.suggest.searches", false);
-
-// Disable search tips
-lockPref("browser.urlbar.tipShownCount.searchTip_onboard", 999);
-lockPref("browser.urlbar.tipShownCount.searchTip_redirect", 999);
-
-// Disable trending searches
-defaultPref("browser.urlbar.suggest.trending", false);
-
-// Disable URL trimming
-defaultPref("browser.urlbar.trimURLs", false);
-
-// Enable the "Search in Private Window" result
-defaultPref("browser.search.separatePrivateDefault.urlbarResult.enabled", true);
-
-// Enable shortcut suggestions by default
-lockPref("browser.urlbar.suggest.topsites", false);
-
-// Ensure UI reflects that the default search engine is set to DuckDuckGo
-defaultPref("browser.urlbar.placeholderName", "DuckDuckGo");
-defaultPref("browser.urlbar.placeholderName.private", "DuckDuckGo");
-
-// Expose the UI to switch search engines for individual searches
-defaultPref("browser.urlbar.scotchBonnet.disableOneOffs", false);
-
-// If URL trimming is enabled, untrim on user interaction
-defaultPref("browser.urlbar.untrimOnUserInteraction.featureGate", true);
-
-// Show full URLs instead of search terms
-lockPref("browser.urlbar.showSearchTerms.enabled", false);
 
 /* -----------------------------------------------------------------------------------
    011: DNS
@@ -1405,4 +1354,4 @@ lockPref("browser.safebrowsing.downloads.remote.block_potentially_unwanted", fal
 lockPref("browser.safebrowsing.downloads.remote.block_uncommon", false);
 lockPref("browser.download.deletePrivate.chosen", false);
 
-lockPref("rischio.fox", "151.38");
+lockPref("rischio.fox", "151.39");
