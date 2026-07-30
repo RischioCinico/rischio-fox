@@ -48,16 +48,6 @@ INDICE:
    001: TELEMETRIA
    ----------------------------------------------------------------------------------- */
 
-lockPref("browser.engagement.ctrlTab.has-used", true);
-lockPref("browser.engagement.downloads-button.has-used", true);
-lockPref("browser.engagement.fxa-toolbar-menu-button.has-used", true);
-lockPref("browser.engagement.home-button.has-used", true);
-lockPref("browser.engagement.library-button.has-used", true);
-lockPref("browser.engagement.sidebar-button.has-used", true);
-lockPref("browser.engagement.total_uri_count.pbm", false);
-lockPref("browser.engagement.search_counts.pbm", false);
-lockPref("browser.search.totalSearches", 100);
-
 // Blocca "Allow Firefox to improve features, performance, and stability between updates"
 lockPref("nimbus.rollouts.enabled", false);
 
@@ -81,6 +71,16 @@ lockPref("dom.origin-trials.enabled", false);
 /* -----------------------------------------------------------------------------------
    002: MOZILLA
    ----------------------------------------------------------------------------------- */
+
+lockPref("browser.engagement.ctrlTab.has-used", true);
+lockPref("browser.engagement.downloads-button.has-used", true);
+lockPref("browser.engagement.fxa-toolbar-menu-button.has-used", true);
+lockPref("browser.engagement.home-button.has-used", true);
+lockPref("browser.engagement.library-button.has-used", true);
+lockPref("browser.engagement.sidebar-button.has-used", true);
+lockPref("browser.engagement.total_uri_count.pbm", false);
+lockPref("browser.engagement.search_counts.pbm", false);
+lockPref("browser.search.totalSearches", 100);
 
 // Disable `about:welcome`/onboarding
 defaultPref("browser.preonboarding.enabled", false);
