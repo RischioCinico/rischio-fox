@@ -465,9 +465,6 @@ defaultPref("browser.urlbar.autoFill", false);
 defaultPref("browser.urlbar.clipboard.featureGate", true);
 lockPref("browser.urlbar.suggest.clipboard", false);
 
-// Disable Firefox's new 'Unified Trust Panel'
-defaultPref("browser.urlbar.trustPanel.featureGate", false);
-
 // Disable quick actions
 defaultPref("browser.urlbar.quickactions.showPrefs", true);
 defaultPref("browser.urlbar.secondaryActions.featureGate", true);
