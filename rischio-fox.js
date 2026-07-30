@@ -268,11 +268,10 @@ defaultPref("browser.urlbar.trustPanel.breachAlerts.featureGate", false);
 
 // Disabilita cache su disco
 lockPref("browser.cache.disk.enable", false);
-
-defaultPref("browser.cache.disk_cache_ssl", true);
+lockPref("browser.cache.disk_cache_ssl", false);
 
 // Decrease the number of tabs saved in Session Store
-defaultPref("browser.sessionstore.max_tabs_undo", 7);
+defaultPref("browser.sessionstore.max_tabs_undo", 5);
 
 // Disable back/forward cache (bfcache)
 defaultPref("browser.sessionhistory.max_total_viewers", 0);
