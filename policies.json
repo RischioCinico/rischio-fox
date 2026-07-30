@@ -14,7 +14,6 @@
     "DisableRemoteImprovements": true,
     "DisableSetDesktopBackground": true,
     "DisableTelemetry": true,
-    
     "DNSOverHTTPS": {
       "Enabled": true,
       "Fallback": false,
@@ -22,6 +21,17 @@
       "Locked": true
     },
     "DontCheckDefaultBrowser": true,
+    "EnableTrackingProtection": {
+      "Value": true,
+      "Locked": true,
+      "Cryptomining": true,
+      "Fingerprinting": true,
+      "EmailTracking": true,
+      "SuspectedFingerprinting": true,
+      "Category": "strict",
+      "BaselineExceptions": true,
+      "ConvenienceExceptions": true
+    },
     "FirefoxHome": {
       "Search": true,
       "TopSites": true,
