@@ -126,23 +126,22 @@ lockPref("browser.contentblocking.report.lockwise.enabled", false);
 lockPref("browser.contentblocking.report.show_mobile_app", false);
 lockPref("browser.ipProtection.blockIPProtectionCallouts", true);
 
-
-
-
-
-
-
-
-
-
-
 // Disable Mozilla.UITour
 lockPref("browser.uitour.enabled", false);
-defaultPref("browser.uitour.loglevel", "Off");
-lockPref("browser.uitour.requireSecure", true);
-lockPref("browser.uitour.surveyDuration", 0);
-lockPref("browser.uitour.testingOrigins", "");
-lockPref("browser.uitour.url", "");
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 // Disable "Privacy-Preserving Attribution"
 lockPref("dom.origin-trials.private-attribution.state", 2);
@@ -162,15 +161,8 @@ lockPref("browser.search.param.search_rich_suggestions", "");
 // Disable the Web Compatibility Reporter
 defaultPref("ui.new-webcompat-reporter.enabled", false);
 
-// Hide the "More from Mozilla" settings tab (`about:preferences#moreFromMozilla`)
-lockPref("browser.preferences.moreFromMozilla", false);
-
 // Opt out of add-on metadata updates (This prevents themes from displaying previews in `about:addons`)
 defaultPref("extensions.getAddons.cache.enabled", false);
-
-// Prevent checking if Firefox is the default browser
-defaultPref("browser.shell.checkDefaultBrowser", false);
-defaultPref("browser.shell.skipDefaultBrowserCheckOnFirstRun", true);
 
 // Prevent checking if Firefox is the default `mailto:` handler
 defaultPref("browser.mailto.dualPrompt", false);
@@ -1686,4 +1678,4 @@ lockPref("browser.safebrowsing.downloads.remote.block_potentially_unwanted", fal
 lockPref("browser.safebrowsing.downloads.remote.block_uncommon", false);
 lockPref("browser.download.deletePrivate.chosen", false);
 
-lockPref("rischio.fox", "151.28");
+lockPref("rischio.fox", "151.29");
