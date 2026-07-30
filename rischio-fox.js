@@ -130,7 +130,7 @@ lockPref("browser.contentblocking.report.lockwise.enabled", false);
 lockPref("browser.contentblocking.report.show_mobile_app", false);
 lockPref("browser.ipProtection.blockIPProtectionCallouts", true);
 
-// Disable Mozilla.UITour
+// Disabilita UITour
 lockPref("browser.uitour.enabled", false);
 
 // Disabilita "Privacy-Preserving Attribution"
