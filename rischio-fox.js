@@ -12,25 +12,25 @@
 /*
 INDICE:
    001: TELEMETRIA
-   002: MOZILLA
-   003: TRACKING PROTECTION
-   004: FINGERPRINTING PROTECTION
-   005: DISK AVOIDANCE
-   006: DOWNLOADS
-   007: HTTP(S)
-   008: IMPLICIT CONNECTIONS
-   009: SEARCH & URL BAR
-   010: DNS
-   011: PROXIES
-   012: WEBRTC
-   013: MEDIA
-   014: ATTACK SURFACE
-   015: PASSWORDS
-   016: EXTENSIONS
-   017: AI
-   018: GEOLOCATION
-   019: PDF
-   020: SAFE BROWSING
+   002: UX
+   004: TRACKING PROTECTION
+   005: FINGERPRINTING PROTECTION
+   006: DISK AVOIDANCE
+   007: DOWNLOADS
+   008: HTTP(S)
+   009: IMPLICIT CONNECTIONS
+   010: SEARCH & URL BAR
+   011: DNS
+   012: PROXIES
+   013: WEBRTC
+   014: MEDIA
+   015: ATTACK SURFACE
+   016: PASSWORDS
+   017: EXTENSIONS
+   018: AI
+   019: GEOLOCATION
+   020: PDF
+   021: SAFE BROWSING
    022: PRIVACY + SECURITY
    023: PRIVACY
    024: SECURITY
@@ -38,7 +38,6 @@ INDICE:
    026: DEBUGGING
    027: CONTROL
    028: UI
-   029: UX
    030: PERFORMANCE
    032: HOME
    033: SUGGESTIONS
@@ -69,7 +68,7 @@ lockPref("app.normandy.enabled", false);
 lockPref("dom.origin-trials.enabled", false);
 
 /* -----------------------------------------------------------------------------------
-   002: MOZILLA
+   002: UX
    ----------------------------------------------------------------------------------- */
 
 lockPref("browser.engagement.ctrlTab.has-used", true);
@@ -81,144 +80,61 @@ lockPref("browser.engagement.sidebar-button.has-used", true);
 lockPref("browser.engagement.total_uri_count.pbm", false);
 lockPref("browser.engagement.search_counts.pbm", false);
 lockPref("browser.search.totalSearches", 100);
-
-// Disable `about:welcome`/onboarding
-defaultPref("browser.preonboarding.enabled", false);
-defaultPref("browser.aboutwelcome.enabled", false);
-defaultPref("browser.aboutwelcome.log", "off");
-defaultPref("browser.rights.3.shown", true);
-defaultPref("browser.startup.firstrunSkipsHomepage", false);
-lockPref("browser.startup.homepage_override.buildID", "20100101");
-lockPref("browser.startup.homepage_override.mstone", "ignore");
-defaultPref("browser.startup.upgradeDialog.enabled", false);
-defaultPref("browser.suppress_first_window_animation", true);
-defaultPref("startup.homepage_override_nimbus_disable_wnp", true);
-defaultPref("startup.homepage_override_url", "");
-defaultPref("startup.homepage_override_url_nimbus", "");
-defaultPref("startup.homepage_welcome_url", "");
-defaultPref("startup.homepage_welcome_url.additional", "");
-
-// Disable add-on/feature recommendations
-lockPref("browser.discovery.enabled", false);
-defaultPref("browser.translations.mostRecentTargetLanguages", "en-US");
-lockPref("browser.translations.panelShown", true);
-defaultPref("extensions.getAddons.browseAddons", "");
-defaultPref("extensions.getAddons.discovery.api_url", "data;");
-defaultPref("extensions.getAddons.showPane", false);
-defaultPref("extensions.htmlaboutaddons.recommendations.enabled", false);
-lockPref("extensions.recommendations.hideNotice", true);
-defaultPref("extensions.recommendations.themeRecommendationUrl", "");
-defaultPref("extensions.ui.lastCategory", "addons://list/extension");
-defaultPref("extensions.webservice.discoverURL", "");
-lockPref("browser.dataFeatureRecommendations.enabled", false);
-defaultPref("browser.discovery.sites", "");
-lockPref("browser.newtabpage.activity-stream.asrouter.userprefs.cfr.addons", false);
-lockPref("browser.newtabpage.activity-stream.asrouter.userprefs.cfr.features", false);
-
-// Disable DoH Rollout/heuristics/steering
-defaultPref("doh-rollout._testing", false);
-lockPref("doh-rollout.disable-heuristics", true);
-lockPref("doh-rollout.doneFirstRun", true);
-lockPref("doh-rollout.enabled", false);
-lockPref("doh-rollout.provider-steering.enabled", false);
-lockPref("doh-rollout.provider-steering.provider-list", "");
-lockPref("doh-rollout.self-enabled", false);
-lockPref("doh-rollout.skipHeuristicsCheck", true);
-lockPref("doh-rollout.trr-selection.enabled", false);
-lockPref("doh-rollout.trr-selection.provider-list", "");
-
-// Disable DoH performance measurements
-defaultPref("doh-rollout.trrRace.canonicalDomain", "");
-defaultPref("doh-rollout.trrRace.complete", true);
-defaultPref("doh-rollout.trrRace.enabled", false);
-defaultPref("doh-rollout.trrRace.popularDomains", "");
-defaultPref("doh-rollout.trrRace.randomSubdomainCount", 0);
-
-// Disable "Feature Tours"
-defaultPref("browser.firefox-view.feature-tour", "{\"screen\":\"\",\"complete\":true}");
-defaultPref("browser.newtab.feature-tour", "{\"screen\":\"\",\"complete\":true}");
-defaultPref("browser.pdfjs.feature-tour", "{\"screen\":\"\",\"complete\":true}");
-
-// Disable fetching Firefox Relay's "allowlist" and "denylist"
-defaultPref("signon.firefoxRelay.allowListRemoteSettingsCollection", "");
-defaultPref("signon.firefoxRelay.denyListRemoteSettingsCollection", "");
-
-// Disable fetching Password Manager rules remotely
-defaultPref("signon.recipes.remoteRecipes.enabled", false);
-
-// Disable Firefox Bridge
-defaultPref("browser.firefoxbridge.enabled", false);
-
-// Disable (no-op) the Firefox/Gecko Profiler
-lockPref("devtools.performance.popup.feature-flag", false);
-defaultPref("devtools.performance.recording.ui-base-url", "http://localhost:3");
-lockPref("logging.config.output_type", "file");
-defaultPref("toolkit.aboutProcesses.showProfilerIcons", false);
-defaultPref("devtools.performance.enabled", false);
-
-// Disable the Firefox Messaging System
-defaultPref("app.update.background.messaging.targeting.snapshot.intervalSec", -1);
-lockPref("browser.newtabpage.activity-stream.asrouter.providers.cfr", "null");
-lockPref("browser.newtabpage.activity-stream.asrouter.providers.cfr-fxa", "null");
-lockPref("browser.newtabpage.activity-stream.asrouter.providers.message-groups", "null");
-lockPref("browser.newtabpage.activity-stream.asrouter.providers.messaging-experiments", "null");
-lockPref("browser.newtabpage.activity-stream.asrouter.providers.onboarding", "null");
-lockPref("browser.newtabpage.activity-stream.asrouter.providers.snippets", "null");
-lockPref("browser.newtabpage.activity-stream.feeds.newtabmessaging", false);
-lockPref("messaging-system.askForFeedback", false);
-defaultPref("messaging-system.log", "off");
-defaultPref("messaging-system.profile.singleProfileMessaging.disable", false);
-
-// Disable Firefox Relay by default
-lockPref("signon.firefoxRelay.feature", "available");
-
-// Disable import of Mozilla's default bookmarks
-lockPref("browser.bookmarks.restore_default_bookmarks", false);
-lockPref("browser.bookmarks.testing.skipDefaultBookmarksImport", true);
-defaultPref("browser.places.importBookmarksHTML", true);
-
-// Disable import of Mozilla's default protocol handlers
-lockPref("gecko.handlerService.defaultHandlersVersion", 2147483647);
-
-// Disable "Interest-based Content Relevance Ranking and Personalization"
-lockPref("toolkit.contentRelevancy.enabled", false);
-lockPref("toolkit.contentRelevancy.ingestEnabled", false);
-defaultPref("toolkit.contentRelevancy.log", false);
-
-// Disable Mozilla nags/promotions
-lockPref("browser.aboutpdf.promo.dismissed", true);
-lockPref("browser.promo.cookiebanners.enabled", false);
-defaultPref("browser.promo.focus.disallowed_regions", "xx");
-lockPref("browser.promo.focus.enabled", false);
-lockPref("browser.promo.pin.enabled", false);
-lockPref("browser.send_to_device_locales", "");
-defaultPref("browser.vpn_promo.disallowed_regions", "xx");
-lockPref("browser.vpn_promo.enabled", false);
-lockPref("pdfjs.enableNewBadge", false);
+lockPref("browser.rights.3.shown", true);
 lockPref("privacy.trackingprotection.allow_list.hasUserInteractedWithETPSettings", true);
-lockPref("browser.contentblocking.report.hide_vpn_banner", true);
-lockPref("browser.contentblocking.report.lockwise.enabled", false);
-lockPref("browser.contentblocking.report.mobile-android.url", "");
-lockPref("browser.contentblocking.report.mobile-ios.url", "");
-lockPref("browser.contentblocking.report.monitor.enabled", false);
-lockPref("browser.contentblocking.report.show_mobile_app", false);
-lockPref("browser.contentblocking.report.vpn.url", "");
-lockPref("browser.contentblocking.report.vpn-android.url", "");
-lockPref("browser.contentblocking.report.vpn-ios.url", "");
-lockPref("browser.contentblocking.report.vpn-promo.url", "");
-lockPref("browser.ipProtection.blockIPProtectionCallouts", true);
 lockPref("browser.ipProtection.locationButtonBadgeDismissed", true);
-lockPref("browser.ipProtection.openedPanelWithLocation", true);
-lockPref("browser.ipProtection.productVpn.endpoint", "");
-lockPref("browser.ipProtection.upgradeNotAvailable", true);
+lockPref("sidebar.verticalTabs.dragToPinPromo.dismissed", true);
 lockPref("browser.protections_panel.infoMessage.seen", true);
-lockPref("browser.settings-redesign.promo.dismissed", true);
+lockPref("identity.fxaccounts.toolbar.accessed", true);
+lockPref("browser.ipProtection.openedPanelWithLocation", true);
+lockPref("browser.ipProtection.upgradeNotAvailable", true);
+
+// Nascondi badge "New"
+lockPref("pdfjs.enableNewBadge", false);
 lockPref("browser.tabs.notes.newBadge.enabled", false);
 lockPref("browser.tabs.splitview.hasUsed", true);
-lockPref("cookiebanners.ui.desktop.showCallout", false);
-lockPref("identity.fxaccounts.toolbar.accessed", true);
-lockPref("sidebar.verticalTabs.dragToPinPromo.dismissed", true);
-lockPref("trailhead.firstrun.didHandleCampaignAction", true);
+
+// Disabilita avviso in `about:config`
+lockPref("browser.aboutConfig.showWarning", false);
+
+// Disabilita avviso schermo intero
+lockPref("full-screen-api.warning.timeout", 0);
+
+// Previene l'apertura delle pagine "What's New" dopo gli aggiornamenti
+lockPref("browser.startup.homepage_override.buildID", "20100101");
+lockPref("browser.startup.homepage_override.mstone", "ignore");
+lockPref("startup.homepage_override_nimbus_disable_wnp", true);
+
+// Disabilita estensioni suggerite
+lockPref("browser.discovery.enabled", false);
+
+// Nasconde la voce "Recommendations" nel menu Add-ons
+lockPref("extensions.getAddons.showPane", false);
+
+// Nasconde "Recommended Extensions" in fondo alla pagina delle estensioni installate
+lockPref("extensions.htmlaboutaddons.recommendations.enabled", false);
+
+// Disattiva le richieste interne di feedback sull'uso di Firefox
+lockPref("messaging-system.askForFeedback", false);
+
+// Disabilita promozioni
+lockPref("browser.promo.focus.enabled", false);
+lockPref("browser.promo.pin.enabled", false);
+lockPref("browser.vpn_promo.enabled", false);
+lockPref("browser.contentblocking.report.hide_vpn_banner", true);
+lockPref("browser.contentblocking.report.lockwise.enabled", false);
+lockPref("browser.contentblocking.report.show_mobile_app", false);
+lockPref("browser.ipProtection.blockIPProtectionCallouts", true);
+
+
+
+
+
+
+
+
+
+
 
 // Disable Mozilla.UITour
 lockPref("browser.uitour.enabled", false);
@@ -244,11 +160,7 @@ defaultPref("services.settings.preview_enabled", false);
 lockPref("browser.search.param.search_rich_suggestions", "");
 
 // Disable the Web Compatibility Reporter
-defaultPref("extensions.webcompat-reporter.enabled", false);
-defaultPref("extensions.webcompat-reporter.newIssueEndpoint", "https://phoenix.celenity.dev/issues");
-defaultPref("media.decoder-doctor.new-issue-endpoint", "https://phoenix.celenity.dev/issues");
 defaultPref("ui.new-webcompat-reporter.enabled", false);
-defaultPref("ui.new-webcompat-reporter.new-report-endpoint", "https://phoenix.celenity.dev/issues");
 
 // Hide the "More from Mozilla" settings tab (`about:preferences#moreFromMozilla`)
 lockPref("browser.preferences.moreFromMozilla", false);
@@ -276,7 +188,7 @@ lockPref("termsofuse.acceptedVersion", 999);
 lockPref("termsofuse.bypassNotification", true);
 
 /* -----------------------------------------------------------------------------------
-   003: TRACKING PROTECTION
+   004: TRACKING PROTECTION
    ----------------------------------------------------------------------------------- */
 
 // Abilita eccezioni per evitare problemi minori
@@ -373,12 +285,8 @@ defaultPref("privacy.trackingprotection.lower_network_priority", true);
 defaultPref("privacy.purge_trackers.enabled", true);
 
 /* -----------------------------------------------------------------------------------
-   004: FINGERPRINTING PROTECTION
+   005: FINGERPRINTING PROTECTION
    ----------------------------------------------------------------------------------- */
-
-// Unnecessarily fingerprintable
-clearPref("dom.webmidi.enabled");
-clearPref("geo.enabled");
 
 // Always load fonts bundled with Firefox
 defaultPref("gfx.bundled-fonts.activate", 1);
@@ -412,7 +320,7 @@ defaultPref("ui.use_standins_for_native_colors", true);
 defaultPref("dom.quotaManager.temporaryStorage.fixedLimit", 52428800);
 
 /* -----------------------------------------------------------------------------------
-   005: DISK AVOIDANCE
+   006: DISK AVOIDANCE
    ----------------------------------------------------------------------------------- */
 
 // Decrease the number of tabs saved in Session Store
@@ -465,7 +373,7 @@ defaultPref("browser.download.start_downloads_in_tmp_dir", true);
 defaultPref("browser.helperApps.deleteTempFileOnExit", true);
 
 /* -----------------------------------------------------------------------------------
-   006: DOWNLOADS
+   007: DOWNLOADS
    ----------------------------------------------------------------------------------- */
 
 // Block insecure downloads
@@ -482,7 +390,7 @@ lockPref("browser.download.always_ask_before_handling_new_types", true);
 lockPref("browser.download.useDownloadDir", false);
 
 /* -----------------------------------------------------------------------------------
-   007: HTTP(S)
+   008: HTTP(S)
    ----------------------------------------------------------------------------------- */
 
 // Always attempt to resolve HTTPS resource records, regardless of connectivity checks/other factors
@@ -551,7 +459,7 @@ defaultPref("security.certerrors.permanentOverride", false);
 defaultPref("security.ssl.require_safe_negotiation", true);
 
 /* -----------------------------------------------------------------------------------
-   008: IMPLICIT CONNECTIONS
+   009: IMPLICIT CONNECTIONS
    ----------------------------------------------------------------------------------- */
 
 // Disable Early Hints
@@ -582,7 +490,7 @@ defaultPref("middlemouse.paste", false);
 defaultPref("browser.tabs.searchclipboardfor.middleclick", false);
 
 /* -----------------------------------------------------------------------------------
-   009: SEARCH & URL BAR
+   010: SEARCH & URL BAR
    ----------------------------------------------------------------------------------- */
 
 // Abilita la possibilità di usare un motore di ricerca diverso in finestre normali e private
@@ -655,7 +563,7 @@ defaultPref("browser.urlbar.untrimOnUserInteraction.featureGate", true);
 lockPref("browser.urlbar.showSearchTerms.enabled", false);
 
 /* -----------------------------------------------------------------------------------
-   010: DNS
+   011: DNS
    ----------------------------------------------------------------------------------- */
 
 // Imposta Quad9 come DoH provider
@@ -692,8 +600,27 @@ defaultPref("network.trr.exclude-etc-hosts", false);
 defaultPref("network.trr.allow_default_http3_first", true);
 defaultPref("network.trr.force_http3_first", true);
 
+// Disable DoH Rollout/heuristics/steering
+defaultPref("doh-rollout._testing", false);
+lockPref("doh-rollout.disable-heuristics", true);
+lockPref("doh-rollout.doneFirstRun", true);
+lockPref("doh-rollout.enabled", false);
+lockPref("doh-rollout.provider-steering.enabled", false);
+lockPref("doh-rollout.provider-steering.provider-list", "");
+lockPref("doh-rollout.self-enabled", false);
+lockPref("doh-rollout.skipHeuristicsCheck", true);
+lockPref("doh-rollout.trr-selection.enabled", false);
+lockPref("doh-rollout.trr-selection.provider-list", "");
+
+// Disable DoH performance measurements
+defaultPref("doh-rollout.trrRace.canonicalDomain", "");
+defaultPref("doh-rollout.trrRace.complete", true);
+defaultPref("doh-rollout.trrRace.enabled", false);
+defaultPref("doh-rollout.trrRace.popularDomains", "");
+defaultPref("doh-rollout.trrRace.randomSubdomainCount", 0);
+
 /* -----------------------------------------------------------------------------------
-   011: PROXIES
+   012: PROXIES
    ----------------------------------------------------------------------------------- */
 
 // Prevent Firefox from automatically using the system's proxy configuration 
@@ -721,7 +648,7 @@ defaultPref("network.proxy.allow_bypass", false);
 defaultPref("network.proxy.socks_remote_dns", true);
 
 /* -----------------------------------------------------------------------------------
-   012: WEBRTC
+   013: WEBRTC
    ----------------------------------------------------------------------------------- */
 
 // Allow user to silence notifications when screen sharing
@@ -740,7 +667,7 @@ defaultPref("media.peerconnection.ice.proxy_only_if_behind_proxy", true);
 defaultPref("privacy.webrtc.sharedTabWarning", true);
 
 /* -----------------------------------------------------------------------------------
-   013: MEDIA
+   014: MEDIA
    ----------------------------------------------------------------------------------- */
 
 // Block media autoplay
@@ -768,7 +695,7 @@ defaultPref("media.gmp.encoder.multithreaded", true);
 defaultPref("media.gmp.insecure.allow", false); // [LINUX]
 
 /* -----------------------------------------------------------------------------------
-   014: ATTACK SURFACE
+   015: ATTACK SURFACE
    ----------------------------------------------------------------------------------- */
 
 // Disable Graphite & SVG OpenType fonts
@@ -798,7 +725,7 @@ defaultPref("permissions.default.xr", 2);
 defaultPref("dom.xslt.enabled", false);
 
 /* -----------------------------------------------------------------------------------
-   015: PASSWORDS
+   016: PASSWORDS
    ----------------------------------------------------------------------------------- */
 
 // Always display a `reveal password` button in `password` `<input>` types
@@ -832,7 +759,7 @@ lockPref("signon.generation.enabled", true);
 defaultPref("network.auth.subresource-http-auth-allow", 1);
 
 /* -----------------------------------------------------------------------------------
-   016: EXTENSIONS
+   017: EXTENSIONS
    ----------------------------------------------------------------------------------- */
 
 // Allow enabling/disabling extensions per-container
@@ -894,11 +821,11 @@ defaultPref("extensions.content_web_accessible.enabled", true);
 defaultPref("extensions.install.requireSecureOrigin", true);
 
 /* -----------------------------------------------------------------------------------
-   017: AI
+   018: AI
    ----------------------------------------------------------------------------------- */
 
 /* -----------------------------------------------------------------------------------
-   018: GEOLOCATION
+   019: GEOLOCATION
    ----------------------------------------------------------------------------------- */
 
 // Block websites from prompting to access geolocation
@@ -920,7 +847,7 @@ defaultPref("geo.provider.geoclue.always_high_accuracy", false); // [LINUX]
 defaultPref("geo.provider.network.url", "https://beacondb.net/v1/geolocate");
 
 /* -----------------------------------------------------------------------------------
-   019: PDF
+   020: PDF
    ----------------------------------------------------------------------------------- */
 
 // Disable automatic hyperlinks
@@ -955,7 +882,7 @@ defaultPref("pdfjs.sidebarViewOnLoad", 2);
 defaultPref("pdfjs.historyUpdateUrl", true);
 
 /* -----------------------------------------------------------------------------------
-   020: SAFE BROWSING
+   021: SAFE BROWSING
    ----------------------------------------------------------------------------------- */
 
 // Disable the legacy (v2.2) Safe Browsing API
@@ -1296,9 +1223,6 @@ defaultPref("nimbus.debug", true);
    028: UI
    ----------------------------------------------------------------------------------- */
 
-// Disable warning when attempting to access `about:config`
-defaultPref("browser.aboutConfig.showWarning", false);
-
 // Display "More settings" on print previews
 defaultPref("print.more-settings.open", true);
 
@@ -1353,10 +1277,6 @@ defaultPref("browser.xul.error_pages.expert_bad_cert", true);
 
 // Show an error page/details instead of a blank page for HTTP responses with certain error codes
 defaultPref("browser.http.blank_page_with_error_response.enabled", false);
-
-/* -----------------------------------------------------------------------------------
-   029: UX
-   ----------------------------------------------------------------------------------- */
 
 // Always load bookmarks in new tabs 
 defaultPref("browser.tabs.loadBookmarksInTabs", true);
@@ -1638,6 +1558,15 @@ defaultPref("browser.newtabpage.activity-stream.improvesearch.topSiteSearchShort
 defaultPref("browser.newtabpage.activity-stream.improvesearch.topSiteSearchShortcuts.searchEngines", "");
 defaultPref("browser.newtabpage.pinned", "[{\"url\":\"https://www.youtube.com/\",\"label\":\"YouTube\"},{\"url\":\"https://www.reddit.com/\",\"label\":\"Reddit\"},{\"url\":\"https://mail.google.com/mail/u/0/?hl=it#inbox\",\"label\":\"Gmail\"},{\"url\":\"https://addons.mozilla.org/it/firefox/\",\"label\":\"Estensioni\"},{\"url\":\"https://wiki.archlinux.org/title/List_of_applications\",\"label\":\"Applicazioni\"},{\"url\":\"https://it.wikipedia.org/wiki/Pagina_principale\",\"label\":\"Wikipedia\"},{\"url\":\"https://github.com/\",\"label\":\"GitHub\"},{\"url\":\"https://www.diretta.it/\",\"label\":\"Diretta\"}]");
 
+// Disable the Firefox Messaging System
+lockPref("browser.newtabpage.activity-stream.asrouter.providers.cfr", "null");
+lockPref("browser.newtabpage.activity-stream.asrouter.providers.cfr-fxa", "null");
+lockPref("browser.newtabpage.activity-stream.asrouter.providers.message-groups", "null");
+lockPref("browser.newtabpage.activity-stream.asrouter.providers.messaging-experiments", "null");
+lockPref("browser.newtabpage.activity-stream.asrouter.providers.onboarding", "null");
+lockPref("browser.newtabpage.activity-stream.asrouter.providers.snippets", "null");
+lockPref("browser.newtabpage.activity-stream.feeds.newtabmessaging", false);
+
 /* -----------------------------------------------------------------------------------
    033: SUGGESTIONS
    ----------------------------------------------------------------------------------- */
@@ -1753,11 +1682,8 @@ defaultPref("browser.tabs.notes.enabled", true);
 // Abilita il pulsante Picture-in-Picture su tutti i video
 defaultPref("media.videocontrols.picture-in-picture.video-toggle.always-show", true);
 
-// Disabilita avviso schermo intero
-defaultPref("full-screen-api.warning.timeout", 0);
-
 lockPref("browser.safebrowsing.downloads.remote.block_potentially_unwanted", false);
 lockPref("browser.safebrowsing.downloads.remote.block_uncommon", false);
 lockPref("browser.download.deletePrivate.chosen", false);
 
-lockPref("rischio.fox", "151.26");
+lockPref("rischio.fox", "151.28");
