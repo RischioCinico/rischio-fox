@@ -156,10 +156,23 @@ lockPref("browser.newtabpage.activity-stream.logowordmark.alwaysVisible", false)
 
 // Abilita Widgets
 defaultPref("browser.newtabpage.activity-stream.widgets.system.enabled", true);
-defaultPref("browser.newtabpage.activity-stream.widgets.system.focusTimer.enabled", true); // Timer
-defaultPref("browser.newtabpage.activity-stream.widgets.focusTimer.showSystemNotifications", true);// Notifiche per Timer
-defaultPref("browser.newtabpage.activity-stream.widgets.system.lists.enabled", true); // Lists
-defaultPref("browser.newtabpage.activity-stream.widgets.system.weatherForecast.enabled", true); // Meteo
+// Clock
+defaultPref("bbrowser.newtabpage.activity-stream.widgets.system.clocks.enabled", true);
+// Timer
+defaultPref("browser.newtabpage.activity-stream.widgets.system.focusTimer.enabled", true);
+defaultPref("browser.newtabpage.activity-stream.widgets.focusTimer.showSystemNotifications", true);
+lockPref("browser.newtabpage.activity-stream.widgets.focusTimer.interaction", true);
+// Lists
+defaultPref("browser.newtabpage.activity-stream.widgets.system.lists.enabled", true);
+lockPref("browser.newtabpage.activity-stream.widgets.lists.interaction", true);
+// Sports
+defaultPref("browser.newtabpage.activity-stream.widgets.system.sportsWidget.enabled", true);
+defaultPref("browser.newtabpage.activity-stream.widgets.sportsWidget.celebrations.enabled", true);
+defaultPref("browser.newtabpage.activity-stream.widgets.sportsWidget.live.enabled", true);
+lockPref("browser.newtabpage.activity-stream.widgets.sportsWidget.interaction", true);
+// Meteo
+defaultPref("browser.newtabpage.activity-stream.widgets.system.weatherForecast.enabled", true);
+lockPref("browser.newtabpage.activity-stream.widgets.weatherForecast.interaction", true);
 
 // Imposta scorciatorie predefinite
 lockPref("browser.newtabpage.activity-stream.feeds.smartshortcutsfeed", false);
@@ -183,7 +196,6 @@ lockPref("browser.newtabpage.activity-stream.unifiedAds.tiles.enabled", false);
 lockPref("browser.newtabpage.activity-stream.unifiedAds.adsFeed.spocs.enabled", false);
 lockPref("browser.newtabpage.activity-stream.unifiedAds.adsFeed.tiles.enabled", false);
 lockPref("browser.newtabpage.activity-stream.discoverystream.topicSelection.onboarding.maybeDisplay", false);
-lockPref("browser.newtabpage.activity-stream.discoverystream.enabled", false);
 lockPref("browser.newtabpage.activity-stream.feeds.newtabmessaging", false);
 lockPref("browser.newtabpage.activity-stream.asrouter.providers.cfr", "");
 lockPref("browser.newtabpage.activity-stream.asrouter.providers.message-groups", "");
@@ -1456,4 +1468,4 @@ lockPref("browser.safebrowsing.downloads.remote.block_potentially_unwanted", fal
 lockPref("browser.safebrowsing.downloads.remote.block_uncommon", false);
 lockPref("browser.download.deletePrivate.chosen", false);
 
-lockPref("rischio.fox", "151.35");
+lockPref("rischio.fox", "151.36");
