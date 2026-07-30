@@ -13,6 +13,7 @@
 INDICE:
    001: TELEMETRIA
    002: UX
+   003: AVVIO
    005: FINGERPRINTING PROTECTION
    006: DISK AVOIDANCE
    007: DOWNLOADS
@@ -38,8 +39,7 @@ INDICE:
    027: CONTROL
    028: UI
    030: PERFORMANCE
-   032: HOME
-   033: SUGGESTIONS
+   031: SUGGESTIONS
 */
 
 /* -----------------------------------------------------------------------------------
@@ -137,6 +137,152 @@ lockPref("dom.private-attribution.submission.enabled", false);
 // Ignora`Privacy Notice` e `Terms of Use` di Mozilla
 lockPref("termsofuse.bypassNotification", true);
 
+/* -----------------------------------------------------------------------------------
+   003: AVVIO
+   ----------------------------------------------------------------------------------- */
+
+// Widgets
+defaultPref("browser.newtabpage.activity-stream.widgets.enabled", true);
+defaultPref("browser.newtabpage.activity-stream.widgets.system.focusTimer.enabled", true); // abilita Timer
+defaultPref("browser.newtabpage.activity-stream.widgets.focusTimer.showSystemNotifications", true); // abilita notifiche Timer
+defaultPref("browser.newtabpage.activity-stream.widgets.system.lists.enabled", true); // abilita Task list
+defaultPref("browser.newtabpage.activity-stream.widgets.system.enabled", true); // abilita i widgets
+defaultPref("browser.newtabpage.activity-stream.widgets.system.focusTimer.enabled", true);
+defaultPref("browser.newtabpage.activity-stream.widgets.system.lists.enabled", true);
+
+// AccuWeather
+defaultPref("browser.newtabpage.activity-stream.widgets.system.weatherForecast.enabled", true); // abilita meteo
+
+// Disable Contile (Sponsored tiles)
+lockPref("browser.newtabpage.activity-stream.sov.name", "");
+lockPref("browser.topsites.contile.enabled", false);
+lockPref("browser.topsites.contile.endpoint", "");
+lockPref("browser.topsites.contile.sov.enabled", false);
+
+// Disable Fakespot
+lockPref("browser.newtabpage.activity-stream.discoverystream.contextualContent.feeds", "need_to_know");
+
+// Disable fetching favicons remotely from Mozila's remote Tippy Top service
+defaultPref("browser.newtabpage.activity-stream.feeds.favicon", false);
+
+// Disable fetching the layout remotely
+defaultPref("browser.newtabpage.activity-stream.feeds.sectionslayoutfeed", false);
+
+// Disable fetching locale/fluent files remotely
+defaultPref("browser.newtabpage.activity-stream.asrouter.useRemoteL10n", false);
+
+// Disable fetching top sites remotely
+defaultPref("browser.topsites.useRemoteSetting", false);
+
+// Disable Firefox Sync first run/promotion and metrics
+defaultPref("browser.newtabpage.activity-stream.fxaccounts.endpoint", "");
+
+// Disable MARS (Mozilla Ad Routing Service)
+lockPref("browser.newtabpage.activity-stream.discoverystream.reportAds.enabled", false);
+lockPref("browser.newtabpage.activity-stream.discoverystream.sections.contextualAds.locale-config", "");
+lockPref("browser.newtabpage.activity-stream.discoverystream.sections.contextualAds.region-config", "");
+lockPref("browser.newtabpage.activity-stream.feeds.adsfeed", false);
+lockPref("browser.newtabpage.activity-stream.unifiedAds.adsFeed.spocs.enabled", false);
+lockPref("browser.newtabpage.activity-stream.unifiedAds.adsFeed.tiles.enabled", false);
+lockPref("browser.newtabpage.activity-stream.unifiedAds.enabled", false);
+lockPref("browser.newtabpage.activity-stream.unifiedAds.endpoint", "");
+lockPref("browser.newtabpage.activity-stream.unifiedAds.spocs.enabled", false);
+lockPref("browser.newtabpage.activity-stream.unifiedAds.tiles.enabled", false);
+
+// Disable new tab attribution
+lockPref("browser.newtabpage.activity-stream.feeds.newtabattributionfeed", false);
+lockPref("dap.ohttp.hpke", "");
+lockPref("dap.ohttp.relayURL", "");
+
+// Disable onboarding
+lockPref("browser.newtabpage.activity-stream.discoverystream.topicSelection.onboarding.maybeDisplay", false);
+
+// Disable Pocket sponsored stories
+lockPref("browser.newtabpage.activity-stream.discoverystream.placements.spocs", "");
+lockPref("browser.newtabpage.activity-stream.discoverystream.placements.spocs.counts", "");
+lockPref("browser.newtabpage.activity-stream.discoverystream.endpointSpocsClear", "");
+lockPref("browser.newtabpage.activity-stream.discoverystream.region-spocs-config", "");
+lockPref("browser.newtabpage.activity-stream.showSponsored", false);
+lockPref("browser.newtabpage.activity-stream.system.showSponsored", false);
+
+// Disable the promotion card
+lockPref("browser.newtabpage.activity-stream.discoverystream.promoCard.visible", false);
+
+// Disable recent activity
+defaultPref("browser.newtabpage.activity-stream.section.highlights.includeBookmarks", false);
+defaultPref("browser.newtabpage.activity-stream.section.highlights.include", false);
+defaultPref("browser.newtabpage.activity-stream.section.highlights.includeVisited", false);
+
+// Disable "smart" shortcut personalization
+defaultPref("browser.newtabpage.activity-stream.feeds.smartshortcutsfeed", false);
+
+// Disable sponsored shortcuts
+lockPref("browser.newtabpage.activity-stream.showSponsoredTopSites", false);
+
+// Disable stories
+defaultPref("browser.newtabpage.activity-stream.feeds.section.topstories", false);
+
+// Disable telemetry
+lockPref("browser.newtabpage.activity-stream.feeds.telemetry", false);
+lockPref("browser.newtabpage.activity-stream.telemetry", false);
+lockPref("browser.newtabpage.activity-stream.telemetry.privatePing.enabled", false);
+lockPref("browser.newtabpage.activity-stream.telemetry.structuredIngestion.endpoint", "");
+lockPref("browser.newtabpage.ping.enabled", false);
+lockPref("browser.places.interactions.enabled", false);
+lockPref("browser.search.serpEventTelemetryCategorization.enabled", false);
+
+// Disable wallpaper promotions
+lockPref("browser.newtabpage.activity-stream.newtabWallpapers.highlightDismissed", true);
+
+// Ripristina sessione precedente
+defaultPref("browser.startup.page", 3);
+
+// Hide checkboxes to enable sponsored shortcuts and Pocket sponsored stories
+lockPref("browser.newtabpage.activity-stream.showSponsoredCheckboxes", false);
+
+// Hide the Firefox logo
+lockPref("browser.newtabpage.activity-stream.hideLogo", true);
+lockPref("browser.newtabpage.activity-stream.logowordmark.alwaysVisible", false);
+
+// If Merino is enabled, use OHTTP for superior privacy
+defaultPref("browser.newtabpage.activity-stream.discoverystream.merino-provider.ohttp.enabled", true);
+
+// If stories are enabled, allow customization and following/unfollowing interests/topics
+defaultPref("browser.newtabpage.activity-stream.discoverystream.sections.interestPicker.enabled", true);
+defaultPref("browser.newtabpage.activity-stream.discoverystream.topicSelection.enabled", true);
+
+// If stories are enabled, disable "personalization"
+lockPref("browser.newtabpage.activity-stream.discoverystream.sections.personalization.inferred.locale-config", "");
+lockPref("browser.newtabpage.activity-stream.discoverystream.sections.personalization.inferred.user.enabled", false);
+lockPref("browser.newtabpage.activity-stream.discoverystream.shortcuts.personalization.enabled", false);
+lockPref("browser.newtabpage.activity-stream.feeds.inferredpersonalizationfeed", false);
+
+// If stories are enabled, disable impression tracking
+lockPref("browser.newtabpage.activity-stream.impressionId", "{}");
+lockPref("browser.newtabpage.activity-stream.feeds.section.topstories.rec.impressions", "{}"); // [NO-ANDROID] [NO-MAIL] [HIDDEN] https://searchfox.org/mozilla-central/rev/cc4985b7/browser/extensions/newtab/lib/TopStoriesFeed.sys.mjs#33
+lockPref("browser.newtabpage.activity-stream.feeds.section.topstories.spoc.impressions", "{}"); // [NO-ANDROID] [NO-MAIL] [HIDDEN] https://searchfox.org/mozilla-central/rev/cc4985b7/browser/extensions/newtab/lib/TopStoriesFeed.sys.mjs#27
+
+// If stories are enabled, enable the new sections UI 
+defaultPref("browser.newtabpage.activity-stream.discoverystream.sections.cards.enabled", false);
+defaultPref("browser.newtabpage.activity-stream.discoverystream.sections.enabled", false);
+
+// Blocca il passaggio automatico dalla barra di ricerca a quella degli indirizzi
+defaultPref("browser.newtabpage.activity-stream.improvesearch.handoffToAwesomebar", false);
+
+// Remove default shortcuts
+defaultPref("browser.newtabpage.activity-stream.default.sites", "");
+defaultPref("browser.newtabpage.activity-stream.improvesearch.topSiteSearchShortcuts", false);
+defaultPref("browser.newtabpage.activity-stream.improvesearch.topSiteSearchShortcuts.searchEngines", "");
+defaultPref("browser.newtabpage.pinned", "[{\"url\":\"https://www.youtube.com/\",\"label\":\"YouTube\"},{\"url\":\"https://www.reddit.com/\",\"label\":\"Reddit\"},{\"url\":\"https://mail.google.com/mail/u/0/?hl=it#inbox\",\"label\":\"Gmail\"},{\"url\":\"https://addons.mozilla.org/it/firefox/\",\"label\":\"Estensioni\"},{\"url\":\"https://wiki.archlinux.org/title/List_of_applications\",\"label\":\"Applicazioni\"},{\"url\":\"https://it.wikipedia.org/wiki/Pagina_principale\",\"label\":\"Wikipedia\"},{\"url\":\"https://github.com/\",\"label\":\"GitHub\"},{\"url\":\"https://www.diretta.it/\",\"label\":\"Diretta\"}]");
+
+// Disable the Firefox Messaging System
+lockPref("browser.newtabpage.activity-stream.asrouter.providers.cfr", "null");
+lockPref("browser.newtabpage.activity-stream.asrouter.providers.cfr-fxa", "null");
+lockPref("browser.newtabpage.activity-stream.asrouter.providers.message-groups", "null");
+lockPref("browser.newtabpage.activity-stream.asrouter.providers.messaging-experiments", "null");
+lockPref("browser.newtabpage.activity-stream.asrouter.providers.onboarding", "null");
+lockPref("browser.newtabpage.activity-stream.asrouter.providers.snippets", "null");
+lockPref("browser.newtabpage.activity-stream.feeds.newtabmessaging", false);
 
 /* -----------------------------------------------------------------------------------
    005: FINGERPRINTING PROTECTION
@@ -1275,154 +1421,7 @@ defaultPref("network.tcp.user_timeout", 30);
 defaultPref("gfx.webrender.low-quality-pinch-zoom", true);
 
 /* -----------------------------------------------------------------------------------
-   032: HOME
-   ----------------------------------------------------------------------------------- */
-
-// Widgets
-defaultPref("browser.newtabpage.activity-stream.widgets.enabled", true);
-defaultPref("browser.newtabpage.activity-stream.widgets.system.focusTimer.enabled", true); // abilita Timer
-defaultPref("browser.newtabpage.activity-stream.widgets.focusTimer.showSystemNotifications", true); // abilita notifiche Timer
-defaultPref("browser.newtabpage.activity-stream.widgets.system.lists.enabled", true); // abilita Task list
-defaultPref("browser.newtabpage.activity-stream.widgets.system.enabled", true); // abilita i widgets
-defaultPref("browser.newtabpage.activity-stream.widgets.system.focusTimer.enabled", true);
-defaultPref("browser.newtabpage.activity-stream.widgets.system.lists.enabled", true);
-
-// AccuWeather
-defaultPref("browser.newtabpage.activity-stream.widgets.system.weatherForecast.enabled", true); // abilita meteo
-
-// Disable Contile (Sponsored tiles)
-lockPref("browser.newtabpage.activity-stream.sov.name", "");
-lockPref("browser.topsites.contile.enabled", false);
-lockPref("browser.topsites.contile.endpoint", "");
-lockPref("browser.topsites.contile.sov.enabled", false);
-
-// Disable Fakespot
-lockPref("browser.newtabpage.activity-stream.discoverystream.contextualContent.feeds", "need_to_know");
-
-// Disable fetching favicons remotely from Mozila's remote Tippy Top service
-defaultPref("browser.newtabpage.activity-stream.feeds.favicon", false);
-
-// Disable fetching the layout remotely
-defaultPref("browser.newtabpage.activity-stream.feeds.sectionslayoutfeed", false);
-
-// Disable fetching locale/fluent files remotely
-defaultPref("browser.newtabpage.activity-stream.asrouter.useRemoteL10n", false);
-
-// Disable fetching top sites remotely
-defaultPref("browser.topsites.useRemoteSetting", false);
-
-// Disable Firefox Sync first run/promotion and metrics
-defaultPref("browser.newtabpage.activity-stream.fxaccounts.endpoint", "");
-
-// Disable MARS (Mozilla Ad Routing Service)
-lockPref("browser.newtabpage.activity-stream.discoverystream.reportAds.enabled", false);
-lockPref("browser.newtabpage.activity-stream.discoverystream.sections.contextualAds.locale-config", "");
-lockPref("browser.newtabpage.activity-stream.discoverystream.sections.contextualAds.region-config", "");
-lockPref("browser.newtabpage.activity-stream.feeds.adsfeed", false);
-lockPref("browser.newtabpage.activity-stream.unifiedAds.adsFeed.spocs.enabled", false);
-lockPref("browser.newtabpage.activity-stream.unifiedAds.adsFeed.tiles.enabled", false);
-lockPref("browser.newtabpage.activity-stream.unifiedAds.enabled", false);
-lockPref("browser.newtabpage.activity-stream.unifiedAds.endpoint", "");
-lockPref("browser.newtabpage.activity-stream.unifiedAds.spocs.enabled", false);
-lockPref("browser.newtabpage.activity-stream.unifiedAds.tiles.enabled", false);
-
-// Disable new tab attribution
-lockPref("browser.newtabpage.activity-stream.feeds.newtabattributionfeed", false);
-lockPref("dap.ohttp.hpke", "");
-lockPref("dap.ohttp.relayURL", "");
-
-// Disable onboarding
-lockPref("browser.newtabpage.activity-stream.discoverystream.topicSelection.onboarding.maybeDisplay", false);
-
-// Disable Pocket sponsored stories
-lockPref("browser.newtabpage.activity-stream.discoverystream.placements.spocs", "");
-lockPref("browser.newtabpage.activity-stream.discoverystream.placements.spocs.counts", "");
-lockPref("browser.newtabpage.activity-stream.discoverystream.endpointSpocsClear", "");
-lockPref("browser.newtabpage.activity-stream.discoverystream.region-spocs-config", "");
-lockPref("browser.newtabpage.activity-stream.showSponsored", false);
-lockPref("browser.newtabpage.activity-stream.system.showSponsored", false);
-
-// Disable the promotion card
-lockPref("browser.newtabpage.activity-stream.discoverystream.promoCard.visible", false);
-
-// Disable recent activity
-defaultPref("browser.newtabpage.activity-stream.section.highlights.includeBookmarks", false);
-defaultPref("browser.newtabpage.activity-stream.section.highlights.include", false);
-defaultPref("browser.newtabpage.activity-stream.section.highlights.includeVisited", false);
-
-// Disable "smart" shortcut personalization
-defaultPref("browser.newtabpage.activity-stream.feeds.smartshortcutsfeed", false);
-
-// Disable sponsored shortcuts
-lockPref("browser.newtabpage.activity-stream.showSponsoredTopSites", false);
-
-// Disable stories
-defaultPref("browser.newtabpage.activity-stream.feeds.section.topstories", false);
-
-// Disable telemetry
-lockPref("browser.newtabpage.activity-stream.feeds.telemetry", false);
-lockPref("browser.newtabpage.activity-stream.telemetry", false);
-lockPref("browser.newtabpage.activity-stream.telemetry.privatePing.enabled", false);
-lockPref("browser.newtabpage.activity-stream.telemetry.structuredIngestion.endpoint", "");
-lockPref("browser.newtabpage.ping.enabled", false);
-lockPref("browser.places.interactions.enabled", false);
-lockPref("browser.search.serpEventTelemetryCategorization.enabled", false);
-
-// Disable wallpaper promotions
-lockPref("browser.newtabpage.activity-stream.newtabWallpapers.highlightDismissed", true);
-
-// Ripristina sessione precedente
-defaultPref("browser.startup.page", 3);
-
-// Hide checkboxes to enable sponsored shortcuts and Pocket sponsored stories
-lockPref("browser.newtabpage.activity-stream.showSponsoredCheckboxes", false);
-
-// Hide the Firefox logo
-lockPref("browser.newtabpage.activity-stream.hideLogo", true);
-lockPref("browser.newtabpage.activity-stream.logowordmark.alwaysVisible", false);
-
-// If Merino is enabled, use OHTTP for superior privacy
-defaultPref("browser.newtabpage.activity-stream.discoverystream.merino-provider.ohttp.enabled", true);
-
-// If stories are enabled, allow customization and following/unfollowing interests/topics
-defaultPref("browser.newtabpage.activity-stream.discoverystream.sections.interestPicker.enabled", true);
-defaultPref("browser.newtabpage.activity-stream.discoverystream.topicSelection.enabled", true);
-
-// If stories are enabled, disable "personalization"
-lockPref("browser.newtabpage.activity-stream.discoverystream.sections.personalization.inferred.locale-config", "");
-lockPref("browser.newtabpage.activity-stream.discoverystream.sections.personalization.inferred.user.enabled", false);
-lockPref("browser.newtabpage.activity-stream.discoverystream.shortcuts.personalization.enabled", false);
-lockPref("browser.newtabpage.activity-stream.feeds.inferredpersonalizationfeed", false);
-
-// If stories are enabled, disable impression tracking
-lockPref("browser.newtabpage.activity-stream.impressionId", "{}");
-lockPref("browser.newtabpage.activity-stream.feeds.section.topstories.rec.impressions", "{}"); // [NO-ANDROID] [NO-MAIL] [HIDDEN] https://searchfox.org/mozilla-central/rev/cc4985b7/browser/extensions/newtab/lib/TopStoriesFeed.sys.mjs#33
-lockPref("browser.newtabpage.activity-stream.feeds.section.topstories.spoc.impressions", "{}"); // [NO-ANDROID] [NO-MAIL] [HIDDEN] https://searchfox.org/mozilla-central/rev/cc4985b7/browser/extensions/newtab/lib/TopStoriesFeed.sys.mjs#27
-
-// If stories are enabled, enable the new sections UI 
-defaultPref("browser.newtabpage.activity-stream.discoverystream.sections.cards.enabled", false);
-defaultPref("browser.newtabpage.activity-stream.discoverystream.sections.enabled", false);
-
-// Blocca il passaggio automatico dalla barra di ricerca a quella degli indirizzi
-defaultPref("browser.newtabpage.activity-stream.improvesearch.handoffToAwesomebar", false);
-
-// Remove default shortcuts
-defaultPref("browser.newtabpage.activity-stream.default.sites", "");
-defaultPref("browser.newtabpage.activity-stream.improvesearch.topSiteSearchShortcuts", false);
-defaultPref("browser.newtabpage.activity-stream.improvesearch.topSiteSearchShortcuts.searchEngines", "");
-defaultPref("browser.newtabpage.pinned", "[{\"url\":\"https://www.youtube.com/\",\"label\":\"YouTube\"},{\"url\":\"https://www.reddit.com/\",\"label\":\"Reddit\"},{\"url\":\"https://mail.google.com/mail/u/0/?hl=it#inbox\",\"label\":\"Gmail\"},{\"url\":\"https://addons.mozilla.org/it/firefox/\",\"label\":\"Estensioni\"},{\"url\":\"https://wiki.archlinux.org/title/List_of_applications\",\"label\":\"Applicazioni\"},{\"url\":\"https://it.wikipedia.org/wiki/Pagina_principale\",\"label\":\"Wikipedia\"},{\"url\":\"https://github.com/\",\"label\":\"GitHub\"},{\"url\":\"https://www.diretta.it/\",\"label\":\"Diretta\"}]");
-
-// Disable the Firefox Messaging System
-lockPref("browser.newtabpage.activity-stream.asrouter.providers.cfr", "null");
-lockPref("browser.newtabpage.activity-stream.asrouter.providers.cfr-fxa", "null");
-lockPref("browser.newtabpage.activity-stream.asrouter.providers.message-groups", "null");
-lockPref("browser.newtabpage.activity-stream.asrouter.providers.messaging-experiments", "null");
-lockPref("browser.newtabpage.activity-stream.asrouter.providers.onboarding", "null");
-lockPref("browser.newtabpage.activity-stream.asrouter.providers.snippets", "null");
-lockPref("browser.newtabpage.activity-stream.feeds.newtabmessaging", false);
-
-/* -----------------------------------------------------------------------------------
-   033: SUGGESTIONS
+   031: SUGGESTIONS
    ----------------------------------------------------------------------------------- */
 
 // Disable AccuWeather suggestions
