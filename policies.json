@@ -6,7 +6,7 @@
     "Cookies": {
       "Behavior": "partition-foreign",
       "BehaviorPrivateBrowsing": "partition-foreign",
-      "Locked": true,
+      "Locked": true
     },
     "DisableFeedbackCommands": true,
     "DisableFirefoxStudies": true,
