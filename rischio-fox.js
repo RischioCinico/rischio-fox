@@ -95,6 +95,8 @@ lockPref("browser.ipProtection.upgradeNotAvailable", true);
 lockPref("pdfjs.enableNewBadge", false);
 lockPref("browser.tabs.notes.newBadge.enabled", false);
 lockPref("browser.tabs.splitview.hasUsed", true);
+lockPref("browser.ml.chat.page.footerBadge", false);
+lockPref("browser.ml.chat.page.menuBadge", false);
 
 // Disabilita avviso in `about:config`
 lockPref("browser.aboutConfig.showWarning", false);
@@ -1539,4 +1541,4 @@ lockPref("browser.safebrowsing.downloads.remote.block_potentially_unwanted", fal
 lockPref("browser.safebrowsing.downloads.remote.block_uncommon", false);
 lockPref("browser.download.deletePrivate.chosen", false);
 
-lockPref("rischio.fox", "151.32");
+lockPref("rischio.fox", "151.33");
