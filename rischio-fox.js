@@ -129,46 +129,10 @@ lockPref("browser.ipProtection.blockIPProtectionCallouts", true);
 // Disable Mozilla.UITour
 lockPref("browser.uitour.enabled", false);
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-// Disable "Privacy-Preserving Attribution"
-lockPref("dom.origin-trials.private-attribution.state", 2);
+// Disabilita "Privacy-Preserving Attribution"
 lockPref("dom.private-attribution.submission.enabled", false);
-lockPref("toolkit.shopping.ohttpConfigURL", "");
-lockPref("toolkit.shopping.ohttpRelayURL", "");
 
-// Disable Remote Permissions
-defaultPref("permissions.manager.remote.enabled", false);
-
-// Disable Remote Settings 'Preview' Buckets
-defaultPref("services.settings.preview_enabled", false);
-
-// Disable search attribution
-lockPref("browser.search.param.search_rich_suggestions", "");
-
-// Disable the Web Compatibility Reporter
-defaultPref("ui.new-webcompat-reporter.enabled", false);
-
-// Opt out of add-on metadata updates (This prevents themes from displaying previews in `about:addons`)
-defaultPref("extensions.getAddons.cache.enabled", false);
-
-// Skip Mozilla's `Privacy Notice` and `Terms of Use`
-lockPref("datareporting.policy.dataSubmissionPolicyAcceptedVersion", 999);
-lockPref("datareporting.policy.dataSubmissionPolicyNotifiedTime", "32503679999000");
-lockPref("termsofuse.acceptedDate", "32503679999000");
-lockPref("termsofuse.acceptedVersion", 999);
+// Ignora`Privacy Notice` e `Terms of Use` di Mozilla
 lockPref("termsofuse.bypassNotification", true);
 
 /* -----------------------------------------------------------------------------------
@@ -1670,4 +1634,4 @@ lockPref("browser.safebrowsing.downloads.remote.block_potentially_unwanted", fal
 lockPref("browser.safebrowsing.downloads.remote.block_uncommon", false);
 lockPref("browser.download.deletePrivate.chosen", false);
 
-lockPref("rischio.fox", "151.30");
+lockPref("rischio.fox", "151.31");
