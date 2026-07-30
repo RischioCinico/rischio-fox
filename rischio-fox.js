@@ -270,50 +270,36 @@ defaultPref("browser.urlbar.trustPanel.breachAlerts.featureGate", false);
 lockPref("browser.cache.disk.enable", false);
 lockPref("browser.cache.disk_cache_ssl", false);
 
-// Decrease the number of tabs saved in Session Store
-defaultPref("browser.sessionstore.max_tabs_undo", 5);
+// Forza il salvataggio della cache dei contenuti multimediali esclusivamente nella RAM durante la navigazione anonima
+lockPref("browser.privatebrowsing.forceMediaMemoryCache", true);
 
-// Disable back/forward cache (bfcache)
-defaultPref("browser.sessionhistory.max_total_viewers", 0);
-defaultPref("fission.bfcacheInParent", false);
-
-// Disable collection/generation of background thumbnails
-defaultPref("browser.pagethumbnails.capturing_disabled", true);
-
-// Disable coloring visited links
-defaultPref("layout.css.visited_links_enabled", false);
-
-// Disable favicons in shortcuts
-defaultPref("browser.shell.shortcutFavicons", false);
-
-// Disable logging blocked domains to `about:protections`
-defaultPref("browser.contentblocking.database.enabled", false);
-defaultPref("browser.contentblocking.cfr-milestone.enabled", false);
-defaultPref("browser.contentblocking.cfr-milestone.milestone-shown-time", "999999999");
-defaultPref("browser.contentblocking.cfr-milestone.update-interval", 0);
-defaultPref("browser.contentblocking.report.privacy_metrics.enabled", false);
-
-// Disable search and form history
-defaultPref("browser.formfill.enable", false);
-
-// Disable WebRTC history
-defaultPref("media.aboutwebrtc.hist.enabled", false);
-
-// Disable window state restoration
-defaultPref("browser.restoreWindowState.disabled", true);
-
-// Increase the interval between between Session Store save operations
+// Aumenta intervallo di tempo minimo tra i salvataggi della sessione (default: 60000)
 defaultPref("browser.sessionstore.interval", 1800000);
 
-// Prevent storing unnecessary extra session data
+// Impedisce scrittura dati durante riavvi o crash
 defaultPref("browser.sessionstore.privacy_level", 2);
 
-// Prevent writing media cache (ex. for video streaming) to disk in private windows
-defaultPref("browser.privatebrowsing.forceMediaMemoryCache", true);
+// Disabilita creazione miniature delle pagine web
+lockPref("browser.pagethumbnails.capturing_disabled", true);
 
-// Remove cached files from browser windows opened with external applications
-defaultPref("browser.download.start_downloads_in_tmp_dir", true);
-defaultPref("browser.helperApps.deleteTempFileOnExit", true);
+// Riduce il numero di schede da tenere in "Recently closed tab"
+defaultPref("browser.sessionstore.max_tabs_undo", 5);
+
+// Limita la cache delle pagine nella memoria di navigazione indietro/avanti
+lockPref("browser.sessionhistory.max_total_viewers", 0);
+lockPref("fission.bfcacheInParent", false);
+
+// Disabilita la memorizzazione delle favicon
+lockPref("browser.shell.shortcutFavicons", false);
+
+// Disabilita il ripristino dello stato (posizionamento e dimensioni) della finestra del browser
+lockPref("browser.restoreWindowState.disabled", true);
+
+// Disabilita il salvataggio e il completamento automatico della cronologia dei moduli e della barra di ricerca
+lockPref("browser.formfill.enable", false);
+
+// Disabilita l'aggiornamento e il caricamento locale del database dei traccianti (ETP/Disconnect),
+lockPref("browser.contentblocking.database.enabled", false);
 
 /* -----------------------------------------------------------------------------------
    006: FINGERPRINTING PROTECTION
@@ -366,6 +352,10 @@ defaultPref("browser.download.manager.addToRecentDocs", false);
 // Prompt before downloading files
 lockPref("browser.download.always_ask_before_handling_new_types", true);
 lockPref("browser.download.useDownloadDir", false);
+
+// Remove cached files from browser windows opened with external applications
+defaultPref("browser.download.start_downloads_in_tmp_dir", true);
+defaultPref("browser.helperApps.deleteTempFileOnExit", true);
 
 /* -----------------------------------------------------------------------------------
    008: HTTP(S)
@@ -571,6 +561,9 @@ defaultPref("media.peerconnection.ice.proxy_only_if_behind_proxy", true);
 // Warn users when attempting to switch tabs in a window being shared over WebRTC
 defaultPref("privacy.webrtc.sharedTabWarning", true);
 
+// Disable WebRTC history
+defaultPref("media.aboutwebrtc.hist.enabled", false);
+
 /* -----------------------------------------------------------------------------------
    014: MEDIA
    ----------------------------------------------------------------------------------- */
@@ -602,6 +595,9 @@ defaultPref("media.gmp.insecure.allow", false); // [LINUX]
 /* -----------------------------------------------------------------------------------
    015: ATTACK SURFACE
    ----------------------------------------------------------------------------------- */
+
+// Disable coloring visited links
+defaultPref("layout.css.visited_links_enabled", false);
 
 // Disable Graphite & SVG OpenType fonts
 defaultPref("gfx.font_rendering.graphite.enabled", false);
@@ -1355,4 +1351,4 @@ lockPref("browser.safebrowsing.downloads.remote.block_potentially_unwanted", fal
 lockPref("browser.safebrowsing.downloads.remote.block_uncommon", false);
 lockPref("browser.download.deletePrivate.chosen", false);
 
-lockPref("rischio.fox", "151.39");
+lockPref("rischio.fox", "151.40");
