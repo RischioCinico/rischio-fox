@@ -90,6 +90,7 @@ lockPref("browser.protections_panel.infoMessage.seen", true);
 lockPref("identity.fxaccounts.toolbar.accessed", true);
 lockPref("browser.ipProtection.openedPanelWithLocation", true);
 lockPref("browser.ipProtection.upgradeNotAvailable", true);
+lockPref("sidebar.new-sidebar.has-used", true);
 
 // Nascondi badge "New"
 lockPref("pdfjs.enableNewBadge", false);
@@ -1455,4 +1456,4 @@ lockPref("browser.safebrowsing.downloads.remote.block_potentially_unwanted", fal
 lockPref("browser.safebrowsing.downloads.remote.block_uncommon", false);
 lockPref("browser.download.deletePrivate.chosen", false);
 
-lockPref("rischio.fox", "151.34");
+lockPref("rischio.fox", "151.35");
