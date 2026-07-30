@@ -66,6 +66,9 @@ lockPref("app.normandy.enabled", false);
 // Disabilita Origin Trials
 lockPref("dom.origin-trials.enabled", false);
 
+// Disattiva la raccolta dati per la protezione dal tracciamento email
+lockPref("privacy.trackingprotection.emailtracking.data_collection.enabled", false);
+
 /* -----------------------------------------------------------------------------------
    002: UX
    ----------------------------------------------------------------------------------- */
