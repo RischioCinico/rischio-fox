@@ -318,7 +318,6 @@ lockPref("browser.download.always_ask_before_handling_new_types", true);
 lockPref("browser.download.useDownloadDir", false);
 
 // Remove cached files from browser windows opened with external applications
-defaultPref("browser.download.start_downloads_in_tmp_dir", true);
 defaultPref("browser.helperApps.deleteTempFileOnExit", true);
 
 /* -----------------------------------------------------------------------------------
@@ -1347,4 +1346,4 @@ lockPref("browser.safebrowsing.downloads.remote.block_potentially_unwanted", fal
 lockPref("browser.safebrowsing.downloads.remote.block_uncommon", false);
 lockPref("browser.download.deletePrivate.chosen", false);
 
-lockPref("rischio.fox", "151.40");
+lockPref("rischio.fox", "151.41");
