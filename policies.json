@@ -44,9 +44,10 @@
       "Locked": true
     },
     "FirefoxSuggest": {
-      "ImproveSuggest": false,
+      "WebSuggestions": false,
       "SponsoredSuggestions": false,
-      "WebSuggestions": false
+      "ImproveSuggest": false,
+      "Locked": true
     },
     "Homepage": {
       "StartPage": "previous-session"
