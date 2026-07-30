@@ -15,8 +15,9 @@ INDICE:
    002: UX
    003: AVVIO
    004: RICERCA
-   005: FINGERPRINTING PROTECTION
-   006: DISK AVOIDANCE
+   005: I/O
+
+   006: FINGERPRINTING PROTECTION
    007: DOWNLOADS
    008: HTTP(S)
    009: IMPLICIT CONNECTIONS
@@ -297,7 +298,7 @@ defaultPref("ui.use_standins_for_native_colors", true);
 defaultPref("dom.quotaManager.temporaryStorage.fixedLimit", 52428800);
 
 /* -----------------------------------------------------------------------------------
-   006: DISK AVOIDANCE
+   006: I/O
    ----------------------------------------------------------------------------------- */
 
 // Decrease the number of tabs saved in Session Store
