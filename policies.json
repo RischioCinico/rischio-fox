@@ -69,6 +69,7 @@
     },
     "SearchBar": "unified",
     "SkipTermsOfUse": true,
+    "StartDownloadsInTempDirectory": true,
     "UserMessaging": {
       "ExtensionRecommendations": false,
       "FeatureRecommendations": false,
