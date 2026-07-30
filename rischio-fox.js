@@ -263,42 +263,7 @@ defaultPref("browser.urlbar.trending.featureGate", false);
 defaultPref("browser.urlbar.trustPanel.breachAlerts.featureGate", false);
 
 /* -----------------------------------------------------------------------------------
-   005: FINGERPRINTING PROTECTION
-   ----------------------------------------------------------------------------------- */
-
-// Always load fonts bundled with Firefox
-defaultPref("gfx.bundled-fonts.activate", 1);
-
-// Disable the ability to switch locales without requiring a restart
-defaultPref("intl.multilingual.liveReload", false);
-
-// Disable VP9 Benchmark
-defaultPref("media.benchmark.vp9.threshold", 0);
-
-// Limit font visibility to base system fonts + fonts from optional language packs
-defaultPref("layout.css.font-visibility", 2);
-
-// Prevent exposing WebGL Renderer Info
-defaultPref("webgl.enable-renderer-query", false);
-defaultPref("webgl.override-unmasked-renderer", "Mozilla");
-defaultPref("webgl.override-unmasked-vendor", "Mozilla");
-defaultPref("webgl.sanitize-unmasked-renderer", false);
-
-// Prevent pre-allocating content processes
-defaultPref("dom.ipc.processPrelaunch.enabled", false);
-defaultPref("dom.ipc.processPrelaunch.fission.number", 0);
-
-// Prevent using system accent colors
-defaultPref("widget.non-native-theme.use-theme-accent", false);
-
-// Prevent using system colors
-defaultPref("ui.use_standins_for_native_colors", true);
-
-// Set a fixed temporary storage limit
-defaultPref("dom.quotaManager.temporaryStorage.fixedLimit", 52428800);
-
-/* -----------------------------------------------------------------------------------
-   006: I/O
+   005: I/O
    ----------------------------------------------------------------------------------- */
 
 // Decrease the number of tabs saved in Session Store
@@ -349,6 +314,41 @@ defaultPref("browser.privatebrowsing.forceMediaMemoryCache", true);
 // Remove cached files from browser windows opened with external applications
 defaultPref("browser.download.start_downloads_in_tmp_dir", true);
 defaultPref("browser.helperApps.deleteTempFileOnExit", true);
+
+/* -----------------------------------------------------------------------------------
+   006: FINGERPRINTING PROTECTION
+   ----------------------------------------------------------------------------------- */
+
+// Always load fonts bundled with Firefox
+defaultPref("gfx.bundled-fonts.activate", 1);
+
+// Disable the ability to switch locales without requiring a restart
+defaultPref("intl.multilingual.liveReload", false);
+
+// Disable VP9 Benchmark
+defaultPref("media.benchmark.vp9.threshold", 0);
+
+// Limit font visibility to base system fonts + fonts from optional language packs
+defaultPref("layout.css.font-visibility", 2);
+
+// Prevent exposing WebGL Renderer Info
+defaultPref("webgl.enable-renderer-query", false);
+defaultPref("webgl.override-unmasked-renderer", "Mozilla");
+defaultPref("webgl.override-unmasked-vendor", "Mozilla");
+defaultPref("webgl.sanitize-unmasked-renderer", false);
+
+// Prevent pre-allocating content processes
+defaultPref("dom.ipc.processPrelaunch.enabled", false);
+defaultPref("dom.ipc.processPrelaunch.fission.number", 0);
+
+// Prevent using system accent colors
+defaultPref("widget.non-native-theme.use-theme-accent", false);
+
+// Prevent using system colors
+defaultPref("ui.use_standins_for_native_colors", true);
+
+// Set a fixed temporary storage limit
+defaultPref("dom.quotaManager.temporaryStorage.fixedLimit", 52428800);
 
 /* -----------------------------------------------------------------------------------
    007: DOWNLOADS
