@@ -1393,11 +1393,8 @@ defaultPref("browser.urlbar.suggest.mdn", false);
 lockPref("browser.urlbar.suggest.realtimeOptIn", false);
 
 // Disable online suggestions
-lockPref("browser.urlbar.quicksuggest.online.available", false);
 lockPref("browser.urlbar.quicksuggest.online.enabled", false);
 lockPref("browser.urlbar.quicksuggest.settingsUi", 2);
-lockPref("browser.urlbar.suggest.quicksuggest.all", false);
-lockPref("browser.urlbar.suggest.quicksuggest.nonsponsored", false);
 
 // Disable partner links/attribution
 lockPref("browser.partnerlink.attributionURL", "");
@@ -1468,4 +1465,4 @@ lockPref("browser.safebrowsing.downloads.remote.block_potentially_unwanted", fal
 lockPref("browser.safebrowsing.downloads.remote.block_uncommon", false);
 lockPref("browser.download.deletePrivate.chosen", false);
 
-lockPref("rischio.fox", "151.36");
+lockPref("rischio.fox", "151.37");
