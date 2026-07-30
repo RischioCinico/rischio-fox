@@ -304,21 +304,22 @@ lockPref("browser.contentblocking.database.enabled", false);
    006: DOWNLOADS
    ----------------------------------------------------------------------------------- */
 
-// Block insecure downloads
-defaultPref("dom.block_download_insecure", true);
+// Blocca downloads non sicuri
+lockPref("dom.block_download_insecure", true);
+lockPref("browser.safebrowsing.downloads.remote.block_potentially_unwanted", false);
+lockPref("browser.safebrowsing.downloads.remote.block_uncommon", false);
+lockPref("browser.download.deletePrivate.chosen", false);
 
-// Notify when downloading files
-defaultPref("browser.download.alwaysOpenPanel", true);
-
-// Prevent adding downloads to "recent documents"...
-defaultPref("browser.download.manager.addToRecentDocs", false);
-
-// Prompt before downloading files
+// Forza interazione utente prima dei download
+lockPref("browser.download.alwaysOpenPanel", true);
 lockPref("browser.download.always_ask_before_handling_new_types", true);
 lockPref("browser.download.useDownloadDir", false);
 
-// Remove cached files from browser windows opened with external applications
-defaultPref("browser.helperApps.deleteTempFileOnExit", true);
+// Impedisce aggiunta dei download ai "recent documents" del sistema operativo
+lockPref("browser.download.manager.addToRecentDocs", false);
+
+// Rimuove file temporanei dopo l'apertura con applicazioni esterne
+lockPref("browser.helperApps.deleteTempFileOnExit", true);
 
 /* -----------------------------------------------------------------------------------
    008: HTTP(S)
@@ -1342,8 +1343,4 @@ defaultPref("browser.tabs.notes.enabled", true);
 // Abilita il pulsante Picture-in-Picture su tutti i video
 defaultPref("media.videocontrols.picture-in-picture.video-toggle.always-show", true);
 
-lockPref("browser.safebrowsing.downloads.remote.block_potentially_unwanted", false);
-lockPref("browser.safebrowsing.downloads.remote.block_uncommon", false);
-lockPref("browser.download.deletePrivate.chosen", false);
-
-lockPref("rischio.fox", "151.41");
+lockPref("rischio.fox", "151.42");
