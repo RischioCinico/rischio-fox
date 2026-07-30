@@ -266,6 +266,11 @@ defaultPref("browser.urlbar.trustPanel.breachAlerts.featureGate", false);
    005: I/O
    ----------------------------------------------------------------------------------- */
 
+// Disabilita cache su disco
+lockPref("browser.cache.disk.enable", false);
+
+defaultPref("browser.cache.disk_cache_ssl", true);
+
 // Decrease the number of tabs saved in Session Store
 defaultPref("browser.sessionstore.max_tabs_undo", 7);
 
@@ -278,10 +283,6 @@ defaultPref("browser.pagethumbnails.capturing_disabled", true);
 
 // Disable coloring visited links
 defaultPref("layout.css.visited_links_enabled", false);
-
-// Disable disk cache
-defaultPref("browser.cache.disk.enable", false);
-defaultPref("browser.cache.disk_cache_ssl", true);
 
 // Disable favicons in shortcuts
 defaultPref("browser.shell.shortcutFavicons", false);
