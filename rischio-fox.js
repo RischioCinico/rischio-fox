@@ -13,7 +13,6 @@
 INDICE:
    001: TELEMETRIA
    002: UX
-   004: TRACKING PROTECTION
    005: FINGERPRINTING PROTECTION
    006: DISK AVOIDANCE
    007: DOWNLOADS
@@ -135,102 +134,6 @@ lockPref("dom.private-attribution.submission.enabled", false);
 // Ignora`Privacy Notice` e `Terms of Use` di Mozilla
 lockPref("termsofuse.bypassNotification", true);
 
-/* -----------------------------------------------------------------------------------
-   004: TRACKING PROTECTION
-   ----------------------------------------------------------------------------------- */
-
-// Abilita eccezioni per evitare problemi minori
-lockPref("privacy.trackingprotection.allow_list.convenience.enabled", true);
-
-// Enable ETP Strict
-lockPref("browser.contentblocking.category", "strict"); 
-
-// Block harmful add-on URLs
-defaultPref("privacy.trackingprotection.harmfuladdon.enabled", true); // [DEFAULT - Desktop Firefox] https://searchfox.org/firefox-main/rev/93aad2a6615f670b1279c229dd37f7397236131a/browser/app/profile/firefox.js#2434
-
-// Block known consent managers (CMPs)
-defaultPref("privacy.trackingprotection.consentmanager.annotate_channels", true); // [DEFAULT]
-defaultPref("privacy.trackingprotection.consentmanager.skip.enabled", false); // [DEFAULT]
-defaultPref("privacy.trackingprotection.consentmanager.skip.pbmode.enabled", false);
-
-// Block known cryptominers
-defaultPref("privacy.trackingprotection.cryptomining.enabled", true); 
-
-// Block known email trackers
-defaultPref("privacy.trackingprotection.emailtracking.enabled", true);
-defaultPref("privacy.trackingprotection.emailtracking.pbmode.enabled", true);
-
-// Block known fingerprinters
-defaultPref("privacy.trackingprotection.antifraud.annotate_channels", true);
-defaultPref("privacy.trackingprotection.antifraud.skip.enabled", false);
-defaultPref("privacy.trackingprotection.antifraud.skip.pbmode.enabled", false);
-defaultPref("privacy.trackingprotection.fingerprinting.enabled", true);
-
-// Block known social trackers
-defaultPref("privacy.trackingprotection.socialtracking.enabled", true);
-
-// Block known trackers
-defaultPref("privacy.trackingprotection.annotate_channels", true);
-defaultPref("privacy.trackingprotection.enabled", true);
-defaultPref("privacy.trackingprotection.pbmode.enabled", true);
-
-// Block known trackers using the `strict` (Level 2) list
-defaultPref("privacy.annotate_channels.strict_list.enabled", true);
-defaultPref("privacy.annotate_channels.strict_list.pbmode.enabled", true);
-
-// Block known tracking cookies
-defaultPref("network.cookie.cookieBehavior.trackerCookieBlocking", true);
-defaultPref("privacy.socialtracking.block_cookies.enabled", true);
-
-// Enable Bounce Tracking Protection
-defaultPref("privacy.bounceTrackingProtection.mode", 1);
-
-// Enable Query Parameter Stripping
-defaultPref("privacy.query_stripping.enabled", true);
-defaultPref("privacy.query_stripping.enabled.pbmode", true);
-defaultPref("privacy.query_stripping.redirect", true);
-
-// Enable SmartBlock and Web Compatibility interventions
-defaultPref("extensions.webcompat.enable_interventions", true);
-defaultPref("extensions.webcompat.enable_shims", true);
-defaultPref("extensions.webcompat.perform_injections", true);
-defaultPref("extensions.webcompat.perform_ua_overrides", true);
-defaultPref("extensions.webcompat.smartblockEmbeds.enabled", true);
-defaultPref("extensions.pictureinpicture.enable_picture_in_picture_overrides", true);
-
-// State Partitioning (Total Cookie Protection / Isolamento Risorse)
-defaultPref("network.fetch.cache_partition_cross_origin", true);
-defaultPref("privacy.partition.bloburl_per_partition_key", true);
-defaultPref("privacy.partition.serviceWorkers", true);
-
-// Enable Suspected Fingerprinters Protection (FPP)
-defaultPref("privacy.fingerprintingProtection", true);
-defaultPref("privacy.fingerprintingProtection.pbmode", true);
-defaultPref("privacy.reduceTimerPrecision", true);
-defaultPref("privacy.resistFingerprinting", false);
-defaultPref("privacy.resistFingerprinting.pbmode", false);
-
-// Enable TCP/dFPI
-defaultPref("network.cookie.cookieBehavior", 5);
-defaultPref("network.cookie.cookieBehavior.pbmode", 5);
-defaultPref("network.cookie.cookieBehavior.optInPartitioning", true);
-defaultPref("network.cookie.cookieBehavior.optInPartitioning.pbmode", true);
-
-// Ignore less restricted referer policies (than the default)
-defaultPref("network.http.referer.disallowCrossSiteRelaxingDefault", true);
-defaultPref("network.http.referer.disallowCrossSiteRelaxingDefault.pbmode", true);
-defaultPref("network.http.referer.disallowCrossSiteRelaxingDefault.pbmode.top_navigation", true);
-defaultPref("network.http.referer.disallowCrossSiteRelaxingDefault.top_navigation", true);
-
-// Enable exceptions required to avoid major breakage
-lockPref("privacy.trackingprotection.allow_list.baseline.enabled", true);
-lockPref("privacy.trackingprotection.allow_list.hasMigratedCategoryPrefs", true);
-
-// Lower the network priority of known trackers (if not blocked for whatever reason...)
-defaultPref("privacy.trackingprotection.lower_network_priority", true);
-
-// Purge first-party tracking cookies
-defaultPref("privacy.purge_trackers.enabled", true);
 
 /* -----------------------------------------------------------------------------------
    005: FINGERPRINTING PROTECTION
@@ -1634,4 +1537,4 @@ lockPref("browser.safebrowsing.downloads.remote.block_potentially_unwanted", fal
 lockPref("browser.safebrowsing.downloads.remote.block_uncommon", false);
 lockPref("browser.download.deletePrivate.chosen", false);
 
-lockPref("rischio.fox", "151.31");
+lockPref("rischio.fox", "151.32");
