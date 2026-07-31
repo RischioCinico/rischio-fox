@@ -55,10 +55,14 @@
     },
     "HttpsOnlyMode": "force_enabled",
     "NetworkPrediction": false,
+    "NoDefaultBookmarks": true,
+    "OverrideFirstRunPage": "",
+    "OverridePostUpdatePage": "",
     "PopupBlocking": {
       "Default": false,
       "Locked": true
     },
+    "PromptForDownloadLocation": true,
     "SanitizeOnShutdown": {
       "Cache": true,
       "Cookies": false,
