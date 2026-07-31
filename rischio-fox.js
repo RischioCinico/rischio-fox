@@ -318,7 +318,6 @@ lockPref("browser.download.deletePrivate.chosen", false);
 // Forza interazione utente prima dei download
 lockPref("browser.download.alwaysOpenPanel", true);
 lockPref("browser.download.always_ask_before_handling_new_types", true);
-lockPref("browser.download.useDownloadDir", false);
 
 // Impedisce aggiunta dei download ai "recent documents" del sistema operativo
 lockPref("browser.download.manager.addToRecentDocs", false);
@@ -1303,4 +1302,4 @@ defaultPref("browser.tabs.notes.enabled", true);
 // Abilita il pulsante Picture-in-Picture su tutti i video
 defaultPref("media.videocontrols.picture-in-picture.video-toggle.always-show", true);
 
-lockPref("rischio.fox", "151.45");
+lockPref("rischio.fox", "151.46");
