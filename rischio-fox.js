@@ -247,7 +247,6 @@ lockPref("browser.urlbar.suggest.mdn", false);
 lockPref("browser.urlbar.suggest.quickactions", false);
 lockPref("browser.urlbar.suggest.realtimeOptIn", false);
 lockPref("browser.urlbar.suggest.recentsearches", false);
-lockPref("browser.urlbar.suggest.searches", false);
 lockPref("browser.urlbar.suggest.sports", false);
 lockPref("browser.urlbar.suggest.topsites", false);
 lockPref("browser.urlbar.suggest.trending", false);
@@ -1302,4 +1301,4 @@ defaultPref("browser.tabs.notes.enabled", true);
 // Abilita il pulsante Picture-in-Picture su tutti i video
 defaultPref("media.videocontrols.picture-in-picture.video-toggle.always-show", true);
 
-lockPref("rischio.fox", "151.46");
+lockPref("rischio.fox", "151.47");
