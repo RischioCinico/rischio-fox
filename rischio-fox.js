@@ -425,20 +425,12 @@ defaultPref("browser.http.blank_page_with_error_response.enabled", false);
 // Segna come non sicura la connessione se il server usa vecchi protocolli di rinegoziazione TLS
 defaultPref("security.ssl.treat_unsafe_negotiation_as_broken", true);
 
-// Mostra l'avviso di connessione non sicura sui moduli di login anche per gli IP locali
-defaultPref("security.insecure_field_warning.ignore_local_ip_address", false);
-
 // Disabilita OCSP
 lockPref("security.OCSP.enabled", 0);
 lockPref("security.OCSP.require", false);
 
 // Disabilita l'invio di una richiesta HTTP in background per verificare la disponibilità del sito
 defaultPref("dom.security.https_only_mode_send_http_background_request", false);
-
-// Disabilita certificati installati a livello di sistema operativo
-defaultPref("security.certerrors.mitm.auto_enable_enterprise_roots", false);
-defaultPref("security.enterprise_roots.enabled", false);
-defaultPref("network.http.http3.disable_when_third_party_roots_found", false);
 
 
 
