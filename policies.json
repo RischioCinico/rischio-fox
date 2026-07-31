@@ -49,6 +49,7 @@
       "ImproveSuggest": false,
       "Locked": true
     },
+    "GoToIntranetSiteForSingleWordEntryInAddressBar": false
     "Homepage": {
       "StartPage": "previous-session"
     },
