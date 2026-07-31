@@ -404,7 +404,7 @@ defaultPref("browser.tabs.fadeOutUnloadedTabs", true);
    009: CONNESSIONI
    ----------------------------------------------------------------------------------- */
 
-// If a connection with HTTP/3 fails, allow retrying it with a different IP address
+// Ritenta HTTP/3 alternando tra IPv4 e IPv6 in caso di errore di connessione.
 defaultPref("network.http.http3.retry_different_ip_family", true);
 
 // If a connection fails retry with the one that is still connecting
