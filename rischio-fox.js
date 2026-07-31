@@ -432,31 +432,20 @@ lockPref("security.OCSP.require", false);
 // Disabilita l'invio di una richiesta HTTP in background per verificare la disponibilità del sito
 defaultPref("dom.security.https_only_mode_send_http_background_request", false);
 
-
-
-
-
-
-// Disable TLS 1.3 0-RTT
+// Disabilita l'invio di Early Data nelle riconnessioni TLS 1.3
 defaultPref("network.http.http3.enable_0rtt", false);
 defaultPref("security.tls.enable_0rtt_data", false);
 
-// Enable HTTPS-First
-defaultPref("dom.security.https_first_add_exception_on_failure", false);
-defaultPref("dom.security.https_first_for_custom_ports", true);
-defaultPref("dom.security.https_first_for_local_addresses", true);
-defaultPref("dom.security.https_first_for_unknown_suffixes", true);
+
+
+
+
+
+
 
 // Enable HTTPS-Only Mode
-defaultPref("dom.security.https_only_mode.upgrade_local", true);
 defaultPref("dom.security.https_only_mode_pbm", true);
 defaultPref("dom.security.https_only_mode_error_page_user_suggestions", true);
-lockPref("dom.security.https_only_mode", true);
-lockPref("dom.security.https_only_mode_pbm", true);
-
-// Enable MITM Detection
-defaultPref("security.certerrors.mitm.priming.enabled", true);
-defaultPref("security.certerrors.mitm.priming.endpoint", "https://mitmdetection.services.mozilla.com/");
 
 // Enable prompts for unsafe HTTP redirects
 defaultPref("network.http.prompt-temp-redirect", true);
@@ -1287,4 +1276,4 @@ defaultPref("browser.tabs.insertAfterCurrent", true);
 // Abilita il pulsante Picture-in-Picture su tutti i video
 defaultPref("media.videocontrols.picture-in-picture.video-toggle.always-show", true);
 
-lockPref("rischio.fox", "151.48");
+lockPref("rischio.fox", "151.49");
