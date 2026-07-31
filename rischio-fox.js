@@ -400,56 +400,54 @@ defaultPref("browser.tabs.loadBookmarksInTabs", true);
 // Abilita dissolvenza delle Unloaded Tabs
 defaultPref("browser.tabs.fadeOutUnloadedTabs", true);
 
+// Abilita note per le schede
+defaultPref("browser.tabs.notes.enabled", true);
+
 /* -----------------------------------------------------------------------------------
    009: CONNESSIONI
    ----------------------------------------------------------------------------------- */
 
-// Ritenta HTTP/3 alternando tra IPv4 e IPv6 in caso di errore di connessione.
+// Impedisce a Firefox di passare automaticamente alla modalità offline
+defaultPref("network.manage-offline-status", false);
+
+// Ritenta HTTP/3 alternando tra IPv4 e IPv6 in caso di errore di connessione
 defaultPref("network.http.http3.retry_different_ip_family", true);
 
-// If a connection fails retry with the one that is still connecting
+// Se una connessione TCP fallisce a metà apertura, ne avvia subito un'altra
 defaultPref("network.http.retry_with_another_half_open", true); 
 
-// Show detailed information on insecure certificate/warning pages
+// Mostra subito i dettagli tecnici e il tasto di avanzamento negli errori HTTPS
 defaultPref("browser.xul.error_pages.expert_bad_cert", true);
 
-// Show an error page/details instead of a blank page for HTTP responses with certain error codes
+// Mostra il codice d'errore del server invece di una pagina completamente bianca
 defaultPref("browser.http.blank_page_with_error_response.enabled", false);
 
-// Always attempt to resolve HTTPS resource records, regardless of connectivity checks/other factors
-defaultPref("network.dns.force_use_https_rr", true);
-
-// Always warn on insecure webpages
-defaultPref("security.insecure_connection_text.enabled", true);
-defaultPref("security.insecure_connection_text.pbmode.enabled", true);
+// Segna come non sicura la connessione se il server usa vecchi protocolli di rinegoziazione TLS
 defaultPref("security.ssl.treat_unsafe_negotiation_as_broken", true);
 
-// Always warn when submitting a form from HTTP to HTTPS, even on local IP addresses
+// Mostra l'avviso di connessione non sicura sui moduli di login anche per gli IP locali
 defaultPref("security.insecure_field_warning.ignore_local_ip_address", false);
 
-// Disable the automatic import of OS client authentication certificates
-defaultPref("security.osclientcerts.autoload", false);
-
-// Disable OCSP revocation checks
+// Disabilita OCSP
 lockPref("security.OCSP.enabled", 0);
 lockPref("security.OCSP.require", false);
 
-// Disable sending background HTTP requests to websites that do not respond quickly to check if they support HTTPS
+// Disabilita l'invio di una richiesta HTTP in background per verificare la disponibilità del sito
 defaultPref("dom.security.https_only_mode_send_http_background_request", false);
 
-// Disable third-party/OS-level root certificates
+// Disabilita certificati installati a livello di sistema operativo
 defaultPref("security.certerrors.mitm.auto_enable_enterprise_roots", false);
 defaultPref("security.enterprise_roots.enabled", false);
-
-// Ensure HTTP/3 isn't disabled when/if third-party/OS-level root certificates are found
 defaultPref("network.http.http3.disable_when_third_party_roots_found", false);
+
+
+
+
+
 
 // Disable TLS 1.3 0-RTT
 defaultPref("network.http.http3.enable_0rtt", false);
 defaultPref("security.tls.enable_0rtt_data", false);
-
-// Enable CRLite revocation checks (and prioritize over OCSP)
-defaultPref("security.pki.crlite_mode", 2);
 
 // Enable HTTPS-First
 defaultPref("dom.security.https_first_add_exception_on_failure", false);
@@ -458,7 +456,6 @@ defaultPref("dom.security.https_first_for_local_addresses", true);
 defaultPref("dom.security.https_first_for_unknown_suffixes", true);
 
 // Enable HTTPS-Only Mode
-defaultPref("dom.security.https_only_mode", true);
 defaultPref("dom.security.https_only_mode.upgrade_local", true);
 defaultPref("dom.security.https_only_mode_pbm", true);
 defaultPref("dom.security.https_only_mode_error_page_user_suggestions", true);
@@ -480,9 +477,6 @@ defaultPref("security.certerrors.permanentOverride", false);
 
 // Require safe renegotiations
 defaultPref("security.ssl.require_safe_negotiation", true);
-
-// Impedisce a Firefox di passare automaticamente alla modalità offline
-defaultPref("network.manage-offline-status", false);
 
 // Enable GREASE (Generate Random Extensions And Sustain Extensibility)
 defaultPref("security.tls.grease_http3_enable", true);
@@ -513,6 +507,9 @@ defaultPref("middlemouse.paste", false);
 
 // Prevent middle mouse clicks on new tab button opening URLs or searches from clipboard
 defaultPref("browser.tabs.searchclipboardfor.middleclick", false);
+
+// Always attempt to resolve HTTPS resource records, regardless of connectivity checks/other factors
+defaultPref("network.dns.force_use_https_rr", true);
 
 /* -----------------------------------------------------------------------------------
    011: DNS
@@ -1295,10 +1292,7 @@ defaultPref("browser.tabs.insertAfterCurrent", true);
    FINE
    ----------------------------------------------------------------------------------- */
 
-// Abilita note per le schede
-defaultPref("browser.tabs.notes.enabled", true);
-
 // Abilita il pulsante Picture-in-Picture su tutti i video
 defaultPref("media.videocontrols.picture-in-picture.video-toggle.always-show", true);
 
-lockPref("rischio.fox", "151.47");
+lockPref("rischio.fox", "151.48");
