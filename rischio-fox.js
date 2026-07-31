@@ -18,9 +18,9 @@ INDICE:
    005: I/O
    006: DOWNLOADS
    007: INTERFACCIA
+   008: SCHEDE
+   009: CONNESSIONI
    
-   008: HTTP(S)
-   009: IMPLICIT CONNECTIONS
    011: DNS
    012: PROXIES
    013: WEBRTC
@@ -37,7 +37,6 @@ INDICE:
    024: SECURITY
    026: DEBUGGING
    027: CONTROL
-   028: UI
    030: PERFORMANCE
 */
 
@@ -100,9 +99,6 @@ lockPref("browser.ml.chat.page.menuBadge", false);
 
 // Disabilita avviso in `about:config`
 lockPref("browser.aboutConfig.showWarning", false);
-
-// Disabilita avviso schermo intero
-lockPref("full-screen-api.warning.timeout", 0);
 
 // Previene l'apertura delle pagine "What's New" dopo gli aggiornamenti
 lockPref("browser.startup.homepage_override.buildID", "20100101");
@@ -330,19 +326,97 @@ lockPref("browser.download.manager.addToRecentDocs", false);
 // Rimuove file temporanei dopo l'apertura con applicazioni esterne
 lockPref("browser.helperApps.deleteTempFileOnExit", true);
 
-
 /* -----------------------------------------------------------------------------------
    007: INTERFACCIA
    ----------------------------------------------------------------------------------- */
 
+// Nasconde barra del titolo
+defaultPref("browser.tabs.inTitlebar", 1);
 
+// Abilita nuova Sidebar
+defaultPref("sidebar.revamp", true);
+lockPref("browser.toolbarbuttons.introduced.sidebar-button", false);
 
+// Disabilita avviso e transizione quando un video passa a schermo intero
+lockPref("full-screen-api.warning.timeout", 0);
+defaultPref("full-screen-api.transition-duration.enter", "0 0");
+defaultPref("full-screen-api.transition-duration.leave", "0 0");
 
+// Mostra "More settings" sulle anteprime di stampa
+defaultPref("print.more-settings.open", true);
 
+// Mostra "Also open a new tab" nelle impostazioni di avvio
+defaultPref("browser.sessionstore.newTabOnRestore.showSetting", true);
+
+// Mostra "Compact`in "Customize Toolbar"
+defaultPref("browser.compactmode.show", true);
+
+// Mostra "View Image Info" nel menu contestuale
+defaultPref("browser.menu.showViewImageInfo", true);
+
+// Previene chiusura automatica dei menu quando si apre un segnalibro
+defaultPref("browser.bookmarks.openInTabClosesMenu", false);
+
+// Mostra "Always ask" per permessi di camera e microfono
+defaultPref("permissions.media.show_always_ask.enabled", true);
+
+// Disabilita fastidioso avviso Web Speech API error
+defaultPref("media.webspeech.synth.dont_notify_on_error", true);
+
+// Disabilita fastidioso avviso del traduttore
+defaultPref("browser.translations.automaticallyPopup", false);
+
+// Mostra caratteri nascosti
+defaultPref("layout.css.control-characters.visible", true);
+
+// Mostra icona per svuotare search boxes
+defaultPref("layout.forms.input-type-search.enabled", true);
+
+// Mostra animazione cursore durante caricamenti
+defaultPref("browser.spin_cursor_while_busy", true);
+
+// Nasconde logo nei QR code generati con Firefox
+defaultPref("browser.shareqrcode.embed_logo", false);
+
+// Mostra maggiori informazioni nelle pagine "about:"
+defaultPref("media.mediacapabilities.from-database", true);
+defaultPref("toolkit.aboutProcesses.showAllSubframes", true);
+defaultPref("toolkit.aboutProcesses.showThreads", true);
 
 /* -----------------------------------------------------------------------------------
-   008: HTTP(S)
+   008: SCHEDE
    ----------------------------------------------------------------------------------- */
+
+// Non chiudere finestra del browser quando si chiude l'ultima scheda
+defaultPref("browser.tabs.closeWindowWithLastTab", false);
+
+// Apre pagine da applicazioni esterne in nuove schede
+defaultPref("browser.link.open_newwindow.override.external", 3);
+
+// Forza apertura pop-ups in nuove schede
+defaultPref("browser.link.open_newwindow.restriction", 0);
+
+// Apre segnalibri in una nuova scheda
+defaultPref("browser.tabs.loadBookmarksInTabs", true);
+
+// Abilita dissolvenza delle Unloaded Tabs
+defaultPref("browser.tabs.fadeOutUnloadedTabs", true);
+
+/* -----------------------------------------------------------------------------------
+   009: CONNESSIONI
+   ----------------------------------------------------------------------------------- */
+
+// If a connection with HTTP/3 fails, allow retrying it with a different IP address
+defaultPref("network.http.http3.retry_different_ip_family", true);
+
+// If a connection fails retry with the one that is still connecting
+defaultPref("network.http.retry_with_another_half_open", true); 
+
+// Show detailed information on insecure certificate/warning pages
+defaultPref("browser.xul.error_pages.expert_bad_cert", true);
+
+// Show an error page/details instead of a blank page for HTTP responses with certain error codes
+defaultPref("browser.http.blank_page_with_error_response.enabled", false);
 
 // Always attempt to resolve HTTPS resource records, regardless of connectivity checks/other factors
 defaultPref("network.dns.force_use_https_rr", true);
@@ -414,10 +488,6 @@ defaultPref("network.manage-offline-status", false);
 
 // Enable GREASE (Generate Random Extensions And Sustain Extensibility)
 defaultPref("security.tls.grease_http3_enable", true);
-
-/* -----------------------------------------------------------------------------------
-   009: IMPLICIT CONNECTIONS
-   ----------------------------------------------------------------------------------- */
 
 // Disable Early Hints
 defaultPref("network.early-hints.enabled", false);
@@ -615,10 +685,9 @@ defaultPref("ui.use_standins_for_native_colors", true);
 
 // Set a fixed temporary storage limit
 defaultPref("dom.quotaManager.temporaryStorage.fixedLimit", 52428800);
+
 // Disable coloring visited links
 defaultPref("layout.css.visited_links_enabled", false);
-
-
 
 // Disable Graphite & SVG OpenType fonts
 defaultPref("gfx.font_rendering.graphite.enabled", false);
@@ -1119,130 +1188,18 @@ defaultPref("editor.resizing.enabled_by_default", true);
 // Ensure users can always control Nimbus recipes
 defaultPref("nimbus.debug", true);
 
-/* -----------------------------------------------------------------------------------
-   028: UI
-   ----------------------------------------------------------------------------------- */
-
-// Display "More settings" on print previews
-defaultPref("print.more-settings.open", true);
-
-// Display the option to open a new tab upon browser start (at `about:preferences#home`)
-defaultPref("browser.sessionstore.newTabOnRestore.showSetting", true);
-
-// Display the option to enable `Compact` mode at `Customize toolbar...`
-defaultPref("browser.compactmode.show", true);
-
-// Display supported media codecs/capabilities at `about:support`
-defaultPref("media.mediacapabilities.from-database", true);
-
-// Enable the containers UI (ex. at `about:preferences#general` - `about:preferences#containers`)
-defaultPref("privacy.userContext.ui.enabled", true);
-
-// Enable the cookie banner reduction UI
-defaultPref("cookiebanners.ui.desktop.enabled", true);
-
-// Enable + customize the new Sidebar 
-defaultPref("browser.toolbarbuttons.introduced.sidebar-button", false);
-defaultPref("sidebar.backupState", '{"command":"","launcherWidth":0,"launcherExpanded":false,"launcherVisible":false}');
-defaultPref("sidebar.main.tools", "syncedtabs,history,bookmarks,passwords,aichat");
-defaultPref("sidebar.revamp", true);
-defaultPref("sidebar.visibility", "hide-sidebar");
-
-// Enable display of in-process subframes at `about:processes` 
-defaultPref("toolkit.aboutProcesses.showAllSubframes", true);
-
-// Enable display of thread information at `about:processes` 
-defaultPref("toolkit.aboutProcesses.showThreads", true);
-
-// Enable the "Page Setup.." menu (under `File` - ex. on the menu bar)
-defaultPref("print.show_page_setup_menu", true);
-
-// Enable the `Share` (URL) context menu item
-defaultPref("browser.menu.share_url.allow", true);
-
-// Enable the `View Image Info` context menu item
-defaultPref("browser.menu.showViewImageInfo", true);
-
-// Fade out unloaded tabs in the tab bar
-defaultPref("browser.tabs.fadeOutUnloadedTabs", true);
-
-// Hide the title bar 
-defaultPref("browser.tabs.inTitlebar", 1);
-
-// Show 'Always ask' for camera and microphone in the permissions drop-down
-defaultPref("permissions.media.show_always_ask.enabled", true);
-
-// Show detailed information on insecure certificate/warning pages
-defaultPref("browser.xul.error_pages.expert_bad_cert", true);
-
-// Show an error page/details instead of a blank page for HTTP responses with certain error codes
-defaultPref("browser.http.blank_page_with_error_response.enabled", false);
-
-// Always load bookmarks in new tabs 
-defaultPref("browser.tabs.loadBookmarksInTabs", true);
-
-// Disable annoying Web Speech API error pop-ups, especially relevant on Linux
-defaultPref("media.webspeech.synth.dont_notify_on_error", true);
-
-// Disable fullscreen delay
-defaultPref("full-screen-api.transition-duration.enter", "0 0");
-defaultPref("full-screen-api.transition-duration.leave", "0 0");
-
-// Display hidden/stray "control" characters
-defaultPref("layout.css.control-characters.visible", true);
-
-// Display an icon to clear search boxes (for `search` `<input>` types)
-defaultPref("layout.forms.input-type-search.enabled", true);
-
-// Display a spinning animation while websites are loading
-defaultPref("browser.spin_cursor_while_busy", true);
-
-// Do not close the browser window if all tabs are closed
-defaultPref("browser.tabs.closeWindowWithLastTab", false);
-
 // Enable autoscrolling
 defaultPref("general.autoScroll", true);
 
 // Enable Firefox Translations (ma disabilita il fastidioso pop-up)
 defaultPref("browser.ai.control.translations", "enabled");
-defaultPref("browser.translations.automaticallyPopup", false);
 defaultPref("extensions.translations.disabled", false);
-
-// Enable QR code creation (from the `Share` (URL) menu) and disable embedding of logo
-defaultPref("browser.shareqrcode.embed_logo", false);
 
 // Enable spellcheck for both multi-line and single-line boxes
 defaultPref("layout.spellcheckDefault", 2);
 
-// Export bookmarks to a `bookmarks.html` file
-defaultPref("browser.bookmarks.autoExportHTML", true);
-
-// Force pop-ups to open in new tabs instead of new windows
-defaultPref("browser.link.open_newwindow.restriction", 0);
-
-// Highlight all Findbar (Ctrl + F) results
-defaultPref("findbar.highlightAll", true);
-
-// If a connection with HTTP/3 fails, allow retrying it with a different IP address
-defaultPref("network.http.http3.retry_different_ip_family", true);
-
-// If a connection fails retry with the one that is still connecting
-defaultPref("network.http.retry_with_another_half_open", true); 
-
 // Limit what events can cause pop-ups
 defaultPref("dom.popup_allowed_events", "click dblclick");
-
-// Open links from external programs in new tabs
-defaultPref("browser.link.open_newwindow.override.external", 3);
-
-// Prevent automatically closing the Bookmarks menu after selecting a bookmark
-defaultPref("browser.bookmarks.openInTabClosesMenu", false);
-
-// Prevent websites from automatically refreshing
-defaultPref("accessibility.blockautorefresh", true);
-
-// Set default URL to load when navigating to `moz://a`
-defaultPref("toolkit.mozprotocol.url", "about:mozilla");
 
 /* -----------------------------------------------------------------------------------
    030: PERFORMANCE
@@ -1346,4 +1303,4 @@ defaultPref("browser.tabs.notes.enabled", true);
 // Abilita il pulsante Picture-in-Picture su tutti i video
 defaultPref("media.videocontrols.picture-in-picture.video-toggle.always-show", true);
 
-lockPref("rischio.fox", "151.43");
+lockPref("rischio.fox", "151.44");
