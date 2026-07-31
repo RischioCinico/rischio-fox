@@ -20,7 +20,6 @@ INDICE:
    007: INTERFACCIA
    008: SCHEDE
    009: CONNESSIONI
-   010: DNS
    
    012: PROXIES
    013: WEBRTC
@@ -448,65 +447,9 @@ defaultPref("network.http.prompt-temp-redirect", true);
 // Disabilita preconnect
 defaultPref("network.preconnect", false);
 
-/* -----------------------------------------------------------------------------------
-   010: DNS
-   ----------------------------------------------------------------------------------- */
 
-// Imposta Quad9 come DoH provider
-defaultPref("network.trr.uri", "https://dns.quad9.net/dns-query");
 
-// Disable DoH Connectivity Checks
-defaultPref("network.connectivity-service.DNS_HTTPS.domain", "");
-defaultPref("network.trr.attempt-when-retrying-confirmation", true);
-defaultPref("network.trr.confirmationNS", "skip");
-defaultPref("network.trr.skip-check-for-blocked-host", true);
 
-// Disable DoH GET
-defaultPref("network.trr.useGET", false);
-
-// Disable nsNotifyAddrListener
-defaultPref("network.notify.changed", false);
-defaultPref("network.notify.checkForNRPT", false);
-defaultPref("network.notify.checkForProxies", false);
-defaultPref("network.notify.dnsSuffixList", false);
-defaultPref("network.notify.initial_call", false);
-defaultPref("network.notify.IPv6", false);
-defaultPref("network.notify.resolvers", false);
-
-// Enable DoH without fallback 
-defaultPref("network.trr.mode", 3);
-
-// Fix IPv6 connectivity when DoH is enabled
-defaultPref("network.dns.preferIPv6", true);
-
-// Prevent bypassing DoH for /etc/HOSTS entries 
-defaultPref("network.trr.exclude-etc-hosts", false);
-
-// Prioritize HTTP/3
-defaultPref("network.trr.allow_default_http3_first", true);
-defaultPref("network.trr.force_http3_first", true);
-
-// Disable DoH Rollout/heuristics/steering
-defaultPref("doh-rollout._testing", false);
-lockPref("doh-rollout.disable-heuristics", true);
-lockPref("doh-rollout.doneFirstRun", true);
-lockPref("doh-rollout.enabled", false);
-lockPref("doh-rollout.provider-steering.enabled", false);
-lockPref("doh-rollout.provider-steering.provider-list", "");
-lockPref("doh-rollout.self-enabled", false);
-lockPref("doh-rollout.skipHeuristicsCheck", true);
-lockPref("doh-rollout.trr-selection.enabled", false);
-lockPref("doh-rollout.trr-selection.provider-list", "");
-
-// Disable DoH performance measurements
-defaultPref("doh-rollout.trrRace.canonicalDomain", "");
-defaultPref("doh-rollout.trrRace.complete", true);
-defaultPref("doh-rollout.trrRace.enabled", false);
-defaultPref("doh-rollout.trrRace.popularDomains", "");
-defaultPref("doh-rollout.trrRace.randomSubdomainCount", 0);
-
-// Always attempt to resolve HTTPS resource records, regardless of connectivity checks/other factors
-defaultPref("network.dns.force_use_https_rr", true);
 
 /* -----------------------------------------------------------------------------------
    012: PROXIES
@@ -1238,4 +1181,4 @@ defaultPref("browser.tabs.insertAfterCurrent", true);
    FINE
    ----------------------------------------------------------------------------------- */
 
-lockPref("rischio.fox", "151.50");
+lockPref("rischio.fox", "151.51");
