@@ -380,6 +380,9 @@ defaultPref("media.mediacapabilities.from-database", true);
 defaultPref("toolkit.aboutProcesses.showAllSubframes", true);
 defaultPref("toolkit.aboutProcesses.showThreads", true);
 
+// [PF] Impedisce al puntatore del mouse di nascondersi mentre si digita
+defaultPref("widget.gtk.hide-pointer-while-typing.enabled", false); // [LINUX]
+
 /* -----------------------------------------------------------------------------------
    008: SCHEDE
    ----------------------------------------------------------------------------------- */
@@ -404,6 +407,15 @@ defaultPref("browser.tabs.notes.enabled", true);
 
 // Blocca ricerca degli appunti quando si apre una nuova scheda cliccando con il tasto centrale del mouse
 defaultPref("browser.tabs.searchclipboardfor.middleclick", false);
+
+// [PF] Apri le nuove schede in background
+defaultPref("browser.tabs.loadDivertedInBackground", true);
+
+// [PF] Apri i segnalibri in background
+defaultPref("browser.tabs.loadBookmarksInBackground", true);
+
+// [PF] Apri le nuove schede subito dopo quella attuale
+defaultPref("browser.tabs.insertAfterCurrent", true);
 
 /* -----------------------------------------------------------------------------------
    009: CONNESSIONI
@@ -1160,22 +1172,6 @@ defaultPref("network.tcp.user_timeout", 30);
 
 // Use higher performance pinch-zoom
 defaultPref("gfx.webrender.low-quality-pinch-zoom", true);
-
-/* -----------------------------------------------------------------------------------
-   PESKYFOX
-   ----------------------------------------------------------------------------------- */
-
-// Impedisce al puntatore del mouse di nascondersi mentre si digita
-defaultPref("widget.gtk.hide-pointer-while-typing.enabled", false); // [LINUX]
-
-// Apri le nuove schede in background
-defaultPref("browser.tabs.loadDivertedInBackground", true);
-
-// Apri i segnalibri in background
-defaultPref("browser.tabs.loadBookmarksInBackground", true);
-
-// Apri le nuove schede subito dopo quella attuale
-defaultPref("browser.tabs.insertAfterCurrent", true);
 
 /* -----------------------------------------------------------------------------------
    FINE
