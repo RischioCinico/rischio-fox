@@ -34,7 +34,6 @@ INDICE:
    022: PRIVACY + SECURITY
    023: PRIVACY
    024: SECURITY
-   025: MISC
    026: DEBUGGING
    027: CONTROL
    028: UI
@@ -139,9 +138,19 @@ lockPref("dom.private-attribution.submission.enabled", false);
 // Ignora`Privacy Notice` e `Terms of Use` di Mozilla
 lockPref("termsofuse.bypassNotification", true);
 
+// Disabilita messaggio che propone di resettare il profilo
+lockPref("browser.disableResetPrompt", true);
+
+// Disabilita l'API Keyboard Lock quando una pagina web è in modalità a schermo intero.
+defaultPref("dom.fullscreen.keyboard_lock.enabled", false); 
+
+
 /* -----------------------------------------------------------------------------------
    003: AVVIO
    ----------------------------------------------------------------------------------- */
+
+// Disabilita avvio automatico in modalità Safe Mode a seguito di crash
+defaultPref("toolkit.startup.max_resumed_crashes", -1);
 
 // Blocca il passaggio automatico dalla barra di ricerca a quella degli indirizzi
 defaultPref("browser.newtabpage.activity-stream.improvesearch.handoffToAwesomebar", false);
@@ -389,6 +398,12 @@ defaultPref("security.certerrors.permanentOverride", false);
 
 // Require safe renegotiations
 defaultPref("security.ssl.require_safe_negotiation", true);
+
+// Impedisce a Firefox di passare automaticamente alla modalità offline
+defaultPref("network.manage-offline-status", false);
+
+// Enable GREASE (Generate Random Extensions And Sustain Extensibility)
+defaultPref("security.tls.grease_http3_enable", true);
 
 /* -----------------------------------------------------------------------------------
    009: IMPLICIT CONNECTIONS
@@ -981,28 +996,6 @@ defaultPref("network.cookie.sameSite.schemeful", true);
 defaultPref("security.block_fileuri_script_with_wrong_mime", true);
 
 /* -----------------------------------------------------------------------------------
-   025: MISC
-   ----------------------------------------------------------------------------------- */
-
-// Block websites from prompting to display notifications
-defaultPref("permissions.default.desktop-notification", 2);
-
-// Disable Firefox's "Reset/Refresh Profile" prompt
-lockPref("browser.disableResetPrompt", true);
-
-// Disable keyboard locking
-defaultPref("dom.fullscreen.keyboard_lock.enabled", false); 
-
-// Disable network connectivity status monitoring
-defaultPref("network.manage-offline-status", false);
-
-// Enable GREASE (Generate Random Extensions And Sustain Extensibility)
-defaultPref("security.tls.grease_http3_enable", true);
-
-// Prevent Safe Mode from automatically starting
-defaultPref("toolkit.startup.max_resumed_crashes", -1);
-
-/* -----------------------------------------------------------------------------------
    026: DEBUGGING
    ----------------------------------------------------------------------------------- */
 
@@ -1343,4 +1336,4 @@ defaultPref("browser.tabs.notes.enabled", true);
 // Abilita il pulsante Picture-in-Picture su tutti i video
 defaultPref("media.videocontrols.picture-in-picture.video-toggle.always-show", true);
 
-lockPref("rischio.fox", "151.42");
+lockPref("rischio.fox", "151.43");
