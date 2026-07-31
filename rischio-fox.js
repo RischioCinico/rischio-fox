@@ -20,8 +20,8 @@ INDICE:
    007: INTERFACCIA
    008: SCHEDE
    009: CONNESSIONI
+   010: DNS
    
-   011: DNS
    012: PROXIES
    013: WEBRTC
    014: MEDIA
@@ -403,6 +403,9 @@ defaultPref("browser.tabs.fadeOutUnloadedTabs", true);
 // Abilita note per le schede
 defaultPref("browser.tabs.notes.enabled", true);
 
+// Blocca ricerca degli appunti quando si apre una nuova scheda cliccando con il tasto centrale del mouse
+defaultPref("browser.tabs.searchclipboardfor.middleclick", false);
+
 /* -----------------------------------------------------------------------------------
    009: CONNESSIONI
    ----------------------------------------------------------------------------------- */
@@ -436,64 +439,17 @@ defaultPref("dom.security.https_only_mode_send_http_background_request", false);
 defaultPref("network.http.http3.enable_0rtt", false);
 defaultPref("security.tls.enable_0rtt_data", false);
 
-
-
-
-
-
-
-
-// Enable HTTPS-Only Mode
-defaultPref("dom.security.https_only_mode_pbm", true);
+// Mostra pulsanti di sblocco nelle pagina d'errore HTTPS
 defaultPref("dom.security.https_only_mode_error_page_user_suggestions", true);
 
-// Enable prompts for unsafe HTTP redirects
+// Chiede conferma all'utente prima di seguire un reindirizzamento temporaneo HTTP
 defaultPref("network.http.prompt-temp-redirect", true);
 
-// Enforce Strict Certificate Pinning
-defaultPref("security.cert_pinning.enforcement_level", 3);
-
-// Only allow certificate error exceptions per-session
-defaultPref("security.certerrors.permanentOverride", false);
-
-// Require safe renegotiations
-defaultPref("security.ssl.require_safe_negotiation", true);
-
-// Enable GREASE (Generate Random Extensions And Sustain Extensibility)
-defaultPref("security.tls.grease_http3_enable", true);
-
-// Disable Early Hints
-defaultPref("network.early-hints.enabled", false);
-defaultPref("network.early-hints.over-http-v1-1.enabled", false);
-defaultPref("network.early-hints.preconnect.enabled", false);
-defaultPref("network.early-hints.preconnect.max_connections", 0);
-
-// Disable network prefetching
-defaultPref("dom.prefetch_dns_for_anchor_http_document", false);
-defaultPref("dom.prefetch_dns_for_anchor_https_document", false);
-defaultPref("network.dns.disablePrefetch", true);
-defaultPref("network.dns.disablePrefetchFromHTTPS", true);
-defaultPref("network.http.speculative-parallel-limit", 0); // [DEFAULT - Thunderbird]
-defaultPref("network.prefetch-next", false);
-
-// Disable preconnect
+// Disabilita preconnect
 defaultPref("network.preconnect", false);
 
-// Disable speculative pre-connections
-defaultPref("browser.places.speculativeConnect.enabled", false);
-defaultPref("browser.urlbar.speculativeConnect.enabled", false);
-
-// Prevent middle mouse clicks from pasting clipboard contents
-defaultPref("middlemouse.paste", false);
-
-// Prevent middle mouse clicks on new tab button opening URLs or searches from clipboard
-defaultPref("browser.tabs.searchclipboardfor.middleclick", false);
-
-// Always attempt to resolve HTTPS resource records, regardless of connectivity checks/other factors
-defaultPref("network.dns.force_use_https_rr", true);
-
 /* -----------------------------------------------------------------------------------
-   011: DNS
+   010: DNS
    ----------------------------------------------------------------------------------- */
 
 // Imposta Quad9 come DoH provider
@@ -548,6 +504,9 @@ defaultPref("doh-rollout.trrRace.complete", true);
 defaultPref("doh-rollout.trrRace.enabled", false);
 defaultPref("doh-rollout.trrRace.popularDomains", "");
 defaultPref("doh-rollout.trrRace.randomSubdomainCount", 0);
+
+// Always attempt to resolve HTTPS resource records, regardless of connectivity checks/other factors
+defaultPref("network.dns.force_use_https_rr", true);
 
 /* -----------------------------------------------------------------------------------
    012: PROXIES
@@ -626,6 +585,9 @@ defaultPref("media.gmp.encoder.multithreaded", true);
 
 // Sandbox GMP
 defaultPref("media.gmp.insecure.allow", false); // [LINUX]
+
+// Abilita il pulsante Picture-in-Picture su tutti i video
+defaultPref("media.videocontrols.picture-in-picture.video-toggle.always-show", true);
 
 /* -----------------------------------------------------------------------------------
    015: ATTACK SURFACE
@@ -1141,6 +1103,9 @@ defaultPref("view_source.wrap_long_lines", true);
    027: CONTROL
    ----------------------------------------------------------------------------------- */
 
+// Prevent middle mouse clicks from pasting clipboard contents
+defaultPref("middlemouse.paste", false);
+
 // Allow custom CSS
 defaultPref("toolkit.legacyUserProfileCustomizations.stylesheets", true);
 
@@ -1273,7 +1238,4 @@ defaultPref("browser.tabs.insertAfterCurrent", true);
    FINE
    ----------------------------------------------------------------------------------- */
 
-// Abilita il pulsante Picture-in-Picture su tutti i video
-defaultPref("media.videocontrols.picture-in-picture.video-toggle.always-show", true);
-
-lockPref("rischio.fox", "151.49");
+lockPref("rischio.fox", "151.50");
