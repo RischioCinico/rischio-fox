@@ -237,34 +237,34 @@ defaultPref("network.IDN_show_punycode", true);
 
 // Disabilita suggerimenti inutili
 lockPref("browser.urlbar.quicksuggest.enabled", false);
-defaultPref("browser.urlbar.suggest.addons", false);
-defaultPref("browser.urlbar.suggest.amp", false);
-defaultPref("browser.urlbar.suggest.bookmark", false);
-defaultPref("browser.urlbar.suggest.clipboard", false);
-defaultPref("browser.urlbar.suggest.history", false);
-defaultPref("browser.urlbar.suggest.importantDates", false);
-defaultPref("browser.urlbar.suggest.mdn", false);
-defaultPref("browser.urlbar.suggest.quickactions", false);
-defaultPref("browser.urlbar.suggest.realtimeOptIn", false);
-defaultPref("browser.urlbar.suggest.recentsearches", false);
-defaultPref("browser.urlbar.suggest.searches", false);
-defaultPref("browser.urlbar.suggest.sports", false);
-defaultPref("browser.urlbar.suggest.topsites", false);
-defaultPref("browser.urlbar.suggest.trending", false);
-defaultPref("browser.urlbar.suggest.weather", false);
-defaultPref("browser.urlbar.suggest.wikipedia", false);
-defaultPref("browser.urlbar.suggest.yelp", false);
-defaultPref("browser.urlbar.suggest.yelpRealtime", false);
+lockPref("browser.urlbar.suggest.addons", false);
+lockPref("browser.urlbar.suggest.amp", false);
+lockPref("browser.urlbar.suggest.bookmark", false);
+lockPref("browser.urlbar.suggest.clipboard", false);
+lockPref("browser.urlbar.suggest.history", false);
+lockPref("browser.urlbar.suggest.importantDates", false);
+lockPref("browser.urlbar.suggest.mdn", false);
+lockPref("browser.urlbar.suggest.quickactions", false);
+lockPref("browser.urlbar.suggest.realtimeOptIn", false);
+lockPref("browser.urlbar.suggest.recentsearches", false);
+lockPref("browser.urlbar.suggest.searches", false);
+lockPref("browser.urlbar.suggest.sports", false);
+lockPref("browser.urlbar.suggest.topsites", false);
+lockPref("browser.urlbar.suggest.trending", false);
+lockPref("browser.urlbar.suggest.weather", false);
+lockPref("browser.urlbar.suggest.wikipedia", false);
+lockPref("browser.urlbar.suggest.yelp", false);
+lockPref("browser.urlbar.suggest.yelpRealtime", false);
 
 // FeatureGate
-defaultPref("browser.search.visualSearch.featureGate", false);
-defaultPref("browser.urlbar.clipboard.featureGate", false);
-defaultPref("browser.urlbar.importantDates.featureGate", false);
-defaultPref("browser.urlbar.recentsearches.featureGate", false);
-defaultPref("browser.urlbar.richSuggestions.featureGate", false);
-defaultPref("browser.urlbar.secondaryActions.featureGate", false);
-defaultPref("browser.urlbar.trending.featureGate", false);
-defaultPref("browser.urlbar.trustPanel.breachAlerts.featureGate", false);
+lockPref("browser.search.visualSearch.featureGate", false);
+lockPref("browser.urlbar.clipboard.featureGate", false);
+lockPref("browser.urlbar.importantDates.featureGate", false);
+lockPref("browser.urlbar.recentsearches.featureGate", false);
+lockPref("browser.urlbar.richSuggestions.featureGate", false);
+lockPref("browser.urlbar.secondaryActions.featureGate", false);
+lockPref("browser.urlbar.trending.featureGate", false);
+lockPref("browser.urlbar.trustPanel.breachAlerts.featureGate", false);
 
 /* -----------------------------------------------------------------------------------
    005: I/O
@@ -1303,4 +1303,4 @@ defaultPref("browser.tabs.notes.enabled", true);
 // Abilita il pulsante Picture-in-Picture su tutti i video
 defaultPref("media.videocontrols.picture-in-picture.video-toggle.always-show", true);
 
-lockPref("rischio.fox", "151.44");
+lockPref("rischio.fox", "151.45");
