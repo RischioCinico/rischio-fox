@@ -17,6 +17,7 @@ INDICE:
    004: RICERCA
    005: I/O
    006: DOWNLOADS
+   007: INTERFACCIA
    
    008: HTTP(S)
    009: IMPLICIT CONNECTIONS
@@ -143,7 +144,6 @@ lockPref("browser.disableResetPrompt", true);
 
 // Disabilita l'API Keyboard Lock quando una pagina web è in modalità a schermo intero.
 defaultPref("dom.fullscreen.keyboard_lock.enabled", false); 
-
 
 /* -----------------------------------------------------------------------------------
    003: AVVIO
@@ -329,6 +329,16 @@ lockPref("browser.download.manager.addToRecentDocs", false);
 
 // Rimuove file temporanei dopo l'apertura con applicazioni esterne
 lockPref("browser.helperApps.deleteTempFileOnExit", true);
+
+
+/* -----------------------------------------------------------------------------------
+   007: INTERFACCIA
+   ----------------------------------------------------------------------------------- */
+
+
+
+
+
 
 /* -----------------------------------------------------------------------------------
    008: HTTP(S)
