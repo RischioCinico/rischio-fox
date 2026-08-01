@@ -711,8 +711,39 @@ lockPref("doh-rollout.home-region", "");
    020: PRESTAZIONI
    ----------------------------------------------------------------------------------- */
 
+// Aumenta la dimensione della cache dei font gestita dal motore grafico Skia 
+defaultPref("gfx.content.skia-font-cache-size", 32); // default=5
+
+// Riduce intervallo di notifica per il rendering dei contenuti in millisecondi
+defaultPref("content.notify.interval", 100000); // default=120000
+
+// Imposta la dimensione della cache per la rasterizzazione accelerata della canvas HTML5
+defaultPref("gfx.canvas.accelerated.cache-size", 512); // default=256
+
+// Imposta la soglia di esecuzione prima che il compilatore JIT di JavaScript attivi la compilazione Baseline
+defaultPref("javascript.options.baselinejit.threshold", 50); // default=100
+
+// Aumenta la dimensione della cache in RAM
+defaultPref("browser.cache.memory.capacity", 65536); // default=-1 (auto)
+defaultPref("browser.cache.memory.max_entry_size", 10240); // default=5120
+
+// Aumenta la dimensione della cache per i media
+defaultPref("media.memory_caches_combined_limit_kb", 1048576); // default=524288
+defaultPref("media.memory_caches_combined_limit_pc_sysmem", 10); // default=5
+
+// Aumenta limiti di buffering per contenuti multimediali 
+defaultPref("media.cache_readahead_limit", 3600); // default=60
+defaultPref("media.cache_resume_threshold", 1800); // default=30
+
+// Imposta il numero di byte di un'immagine decodificati per singola iterazione
+defaultPref("image.mem.decode_bytes_at_a_time", 32768); // default=16384
+
+// Aumenta la dimensione e il numero dei buffer di memoria per i trasferimenti di dati di rete
+defaultPref("network.buffer.cache.size", 65535); // default=32768
+defaultPref("network.buffer.cache.count", 48); // default=24
+
 /* -----------------------------------------------------------------------------------
    FINE
    ----------------------------------------------------------------------------------- */
 
-lockPref("rischio.fox", "152");
+lockPref("rischio.fox", "152.1");
