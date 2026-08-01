@@ -20,12 +20,12 @@ INDICE:
    007: INTERFACCIA
    008: SCHEDE
    009: CONNESSIONI
+   010: PASSWORDS
+   011: PROXY
    
-   012: PROXIES
    013: WEBRTC
    014: MEDIA
    015: ATTACK SURFACE
-   016: PASSWORDS
    017: EXTENSIONS
    018: AI
    019: GEOLOCATION
@@ -459,13 +459,29 @@ defaultPref("network.http.prompt-temp-redirect", true);
 // Disabilita preconnect
 defaultPref("network.preconnect", false);
 
+/* -----------------------------------------------------------------------------------
+   016: PASSWORDS
+   ----------------------------------------------------------------------------------- */
 
+// Disabilita l'autocompilazione automatica di username e password
+lockPref("signon.autofillForms", false);
 
+// Mostra tasto per rivelare password
+defaultPref("layout.forms.reveal-password-button.enabled", true);
 
+// Disabilita la cattura delle credenziali inserite fuori dai moduli HTML standard
+defaultPref("signon.privateBrowsingCapture.enabled", false);
+defaultPref("signon.formlessCapture.enabled", false);
+
+// Disable password truncation
+defaultPref("editor.truncate_user_pastes", false);
+
+// Consente l'autenticazione HTTP per le risorse secondarie solo se sono dello stesso dominio
+defaultPref("network.auth.subresource-http-auth-allow", 1);
 
 /* -----------------------------------------------------------------------------------
-   012: PROXIES
-   ----------------------------------------------------------------------------------- */
+   011: PROXY
+   ----------------------------------------------------------------------------------- *
 
 // Prevent Firefox from automatically using the system's proxy configuration 
 defaultPref("network.proxy.type", 0);
@@ -607,40 +623,6 @@ defaultPref("permissions.default.xr", 2);
 
 // Disable XSLT
 defaultPref("dom.xslt.enabled", false);
-
-/* -----------------------------------------------------------------------------------
-   016: PASSWORDS
-   ----------------------------------------------------------------------------------- */
-
-// Always display a `reveal password` button in `password` `<input>` types
-defaultPref("layout.forms.reveal-password-button.enabled", true);
-
-// Disable autofill
-lockPref("signon.autofillForms", false);
-
-// Disable Basic authentication over HTTP
-defaultPref("network.http.basic_http_auth.enabled", false);
-
-// Disable formless capture of log-in credentials
-defaultPref("signon.privateBrowsingCapture.enabled", false);
-defaultPref("signon.formlessCapture.enabled", false);
-
-// Disable Microsoft SSO
-defaultPref("network.http.microsoft-entra-sso.container-enabled.0", false);
-defaultPref("network.http.windows-sso.container-enabled.0", false);
-defaultPref("network.microsoft-sso-authority-list", "");
-
-// Disable password truncation
-defaultPref("editor.truncate_user_pastes", false);
-
-// Enable alerts for breached and vulnerable passwords
-lockPref("signon.management.page.breach-alerts.enabled", true);
-
-// Enable strong password generation
-lockPref("signon.generation.enabled", true);
-
-// Prevent cross-origin sub-resources from opening HTTP authentication dialogs
-defaultPref("network.auth.subresource-http-auth-allow", 1);
 
 /* -----------------------------------------------------------------------------------
    017: EXTENSIONS
@@ -1177,4 +1159,4 @@ defaultPref("gfx.webrender.low-quality-pinch-zoom", true);
    FINE
    ----------------------------------------------------------------------------------- */
 
-lockPref("rischio.fox", "151.51");
+lockPref("rischio.fox", "151.52");
