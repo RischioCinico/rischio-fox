@@ -308,6 +308,9 @@ lockPref("browser.helperApps.deleteTempFileOnExit", true);
    007: INTERFACCIA
    ----------------------------------------------------------------------------------- */
 
+// Carica stili CSS personalizzati (se presenti) nel profilo utente
+defaultPref("toolkit.legacyUserProfileCustomizations.stylesheets", true);
+
 // Nasconde barra del titolo
 defaultPref("browser.tabs.inTitlebar", 1);
 
@@ -489,6 +492,9 @@ defaultPref("network.proxy.socks_remote_dns", true);
 
 // Abilita sempre Picture-in-Picture per tutti i tipi di video
 defaultPref("media.videocontrols.picture-in-picture.video-toggle.always-show", true);
+
+// Non permettere ai siti di bloccare Picture-in-Picture
+defaultPref("media.videocontrols.picture-in-picture.respect-disablePictureInPicture", false);
 
 // Nasconde fastidioso tasto Picture-in-Picture sui video
 defaultPref("media.videocontrols.picture-in-picture.video-toggle.enabled", false);
@@ -704,12 +710,6 @@ defaultPref("devtools.aboutdebugging.local-tab-debugging", true);
 // Prevent middle mouse clicks from pasting clipboard contents
 defaultPref("middlemouse.paste", false);
 
-// Carica stili CSS personalizzati nella cartella utente
-defaultPref("toolkit.legacyUserProfileCustomizations.stylesheets", true);
-
-// Allow Picture-in-Picture on all websites, even if the website tries to block it
-defaultPref("media.videocontrols.picture-in-picture.respect-disablePictureInPicture", false);
-
 // Allow zoom on all websites, even if the website tries to block it
 defaultPref("browser.ui.zoom.force-user-scalable", true);
 
@@ -723,9 +723,6 @@ defaultPref("devtools.performance.aboutprofiling.has-developer-options", true);
 defaultPref("editor.inline_table_editing.enabled_by_default", true);
 defaultPref("editor.positioning.enabled_by_default", true);
 defaultPref("editor.resizing.enabled_by_default", true);
-
-// Ensure users can always control Nimbus recipes
-defaultPref("nimbus.debug", true);
 
 // Enable autoscrolling
 defaultPref("general.autoScroll", true);
@@ -822,4 +819,4 @@ defaultPref("gfx.webrender.low-quality-pinch-zoom", true);
    FINE
    ----------------------------------------------------------------------------------- */
 
-lockPref("rischio.fox", "151.62");
+lockPref("rischio.fox", "151.63");
