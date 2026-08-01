@@ -742,8 +742,25 @@ defaultPref("image.mem.decode_bytes_at_a_time", 32768); // default=16384
 defaultPref("network.buffer.cache.size", 65535); // default=32768
 defaultPref("network.buffer.cache.count", 48); // default=24
 
+// Aumenta il numero massimo di connessioni HTTP simultanee e per singolo server
+defaultPref("network.http.max-connections", 1800); // default=900
+defaultPref("network.http.max-persistent-connections-per-server", 10); // default=6
+defaultPref("network.http.max-urgent-start-excessive-connections-per-host", 5); // default=3
+defaultPref("network.http.request.max-start-delay", 5); // default=10
+
+// Disabilita il throttling (pacing) delle richieste HTTP per inviarne il massimo numero possibile in parallelo
+defaultPref("network.http.pacing.requests.enabled", false);
+defaultPref("network.http.pacing.requests.min-parallelism", 12); // default=6
+defaultPref("network.http.pacing.requests.burst", 20); // default=10
+
+// Aumenta il numero di voci memorizzabili nella cache DNS del browser
+defaultPref("network.dnsCacheEntries", 1600); // default=800
+
+// Aumenta durata cache DNS
+defaultPref("network.dnsCacheExpiration", 3600); // default=60
+
 /* -----------------------------------------------------------------------------------
    FINE
    ----------------------------------------------------------------------------------- */
 
-lockPref("rischio.fox", "152.1");
+lockPref("rischio.fox", "152.3");
