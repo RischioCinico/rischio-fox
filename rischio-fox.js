@@ -30,7 +30,7 @@ INDICE:
    017: PRIVACY
    018: ISOLAMENTO
    019: GEOLOCALIZZAZIONE
-   020: PERFORMANCE
+   020: PRESTAZIONI
 */
 
 /* -----------------------------------------------------------------------------------
@@ -363,6 +363,7 @@ defaultPref("browser.xul.error_pages.show_safe_browsing_details_on_load", true);
 defaultPref("media.mediacapabilities.from-database", true);
 defaultPref("toolkit.aboutProcesses.showAllSubframes", true);
 defaultPref("toolkit.aboutProcesses.showThreads", true);
+defaultPref("browser.preferences.defaultPerformanceSettings.enabled", false);
 
 // [PF] Impedisce al puntatore del mouse di nascondersi mentre si digita
 defaultPref("widget.gtk.hide-pointer-while-typing.enabled", false); // [LINUX]
@@ -707,85 +708,11 @@ defaultPref("browser.region.update.enabled", false);
 lockPref("doh-rollout.home-region", "");
 
 /* -----------------------------------------------------------------------------------
-   020: PERFORMANCE
+   020: PRESTAZIONI
    ----------------------------------------------------------------------------------- */
-
-defaultPref("gfx.webrender.all", true);
-
-// Compress cached JavaScript bytecode
-defaultPref("browser.cache.jsbc_compression_level", 3);
-
-// Disable async stack tracing 
-defaultPref("javascript.options.asyncstack", false);
-
-// Disable CSS error reporting 
-defaultPref("layout.css.report_errors", false);
-
-// Disable pacing requests
-defaultPref("network.http.pacing.requests.enabled", false);
-
-// Display advanced performance settings at `about:preferences#general`
-defaultPref("browser.preferences.defaultPerformanceSettings.enabled", false);
-
-// Enable Canvas2D acceleration
-defaultPref("gfx.canvas.accelerated.cache-items", 32768);
-defaultPref("gfx.canvas.accelerated.cache-size", 4096);
-
-// Enable CSS Masonry Layout
-defaultPref("layout.css.grid-template-masonry-value.enabled", true);
-
-// Enable dynamic reflow roots
-defaultPref("layout.dynamic-reflow-roots.enabled", true);
-
-// Enable the WebRender native compositor
-defaultPref("gfx.webrender.compositor", true);
-
-// Increase buffering for video playback
-defaultPref("media.cache_readahead_limit", 600);
-defaultPref("media.cache_readahead_limit.cellular", 600);
-defaultPref("media.cache_resume_threshold", 300);
-defaultPref("media.cache_resume_threshold.cellular", 300);
-defaultPref("media.throttle-cellular-regardless-of-download-rate", false);
-
-// Increase the chunk size for calls to image decoders
-defaultPref("image.mem.decode_bytes_at_a_time", 65536);
-
-// Increase DNS caching
-defaultPref("network.dnsCacheExpiration", 3600);
-defaultPref("network.dnsCacheEntries", 10000);
-
-// Increase the file-backed media cache size for cellular connections
-defaultPref("media.cache_size.cellular", 512000);
-
-// Increase the memory-backed media cache size
-defaultPref("media.memory_cache_max_size", 262144);
-defaultPref("media.memory_caches_combined_limit_kb", 1048576);
-
-// Increase memory cache
-defaultPref("browser.cache.memory.capacity", 131072);
-defaultPref("browser.cache.memory.max_entry_size", 20480);
-
-// Increase the skia font cache size
-defaultPref("gfx.content.skia-font-cache-size", 32);
-
-// Increase the maximum number of HTTP connections
-defaultPref("network.http.max-connections", 1800);
-defaultPref("network.http.max-persistent-connections-per-proxy", 48);
-defaultPref("network.http.max-persistent-connections-per-server", 10);
-defaultPref("network.http.max-urgent-start-excessive-connections-per-host", 5);
-defaultPref("network.http.request.max-start-delay", 5);
-
-// Set TCP_NOTSENT_LOWAT on TCP sockets
-defaultPref("network.tcp.notsent_lowat", 32768);
-
-// Set TCP_USER_TIMEOUT
-defaultPref("network.tcp.user_timeout", 30);
-
-// Use higher performance pinch-zoom
-defaultPref("gfx.webrender.low-quality-pinch-zoom", true);
 
 /* -----------------------------------------------------------------------------------
    FINE
    ----------------------------------------------------------------------------------- */
 
-lockPref("rischio.fox", "151.64");
+lockPref("rischio.fox", "152");
