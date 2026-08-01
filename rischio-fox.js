@@ -24,10 +24,10 @@ INDICE:
    011: PROXY
    012: MULTIMEDIA
    013: WEBRTC
+   014: GEOLOCALIZZAZIONE
    015: ATTACK SURFACE
    017: EXTENSIONS
    018: AI
-   019: GEOLOCATION
    020: PDF
    021: SAFE BROWSING
    022: PRIVACY + SECURITY
@@ -499,25 +499,12 @@ defaultPref("media.videocontrols.picture-in-picture.video-toggle.always-show", t
 // Nasconde fastidioso tasto Picture-in-Picture sui video
 defaultPref("media.videocontrols.picture-in-picture.video-toggle.enabled", false);
 
-
-
-
-
-
-
-/*
-// Block media autoplay
-defaultPref("media.autoplay.default", 5);
-defaultPref("media.geckoview.autoplay.request.testing", 2);
-
-// Configure the media autoplay blocking policy
-defaultPref("media.autoplay.blocking_policy", 1);
-
-
+// Blocca riproduzione automatica dei media che non sono stati cliccati direttamente
+defaultPref("media.autoplay.blocking_policy", 2);
 
 /* -----------------------------------------------------------------------------------
    013: WEBRTC
-   ----------------------------------------------------------------------------------- */
+   -----------------------------------------------------------------------------------
 
 // Allow user to silence notifications when screen sharing
 defaultPref("privacy.webrtc.hideGlobalIndicator", true);
@@ -536,6 +523,25 @@ defaultPref("privacy.webrtc.sharedTabWarning", true);
 
 // Disable WebRTC history
 defaultPref("media.aboutwebrtc.hist.enabled", false);
+
+/* -----------------------------------------------------------------------------------
+   014: GEOLOCALIZZAZIONE
+   ----------------------------------------------------------------------------------- *
+
+// Disable Mozilla's GeoIP/Region Service
+defaultPref("browser.region.network.url", "");
+defaultPref("browser.region.update.enabled", false);
+defaultPref("browser.search.region", "XX");
+defaultPref("doh-rollout.home-region", "XX");
+
+// Enable Geoclue for GNU/Linux
+defaultPref("geo.provider.use_geoclue", false); // [LINUX]
+
+// Prevent unconditionally providing high location accuracy
+defaultPref("geo.provider.geoclue.always_high_accuracy", false); // [LINUX]
+
+// Set BeaconDB as the default network geolocation provider
+defaultPref("geo.provider.network.url", "https://beacondb.net/v1/geolocate");
 
 /* -----------------------------------------------------------------------------------
    015: ATTACK SURFACE
@@ -669,28 +675,6 @@ defaultPref("extensions.install.requireSecureOrigin", true);
 /* -----------------------------------------------------------------------------------
    018: AI
    ----------------------------------------------------------------------------------- */
-
-/* -----------------------------------------------------------------------------------
-   019: GEOLOCATION
-   ----------------------------------------------------------------------------------- */
-
-// Block websites from prompting to access geolocation
-defaultPref("permissions.default.geo", 2);
-
-// Disable Mozilla's GeoIP/Region Service
-defaultPref("browser.region.network.url", "");
-defaultPref("browser.region.update.enabled", false);
-defaultPref("browser.search.region", "XX");
-defaultPref("doh-rollout.home-region", "XX");
-
-// Enable Geoclue for GNU/Linux
-defaultPref("geo.provider.use_geoclue", false); // [LINUX]
-
-// Prevent unconditionally providing high location accuracy
-defaultPref("geo.provider.geoclue.always_high_accuracy", false); // [LINUX]
-
-// Set BeaconDB as the default network geolocation provider
-defaultPref("geo.provider.network.url", "https://beacondb.net/v1/geolocate");
 
 /* -----------------------------------------------------------------------------------
    020: PDF
@@ -1139,4 +1123,4 @@ defaultPref("gfx.webrender.low-quality-pinch-zoom", true);
    FINE
    ----------------------------------------------------------------------------------- */
 
-lockPref("rischio.fox", "151.54");
+lockPref("rischio.fox", "151.55");
