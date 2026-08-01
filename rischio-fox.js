@@ -244,36 +244,6 @@ defaultPref("browser.urlbar.showSearchTerms.enabled", false);
 // Forza la visualizzazione in Punycode dei domini
 defaultPref("network.IDN_show_punycode", true);
 
-// Disabilita suggerimenti inutili
-lockPref("browser.urlbar.quicksuggest.enabled", false);
-lockPref("browser.urlbar.suggest.addons", false);
-lockPref("browser.urlbar.suggest.amp", false);
-lockPref("browser.urlbar.suggest.bookmark", false);
-lockPref("browser.urlbar.suggest.clipboard", false);
-lockPref("browser.urlbar.suggest.history", false);
-lockPref("browser.urlbar.suggest.importantDates", false);
-lockPref("browser.urlbar.suggest.mdn", false);
-lockPref("browser.urlbar.suggest.quickactions", false);
-lockPref("browser.urlbar.suggest.realtimeOptIn", false);
-lockPref("browser.urlbar.suggest.recentsearches", false);
-lockPref("browser.urlbar.suggest.sports", false);
-lockPref("browser.urlbar.suggest.topsites", false);
-lockPref("browser.urlbar.suggest.trending", false);
-lockPref("browser.urlbar.suggest.weather", false);
-lockPref("browser.urlbar.suggest.wikipedia", false);
-lockPref("browser.urlbar.suggest.yelp", false);
-lockPref("browser.urlbar.suggest.yelpRealtime", false);
-
-// FeatureGate
-lockPref("browser.search.visualSearch.featureGate", false);
-lockPref("browser.urlbar.clipboard.featureGate", false);
-lockPref("browser.urlbar.importantDates.featureGate", false);
-lockPref("browser.urlbar.recentsearches.featureGate", false);
-lockPref("browser.urlbar.richSuggestions.featureGate", false);
-lockPref("browser.urlbar.secondaryActions.featureGate", false);
-lockPref("browser.urlbar.trending.featureGate", false);
-lockPref("browser.urlbar.trustPanel.breachAlerts.featureGate", false);
-
 /* -----------------------------------------------------------------------------------
    005: I/O
    ----------------------------------------------------------------------------------- */
