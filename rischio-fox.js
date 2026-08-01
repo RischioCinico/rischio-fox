@@ -370,6 +370,17 @@ defaultPref("toolkit.aboutProcesses.showThreads", true);
 // [PF] Impedisce al puntatore del mouse di nascondersi mentre si digita
 defaultPref("widget.gtk.hide-pointer-while-typing.enabled", false); // [LINUX]
 
+// Permette zoom utente ignorando i blocchi imposti dai siti web
+defaultPref("browser.ui.zoom.force-user-scalable", true);
+
+// Consente all'utente di rimpicciolire la pagina oltre i limiti
+defaultPref("apz.allow_zooming_out", true);
+
+// Abilita di default le funzioni di modifica avanzata (tabelle, posizionamento e ridimensionamento) nell'editor integrato
+defaultPref("editor.inline_table_editing.enabled_by_default", true);
+defaultPref("editor.positioning.enabled_by_default", true);
+defaultPref("editor.resizing.enabled_by_default", true);
+
 /* -----------------------------------------------------------------------------------
    008: SCHEDE
    ----------------------------------------------------------------------------------- */
@@ -626,6 +637,9 @@ defaultPref("javascript.options.wasm_memory_control", true);
 // Blocca l'esecuzione di script caricati tramite protocollo file:// se hanno un MIME type errato
 defaultPref("security.block_fileuri_script_with_wrong_mime", true);
 
+// Limita gli eventi che possono aprire una nuova finestra o popup
+defaultPref("dom.popup_allowed_events", "click dblclick");
+
 /* -----------------------------------------------------------------------------------
    017: PRIVACY
    ----------------------------------------------------------------------------------- */
@@ -695,50 +709,8 @@ defaultPref("browser.region.network.url", "");
 defaultPref("browser.region.update.enabled", false);
 lockPref("doh-rollout.home-region", "");
 
-
-
 /* -----------------------------------------------------------------------------------
-   027: CONTROL
-   ----------------------------------------------------------------------------------- *
-
-// Allow inspecting the browser chrome
-defaultPref("devtools.chrome.enabled", true);
-
-// Allow inspecting/debugging local tabs from `about:debugging`
-defaultPref("devtools.aboutdebugging.local-tab-debugging", true);
-
-// Prevent middle mouse clicks from pasting clipboard contents
-defaultPref("middlemouse.paste", false);
-
-// Allow zoom on all websites, even if the website tries to block it
-defaultPref("browser.ui.zoom.force-user-scalable", true);
-
-// Allow zooming out beyond the initial scale of websites
-defaultPref("apz.allow_zooming_out", true);
-
-// Enable developer options for `about:profiling`
-defaultPref("devtools.performance.aboutprofiling.has-developer-options", true);
-
-// Enable image/table resizing (for text input)
-defaultPref("editor.inline_table_editing.enabled_by_default", true);
-defaultPref("editor.positioning.enabled_by_default", true);
-defaultPref("editor.resizing.enabled_by_default", true);
-
-// Enable autoscrolling
-defaultPref("general.autoScroll", true);
-
-// Enable Firefox Translations (ma disabilita il fastidioso pop-up)
-defaultPref("browser.ai.control.translations", "enabled");
-defaultPref("extensions.translations.disabled", false);
-
-// Enable spellcheck for both multi-line and single-line boxes
-defaultPref("layout.spellcheckDefault", 2);
-
-// Limit what events can cause pop-ups
-defaultPref("dom.popup_allowed_events", "click dblclick");
-
-/* -----------------------------------------------------------------------------------
-   030: PERFORMANCE
+   020: PERFORMANCE
    ----------------------------------------------------------------------------------- */
 
 defaultPref("gfx.webrender.all", true);
@@ -819,4 +791,4 @@ defaultPref("gfx.webrender.low-quality-pinch-zoom", true);
    FINE
    ----------------------------------------------------------------------------------- */
 
-lockPref("rischio.fox", "151.63");
+lockPref("rischio.fox", "151.64");
