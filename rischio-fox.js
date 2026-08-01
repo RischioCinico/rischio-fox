@@ -26,8 +26,9 @@ INDICE:
    013: GEOLOCALIZZAZIONE
    014: PDF
    015: ESTENSIONI
+   016: RENDERING
+   017: RENDERING
    
-   016: ATTACK SURFACE
    022: PRIVACY + SECURITY
    023: PRIVACY
    024: SECURITY
@@ -546,136 +547,85 @@ defaultPref("pdfjs.historyUpdateUrl", true);
 
 /* -----------------------------------------------------------------------------------
    015: ESTENSIONI
-   ----------------------------------------------------------------------------------- *
-
-// Allow enabling/disabling extensions per-container
-defaultPref("extensions.userContextIsolation.enabled", true);
-
-// Always display "hidden" add-ons at `about:debugging`
-lockPref("devtools.aboutdebugging.showHiddenAddons", true);
-
-// Disable add-on sideloading
-defaultPref("extensions.autoDisableScopes", 15);
-defaultPref("extensions.enabledScopes", 5);
-defaultPref("extensions.installDistroAddons", false);
-defaultPref("extensions.sideloadScopes", 0);
-
-// Disable the AMO Abuse Report API
-defaultPref("extensions.addonAbuseReport.url", "");
-
-// Disable mozAddonManager
-defaultPref("privacy.resistFingerprinting.block_mozAddonManager", true);
-
-// Enable Add-on Distribution Control (Install Origins)
-defaultPref("extensions.install_origins.enabled", true);
-
-// Harden CSP policy
-defaultPref("extensions.webextensions.base-content-security-policy", "script-src 'self' 'unsafe-inline'; upgrade-insecure-requests;");
-defaultPref("extensions.webextensions.base-content-security-policy.v3", "script-src 'self'; upgrade-insecure-requests;");
-defaultPref("extensions.webextensions.base-content-security-policy.v3-with-localhost", "script-src 'self'; upgrade-insecure-requests;");
-defaultPref("extensions.webextensions.default-content-security-policy", "script-src 'self'; upgrade-insecure-requests;");
-
-// Never allow installing extensions without first prompting the user
-lockPref("extensions.postDownloadThirdPartyPrompt", false);
-defaultPref("xpinstall.whitelist.directRequest", false);
-defaultPref("xpinstall.whitelist.fileRequest", false);
-lockPref("xpinstall.whitelist.required", true);
-
-// Only allow installation and updates of extensions using Firefox's built-in certificates
-defaultPref("extensions.install.requireBuiltInCerts", true);
-defaultPref("extensions.update.requireBuiltInCerts", true);
-
-// Prevent automatically granting MV3 extensions optional host permissions
-defaultPref("extensions.originControls.grantByDefault", false);
-
-// Prevent extensions from opening pop-ups to remote websites
-defaultPref("extensions.manifestV2.actionsPopupURLRestricted", true); 
-
-// Prevent extensions from opening pop-ups without user interaction
-defaultPref("extensions.openPopupWithoutUserGesture.enabled", false);
-
-// Prevent extensions from using the Gecko Profiler
-defaultPref("extensions.geckoProfiler.acceptedExtensionIds", "");
-
-// Prevent recommending search extensions
-defaultPref("browser.search.searchEnginesURL", "");
-
-// Require resources loaded by MV2 extensions to be specified under web_accessible_resources in the extension's manifest
-defaultPref("extensions.content_web_accessible.enabled", true);
-
-// Require secure origins to install add-ons
-defaultPref("extensions.install.requireSecureOrigin", true);
-
-/* -----------------------------------------------------------------------------------
-   016: ATTACK SURFACE
    ----------------------------------------------------------------------------------- */
 
-// Always load fonts bundled with Firefox
-defaultPref("gfx.bundled-fonts.activate", 1);
+// Mostra add-ons nascosti in `about:debugging`
+defaultPref("devtools.aboutdebugging.showHiddenAddons", true);
 
-// Disable the ability to switch locales without requiring a restart
-defaultPref("intl.multilingual.liveReload", false);
+// Limita l'esecuzione delle estensioni solo a quelle nel profilo o integrate
+defaultPref("extensions.enabledScopes", 5);
 
-// Disable VP9 Benchmark
-defaultPref("media.benchmark.vp9.threshold", 0);
+// Chiede sempre conferma manuale all'utente prima di attivare estensioni rilevate nel sistema
+defaultPref("extensions.autoDisableScopes", 15);
 
-// Limit font visibility to base system fonts + fonts from optional language packs
+// Disabilita mozAddonManager
+defaultPref("privacy.resistFingerprinting.block_mozAddonManager", true);
+
+// Permette l'installazione delle estensioni unicamente ai domini e alle origini autorizzate
+defaultPref("extensions.install_origins.enabled", true);
+
+// Non concedere automaticamente l'accesso a tutti i siti web alle estensioni
+defaultPref("extensions.originControls.grantByDefault", false);
+
+// Limita caricamenti di URL non sicuri all'interno dei popup per le estensioni Manifest V2
+defaultPref("extensions.manifestV2.actionsPopupURLRestricted", true); 
+
+// Impedisce alle estensioni di aprire popup o pannelli senza un'interazione diretta dell'utente
+defaultPref("extensions.openPopupWithoutUserGesture.enabled", false);
+
+// Rimuove qualsiasi estensione dalla lista di quelle autorizzate ad accedere alle API del Gecko Profiler
+lockPref("extensions.geckoProfiler.acceptedExtensionIds", "");
+
+// Blocca aggiornamenti per le definizioni dei motori di ricerca
+defaultPref("browser.search.searchEnginesURL", "");
+
+/* -----------------------------------------------------------------------------------
+   016: RENDERING
+   ----------------------------------------------------------------------------------- */
+
+// Restringe la visibilità dei font installati
 defaultPref("layout.css.font-visibility", 2);
 
-// Prevent exposing WebGL Renderer Info
-defaultPref("webgl.enable-renderer-query", false);
-defaultPref("webgl.override-unmasked-renderer", "Mozilla");
-defaultPref("webgl.override-unmasked-vendor", "Mozilla");
-defaultPref("webgl.sanitize-unmasked-renderer", false);
-
-// Prevent pre-allocating content processes
-defaultPref("dom.ipc.processPrelaunch.enabled", false);
-defaultPref("dom.ipc.processPrelaunch.fission.number", 0);
-
-// Prevent using system accent colors
+// Impedisce alle pagine web di ereditare i colori del tema di sistema
 defaultPref("widget.non-native-theme.use-theme-accent", false);
-
-// Prevent using system colors
 defaultPref("ui.use_standins_for_native_colors", true);
 
-// Set a fixed temporary storage limit
-defaultPref("dom.quotaManager.temporaryStorage.fixedLimit", 52428800);
-
-// Disable coloring visited links
-defaultPref("layout.css.visited_links_enabled", false);
-
-// Disable Graphite & SVG OpenType fonts
+// Disabilita rendering di font per lingue complesse / non latine
 defaultPref("gfx.font_rendering.graphite.enabled", false);
+
+// Disabilita i font OpenType-SVG (grafica vettoriale SVG integrata nei file dei font)
 defaultPref("gfx.font_rendering.opentype_svg.enabled", false);
 
-// Disable JavaScript Just-in-time Compilation (JIT)
-defaultPref("javascript.options.baselinejit", false);
-defaultPref("javascript.options.ion", false);
-defaultPref("javascript.options.jithints", false);
-defaultPref("javascript.options.native_regexp", false);
-defaultPref("javascript.options.wasm_optimizingjit", false);
-
-// Disable MathML
+// Disable rendering nativo di formule matematiche
 defaultPref("mathml.disabled", true);
 
-// Disable shared memory allocation from the parent process to content processes
-defaultPref("javascript.options.self_hosted.use_shared_memory", false);
-
-// Disable SharedArrayBuffer using window.postMessage
-defaultPref("dom.postMessage.sharedArrayBuffer.withCOOP_COEP", false);
-
-// Disable WebVR/WebXR
-defaultPref("permissions.default.xr", 2);
-
-// Disable XSLT
+// Disabilita XSLT (trasformazione di documenti XML)
 defaultPref("dom.xslt.enabled", false);
 
-// Disable GIO
+/* -----------------------------------------------------------------------------------
+   017: SICUREZZA
+   ----------------------------------------------------------------------------------- */
+
+// Disabilita GIO (GNOME Input/Output)
 defaultPref("network.gio.supported-protocols", ""); // [LINUX]
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 /* -----------------------------------------------------------------------------------
    022: PRIVACY + SECURITY
-   ----------------------------------------------------------------------------------- */
+   ----------------------------------------------------------------------------------- *
 
 // Block background/hidden extension pages from opening file pickers
 defaultPref("browser.disable_pickers_in_hidden_extension_pages", true);
@@ -736,7 +686,7 @@ defaultPref("dom.use_components_shim", false);
 
 /* -----------------------------------------------------------------------------------
    023: PRIVACY
-   ----------------------------------------------------------------------------------- */
+   ----------------------------------------------------------------------------------- *
 
 // Block ports currently known to be abused by Android apps for tracking/fingerprinting
 defaultPref("network.security.ports.banned", "29009, 29010, 30102, 30103, 12387, 12388, 12580, 12581, 12582, 12583, 12584, 12585, 12586, 12587, 12588, 12589, 12590, 12591");
@@ -799,7 +749,7 @@ defaultPref("network.http.referer.XOriginTrimmingPolicy", 2);
 
 /* -----------------------------------------------------------------------------------
    024: SECURITY
-   ----------------------------------------------------------------------------------- */
+   ----------------------------------------------------------------------------------- *
 
 // Block privileged `about:` pages from loading remote scripts
 defaultPref("security.disallow_privilegedabout_remote_script_loads", true);
@@ -1062,4 +1012,4 @@ defaultPref("gfx.webrender.low-quality-pinch-zoom", true);
    FINE
    ----------------------------------------------------------------------------------- */
 
-lockPref("rischio.fox", "151.58");
+lockPref("rischio.fox", "151.59");
