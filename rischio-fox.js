@@ -74,26 +74,6 @@ defaultPref("security.csp.reporting.enabled", false);
    002: UX
    ----------------------------------------------------------------------------------- */
 
-lockPref("browser.engagement.ctrlTab.has-used", true);
-lockPref("browser.engagement.downloads-button.has-used", true);
-lockPref("browser.engagement.fxa-toolbar-menu-button.has-used", true);
-lockPref("browser.engagement.home-button.has-used", true);
-lockPref("browser.engagement.library-button.has-used", true);
-lockPref("browser.engagement.sidebar-button.has-used", true);
-lockPref("browser.engagement.total_uri_count.pbm", false);
-lockPref("browser.engagement.search_counts.pbm", false);
-lockPref("browser.search.totalSearches", 100);
-lockPref("browser.rights.3.shown", true);
-lockPref("privacy.trackingprotection.allow_list.hasUserInteractedWithETPSettings", true);
-lockPref("browser.ipProtection.locationButtonBadgeDismissed", true);
-lockPref("sidebar.verticalTabs.dragToPinPromo.dismissed", true);
-lockPref("browser.protections_panel.infoMessage.seen", true);
-lockPref("identity.fxaccounts.toolbar.accessed", true);
-lockPref("browser.ipProtection.openedPanelWithLocation", true);
-lockPref("browser.ipProtection.upgradeNotAvailable", true);
-lockPref("sidebar.new-sidebar.has-used", true);
-lockPref("media.videocontrols.picture-in-picture.video-toggle.has-used", true);
-
 // Nascondi badge "New"
 lockPref("pdfjs.enableNewBadge", false);
 lockPref("browser.tabs.notes.newBadge.enabled", false);
@@ -666,6 +646,9 @@ defaultPref("network.cookie.sameSite.laxByDefault", true);
 defaultPref("network.cookie.sameSite.laxByDefaultWarningsForBeta", true);
 defaultPref("network.cookie.sameSite.schemeful", true);
 
+// Abilita VPN Mozilla
+defaultPref("browser.ipProtection.enabled", true);
+
 /* -----------------------------------------------------------------------------------
    018: ISOLAMENTO
    ----------------------------------------------------------------------------------- */
@@ -763,4 +746,4 @@ defaultPref("network.dnsCacheExpiration", 3600); // default=60
    FINE
    ----------------------------------------------------------------------------------- */
 
-lockPref("rischio.fox", "152.3");
+lockPref("rischio.fox", "153");
