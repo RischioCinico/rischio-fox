@@ -23,13 +23,14 @@ INDICE:
    010: CONNESSIONI
    011: PROXY
    012: MULTIMEDIA
-   013: GEOLOCALIZZAZIONE
-   014: PDF
-   015: ESTENSIONI
-   016: RENDERING
-   017: SICUREZZA
-   018: PRIVACY
-   019: ISOLAMENTO
+   013: PDF
+   014: ESTENSIONI
+   015: RENDERING
+   016: SICUREZZA
+   017: PRIVACY
+   018: ISOLAMENTO
+   019: GEOLOCALIZZAZIONE
+
    
    027: CONTROL
    030: PERFORMANCE
@@ -496,23 +497,7 @@ defaultPref("media.videocontrols.picture-in-picture.video-toggle.enabled", false
 defaultPref("media.autoplay.blocking_policy", 2);
 
 /* -----------------------------------------------------------------------------------
-   013: GEOLOCALIZZAZIONE
-   ----------------------------------------------------------------------------------- */
-
-// Usa BeaconDB al posto delle API di Google per la geolocalizzazione
-defaultPref("geo.provider.network.url", "https://beacondb.net/v1/geolocate");
-
-// Disabilita Geoclue
-defaultPref("geo.provider.use_geoclue", false); // [LINUX]
-defaultPref("geo.provider.geoclue.always_high_accuracy", false); // [LINUX]
-
-// Disabilita il rilevamento della regione via IP da parte dei server Mozilla
-defaultPref("browser.region.network.url", "");
-defaultPref("browser.region.update.enabled", false);
-lockPref("doh-rollout.home-region", "");
-
-/* -----------------------------------------------------------------------------------
-   014: PDF
+   013: PDF
    ----------------------------------------------------------------------------------- */
 
 // Disabilita JavaScript nei PDF
@@ -537,7 +522,7 @@ defaultPref("pdfjs.handleOctetStream", false);
 defaultPref("pdfjs.historyUpdateUrl", true);
 
 /* -----------------------------------------------------------------------------------
-   015: ESTENSIONI
+   014: ESTENSIONI
    ----------------------------------------------------------------------------------- */
 
 // Mostra add-ons nascosti in `about:debugging`
@@ -571,7 +556,7 @@ lockPref("extensions.geckoProfiler.acceptedExtensionIds", "");
 defaultPref("browser.search.searchEnginesURL", "");
 
 /* -----------------------------------------------------------------------------------
-   016: RENDERING
+   015: RENDERING
    ----------------------------------------------------------------------------------- */
 
 // Restringe la visibilità dei font installati
@@ -594,7 +579,7 @@ defaultPref("mathml.disabled", true);
 defaultPref("dom.xslt.enabled", false);
 
 /* -----------------------------------------------------------------------------------
-   017: SICUREZZA
+   016: SICUREZZA
    ----------------------------------------------------------------------------------- */
 
 // Disabilita GNOME Integration & GIO (GNOME Input/Output)
@@ -636,7 +621,7 @@ defaultPref("javascript.options.wasm_memory_control", true);
 defaultPref("security.block_fileuri_script_with_wrong_mime", true);
 
 /* -----------------------------------------------------------------------------------
-   018: PRIVACY
+   017: PRIVACY
    ----------------------------------------------------------------------------------- */
 
 // Abilita Global Privacy Control
@@ -664,7 +649,7 @@ defaultPref("network.cookie.sameSite.laxByDefaultWarningsForBeta", true);
 defaultPref("network.cookie.sameSite.schemeful", true);
 
 /* -----------------------------------------------------------------------------------
-   019: ISOLAMENTO
+   018: ISOLAMENTO
    ----------------------------------------------------------------------------------- */
 
 // Isola le risorse caricate dagli script delle estensioni per evitare il tracciamento tra siti diversi
@@ -688,7 +673,21 @@ defaultPref("browser.tabs.remote.enforceRemoteTypeRestrictions", true);
 // Imposta il livello massimo di isolamento (sandbox) del processo GPU
 defaultPref("security.sandbox.gpu.level", 2);
 
+/* -----------------------------------------------------------------------------------
+   019: GEOLOCALIZZAZIONE
+   ----------------------------------------------------------------------------------- */
 
+// Usa BeaconDB al posto delle API di Google per la geolocalizzazione
+defaultPref("geo.provider.network.url", "https://beacondb.net/v1/geolocate");
+
+// Disabilita Geoclue
+defaultPref("geo.provider.use_geoclue", false); // [LINUX]
+defaultPref("geo.provider.geoclue.always_high_accuracy", false); // [LINUX]
+
+// Disabilita il rilevamento della regione via IP da parte dei server Mozilla
+defaultPref("browser.region.network.url", "");
+defaultPref("browser.region.update.enabled", false);
+lockPref("doh-rollout.home-region", "");
 
 
 
@@ -705,7 +704,7 @@ defaultPref("devtools.aboutdebugging.local-tab-debugging", true);
 // Prevent middle mouse clicks from pasting clipboard contents
 defaultPref("middlemouse.paste", false);
 
-// Permetti CSS personalizzato
+// Carica stili CSS personalizzati nella cartella utente
 defaultPref("toolkit.legacyUserProfileCustomizations.stylesheets", true);
 
 // Allow Picture-in-Picture on all websites, even if the website tries to block it
@@ -823,4 +822,4 @@ defaultPref("gfx.webrender.low-quality-pinch-zoom", true);
    FINE
    ----------------------------------------------------------------------------------- */
 
-lockPref("rischio.fox", "151.61");
+lockPref("rischio.fox", "151.62");
