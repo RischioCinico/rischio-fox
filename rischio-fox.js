@@ -300,7 +300,7 @@ lockPref("browser.restoreWindowState.disabled", true);
 // Disabilita il salvataggio e il completamento automatico della cronologia dei moduli e della barra di ricerca
 lockPref("browser.formfill.enable", false);
 
-// Disabilita l'aggiornamento e il caricamento locale del database dei traccianti (ETP/Disconnect),
+// Disabilita l'aggiornamento e il caricamento locale del database dei traccianti
 lockPref("browser.contentblocking.database.enabled", false);
 
 /* -----------------------------------------------------------------------------------
