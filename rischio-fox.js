@@ -30,10 +30,7 @@ INDICE:
    017: PRIVACY
    018: ISOLAMENTO
    019: GEOLOCALIZZAZIONE
-
-   
-   027: CONTROL
-   030: PERFORMANCE
+   020: PERFORMANCE
 */
 
 /* -----------------------------------------------------------------------------------
