@@ -73,6 +73,7 @@
       "StartPage": "previous-session"
     },
     "HttpsOnlyMode": "force_enabled",
+    "IPProtectionAvailable": true,
     "NetworkPrediction": false,
     "NoDefaultBookmarks": true,
     "OverrideFirstRunPage": "",
