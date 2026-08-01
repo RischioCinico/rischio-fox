@@ -19,8 +19,8 @@ INDICE:
    006: DOWNLOADS
    007: INTERFACCIA
    008: SCHEDE
-   009: CONNESSIONI
-   010: PASSWORDS
+   009: PASSWORDS
+   010: CONNESSIONI
    011: PROXY
    
    013: WEBRTC
@@ -418,7 +418,27 @@ defaultPref("browser.tabs.loadBookmarksInBackground", true);
 defaultPref("browser.tabs.insertAfterCurrent", true);
 
 /* -----------------------------------------------------------------------------------
-   009: CONNESSIONI
+   009: PASSWORDS
+   ----------------------------------------------------------------------------------- */
+
+// Disabilita l'autocompilazione automatica di username e password
+lockPref("signon.autofillForms", false);
+
+// Mostra tasto per rivelare password
+defaultPref("layout.forms.reveal-password-button.enabled", true);
+
+// Disabilita la cattura delle credenziali inserite fuori dai moduli HTML standard
+defaultPref("signon.privateBrowsingCapture.enabled", false);
+defaultPref("signon.formlessCapture.enabled", false);
+
+// Disable password truncation
+defaultPref("editor.truncate_user_pastes", false);
+
+// Consente l'autenticazione HTTP per le risorse secondarie solo se sono dello stesso dominio
+defaultPref("network.auth.subresource-http-auth-allow", 1);
+
+/* -----------------------------------------------------------------------------------
+   010: CONNESSIONI
    ----------------------------------------------------------------------------------- */
 
 // Impedisce a Firefox di passare automaticamente alla modalità offline
@@ -458,26 +478,6 @@ defaultPref("network.http.prompt-temp-redirect", true);
 
 // Disabilita preconnect
 defaultPref("network.preconnect", false);
-
-/* -----------------------------------------------------------------------------------
-   016: PASSWORDS
-   ----------------------------------------------------------------------------------- */
-
-// Disabilita l'autocompilazione automatica di username e password
-lockPref("signon.autofillForms", false);
-
-// Mostra tasto per rivelare password
-defaultPref("layout.forms.reveal-password-button.enabled", true);
-
-// Disabilita la cattura delle credenziali inserite fuori dai moduli HTML standard
-defaultPref("signon.privateBrowsingCapture.enabled", false);
-defaultPref("signon.formlessCapture.enabled", false);
-
-// Disable password truncation
-defaultPref("editor.truncate_user_pastes", false);
-
-// Consente l'autenticazione HTTP per le risorse secondarie solo se sono dello stesso dominio
-defaultPref("network.auth.subresource-http-auth-allow", 1);
 
 /* -----------------------------------------------------------------------------------
    011: PROXY
