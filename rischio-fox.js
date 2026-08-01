@@ -23,12 +23,12 @@ INDICE:
    010: CONNESSIONI
    011: PROXY
    012: MULTIMEDIA
-   013: WEBRTC
-   014: GEOLOCALIZZAZIONE
+   013: GEOLOCALIZZAZIONE
+   014: PDF
+   
    015: ATTACK SURFACE
    017: EXTENSIONS
    018: AI
-   020: PDF
    021: SAFE BROWSING
    022: PRIVACY + SECURITY
    023: PRIVACY
@@ -503,45 +503,60 @@ defaultPref("media.videocontrols.picture-in-picture.video-toggle.enabled", false
 defaultPref("media.autoplay.blocking_policy", 2);
 
 /* -----------------------------------------------------------------------------------
-   013: WEBRTC
-   -----------------------------------------------------------------------------------
+   013: GEOLOCALIZZAZIONE
+   ----------------------------------------------------------------------------------- */
 
-// Allow user to silence notifications when screen sharing
-defaultPref("privacy.webrtc.hideGlobalIndicator", true);
+// Usa BeaconDB al posto delle API di Google per la geolocalizzazione
+defaultPref("geo.provider.network.url", "https://beacondb.net/v1/geolocate");
 
-// Disable RTP Control Protocol (RTCP) reception
-defaultPref("media.webrtc.net.force_disable_rtcp_reception", true);
-
-// Enable global toggles for muting the camera/microphone
-defaultPref("privacy.webrtc.globalMuteToggles", true);
-
-// Prevent WebRTC from bypassing the proxy (if configured)
-defaultPref("media.peerconnection.ice.proxy_only_if_behind_proxy", true);
-
-// Warn users when attempting to switch tabs in a window being shared over WebRTC
-defaultPref("privacy.webrtc.sharedTabWarning", true);
-
-// Disable WebRTC history
-defaultPref("media.aboutwebrtc.hist.enabled", false);
-
-/* -----------------------------------------------------------------------------------
-   014: GEOLOCALIZZAZIONE
-   ----------------------------------------------------------------------------------- *
-
-// Disable Mozilla's GeoIP/Region Service
-defaultPref("browser.region.network.url", "");
-defaultPref("browser.region.update.enabled", false);
-defaultPref("browser.search.region", "XX");
-defaultPref("doh-rollout.home-region", "XX");
-
-// Enable Geoclue for GNU/Linux
+// Disabilita Geoclue
 defaultPref("geo.provider.use_geoclue", false); // [LINUX]
-
-// Prevent unconditionally providing high location accuracy
 defaultPref("geo.provider.geoclue.always_high_accuracy", false); // [LINUX]
 
-// Set BeaconDB as the default network geolocation provider
-defaultPref("geo.provider.network.url", "https://beacondb.net/v1/geolocate");
+// Disabilita il rilevamento della regione via IP da parte dei server Mozilla
+defaultPref("browser.region.network.url", "");
+defaultPref("browser.region.update.enabled", false);
+lockPref("doh-rollout.home-region", "");
+
+/* -----------------------------------------------------------------------------------
+   014: PDF
+   ----------------------------------------------------------------------------------- *
+
+// Disable automatic hyperlinks
+defaultPref("pdfjs.enableAutoLinking", false);
+
+// Disable JavaScript
+defaultPref("pdfjs.enableScripting", false);
+
+// Disable WebGPU
+defaultPref("pdfjs.enableWebGPU", false);
+
+// Disable XFA
+defaultPref("pdfjs.enableXfa", false);
+
+// Enforce using the internal font renderer
+defaultPref("pdfjs.disableFontFace", true);
+
+// Force PDFs to be downloaded/viewed locally, and prompt before opening the PDF Viewer
+defaultPref("pdfjs.disableRange", true);
+defaultPref("pdfjs.disableStream", true);
+
+// Open external links in new tabs/windows
+defaultPref("pdfjs.externalLinkTarget", 2);
+
+// Prevent attempting to load/convert unknown binary files
+defaultPref("pdfjs.handleOctetStream", false);
+
+// Show sidebar when viewing PDFs
+defaultPref("pdfjs.sidebarViewOnLoad", 2);
+
+// Update URL when changing pages
+defaultPref("pdfjs.historyUpdateUrl", true);
+
+
+
+
+
 
 /* -----------------------------------------------------------------------------------
    015: ATTACK SURFACE
@@ -675,41 +690,6 @@ defaultPref("extensions.install.requireSecureOrigin", true);
 /* -----------------------------------------------------------------------------------
    018: AI
    ----------------------------------------------------------------------------------- */
-
-/* -----------------------------------------------------------------------------------
-   020: PDF
-   ----------------------------------------------------------------------------------- */
-
-// Disable automatic hyperlinks
-defaultPref("pdfjs.enableAutoLinking", false);
-
-// Disable JavaScript
-defaultPref("pdfjs.enableScripting", false);
-
-// Disable WebGPU
-defaultPref("pdfjs.enableWebGPU", false);
-
-// Disable XFA
-defaultPref("pdfjs.enableXfa", false);
-
-// Enforce using the internal font renderer
-defaultPref("pdfjs.disableFontFace", true);
-
-// Force PDFs to be downloaded/viewed locally, and prompt before opening the PDF Viewer
-defaultPref("pdfjs.disableRange", true);
-defaultPref("pdfjs.disableStream", true);
-
-// Open external links in new tabs/windows
-defaultPref("pdfjs.externalLinkTarget", 2);
-
-// Prevent attempting to load/convert unknown binary files
-defaultPref("pdfjs.handleOctetStream", false);
-
-// Show sidebar when viewing PDFs
-defaultPref("pdfjs.sidebarViewOnLoad", 2);
-
-// Update URL when changing pages
-defaultPref("pdfjs.historyUpdateUrl", true);
 
 /* -----------------------------------------------------------------------------------
    021: SAFE BROWSING
@@ -1123,4 +1103,4 @@ defaultPref("gfx.webrender.low-quality-pinch-zoom", true);
    FINE
    ----------------------------------------------------------------------------------- */
 
-lockPref("rischio.fox", "151.55");
+lockPref("rischio.fox", "151.57");
