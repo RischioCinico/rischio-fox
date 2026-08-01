@@ -22,9 +22,8 @@ INDICE:
    009: PASSWORDS
    010: CONNESSIONI
    011: PROXY
-   
+   012: MULTIMEDIA
    013: WEBRTC
-   014: MEDIA
    015: ATTACK SURFACE
    017: EXTENSIONS
    018: AI
@@ -481,57 +480,17 @@ defaultPref("network.preconnect", false);
 
 /* -----------------------------------------------------------------------------------
    011: PROXY
-   ----------------------------------------------------------------------------------- *
+   ----------------------------------------------------------------------------------- */
 
-// Prevent Firefox from automatically using the system's proxy configuration 
-defaultPref("network.proxy.type", 0);
-
-// Always start proxy extensions (if installed) as soon as possible, instead of waiting for the first browser window to open
-defaultPref("extensions.webextensions.early_background_wakeup_on_request", true);
-
-// Disable automatic failover from the proxy (if configured) to direct connections when certain system requests fail
+// Impedisce connessione diretta a Internet se il proxy configurato smette di funzionare
 defaultPref("network.proxy.failover_direct", false);
 
-// Disable file:///net
-defaultPref("network.file.path_blacklist", "/net");
-
-// Disable GIO
-defaultPref("network.gio.supported-protocols", "");
-
-// Disable Uniform Naming Convention (UNC) file paths
-defaultPref("network.file.disable_unc_paths", true);
-
-// Prevent bypassing the proxy (if configured) for system connections that include the `bypassProxy` flag
-defaultPref("network.proxy.allow_bypass", false);
-
-// Use the proxy (if configured) for remote DNS lookups
+// Forza la risoluzione dei nomi di dominio (DNS) attraverso il server proxy SOCKS5
 defaultPref("network.proxy.socks_remote_dns", true);
 
 /* -----------------------------------------------------------------------------------
-   013: WEBRTC
-   ----------------------------------------------------------------------------------- */
-
-// Allow user to silence notifications when screen sharing
-defaultPref("privacy.webrtc.hideGlobalIndicator", true);
-
-// Disable RTP Control Protocol (RTCP) reception
-defaultPref("media.webrtc.net.force_disable_rtcp_reception", true);
-
-// Enable global toggles for muting the camera/microphone
-defaultPref("privacy.webrtc.globalMuteToggles", true);
-
-// Prevent WebRTC from bypassing the proxy (if configured)
-defaultPref("media.peerconnection.ice.proxy_only_if_behind_proxy", true);
-
-// Warn users when attempting to switch tabs in a window being shared over WebRTC
-defaultPref("privacy.webrtc.sharedTabWarning", true);
-
-// Disable WebRTC history
-defaultPref("media.aboutwebrtc.hist.enabled", false);
-
-/* -----------------------------------------------------------------------------------
-   014: MEDIA
-   ----------------------------------------------------------------------------------- */
+   012: MULTIMEDIA
+   ----------------------------------------------------------------------------------- *
 
 // Block media autoplay
 defaultPref("media.autoplay.default", 5);
@@ -557,8 +516,30 @@ defaultPref("media.gmp.encoder.multithreaded", true);
 // Sandbox GMP
 defaultPref("media.gmp.insecure.allow", false); // [LINUX]
 
-// Abilita il pulsante Picture-in-Picture su tutti i video
+// Mostra sempre pulsante Picture-in-Picture
 defaultPref("media.videocontrols.picture-in-picture.video-toggle.always-show", true);
+
+/* -----------------------------------------------------------------------------------
+   013: WEBRTC
+   ----------------------------------------------------------------------------------- */
+
+// Allow user to silence notifications when screen sharing
+defaultPref("privacy.webrtc.hideGlobalIndicator", true);
+
+// Disable RTP Control Protocol (RTCP) reception
+defaultPref("media.webrtc.net.force_disable_rtcp_reception", true);
+
+// Enable global toggles for muting the camera/microphone
+defaultPref("privacy.webrtc.globalMuteToggles", true);
+
+// Prevent WebRTC from bypassing the proxy (if configured)
+defaultPref("media.peerconnection.ice.proxy_only_if_behind_proxy", true);
+
+// Warn users when attempting to switch tabs in a window being shared over WebRTC
+defaultPref("privacy.webrtc.sharedTabWarning", true);
+
+// Disable WebRTC history
+defaultPref("media.aboutwebrtc.hist.enabled", false);
 
 /* -----------------------------------------------------------------------------------
    015: ATTACK SURFACE
@@ -623,6 +604,9 @@ defaultPref("permissions.default.xr", 2);
 
 // Disable XSLT
 defaultPref("dom.xslt.enabled", false);
+
+// Disable GIO
+defaultPref("network.gio.supported-protocols", ""); // [LINUX]
 
 /* -----------------------------------------------------------------------------------
    017: EXTENSIONS
@@ -1159,4 +1143,4 @@ defaultPref("gfx.webrender.low-quality-pinch-zoom", true);
    FINE
    ----------------------------------------------------------------------------------- */
 
-lockPref("rischio.fox", "151.52");
+lockPref("rischio.fox", "151.53");
