@@ -25,11 +25,9 @@ INDICE:
    012: MULTIMEDIA
    013: GEOLOCALIZZAZIONE
    014: PDF
+   015: ESTENSIONI
    
-   015: ATTACK SURFACE
-   017: EXTENSIONS
-   018: AI
-   021: SAFE BROWSING
+   016: ATTACK SURFACE
    022: PRIVACY + SECURITY
    023: PRIVACY
    024: SECURITY
@@ -375,6 +373,9 @@ defaultPref("browser.spin_cursor_while_busy", true);
 // Nasconde logo nei QR code generati con Firefox
 defaultPref("browser.shareqrcode.embed_logo", false);
 
+// Mostra maggiori informazioni sulle pagine bloccate da Safe Browsing
+defaultPref("browser.xul.error_pages.show_safe_browsing_details_on_load", true);
+
 // Mostra maggiori informazioni nelle pagine "about:"
 defaultPref("media.mediacapabilities.from-database", true);
 defaultPref("toolkit.aboutProcesses.showAllSubframes", true);
@@ -520,46 +521,93 @@ lockPref("doh-rollout.home-region", "");
 
 /* -----------------------------------------------------------------------------------
    014: PDF
-   ----------------------------------------------------------------------------------- *
+   ----------------------------------------------------------------------------------- */
 
-// Disable automatic hyperlinks
-defaultPref("pdfjs.enableAutoLinking", false);
-
-// Disable JavaScript
+// Disabilita JavaScript nei PDF
 defaultPref("pdfjs.enableScripting", false);
 
-// Disable WebGPU
+// Disabilita accelerazione hardware per il rendering dei PDF
 defaultPref("pdfjs.enableWebGPU", false);
 
-// Disable XFA
+// Disabilita XFA
 defaultPref("pdfjs.enableXfa", false);
 
-// Enforce using the internal font renderer
-defaultPref("pdfjs.disableFontFace", true);
+// Disabilita la conversione automatica del testo in link cliccabili
+defaultPref("pdfjs.enableAutoLinking", false);
 
-// Force PDFs to be downloaded/viewed locally, and prompt before opening the PDF Viewer
-defaultPref("pdfjs.disableRange", true);
-defaultPref("pdfjs.disableStream", true);
-
-// Open external links in new tabs/windows
+// Apre i link in una nuova scheda
 defaultPref("pdfjs.externalLinkTarget", 2);
 
-// Prevent attempting to load/convert unknown binary files
+// Evita che il browser tenti di aprire file sconosciuti come PDF
 defaultPref("pdfjs.handleOctetStream", false);
 
-// Show sidebar when viewing PDFs
-defaultPref("pdfjs.sidebarViewOnLoad", 2);
-
-// Update URL when changing pages
+// Aggiorna URL quando cambia la pagina nel lettore PDF
 defaultPref("pdfjs.historyUpdateUrl", true);
 
+/* -----------------------------------------------------------------------------------
+   015: ESTENSIONI
+   ----------------------------------------------------------------------------------- *
 
+// Allow enabling/disabling extensions per-container
+defaultPref("extensions.userContextIsolation.enabled", true);
 
+// Always display "hidden" add-ons at `about:debugging`
+lockPref("devtools.aboutdebugging.showHiddenAddons", true);
 
+// Disable add-on sideloading
+defaultPref("extensions.autoDisableScopes", 15);
+defaultPref("extensions.enabledScopes", 5);
+defaultPref("extensions.installDistroAddons", false);
+defaultPref("extensions.sideloadScopes", 0);
 
+// Disable the AMO Abuse Report API
+defaultPref("extensions.addonAbuseReport.url", "");
+
+// Disable mozAddonManager
+defaultPref("privacy.resistFingerprinting.block_mozAddonManager", true);
+
+// Enable Add-on Distribution Control (Install Origins)
+defaultPref("extensions.install_origins.enabled", true);
+
+// Harden CSP policy
+defaultPref("extensions.webextensions.base-content-security-policy", "script-src 'self' 'unsafe-inline'; upgrade-insecure-requests;");
+defaultPref("extensions.webextensions.base-content-security-policy.v3", "script-src 'self'; upgrade-insecure-requests;");
+defaultPref("extensions.webextensions.base-content-security-policy.v3-with-localhost", "script-src 'self'; upgrade-insecure-requests;");
+defaultPref("extensions.webextensions.default-content-security-policy", "script-src 'self'; upgrade-insecure-requests;");
+
+// Never allow installing extensions without first prompting the user
+lockPref("extensions.postDownloadThirdPartyPrompt", false);
+defaultPref("xpinstall.whitelist.directRequest", false);
+defaultPref("xpinstall.whitelist.fileRequest", false);
+lockPref("xpinstall.whitelist.required", true);
+
+// Only allow installation and updates of extensions using Firefox's built-in certificates
+defaultPref("extensions.install.requireBuiltInCerts", true);
+defaultPref("extensions.update.requireBuiltInCerts", true);
+
+// Prevent automatically granting MV3 extensions optional host permissions
+defaultPref("extensions.originControls.grantByDefault", false);
+
+// Prevent extensions from opening pop-ups to remote websites
+defaultPref("extensions.manifestV2.actionsPopupURLRestricted", true); 
+
+// Prevent extensions from opening pop-ups without user interaction
+defaultPref("extensions.openPopupWithoutUserGesture.enabled", false);
+
+// Prevent extensions from using the Gecko Profiler
+defaultPref("extensions.geckoProfiler.acceptedExtensionIds", "");
+
+// Prevent recommending search extensions
+defaultPref("browser.search.searchEnginesURL", "");
+
+// Require resources loaded by MV2 extensions to be specified under web_accessible_resources in the extension's manifest
+defaultPref("extensions.content_web_accessible.enabled", true);
+
+// Require secure origins to install add-ons
+defaultPref("extensions.install.requireSecureOrigin", true);
 
 /* -----------------------------------------------------------------------------------
-   015: ATTACK SURFACE
+   016: ATTACK SURFACE
    ----------------------------------------------------------------------------------- */
 
 // Always load fonts bundled with Firefox
@@ -624,95 +672,6 @@ defaultPref("dom.xslt.enabled", false);
 
 // Disable GIO
 defaultPref("network.gio.supported-protocols", ""); // [LINUX]
-
-/* -----------------------------------------------------------------------------------
-   017: EXTENSIONS
-   ----------------------------------------------------------------------------------- */
-
-// Allow enabling/disabling extensions per-container
-defaultPref("extensions.userContextIsolation.enabled", true);
-
-// Always display "hidden" add-ons at `about:debugging`
-lockPref("devtools.aboutdebugging.showHiddenAddons", true);
-
-// Disable add-on sideloading
-defaultPref("extensions.autoDisableScopes", 15);
-defaultPref("extensions.enabledScopes", 5);
-defaultPref("extensions.installDistroAddons", false);
-defaultPref("extensions.sideloadScopes", 0);
-
-// Disable the AMO Abuse Report API
-defaultPref("extensions.addonAbuseReport.url", "");
-
-// Disable mozAddonManager
-defaultPref("privacy.resistFingerprinting.block_mozAddonManager", true);
-
-// Enable Add-on Distribution Control (Install Origins)
-defaultPref("extensions.install_origins.enabled", true);
-
-// Harden CSP policy
-defaultPref("extensions.webextensions.base-content-security-policy", "script-src 'self' 'unsafe-inline'; upgrade-insecure-requests;");
-defaultPref("extensions.webextensions.base-content-security-policy.v3", "script-src 'self'; upgrade-insecure-requests;");
-defaultPref("extensions.webextensions.base-content-security-policy.v3-with-localhost", "script-src 'self'; upgrade-insecure-requests;");
-defaultPref("extensions.webextensions.default-content-security-policy", "script-src 'self'; upgrade-insecure-requests;");
-
-// Never allow installing extensions without first prompting the user
-lockPref("extensions.postDownloadThirdPartyPrompt", false);
-defaultPref("xpinstall.whitelist.directRequest", false);
-defaultPref("xpinstall.whitelist.fileRequest", false);
-lockPref("xpinstall.whitelist.required", true);
-
-// Only allow installation and updates of extensions using Firefox's built-in certificates
-defaultPref("extensions.install.requireBuiltInCerts", true);
-defaultPref("extensions.update.requireBuiltInCerts", true);
-
-// Prevent automatically granting MV3 extensions optional host permissions
-defaultPref("extensions.originControls.grantByDefault", false);
-
-// Prevent extensions from opening pop-ups to remote websites
-defaultPref("extensions.manifestV2.actionsPopupURLRestricted", true); 
-
-// Prevent extensions from opening pop-ups without user interaction
-defaultPref("extensions.openPopupWithoutUserGesture.enabled", false);
-
-// Prevent extensions from using the Gecko Profiler
-defaultPref("extensions.geckoProfiler.acceptedExtensionIds", "");
-
-// Prevent recommending search extensions
-defaultPref("browser.search.searchEnginesURL", "");
-
-// Require resources loaded by MV2 extensions to be specified under web_accessible_resources in the extension's manifest
-defaultPref("extensions.content_web_accessible.enabled", true);
-
-// Require secure origins to install add-ons
-defaultPref("extensions.install.requireSecureOrigin", true);
-
-/* -----------------------------------------------------------------------------------
-   018: AI
-   ----------------------------------------------------------------------------------- */
-
-/* -----------------------------------------------------------------------------------
-   021: SAFE BROWSING
-   ----------------------------------------------------------------------------------- */
-
-// Disable the legacy (v2.2) Safe Browsing API
-defaultPref("browser.safebrowsing.provider.google.advisoryName", "Google Safe Browsing (Legacy)");
-defaultPref("browser.safebrowsing.provider.google.lists", "disabled");
-defaultPref("browser.safebrowsing.provider.google.lists.default", "goog-badbinurl-shavar,goog-downloadwhite-digest256,goog-phish-shavar,googpub-phish-shavar,goog-malware-shavar,goog-unwanted-shavar");
-
-// Enable the Potentially Harmful Application list (when Safe Browsing is enabled)
-defaultPref("urlclassifier.malwareTable", "goog-malware-proto,goog-unwanted-proto,moztest-harmful-simple,moztest-malware-simple,moztest-unwanted-simple,goog-harmful-proto");
-
-// Enable Safe Browsing by default
-lockPref("browser.safebrowsing.downloads.enabled", true);
-lockPref("browser.safebrowsing.malware.enabled", true);
-lockPref("browser.safebrowsing.phishing.enabled", true);
-
-// Prevent sending metadata of downloaded files to Safe Browsing providers
-defaultPref("browser.safebrowsing.downloads.remote.enabled", false);
-
-// Show advanced details on pages blocked by Safe Browsing
-defaultPref("browser.xul.error_pages.show_safe_browsing_details_on_load", true);
 
 /* -----------------------------------------------------------------------------------
    022: PRIVACY + SECURITY
@@ -1103,4 +1062,4 @@ defaultPref("gfx.webrender.low-quality-pinch-zoom", true);
    FINE
    ----------------------------------------------------------------------------------- */
 
-lockPref("rischio.fox", "151.57");
+lockPref("rischio.fox", "151.58");
