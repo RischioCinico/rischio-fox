@@ -19,7 +19,7 @@ INDICE:
    006: DOWNLOADS
    007: INTERFACCIA
    008: SCHEDE
-   009: PASSWORDS
+   009: CREDENZIALI
    010: CONNESSIONI
    011: PROXY
    012: MULTIMEDIA
@@ -28,11 +28,9 @@ INDICE:
    015: ESTENSIONI
    016: RENDERING
    017: SICUREZZA
+   018: PRIVACY
+   019: ISOLAMENTO
    
-   022: PRIVACY + SECURITY
-   023: PRIVACY
-   024: SECURITY
-   026: DEBUGGING
    027: CONTROL
    030: PERFORMANCE
 */
@@ -63,6 +61,16 @@ lockPref("dom.origin-trials.enabled", false);
 
 // Disattiva la raccolta dati per la protezione dal tracciamento email
 lockPref("privacy.trackingprotection.emailtracking.data_collection.enabled", false);
+
+// Disabilita l'invio di dati di diagnostica, metriche e telemetria tramite Beacon API
+defaultPref("beacon.enabled", false);
+
+// Disabilita l'invio automatico di report ai server esterni
+defaultPref("dom.reporting.enabled", false);
+defaultPref("dom.reporting.header.enabled", false);
+
+// Disabilita l'invio dei report sulle violazioni della Content Security Policy (CSP) ai server esterni
+defaultPref("security.csp.reporting.enabled", false);
 
 /* -----------------------------------------------------------------------------------
    002: UX
@@ -137,7 +145,10 @@ lockPref("termsofuse.bypassNotification", true);
 lockPref("browser.disableResetPrompt", true);
 
 // Disabilita l'API Keyboard Lock quando una pagina web è in modalità a schermo intero.
-defaultPref("dom.fullscreen.keyboard_lock.enabled", false); 
+defaultPref("dom.fullscreen.keyboard_lock.enabled", false);
+
+// Impedisce al browser di cercare automaticamente aggiornamenti per i motori di ricerca preinstallati
+defaultPref("browser.search.update", false);
 
 /* -----------------------------------------------------------------------------------
    003: AVVIO
@@ -419,8 +430,12 @@ defaultPref("browser.tabs.loadBookmarksInBackground", true);
 // [PF] Apri le nuove schede subito dopo quella attuale
 defaultPref("browser.tabs.insertAfterCurrent", true);
 
+// Disabilita l'anteprima delle schede al passaggio del mouse
+defaultPref("browser.tabs.hoverPreview.enabled", false);
+defaultPref("browser.tabs.hoverPreview.showThumbnails", false);
+
 /* -----------------------------------------------------------------------------------
-   009: PASSWORDS
+   009: CREDENZIALI
    ----------------------------------------------------------------------------------- */
 
 // Disabilita l'autocompilazione automatica di username e password
@@ -438,6 +453,9 @@ defaultPref("editor.truncate_user_pastes", false);
 
 // Consente l'autenticazione HTTP per le risorse secondarie solo se sono dello stesso dominio
 defaultPref("network.auth.subresource-http-auth-allow", 1);
+
+// Estende i controlli di monitoraggio delle credenziali compromesse all'architettura Fission per i campi di login ad alto valore
+defaultPref("fission.highValue.login.monitor", true);
 
 /* -----------------------------------------------------------------------------------
    010: CONNESSIONI
@@ -480,6 +498,9 @@ defaultPref("network.http.prompt-temp-redirect", true);
 
 // Disabilita preconnect
 defaultPref("network.preconnect", false);
+
+// Disabilita l'uso degli identificatori di sessione SSL/TLS (Session IDs)
+defaultPref("security.ssl.disable_session_identifiers", true);
 
 /* -----------------------------------------------------------------------------------
    011: PROXY
@@ -606,297 +627,115 @@ defaultPref("dom.xslt.enabled", false);
    017: SICUREZZA
    ----------------------------------------------------------------------------------- */
 
-// Disabilita GIO (GNOME Input/Output)
+// Disabilita GNOME Integration & GIO (GNOME Input/Output)
+defaultPref("browser.gnome-search-provider.enabled", false); // [LINUX] 
 defaultPref("network.gio.supported-protocols", ""); // [LINUX]
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-/* -----------------------------------------------------------------------------------
-   022: PRIVACY + SECURITY
-   ----------------------------------------------------------------------------------- *
-
-// Block background/hidden extension pages from opening file pickers
+// Impedisce alle pagine in background di richiamare selettori di file nativi del sistema
 defaultPref("browser.disable_pickers_in_hidden_extension_pages", true);
 
-// Disable Accessibility Services
+// Disabilita completamente i servizi di accessibilità
 defaultPref("accessibility.force_disabled", 1);
 defaultPref("devtools.accessibility.enabled", false);
 
-// Disable automatic updates for OpenSearch engines
-defaultPref("browser.search.update", false);
-
-// Disable Battery API
-defaultPref("dom.battery.enabled", false);
-
-// Disable Beacon API (Navigator.sendBeacon)
-defaultPref("beacon.enabled", false);
-
-// Disable Native Messaging
-defaultPref("webextensions.native-messaging.max-input-message-bytes", 0);
-defaultPref("webextensions.native-messaging.max-output-message-bytes", 0);
-defaultPref("webextensions.native-messaging.max-input-message-bytes.default", 1048576);
-defaultPref("webextensions.native-messaging.max-output-message-bytes.default", 2147483647);
-defaultPref("widget.use-xdg-desktop-portal.native-messaging", 0); // [LINUX]
-
-// Disable Reporting API
-defaultPref("dom.reporting.enabled", false);
-defaultPref("dom.reporting.header.enabled", false);
-
-// Disable tab hover previews
-defaultPref("browser.tabs.hoverPreview.enabled", false);
-defaultPref("browser.tabs.hoverPreview.showThumbnails", false);
-
-// Disable WebMIDI
+// Disabilita il provider di componenti aggiuntivi per i permessi dei siti
 defaultPref("dom.sitepermsaddon-provider.enabled", false);
-defaultPref("permissions.default.midi", 2);
-defaultPref("permissions.default.midi-sysex", 2);
 
-// Enable Local Network Access Restrictions
-defaultPref("network.lna.allow_top_level_navigation", false);
-defaultPref("network.lna.benchmarking-is-local", true);
-defaultPref("network.lna.block_trackers", true);
-defaultPref("network.lna.defer_https_check", false);
-defaultPref("network.lna.etp.enabled", false);
-defaultPref("network.lna.local-network-to-localhost.skip-checks", false);
-defaultPref("network.lna.skip-domains", "secure-login.attwifi.com");
-defaultPref("network.lna.websocket.enabled", true);
-defaultPref("permissions.default.local-network", 2);
-defaultPref("permissions.default.loopback-network", 0);
-
-// Enable Messaging Layer Security (MLS)
-defaultPref("dom.origin-trials.mls.state", 1);
-
-// Enable unused permission expiration
+// Abilita la scadenza automatica dei permessi concessi ai siti web se non vengono utilizzati per un certo periodo
 defaultPref("permissions.expireUnused.enabled", true);
 
-// Prevent exposing XPCOM Components.interfaces to websites
+// Disabilita il supporto di compatibilità per i vecchi componenti interni di Firefox
 defaultPref("dom.use_components_shim", false);
 
+// Disabilita l'assegnazione automatica dei permessi di accesso allo storage per i siti di terze parti
+defaultPref("dom.storage_access.auto_grants", false);
+
+// Vieta il caricamento di script remoti all'interno delle pagine privilegiate di Firefox (pagine "about:")
+defaultPref("security.disallow_privilegedabout_remote_script_loads", true);
+
+// Disabilita l'API Document Picture-in-Picture (Document PiP)
+defaultPref("dom.documentpip.enabled", false);
+
+// Mantiene attive le mitigazioni hardware e software contro gli attacchi Spectre per i contenuti isolati
+defaultPref("javascript.options.spectre.disable_for_isolated_content", false);
+
+// Abilita i controlli avanzati sulla memoria WebAssembly (Wasm)
+defaultPref("javascript.options.wasm_memory_control", true);
+
+// Blocca l'esecuzione di script caricati tramite protocollo file:// se hanno un MIME type errato
+defaultPref("security.block_fileuri_script_with_wrong_mime", true);
+
 /* -----------------------------------------------------------------------------------
-   023: PRIVACY
-   ----------------------------------------------------------------------------------- *
+   018: PRIVACY
+   ----------------------------------------------------------------------------------- */
 
-// Block ports currently known to be abused by Android apps for tracking/fingerprinting
-defaultPref("network.security.ports.banned", "29009, 29010, 30102, 30103, 12387, 12388, 12580, 12581, 12582, 12583, 12584, 12585, 12586, 12587, 12588, 12589, 12590, 12591");
+// Abilita Global Privacy Control
+lockPref("privacy.globalprivacycontrol.enabled", true);
 
-// Disable CSP reporting
-defaultPref("security.csp.reporting.enabled", false);
+// Disabilita l'API Battery Status per impedire ai siti web di tracciare il livello di carica e lo stato energetico del dispositivo
+defaultPref("dom.battery.enabled", false);
 
-// Disable Hyperlink Auditing (Click Tracking)
+// Limita l'invio dei ping HTML per limitare il tracciamento dei click
 defaultPref("browser.send_pings.require_same_host", true);
 
-// Disable online speech recognition
-defaultPref("media.webspeech.service.endpoint", "data;");
+// Taglia l'URL del Referrer inviato a siti di terze parti mantenendo solo lo schema, l'host e la porta (rimuovendo il percorso e i parametri)
+defaultPref("network.http.referer.XOriginTrimmingPolicy", 2);
 
-// Disable storage access heuristics
-defaultPref("dom.storage_access.auto_grants", false);
+// Limita la memorizzazione dei cookie e dello storage per i contenuti di terze parti integrati nelle pagine
+defaultPref("privacy.dynamic_firstparty.limitForeign", true);
+
+// Disabilita tutte le eccezioni euristiche basate su interazioni recenti o finestre aperte per lo storage di terze parti
 defaultPref("privacy.restrict3rdpartystorage.heuristic.opened_window_after_interaction", false);
 defaultPref("privacy.restrict3rdpartystorage.heuristic.recently_visited_time", 0);
 
-// Disable TLS session identifiers
-defaultPref("security.ssl.disable_session_identifiers", true);
-
-// Enable containers
-defaultPref("privacy.userContext.enabled", true);
-
-// Enable cookie banner reduction
-defaultPref("cookiebanners.service.mode", 1);
-defaultPref("cookiebanners.service.mode.privateBrowsing", 1);
-
-// Enable Do Not Track
-defaultPref("privacy.donottrackheader.enabled", true);
-
-// Enable Global Privacy Control
-lockPref("privacy.globalprivacycontrol.enabled", true);
-
-// Enable support for Mozilla IP Protection
-defaultPref("browser.ipProtection.enabled", true);
-defaultPref("browser.ipProtection.added", true);
-defaultPref("browser.ipProtection.features.siteExceptions", true);
-
-// Isolate permissions per container
-defaultPref("permissions.isolateBy.userContext", true);
-
-// Isolate resources (ex. referrers and cookies) injected by extensions
-defaultPref("privacy.antitracking.isolateContentScriptResources", true);
-
-// Limit maximum cookie lifetime to 6 months/180 days
-defaultPref("network.cookie.maxageCap", 15552000);
-
-// Prevent Firefox from automatically guessing which container to open an external link in
-defaultPref("browser.link.force_default_user_context_id_for_external_opens", true);
-
-// Prevent third parties from setting cookies unless the third party already has cookies as a first party
-defaultPref("privacy.dynamic_firstparty.limitForeign", true);
-
-// Strip tracking parameters from URLs when shared
-defaultPref("privacy.query_stripping.strip_on_share.enabled", true);
-
-// Trim cross-origin referers
-defaultPref("network.http.referer.XOriginTrimmingPolicy", 2);
-
-/* -----------------------------------------------------------------------------------
-   024: SECURITY
-   ----------------------------------------------------------------------------------- *
-
-// Block privileged `about:` pages from loading remote scripts
-defaultPref("security.disallow_privilegedabout_remote_script_loads", true);
-
-// Decrease the lifetime of privileged processes for `about:` pages
-defaultPref("dom.ipc.keepProcessesAlive.privilegedabout", 0);
-
-// Disable the Document Picture-in-Picture API
-defaultPref("dom.documentpip.enabled", false);
-
-// Disable GNOME Integration
-defaultPref("browser.gnome-search-provider.enabled", false); // [LINUX]
-   
-// Enable the Cross-Origin-Embedder Policy Header
-defaultPref("dom.origin-trials.coep-credentialless.state", 1);
-
-// Enable GPU Sandboxing
-defaultPref("security.sandbox.gpu.level", 2);
-
-// Enable the Integrity-Policy header
-defaultPref("security.integrity_policy.stylesheet.enabled", true);
-
-// Enable Origin-keyed agent clustering
-defaultPref("dom.origin_agent_cluster.default", true);
-
-// Enforce Per-site Process Isolation + isolate all websites
-defaultPref("fission.highValue.login.monitor", true);
-defaultPref("gfx.webrender.all", true);
-
-// Enable Spectre mitigations for isolated content
-defaultPref("javascript.options.spectre.disable_for_isolated_content", false);
-
-// Enable WebAssembly Memory Control
-defaultPref("javascript.options.wasm_memory_control", true);
-
-// Prefer to create new content processes, instead of re-using existing ones
-defaultPref("browser.tabs.remote.subframesPreferUsed", false);
-
-// Prevent marking JIT code pages as both writable and executable, only one or the other...
-defaultPref("general.config.sandbox_enabled", true);
-
-// Prevent remoteTypes from triggering process switches they shouldn't be able to...
-defaultPref("browser.tabs.remote.enforceRemoteTypeRestrictions", true);
-
-// Protect against CSRF Attacks
+// Applica l'attributo SameSite=Lax di default ai cookie
 defaultPref("network.cookie.sameSite.laxByDefault", true);
 defaultPref("network.cookie.sameSite.laxByDefaultWarningsForBeta", true);
 defaultPref("network.cookie.sameSite.schemeful", true);
 
-// Protect against MIME Exploits
-defaultPref("security.block_fileuri_script_with_wrong_mime", true);
+/* -----------------------------------------------------------------------------------
+   019: ISOLAMENTO
+   ----------------------------------------------------------------------------------- */
+
+// Isola le risorse caricate dagli script delle estensioni per evitare il tracciamento tra siti diversi
+defaultPref("privacy.antitracking.isolateContentScriptResources", true);
+
+// Isola i permessi dei siti web in base ai Container
+defaultPref("permissions.isolateBy.userContext", true);
+
+// Forza l'apertura dei link esterni in arrivo da altre applicazioni nel Container predefinito
+defaultPref("browser.link.force_default_user_context_id_for_external_opens", true);
+
+// Forza il raggruppamento predefinito dei documenti in "Origin Agent Clusters" isolati
+defaultPref("dom.origin_agent_cluster.default", true);
+
+// Disabilita la preferenza per il riutilizzo dei processi esistenti per i sotto-frame nell'architettura Fission
+defaultPref("browser.tabs.remote.subframesPreferUsed", false);
+
+// Forza restrizioni rigorose sui tipi di processo remoti nell'architettura Fission
+defaultPref("browser.tabs.remote.enforceRemoteTypeRestrictions", true);
+
+// Imposta il livello massimo di isolamento (sandbox) del processo GPU
+defaultPref("security.sandbox.gpu.level", 2);
+
+
+
+
 
 /* -----------------------------------------------------------------------------------
-   026: DEBUGGING
-   ----------------------------------------------------------------------------------- */
+   027: CONTROL
+   ----------------------------------------------------------------------------------- *
 
 // Allow inspecting the browser chrome
 defaultPref("devtools.chrome.enabled", true);
-defaultPref("devtools.selfxss.count", 5);
 
 // Allow inspecting/debugging local tabs from `about:debugging`
 defaultPref("devtools.aboutdebugging.local-tab-debugging", true);
 
-// "Beautify" HTML content upon copy to the clipboard
-defaultPref("devtools.markup.beautifyOnCopy", true);
-
-// Disable annoying "A simpler highlighter can be enabled in the settings..." banner when using developer tools
-defaultPref("devtools.inspector.simple-highlighters.message-dismissed", true);
-
-// Disable annoying "Firefox Profiler is now integrated into Developer Tools" banner when opening the performance panel
-defaultPref("devtools.performance.new-panel-onboarding", false);
-
-// Disable automatic bracket/quote closing
-defaultPref("devtools.editor.autoclosebrackets", false);
-
-// Disable editor onboarding
-defaultPref("devtools.webconsole.input.editorOnboarding", false);
-
-// Disable pausing on debugger statements
-defaultPref("devtools.debugger.pause-on-debugger-statement", false);
-
-// Disable the performance panel intro
-defaultPref("devtools.performance.popup.intro-displayed", true);
-
-// Disable truncation of DOM attributes in the inspector
-defaultPref("devtools.markup.collapseAttributes", false);
-
-// Display content scripts injected by extensions when debugging
-defaultPref("devtools.debugger.show-content-scripts", true);
-
-// Display native anonymous content in the inspector
-defaultPref("devtools.inspector.showAllAnonymousContent", true);
-
-// Display web console timestamps
-defaultPref("devtools.webconsole.timestampMessages", true);
-
-// Display responses in the "raw" format in the network monitor
-defaultPref("devtools.netmonitor.ui.default-raw-response", true); 
-
-// Enable DevTools buttons
-defaultPref("devtools.command-button-measure.enabled", true);
-defaultPref("devtools.command-button-noautohide.enabled", true);
-defaultPref("devtools.command-button-rulers.enabled", true);
-defaultPref("devtools.command-button-screenshot.enabled", true);
-
-// Enable the Web Console sidebar toggle
-defaultPref("devtools.webconsole.sidebarToggle", true);
-
-// Pretty print code when debugging
-defaultPref("devtools.debugger.auto-pretty-print", true);
-
-// Prevent automatically clearing log messages after page reloads/navigation
-defaultPref("devtools.netmonitor.persistlog", true);
-defaultPref("devtools.webconsole.persistlog", true); 
-
-// Prevent logging URLs in Reader errors
-defaultPref("reader.errors.includeURLs", false);
-
-// Prevent WebDriver from overriding preferences
-defaultPref("remote.prefs.recommended", false);
-
-// Significantly reduce input history
-defaultPref("devtools.webconsole.inputHistoryCount", 10);
-
-// Set Browser/Error Console scope to "Multiprocess" instead of "Parent process only"
-defaultPref("devtools.browsertoolbox.scope", "everything");
-
-// Show default/browser styles in the Inspector
-defaultPref("devtools.inspector.showUserAgentStyles", true);
-
-// Unbreak debugging if `localhost` can't be looked up via DNS
-defaultPref("devtools.debugger.chrome-debugging-host", "127.0.0.1"); 
-
-// Wrap lines when debugging
-defaultPref("devtools.debugger.ui.editor-wrapping", true);
-
-// Wrap lines when viewing the source of webpages (via `view-source:`)
-defaultPref("view_source.wrap_long_lines", true);
-
-/* -----------------------------------------------------------------------------------
-   027: CONTROL
-   ----------------------------------------------------------------------------------- */
-
 // Prevent middle mouse clicks from pasting clipboard contents
 defaultPref("middlemouse.paste", false);
 
-// Allow custom CSS
+// Permetti CSS personalizzato
 defaultPref("toolkit.legacyUserProfileCustomizations.stylesheets", true);
 
 // Allow Picture-in-Picture on all websites, even if the website tries to block it
@@ -935,6 +774,8 @@ defaultPref("dom.popup_allowed_events", "click dblclick");
 /* -----------------------------------------------------------------------------------
    030: PERFORMANCE
    ----------------------------------------------------------------------------------- */
+
+defaultPref("gfx.webrender.all", true);
 
 // Compress cached JavaScript bytecode
 defaultPref("browser.cache.jsbc_compression_level", 3);
@@ -1012,4 +853,4 @@ defaultPref("gfx.webrender.low-quality-pinch-zoom", true);
    FINE
    ----------------------------------------------------------------------------------- */
 
-lockPref("rischio.fox", "151.59");
+lockPref("rischio.fox", "151.61");
