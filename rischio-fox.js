@@ -87,6 +87,7 @@ lockPref("identity.fxaccounts.toolbar.accessed", true);
 lockPref("browser.ipProtection.openedPanelWithLocation", true);
 lockPref("browser.ipProtection.upgradeNotAvailable", true);
 lockPref("sidebar.new-sidebar.has-used", true);
+lockPref("media.videocontrols.picture-in-picture.video-toggle.has-used", true);
 
 // Nascondi badge "New"
 lockPref("pdfjs.enableNewBadge", false);
@@ -490,8 +491,21 @@ defaultPref("network.proxy.socks_remote_dns", true);
 
 /* -----------------------------------------------------------------------------------
    012: MULTIMEDIA
-   ----------------------------------------------------------------------------------- *
+   ----------------------------------------------------------------------------------- */
 
+// Abilita sempre Picture-in-Picture per tutti i tipi di video
+defaultPref("media.videocontrols.picture-in-picture.video-toggle.always-show", true);
+
+// Nasconde fastidioso tasto Picture-in-Picture sui video
+defaultPref("media.videocontrols.picture-in-picture.video-toggle.enabled", false);
+
+
+
+
+
+
+
+/*
 // Block media autoplay
 defaultPref("media.autoplay.default", 5);
 defaultPref("media.geckoview.autoplay.request.testing", 2);
@@ -499,25 +513,7 @@ defaultPref("media.geckoview.autoplay.request.testing", 2);
 // Configure the media autoplay blocking policy
 defaultPref("media.autoplay.blocking_policy", 1);
 
-// Disable OpenH264 (in favor of hardware decoding)
-defaultPref("media.ffmpeg.allow-openh264", false);
-defaultPref("media.gmp-gmpopenh264.enabled", false);
-defaultPref("media.gmp-gmpopenh264.visible", false);
-defaultPref("media.webrtc.encoder_creation_strategy", 1);
-defaultPref("media.webrtc.hw.h264.enabled", true);
 
-// Enable click to play UI for certain CSS skins
-defaultPref("userContent.player.click_to_play", true);
-
-// Enable multi-threaded media encoding/decoding
-defaultPref("media.gmp.decoder.multithreaded", true);
-defaultPref("media.gmp.encoder.multithreaded", true);
-
-// Sandbox GMP
-defaultPref("media.gmp.insecure.allow", false); // [LINUX]
-
-// Mostra sempre pulsante Picture-in-Picture
-defaultPref("media.videocontrols.picture-in-picture.video-toggle.always-show", true);
 
 /* -----------------------------------------------------------------------------------
    013: WEBRTC
@@ -1143,4 +1139,4 @@ defaultPref("gfx.webrender.low-quality-pinch-zoom", true);
    FINE
    ----------------------------------------------------------------------------------- */
 
-lockPref("rischio.fox", "151.53");
+lockPref("rischio.fox", "151.54");
