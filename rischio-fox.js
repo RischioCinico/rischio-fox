@@ -148,7 +148,7 @@ lockPref("browser.newtabpage.activity-stream.logowordmark.alwaysVisible", false)
 // Abilita Widgets
 defaultPref("browser.newtabpage.activity-stream.widgets.system.enabled", true);
 // Clock
-defaultPref("bbrowser.newtabpage.activity-stream.widgets.system.clocks.enabled", true);
+defaultPref("browser.newtabpage.activity-stream.widgets.system.clocks.enabled", true);
 // Timer
 defaultPref("browser.newtabpage.activity-stream.widgets.system.focusTimer.enabled", true);
 defaultPref("browser.newtabpage.activity-stream.widgets.focusTimer.showSystemNotifications", true);
@@ -746,4 +746,4 @@ defaultPref("network.dnsCacheExpiration", 3600); // default=60
    FINE
    ----------------------------------------------------------------------------------- */
 
-lockPref("rischio.fox", "153");
+lockPref("rischio.fox", "153.1");
