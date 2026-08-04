@@ -359,6 +359,9 @@ defaultPref("editor.inline_table_editing.enabled_by_default", true);
 defaultPref("editor.positioning.enabled_by_default", true);
 defaultPref("editor.resizing.enabled_by_default", true);
 
+// Mostra segnalibri mobile
+lockPref("browser.bookmarks.showMobileBookmarks", true);
+
 /* -----------------------------------------------------------------------------------
    008: SCHEDE
    ----------------------------------------------------------------------------------- */
@@ -746,4 +749,4 @@ defaultPref("network.dnsCacheExpiration", 3600); // default=60
    FINE
    ----------------------------------------------------------------------------------- */
 
-lockPref("rischio.fox", "153.1");
+lockPref("rischio.fox", "153.2");
