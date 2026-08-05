@@ -145,8 +145,9 @@ lockPref("browser.newtabpage.activity-stream.newtabWallpapers.highlightDismissed
 lockPref("browser.newtabpage.activity-stream.hideLogo", true);
 lockPref("browser.newtabpage.activity-stream.logowordmark.alwaysVisible", false);
 
-// Abilita Widgets
+// Widgets
 defaultPref("browser.newtabpage.activity-stream.widgets.system.enabled", true);
+defaultPref("browser.newtabpage.activity-stream.widgets.enabled", false);
 // Clock
 defaultPref("browser.newtabpage.activity-stream.widgets.system.clocks.enabled", true);
 // Timer
@@ -162,6 +163,8 @@ defaultPref("browser.newtabpage.activity-stream.widgets.sportsWidget.celebration
 defaultPref("browser.newtabpage.activity-stream.widgets.sportsWidget.live.enabled", true);
 lockPref("browser.newtabpage.activity-stream.widgets.sportsWidget.interaction", true);
 // Meteo
+defaultPref("browser.newtabpage.activity-stream.system.showWeather", true);
+defaultPref("browser.newtabpage.activity-stream.widgets.system.weather.enabled", true);
 defaultPref("browser.newtabpage.activity-stream.widgets.system.weatherForecast.enabled", true);
 lockPref("browser.newtabpage.activity-stream.widgets.weatherForecast.interaction", true);
 
@@ -749,4 +752,4 @@ defaultPref("network.dnsCacheExpiration", 3600); // default=60
    FINE
    ----------------------------------------------------------------------------------- */
 
-lockPref("rischio.fox", "153.2");
+lockPref("rischio.fox", "153.3");
