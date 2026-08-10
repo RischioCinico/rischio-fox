@@ -60,9 +60,6 @@ lockPref("dom.origin-trials.enabled", false);
 // Disattiva la raccolta dati per la protezione dal tracciamento email
 lockPref("privacy.trackingprotection.emailtracking.data_collection.enabled", false);
 
-// Disabilita l'invio di dati di diagnostica, metriche e telemetria tramite Beacon API
-defaultPref("beacon.enabled", false);
-
 // Disabilita l'invio automatico di report ai server esterni
 defaultPref("dom.reporting.enabled", false);
 defaultPref("dom.reporting.header.enabled", false);
@@ -752,4 +749,4 @@ defaultPref("network.dnsCacheExpiration", 3600); // default=60
    FINE
    ----------------------------------------------------------------------------------- */
 
-lockPref("rischio.fox", "153.3");
+lockPref("rischio.fox", "153.4");
