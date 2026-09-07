@@ -730,9 +730,6 @@ defaultPref("network.http.pacing.requests.enabled", false);
 defaultPref("network.http.pacing.requests.min-parallelism", 12); // default=6
 defaultPref("network.http.pacing.requests.burst", 20); // default=10
 
-// Aumenta il numero di voci memorizzabili nella cache DNS del browser
-defaultPref("network.dnsCacheEntries", 1600); // default=800
-
 // Aumenta durata cache DNS
 defaultPref("network.dnsCacheExpiration", 3600); // default=60
 
@@ -740,4 +737,4 @@ defaultPref("network.dnsCacheExpiration", 3600); // default=60
    FINE
    ----------------------------------------------------------------------------------- */
 
-lockPref("rischio.fox", "153.6");
+lockPref("rischio.fox", "155");
