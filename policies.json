@@ -134,8 +134,8 @@
         "Qwant",
         "Wikipedia (en)"
       ],
-       "Default": "DuckDuckGo‎",
-       "DefaultPrivate": "DuckDuckGo‎"
+      "Default": "DuckDuckGo",
+      "DefaultPrivate": "DuckDuckGo"
     },
     "SearchSuggestEnabled": false,
     "SkipTermsOfUse": true,
