@@ -48,24 +48,8 @@ lockPref("browser.crashReports.onDemand", false);
 lockPref("browser.crashReports.requestedNeverShowAgain", true);
 lockPref("browser.tabs.crashReporting.sendReport", false);
 
-// Disattiva il rilevatore interno di CAPTCHA
-lockPref("captchadetection.actor.enabled", false);
-
 // Disabilita Normandy
-lockPref("app.normandy.enabled", false);
-
-// Disabilita Origin Trials
-lockPref("dom.origin-trials.enabled", false);
-
-// Disattiva la raccolta dati per la protezione dal tracciamento email
-lockPref("privacy.trackingprotection.emailtracking.data_collection.enabled", false);
-
-// Disabilita l'invio automatico di report ai server esterni
-defaultPref("dom.reporting.enabled", false);
-defaultPref("dom.reporting.header.enabled", false);
-
-// Disabilita l'invio dei report sulle violazioni della Content Security Policy (CSP) ai server esterni
-defaultPref("security.csp.reporting.enabled", false);
+//lockPref("app.normandy.enabled", false);
 
 /* -----------------------------------------------------------------------------------
    002: UX
