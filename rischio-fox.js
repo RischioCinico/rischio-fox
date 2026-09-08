@@ -41,7 +41,7 @@ INDICE:
 lockPref("nimbus.rollouts.enabled", false);
 
 // Blocca "Automatically send crash reports"
-lockPref("browser.crashReports.unsubmittedCheck.autoSubmit2", true);
+lockPref("browser.crashReports.unsubmittedCheck.autoSubmit2", false);
 
 // Disabilita crash report
 lockPref("browser.crashReports.onDemand", false);
