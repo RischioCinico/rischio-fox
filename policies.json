@@ -114,8 +114,7 @@
       "FormData": true,
       "History": false,
       "Sessions": false,
-      "SiteSettings": false,
-      "Locked": false
+      "SiteSettings": false
     },
     "SearchBar": "unified",
     "SearchEngines": {
