@@ -49,7 +49,7 @@ lockPref("browser.crashReports.requestedNeverShowAgain", true);
 lockPref("browser.tabs.crashReporting.sendReport", false);
 
 // Disabilita Normandy
-//lockPref("app.normandy.enabled", false);
+lockPref("app.normandy.enabled", false);
 
 /* -----------------------------------------------------------------------------------
    002: UX
