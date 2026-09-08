@@ -55,13 +55,6 @@ lockPref("browser.tabs.crashReporting.sendReport", false);
    002: UX
    ----------------------------------------------------------------------------------- */
 
-// Nascondi badge "New"
-lockPref("pdfjs.enableNewBadge", false);
-lockPref("browser.tabs.notes.newBadge.enabled", false);
-lockPref("browser.tabs.splitview.hasUsed", true);
-lockPref("browser.ml.chat.page.footerBadge", false);
-lockPref("browser.ml.chat.page.menuBadge", false);
-
 // Disabilita avviso in `about:config`
 lockPref("browser.aboutConfig.showWarning", false);
 
