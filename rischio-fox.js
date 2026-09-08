@@ -103,7 +103,6 @@ lockPref("browser.promo.focus.enabled", false);
 lockPref("browser.promo.pin.enabled", false);
 lockPref("browser.vpn_promo.enabled", false);
 lockPref("browser.contentblocking.report.hide_vpn_banner", true);
-lockPref("browser.contentblocking.report.lockwise.enabled", false);
 lockPref("browser.contentblocking.report.show_mobile_app", false);
 lockPref("browser.ipProtection.blockIPProtectionCallouts", true);
 
@@ -618,9 +617,6 @@ defaultPref("dom.popup_allowed_events", "click dblclick");
 
 // Abilita Global Privacy Control
 lockPref("privacy.globalprivacycontrol.enabled", true);
-
-// Disabilita l'API Battery Status per impedire ai siti web di tracciare il livello di carica e lo stato energetico del dispositivo
-defaultPref("dom.battery.enabled", false);
 
 // Limita l'invio dei ping HTML per limitare il tracciamento dei click
 defaultPref("browser.send_pings.require_same_host", true);
