@@ -141,7 +141,7 @@ lockPref("browser.topsites.useRemoteSetting", false);
 lockPref("browser.newtabpage.activity-stream.default.sites", "");
 lockPref("browser.newtabpage.activity-stream.improvesearch.topSiteSearchShortcuts", false);
 lockPref("browser.newtabpage.activity-stream.improvesearch.topSiteSearchShortcuts.searchEngines", "");
-defaultPref("browser.newtabpage.pinned", "[{\"url\":\"https://www.youtube.com/\",\"label\":\"YouTube\"},{\"url\":\"https://www.reddit.com/\",\"label\":\"Reddit\"},{\"url\":\"https://mail.google.com/mail/u/0/?hl=it#inbox\",\"label\":\"Gmail\"},{\"url\":\"https://addons.mozilla.org/it/firefox/\",\"label\":\"Estensioni\"},{\"url\":\"https://wiki.archlinux.org/title/List_of_applications\",\"label\":\"Applicazioni\"},{\"url\":\"https://it.wikipedia.org/wiki/Pagina_principale\",\"label\":\"Wikipedia\"},{\"url\":\"https://github.com/\",\"label\":\"GitHub\"},{\"url\":\"https://www.diretta.it/\",\"label\":\"Diretta\"}]");
+defaultPref("browser.newtabpage.pinned", "[{\"url\":\"https://www.youtube.com/\",\"label\":\"YouTube\"},{\"url\":\"https://account.proton.me/apps\",\"label\":\"Proton\"},{\"url\":\"https://mail.google.com/mail/u/0/?hl=it#inbox\",\"label\":\"Gmail\"},{\"url\":\"https://www.reddit.com/\",\"label\":\"Reddit\"},{\"url\":\"https://addons.mozilla.org/it/firefox/\",\"label\":\"Estensioni\"},{\"url\":\"https://wiki.archlinux.org/title/List_of_applications\",\"label\":\"Applicazioni\"},{\"url\":\"https://github.com/\",\"label\":\"GitHub\"},{\"url\":\"https://www.diretta.it/\",\"label\":\"Diretta\"}]");
 
 // Disabilita sponsorizzazioni
 lockPref("browser.newtabpage.activity-stream.discoverystream.promoCard.visible", false);
@@ -710,4 +710,4 @@ defaultPref("network.dnsCacheExpiration", 3600); // default=60
    FINE
    ----------------------------------------------------------------------------------- */
 
-lockPref("rischio.fox", "08 settembre 2026");
+lockPref("rischio.fox", "09 settembre 2026");
