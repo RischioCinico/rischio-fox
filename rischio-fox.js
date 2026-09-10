@@ -142,7 +142,7 @@ lockPref("browser.newtabpage.activity-stream.default.sites", "");
 lockPref("browser.newtabpage.activity-stream.improvesearch.topSiteSearchShortcuts", false);
 lockPref("browser.newtabpage.activity-stream.improvesearch.topSiteSearchShortcuts.searchEngines", "");
 defaultPref("browser.newtabpage.activity-stream.topSitesMaxSitesPerRow", 6);
-defaultPref("browser.newtabpage.pinned", "[{"url":"https://mail.proton.me/","label":"Mail","baseDomain":"mail.proton.me"},{"url":"https://calendar.proton.me/","label":"Calendar","baseDomain":"calendar.proton.me"},{"url":"https://drive.proton.me/","label":"Drive","baseDomain":"drive.proton.me"},{"url":"https://docs.proton.me/u/1/","label":"Docs","baseDomain":"docs.proton.me"},{"url":"https://www.youtube.com/","label":"YouTube","baseDomain":"youtube.com"},{"url":"https://mail.google.com/mail/u/0/?hl=it#inbox","label":"Gmail","baseDomain":"mail.google.com"}]
+defaultPref("browser.newtabpage.pinned", "[{\"url\":\"https://mail.proton.me/\",\"label\":\"Mail\",\"baseDomain\":\"mail.proton.me\"},{\"url\":\"https://calendar.proton.me/\",\"label\":\"Calendar\",\"baseDomain\":\"calendar.proton.me\"},{\"url\":\"https://drive.proton.me/\",\"label\":\"Drive\",\"baseDomain\":\"drive.proton.me\"},{\"url\":\"https://docs.proton.me/u/1/\",\"label\":\"Docs\",\"baseDomain\":\"docs.proton.me\"},{\"url\":\"https://www.youtube.com/\",\"label\":\"YouTube\",\"baseDomain\":\"youtube.com\"},{\"url\":\"https://mail.google.com/mail/u/0/?hl=it#inbox\",\"label\":\"Gmail\",\"baseDomain\":\"mail.google.com\"}]");
 
 // Raggruppa scorciatoie fissate
 defaultPref("browser.newtabpage.activity-stream.topSitesGroupedPins", true);
