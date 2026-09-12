@@ -95,6 +95,9 @@ lockPref("termsofuse.bypassNotification", true);
 // Disabilita messaggio che propone di resettare il profilo
 lockPref("browser.disableResetPrompt", true);
 
+// Abilita Nova
+defaultPref("browser.nova.enabled", true);
+
 /* -----------------------------------------------------------------------------------
    003: AVVIO
    ----------------------------------------------------------------------------------- */
