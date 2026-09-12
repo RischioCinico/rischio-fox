@@ -103,17 +103,14 @@ defaultPref("browser.nova.enabled", true);
    ----------------------------------------------------------------------------------- */
 
 // Disabilita avvio automatico in modalità Safe Mode a seguito di crash
-defaultPref("toolkit.startup.max_resumed_crashes", -1);
+lockPref("toolkit.startup.max_resumed_crashes", -1);
 
 // Blocca il passaggio automatico dalla barra di ricerca a quella degli indirizzi
-defaultPref("browser.newtabpage.activity-stream.improvesearch.handoffToAwesomebar", false);
-
-// Sfondo
-lockPref("browser.newtabpage.activity-stream.newtabWallpapers.highlightDismissed", true);
+lockPref("browser.newtabpage.activity-stream.improvesearch.handoffToAwesomebar", false);
 
 // Nasconde logo
-lockPref("browser.newtabpage.activity-stream.hideLogo", true);
-lockPref("browser.newtabpage.activity-stream.logowordmark.alwaysVisible", false);
+lockPref("browser.newtabpage.activity-stream.hideLogo", true); // Se "browser.newtabpage.activity-stream.nova.enabled" è TRUE
+lockPref("browser.newtabpage.activity-stream.logowordmark.alwaysVisible", false); // Se browser.newtabpage.activity-stream.nova.enabled è FALSE
 
 // Mostra tasto per attivare Widgets, senza abilitarli di default
 defaultPref("browser.newtabpage.activity-stream.widgets.system.enabled", true);
