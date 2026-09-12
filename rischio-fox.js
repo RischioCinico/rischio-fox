@@ -95,12 +95,6 @@ lockPref("termsofuse.bypassNotification", true);
 // Disabilita messaggio che propone di resettare il profilo
 lockPref("browser.disableResetPrompt", true);
 
-// Disabilita l'API Keyboard Lock quando una pagina web è in modalità a schermo intero.
-defaultPref("dom.fullscreen.keyboard_lock.enabled", false);
-
-// Impedisce al browser di cercare automaticamente aggiornamenti per i motori di ricerca preinstallati
-defaultPref("browser.search.update", false);
-
 /* -----------------------------------------------------------------------------------
    003: AVVIO
    ----------------------------------------------------------------------------------- */
@@ -714,4 +708,4 @@ defaultPref("network.dnsCacheExpiration", 3600); // default=60
    FINE
    ----------------------------------------------------------------------------------- */
 
-lockPref("rischio.fox", "10 settembre 2026");
+lockPref("rischio.fox", "12 settembre 2026");
