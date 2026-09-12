@@ -126,48 +126,14 @@ defaultPref("browser.newtabpage.activity-stream.widgets.system.stocks.enabled", 
 defaultPref("browser.newtabpage.activity-stream.widgets.system.weather.enabled", true); // Abilita Weather
 defaultPref("browser.newtabpage.activity-stream.system.showWeather", true); // Mostra Weather nei Widget
 
-// Imposta scorciatorie predefinite
-lockPref("browser.newtabpage.activity-stream.feeds.smartshortcutsfeed", false);
-lockPref("browser.newtabpage.activity-stream.section.highlights.includeBookmarks", false);
-lockPref("browser.newtabpage.activity-stream.section.highlights.includeDownloads", false);
-lockPref("browser.newtabpage.activity-stream.section.highlights.includeVisited", false);
-lockPref("browser.topsites.useRemoteSetting", false);
-lockPref("browser.newtabpage.activity-stream.default.sites", "");
-lockPref("browser.newtabpage.activity-stream.improvesearch.topSiteSearchShortcuts", false);
-lockPref("browser.newtabpage.activity-stream.improvesearch.topSiteSearchShortcuts.searchEngines", "");
+// Numero di scorciatoie da mostrare
 defaultPref("browser.newtabpage.activity-stream.topSitesMaxSitesPerRow", 6);
+
+// Imposta scorciatorie predefinite
 defaultPref("browser.newtabpage.pinned", "[{\"url\":\"https://mail.proton.me/\",\"label\":\"Mail\",\"baseDomain\":\"mail.proton.me\"},{\"url\":\"https://calendar.proton.me/\",\"label\":\"Calendar\",\"baseDomain\":\"calendar.proton.me\"},{\"url\":\"https://drive.proton.me/\",\"label\":\"Drive\",\"baseDomain\":\"drive.proton.me\"},{\"url\":\"https://docs.proton.me/u/1/\",\"label\":\"Docs\",\"baseDomain\":\"docs.proton.me\"},{\"url\":\"https://www.youtube.com/\",\"label\":\"YouTube\",\"baseDomain\":\"youtube.com\"},{\"url\":\"https://mail.google.com/mail/u/0/?hl=it#inbox\",\"label\":\"Gmail\",\"baseDomain\":\"mail.google.com\"}]");
 
 // Raggruppa scorciatoie fissate
 defaultPref("browser.newtabpage.activity-stream.topSitesGroupedPins", true);
-
-// Disabilita sponsorizzazioni
-lockPref("browser.newtabpage.activity-stream.discoverystream.promoCard.visible", false);
-lockPref("browser.newtabpage.activity-stream.system.showSponsored", false);
-lockPref("browser.topsites.contile.enabled", false);
-lockPref("browser.newtabpage.activity-stream.feeds.adsfeed", false);
-lockPref("browser.newtabpage.activity-stream.discoverystream.reportAds.enabled", false);
-lockPref("browser.newtabpage.activity-stream.unifiedAds.spocs.enabled", false);
-lockPref("browser.newtabpage.activity-stream.unifiedAds.tiles.enabled", false);
-lockPref("browser.newtabpage.activity-stream.unifiedAds.adsFeed.spocs.enabled", false);
-lockPref("browser.newtabpage.activity-stream.unifiedAds.adsFeed.tiles.enabled", false);
-lockPref("browser.newtabpage.activity-stream.discoverystream.topicSelection.onboarding.maybeDisplay", false);
-lockPref("browser.newtabpage.activity-stream.feeds.newtabmessaging", false);
-lockPref("browser.newtabpage.activity-stream.asrouter.providers.cfr", "");
-lockPref("browser.newtabpage.activity-stream.asrouter.providers.message-groups", "");
-lockPref("browser.newtabpage.activity-stream.asrouter.providers.messaging-experiments", "");
-lockPref("browser.newtabpage.activity-stream.asrouter.providers.onboarding", "");
-
-// Disabilita telemetria
-lockPref("browser.newtabpage.activity-stream.feeds.newtabattributionfeed", false);
-lockPref("dap.ohttp.hpke", "");
-lockPref("dap.ohttp.relayURL", "");
-lockPref("browser.newtabpage.activity-stream.feeds.telemetry", false);
-lockPref("browser.newtabpage.activity-stream.telemetry", false);
-lockPref("browser.newtabpage.activity-stream.telemetry.privatePing.enabled", false);
-lockPref("browser.places.interactions.enabled", false);
-lockPref("browser.search.serpEventTelemetryCategorization.enabled", false);
-lockPref("browser.newtabpage.activity-stream.discoverystream.merino-provider.ohttp.enabled", true);
 
 /* -----------------------------------------------------------------------------------
    004: RICERCA
