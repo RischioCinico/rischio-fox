@@ -112,9 +112,9 @@ lockPref("browser.newtabpage.activity-stream.improvesearch.handoffToAwesomebar",
 lockPref("browser.newtabpage.activity-stream.hideLogo", true); // Se "browser.newtabpage.activity-stream.nova.enabled" è TRUE
 lockPref("browser.newtabpage.activity-stream.logowordmark.alwaysVisible", false); // Se browser.newtabpage.activity-stream.nova.enabled è FALSE
 
-// Mostra tasto per attivare Widgets, senza abilitarli di default
-defaultPref("browser.newtabpage.activity-stream.widgets.system.enabled", true);
-defaultPref("browser.newtabpage.activity-stream.widgets.enabled", false);
+// Widgets
+defaultPref("browser.newtabpage.activity-stream.widgets.system.enabled", true); // Mostra tasto per attivare Widgets
+defaultPref("browser.newtabpage.activity-stream.widgets.enabled", true); // Abilitare widgets di default
 defaultPref("browser.newtabpage.activity-stream.widgets.system.clocks.enabled", true); // Clock
 defaultPref("browser.newtabpage.activity-stream.widgets.system.crossword.enabled", true); // Crossword
 defaultPref("browser.newtabpage.activity-stream.widgets.system.focusTimer.enabled", true); // Timer
