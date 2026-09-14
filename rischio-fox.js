@@ -95,9 +95,6 @@ lockPref("termsofuse.bypassNotification", true);
 // Disabilita messaggio che propone di resettare il profilo
 lockPref("browser.disableResetPrompt", true);
 
-// Abilita Nova
-defaultPref("browser.nova.enabled", true);
-
 /* -----------------------------------------------------------------------------------
    003: AVVIO
    ----------------------------------------------------------------------------------- */
@@ -215,6 +212,9 @@ lockPref("browser.helperApps.deleteTempFileOnExit", true);
 /* -----------------------------------------------------------------------------------
    007: INTERFACCIA
    ----------------------------------------------------------------------------------- */
+
+// Abilita Nova
+defaultPref("browser.nova.enabled", true);
 
 // Carica stili CSS personalizzati (se presenti) nel profilo utente
 defaultPref("toolkit.legacyUserProfileCustomizations.stylesheets", true);
