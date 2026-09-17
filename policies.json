@@ -49,16 +49,12 @@
     },
     "FirefoxHome": {
       "Search": true,
-      "TopSites": true,
       "SponsoredTopSites": false,
       "Highlights": false,
       "Pocket": false,
       "SponsoredPocket": false,
       "SponsoredStories": false,
       "Snippets": false,
-      "Widgets": {
-        "Enabled": true
-      },
       "Locked": true
     },
     "FirefoxSuggest": {
