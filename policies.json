@@ -56,6 +56,9 @@
       "SponsoredPocket": false,
       "SponsoredStories": false,
       "Snippets": false,
+      "Widgets": {
+        "Enabled": true,
+      },
       "Locked": true
     },
     "FirefoxSuggest": {
