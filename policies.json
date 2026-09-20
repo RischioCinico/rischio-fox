@@ -159,7 +159,9 @@
               "easylist-notifications",
               "easylist-annoyances",
               "ublock-annoyances",
-              "ITA-0"            ]
+              "ITA-0",
+              "https://raw.githubusercontent.com/RischioCinico/Filterc/refs/heads/main/filterc.txt"
+            ]
           }
         }
       }
