@@ -127,14 +127,8 @@ defaultPref("browser.newtabpage.activity-stream.system.showWeather", true); // M
 defaultPref("browser.newtabpage.activity-stream.topSitesMaxSitesPerRow", 6);
 
 // Imposta scorciatorie predefinite
-defaultPref("browser.newtabpage.pinned", 
-  "[{\"url\":\"https://mail.proton.me/\",\"label\":\"Mail\",\"baseDomain\":\"mail.proton.me\"}," +
-  "{\"url\":\"https://calendar.proton.me/\",\"label\":\"Calendar\",\"baseDomain\":\"calendar.proton.me\"}," +
-  "{\"url\":\"https://drive.proton.me/\",\"label\":\"Drive\",\"baseDomain\":\"drive.proton.me\"}," +
-  "{\"url\":\"https://docs.proton.me/u/1/\",\"label\":\"Docs\",\"baseDomain\":\"docs.proton.me\"}," +
-  "{\"url\":\"https://pass.proton.me\",\"label\":\"Pass\",\"baseDomain\":\"pass.proton.me\"}," +
-  "{\"url\":\"https://www.youtube.com/\",\"label\":\"YouTube\",\"baseDomain\":\"youtube.com\"}
-);
+
+defaultPref("browser.newtabpage.pinned", "[{\"url\":\"https://mail.proton.me/\",\"label\":\"Mail\",\"baseDomain\":\"mail.proton.me\"},{\"url\":\"https://calendar.proton.me/\",\"label\":\"Calendar\",\"baseDomain\":\"calendar.proton.me\"},{\"url\":\"https://drive.proton.me/\",\"label\":\"Drive\",\"baseDomain\":\"drive.proton.me\"},{\"url\":\"https://docs.proton.me/u/1/\",\"label\":\"Docs\",\"baseDomain\":\"docs.proton.me\"},"{\"url\":\"https://pass.proton.me\",\"label\":\"Pass\",\"baseDomain\":\"pass.proton.me\"},"{\"url\":\"https://www.youtube.com/\",\"label\":\"YouTube\",\"baseDomain\":\"youtube.com\"}]");
 
 // Raggruppa scorciatoie fissate
 defaultPref("browser.newtabpage.activity-stream.topSitesGroupedPins", true);
