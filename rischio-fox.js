@@ -128,7 +128,10 @@ defaultPref("browser.newtabpage.activity-stream.topSitesMaxSitesPerRow", 6);
 
 // Rimuove scorciatorie predefinite
 lockPref("browser.newtabpage.activity-stream.default.sites", "");
+lockPref("browser.newtabpage.activity-stream.improvesearch.topSiteSearchShortcuts.havePinned", "");
+lockPref("browser.newtabpage.activity-stream.improvesearch.topSiteSearchShortcuts.searchEngines", "");
 lockPref("browser.topsites.useRemoteSetting", false);
+
 
 // Raggruppa scorciatoie fissate
 defaultPref("browser.newtabpage.activity-stream.topSitesGroupedPins", true);
