@@ -126,8 +126,9 @@ defaultPref("browser.newtabpage.activity-stream.system.showWeather", true); // M
 // Numero di scorciatoie da mostrare
 defaultPref("browser.newtabpage.activity-stream.topSitesMaxSitesPerRow", 6);
 
-// Imposta scorciatorie predefinite
-defaultPref("browser.newtabpage.pinned", "[{\"url\":\"https://mail.proton.me/\",\"label\":\"Mail\"},{\"url\":\"https://calendar.proton.me/\",\"label\":\"Calendar\"},{\"url\":\"https://drive.proton.me/\",\"label\":\"Drive\"},{\"url\":\"https://docs.proton.me/\",\"label\":\"Docs\"},{\"url\":\"https://pass.proton.me/\",\"label\":\"Pass\"},{\"url\":\"https://www.youtube.com/\",\"label\":\"YouTube\"}]");
+// Rimuove scorciatorie predefinite
+lockPref("browser.newtabpage.activity-stream.default.sites", "");
+lockPref("browser.topsites.useRemoteSetting", false);
 
 // Raggruppa scorciatoie fissate
 defaultPref("browser.newtabpage.activity-stream.topSitesGroupedPins", true);
@@ -674,4 +675,4 @@ defaultPref("network.dnsCacheExpiration", 3600); // default=60
    FINE
    ----------------------------------------------------------------------------------- */
 
-lockPref("rischio.fox", "12 settembre 2026");
+lockPref("rischio.fox", "18/10/26");
