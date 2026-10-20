@@ -123,15 +123,11 @@ defaultPref("browser.newtabpage.activity-stream.widgets.system.stocks.enabled", 
 defaultPref("browser.newtabpage.activity-stream.widgets.system.weather.enabled", true); // Abilita Weather
 defaultPref("browser.newtabpage.activity-stream.system.showWeather", true); // Mostra Weather nei Widget
 
-// Numero di scorciatoie da mostrare
-defaultPref("browser.newtabpage.activity-stream.topSitesMaxSitesPerRow", 6);
-
 // Rimuove scorciatorie predefinite
 lockPref("browser.newtabpage.activity-stream.default.sites", "");
 lockPref("browser.newtabpage.activity-stream.improvesearch.topSiteSearchShortcuts.havePinned", "");
 lockPref("browser.newtabpage.activity-stream.improvesearch.topSiteSearchShortcuts.searchEngines", "");
 lockPref("browser.topsites.useRemoteSetting", false);
-
 
 // Raggruppa scorciatoie fissate
 defaultPref("browser.newtabpage.activity-stream.topSitesGroupedPins", true);
