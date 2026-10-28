@@ -13,8 +13,6 @@ jobs:
   build:
     runs-on: ubuntu-latest
     container: archlinux:latest
-    permissions:
-      contents: write
 
     steps:
       - name: Checkout repository
@@ -38,12 +36,34 @@ jobs:
         run: |
           su builder -c "makepkg -s --noconfirm"
 
-      - name: Prepare Repository Files
+      - name: Prepare repository files
         run: |
           mkdir -p repo
           mv *.pkg.tar.zst repo/
           cd repo
           repo-add rischio-repo.db.tar.gz *.pkg.tar.zst
+
+      - name: Upload build artifacts
+        uses: actions/upload-artifact@v4
+        with:
+          name: package-repo
+          path: repo/
+
+  publish:
+    needs: build
+    runs-on: ubuntu-latest
+    permissions:
+      contents: write
+
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
+
+      - name: Download build artifacts
+        uses: actions/download-artifact@v4
+        with:
+          name: package-repo
+          path: repo/
 
       - name: Commit and Push Changes
         uses: stefanzweifel/git-auto-commit-action@v5
