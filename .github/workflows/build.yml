@@ -1,4 +1,4 @@
-name: Build and Release Arch Linux Package
+name: Build and Update Arch Repo
 
 on:
   push:
@@ -14,7 +14,7 @@ jobs:
     runs-on: ubuntu-latest
     container: archlinux:latest
     permissions:
-      contents: write # Necessario per creare la release e caricare i file
+      contents: write
 
     steps:
       - name: Checkout repository
@@ -38,10 +38,23 @@ jobs:
         run: |
           su builder -c "makepkg -s --noconfirm"
 
-      - name: Create or Update Release
-        uses: softprops/action-gh-release@v2
-        with:
-          tag_name: stable
-          files: '*.pkg.tar.zst'
-          body: 'Aggiornamento automatico del pacchetto Arch Linux.'
-          fail_on_unmatched_files: true
+      - name: Create package database and commit back
+        run: |
+          # Sposta il pacchetto compilato in una cartella dedicata al repo
+          mkdir -p repo
+          mv *.pkg.tar.zst repo/
+          cd repo
+          
+          # Genera il database del repository
+          repo-add rischio-repo.db.tar.gz *.pkg.tar.zst
+          
+          # Configura git per il bot di GitHub Actions
+          git config --global user.name "github-actions[bot]"
+          git config --global user.email "github-actions[bot]@users.noreply.github.com"
+          git remote set-url origin https://x-access-token:${{ secrets.GITHUB_TOKEN }}@github.com/${{ github.repository }}.git
+          git checkout main || git checkout master
+          
+          # Aggiunge i file compilati e il db al repository git
+          git add .
+          git commit -m "Auto-update package and repository database [skip ci]"
+          git push
