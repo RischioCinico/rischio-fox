@@ -11,6 +11,7 @@ conflicts=()
 
 package() {
     cd "$startdir"
+}
 
 pkgver() {
   date +%Y%m%d%H%M
