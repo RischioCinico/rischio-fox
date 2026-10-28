@@ -38,21 +38,17 @@ jobs:
         run: |
           su builder -c "makepkg -s --noconfirm"
 
-      - name: Create package database and commit back
+      - name: Prepare Repository Files
         run: |
-          cd $GITHUB_WORKSPACE
           mkdir -p repo
           mv *.pkg.tar.zst repo/
-          
           cd repo
           repo-add rischio-repo.db.tar.gz *.pkg.tar.zst
-          cd $GITHUB_WORKSPACE
-          
-          git config --global --add safe.directory "$GITHUB_WORKSPACE"
-          git config --global user.name "github-actions[bot]"
-          git config --global user.email "github-actions[bot]@users.noreply.github.com"
-          git remote set-url origin https://x-access-token:${{ secrets.GITHUB_TOKEN }}@github.com/${{ github.repository }}.git
-          
-          git add repo/
-          git commit -m "Auto-update package and repository database [skip ci]"
-          git push
+
+      - name: Commit and Push Changes
+        uses: stefanzweifel/git-auto-commit-action@v5
+        with:
+          commit_message: "Auto-update package and repository database [skip ci]"
+          file_pattern: "repo/*"
+          commit_user_name: "github-actions[bot]"
+          commit_user_email: "github-actions[bot]@users.noreply.github.com"
