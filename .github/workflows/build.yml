@@ -40,21 +40,18 @@ jobs:
 
       - name: Create package database and commit back
         run: |
-          # Sposta il pacchetto compilato in una cartella dedicata al repo
           mkdir -p repo
           mv *.pkg.tar.zst repo/
+          
           cd repo
-          
-          # Genera il database del repository
           repo-add rischio-repo.db.tar.gz *.pkg.tar.zst
+          cd ..
           
-          # Configura git per il bot di GitHub Actions
+          git config --global --add safe.directory /__w/rischio-fox/rischio-fox
           git config --global user.name "github-actions[bot]"
           git config --global user.email "github-actions[bot]@users.noreply.github.com"
           git remote set-url origin https://x-access-token:${{ secrets.GITHUB_TOKEN }}@github.com/${{ github.repository }}.git
-          git checkout main || git checkout master
           
-          # Aggiunge i file compilati e il db al repository git
-          git add .
+          git add repo/
           git commit -m "Auto-update package and repository database [skip ci]"
           git push
