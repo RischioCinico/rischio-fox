@@ -1,10 +1,8 @@
-name: Build Arch Linux Package
+name: Build and Release Arch Linux Package
 
 on:
   push:
     branches: [ main, master ]
-    tags:
-      - 'v*'
     paths:
       - 'PKGBUILD'
       - 'policies.json'
@@ -15,6 +13,8 @@ jobs:
   build:
     runs-on: ubuntu-latest
     container: archlinux:latest
+    permissions:
+      contents: write # Necessario per creare la release e caricare i file
 
     steps:
       - name: Checkout repository
@@ -38,8 +38,10 @@ jobs:
         run: |
           su builder -c "makepkg -s --noconfirm"
 
-      - name: Upload package artifact
-        uses: actions/upload-artifact@v4
+      - name: Create or Update Release
+        uses: softprops/action-gh-release@v2
         with:
-          name: archlinux-package
-          path: '*.pkg.tar.zst'
+          tag_name: stable
+          files: '*.pkg.tar.zst'
+          body: 'Aggiornamento automatico del pacchetto Arch Linux.'
+          fail_on_unmatched_files: true
