@@ -1,0 +1,40 @@
+! Title: RC's filters
+! Description: Filters optimized for uBlock Origin
+! Homepage: https://RischioCinico.altervista.org/
+@@||rischiocinico.altervista.org
+
+
+!!! GLEAM
+! Consenti widgets
+@@||widget.gleamjs.io
+
+
+
+!!! LA7
+! Rifiuta automaticamente cookie per sbloccare lo streaming
+www.la7.it##+js(set-cookie, euconsent-v2, reject)
+
+
+
+!!! Mediaset
+! Sblocca diretta streaming
+@@||firebaseinstallations.googleapis.com/v1/projects/rtispa-ott/installations$xhr,domain=mediasetinfinity.mediaset.it
+
+
+
+!!! YOUTUBE
+
+! Non passare a schermo intero con doppio click 
+www.youtube.com##+js(aeld, dblclick)
+
+! Hide View Products
+www.youtube.com##.ytp-suggested-action-badge-expanded
+
+! Hide "1080p Premium" in the video quality menu
+youtube.com##.ytp-quality-menu .ytp-premium-label:upward(.ytp-menuitem)
+
+! Donation
+youtube.com###donation-shelf
+
+! Hide next video, which may accidentally be clicked since it's near the Play button
+www.youtube.com##.ytp-button.ytp-next-button
