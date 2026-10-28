@@ -4,21 +4,13 @@ pkgrel=0
 pkgdesc='Configurazione di Firefox'
 arch=('any')
 url='rischiocinico.altervista.org'
-license=('GPL2')
-makedepends=(cpio)
+license=('Proprietary')
 depends=(firefox)
 provides=("${pkgname}")
 conflicts=()
-source=(
-policies.json
-impostazioni.js
-rischio-fox.js
-)
-sha256sums=(
-'SKIP'
-'SKIP'
-'SKIP'
-)
+
+package() {
+    cd "$startdir"
 
 pkgver() {
   date +%Y%m%d%H%M
