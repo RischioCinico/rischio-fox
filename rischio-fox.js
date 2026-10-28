@@ -224,7 +224,12 @@ defaultPref("browser.tabs.inTitlebar", 1);
 
 // Abilita nuova Sidebar
 defaultPref("sidebar.revamp", true);
+defaultPref("sidebar.main.tools", "bookmarks,aichat,syncedtabs,passwords,history");
 lockPref("browser.toolbarbuttons.introduced.sidebar-button", false);
+
+// Abilita Vertical Tabs
+defaultPref("sidebar.verticalTabs", true);
+defaultPref("sidebar.visibility", "expand-on-hover");
 
 // Disabilita avviso e transizione quando un video passa a schermo intero
 lockPref("full-screen-api.warning.timeout", 0);
@@ -674,4 +679,4 @@ defaultPref("network.dnsCacheExpiration", 3600); // default=60
    FINE
    ----------------------------------------------------------------------------------- */
 
-lockPref("rischio.fox", "25/10/26");
+lockPref("rischio.fox", "26/10/26");
