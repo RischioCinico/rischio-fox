@@ -5,6 +5,11 @@ on:
     branches: [ main, master ]
     tags:
       - 'v*'
+    paths:
+      - 'PKGBUILD'
+      - 'policies.json'
+      - 'impostazioni.js'
+      - 'rischio-fox.js'
 
 jobs:
   build:
