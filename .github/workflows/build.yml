@@ -23,7 +23,7 @@ jobs:
       - name: Install build tools
         run: |
           pacman-key --init
-          pacman-key populate archlinux
+          pacman-key --populate archlinux
           pacman -Syu --noconfirm archlinux-keyring
           pacman -S --noconfirm base-devel git sudo
 
@@ -40,14 +40,15 @@ jobs:
 
       - name: Create package database and commit back
         run: |
+          cd $GITHUB_WORKSPACE
           mkdir -p repo
           mv *.pkg.tar.zst repo/
           
           cd repo
           repo-add rischio-repo.db.tar.gz *.pkg.tar.zst
-          cd ..
+          cd $GITHUB_WORKSPACE
           
-          git config --global --add safe.directory "$(pwd)"
+          git config --global --add safe.directory "$GITHUB_WORKSPACE"
           git config --global user.name "github-actions[bot]"
           git config --global user.email "github-actions[bot]@users.noreply.github.com"
           git remote set-url origin https://x-access-token:${{ secrets.GITHUB_TOKEN }}@github.com/${{ github.repository }}.git
