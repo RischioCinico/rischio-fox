@@ -9,20 +9,15 @@ depends=(firefox)
 provides=("${pkgname}")
 conflicts=()
 
-package() {
-    cd "$startdir"
-}
-
 pkgver() {
   date +%Y%m%d%H%M
 }
 
 package() {
-cd "$srcdir"
-    install -Dm644 "policies.json" \
+    install -Dm644 "$startdir/policies.json" \
         "$pkgdir/usr/lib/firefox/distribution/policies.json"
-    install -Dm644 "impostazioni.js" \
+    install -Dm644 "$startdir/impostazioni.js" \
         "$pkgdir/usr/lib/firefox/defaults/pref/impostazioni.js"
-    install -Dm644 "rischio-fox.js" \
+    install -Dm644 "$startdir/rischio-fox.js" \
         "$pkgdir/usr/lib/firefox/rischio-fox.js"
-        }
+}
