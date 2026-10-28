@@ -674,4 +674,4 @@ defaultPref("network.dnsCacheExpiration", 3600); // default=60
    FINE
    ----------------------------------------------------------------------------------- */
 
-lockPref("rischio.fox", "22/10/26");
+lockPref("rischio.fox", "23/10/26");
