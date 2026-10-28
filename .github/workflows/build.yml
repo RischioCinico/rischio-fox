@@ -23,7 +23,7 @@ jobs:
       - name: Install build tools
         run: |
           pacman-key --init
-          pacman-key --populate archlinux
+          pacman-key populate archlinux
           pacman -Syu --noconfirm archlinux-keyring
           pacman -S --noconfirm base-devel git sudo
 
