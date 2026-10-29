@@ -137,8 +137,8 @@ defaultPref("browser.newtabpage.activity-stream.topSitesGroupedPins", true);
    ----------------------------------------------------------------------------------- */
 
 // Abilita la possibilità di usare un motore di ricerca diverso in finestre normali e private
-defaultPref("browser.search.separatePrivateDefault", true);
-defaultPref("browser.search.separatePrivateDefault.ui.enabled", true);
+defaultPref("browser.search.separatePrivateDefault.featureGate", true);
+defaultPref("browser.search.separatePrivateDefault.enabled", true);
 
 // Disattiva il completamento automatico degli URL nella barra degli indirizzi
 defaultPref("browser.urlbar.autoFill", false);
@@ -679,4 +679,4 @@ defaultPref("network.dnsCacheExpiration", 3600); // default=60
    FINE
    ----------------------------------------------------------------------------------- */
 
-lockPref("rischio.fox", "26/10/26");
+lockPref("rischio.fox", "27/10/26");
