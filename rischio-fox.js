@@ -111,17 +111,7 @@ lockPref("browser.newtabpage.activity-stream.logowordmark.alwaysVisible", false)
 
 // Widgets
 defaultPref("browser.newtabpage.activity-stream.widgets.system.enabled", true); // Mostra tasto per attivare Widgets
-defaultPref("browser.newtabpage.activity-stream.widgets.enabled", true); // Abilitare widgets di default
-defaultPref("browser.newtabpage.activity-stream.widgets.system.clocks.enabled", true); // Clock
-defaultPref("browser.newtabpage.activity-stream.widgets.system.crossword.enabled", true); // Crossword
-defaultPref("browser.newtabpage.activity-stream.widgets.system.focusTimer.enabled", true); // Timer
-defaultPref("browser.newtabpage.activity-stream.widgets.system.lists.enabled", true); // Lists
-defaultPref("browser.newtabpage.activity-stream.widgets.system.pictureOfTheDay.enabled", true); // Picture Of The Day
-defaultPref("browser.newtabpage.activity-stream.widgets.system.privacy.enabled", true); // Privacy
-defaultPref("browser.newtabpage.activity-stream.widgets.system.sportsWidget.enabled", true); // Sports
-defaultPref("browser.newtabpage.activity-stream.widgets.system.stocks.enabled", true); // Stocks
-defaultPref("browser.newtabpage.activity-stream.widgets.system.weather.enabled", true); // Abilita Weather
-defaultPref("browser.newtabpage.activity-stream.system.showWeather", true); // Mostra Weather nei Widget
+defaultPref("browser.newtabpage.activity-stream.widgets.enabled", false); // Abilitare widgets di default
 
 // Rimuove scorciatorie predefinite
 lockPref("browser.newtabpage.activity-stream.default.sites", "");
@@ -679,4 +669,4 @@ defaultPref("network.dnsCacheExpiration", 3600); // default=60
    FINE
    ----------------------------------------------------------------------------------- */
 
-lockPref("rischio.fox", "27/10/26");
+lockPref("rischio.fox", "02/11/26");
