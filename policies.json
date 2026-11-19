@@ -3,6 +3,9 @@
     "AutofillAddressEnabled": false,
     "AutofillCreditCardEnabled": false,
     "CaptivePortal": false,
+    "Certificates": {
+      "ImportEnterpriseRoots": false
+    },
     "Cookies": {
       "Behavior": "partition-foreign",
       "BehaviorPrivateBrowsing": "partition-foreign",
@@ -10,6 +13,7 @@
     },
     "DisableFeedbackCommands": true,
     "DisableFirefoxStudies": true,
+    "DisableFormHistory": true,
     "DisableProfileRefresh": true,
     "DisableRemoteImprovements": true,
     "DisableSetDesktopBackground": true,
@@ -55,6 +59,9 @@
       "SponsoredPocket": false,
       "SponsoredStories": false,
       "Snippets": false,
+      "Widgets": {
+        "Enabled": false
+      },
       "Locked": true
     },
     "FirefoxSuggest": {
@@ -65,10 +72,16 @@
     },
     "GoToIntranetSiteForSingleWordEntryInAddressBar": false,
     "Homepage": {
-      "StartPage": "previous-session"
+      "StartPage": "previous-session",
+      "NewTabOnRestore": false
     },
     "HttpsOnlyMode": "force_enabled",
-    "IPProtectionAvailable": true,
+    "LocalNetworkAccess": {
+      "Enabled": true,
+      "BlockTrackers": true,
+      "EnablePrompting": true,
+      "Locked": true
+    },
     "NetworkPrediction": false,
     "NoDefaultBookmarks": true,
     "OverrideFirstRunPage": "",
@@ -82,9 +95,10 @@
     "PopupBlocking": {
       "Default": true
     },
+    "PostQuantumKeyAgreementEnabled": true,
     "PromptForDownloadLocation": true,
     "SanitizeOnShutdown": {
-      "Cache": true,
+      "Cache": false,
       "Cookies": false,
       "FormData": true,
       "History": false,
@@ -123,6 +137,7 @@
       "MoreFromMozilla": false,
       "Locked": true
     },
+    "XSLTEnabled": false,
     "3rdparty": {
       "Extensions": {
         "uBlock0@raymondhill.net": {

@@ -11,57 +11,38 @@
 
 /*
 INDICE:
-   001: TELEMETRIA
-   002: UX
-   003: AVVIO
-   004: RICERCA
-   005: I/O
-   006: DOWNLOADS
-   007: INTERFACCIA
-   008: SCHEDE
-   009: CREDENZIALI
-   010: CONNESSIONI
-   011: PROXY
-   012: MULTIMEDIA
-   013: PDF
-   014: ESTENSIONI
-   015: RENDERING
-   016: SICUREZZA
-   017: PRIVACY
-   018: ISOLAMENTO
-   019: GEOLOCALIZZAZIONE
-   020: PRESTAZIONI
+   001: UX
+   002: AVVIO
+   003: RICERCA
+   004: I/O
+   005: DOWNLOADS
+   006: INTERFACCIA
+   007: SCHEDE
+   008: CREDENZIALI
+   009: CONNESSIONI
+   010: MULTIMEDIA
+   011: PDF
+   012: ESTENSIONI
+   013: SICUREZZA
+   014: PRIVACY
 */
 
 /* -----------------------------------------------------------------------------------
-   001: TELEMETRIA
+   001: UX
    ----------------------------------------------------------------------------------- */
 
-// Blocca "Allow Firefox to improve features, performance, and stability between updates"
-lockPref("nimbus.rollouts.enabled", false);
-
-// Blocca "Automatically send crash reports"
+// Telemetria e rollout: già in policies.json. Niente crash report o esperimenti remoti
+lockPref("breakpad.reportURL", "");
 lockPref("browser.crashReports.unsubmittedCheck.autoSubmit2", false);
-
-// Disabilita crash report
 lockPref("browser.crashReports.onDemand", false);
-lockPref("browser.crashReports.requestedNeverShowAgain", true);
 lockPref("browser.tabs.crashReporting.sendReport", false);
-
-// Disabilita Normandy
 lockPref("app.normandy.enabled", false);
-
-/* -----------------------------------------------------------------------------------
-   002: UX
-   ----------------------------------------------------------------------------------- */
 
 // Disabilita avviso in `about:config`
 lockPref("browser.aboutConfig.showWarning", false);
 
-// Previene l'apertura delle pagine "What's New" dopo gli aggiornamenti
-lockPref("browser.startup.homepage_override.buildID", "20100101");
+// Previene le pagine "What's New"
 lockPref("browser.startup.homepage_override.mstone", "ignore");
-lockPref("startup.homepage_override_nimbus_disable_wnp", true);
 
 // Disabilita estensioni suggerite
 lockPref("browser.discovery.enabled", false);
@@ -69,53 +50,39 @@ lockPref("browser.discovery.enabled", false);
 // Nasconde la voce "Recommendations" nel menu Add-ons
 lockPref("extensions.getAddons.showPane", false);
 
-// Nasconde "Recommended Extensions" in fondo alla pagina delle estensioni installate
+// Nasconde le estensioni consigliate
 lockPref("extensions.htmlaboutaddons.recommendations.enabled", false);
 
-// Disattiva le richieste interne di feedback sull'uso di Firefox
+// Disattiva richieste di feedback
 lockPref("messaging-system.askForFeedback", false);
 
 // Disabilita promozioni
-lockPref("browser.promo.focus.enabled", false);
 lockPref("browser.promo.pin.enabled", false);
 lockPref("browser.vpn_promo.enabled", false);
-lockPref("browser.contentblocking.report.hide_vpn_banner", true);
+lockPref("browser.promo.relay.enabled", false);
 lockPref("browser.contentblocking.report.show_mobile_app", false);
 lockPref("browser.ipProtection.blockIPProtectionCallouts", true);
 
 // Disabilita UITour
 lockPref("browser.uitour.enabled", false);
 
-// Disabilita "Privacy-Preserving Attribution"
-lockPref("dom.private-attribution.submission.enabled", false);
-
-// Ignora`Privacy Notice` e `Terms of Use` di Mozilla
+// Ignora i Termini d'Uso
 lockPref("termsofuse.bypassNotification", true);
 
-// Disabilita messaggio che propone di resettare il profilo
-lockPref("browser.disableResetPrompt", true);
-
 /* -----------------------------------------------------------------------------------
-   003: AVVIO
+   002: AVVIO
    ----------------------------------------------------------------------------------- */
 
-// Disabilita avvio automatico in modalità Safe Mode a seguito di crash
-lockPref("toolkit.startup.max_resumed_crashes", -1);
+// INDECISO: bloccare il passaggio della ricerca alla barra degli indirizzi?
+// lockPref("browser.newtabpage.activity-stream.improvesearch.handoffToAwesomebar", false);
 
-// Blocca il passaggio automatico dalla barra di ricerca a quella degli indirizzi
-lockPref("browser.newtabpage.activity-stream.improvesearch.handoffToAwesomebar", false);
-
-// Nasconde logo
-lockPref("browser.newtabpage.activity-stream.hideLogo", true); // Se "browser.newtabpage.activity-stream.nova.enabled" è TRUE
-lockPref("browser.newtabpage.activity-stream.logowordmark.alwaysVisible", false); // Se browser.newtabpage.activity-stream.nova.enabled è FALSE
+// Nasconde il logo
+lockPref("browser.newtabpage.activity-stream.hideLogo", true);
 
 // Widgets
-defaultPref("browser.newtabpage.activity-stream.widgets.system.enabled", true); // Mostra tasto per attivare Widgets
-defaultPref("browser.newtabpage.activity-stream.widgets.enabled", false); // Abilitare widgets di default
+defaultPref("browser.newtabpage.activity-stream.widgets.system.enabled", true);
 
-// Rimuove scorciatorie predefinite
-lockPref("browser.newtabpage.activity-stream.default.sites", "");
-lockPref("browser.newtabpage.activity-stream.improvesearch.topSiteSearchShortcuts.havePinned", "");
+// Rimuove scorciatoie predefinite
 lockPref("browser.newtabpage.activity-stream.improvesearch.topSiteSearchShortcuts.searchEngines", "");
 lockPref("browser.topsites.useRemoteSetting", false);
 
@@ -123,114 +90,88 @@ lockPref("browser.topsites.useRemoteSetting", false);
 defaultPref("browser.newtabpage.activity-stream.topSitesGroupedPins", true);
 
 /* -----------------------------------------------------------------------------------
-   004: RICERCA
+   003: RICERCA
    ----------------------------------------------------------------------------------- */
 
-// Abilita la possibilità di usare un motore di ricerca diverso in finestre normali e private
+// Motore di ricerca separato in privato
 defaultPref("browser.search.separatePrivateDefault.featureGate", true);
 defaultPref("browser.search.separatePrivateDefault.enabled", true);
 
-// Disattiva il completamento automatico degli URL nella barra degli indirizzi
-defaultPref("browser.urlbar.autoFill", false);
+// Nessuna ricerca recente o sito frequente nel dropdown della urlbar
+defaultPref("browser.urlbar.suggest.recentsearches", false); // default=true
+defaultPref("browser.urlbar.suggest.topsites", false); // default=true
 
-// Mostra URL completi disabilitando "Trimming" e "Search Terms"
-defaultPref("browser.urlbar.trimURLs", false);
-defaultPref("browser.urlbar.showSearchTerms.enabled", false);
-
-// Forza la visualizzazione in Punycode dei domini
+// Forza Punycode per i domini IDN
 defaultPref("network.IDN_show_punycode", true);
 
 /* -----------------------------------------------------------------------------------
-   005: I/O
+   004: I/O
    ----------------------------------------------------------------------------------- */
 
-// Disabilita cache su disco
-lockPref("browser.cache.disk.enable", false);
-lockPref("browser.cache.disk_cache_ssl", false);
+// Imposta limite cache su disco a 128 MB fissi
+lockPref("browser.cache.disk.smart_size.enabled", false);
+defaultPref("browser.cache.disk.capacity", 131072);
 
-// Forza il salvataggio della cache dei contenuti multimediali esclusivamente nella RAM durante la navigazione anonima
-lockPref("browser.privatebrowsing.forceMediaMemoryCache", true);
+// Cache RAM: FF160 limita l'auto-sizing a 32 MB anche con 31 GB
+defaultPref("browser.cache.memory.capacity", 65536); // default=-1
+defaultPref("browser.cache.memory.max_entry_size", 10240); // default=5120
 
-// Aumenta intervallo di tempo minimo tra i salvataggi della sessione (default: 60000)
-defaultPref("browser.sessionstore.interval", 1800000);
+// Sessione: salvataggio ogni 30 min, nessun dato sensibile scritto su disco, limita il numero di schede chiuse in memoria.
+defaultPref("browser.sessionstore.interval", 1800000); // default=15000
+defaultPref("browser.sessionstore.privacy_level", 2); // default=0
+defaultPref("browser.sessionstore.max_tabs_undo", 5); // default=25
 
-// Impedisce scrittura dati durante riavvi o crash
-defaultPref("browser.sessionstore.privacy_level", 2);
-
-// Disabilita creazione miniature delle pagine web
+// Niente miniature delle pagine
 lockPref("browser.pagethumbnails.capturing_disabled", true);
 
-// Riduce il numero di schede da tenere in "Recently closed tab"
-defaultPref("browser.sessionstore.max_tabs_undo", 5);
-
-// Limita la cache delle pagine nella memoria di navigazione indietro/avanti
-lockPref("browser.sessionhistory.max_total_viewers", 0);
-lockPref("fission.bfcacheInParent", false);
-
-// Disabilita la memorizzazione delle favicon
-lockPref("browser.shell.shortcutFavicons", false);
-
-// Disabilita il ripristino dello stato (posizionamento e dimensioni) della finestra del browser
-lockPref("browser.restoreWindowState.disabled", true);
-
-// Disabilita il salvataggio e il completamento automatico della cronologia dei moduli e della barra di ricerca
-lockPref("browser.formfill.enable", false);
-
-// Disabilita l'aggiornamento e il caricamento locale del database dei traccianti
+// Niente database dei traccianti
 lockPref("browser.contentblocking.database.enabled", false);
 
 /* -----------------------------------------------------------------------------------
-   006: DOWNLOADS
+   005: DOWNLOADS
    ----------------------------------------------------------------------------------- */
 
-// Blocca downloads non sicuri
-lockPref("dom.block_download_insecure", true);
-lockPref("browser.safebrowsing.downloads.remote.block_potentially_unwanted", false);
-lockPref("browser.safebrowsing.downloads.remote.block_uncommon", false);
-lockPref("browser.download.deletePrivate.chosen", false);
-
-// Forza interazione utente prima dei download
-lockPref("browser.download.alwaysOpenPanel", true);
+// Chiede l'app per i tipi di file non associati
 lockPref("browser.download.always_ask_before_handling_new_types", true);
 
-// Impedisce aggiunta dei download ai "recent documents" del sistema operativo
+// Blocca i download automatici ripetuti senza click
+lockPref("browser.download.enable_spam_prevention", true);
+
+// Nel dialog dei tipi sconosciuti resta solo "Salva"
+defaultPref("browser.download.forbid_open_with", true);
+
+// Niente download nei file recenti del sistema
 lockPref("browser.download.manager.addToRecentDocs", false);
 
-// Rimuove file temporanei dopo l'apertura con applicazioni esterne
-lockPref("browser.helperApps.deleteTempFileOnExit", true);
+// Niente verifica remota dei download: restano le liste locali
+defaultPref("browser.safebrowsing.downloads.remote.enabled", false);
 
 /* -----------------------------------------------------------------------------------
-   007: INTERFACCIA
+   006: INTERFACCIA
    ----------------------------------------------------------------------------------- */
-
-// Abilita Nova
-defaultPref("browser.nova.enabled", true);
 
 // Carica stili CSS personalizzati (se presenti) nel profilo utente
 defaultPref("toolkit.legacyUserProfileCustomizations.stylesheets", true);
 
+// Cache di rendering
+defaultPref("gfx.content.skia-font-cache-size", 32); // default=5 MB
+defaultPref("gfx.canvas.accelerated.cache-size", 512); // default=256
+
 // Nasconde barra del titolo
 defaultPref("browser.tabs.inTitlebar", 1);
 
-// Abilita nuova Sidebar
-defaultPref("sidebar.revamp", true);
+// Strumenti nella nuova Sidebar
 defaultPref("sidebar.main.tools", "bookmarks,aichat,syncedtabs,passwords,history");
-lockPref("browser.toolbarbuttons.introduced.sidebar-button", false);
 
 // Abilita Vertical Tabs
 defaultPref("sidebar.verticalTabs", true);
 defaultPref("sidebar.visibility", "expand-on-hover");
 
-// Disabilita avviso e transizione quando un video passa a schermo intero
+// Disabilita l'avviso quando un video passa a schermo intero
 lockPref("full-screen-api.warning.timeout", 0);
-defaultPref("full-screen-api.transition-duration.enter", "0 0");
-defaultPref("full-screen-api.transition-duration.leave", "0 0");
 
 // Mostra "More settings" sulle anteprime di stampa
 defaultPref("print.more-settings.open", true);
-
-// Mostra "Also open a new tab" nelle impostazioni di avvio
-defaultPref("browser.sessionstore.newTabOnRestore.showSetting", true);
 
 // Mostra "Compact`in "Customize Toolbar"
 defaultPref("browser.compactmode.show", true);
@@ -265,8 +206,7 @@ defaultPref("browser.shareqrcode.embed_logo", false);
 // Mostra maggiori informazioni sulle pagine bloccate da Safe Browsing
 defaultPref("browser.xul.error_pages.show_safe_browsing_details_on_load", true);
 
-// Mostra maggiori informazioni nelle pagine "about:"
-defaultPref("media.mediacapabilities.from-database", true);
+// Più dettagli in about:processes e nelle impostazioni
 defaultPref("toolkit.aboutProcesses.showAllSubframes", true);
 defaultPref("toolkit.aboutProcesses.showThreads", true);
 defaultPref("browser.preferences.defaultPerformanceSettings.enabled", false);
@@ -285,21 +225,18 @@ defaultPref("editor.inline_table_editing.enabled_by_default", true);
 defaultPref("editor.positioning.enabled_by_default", true);
 defaultPref("editor.resizing.enabled_by_default", true);
 
-// Mostra segnalibri mobile
-lockPref("browser.bookmarks.showMobileBookmarks", true);
-
 /* -----------------------------------------------------------------------------------
-   008: SCHEDE
+   007: SCHEDE
    ----------------------------------------------------------------------------------- */
 
 // Non chiudere finestra del browser quando si chiude l'ultima scheda
 defaultPref("browser.tabs.closeWindowWithLastTab", false);
 
-// Apre pagine da applicazioni esterne in nuove schede
-defaultPref("browser.link.open_newwindow.override.external", 3);
-
 // Forza apertura pop-ups in nuove schede
 defaultPref("browser.link.open_newwindow.restriction", 0);
+
+// Forza l'apertura dei link esterni nel Container predefinito
+defaultPref("browser.link.force_default_user_context_id_for_external_opens", true);
 
 // Apre segnalibri in una nuova scheda
 defaultPref("browser.tabs.loadBookmarksInTabs", true);
@@ -327,7 +264,7 @@ defaultPref("browser.tabs.hoverPreview.enabled", false);
 defaultPref("browser.tabs.hoverPreview.showThumbnails", false);
 
 /* -----------------------------------------------------------------------------------
-   009: CREDENZIALI
+   008: CREDENZIALI
    ----------------------------------------------------------------------------------- */
 
 // Disabilita l'autocompilazione automatica di username e password
@@ -336,9 +273,14 @@ lockPref("signon.autofillForms", false);
 // Mostra tasto per rivelare password
 defaultPref("layout.forms.reveal-password-button.enabled", true);
 
-// Disabilita la cattura delle credenziali inserite fuori dai moduli HTML standard
+// Cattura limitata ai moduli HTML standard
 defaultPref("signon.privateBrowsingCapture.enabled", false);
 defaultPref("signon.formlessCapture.enabled", false);
+defaultPref("signon.capture.inputChanges.enabled", false);
+defaultPref("signon.formRemovalCapture.enabled", false);
+
+// Solo ricette di login locali, niente Remote Settings
+defaultPref("signon.recipes.remoteRecipes.enabled", false);
 
 // Disable password truncation
 defaultPref("editor.truncate_user_pastes", false);
@@ -350,7 +292,7 @@ defaultPref("network.auth.subresource-http-auth-allow", 1);
 defaultPref("fission.highValue.login.monitor", true);
 
 /* -----------------------------------------------------------------------------------
-   010: CONNESSIONI
+   009: CONNESSIONI
    ----------------------------------------------------------------------------------- */
 
 // Impedisce a Firefox di passare automaticamente alla modalità offline
@@ -365,15 +307,8 @@ defaultPref("network.http.retry_with_another_half_open", true);
 // Mostra subito i dettagli tecnici e il tasto di avanzamento negli errori HTTPS
 defaultPref("browser.xul.error_pages.expert_bad_cert", true);
 
-// Mostra il codice d'errore del server invece di una pagina completamente bianca
-defaultPref("browser.http.blank_page_with_error_response.enabled", false);
-
-// Segna come non sicura la connessione se il server usa vecchi protocolli di rinegoziazione TLS
-defaultPref("security.ssl.treat_unsafe_negotiation_as_broken", true);
-
-// Disabilita OCSP
+// Disabilita OCSP: Firefox usa CRLite, le revoche Jacob non arrivano in tempo
 lockPref("security.OCSP.enabled", 0);
-lockPref("security.OCSP.require", false);
 
 // Disabilita l'invio di una richiesta HTTP in background per verificare la disponibilità del sito
 defaultPref("dom.security.https_only_mode_send_http_background_request", false);
@@ -382,33 +317,45 @@ defaultPref("dom.security.https_only_mode_send_http_background_request", false);
 defaultPref("network.http.http3.enable_0rtt", false);
 defaultPref("security.tls.enable_0rtt_data", false);
 
-// Mostra pulsanti di sblocco nelle pagina d'errore HTTPS
-defaultPref("dom.security.https_only_mode_error_page_user_suggestions", true);
-
-// Chiede conferma all'utente prima di seguire un reindirizzamento temporaneo HTTP
-defaultPref("network.http.prompt-temp-redirect", true);
-
-// Disabilita preconnect
+// Nessuna connessione o prefetch speculativo: possono bypassare uBlock
 defaultPref("network.preconnect", false);
+defaultPref("network.prefetch-next", false);
+defaultPref("browser.urlbar.speculativeConnect.enabled", false);
+defaultPref("network.http.speculative-parallel-limit", 0);
+defaultPref("browser.places.speculativeConnect.enabled", false);
+defaultPref("network.early-hints.preconnect.enabled", false);
+
+// Nessuna riattivazione automatica di CA radice su errori TLS
+lockPref("security.certerrors.mitm.auto_enable_enterprise_roots", false);
+
+// Nessun Referer meno restrittivo richiesto dai siti nelle navigazioni
+defaultPref("network.http.referer.disallowCrossSiteRelaxingDefault.top_navigation", true);
+
+// Nessun report CSP: leakano URL e referrer della navigazione
+defaultPref("security.csp.reporting.enabled", false);
+
+// Pinning strict e rifiuto server senza rinegoziazione sicura (RFC 5746)
+defaultPref("security.cert_pinning.enforcement_level", 2);
+defaultPref("security.ssl.require_safe_negotiation", true);
 
 // Disabilita l'uso degli identificatori di sessione SSL/TLS (Session IDs)
 defaultPref("security.ssl.disable_session_identifiers", true);
 
-/* -----------------------------------------------------------------------------------
-   011: PROXY
-   ----------------------------------------------------------------------------------- */
-
-// Impedisce connessione diretta a Internet se il proxy configurato smette di funzionare
-defaultPref("network.proxy.failover_direct", false);
-
-// Forza la risoluzione dei nomi di dominio (DNS) attraverso il server proxy SOCKS5
+// DNS remoto lato proxy anche con SOCKS4 (in SOCKS5 è già il default)
 defaultPref("network.proxy.socks_remote_dns", true);
 
+// Nessun probe periodico IPv4/IPv6 verso firefox-portal-detection.com
+defaultPref("network.connectivity-service.enabled", false);
+
+// WebRTC: dentro il proxy se presente, e una sola interfaccia per i candidati ICE
+defaultPref("media.peerconnection.ice.proxy_only_if_behind_proxy", true);
+defaultPref("media.peerconnection.ice.default_address_only", true);
+
 /* -----------------------------------------------------------------------------------
-   012: MULTIMEDIA
+   010: MULTIMEDIA
    ----------------------------------------------------------------------------------- */
 
-// Abilita sempre Picture-in-Picture per tutti i tipi di video
+// Ogni video idoneo al PiP, anche i corti (barra degli indirizzi e scorciatoie)
 defaultPref("media.videocontrols.picture-in-picture.video-toggle.always-show", true);
 
 // Non permettere ai siti di bloccare Picture-in-Picture
@@ -420,21 +367,21 @@ defaultPref("media.videocontrols.picture-in-picture.video-toggle.enabled", false
 // Blocca riproduzione automatica dei media che non sono stati cliccati direttamente
 defaultPref("media.autoplay.blocking_policy", 2);
 
+// Media fino a 64 MB in RAM invece che su disco (limiti: 512 MB e 5% RAM)
+defaultPref("media.memory_cache_max_size", 65536);
+
+// Forza i media ad usare la cache in RAM durante navigazione anonima
+lockPref("browser.privatebrowsing.forceMediaMemoryCache", true);
+
 /* -----------------------------------------------------------------------------------
-   013: PDF
+   011: PDF
    ----------------------------------------------------------------------------------- */
 
 // Disabilita JavaScript nei PDF
 defaultPref("pdfjs.enableScripting", false);
 
-// Disabilita accelerazione hardware per il rendering dei PDF
-defaultPref("pdfjs.enableWebGPU", false);
-
 // Disabilita XFA
 defaultPref("pdfjs.enableXfa", false);
-
-// Disabilita la conversione automatica del testo in link cliccabili
-defaultPref("pdfjs.enableAutoLinking", false);
 
 // Apre i link in una nuova scheda
 defaultPref("pdfjs.externalLinkTarget", 2);
@@ -445,21 +392,24 @@ defaultPref("pdfjs.handleOctetStream", false);
 // Aggiorna URL quando cambia la pagina nel lettore PDF
 defaultPref("pdfjs.historyUpdateUrl", true);
 
-/* -----------------------------------------------------------------------------------
-   014: ESTENSIONI
-   ----------------------------------------------------------------------------------- */
+// Verifica le firme digitali dei PDF (default desktop: false)
+defaultPref("pdfjs.enableSignatureVerification", true);
 
-// Mostra add-ons nascosti in `about:debugging`
-defaultPref("devtools.aboutdebugging.showHiddenAddons", true);
+/* -----------------------------------------------------------------------------------
+   012: ESTENSIONI
+   ----------------------------------------------------------------------------------- */
 
 // Limita l'esecuzione delle estensioni solo a quelle nel profilo o integrate
 defaultPref("extensions.enabledScopes", 5);
 
-// Chiede sempre conferma manuale all'utente prima di attivare estensioni rilevate nel sistema
-defaultPref("extensions.autoDisableScopes", 15);
+// Nessuna cache dei metadati AMO (consigli e pannello già bloccati in 002)
+defaultPref("extensions.getAddons.cache.enabled", false);
 
 // Disabilita mozAddonManager
 defaultPref("privacy.resistFingerprinting.block_mozAddonManager", true);
+
+// Disabilita il provider di componenti aggiuntivi per i permessi dei siti
+defaultPref("dom.sitepermsaddon-provider.enabled", false);
 
 // Permette l'installazione delle estensioni unicamente ai domini e alle origini autorizzate
 defaultPref("extensions.install_origins.enabled", true);
@@ -468,7 +418,7 @@ defaultPref("extensions.install_origins.enabled", true);
 defaultPref("extensions.originControls.grantByDefault", false);
 
 // Limita caricamenti di URL non sicuri all'interno dei popup per le estensioni Manifest V2
-defaultPref("extensions.manifestV2.actionsPopupURLRestricted", true); 
+defaultPref("extensions.manifestV2.actionsPopupURLRestricted", true);
 
 // Impedisce alle estensioni di aprire popup o pannelli senza un'interazione diretta dell'utente
 defaultPref("extensions.openPopupWithoutUserGesture.enabled", false);
@@ -480,82 +430,54 @@ lockPref("extensions.geckoProfiler.acceptedExtensionIds", "");
 defaultPref("browser.search.searchEnginesURL", "");
 
 /* -----------------------------------------------------------------------------------
-   015: RENDERING
+   013: SICUREZZA
    ----------------------------------------------------------------------------------- */
-
-// Restringe la visibilità dei font installati
-defaultPref("layout.css.font-visibility", 2);
-
-// Impedisce alle pagine web di ereditare i colori del tema di sistema
-defaultPref("widget.non-native-theme.use-theme-accent", false);
-defaultPref("ui.use_standins_for_native_colors", true);
-
-// Disabilita rendering di font per lingue complesse / non latine
-defaultPref("gfx.font_rendering.graphite.enabled", false);
-
-// Disabilita i font OpenType-SVG (grafica vettoriale SVG integrata nei file dei font)
-defaultPref("gfx.font_rendering.opentype_svg.enabled", false);
-
-// Disable rendering nativo di formule matematiche
-defaultPref("mathml.disabled", true);
-
-// Disabilita XSLT (trasformazione di documenti XML)
-defaultPref("dom.xslt.enabled", false);
-
-/* -----------------------------------------------------------------------------------
-   016: SICUREZZA
-   ----------------------------------------------------------------------------------- */
-
-// Disabilita GNOME Integration & GIO (GNOME Input/Output)
-defaultPref("browser.gnome-search-provider.enabled", false); // [LINUX] 
-defaultPref("network.gio.supported-protocols", ""); // [LINUX]
 
 // Impedisce alle pagine in background di richiamare selettori di file nativi del sistema
 defaultPref("browser.disable_pickers_in_hidden_extension_pages", true);
 
-// Disabilita completamente i servizi di accessibilità
-defaultPref("accessibility.force_disabled", 1);
-defaultPref("devtools.accessibility.enabled", false);
-
-// Disabilita il provider di componenti aggiuntivi per i permessi dei siti
-defaultPref("dom.sitepermsaddon-provider.enabled", false);
-
-// Abilita la scadenza automatica dei permessi concessi ai siti web se non vengono utilizzati per un certo periodo
-defaultPref("permissions.expireUnused.enabled", true);
-
 // Disabilita il supporto di compatibilità per i vecchi componenti interni di Firefox
 defaultPref("dom.use_components_shim", false);
-
-// Disabilita l'assegnazione automatica dei permessi di accesso allo storage per i siti di terze parti
-defaultPref("dom.storage_access.auto_grants", false);
 
 // Vieta il caricamento di script remoti all'interno delle pagine privilegiate di Firefox (pagine "about:")
 defaultPref("security.disallow_privilegedabout_remote_script_loads", true);
 
-// Disabilita l'API Document Picture-in-Picture (Document PiP)
-defaultPref("dom.documentpip.enabled", false);
-
 // Mantiene attive le mitigazioni hardware e software contro gli attacchi Spectre per i contenuti isolati
 defaultPref("javascript.options.spectre.disable_for_isolated_content", false);
 
-// Abilita i controlli avanzati sulla memoria WebAssembly (Wasm)
-defaultPref("javascript.options.wasm_memory_control", true);
+// Applica la policy W^X anche al codice JIT dei processi contenuto
+defaultPref("javascript.options.content_process_write_protect_code", true);
+
+// Vieta le riservazioni di memoria WebAssembly oltre i 2-4 GB
+defaultPref("javascript.options.wasm_disable_huge_memory", true);
 
 // Blocca l'esecuzione di script caricati tramite protocollo file:// se hanno un MIME type errato
 defaultPref("security.block_fileuri_script_with_wrong_mime", true);
 
 // Limita gli eventi che possono aprire una nuova finestra o popup
-defaultPref("dom.popup_allowed_events", "click dblclick");
+defaultPref("dom.popup_allowed_events", "click dblclick mousedown pointerdown");
+
+// Forza il raggruppamento predefinito dei documenti in "Origin Agent Clusters" isolati
+defaultPref("dom.origin_agent_cluster.default", true);
+
+// Impedisce il riutilizzo dei processi esistenti per i sotto-frame in Fission
+defaultPref("browser.tabs.remote.subframesPreferUsed", false);
 
 /* -----------------------------------------------------------------------------------
-   017: PRIVACY
+   014: PRIVACY
    ----------------------------------------------------------------------------------- */
+
+// Limita i font visibili al CSS a font base e language pack (no font installati)
+defaultPref("layout.css.font-visibility", 2);
+
+// Non esporre l'accento del tema alle pagine web
+defaultPref("widget.non-native-theme.use-theme-accent", false);
+
+// Sostituisce i colori di sistema con valori fissi nei contenuti web
+defaultPref("ui.use_standins_for_native_colors", true);
 
 // Abilita Global Privacy Control
 lockPref("privacy.globalprivacycontrol.enabled", true);
-
-// Limita l'invio dei ping HTML per limitare il tracciamento dei click
-defaultPref("browser.send_pings.require_same_host", true);
 
 // Taglia l'URL del Referrer inviato a siti di terze parti mantenendo solo lo schema, l'host e la porta (rimuovendo il percorso e i parametri)
 defaultPref("network.http.referer.XOriginTrimmingPolicy", 2);
@@ -563,110 +485,38 @@ defaultPref("network.http.referer.XOriginTrimmingPolicy", 2);
 // Limita la memorizzazione dei cookie e dello storage per i contenuti di terze parti integrati nelle pagine
 defaultPref("privacy.dynamic_firstparty.limitForeign", true);
 
-// Disabilita tutte le eccezioni euristiche basate su interazioni recenti o finestre aperte per lo storage di terze parti
+// Isola le risorse caricate dagli script delle estensioni per evitare il tracciamento tra siti diversi
+defaultPref("privacy.antitracking.isolateContentScriptResources", true);
+
+// Disabilita le euristiche di concessione storage dopo interazioni e aperture di finestre
 defaultPref("privacy.restrict3rdpartystorage.heuristic.opened_window_after_interaction", false);
 defaultPref("privacy.restrict3rdpartystorage.heuristic.recently_visited_time", 0);
 
-// Applica l'attributo SameSite=Lax di default ai cookie
-defaultPref("network.cookie.sameSite.laxByDefault", true);
-defaultPref("network.cookie.sameSite.laxByDefaultWarningsForBeta", true);
-defaultPref("network.cookie.sameSite.schemeful", true);
+// Disabilita l'assegnazione automatica dei permessi di accesso allo storage per i siti di terze parti
+defaultPref("dom.storage_access.auto_grants", false);
 
-// Abilita VPN Mozilla
-defaultPref("browser.ipProtection.enabled", true);
-
-/* -----------------------------------------------------------------------------------
-   018: ISOLAMENTO
-   ----------------------------------------------------------------------------------- */
-
-// Isola le risorse caricate dagli script delle estensioni per evitare il tracciamento tra siti diversi
-defaultPref("privacy.antitracking.isolateContentScriptResources", true);
+// Abilita la scadenza automatica dei permessi concessi ai siti web se non vengono utilizzati per un certo periodo
+defaultPref("permissions.expireUnused.enabled", true);
 
 // Isola i permessi dei siti web in base ai Container
 defaultPref("permissions.isolateBy.userContext", true);
 
-// Forza l'apertura dei link esterni in arrivo da altre applicazioni nel Container predefinito
-defaultPref("browser.link.force_default_user_context_id_for_external_opens", true);
-
-// Forza il raggruppamento predefinito dei documenti in "Origin Agent Clusters" isolati
-defaultPref("dom.origin_agent_cluster.default", true);
-
-// Disabilita la preferenza per il riutilizzo dei processi esistenti per i sotto-frame nell'architettura Fission
-defaultPref("browser.tabs.remote.subframesPreferUsed", false);
-
-// Forza restrizioni rigorose sui tipi di processo remoti nell'architettura Fission
-defaultPref("browser.tabs.remote.enforceRemoteTypeRestrictions", true);
-
-// Imposta il livello massimo di isolamento (sandbox) del processo GPU
-defaultPref("security.sandbox.gpu.level", 2);
-
-/* -----------------------------------------------------------------------------------
-   019: GEOLOCALIZZAZIONE
-   ----------------------------------------------------------------------------------- */
+// Applica l'attributo SameSite=Lax di default ai cookie
+defaultPref("network.cookie.sameSite.laxByDefault", true);
+defaultPref("network.cookie.sameSite.schemeful", true);
 
 // Usa BeaconDB al posto delle API di Google per la geolocalizzazione
 defaultPref("geo.provider.network.url", "https://beacondb.net/v1/geolocate");
 
 // Disabilita Geoclue
 defaultPref("geo.provider.use_geoclue", false); // [LINUX]
-defaultPref("geo.provider.geoclue.always_high_accuracy", false); // [LINUX]
 
 // Disabilita il rilevamento della regione via IP da parte dei server Mozilla
 defaultPref("browser.region.network.url", "");
 defaultPref("browser.region.update.enabled", false);
-lockPref("doh-rollout.home-region", "");
-
-/* -----------------------------------------------------------------------------------
-   020: PRESTAZIONI
-   ----------------------------------------------------------------------------------- */
-
-// Aumenta la dimensione della cache dei font gestita dal motore grafico Skia 
-defaultPref("gfx.content.skia-font-cache-size", 32); // default=5
-
-// Riduce intervallo di notifica per il rendering dei contenuti in millisecondi
-defaultPref("content.notify.interval", 100000); // default=120000
-
-// Imposta la dimensione della cache per la rasterizzazione accelerata della canvas HTML5
-defaultPref("gfx.canvas.accelerated.cache-size", 512); // default=256
-
-// Imposta la soglia di esecuzione prima che il compilatore JIT di JavaScript attivi la compilazione Baseline
-defaultPref("javascript.options.baselinejit.threshold", 50); // default=100
-
-// Aumenta la dimensione della cache in RAM
-defaultPref("browser.cache.memory.capacity", 65536); // default=-1 (auto)
-defaultPref("browser.cache.memory.max_entry_size", 10240); // default=5120
-
-// Aumenta la dimensione della cache per i media
-defaultPref("media.memory_caches_combined_limit_kb", 1048576); // default=524288
-defaultPref("media.memory_caches_combined_limit_pc_sysmem", 10); // default=5
-
-// Aumenta limiti di buffering per contenuti multimediali 
-defaultPref("media.cache_readahead_limit", 3600); // default=60
-defaultPref("media.cache_resume_threshold", 1800); // default=30
-
-// Imposta il numero di byte di un'immagine decodificati per singola iterazione
-defaultPref("image.mem.decode_bytes_at_a_time", 32768); // default=16384
-
-// Aumenta la dimensione e il numero dei buffer di memoria per i trasferimenti di dati di rete
-defaultPref("network.buffer.cache.size", 65535); // default=32768
-defaultPref("network.buffer.cache.count", 48); // default=24
-
-// Aumenta il numero massimo di connessioni HTTP simultanee e per singolo server
-defaultPref("network.http.max-connections", 1800); // default=900
-defaultPref("network.http.max-persistent-connections-per-server", 10); // default=6
-defaultPref("network.http.max-urgent-start-excessive-connections-per-host", 5); // default=3
-defaultPref("network.http.request.max-start-delay", 5); // default=10
-
-// Disabilita il throttling (pacing) delle richieste HTTP per inviarne il massimo numero possibile in parallelo
-defaultPref("network.http.pacing.requests.enabled", false);
-defaultPref("network.http.pacing.requests.min-parallelism", 12); // default=6
-defaultPref("network.http.pacing.requests.burst", 20); // default=10
-
-// Aumenta durata cache DNS
-defaultPref("network.dnsCacheExpiration", 3600); // default=60
 
 /* -----------------------------------------------------------------------------------
    FINE
    ----------------------------------------------------------------------------------- */
 
-lockPref("rischio.fox", "02/11/26");
+lockPref("rischio.fox", "160");
