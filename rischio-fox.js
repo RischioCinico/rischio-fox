@@ -212,7 +212,7 @@ defaultPref("toolkit.aboutProcesses.showThreads", true);
 defaultPref("browser.preferences.defaultPerformanceSettings.enabled", false);
 
 // [PF] Impedisce al puntatore del mouse di nascondersi mentre si digita
-defaultPref("widget.gtk.hide-pointer-while-typing.enabled", false); // [LINUX]
+defaultPref("widget.gtk.hide-pointer-while-typing.enabled", false); // [Linux]
 
 // Permette zoom utente ignorando i blocchi imposti dai siti web
 defaultPref("browser.ui.zoom.force-user-scalable", true);
@@ -509,7 +509,7 @@ defaultPref("network.cookie.sameSite.schemeful", true);
 defaultPref("geo.provider.network.url", "https://beacondb.net/v1/geolocate");
 
 // Disabilita Geoclue
-defaultPref("geo.provider.use_geoclue", false); // [LINUX]
+defaultPref("geo.provider.use_geoclue", false); // [Linux]
 
 // Disabilita il rilevamento della regione via IP da parte dei server Mozilla
 defaultPref("browser.region.network.url", "");
