@@ -86,9 +86,6 @@ defaultPref("browser.newtabpage.activity-stream.widgets.system.enabled", true);
 lockPref("browser.newtabpage.activity-stream.improvesearch.topSiteSearchShortcuts.searchEngines", "");
 lockPref("browser.topsites.useRemoteSetting", false);
 
-// Raggruppa scorciatoie fissate
-defaultPref("browser.newtabpage.activity-stream.topSitesGroupedPins", true);
-
 /* -----------------------------------------------------------------------------------
    003: RICERCA
    ----------------------------------------------------------------------------------- */
@@ -101,6 +98,9 @@ defaultPref("browser.search.separatePrivateDefault.enabled", true);
 defaultPref("browser.urlbar.suggest.recentsearches", false); // default=true
 defaultPref("browser.urlbar.suggest.topsites", false); // default=true
 
+// Urlbar: 5 risultati invece di 10
+defaultPref("browser.urlbar.maxRichResults", 5); // default=10
+
 // Forza Punycode per i domini IDN
 defaultPref("network.IDN_show_punycode", true);
 
@@ -112,14 +112,23 @@ defaultPref("network.IDN_show_punycode", true);
 lockPref("browser.cache.disk.smart_size.enabled", false);
 defaultPref("browser.cache.disk.capacity", 131072);
 
-// Cache RAM: FF160 limita l'auto-sizing a 32 MB anche con 31 GB
-defaultPref("browser.cache.memory.capacity", 65536); // default=-1
-defaultPref("browser.cache.memory.max_entry_size", 10240); // default=5120
+// Read-ahead cache su disco: 2 MB invece di 1 [RAM: 8 GB+]
+defaultPref("browser.cache.disk.preload_chunk_count", 8); // default=4
+
+// Indice della cache su RAM: meno seek su disco, nessun nuovo dato persistente [RAM: 8 GB+]
+defaultPref("browser.cache.disk.metadata_memory_limit", 4096); // default=1024 KB
+
+// Cache RAM: FF160 limita l'auto-sizing a 32 MB anche con 31 GB [RAM: 8 GB+]
+defaultPref("browser.cache.memory.capacity", 131072); // default=-1
+defaultPref("browser.cache.memory.max_entry_size", 32768); // default=5120 [RAM: 16 GB+]
 
 // Sessione: salvataggio ogni 30 min, nessun dato sensibile scritto su disco, limita il numero di schede chiuse in memoria.
 defaultPref("browser.sessionstore.interval", 1800000); // default=15000
 defaultPref("browser.sessionstore.privacy_level", 2); // default=0
 defaultPref("browser.sessionstore.max_tabs_undo", 5); // default=25
+
+// Ripristino schede differito: avvio più leggero
+defaultPref("browser.sessionstore.restore_on_demand", true);
 
 // Niente miniature delle pagine
 lockPref("browser.pagethumbnails.capturing_disabled", true);
@@ -154,8 +163,19 @@ defaultPref("browser.safebrowsing.downloads.remote.enabled", false);
 defaultPref("toolkit.legacyUserProfileCustomizations.stylesheets", true);
 
 // Cache di rendering
-defaultPref("gfx.content.skia-font-cache-size", 32); // default=5 MB
-defaultPref("gfx.canvas.accelerated.cache-size", 512); // default=256
+// Font su RAM: utile su pagine ricche di testo [RAM: 16 GB+]
+defaultPref("gfx.content.skia-font-cache-size", 128); // default=5 MB
+// Canvas su GPU/RAM: se il testo si vede garbled, torna a 512 [RAM: 16 GB+]
+defaultPref("gfx.canvas.accelerated.cache-size", 1024); // default=256
+// Più oggetti canvas in cache [RAM: 16 GB+]
+defaultPref("gfx.canvas.accelerated.cache-items", 16384); // default=8192
+// Non decodificare immagini fuori schermo [FF161] [RAM: 4 GB+]
+defaultPref("image.decode.defer_if_not_visible", true);
+// Non scaricare i frame di immagini inattive: tab switch più veloci [RAM: 16 GB+]
+defaultPref("image.mem.discardable", false);
+defaultPref("image.mem.animated.discardable", false);
+// Surface cache delle immagini fino a 4 GB invece di ~2 GB [RAM: 16 GB+]
+defaultPref("image.mem.surfacecache.max_size_kb", 4194304); // default=2024*1024
 
 // Nasconde barra del titolo
 defaultPref("browser.tabs.inTitlebar", 1);
@@ -232,6 +252,13 @@ defaultPref("editor.resizing.enabled_by_default", true);
 // Non chiudere finestra del browser quando si chiude l'ultima scheda
 defaultPref("browser.tabs.closeWindowWithLastTab", false);
 
+// Più processi contenuto in parallelo [RAM: 16 GB+]
+defaultPref("dom.ipc.processCount", 12); // default=8
+defaultPref("dom.ipc.processCount.webIsolated", 8); // default=4
+
+// Cronologia avanti/indietro: 20 voci invece di 50
+defaultPref("browser.sessionhistory.max_entries", 20); // default=50
+
 // Forza apertura pop-ups in nuove schede
 defaultPref("browser.link.open_newwindow.restriction", 0);
 
@@ -298,11 +325,17 @@ defaultPref("fission.highValue.login.monitor", true);
 // Impedisce a Firefox di passare automaticamente alla modalità offline
 defaultPref("network.manage-offline-status", false);
 
-// Ritenta HTTP/3 alternando tra IPv4 e IPv6 in caso di errore di connessione
-defaultPref("network.http.http3.retry_different_ip_family", true);
+// DNS cache più capiente e TTL più lungo: meno query DoH verso Quad9
+defaultPref("network.dnsCacheEntries", 8192); // default=3200
+defaultPref("network.dnsCacheExpiration", 300); // default=60
+defaultPref("network.dnsNegativeCacheExpiration", 300); // default=60 su Release
 
-// Se una connessione TCP fallisce a metà apertura, ne avvia subito un'altra
-defaultPref("network.http.retry_with_another_half_open", true); 
+// Buffer di rete più grandi [RAM: 8 GB+]
+defaultPref("network.buffer.cache.count", 48); // default=24
+defaultPref("network.buffer.cache.size", 65536); // default=32768
+
+// HTTP/1.1: 10 connessioni per server invece di 6 (con proxy conta il limite per-proxy, già 32)
+defaultPref("network.http.max-persistent-connections-per-server", 10); // default=6
 
 // Mostra subito i dettagli tecnici e il tasto di avanzamento negli errori HTTPS
 defaultPref("browser.xul.error_pages.expert_bad_cert", true);
@@ -325,8 +358,14 @@ defaultPref("network.http.speculative-parallel-limit", 0);
 defaultPref("browser.places.speculativeConnect.enabled", false);
 defaultPref("network.early-hints.preconnect.enabled", false);
 
+// Niente Compression Dictionary Transport (dizionari condivisi e header Available-Dictionary: nuova superficie di tracking/compatibilità) [FF161]
+defaultPref("network.http.dictionaries.enable", false);
+
 // Nessuna riattivazione automatica di CA radice su errori TLS
 lockPref("security.certerrors.mitm.auto_enable_enterprise_roots", false);
+
+// Nessuna richiesta canary a mitmdetection.services.mozilla.com su errori TLS
+defaultPref("security.certerrors.mitm.priming.enabled", false);
 
 // Nessun Referer meno restrittivo richiesto dai siti nelle navigazioni
 defaultPref("network.http.referer.disallowCrossSiteRelaxingDefault.top_navigation", true);
@@ -367,8 +406,8 @@ defaultPref("media.videocontrols.picture-in-picture.video-toggle.enabled", false
 // Blocca riproduzione automatica dei media che non sono stati cliccati direttamente
 defaultPref("media.autoplay.blocking_policy", 2);
 
-// Media fino a 64 MB in RAM invece che su disco (limiti: 512 MB e 5% RAM)
-defaultPref("media.memory_cache_max_size", 65536);
+// Media fino a 128 MB in RAM invece che su disco [RAM: 16 GB+] (limiti: 512 MB e 5% RAM)
+defaultPref("media.memory_cache_max_size", 131072);
 
 // Forza i media ad usare la cache in RAM durante navigazione anonima
 lockPref("browser.privatebrowsing.forceMediaMemoryCache", true);
@@ -454,6 +493,12 @@ defaultPref("javascript.options.wasm_disable_huge_memory", true);
 // Blocca l'esecuzione di script caricati tramite protocollo file:// se hanno un MIME type errato
 defaultPref("security.block_fileuri_script_with_wrong_mime", true);
 
+// Nuovi formati clipboard cross-origin restano negati [FF161]
+defaultPref("clipboard.readCrossOriginCustomFormats.enabled", false);
+
+// Nessun handling "magic" dei file-backed DOM blob [FF161]
+defaultPref("dom.file.allowMagicFiles", false);
+
 // Limita gli eventi che possono aprire una nuova finestra o popup
 defaultPref("dom.popup_allowed_events", "click dblclick mousedown pointerdown");
 
@@ -482,11 +527,17 @@ lockPref("privacy.globalprivacycontrol.enabled", true);
 // Taglia l'URL del Referrer inviato a siti di terze parti mantenendo solo lo schema, l'host e la porta (rimuovendo il percorso e i parametri)
 defaultPref("network.http.referer.XOriginTrimmingPolicy", 2);
 
+// Taglia anche il Referer same-origin a schema+host+porta
+defaultPref("network.http.referer.trimmingPolicy", 2);
+
 // Limita la memorizzazione dei cookie e dello storage per i contenuti di terze parti integrati nelle pagine
 defaultPref("privacy.dynamic_firstparty.limitForeign", true);
 
 // Isola le risorse caricate dagli script delle estensioni per evitare il tracciamento tra siti diversi
 defaultPref("privacy.antitracking.isolateContentScriptResources", true);
+
+// Isola lo stato di rete anche quando c'è un proxy configurato
+defaultPref("privacy.partition.network_state.connection_with_proxy", true);
 
 // Disabilita le euristiche di concessione storage dopo interazioni e aperture di finestre
 defaultPref("privacy.restrict3rdpartystorage.heuristic.opened_window_after_interaction", false);
@@ -515,8 +566,11 @@ defaultPref("geo.provider.use_geoclue", false); // [Linux]
 defaultPref("browser.region.network.url", "");
 defaultPref("browser.region.update.enabled", false);
 
+// L'assistente AI della sidebar non riceve posizione approssimata [FF161]
+defaultPref("browser.smartwindow.location.enabled", false);
+
 /* -----------------------------------------------------------------------------------
    FINE
    ----------------------------------------------------------------------------------- */
 
-lockPref("rischio.fox", "160");
+lockPref("rischio.fox", "161");
